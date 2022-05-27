@@ -1,0 +1,79 @@
+<p align=center><strong>K&agrave;ddug Y&agrave;lla gi</strong>
+<p align=center>Texte copyright &copy; 2010, 2020 AES et MBS
+<p align=center>(NINEA MBS: 20215410C9)
+<p  align=center>Traduction provisoire
+version %version-name%
+<hr>
+<p>Cette &oelig;uvre est mise &agrave; disposition sous licence Creative Commons Attribution - Pas d'Utilisation Commerciale - Pas de Modification 4.0 International (CC BY-NC-ND 4.0)</p>
+<img src="images/cc.png" />
+<p>Vous &ecirc;tes autoris&eacute; &agrave; :</p>
+<p><strong>Partager</strong> &mdash; copier, distribuer et communiquer le mat&eacute;riel par tous moyens et sous tous formats. L'Offrant ne peut retirer les autorisations conc&eacute;d&eacute;es par la licence tant que vous appliquez les termes de cette licence.</p>
+<p><strong>Attribution</strong> &mdash; Vous devez cr&eacute;diter l'&OElig;uvre, int&eacute;grer un lien vers la licence et indiquer si des modifications ont &eacute;t&eacute; effectu&eacute;es &agrave; l'Oeuvre. Vous devez indiquer ces informations par tous les moyens raisonnables, sans toutefois sugg&eacute;rer que l'Offrant vous soutient ou soutient la fa&ccedil;on dont vous avez utilis&eacute; son Oeuvre.</p>
+<p><strong>Pas d&rsquo;Utilisation Commerciale</strong> &mdash; Vous n'&ecirc;tes pas autoris&eacute; &agrave; faire un usage commercial de cette Oeuvre, tout ou partie du mat&eacute;riel la composant.</p>
+<p><strong>Pas de modifications</strong> &mdash; Dans le cas o&ugrave; vous effectuez un remix, que vous transformez, ou cr&eacute;ez &agrave; partir du mat&eacute;riel composant l'Oeuvre originale, vous n'&ecirc;tes pas autoris&eacute; &agrave; distribuer ou mettre &agrave; disposition l'Oeuvre modifi&eacute;e.</p>
+<p><strong>Pas de restrictions compl&eacute;mentaires</strong> &mdash; Vous n'&ecirc;tes pas autoris&eacute; &agrave; appliquer des conditions l&eacute;gales ou des mesures techniques qui restreindraient l&eacute;galement autrui &agrave; utiliser l'Oeuvre dans les conditions d&eacute;crites par la licence.</p>
+<p>C'est un r&eacute;sum&eacute; (et non pas un substitut) de la licence. Pour voir une copie de cette licence, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr"><u>cliquez ici</u></a>.</p>
+<p>La Mission Baptiste du S&eacute;n&eacute;gal a le plaisir de vous autoriser &agrave; utiliser toute portion tir&eacute;e des Ecritures qui sont disponibles sur http://biblewolof.com et sur ces appli (l&rsquo;&oelig;uvre), sous r&eacute;serve que le cr&eacute;dit nous soit reconnu par &eacute;crit, avec la mention du nom de notre organisation (voir plus loin). Mais on ne peut la modifier de quelque fa&ccedil;on que ce soit, ni l&rsquo;utiliser &agrave; des fins commerciales, c&rsquo;est &agrave; dire, de telles ressources ne peuvent &ecirc;tre vendues &agrave; un prix sup&eacute;rieur au co&ucirc;t de la reproduction.</p>
+<p>Cette licence n&rsquo;autorise pas un mixage combinant les &eacute;critures en wolof avec vos propres ressources traduites en wolof. Si vous d&eacute;sirez faire un mixage, vous devez en obtenir l&rsquo;autorisation, et pour cela nous exigeons un &eacute;chantillon de traduction pour une pr&eacute;alable approbation de notre part. En effet des ressources mal traduites portent pr&eacute;judice &agrave; la cr&eacute;dibilit&eacute; des &eacute;critures.</p>
+<p>De m&ecirc;me, s&rsquo;il s&rsquo;agit d&rsquo;enregistrements des &eacute;critures, nous exigeons des &eacute;chantillons de la mati&egrave;re enregistr&eacute;e, pour approbation pr&eacute;alable de notre part. En effet des voix marqu&eacute;es d&rsquo;accent pourraient &ecirc;tre dommageables &agrave; la cr&eacute;dibilit&eacute; des &eacute;critures.</p>
+<p>Pour demander la permission de faire quoi que ce soit en dehors du cadre de cette licence, <a href="http://currah.download/pages/wolof/bible/contact/index.html"><u>contactez-nous</u></a>.</p>
+<p>Voici les d&eacute;clarations de copyright &agrave; inclure dans l'&oelig;uvre:</p>
+<p>S&rsquo;il s&rsquo;agit de l&rsquo;&eacute;dition du NT du 2010 ou le livre de <em>Nj&agrave;lb&eacute;en ga</em>&nbsp;:</p>
+<p><em>&Eacute;criture extraite de </em>(s&rsquo;il s&rsquo;agit d&rsquo;une portion de livre)</p>
+<p>Suivi de:</p>
+<p><em>K&agrave;ddug Y&agrave;lla gi &copy; 2010, 2020 Les Assembl&eacute;es Evang&eacute;liques du Senegal et La Mission Baptiste du S&eacute;n&eacute;gal</em></p>
+<p><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr">https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr</a></p>
+<p>S&rsquo;il s&rsquo;agit des autres livres&nbsp;:</p>
+<p><em>K&agrave;ddug Y&agrave;lla gi &copy; 2020 La Mission Baptiste du S&eacute;n&eacute;gal</em></p>
+<p><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr">https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr</a></p>
+<p>Vous pouvez aussi utiliser une forme abr&eacute;g&eacute;e:</p>
+<p>(Nom du livre abr&eacute;g&eacute;) <em>2020 MBS (NINEA: 20215410C9)</em></p>
+<p><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr">https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr</a></p>
+<p>La politique de confidentialit&eacute; se trouve <a href="http://sng.al/priv"><u>ici</u></a>.</p>
+<hr>
+<p>This work is licensed under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</p>
+<img src="images/cc.png" />
+<p>You are free to:</p>
+<p><strong>Share</strong> &mdash; copy and redistribute the material in any medium or format. The licensor cannot revoke these freedoms as long as you follow the license terms.</p>
+<p><strong>Attribution</strong> &mdash; You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.</p>
+<p><strong>NonCommercial</strong> &mdash; You may not use the material for commercial purposes.</p>
+<p><strong>NoDerivatives</strong> &mdash; If you remix, transform, or build upon the material, you may not distribute the modified material.</p>
+<p><strong>No additional restrictions</strong> &mdash; You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.</p>
+<p>This is a human-readable summary of (and not a substitute for) the license. To view a copy of this license, <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode"><u>click here</u></a>.</p>
+<p>La Mission Baptiste du S&eacute;n&eacute;gal is pleased to give you permission to use any of the scriptures on http://biblewolof.com and in these apps (hereafter referred to as the Work) as long as you give credit to MBS with a copyright notice, and you do not modify or mix the work, and do not sell materials at a price over the cost of reproduction.</p>
+<p>In other words, you may download the Work and share it with others as long as you credit us, but you can&rsquo;t change the Work in any way or use it commercially (for profit).</p>
+<p>If we give you permission to do a re-mix (combining the scriptures in wolof with your own materials translated in wolof), we will ask for a sample translation or audio recording to approve first, before any distribution. Materials badly translated and voices with a foreign accent impair the credibility of the scriptures.</p>
+<p>To ask permission to do anything outside the scope of this license, <a href="http://currah.download/pages/wolof/bible/contact/index.html"><u>contact us</u></a>.</p>
+<p>Here are copyright statements to include with the work :</p>
+<p>For the 2010 NT and the book of Genesis, <em>Nj&agrave;lb&eacute;en ga</em>:</p>
+<p><em>Scripture citations taken from</em> (if it's only a portion of a book) followed by</p>
+<p><em>K&agrave;ddug Y&agrave;lla gi &copy; 2010, 2020 Les Assembl&eacute;es Evang&eacute;liques du Senegal et La Mission Baptiste du S&eacute;n&eacute;gal</em></p>
+<p><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode</a></p>
+<p>For all other books:</p>
+<p><em>T&eacute;ereb Injiil &copy; 2020 La Mission Baptiste du S&eacute;n&eacute;gal</em></p>
+<p><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode</a></p>
+<p>Or you may use a shortened form:</p>
+<p>(Name of the book) <em>2020 MBS (NINEA: 20215410C9)</em></p>
+<p><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode</a></p>
+<p>You can read our privacy policy <a href="http://sng.al/priv"><u>here</u></a>.</p>
+<hr>
+<p>Ligg&eacute;ey bii turu sa&ntilde;-sa&ntilde;u j&euml;fandikoom di &laquo; Creative Commons BY-NC-ND 4.0 &raquo; ; maye na ku ko yeb, f&eacute;pp ci &agrave;ddina, ci kaw way jefandiku ji w&agrave;ccoo ak yii ndigal: BY = SM (dees na Seedeel boroom Moomeelam); NC = AJ (Amul Jaay); ND = AS (Amul Soppi). Ku b&euml;gga gis sottib sa&ntilde; sa&ntilde;u j&euml;fandikoo bi, seet ko <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr"><u>fii</u></a>.</p>
+<img src="images/cc.png" />
+<p>Mission Baptiste du S&eacute;n&eacute;gal am na mb&eacute;gtey may leen ngeen yeb, ak sotti, ak wasaare lu mu mana doon ci K&agrave;ddug Y&agrave;lla gi ci http://biblewolof.com, ak ci appli yii, ci kaw ngeen seedeel nu sunu moomeel (seetal ci suuf). Waaye dungeen ci mana soppi lenn, ak nu coppite ga mana t&euml;dde, te ngeen ba&ntilde; cee jaaye lenn ci nj&euml;g gu wees li leen sottib mbind mi dikke.</p>
+<p>Su dee lu ngeen raxe (muy seen ligg&eacute;eyu bopp bu ngeen tekki ci wolof, boole ko ak lenni k&agrave;ddug Y&agrave;lla gi ci wolof), ba b&euml;gg koo sotti ngir wasaare ko, war ngeen cee j&euml;kka am sunu ndigal, te jox nu ci seenub tekki, lu tuut lu nu ko mana natte ba mu doy nu, ndax jumtukaay yu tekki bi awul yoon g&agrave;kkal na Mbind mu sell mi.</p>
+<p><a href="http://currah.download/pages/wolof/bible/contact/index.html"><u>Jokkooleen ak nun</u></a>, ngir s&agrave;kku ndigalu def lu mu mana doon, lu wees kemu sa&ntilde;-sa&ntilde;u j&euml;foo.</p>
+<p>Ba tey su dee lu ngeen jukkee ci k&agrave;ddug Y&agrave;lla gi, ba def ko ay d&eacute;gtal yu ngeen taataan, b&euml;gg nanu ngeen s&agrave;kkal nu ci seenub taataan, lu tuut lu nu mana natte baat yi ba mu doy nu, ndax baat yu seen l&agrave;mmi&ntilde;u boroom taq itam, g&agrave;kkal na ab ligg&eacute;ey.</p>
+<p>Yii k&agrave;ddu la sa&ntilde;-sa&ntilde;u j&euml;foo tege, te warees koo boole ci ligg&eacute;ey bi:</p>
+<p><em>Ci&hellip;&hellip;&hellip;&hellip; lanu ko jukkee,</em> (su dee ab dogu t&eacute;ere doŋŋ)</p>
+<p><em>K&agrave;ddug Y&agrave;lla gi &copy; 2010, 2020 Les Assembl&eacute;es Evang&eacute;liques du Senegal et La Mission Baptiste du S&eacute;n&eacute;gal</em></p>
+<p><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr">https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr</a></p>
+<p>Li mujj ci kaw sottib Injiil 2010 mbaa t&eacute;ereb Nj&agrave;lb&eacute;en ga la soxal.</p>
+<p>mbaa:</p>
+<p><em>K&agrave;ddug Y&agrave;lla gi &copy; 2020 La Mission Baptiste du S&eacute;n&eacute;gal</em></p>
+<p><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr">https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr</a></p>
+<p>Su dee yeneen t&eacute;ere yi.</p>
+<p>Manees naa j&euml;fandikoo itam ab g&agrave;ttalub turu t&eacute;ere bi :</p>
+<p>(Turu g&agrave;ttalu t&eacute;ere bi) <em>2020 MBS (NINEA: 20215410C9)</em></p>
+<p><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr">https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr</a></p>
+
+%copyright-all:C02%
