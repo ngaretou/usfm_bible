@@ -28,5 +28,5 @@ Change window title on desktop
 
 https://stackoverflow.com/questions/64800455/how-to-change-app-icon-and-app-name-for-flutter-desktop-application
 
-Global options: Add column dark/light mode would be great, Search, Contact Us, About
+Global options: Add column, Search, Contact Us, About
 Each translation options: font size up and down, Remove columns - remove the one you are clicking the thing on

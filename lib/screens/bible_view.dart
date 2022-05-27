@@ -4,7 +4,9 @@ import 'package:fluent_ui/fluent_ui.dart';
 import '../models/database_builder.dart';
 
 class BibleView extends StatefulWidget {
-  const BibleView({Key? key}) : super(key: key);
+  final bool? addPane;
+
+  const BibleView({Key? key, this.addPane}) : super(key: key);
 
   @override
   State<BibleView> createState() => _BibleViewState();
@@ -51,6 +53,7 @@ class _BibleViewState extends State<BibleView> {
   }
 
   changeNumberColumns(bool add) {
+    print('changeNumberColumns');
     if (add == true) {
       numberOfColumns++;
     } else {
@@ -61,6 +64,7 @@ class _BibleViewState extends State<BibleView> {
 
   @override
   Widget build(BuildContext context) {
+    if (widget.addPane != null && widget.addPane!) changeNumberColumns(true);
     //Main row that holds the text columns
     return Row(
       children: List.generate(
@@ -238,6 +242,16 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
+                    //Font increase/decrease
+                    Button(
+                      onPressed: () {},
+                      child: const Icon(FluentIcons.font_increase),
+                    ),
+                    Button(
+                      onPressed: () {},
+                      child: const Icon(FluentIcons.font_decrease),
+                    ), //null makes //null
+                    //Add new column
                     Button(
                       onPressed:
                           widget.numberOfColumns <= 3 //keep it to four columns
@@ -246,14 +260,15 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
                               : null,
                       child: const Icon(FluentIcons.calculator_addition),
                     ), //null makes it disabled
+                    //remove a column
+                    if (widget.myColumnIndex != 0)
+                      Button(
 
-                    Button(
-
-                        //If this is column 1, don't let the user delete the column
-                        onPressed: widget.myColumnIndex != 0
-                            ? () => widget.changeNumberColumns(false)
-                            : null,
-                        child: const Icon(FluentIcons.calculator_subtract)),
+                          //If this is column 1, don't let the user delete the column
+                          onPressed: widget.myColumnIndex != 0
+                              ? () => widget.changeNumberColumns(false)
+                              : null,
+                          child: const Icon(FluentIcons.calculator_subtract)),
 
                     // Button(
                     //     child: const Icon(FluentIcons.accessibilty_checker),

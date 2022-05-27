@@ -8,7 +8,6 @@ import 'package:system_theme/system_theme.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'package:window_manager/window_manager.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'screens/bible_view.dart';
 import 'screens/settings.dart';
@@ -48,7 +47,7 @@ void main() async {
         TitleBarStyle.normal,
         windowButtonVisibility: true,
       );
-      await windowManager.setSize(const Size(755, 545));
+      await windowManager.setSize(const Size(1400, 700));
       await windowManager.setMinimumSize(const Size(600, 600));
       await windowManager.center();
       await windowManager.show();
@@ -271,7 +270,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
           // It doesn't look good when resizing from compact to open
           // PaneItemHeader(header: Text('User Interaction')),
           PaneItem(
-            icon: const Icon(FluentIcons.checkbox_composite),
+            icon: const Icon(FluentIcons.reading_mode),
             title: const Text('Bible View'),
           ),
           // PaneItem(
@@ -323,7 +322,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
         //   controller: TextEditingController(),
         //   items: const ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
         // ),
-        autoSuggestBoxReplacement: const Icon(FluentIcons.search),
+        // autoSuggestBoxReplacement: const Icon(FluentIcons.search),
 
         footerItems: [
           //Actions label?
@@ -336,10 +335,14 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
             title: const Text('Light/Dark Toggle'),
             appTheme: appTheme,
           ),
-          CustomPaneItemAction(
-            icon: const Icon(FluentIcons.calculator_addition),
-            title: const Text('My new item'),
-          ),
+          // PaneItem(
+          //   icon: const Icon(FluentIcons.accessibilty_checker),
+          //   title: const Text('Add new column'),
+          // ),
+          // CustomPaneItemAction(
+          //   icon: const Icon(FluentIcons.calculator_addition),
+          //   title: const Text('My new item'),
+          // ),
 
           PaneItemSeparator(),
           PaneItem(
@@ -354,7 +357,10 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
         ],
       ),
       content: NavigationBody(index: index, children: [
-        const BibleView(),
+        const BibleView(), //main view
+        //must include dummy destination here for each custom action it seems
+        const BibleView(), //toggle light
+
         Settings(controller: settingsController),
       ]),
     );
@@ -462,11 +468,48 @@ class LightDarkModePaneItemAction extends PaneItem {
       bool? autofocus}) {
     //Runs this function
     switchThemeMode() {
-      if (appTheme.mode == ThemeMode.dark) {
-        appTheme.mode = ThemeMode.light;
-      } else {
-        appTheme.mode = ThemeMode.dark;
+      print('switchThemeMode ${appTheme.mode}');
+      print('switchThemeMode ${appTheme.mode}');
+      var brightness = MediaQuery.of(context).platformBrightness;
+      print(brightness);
+
+      switch (appTheme.mode) {
+        case ThemeMode.system:
+          bool dark =
+              (MediaQuery.of(context).platformBrightness == Brightness.dark);
+          if (dark) {
+            appTheme.mode = ThemeMode.light;
+          } else {
+            appTheme.mode = ThemeMode.dark;
+          }
+          break;
+        case ThemeMode.dark:
+          appTheme.mode = ThemeMode.light;
+          break;
+        case ThemeMode.light:
+          appTheme.mode = ThemeMode.dark;
+          break;
+        default:
       }
+
+      // Case the mode is explicitly set - change to opposite
+
+      // if (appTheme.mode == ThemeMode.dark) {
+      //   appTheme.mode = ThemeMode.light;
+      // } else {
+      //   appTheme.mode = ThemeMode.dark;
+      // }
+
+      // // Case the mode not set -- this will only
+      // if (appTheme.mode == ThemeMode.system) {
+      //   bool dark =
+      //       (MediaQuery.of(context).platformBrightness == Brightness.dark);
+      //   if (dark) {
+      //     appTheme.mode = ThemeMode.light;
+      //   } else {
+      //     appTheme.mode = ThemeMode.dark;
+      //   }
+      // }
     }
 
     return super.build(context, selected, switchThemeMode);
