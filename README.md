@@ -7,7 +7,10 @@ An extension of Scripture App Builder primarily for web apps but also can be use
 ### To use built web version:
 
 - Copy contents of SAB .appDef and \_data folder into the assets/project folder - _rename_ your appDef file to "appDef.appDef" and your data file to "data".
-- Change app name and favicon in index.html.
+- in index.html
+  - Change app name
+  - favicon
+  - change _base href_ to your subfolder if your web app is not in the root of your site.
 
 ### To use in Flutter for desktop build:
 
@@ -30,3 +33,7 @@ https://stackoverflow.com/questions/64800455/how-to-change-app-icon-and-app-name
 
 Global options: Add column, Search, Contact Us, About
 Each translation options: font size up and down, Remove columns - remove the one you are clicking the thing on
+
+Figure out permissions - right now you have to manually change permissions to 744 for appdef and all sfm book files after output :(
+
+Instead of plus and minus to make new columns on the columns, one add new column action on the pane and then 'x' close buttons on the columns only

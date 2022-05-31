@@ -77,3 +77,6 @@ version %version-name%
 <p><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr">https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr</a></p>
 
 %copyright-all:C02%
+
+
+%copyright-all:C03%

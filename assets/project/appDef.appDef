@@ -1007,6 +1007,11 @@
       <text-direction value="LTR"/>
       <numeral-system value="Default"/>
       <verse-number-style value="default"/>
+
+      <styles>
+        <style name="div.footer">
+        </style>
+      </styles>
     </styles-info>
 
     <book-order>
@@ -1233,6 +1238,949 @@
       <sub-group>Revelation</sub-group>
       <filename>67REVWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/67REVWNPub18.SFM</source>
+    </book>
+  </books>
+
+  <books id="C03">
+    <book-collection-name>Lexham English Bible</book-collection-name>
+    <book-collection-abbrev>LEB</book-collection-abbrev>
+    <book-collection-description></book-collection-description>
+
+    <features type="bc">
+      <feature name="show-scripture-refs" value="true"/>
+      <feature name="ref-chapter-verse-separator" value=":"/>
+      <feature name="ref-verse-range-separator" value="-"/>
+      <feature name="ref-verse-list-separator" value=","/>
+      <feature name="ref-chapter-range-separator" value="-"/>
+      <feature name="ref-chapter-list-separator" value=";"/>
+      <feature name="ref-extra-material" value=""/>
+      <feature name="numerals-type" value="default"/>
+      <feature name="bc-allow-single-pane" value="true"/>
+      <feature name="bc-allow-copy-text" value="true"/>
+      <feature name="bc-allow-long-press-select" value="true"/>
+      <feature name="bc-allow-share-text" value="true"/>
+      <feature name="bc-allow-text-on-image" value="true"/>
+      <feature name="bc-allow-text-on-image-edit-text" value="true"/>
+      <feature name="bc-allow-verse-of-the-day" value="true"/>
+      <feature name="bc-allow-share-audio" value="false"/>
+      <feature name="bc-allow-share-video" value="false"/>
+    </features>
+
+    <metadata>
+      <meta name="copyright-text" content="Lexham English Bible. Copyright 2012 Logos Bible Software. Lexham is a registered trademark of Logos Bible Software.\n\nhttps://lexhampress.com/LEB-License"/>
+    </metadata>
+
+    <styles-info>
+      <text-font family="font1"/>
+      <text-size value="20"/>
+      <line-height value="120"/>
+      <text-direction value="LTR"/>
+      <numeral-system value="Default"/>
+      <verse-number-style value="default"/>
+
+      <styles>
+        <style name="div.footer">
+        </style>
+      </styles>
+    </styles-info>
+
+    <book-order>
+      <canon-name>Western Protestant Bible</canon-name>
+    </book-order>
+
+    <writing-system code="eng">
+      <display-names>
+        <form lang="default">English</form>
+      </display-names>
+    </writing-system>
+
+    <book id="GEN">
+      <name>Genesis</name>
+      <abbrev>Ge</abbrev>
+      <group>OT</group>
+      <sub-group>Pentateuch</sub-group>
+      <filename>01 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/01 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="EXO">
+      <name>Exodus</name>
+      <abbrev>Exo</abbrev>
+      <group>OT</group>
+      <sub-group>Pentateuch</sub-group>
+      <filename>02 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/02 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="LEV">
+      <name>Leviticus</name>
+      <abbrev>Le</abbrev>
+      <group>OT</group>
+      <sub-group>Pentateuch</sub-group>
+      <filename>03 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/03 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="NUM">
+      <name>Numbers</name>
+      <abbrev>Num</abbrev>
+      <group>OT</group>
+      <sub-group>Pentateuch</sub-group>
+      <filename>04 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/04 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="DEU">
+      <name>Deuteronomy</name>
+      <abbrev>Dt</abbrev>
+      <group>OT</group>
+      <sub-group>Pentateuch</sub-group>
+      <filename>05 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/05 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="JOS">
+      <name>Joshua</name>
+      <abbrev>Jos</abbrev>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>06 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/06 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="JDG">
+      <name>Judges</name>
+      <abbrev>Jdg</abbrev>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>07 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/07 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="RUT">
+      <name>Ruth</name>
+      <abbrev>Ru</abbrev>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>08 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/08 ENG[B]LEB2012.sfm</source>
+    </book>
+
+    <book id="1SA">
+      <name>1 Samuel</name>
+      <abbrev>1 Sa</abbrev>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>09 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/09 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="2SA">
+      <name>2 Samuel</name>
+      <abbrev>2 Sa</abbrev>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>10 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/10 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="1KI">
+      <name>1 Kings</name>
+      <abbrev>1 Ki</abbrev>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>11 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/11 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="2KI">
+      <name>2 Kings</name>
+      <abbrev>2 Ki</abbrev>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>12 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/12 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="1CH">
+      <name>1 Chronicles</name>
+      <abbrev>1 Chr</abbrev>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>13 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/13 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="2CH">
+      <name>2 Chronicles</name>
+      <abbrev>2 Chr</abbrev>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>14 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/14 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="EZR">
+      <name>Ezra</name>
+      <abbrev>Ezr</abbrev>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>15 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/15 ENG[B]LEB2012.sfm</source>
+    </book>
+
+    <book id="NEH">
+      <name>Nehemiah</name>
+      <abbrev>Ne</abbrev>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>16 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/16 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="EST">
+      <name>Esther</name>
+      <abbrev>Es</abbrev>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>17 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/17 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="JOB">
+      <name>Job</name>
+      <abbrev>Job</abbrev>
+      <group>OT</group>
+      <sub-group>PoetryWisdom</sub-group>
+      <filename>18 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/18 ENG[B]LEB2012.sfm</source>
+    </book>
+
+    <book id="PSA">
+      <name>Psalms</name>
+      <abbrev>Ps</abbrev>
+      <group>OT</group>
+      <sub-group>PoetryWisdom</sub-group>
+      <filename>19 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/19 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="PRO">
+      <name>Proverbs</name>
+      <abbrev>Pr</abbrev>
+      <group>OT</group>
+      <sub-group>PoetryWisdom</sub-group>
+      <filename>20 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/20 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="ECC">
+      <name>Ecclesiastes</name>
+      <abbrev>Ec</abbrev>
+      <group>OT</group>
+      <sub-group>PoetryWisdom</sub-group>
+      <filename>21 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/21 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="SNG">
+      <name>Song of Songs</name>
+      <abbrev>So</abbrev>
+      <group>OT</group>
+      <sub-group>PoetryWisdom</sub-group>
+      <filename>22 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/22 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="ISA">
+      <name>Isaiah</name>
+      <abbrev>Is</abbrev>
+      <group>OT</group>
+      <sub-group>MajorProphet</sub-group>
+      <filename>23 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/23 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="JER">
+      <name>Jeremiah</name>
+      <abbrev>Je</abbrev>
+      <group>OT</group>
+      <sub-group>MajorProphet</sub-group>
+      <filename>24 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/24 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="LAM">
+      <name>Lamentations</name>
+      <abbrev>La</abbrev>
+      <group>OT</group>
+      <sub-group>MajorProphet</sub-group>
+      <filename>25 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/25 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="EZK">
+      <name>Ezekiel</name>
+      <abbrev>Eze</abbrev>
+      <group>OT</group>
+      <sub-group>MajorProphet</sub-group>
+      <filename>26 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/26 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="DAN">
+      <name>Daniel</name>
+      <abbrev>Da</abbrev>
+      <group>OT</group>
+      <sub-group>MajorProphet</sub-group>
+      <filename>27 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/27 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="HOS">
+      <name>Hosea</name>
+      <abbrev>Ho</abbrev>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>28 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/28 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="JOL">
+      <name>Joel</name>
+      <abbrev>Joe</abbrev>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>29 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/29 ENG[B]LEB2012.sfm</source>
+    </book>
+
+    <book id="AMO">
+      <name>Amos</name>
+      <abbrev>Am</abbrev>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>30 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/30 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="OBA">
+      <name>Obadiah</name>
+      <abbrev>Ob</abbrev>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>31 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/31 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="JON">
+      <name>Jonah</name>
+      <abbrev>Jon</abbrev>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>32 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/32 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="MIC">
+      <name>Micah</name>
+      <abbrev>Mic</abbrev>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>33 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/33 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="NAM">
+      <name>Nahum</name>
+      <abbrev>Na</abbrev>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>34 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/34 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="HAB">
+      <name>Habakkuk</name>
+      <abbrev>Hab</abbrev>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>35 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/35 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="ZEP">
+      <name>Zepheniah</name>
+      <abbrev>Zep</abbrev>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>36 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/36 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="HAG">
+      <name>Haggai</name>
+      <abbrev>Hag</abbrev>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>37 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/37 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="ZEC">
+      <name>Zecheriah</name>
+      <abbrev>Zec</abbrev>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>38 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/38 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="MAL">
+      <name>Malachi</name>
+      <abbrev>Mal</abbrev>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>39 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/39 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="MAT">
+      <name>Matthew</name>
+      <abbrev>Mt</abbrev>
+      <group>NT</group>
+      <sub-group>Gospel</sub-group>
+      <filename>40 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/40 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="MRK">
+      <name>Mark</name>
+      <abbrev>Mk</abbrev>
+      <group>NT</group>
+      <sub-group>Gospel</sub-group>
+      <filename>41 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/41 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="LUK">
+      <name>Luke</name>
+      <abbrev>Lk</abbrev>
+      <group>NT</group>
+      <sub-group>Gospel</sub-group>
+      <filename>42 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/42 ENG[B]LEB2012.sfm</source>
+    </book>
+
+    <book id="JHN">
+      <name>John</name>
+      <abbrev>Jn</abbrev>
+      <group>NT</group>
+      <sub-group>Gospel</sub-group>
+      <filename>43 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/43 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="ACT">
+      <name>Acts</name>
+      <abbrev>Ac</abbrev>
+      <group>NT</group>
+      <sub-group>Acts</sub-group>
+      <filename>44 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/44 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="ROM">
+      <name>Romans</name>
+      <abbrev>Ro</abbrev>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>45 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/45 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="1CO">
+      <name>1 Corinthians</name>
+      <abbrev>1 Co</abbrev>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>46 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/46 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="2CO">
+      <name>2 Corinthians</name>
+      <abbrev>2 Co</abbrev>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>47 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/47 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="GAL">
+      <name>Galatians</name>
+      <abbrev>Ga</abbrev>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>48 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/48 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="EPH">
+      <name>Ephesians</name>
+      <abbrev>Eph</abbrev>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>49 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/49 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="PHP">
+      <name>Philippians</name>
+      <abbrev>Php</abbrev>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>50 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/50 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="COL">
+      <name>Colossians</name>
+      <abbrev>Col</abbrev>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>51 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/51 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="1TH">
+      <name>1 Thessalonians</name>
+      <abbrev>1 Th</abbrev>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>52 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/52 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="2TH">
+      <name>2 Thessalonians</name>
+      <abbrev>2 Th</abbrev>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>53 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/53 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="1TI">
+      <name>1 Timothy</name>
+      <abbrev>1 Ti</abbrev>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>54 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/54 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="2TI">
+      <name>2 Timothy</name>
+      <abbrev>2 Ti</abbrev>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>55 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/55 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="TIT">
+      <name>Titus</name>
+      <abbrev>Titus</abbrev>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>56 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/56 ENG[B]LEB2012.sfm</source>
+    </book>
+
+    <book id="PHM">
+      <name>Philemon</name>
+      <abbrev>Phm</abbrev>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>57 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/57 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="HEB">
+      <name>Hebrews</name>
+      <abbrev>Heb</abbrev>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>58 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/58 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="JAS">
+      <name>James</name>
+      <abbrev>Jas</abbrev>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>59 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/59 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="1PE">
+      <name>1 Peter</name>
+      <abbrev>1 Pe</abbrev>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>60 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/60 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="2PE">
+      <name>2 Peter</name>
+      <abbrev>2 Pe</abbrev>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>61 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/61 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="1JN">
+      <name>1 John</name>
+      <abbrev>1 Jn</abbrev>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>62 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/62 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="2JN">
+      <name>2 John</name>
+      <abbrev>2 Jn</abbrev>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>63 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/63 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="3JN">
+      <name>3 John</name>
+      <abbrev>3 Jn</abbrev>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>64 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/64 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
+    </book>
+
+    <book id="JUD">
+      <name>Jude</name>
+      <abbrev>Jud</abbrev>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>65 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/65 ENG[B]LEB2012.sfm</source>
+    </book>
+
+    <book id="REV">
+      <name>Revelation</name>
+      <abbrev>Re</abbrev>
+      <group>NT</group>
+      <sub-group>Revelation</sub-group>
+      <filename>66 ENG[B]LEB2012.sfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/66 ENG[B]LEB2012.sfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
     </book>
   </books>
 

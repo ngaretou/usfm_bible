@@ -151,14 +151,18 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
     super.initState();
   }
 
-  Future<void> callInititalization() async {
-    appTitle = await asyncGetProjectName(context);
+  Future<AppInfo> callInititalization() async {
+    var response = await Future.wait(
+        [asyncGetProjectName(context), buildDatabaseFromXML(context)]);
+    appTitle = response[0].toString();
     //This gives the flutter UI a second to complete these above initialization processes
     //These should wait and this be unnecessary but the build happens before all these inits finish,
     //so this is a hack that helps
     // await Future.delayed(Duration(milliseconds: 3000));
+    // print('returning future from initialization');
+    AppInfo responseAppInfo = response[1] as AppInfo;
     print('returning future from initialization');
-    return;
+    return responseAppInfo;
   }
 
   @override
@@ -195,175 +199,126 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
   Widget build(BuildContext context) {
     final appTheme = context.watch<AppTheme>();
     return NavigationView(
-      key: viewKey,
-      //appBar is across top of the screen in place of normal title bar.
-      // appBar: NavigationAppBar(
-      //   automaticallyImplyLeading: false,
-      // title: () {
-      //   if (kIsWeb) return delayedAppTitle();
-      //   return DragToMoveArea(
-      //     child: Row(
-      //       children: [
-      //         const SizedBox(width: 15),
-      //         Align(
-      //           alignment: AlignmentDirectional.centerStart,
-      //           child: delayedAppTitle(),
-      //         ),
-      //       ],
-      //     ),
-      //   );
-      // }(),
-      // actions: Row(
-      //   crossAxisAlignment: CrossAxisAlignment.center,
-      //   mainAxisAlignment: MainAxisAlignment.end,
-      //   children: const [
-      //     // Spacer(),
+        key: viewKey,
+        //appBar is across top of the screen in place of normal OS specific title bar.
+        // appBar: NavigationAppBar(
+        //   automaticallyImplyLeading: false,
+        // title: () {
+        //   if (kIsWeb) return delayedAppTitle();
+        //   return DragToMoveArea(
+        //     child: Row(
+        //       children: [
+        //         const SizedBox(width: 15),
+        //         Align(
+        //           alignment: AlignmentDirectional.centerStart,
+        //           child: delayedAppTitle(),
+        //         ),
+        //       ],
+        //     ),
+        //   );
+        // }(),
+        // actions: Row(
+        //   crossAxisAlignment: CrossAxisAlignment.center,
+        //   mainAxisAlignment: MainAxisAlignment.end,
+        //   children: const [
+        //     // Spacer(),
 
-      //     // ToggleSwitch(
-      //     //   content: const Text('Dark Mode'),
-      //     //   checked: FluentTheme.of(context).brightness.isDark,
-      //     //   onChanged: (v) {
-      //     //     if (v) {
-      //     //       appTheme.mode = ThemeMode.dark;
-      //     //     } else {
-      //     //       appTheme.mode = ThemeMode.light;
-      //     //     }
-      //     //   },
-      //     // ),
-      //     if (!kIsWeb) WindowButtons(),
-      //   ],
-      // ),
-      // ),
-      pane: NavigationPane(
-        selected: index,
-        onChanged: (i) => setState(() => index = i),
-        size: const NavigationPaneSize(
-          openMinWidth: 250.0,
-          openMaxWidth: 320.0,
-        ),
-        header: Container(
-          height: kOneLineTileHeight,
-          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-
-          // child: Align(
-          //   alignment: Alignment.centerLeft,
-          //   child: FlutterLogo(
-          //     style: appTheme.displayMode == PaneDisplayMode.top
-          //         ? FlutterLogoStyle.markOnly
-          //         : FlutterLogoStyle.horizontal,
-          //     size: appTheme.displayMode == PaneDisplayMode.top ? 24 : 100.0,
-          //   ),
-          // ),
-        ),
-
-        displayMode: appTheme.displayMode,
-        indicator: () {
-          switch (appTheme.indicator) {
-            case NavigationIndicators.end:
-              return const EndNavigationIndicator();
-            case NavigationIndicators.sticky:
-            default:
-              return const StickyNavigationIndicator();
-          }
-        }(),
-        items: [
-          // It doesn't look good when resizing from compact to open
-          // PaneItemHeader(header: Text('User Interaction')),
-          PaneItem(
-            icon: const Icon(FluentIcons.reading_mode),
-            title: const Text('Bible View'),
-          ),
-          // PaneItem(
-          //   icon: const Icon(FluentIcons.text_field),
-          //   title: const Text('Forms'),
-          // ),
-          // PaneItemSeparator(),
-          // PaneItem(
-          //   icon: const Icon(FluentIcons.color),
-          //   title: const Text('Colors'),
-          // ),
-          // PaneItem(
-          //   icon: const Icon(FluentIcons.icon_sets_flag),
-          //   title: const Text('Icons'),
-          // ),
-          // PaneItem(
-          //   icon: const Icon(FluentIcons.plain_text),
-          //   title: const Text('Typography'),
-          // ),
-          // PaneItem(
-          //   icon: const Icon(FluentIcons.cell_phone),
-          //   title: const Text('Mobile'),
-          // ),
-          // PaneItem(
-          //   icon: const Icon(FluentIcons.toolbox),
-          //   title: const Text('Command bars'),
-          // ),
-          // PaneItem(
-          //   icon: const Icon(FluentIcons.pop_expand),
-          //   title: const Text('Flyouts'),
-          // ),
-          // PaneItem(
-          //   icon: const Icon(FluentIcons.info),
-          //   title: const Text('InfoBar'),
-          // ),
-          // PaneItem(
-          //   icon: Icon(
-          //     appTheme.displayMode == PaneDisplayMode.top
-          //         ? FluentIcons.more
-          //         : FluentIcons.more_vertical,
-          //   ),
-          //   title: const Text('Others'),
-          //   infoBadge: const InfoBadge(
-          //     source: Text('9'),
-          //   ),
-          // ),
-        ],
-        // autoSuggestBox: AutoSuggestBox(
-        //   controller: TextEditingController(),
-        //   items: const ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
+        //     // ToggleSwitch(
+        //     //   content: const Text('Dark Mode'),
+        //     //   checked: FluentTheme.of(context).brightness.isDark,
+        //     //   onChanged: (v) {
+        //     //     if (v) {
+        //     //       appTheme.mode = ThemeMode.dark;
+        //     //     } else {
+        //     //       appTheme.mode = ThemeMode.light;
+        //     //     }
+        //     //   },
+        //     // ),
+        //     if (!kIsWeb) WindowButtons(),
+        //   ],
         // ),
-        // autoSuggestBoxReplacement: const Icon(FluentIcons.search),
-
-        footerItems: [
-          //Actions label?
-          // PaneItemHeader(),
-          PaneItemSeparator(),
-          LightDarkModePaneItemAction(
-            icon: FluentTheme.of(context).brightness.isDark
-                ? const Icon(FluentIcons.clear_night)
-                : const Icon(FluentIcons.clear_night),
-            title: const Text('Light/Dark Toggle'),
-            appTheme: appTheme,
+        // ),
+        pane: NavigationPane(
+          selected: index,
+          onChanged: (i) => setState(() => index = i),
+          size: const NavigationPaneSize(
+            openMinWidth: 250.0,
+            openMaxWidth: 320.0,
           ),
-          // PaneItem(
-          //   icon: const Icon(FluentIcons.accessibilty_checker),
-          //   title: const Text('Add new column'),
-          // ),
-          // CustomPaneItemAction(
-          //   icon: const Icon(FluentIcons.calculator_addition),
-          //   title: const Text('My new item'),
-          // ),
+          header: Container(
+            height: kOneLineTileHeight,
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
 
-          PaneItemSeparator(),
-          PaneItem(
-            icon: const Icon(FluentIcons.settings),
-            title: const Text('Settings'),
+            // child: Align(
+            //   alignment: Alignment.centerLeft,
+            //   child: FlutterLogo(
+            //     style: appTheme.displayMode == PaneDisplayMode.top
+            //         ? FlutterLogoStyle.markOnly
+            //         : FlutterLogoStyle.horizontal,
+            //     size: appTheme.displayMode == PaneDisplayMode.top ? 24 : 100.0,
+            //   ),
+            // ),
           ),
-          _LinkPaneItemAction(
-            icon: const Icon(FluentIcons.open_source),
-            title: const Text('Source code'),
-            link: 'https://github.com/bdlukaa/fluent_ui',
-          ),
-        ],
-      ),
-      content: NavigationBody(index: index, children: [
-        const BibleView(), //main view
-        //must include dummy destination here for each custom action it seems
-        const BibleView(), //toggle light
+          displayMode: appTheme.displayMode,
+          indicator: () {
+            switch (appTheme.indicator) {
+              case NavigationIndicators.end:
+                return const EndNavigationIndicator();
+              case NavigationIndicators.sticky:
+              default:
+                return const StickyNavigationIndicator();
+            }
+          }(),
+          items: [
+            // It doesn't look good when resizing from compact to open
+            // PaneItemHeader(header: Text('User Interaction')),
+            PaneItem(
+              icon: const Icon(FluentIcons.reading_mode),
+              title: const Text('Bible View'),
+            ),
+          ],
+          footerItems: [
+            //Actions label?
+            // PaneItemHeader(
+            //   header: Text('paneitemheader'),
+            // ),
+            PaneItemSeparator(),
+            LightDarkModePaneItemAction(
+              icon: FluentTheme.of(context).brightness.isDark
+                  ? const Icon(FluentIcons.clear_night)
+                  : const Icon(FluentIcons.clear_night),
+              title: const Text('Light/Dark Toggle'),
+              appTheme: appTheme,
+            ),
 
-        Settings(controller: settingsController),
-      ]),
-    );
+            PaneItemSeparator(),
+            PaneItem(
+              icon: const Icon(FluentIcons.settings),
+              title: const Text('Settings'),
+            ),
+            _LinkPaneItemAction(
+              icon: const Icon(FluentIcons.open_source),
+              title: const Text('Source code'),
+              link: 'https://github.com/bdlukaa/fluent_ui',
+            ),
+          ],
+        ),
+        content: FutureBuilder(
+          future: init,
+          builder: (ctx, snapshot) =>
+              snapshot.connectionState == ConnectionState.waiting
+                  ? const Center(child: ProgressRing())
+                  //Main row that holds the text columns
+                  : NavigationBody(index: index, children: [
+                      BibleView(appInfo: snapshot.data as AppInfo), //main view
+                      //must include dummy destination here for each custom action it seems
+                      BibleView(
+                          appInfo: snapshot.data
+                              as AppInfo), //taking place of toggle light/dark mode
+
+                      Settings(controller: settingsController),
+                    ]),
+        ));
   }
 
   @override
@@ -416,35 +371,6 @@ class WindowButtons extends StatelessWidget {
   }
 }
 
-class CustomPaneItemAction extends PaneItem {
-  CustomPaneItemAction({
-    required Widget icon,
-    title,
-    infoBadge,
-    focusNode,
-    autofocus = false,
-  }) : super(
-          icon: icon,
-          title: title,
-          infoBadge: infoBadge,
-          focusNode: focusNode,
-          autofocus: autofocus,
-        );
-
-  @override
-  Widget build(BuildContext context, bool selected, VoidCallback? onPressed,
-      {PaneDisplayMode? displayMode,
-      bool showTextOnTop = true,
-      bool? autofocus}) {
-    //Runs this function
-    testingFunction() {
-      print('testingFunction');
-    }
-
-    return super.build(context, selected, testingFunction);
-  }
-}
-
 class LightDarkModePaneItemAction extends PaneItem {
   LightDarkModePaneItemAction({
     required Widget icon,
@@ -468,11 +394,9 @@ class LightDarkModePaneItemAction extends PaneItem {
       bool? autofocus}) {
     //Runs this function
     switchThemeMode() {
-      print('switchThemeMode ${appTheme.mode}');
-      print('switchThemeMode ${appTheme.mode}');
-      var brightness = MediaQuery.of(context).platformBrightness;
-      print(brightness);
-
+      /*Couple of cases here - by default it's set to user theme mode, but we want 
+      to offer a way to change that easily. So account for whether the system theme
+      mode is dark or light, and switch to an expressly declared light or dark*/
       switch (appTheme.mode) {
         case ThemeMode.system:
           bool dark =
@@ -490,26 +414,8 @@ class LightDarkModePaneItemAction extends PaneItem {
           appTheme.mode = ThemeMode.dark;
           break;
         default:
+          appTheme.mode = ThemeMode.dark;
       }
-
-      // Case the mode is explicitly set - change to opposite
-
-      // if (appTheme.mode == ThemeMode.dark) {
-      //   appTheme.mode = ThemeMode.light;
-      // } else {
-      //   appTheme.mode = ThemeMode.dark;
-      // }
-
-      // // Case the mode not set -- this will only
-      // if (appTheme.mode == ThemeMode.system) {
-      //   bool dark =
-      //       (MediaQuery.of(context).platformBrightness == Brightness.dark);
-      //   if (dark) {
-      //     appTheme.mode = ThemeMode.light;
-      //   } else {
-      //     appTheme.mode = ThemeMode.dark;
-      //   }
-      // }
     }
 
     return super.build(context, selected, switchThemeMode);

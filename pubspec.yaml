@@ -1,3 +1,5 @@
+# ignore_for_file: asset_directory_does_not_exist
+
 name: usfm_bible
 description: Bible app for desktop and web from USFM files.
 
@@ -75,7 +77,7 @@ flutter:
     - assets/project/data/about/
     - assets/project/data/books/C01/
     - assets/project/data/books/C02/
-    # - assets/project/data/books/C03/
+    - assets/project/data/books/C03/
     # - assets/project/data/books/C04/
     # - assets/project/data/books/C05/
     # - assets/project/data/books/C06/

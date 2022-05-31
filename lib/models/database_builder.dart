@@ -1,6 +1,6 @@
 // ignore_for_file: avoid_print, avoid_function_literals_in_foreach_calls
 
-import 'dart:convert';
+// import 'dart:convert';
 
 import 'package:flutter/material.dart';
 // import 'package:flutter/foundation.dart';
@@ -58,7 +58,7 @@ class Collection {
   });
 }
 
-class ParsedVerse {
+class ParsedLine {
   // late int id;
   late String collectionid;
   late String book;
@@ -68,9 +68,9 @@ class ParsedVerse {
   late String audioMarker;
   late String verseText;
   late String verseStyle;
-  late bool newParagraph;
+  // late bool newParagraph;
 
-  ParsedVerse({
+  ParsedLine({
     // required this.id,
     required this.collectionid,
     required this.book,
@@ -80,12 +80,22 @@ class ParsedVerse {
     required this.audioMarker,
     required this.verseText,
     required this.verseStyle,
-    required this.newParagraph,
+    // required this.newParagraph,
+  });
+}
+
+class AppInfo {
+  List<Collection> collections;
+  List<ParsedLine> verses;
+
+  AppInfo({
+    required this.collections,
+    required this.verses,
   });
 }
 
 List<Collection> collections = [];
-List<ParsedVerse> verses = [];
+List<ParsedLine> verses = [];
 List<Font> allFonts = [];
 
 Future<String> asyncGetProjectName(BuildContext context) async {
@@ -102,50 +112,18 @@ Future<String> asyncGetProjectName(BuildContext context) async {
       .getElement('app-name')!
       .innerText
       .toString(); // e.g. Kaddug Yalla Gi
-  print(projectName);
   return projectName;
 }
 
-Future<List<ParsedVerse>> buildDatabaseFromXML(BuildContext context) async {
-  //Get the appdef file contents without knowing the name of the projects means the structure has to be:
-  //Folder
-  //  Exe or js
-  //  project (must be named 'project')
-  //    nameOfProject.appDef
-  //    nameOfProject_data
+Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
   AssetBundle assetBundle = DefaultAssetBundle.of(context);
-  Future<String> getAppDef() async {
-    // Load as String
-
-    String manifestContent = await assetBundle.loadString('AssetManifest.json');
-
-    // Decode to Map
-    final Map<String, dynamic> manifestMap = json.decode(manifestContent);
-
-    // Filter by path
-    final filtered =
-        manifestMap.keys.where((path) => path.endsWith('appDef')).toList();
-
-    return filtered[0];
-  }
-
-  //get the appDef xml from outside the project
-  // String url = await getAppDef();
-  //the path from assetmanifest comes with %20 instead of spaces - regularize
-  // url = url.replaceAll("%20", " ");
-  // print(url);
+  //
   String appDefLocation = 'assets/project/appDef.appDef';
   String xmlFileString = await assetBundle.loadString(appDefLocation);
   //get the document into a usable iterable
   final document = XmlDocument.parse(xmlFileString);
-  //This is the overall app name
-  final projectName = document
-      .getElement('app-definition')!
-      .getElement('project-name')!
-      .innerText
-      .toString(); // e.g. Kaddug Yalla Gi
 
-  //First get the font information
+  //Get the font information
 
   String fontWeight = "";
   String fontStyle = "";
@@ -167,7 +145,6 @@ Future<List<ParsedVerse>> buildDatabaseFromXML(BuildContext context) async {
         String value = xmlFontProperty.getAttribute('value').toString();
         if (property == 'font-weight') fontWeight = value;
         if (property == 'font-style') fontStyle = value;
-        print('$property $value');
       }
 
       allFonts.add(Font(
@@ -227,10 +204,6 @@ Future<List<ParsedVerse>> buildDatabaseFromXML(BuildContext context) async {
 
   //Now we know about the collections and can populate the content.
 
-  String? verseStyle;
-  String? verseText;
-  bool markNextAsParagraph = false;
-
   for (var collection in collections) {
     List<Book> books = collection.books;
     for (var book in books) {
@@ -241,9 +214,9 @@ Future<List<ParsedVerse>> buildDatabaseFromXML(BuildContext context) async {
       //Removes all the headers etc - this also removes files that have not content - something to look at later
       chapters.removeAt(0);
       for (var chapter in chapters) {
-        RegExpMatch? match = RegExp(r'^\d+\s').firstMatch(chapter);
+        RegExpMatch? match = RegExp(r'(^\d+)(\s)').firstMatch(chapter);
         //ˆ: beginning of line; \d digit, + 1 or more; \s whitespace
-        String? chapterNumber = match?.group(0);
+        String? chapterNumber = match?.group(1);
 
         //split chapter on line break
         List<String> chapterByLineBreaks = chapter.split('\n');
@@ -252,38 +225,59 @@ Future<List<ParsedVerse>> buildDatabaseFromXML(BuildContext context) async {
         //This juts gets rid of the chapter number
         chapterByLineBreaks.removeAt(0);
 
+        //Set up variables for the chapters - having them here resets them each new chapter also
+        String verseStyle = "";
+        String verseNumber = "";
+        String verseText = "";
+
         for (var line in chapterByLineBreaks) {
           // https://medium.com/flutter-community/extracting-text-from-a-string-with-regex-groups-in-dart-b6be604c8a69
-          RegExpMatch? match = RegExp(r'(\\)(\w+\s)(.*)').firstMatch(line);
+          // This regex matches the initial style -
+          //match is an iterable with an element for each matching group of the regexp
+          RegExpMatch? match =
+              RegExp(r'(\\)(\w+)(\s)(.*)').firstMatch(line); // \s asdfaf
           if (match != null) {
-            verseStyle = match.group(2);
-            verseText = match.group(3) ??
-                ""; //?? = if_null operator: https://dart-lang.github.io/linter/lints/prefer_if_null_operators.html
+            if (match.group(2) != null) verseStyle = match.group(2)!;
+            if (match.group(4) != null) {
+              verseText = match.group(
+                  4)!; //?? = if_null operator: https://dart-lang.github.io/linter/lints/prefer_if_null_operators.html
 
-            if (verseStyle!.contains(RegExp('[s.*,m.*,q.*,p]'))) {
-              markNextAsParagraph = true;
             }
 
-            //final verseText string cleanup
+            //New Paragraph section
+
+            //verse checking
+            if (verseStyle == 'v') {
+              RegExpMatch? match = RegExp(r'(\d+)(\s)(.*)').firstMatch(
+                  verseText); //\d+ = digits, \s whitespace ,.* anything
+              if (match != null) {
+                if (match.group(1) != null) verseNumber = match.group(1)!;
+                if (match.group(3) != null) verseText = match.group(3)!;
+              }
+            } else {
+              verseNumber = "";
+            }
+
+            //TODO: final verseText string cleanup
 
             //Now finally add the elements to the List<ParsedVerse>
-            verses.add(ParsedVerse(
+            verses.add(ParsedLine(
                 collectionid: collection.id,
                 book: book.id,
                 chapter: chapterNumber!,
-                verse: "",
+                verse: verseNumber,
                 verseFragment: "",
                 audioMarker: "",
                 verseText: verseText,
-                verseStyle: verseStyle,
-                newParagraph: markNextAsParagraph));
+                verseStyle: verseStyle));
           }
-
-          markNextAsParagraph = false; //reset for the next line
         }
       }
       print('ending current book ${book.name}');
     }
+    print('ending current collection ${collection.id}');
   }
-  return verses;
+
+  AppInfo appInfo = AppInfo(collections: collections, verses: verses);
+  return appInfo;
 }

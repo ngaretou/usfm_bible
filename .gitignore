@@ -1,3 +1,8 @@
+
+.idea
+.vscode
+.fvm
+
 # Miscellaneous
 *.class
 *.log
@@ -31,6 +36,9 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+/macos/
+/test/
+/windows/
 
 # Web related
 lib/generated_plugin_registrant.dart
