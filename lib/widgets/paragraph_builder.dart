@@ -1,7 +1,10 @@
+// ignore_for_file: avoid_print
+
 import 'package:fluent_ui/fluent_ui.dart';
 import '../models/database_builder.dart';
+import 'package:flutter/gestures.dart';
 
-class ParagraphBuilder extends StatelessWidget {
+class ParagraphBuilder extends StatefulWidget {
   // final List<ParsedLine> lines;
 
   final List<ParsedLine> paragraph;
@@ -9,11 +12,30 @@ class ParagraphBuilder extends StatelessWidget {
   const ParagraphBuilder({Key? key, required this.paragraph}) : super(key: key);
 
   @override
+  State<ParagraphBuilder> createState() => _ParagraphBuilderState();
+}
+
+class _ParagraphBuilderState extends State<ParagraphBuilder> {
+  double baseFontSize = 14;
+  late TextStyle style;
+  bool underlined = false;
+  @override
+  void initState() {
+    // style = TextStyle(fontSize: baseFontSize);
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     bool header = false;
-    int baseFontSize = 20;
 
     List<InlineSpan> styledParagraphFragments = [];
+    style = DefaultTextStyle.of(context).style;
+    TextStyle underlineStyle = DefaultTextStyle.of(context)
+        .style
+        .copyWith(decoration: TextDecoration.underline);
+    // decoration: TextDecoration.underline
 
     WidgetSpan verseNumber(String verseNumber) {
       return WidgetSpan(
@@ -30,10 +52,26 @@ class ParagraphBuilder extends StatelessWidget {
       );
     }
 
-    TextSpan normalVerseFragment(String paragraphFragment) {
+    TextSpan normalVerseFragment(ParsedLine line) {
+      print(DefaultTextStyle.of(context).style.fontSize.toString());
       return TextSpan(
-          text: '$paragraphFragment ',
-          style: DefaultTextStyle.of(context).style);
+          text: '${line.verseText} ',
+          style: underlined ? underlineStyle : style,
+          mouseCursor: SystemMouseCursors.basic,
+
+          //Note here that right click gets overridden on web by the browser's right click menu - maybe just have a popout menu on click and no right click
+          recognizer: TapGestureRecognizer()
+            ..onTap = () {
+              print(
+                  '${line.collectionid} ${line.book} ${line.chapter} ${line.verse}');
+              setState(() {
+                underlined = !underlined;
+              });
+            }
+            ..onSecondaryTap = () {
+              print(
+                  'right click on ${line.collectionid} ${line.book} ${line.chapter} ${line.verse}');
+            });
     }
 
     TextSpan s(String paragraphFragment) {
@@ -45,11 +83,11 @@ class ParagraphBuilder extends StatelessWidget {
       );
     }
 
-    for (var line in paragraph) {
+    for (var line in widget.paragraph) {
       switch (line.verseStyle) {
         case 'v':
           styledParagraphFragments.add(verseNumber(line.verse));
-          styledParagraphFragments.add(normalVerseFragment(line.verseText));
+          styledParagraphFragments.add(normalVerseFragment(line));
           break;
         case 's':
         case 's1':
@@ -58,13 +96,18 @@ class ParagraphBuilder extends StatelessWidget {
           header = true;
           break;
         default:
-          styledParagraphFragments.add(normalVerseFragment(line.verseText));
+          styledParagraphFragments.add(normalVerseFragment(line));
       }
     }
 
     //indentation hack for paragraphs
     if (styledParagraphFragments.length > 1) {
-      styledParagraphFragments.insert(0, normalVerseFragment("\t\t"));
+      styledParagraphFragments.insert(
+          0,
+          TextSpan(
+            text: '    ',
+            style: DefaultTextStyle.of(context).style,
+          ));
     }
 
     return Padding(
