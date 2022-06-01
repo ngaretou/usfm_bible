@@ -1,7 +1,6 @@
 // ignore_for_file: avoid_print, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:flutter/material.dart' as material;
 import '../models/database_builder.dart';
 import '../widgets/paragraph_builder.dart';
 
@@ -143,7 +142,8 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   List<String> currentChapterVerseNumbers = [];
   String currentVerse = "";
 
-  List<material.DropdownMenuItem<String>> collectionDropDown = [];
+  List<List<ParsedLine>> versesByParagraph = [];
+  List<ParsedLine> currentParagraph = [];
 
   String? collectionComboBoxValue;
   String? bookComboBoxValue;
@@ -202,15 +202,25 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         .map((e) => e.verse)
         .toList();
 
-    // List<ParsedLine> tempor = versesToShow
-    //     .where((element) =>
-    //         element.book == currentBook &&
-    //         element.chapter == currentChapter &&
-    //         element.verse != "")
-    //     .toList();
-
     currentVerse = currentChapterVerseNumbers[0];
-
+    /*
+    */
+    for (var i = 0; i < versesInColumn.length; i++) {
+      //if not new paragraph marker, add the line to the current paragraph
+      if (!versesInColumn[i].verseStyle.contains(RegExp(r'[p,m,s\d*]'))) {
+        currentParagraph.add(versesInColumn[i]);
+      } else {
+        //If it is a new paragraph marker, add the existing verses to the big list, and start over with a new paragraph
+        versesByParagraph.add(currentParagraph);
+        currentParagraph = [versesInColumn[i]];
+        // if (currentParagraph.isNotEmpty) {
+        //   versesByParagraph.add(currentParagraph);
+        //   currentParagraph = [];
+        // }
+      }
+    }
+    /*
+    */
     super.initState();
   }
 
@@ -218,19 +228,13 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
   @override
   Widget build(BuildContext context) {
-    for (var collection in widget.appInfo.collections) {
-      collectionDropDown.add(material.DropdownMenuItem(
-        value: collection.id,
-        child: Text(collection.name),
-      ));
-    }
-
     //receive list of verses
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       //header toolbar/s
       children: [
+        //Scripture column toolbar
         Padding(
           padding: const EdgeInsets.all(5.0),
           child: Card(
@@ -386,6 +390,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
             ),
           ),
         ),
+        //End of scripture column toolbar
 
         //The scripture container
         Expanded(
@@ -393,20 +398,19 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
             padding: const EdgeInsets.only(
                 left: 12.0, right: 12, top: 12, bottom: 0),
             //TODO: Scrollable positioned list
-            child: ListView.builder(
-                controller: widget.scrollController,
-                shrinkWrap: true,
-                physics: const ClampingScrollPhysics(),
-                itemBuilder: (ctx, i) {
-                  List<ParsedLine> paragraphFragments = [];
-
-                  return ScrollConfiguration(
-                    behavior: ScrollConfiguration.of(context)
-                        .copyWith(scrollbars: true),
-                    child:
-                        ParagraphBuilder(paragraphFragment: versesInColumn[i]),
-                  );
-                }),
+            child: ScrollConfiguration(
+              behavior:
+                  ScrollConfiguration.of(context).copyWith(scrollbars: true),
+              child: ListView.builder(
+                  controller: widget.scrollController,
+                  shrinkWrap: true,
+                  physics: const ClampingScrollPhysics(),
+                  itemBuilder: (ctx, i) {
+                    return ParagraphBuilder(
+                      paragraph: versesByParagraph[i],
+                    );
+                  }),
+            ),
           ),
         ),
       ],
