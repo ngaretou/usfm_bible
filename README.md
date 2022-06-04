@@ -6,8 +6,13 @@ An extension of Scripture App Builder primarily for web apps but also can be use
 
 ### To use built web version:
 
-- Copy contents of SAB .appDef and \_data folder into the assets/project folder - _rename_ your appDef file to "appDef.appDef" and your data file to "data".
-- in index.html
+- Copy contents of SAB .appDef and \_data folder into the assets/project folder
+  - and _rename_ your appDef file to "appDef.appDef" and your data file to "data".
+- Change font names in the project/data/fonts/ folder as follows:
+  - main font - font1-R.ttf and font1-B.ttf
+  - secondary font - font2-R.ttf and font2-B.ttf.
+  - Note there must be those four fonts - if you only have one font, make copies and rename so those files are there. This is a hack to deal with a Flutter limitation and hopefully will be eliminated. https://docs.flutter.dev/cookbook/design/fonts#2-declare-the-font-in-the-pubspec
+- In index.html:
   - Change app name
   - favicon
   - change _base href_ to your subfolder if your web app is not in the root of your site.

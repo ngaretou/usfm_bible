@@ -273,9 +273,9 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
           }
         }
       }
-      print('ending current book ${book.name}');
+      // print('ending current book ${book.name}');
     }
-    print('ending current collection ${collection.id}');
+    // print('ending current collection ${collection.id}');
   }
 
   AppInfo appInfo = AppInfo(collections: collections, verses: verses);

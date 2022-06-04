@@ -14,7 +14,7 @@ import 'screens/settings.dart';
 import 'theme.dart';
 import 'models/database_builder.dart';
 
-String appTitle = "appTitle";
+String appTitle = "Placeholder App Title";
 
 /// Checks if the current environment is a desktop environment.
 bool get isDesktop {
@@ -70,6 +70,7 @@ class MyApp extends StatelessWidget {
         final appTheme = context.watch<AppTheme>();
         return FluentApp(
           title: appTitle,
+
           themeMode: appTheme.mode,
           debugShowCheckedModeBanner: false,
           home: const MyHomePage(),
@@ -83,6 +84,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
           theme: ThemeData(
+            fontFamily: 'font1',
             accentColor: appTheme.color,
             visualDensity: VisualDensity.standard,
             focusTheme: FocusThemeData(
@@ -137,8 +139,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageState extends State<MyHomePage> with WindowListener {
-  bool value = false;
-  late Future init;
+  int numberOfColumns = 2;
+  bool addPane = false;
+  late Future<AppInfo> init = callInititalization();
+
   int index = 0;
 
   final settingsController = ScrollController();
@@ -147,22 +151,42 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
   @override
   void initState() {
     windowManager.addListener(this);
-    init = callInititalization();
+    callInititalizationAppName();
     super.initState();
   }
 
   Future<AppInfo> callInititalization() async {
-    var response = await Future.wait(
-        [asyncGetProjectName(context), buildDatabaseFromXML(context)]);
-    appTitle = response[0].toString();
-    //This gives the flutter UI a second to complete these above initialization processes
-    //These should wait and this be unnecessary but the build happens before all these inits finish,
-    //so this is a hack that helps
-    // await Future.delayed(Duration(milliseconds: 3000));
-    // print('returning future from initialization');
-    AppInfo responseAppInfo = response[1] as AppInfo;
+    var response = await buildDatabaseFromXML(context);
+
+    //How many columns should we initially open?
+    switch (response.collections.length) {
+      case 1:
+        numberOfColumns = 2; //if one collection, open two views
+        break;
+      case 2:
+        numberOfColumns = 2;
+        break;
+      case 3:
+        numberOfColumns = 3;
+        break;
+      case 4:
+        numberOfColumns = 4;
+        break;
+
+      default:
+        2;
+    }
     print('returning future from initialization');
-    return responseAppInfo;
+    return response;
+  }
+
+  Future<void> callInititalizationAppName() async {
+    String response = await asyncGetProjectName(context);
+    print('returning future from asyncGetProjectName');
+    print(response);
+    setState(() {
+      appTitle = response;
+    });
   }
 
   @override
@@ -172,14 +196,19 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
     super.dispose();
   }
 
-  Widget delayedAppTitle() {
-    return FutureBuilder(
-        future: init,
-        builder: (ctx, snapshot) =>
-            snapshot.connectionState == ConnectionState.waiting
-                ? const Center(child: ProgressBar())
-                : Text(appTitle));
-  }
+  // Widget delayedAppTitle() {
+  //   return FutureBuilder(
+  //       future: initAppName,
+  //       builder: (ctx, snapshot) {
+  //         if (snapshot.connectionState == ConnectionState.waiting) {
+  //           return const Center(child: ProgressBar());
+  //           // return Text('still waiting');
+  //         } else {
+  //           print('delayedAppTitle $appTitle');
+  //           return Text(snapshot.data.toString());
+  //         }
+  //       });
+  // }
 
   informationalDialog() {
     ContentDialog(
@@ -195,6 +224,30 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
     );
   }
 
+  void changeNumberColumns({bool? add, int? columnToRemove}) {
+    print('changeNumberColumns');
+    if (add == true) {
+      if (numberOfColumns <= 3) numberOfColumns++; //keep to four columns
+    } else {
+      numberOfColumns--;
+    }
+    setState(() {});
+  }
+
+  void addColumn() {
+    print('adding a column');
+    if (numberOfColumns <= 3) {
+      numberOfColumns++;
+      setState(() {});
+    }
+  }
+
+  void deleteColumn(int indextoDelete) {
+    print('deleting column $indextoDelete');
+    numberOfColumns--;
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     final appTheme = context.watch<AppTheme>();
@@ -203,40 +256,51 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
         //appBar is across top of the screen in place of normal OS specific title bar.
         // appBar: NavigationAppBar(
         //   automaticallyImplyLeading: false,
-        // title: () {
-        //   if (kIsWeb) return delayedAppTitle();
-        //   return DragToMoveArea(
-        //     child: Row(
-        //       children: [
-        //         const SizedBox(width: 15),
-        //         Align(
-        //           alignment: AlignmentDirectional.centerStart,
-        //           child: delayedAppTitle(),
-        //         ),
-        //       ],
-        //     ),
-        //   );
-        // }(),
-        // actions: Row(
-        //   crossAxisAlignment: CrossAxisAlignment.center,
-        //   mainAxisAlignment: MainAxisAlignment.end,
-        //   children: const [
-        //     // Spacer(),
+        //   title: () {
+        //     if (kIsWeb) return Text(appTitle);
+        //     return DragToMoveArea(
+        //       child: Row(
+        //         children: [
+        //           const SizedBox(width: 15),
+        //           Align(
+        //             alignment: AlignmentDirectional.centerStart,
+        //             child: Text(appTitle),
+        //           ),
+        //         ],
+        //       ),
+        //     );
+        //   }(),
+        //   actions: Row(
+        //     crossAxisAlignment: CrossAxisAlignment.center,
+        //     mainAxisAlignment: MainAxisAlignment.end,
+        //     children: [
+        //       IconButton(
+        //           icon: const Icon(FluentIcons.add),
+        //           onPressed: () {
+        //             numberOfColumns <= 3 //keep it to four columns
+        //                 ? changeNumberColumns(add: true)
+        //                 : null;
 
-        //     // ToggleSwitch(
-        //     //   content: const Text('Dark Mode'),
-        //     //   checked: FluentTheme.of(context).brightness.isDark,
-        //     //   onChanged: (v) {
-        //     //     if (v) {
-        //     //       appTheme.mode = ThemeMode.dark;
-        //     //     } else {
-        //     //       appTheme.mode = ThemeMode.light;
-        //     //     }
-        //     //   },
-        //     // ),
-        //     if (!kIsWeb) WindowButtons(),
-        //   ],
-        // ),
+        //             print(numberOfColumns);
+        //             // setState(() {});
+        //           }),
+
+        //       // Spacer(),
+
+        //       // ToggleSwitch(
+        //       //   content: const Text('Dark Mode'),
+        //       //   checked: FluentTheme.of(context).brightness.isDark,
+        //       //   onChanged: (v) {
+        //       //     if (v) {
+        //       //       appTheme.mode = ThemeMode.dark;
+        //       //     } else {
+        //       //       appTheme.mode = ThemeMode.light;
+        //       //     }
+        //       //   },
+        //       // ),
+        //       // if (!kIsWeb) WindowButtons(),
+        //     ],
+        //   ),
         // ),
         pane: NavigationPane(
           selected: index,
@@ -273,9 +337,8 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
             // It doesn't look good when resizing from compact to open
             // PaneItemHeader(header: Text('User Interaction')),
             PaneItem(
-              icon: const Icon(FluentIcons.reading_mode),
-              title: const Text('Bible View'),
-            ),
+                icon: const Icon(FluentIcons.reading_mode),
+                title: Text(appTitle)),
           ],
           footerItems: [
             //Actions label?
@@ -283,9 +346,15 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
             //   header: Text('paneitemheader'),
             // ),
             PaneItemSeparator(),
+            RunFunctionPaneItemAction(
+                icon: const Icon(FluentIcons.search),
+                functionToRun: deleteColumn),
+            RunFunctionPaneItemAction(
+                icon: const Icon(FluentIcons.calculator_addition),
+                functionToRun: addColumn),
             LightDarkModePaneItemAction(
               icon: FluentTheme.of(context).brightness.isDark
-                  ? const Icon(FluentIcons.clear_night)
+                  ? const Icon(FluentIcons.sunny)
                   : const Icon(FluentIcons.clear_night),
               title: const Text('Light/Dark Toggle'),
               appTheme: appTheme,
@@ -304,21 +373,45 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
           ],
         ),
         content: FutureBuilder(
-          future: init,
-          builder: (ctx, snapshot) =>
-              snapshot.connectionState == ConnectionState.waiting
-                  ? const Center(child: ProgressRing())
-                  //Main row that holds the text columns
-                  : NavigationBody(index: index, children: [
-                      BibleView(appInfo: snapshot.data as AppInfo), //main view
-                      //must include dummy destination here for each custom action it seems
-                      BibleView(
-                          appInfo: snapshot.data
-                              as AppInfo), //taking place of toggle light/dark mode
+            future: init,
+            builder: (ctx, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const Center(child: ProgressRing());
+              }
+              //Main row that holds the text columns
+              else {
+                AppInfo appInfo = snapshot.data as AppInfo;
 
-                      Settings(controller: settingsController),
-                    ]),
-        ));
+                return NavigationBody(index: index, children: [
+                  BibleView(
+                    appInfo: appInfo,
+                    numberOfColumns: numberOfColumns,
+                    deleteColumn: deleteColumn,
+                  ), //main view
+                  //must include dummy destination here for each custom action, apparently
+
+                  BibleView(
+                    appInfo: snapshot.data as AppInfo,
+                    numberOfColumns: numberOfColumns,
+                    deleteColumn: deleteColumn,
+                  ), //taking place of Search BibleView
+
+                  BibleView(
+                    appInfo: snapshot.data as AppInfo,
+                    numberOfColumns: numberOfColumns,
+                    deleteColumn: deleteColumn,
+                  ), //taking place of add a pane
+
+                  BibleView(
+                    appInfo: snapshot.data as AppInfo,
+                    numberOfColumns: numberOfColumns,
+                    deleteColumn: deleteColumn,
+                  ), //taking place of toggle light/dark mode
+
+                  Settings(controller: settingsController),
+                ]);
+              }
+            }));
   }
 
   @override
@@ -358,7 +451,7 @@ class WindowButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = FluentTheme.of(context);
+    final ThemeData theme = FluentTheme.of(context).copyWith();
 
     return SizedBox(
       width: 138,
@@ -368,6 +461,36 @@ class WindowButtons extends StatelessWidget {
         backgroundColor: Colors.transparent,
       ),
     );
+  }
+}
+
+class RunFunctionPaneItemAction extends PaneItem {
+  RunFunctionPaneItemAction({
+    required Widget icon,
+    required this.functionToRun, //pass in the function
+    title,
+    infoBadge,
+    focusNode,
+    autofocus = false,
+  }) : super(
+          icon: icon,
+          title: title,
+          infoBadge: infoBadge,
+          focusNode: focusNode,
+          autofocus: autofocus,
+        );
+  Function functionToRun;
+  @override
+  Widget build(BuildContext context, bool selected, VoidCallback? onPressed,
+      {PaneDisplayMode? displayMode,
+      bool showTextOnTop = true,
+      bool? autofocus}) {
+    // Runs this function - referencing the function passed in above
+    internalCaller() {
+      functionToRun();
+    }
+
+    return super.build(context, selected, internalCaller);
   }
 }
 

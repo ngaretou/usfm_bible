@@ -3,7 +3,7 @@
   <project-name>Test App Project Name</project-name>
   <project-description></project-description>
 
-  <app-name lang="default">Test App Name</app-name>
+  <app-name lang="default">Kàddug Yàlla Gi Web App</app-name>
   <apk-filename append-version="true">Test_App.apk</apk-filename>
   <package>org.mbs.test.test</package>
   <version code="2" name="1.0"/>
@@ -227,44 +227,16 @@
       <style-decl property="font-style" value="normal"/>
     </font>
     <font family="font2">
-      <font-name>Gentium Special Regular</font-name>
-      <display-name>Gentium Special</display-name>
-      <filename format="truetype">GentiumSpecial-R.ttf</filename>
+      <font-name>Gentium Plus Compact</font-name>
+      <display-name>Gentium Plus Compact</display-name>
+      <filename format="truetype">GentiumPlusCompact-R.ttf</filename>
       <style-decl property="font-weight" value="normal"/>
       <style-decl property="font-style" value="normal"/>
-    </font>
-    <font family="font2">
-      <font-name>Gentium Special Italic</font-name>
-      <display-name>Gentium Special</display-name>
-      <filename format="truetype">GentiumSpecial-I.ttf</filename>
-      <style-decl property="font-weight" value="normal"/>
-      <style-decl property="font-style" value="italic"/>
-    </font>
-    <font family="font2">
-      <font-name>Gentium Special Bold</font-name>
-      <display-name>Gentium Special</display-name>
-      <filename format="truetype">GentiumSpecial-B.ttf</filename>
-      <style-decl property="font-weight" value="bold"/>
-      <style-decl property="font-style" value="normal"/>
-    </font>
-    <font family="font2">
-      <font-name>Gentium Special Bold Italic</font-name>
-      <display-name>Gentium Special</display-name>
-      <filename format="truetype">GentiumSpecial-BI.ttf</filename>
-      <style-decl property="font-weight" value="bold"/>
-      <style-decl property="font-style" value="italic"/>
     </font>
     <font family="font3">
       <font-name>Andika Compact</font-name>
       <display-name>Andika Compact</display-name>
       <filename format="truetype">AndikaCompact-R.ttf</filename>
-      <style-decl property="font-weight" value="normal"/>
-      <style-decl property="font-style" value="normal"/>
-    </font>
-    <font family="font4">
-      <font-name>Gentium Plus Compact</font-name>
-      <display-name>Gentium Plus Compact</display-name>
-      <filename format="truetype">GentiumPlusCompact-R.ttf</filename>
       <style-decl property="font-weight" value="normal"/>
       <style-decl property="font-style" value="normal"/>
     </font>
@@ -2293,7 +2265,7 @@ Please enter your access code:</translation>
         <translation lang="default">Code incorrect. Please ask for an access code for this device.</translation>
       </translation-mapping>
     </translation-mappings>
-    
+
     <user-details>
       <user-detail code="name" type="text">
         <title>

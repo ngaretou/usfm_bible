@@ -1,8 +1,10 @@
 // ignore_for_file: avoid_print
 
 import 'package:fluent_ui/fluent_ui.dart';
+
 import '../models/database_builder.dart';
 import 'package:flutter/gestures.dart';
+// import 'package:google_fonts/google_fonts.dart';
 
 class ParagraphBuilder extends StatefulWidget {
   // final List<ParsedLine> lines;
@@ -16,47 +18,57 @@ class ParagraphBuilder extends StatefulWidget {
 }
 
 class _ParagraphBuilderState extends State<ParagraphBuilder> {
-  double baseFontSize = 14;
-  late TextStyle style;
+  double baseFontSize = 20;
+  late TextStyle mainTextStyle;
   bool underlined = false;
-  @override
-  void initState() {
-    // style = TextStyle(fontSize: baseFontSize);
+  String? fontFromAssets;
 
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   // style = TextStyle(fontSize: baseFontSize);
+
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
     bool header = false;
 
     List<InlineSpan> styledParagraphFragments = [];
-    style = DefaultTextStyle.of(context).style;
-    TextStyle underlineStyle = DefaultTextStyle.of(context)
-        .style
-        .copyWith(decoration: TextDecoration.underline);
-    // decoration: TextDecoration.underline
+
+    //font experimentation
+
+    mainTextStyle = TextStyle(
+      fontFamily: 'font1',
+      fontSize: baseFontSize,
+      color: DefaultTextStyle.of(context).style.color,
+    );
+    // mainTextStyle = TextStyle(
+    //   fontFamily: Charis,
+    //   package:
+    // )
+
+//font experimentation
+
+    TextStyle underlineStyle =
+        mainTextStyle.copyWith(decoration: TextDecoration.underline);
 
     WidgetSpan verseNumber(String verseNumber) {
       return WidgetSpan(
         child: Transform.translate(
           offset: const Offset(0.0, -4.0),
-          child: Text(
-            '$verseNumber ',
-            style: TextStyle(
-              fontSize: baseFontSize / 2,
-              color: FluentTheme.of(context).accentColor,
-            ),
-          ),
+          child: Text('$verseNumber ',
+              style: mainTextStyle.copyWith(
+                  fontSize: baseFontSize / 2,
+                  color: FluentTheme.of(context).accentColor)),
         ),
       );
     }
 
     TextSpan normalVerseFragment(ParsedLine line) {
-      print(DefaultTextStyle.of(context).style.fontSize.toString());
       return TextSpan(
           text: '${line.verseText} ',
-          style: underlined ? underlineStyle : style,
+          style: underlined ? underlineStyle : mainTextStyle,
           mouseCursor: SystemMouseCursors.basic,
 
           //Note here that right click gets overridden on web by the browser's right click menu - maybe just have a popout menu on click and no right click
@@ -77,7 +89,7 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
     TextSpan s(String paragraphFragment) {
       return TextSpan(
         text: paragraphFragment,
-        style: TextStyle(
+        style: mainTextStyle.copyWith(
             fontSize: baseFontSize + 5,
             color: DefaultTextStyle.of(context).style.color),
       );
