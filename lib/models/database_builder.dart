@@ -3,10 +3,14 @@
 // import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:usfm_bible/providers/user_prefs.dart';
 // import 'package:flutter/foundation.dart';
 // import 'package:hive/hive.dart';
 // import 'package:hive_flutter/hive_flutter.dart';
 import 'package:xml/xml.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/user_prefs.dart';
 
 class Font {
   final String fontFamily;
@@ -278,6 +282,8 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
     // print('ending current collection ${collection.id}');
   }
 
+  var userPrefs = Provider.of<UserPrefs>(context, listen: false).userColumns;
   AppInfo appInfo = AppInfo(collections: collections, verses: verses);
+
   return appInfo;
 }

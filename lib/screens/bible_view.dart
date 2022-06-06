@@ -1,91 +1,80 @@
 // ignore_for_file: avoid_print, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+import 'package:flutter/material.dart';
+// import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+import 'package:provider/provider.dart';
+import 'package:usfm_bible/providers/user_prefs.dart';
+
 import '../models/database_builder.dart';
 import '../widgets/scripture_column.dart';
-
-class BibleReference {
-  final String collectionID;
-  final String bookID;
-  final String chapter;
-  final String verse;
-
-  BibleReference({
-    required this.collectionID,
-    required this.bookID,
-    required this.chapter,
-    required this.verse,
-  });
-}
+import '../providers/user_prefs.dart';
 
 class BibleView extends StatefulWidget {
-  int numberOfColumns;
   final AppInfo appInfo;
-  final Function(int) deleteColumn;
 
-  BibleView(
-      {Key? key,
-      required this.numberOfColumns,
-      required this.appInfo,
-      required this.deleteColumn})
-      : super(key: key);
+  const BibleView({
+    Key? key,
+    required this.appInfo,
+  }) : super(key: key);
 
   @override
   State<BibleView> createState() => _BibleViewState();
 }
 
 class _BibleViewState extends State<BibleView> {
-  List<Widget> scriptureColumns = [];
+  late List<BibleReference> columnInfo;
+  // int numberOfColumns = 2;
   int currentIndex = 0;
+  List<Widget> scriptureColumns = [];
 
-  //We're limiting it to four panes and four scrollcontrollers.
-  ItemScrollController scrollController1 = ItemScrollController();
-  ItemScrollController scrollController2 = ItemScrollController();
-  ItemScrollController scrollController3 = ItemScrollController();
-  ItemScrollController scrollController4 = ItemScrollController();
-  List<ItemScrollController> scrollControllers = [];
+  // @override
+  // void initState() {
 
-  @override
-  void initState() {
-    scrollControllers = [
-      scrollController1,
-      scrollController2,
-      scrollController3,
-      scrollController4,
-    ];
-    AppInfo appInfo = widget.appInfo;
+  //   super.initState();
+  // }
 
-    scriptureColumns = List.generate(
-      widget.numberOfColumns,
-      (index) {
-        return Expanded(
-          child: Center(
-            child: ScriptureColumn(
-                myColumnIndex: index,
-                numberOfColumns: widget.numberOfColumns,
-                appInfo: appInfo,
-                scrollController: scrollControllers[index],
-                deleteColumn: deleteColumnTry),
-          ),
-        );
-      },
-    );
+  // @override
+  // void didChangeDependencies() {
+  // //Getting current usercolumns
+  // List<BibleReference>? userColumns =
+  //     Provider.of<UserPrefs>(context, listen: true).userPrefList.userColumns;
 
-    super.initState();
-  }
-
-  deleteColumnTry(int indexToDelete) {
-    scriptureColumns.removeAt(indexToDelete);
-    widget.numberOfColumns--;
-    setState(() {});
-  }
+  // scriptureColumns = List.generate(
+  //     userColumns!.length,
+  //     (index) => ScriptureColumn(
+  //         myColumnIndex: index,
+  //         numberOfColumns: userColumns.length,
+  //         appInfo: widget.appInfo,
+  //         bibleReference: userColumns[index]));
+  //   super.didChangeDependencies();
+  // }
 
   @override
   Widget build(BuildContext context) {
-    print('bibleview build');
-    print('no. columns ${widget.numberOfColumns}');
+    //Getting current usercolumns
+    List<BibleReference>? userColumns =
+        Provider.of<UserPrefs>(context, listen: true).userPrefList.userColumns;
 
-    return Row(children: scriptureColumns);
+    scriptureColumns = List.generate(
+        userColumns!.length,
+        (index) => ScriptureColumn(
+            myColumnIndex: index,
+            numberOfColumns: userColumns.length,
+            appInfo: widget.appInfo,
+            bibleReference: userColumns[index]));
+
+    print('bibleview build');
+
+    return Row(
+      children: scriptureColumns,
+    );
+
+    // return FutureBuilder(
+    //     future: columnInit,
+    //     builder: (ctx, snapshot) =>
+    //         snapshot.connectionState == ConnectionState.waiting
+    //             ? const Center(child: ProgressRing())
+    //             : Row(children: scriptureColumns));
   }
 }

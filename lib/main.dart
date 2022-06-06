@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: avoid_print, use_build_context_synchronously
 
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/foundation.dart';
@@ -13,6 +13,8 @@ import 'screens/bible_view.dart';
 import 'screens/settings.dart';
 import 'theme.dart';
 import 'models/database_builder.dart';
+
+import 'providers/user_prefs.dart';
 
 String appTitle = "Placeholder App Title";
 
@@ -56,7 +58,20 @@ void main() async {
     });
   }
 
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (ctx) => UserPrefs(),
+        ),
+
+        // ChangeNotifierProvider(
+        //   create: (ctx) => PlayerManager(),
+        // ),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -84,7 +99,6 @@ class MyApp extends StatelessWidget {
             ),
           ),
           theme: ThemeData(
-            fontFamily: 'font1',
             accentColor: appTheme.color,
             visualDensity: VisualDensity.standard,
             focusTheme: FocusThemeData(
@@ -139,8 +153,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageState extends State<MyHomePage> with WindowListener {
-  int numberOfColumns = 2;
-  bool addPane = false;
   late Future<AppInfo> init = callInititalization();
 
   int index = 0;
@@ -156,34 +168,17 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
   }
 
   Future<AppInfo> callInititalization() async {
-    var response = await buildDatabaseFromXML(context);
-
-    //How many columns should we initially open?
-    switch (response.collections.length) {
-      case 1:
-        numberOfColumns = 2; //if one collection, open two views
-        break;
-      case 2:
-        numberOfColumns = 2;
-        break;
-      case 3:
-        numberOfColumns = 3;
-        break;
-      case 4:
-        numberOfColumns = 4;
-        break;
-
-      default:
-        2;
-    }
-    print('returning future from initialization');
+    AppInfo response = await buildDatabaseFromXML(context);
+    Provider.of<UserPrefs>(context, listen: false).loadUserPrefs(response);
+    // print('returning future from initialization');
     return response;
   }
 
   Future<void> callInititalizationAppName() async {
     String response = await asyncGetProjectName(context);
-    print('returning future from asyncGetProjectName');
-    print(response);
+
+    // print('returning future from asyncGetProjectName');
+    // print(response);
     setState(() {
       appTitle = response;
     });
@@ -210,47 +205,24 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
   //       });
   // }
 
-  informationalDialog() {
-    ContentDialog(
-      title: const Text('No WiFi connection'),
-      content: const Text('Check your connection and try again'),
-      actions: [
-        Button(
-            child: const Text('Ok'),
-            onPressed: () {
-              Navigator.pop(context);
-            })
-      ],
-    );
-  }
-
-  void changeNumberColumns({bool? add, int? columnToRemove}) {
-    print('changeNumberColumns');
-    if (add == true) {
-      if (numberOfColumns <= 3) numberOfColumns++; //keep to four columns
-    } else {
-      numberOfColumns--;
-    }
-    setState(() {});
-  }
-
-  void addColumn() {
-    print('adding a column');
-    if (numberOfColumns <= 3) {
-      numberOfColumns++;
-      setState(() {});
-    }
-  }
-
-  void deleteColumn(int indextoDelete) {
-    print('deleting column $indextoDelete');
-    numberOfColumns--;
-    setState(() {});
-  }
+  // informationalDialog() {
+  //   ContentDialog(
+  //     title: const Text('No WiFi connection'),
+  //     content: const Text('Check your connection and try again'),
+  //     actions: [
+  //       Button(
+  //           child: const Text('Ok'),
+  //           onPressed: () {
+  //             Navigator.pop(context);
+  //           })
+  //     ],
+  //   );
+  // }
 
   @override
   Widget build(BuildContext context) {
     final appTheme = context.watch<AppTheme>();
+
     return NavigationView(
         key: viewKey,
         //appBar is across top of the screen in place of normal OS specific title bar.
@@ -347,11 +319,11 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
             // ),
             PaneItemSeparator(),
             RunFunctionPaneItemAction(
-                icon: const Icon(FluentIcons.search),
-                functionToRun: deleteColumn),
+                icon: const Icon(FluentIcons.search), functionToRun: () {}),
             RunFunctionPaneItemAction(
                 icon: const Icon(FluentIcons.calculator_addition),
-                functionToRun: addColumn),
+                functionToRun:
+                    Provider.of<UserPrefs>(context, listen: false).addColumn),
             LightDarkModePaneItemAction(
               icon: FluentTheme.of(context).brightness.isDark
                   ? const Icon(FluentIcons.sunny)
@@ -385,27 +357,20 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                 return NavigationBody(index: index, children: [
                   BibleView(
                     appInfo: appInfo,
-                    numberOfColumns: numberOfColumns,
-                    deleteColumn: deleteColumn,
                   ), //main view
+
                   //must include dummy destination here for each custom action, apparently
 
                   BibleView(
                     appInfo: snapshot.data as AppInfo,
-                    numberOfColumns: numberOfColumns,
-                    deleteColumn: deleteColumn,
                   ), //taking place of Search BibleView
 
                   BibleView(
                     appInfo: snapshot.data as AppInfo,
-                    numberOfColumns: numberOfColumns,
-                    deleteColumn: deleteColumn,
                   ), //taking place of add a pane
 
                   BibleView(
                     appInfo: snapshot.data as AppInfo,
-                    numberOfColumns: numberOfColumns,
-                    deleteColumn: deleteColumn,
                   ), //taking place of toggle light/dark mode
 
                   Settings(controller: settingsController),
