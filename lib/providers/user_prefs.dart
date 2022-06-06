@@ -11,7 +11,7 @@ import 'dart:convert';
 
 class BibleReference {
   final Key key;
-  final int columnIndex;
+  // final int columnIndex;
   final bool partOfScrollGroup;
   final String collectionID;
   String? bookID;
@@ -20,7 +20,7 @@ class BibleReference {
 
   BibleReference({
     required this.key,
-    required this.columnIndex,
+    // required this.columnIndex,
     required this.partOfScrollGroup,
     required this.collectionID,
     this.bookID,
@@ -91,7 +91,7 @@ class UserPrefs with ChangeNotifier {
           2,
           (index) => BibleReference(
               key: UniqueKey(),
-              columnIndex: index,
+              // columnIndex: index,
               partOfScrollGroup: partOfScrollGroup,
               collectionID: currentCollection,
               bookID: null,
@@ -105,7 +105,7 @@ class UserPrefs with ChangeNotifier {
           numberOfColumns,
           (index) => BibleReference(
               key: UniqueKey(),
-              columnIndex: index,
+              // columnIndex: index,
               partOfScrollGroup: partOfScrollGroup,
               collectionID: "C0${(index + 1).toString()}",
               bookID: null,
@@ -121,7 +121,7 @@ class UserPrefs with ChangeNotifier {
     //new default column
     userColumns.add(BibleReference(
         key: UniqueKey(),
-        columnIndex: userColumns.length,
+        // columnIndex: userColumns.length,
         partOfScrollGroup: true,
         collectionID: "C01",
         bookID: null,
@@ -135,7 +135,11 @@ class UserPrefs with ChangeNotifier {
     //This removes the desired element
     userColumns.removeWhere((element) => element.key == keyToDelete);
     //This reorders the list, refreshing the indices
-    userColumns = userColumns.toList();
+    // userColumns = userColumns.toList();
+    print('deleteColumn in userprefs');
+    for (var item in userColumns) {
+      print(item.collectionID);
+    }
     notifyListeners();
     print('here');
   }

@@ -57,6 +57,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
   @override
   void initState() {
+    print('scripture column');
     itemScrollController = ItemScrollController();
     currentCollection = widget.bibleReference.collectionID;
 
@@ -123,13 +124,12 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   @override
   Widget build(BuildContext context) {
     print('Scripture Column build');
+    print(widget.bibleReference.collectionID);
     double windowWidth = MediaQuery.of(context).size.width;
     if (windowWidth > 500 && widget.numberOfColumns == 1) {
       wideWindow = true;
       wideWindowPadding = windowWidth / 5;
     }
-    // var deleteColumn = Provider.of<UserPrefs>(context, listen: false)
-    //     .deleteColumn(widget.myColumnIndex);
 
     return Expanded(
       child: Column(
@@ -294,8 +294,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                         Provider.of<UserPrefs>(context, listen: false)
                             .deleteColumn(widget.bibleReference.key);
                       },
-                      // onPressed:
-                      //     widget.myColumnIndex != 0 ? (_) => deleteColumn : null,
                       icon: const Icon(FluentIcons.calculator_multiply),
                     ),
                   // Column(

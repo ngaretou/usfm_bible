@@ -54,15 +54,23 @@ class _BibleViewState extends State<BibleView> {
   Widget build(BuildContext context) {
     //Getting current usercolumns
     List<BibleReference>? userColumns =
-        Provider.of<UserPrefs>(context, listen: true).userPrefList.userColumns;
+        Provider.of<UserPrefs>(context, listen: true).userColumns;
+
+    print('userColumns in Bible View');
+    for (var item in userColumns) {
+      print(item.collectionID);
+    }
 
     scriptureColumns = List.generate(
-        userColumns!.length,
-        (index) => ScriptureColumn(
-            myColumnIndex: index,
-            numberOfColumns: userColumns.length,
-            appInfo: widget.appInfo,
-            bibleReference: userColumns[index]));
+      userColumns.length,
+      (index) => ScriptureColumn(
+        key: UniqueKey(),
+        myColumnIndex: index,
+        numberOfColumns: userColumns.length,
+        appInfo: widget.appInfo,
+        bibleReference: userColumns[index],
+      ),
+    );
 
     print('bibleview build');
 
