@@ -15,6 +15,7 @@ import 'theme.dart';
 import 'models/database_builder.dart';
 
 import 'providers/user_prefs.dart';
+import 'providers/add_column.dart';
 
 String appTitle = "Placeholder App Title";
 
@@ -65,6 +66,13 @@ void main() async {
           create: (ctx) => UserPrefs(),
         ),
 
+        //This seems a bit hacky but there are two buttons in the
+        ChangeNotifierProvider(
+          create: (ctx) => AddColumn(),
+        ),
+        ChangeNotifierProvider(
+          create: (ctx) => OpenSearch(),
+        ),
         // ChangeNotifierProvider(
         //   create: (ctx) => PlayerManager(),
         // ),
@@ -168,10 +176,10 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
   }
 
   Future<AppInfo> callInititalization() async {
-    AppInfo response = await buildDatabaseFromXML(context);
-    Provider.of<UserPrefs>(context, listen: false).loadUserPrefs(response);
+    AppInfo appInfo = await buildDatabaseFromXML(context);
+    Provider.of<UserPrefs>(context, listen: false).loadUserPrefs(appInfo);
     // print('returning future from initialization');
-    return response;
+    return appInfo;
   }
 
   Future<void> callInititalizationAppName() async {
@@ -319,11 +327,15 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
             // ),
             PaneItemSeparator(),
             RunFunctionPaneItemAction(
-                icon: const Icon(FluentIcons.search), functionToRun: () {}),
+                title: const Text('Search'),
+                icon: const Icon(FluentIcons.search),
+                functionToRun:
+                    Provider.of<OpenSearch>(context, listen: false).openSearch),
             RunFunctionPaneItemAction(
+                title: const Text('Add Column'),
                 icon: const Icon(FluentIcons.calculator_addition),
                 functionToRun:
-                    Provider.of<UserPrefs>(context, listen: false).addColumn),
+                    Provider.of<AddColumn>(context, listen: false).addColumn),
             LightDarkModePaneItemAction(
               icon: FluentTheme.of(context).brightness.isDark
                   ? const Icon(FluentIcons.sunny)

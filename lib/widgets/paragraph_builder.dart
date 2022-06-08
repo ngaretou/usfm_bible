@@ -71,7 +71,8 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
           style: underlined ? underlineStyle : mainTextStyle,
           mouseCursor: SystemMouseCursors.basic,
 
-          //Note here that right click gets overridden on web by the browser's right click menu - maybe just have a popout menu on click and no right click
+          //Note here that right click gets overridden on web by the browser's right click menu -
+          //maybe just have a popout menu on click and no right click if can not override browser menu
           recognizer: TapGestureRecognizer()
             ..onTap = () {
               print(
@@ -104,6 +105,9 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
         case 's':
         case 's1':
         case 's2':
+        case 'mt1':
+        case 'mr':
+        case 'ms':
           styledParagraphFragments.add(s(line.verseText));
           header = true;
           break;

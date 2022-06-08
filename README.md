@@ -36,9 +36,8 @@ Change window title on desktop
 
 https://stackoverflow.com/questions/64800455/how-to-change-app-icon-and-app-name-for-flutter-desktop-application
 
-Global options: Add column, Search, Contact Us, About
-Each translation options: font size up and down, Remove columns - remove the one you are clicking the thing on
+NavPane buttons: Add column, Search, Contact Us, About
+
+Each translation options: font size up and down
 
 Figure out permissions - right now you have to manually change permissions to 744 for appdef and all sfm book files after output :(
-
-Instead of plus and minus to make new columns on the columns, one add new column action on the pane and then 'x' close buttons on the columns only

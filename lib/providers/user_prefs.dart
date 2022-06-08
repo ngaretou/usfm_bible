@@ -1,17 +1,12 @@
 // ignore_for_file: avoid_print
 
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:usfm_bible/models/database_builder.dart';
 import 'dart:core';
-// import 'dart:async';
-import 'dart:convert';
 
 class BibleReference {
-  final Key key;
-  // final int columnIndex;
+  Key key;
   final bool partOfScrollGroup;
   final String collectionID;
   String? bookID;
@@ -20,7 +15,6 @@ class BibleReference {
 
   BibleReference({
     required this.key,
-    // required this.columnIndex,
     required this.partOfScrollGroup,
     required this.collectionID,
     this.bookID,
@@ -116,33 +110,11 @@ class UserPrefs with ChangeNotifier {
     _userPrefList = UserPrefList(userColumns: userColumns);
   }
 
-  void addColumn() {
-    print('adding a column in ColumnManager');
-    //new default column
-    userColumns.add(BibleReference(
-        key: UniqueKey(),
-        // columnIndex: userColumns.length,
-        partOfScrollGroup: true,
-        collectionID: "C01",
-        bookID: null,
-        chapter: null,
-        verse: null));
+  //TODO add user feedback on too many columns
+}
+
+class OpenSearch with ChangeNotifier {
+  void openSearch() {
     notifyListeners();
   }
-
-  deleteColumn(Key keyToDelete) {
-    print('deleting column index $keyToDelete');
-    //This removes the desired element
-    userColumns.removeWhere((element) => element.key == keyToDelete);
-    //This reorders the list, refreshing the indices
-    // userColumns = userColumns.toList();
-    print('deleteColumn in userprefs');
-    for (var item in userColumns) {
-      print(item.collectionID);
-    }
-    notifyListeners();
-    print('here');
-  }
-
-  void openSearchColumn() {}
 }

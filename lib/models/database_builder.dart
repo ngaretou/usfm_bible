@@ -1,16 +1,7 @@
 // ignore_for_file: avoid_print, avoid_function_literals_in_foreach_calls
 
-// import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:usfm_bible/providers/user_prefs.dart';
-// import 'package:flutter/foundation.dart';
-// import 'package:hive/hive.dart';
-// import 'package:hive_flutter/hive_flutter.dart';
 import 'package:xml/xml.dart';
-import 'package:provider/provider.dart';
-
-import '../providers/user_prefs.dart';
 
 class Font {
   final String fontFamily;
@@ -120,6 +111,7 @@ Future<String> asyncGetProjectName(BuildContext context) async {
 }
 
 Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
+  print('buildDatabaseFromXML');
   AssetBundle assetBundle = DefaultAssetBundle.of(context);
   //
   String appDefLocation = 'assets/project/appDef.appDef';
@@ -217,6 +209,18 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
       List<String> chapters = chapterText.split(r"\c ");
       //Removes all the headers etc - this also removes files that have not content - something to look at later
       chapters.removeAt(0);
+
+      //Before going to chapters, add an entry for the book title
+      verses.add(ParsedLine(
+          collectionid: collection.id,
+          book: book.id,
+          chapter: "1",
+          verse: "",
+          verseFragment: "",
+          audioMarker: "",
+          verseText: book.name,
+          verseStyle: 'mt1'));
+
       for (var chapter in chapters) {
         RegExpMatch? match = RegExp(r'(^\d+)(\s)').firstMatch(chapter);
         //ˆ: beginning of line; \d digit, + 1 or more; \s whitespace
@@ -239,12 +243,14 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
           // This regex matches the initial style -
           //match is an iterable with an element for each matching group of the regexp
           RegExpMatch? match =
-              RegExp(r'(\\)(\w+)(\s)(.*)').firstMatch(line); // \s asdfaf
+              RegExp(r'(\\)(\w+)(\s)(.*)').firstMatch(line); // \s
           if (match != null) {
-            if (match.group(2) != null) verseStyle = match.group(2)!;
+            if (match.group(2) != null) {
+              verseStyle = match.group(2)!; //verseStyle
+            }
             if (match.group(4) != null) {
-              verseText = match.group(
-                  4)!; //?? = if_null operator: https://dart-lang.github.io/linter/lints/prefer_if_null_operators.html
+              verseText = match.group(4)!; //verseText
+              //?? = if_null operator: https://dart-lang.github.io/linter/lints/prefer_if_null_operators.html
 
             }
 
@@ -253,7 +259,7 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
             //verse checking
             if (verseStyle == 'v') {
               RegExpMatch? match = RegExp(r'(\d+)(\s)(.*)').firstMatch(
-                  verseText); //\d+ = digits, \s whitespace ,.* anything
+                  verseText); //group 1 \d+ = digits, \s whitespace, group 3 .* is anything
               if (match != null) {
                 if (match.group(1) != null) verseNumber = match.group(1)!;
                 if (match.group(3) != null) verseText = match.group(3)!;
@@ -262,7 +268,8 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
               verseNumber = "";
             }
 
-            //TODO: final verseText string cleanup
+            //TODO: final verseText string cleanup - incorporate Changes from appDef
+            // example --- to long dash
 
             //Now finally add the elements to the List<ParsedVerse>
             verses.add(ParsedLine(
@@ -282,8 +289,7 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
     // print('ending current collection ${collection.id}');
   }
 
-  var userPrefs = Provider.of<UserPrefs>(context, listen: false).userColumns;
   AppInfo appInfo = AppInfo(collections: collections, verses: verses);
-
+  print('finished buildDatabaseFromXML');
   return appInfo;
 }

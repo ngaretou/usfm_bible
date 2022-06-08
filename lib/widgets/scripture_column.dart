@@ -1,26 +1,28 @@
 // ignore_for_file: avoid_print, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+// import 'dart:async';
+
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:provider/provider.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import '../models/database_builder.dart';
 import '../widgets/paragraph_builder.dart';
-import '../screens/bible_view.dart';
 import '../providers/user_prefs.dart';
 
 class ScriptureColumn extends StatefulWidget {
   final int myColumnIndex;
-  final int numberOfColumns;
+
   final AppInfo appInfo;
   final BibleReference bibleReference;
+  final Function deleteColumn;
 
   const ScriptureColumn({
-    Key? key,
+    required Key? key,
     required this.myColumnIndex,
-    required this.numberOfColumns,
     required this.appInfo,
     required this.bibleReference,
+    required this.deleteColumn,
   }) : super(key: key);
 
   @override
@@ -29,23 +31,24 @@ class ScriptureColumn extends StatefulWidget {
 
 class _ScriptureColumnState extends State<ScriptureColumn> {
   late ItemScrollController itemScrollController;
+  ItemPositionsListener itemPositionsListener = ItemPositionsListener.create();
   bool wideWindow = false;
   late double wideWindowPadding = 0;
   bool partOfScrollGroup = true;
 
-  List<ParsedLine> versesInColumn = []; //All verses in Collection
+  List<ParsedLine> versesInCollection = []; //All verses in Collection
   List<ParsedLine> versesToDisplay =
       []; //the specific verses to display in a paragraph
   // late BibleReference bibleReference;
   List<String> collectionNames = [];
   late Collection currentCollectionInfo;
-  String currentCollection = "";
+  String currentCollection = "C01";
   List<Book> currentCollectionBooks = [];
-  String currentBook = "";
+  String currentBook = "GEN";
   List<String> currentBookChapters = [];
-  String currentChapter = "";
+  String currentChapter = "1";
   List<String> currentChapterVerseNumbers = [];
-  String currentVerse = "";
+  String currentVerse = "1";
 
   List<List<ParsedLine>> versesByParagraph = [];
   List<ParsedLine> currentParagraph = [];
@@ -57,39 +60,164 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
   @override
   void initState() {
-    print('scripture column');
+    print('scripture column initState');
     itemScrollController = ItemScrollController();
-    currentCollection = widget.bibleReference.collectionID;
 
-    versesInColumn = widget.appInfo.verses
-        .where((element) => element.collectionid == currentCollection)
-        .toList();
+    scrollToReference(
+        collection: widget.bibleReference.collectionID,
+        bookID: widget.bibleReference.bookID,
+        chapter: widget.bibleReference.chapter,
+        verse: widget.bibleReference.verse,
+        isInitState: true);
 
-    //Set initial ch/vs selectors
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      //do after whole widget builds
+      // setSelectorsToClosestReference();
+    });
 
-    //Books in current collection
-    currentCollectionBooks = widget.appInfo.collections
-        .where((element) => element.id == currentCollection)
-        .toList()[0]
-        .books;
+    super.initState();
+  }
 
-    //on first open of the app, open the first book
-    currentBook = currentCollectionBooks[0].id;
+  //from combobox selectors
+  scrollToReference(
+      {String? collection,
+      String? bookID,
+      String? chapter,
+      String? verse,
+      bool isInitState = false}) {
+    //If we're changing the collection, we need to rebuild the whole column's content.
+    //If just navigating in the collection it's scrollTo.
+    print('here');
+    if ((collection != null && currentCollection != collection) ||
+        currentCollection == "" ||
+        isInitState == true) {
+      currentCollection = collection!;
+      //reset the components of the paragraph builder
+      versesInCollection = [];
+      versesByParagraph = [];
+      currentParagraph = [];
 
-    //Now get chapters in current book
+      versesInCollection = widget.appInfo.verses
+          .where((element) => element.collectionid == currentCollection)
+          .toList();
 
-    currentBookChapters = versesInColumn
+      //Books in current collection
+      currentCollectionBooks = widget.appInfo.collections
+          .where((element) => element.id == currentCollection)
+          .toList()[0]
+          .books;
+
+      if (bookID == null) {
+        currentBook = currentCollectionBooks[0].id;
+      }
+
+      setUpComboBoxesChVs(currentBook, currentChapter, currentVerse);
+
+      //Because the collection changed, we're leaving the book/ch/vs as they were, but have to
+      //TODO check to see if currentBook/ch/vs exists in the collection and choose what to do
+
+      //Now get chapters in current book
+
+      for (var i = 0; i < versesInCollection.length; i++) {
+        //if not new paragraph marker, add the line to the current paragraph
+        if (!versesInCollection[i].verseStyle.contains(RegExp(r'[p,m,s\d*]'))) {
+          currentParagraph.add(versesInCollection[i]);
+        } else {
+          //If it is a new paragraph marker, add the existing verses to the big list, and start over with a new paragraph
+          versesByParagraph.add(currentParagraph);
+          currentParagraph = [versesInCollection[i]];
+          // if (currentParagraph.isNotEmpty) {
+          //   versesByParagraph.add(currentParagraph);
+          //   currentParagraph = [];
+          // }
+        }
+      }
+      if (!isInitState) setState(() {});
+    } else {
+      //Above is collection change, which resets the whole column.
+      //Here is where the choice of book, ch, vs comes, and is a scrollTo with the same content
+      //Find index of the paragraph that has the desired verse
+      //We don't know which the user has navigated to, so sort that out
+      if (bookID != null) currentBook = bookID;
+      if (chapter != null) currentChapter = chapter;
+      if (verse != null) currentVerse = verse;
+
+      int navigateToParagraph = 0;
+      for (int i = 0; i < versesByParagraph.length; i++) {
+        var test = versesByParagraph[i].indexWhere((element) =>
+            element.book == currentBook &&
+            element.chapter == currentChapter &&
+            element.verse == currentVerse);
+        if (test != -1) {
+          navigateToParagraph = i;
+          break;
+        }
+      } //for loop
+
+      //Navigate to the paragraph.
+      itemScrollController.scrollTo(
+          index: navigateToParagraph, duration: Duration(milliseconds: 500));
+      setState(() {});
+
+      // print(navigateToParagraph.toString());
+    } //end of book/ch/vs else
+    // print(currentCollection);
+    // print(currentBook);
+    // print(currentChapter);
+    // print(currentVerse);
+  }
+
+  //On user end scroll notification
+  setSelectorsToClosestReference() {
+    var oldBook = currentBook;
+    var oldChapter = currentChapter;
+
+    var p = itemPositionsListener.itemPositions.value.first.index;
+
+    List<ParsedLine> para = versesByParagraph[p];
+
+    outerloop:
+    for (var i = p; i < versesByParagraph.length; i++) {
+      para = versesByParagraph[i];
+      if (para.isNotEmpty) {
+        for (var l = 0; l < para.length; l++) {
+          if ((para[l].chapter != "" && para[l].chapter != "0") &&
+              (para[l].verse != "" && para[l].chapter != "0")) {
+            currentBook = para[l].book;
+            currentChapter = para[l].chapter;
+            currentVerse = para[l].verse;
+            if (currentBook != oldBook || currentChapter != oldChapter) {
+              //reset combobox
+              setUpComboBoxesChVs(currentBook, currentChapter, currentVerse);
+            }
+
+            // print(para[l].book);
+            // print(para[l].chapter);
+            // print(para[l].verse);
+
+            setState(() {});
+
+            break outerloop;
+          }
+        }
+      }
+    }
+  }
+
+  setUpComboBoxesChVs(String newBook, String newChapter, String newVerse) {
+    currentBook = newBook;
+
+    List<String> temp = versesInCollection
         .where((element) => element.book == currentBook)
         .map((e) => e.chapter)
         .toList();
 
-    //.toSet().toList() here reduces a big list to uniques
-    currentBookChapters = currentBookChapters.toSet().toList();
+    //.toSet().toList() here reduces a big list to unique values
+    currentBookChapters = temp.toSet().toList();
 
-    //on first open of the app, open the first book
-    currentChapter = currentBookChapters[0];
+    currentChapter = newChapter;
 
-    currentChapterVerseNumbers = versesInColumn
+    currentChapterVerseNumbers = versesInCollection
         .where((element) =>
             element.book == currentBook &&
             element.chapter == currentChapter &&
@@ -97,36 +225,18 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         .map((e) => e.verse)
         .toList();
 
-    currentVerse = currentChapterVerseNumbers[0];
-    /*
-    */
-    for (var i = 0; i < versesInColumn.length; i++) {
-      //if not new paragraph marker, add the line to the current paragraph
-      if (!versesInColumn[i].verseStyle.contains(RegExp(r'[p,m,s\d*]'))) {
-        currentParagraph.add(versesInColumn[i]);
-      } else {
-        //If it is a new paragraph marker, add the existing verses to the big list, and start over with a new paragraph
-        versesByParagraph.add(currentParagraph);
-        currentParagraph = [versesInColumn[i]];
-        // if (currentParagraph.isNotEmpty) {
-        //   versesByParagraph.add(currentParagraph);
-        //   currentParagraph = [];
-        // }
-      }
-    }
-    /*
-    */
-    super.initState();
+    currentVerse = newVerse;
   }
-
-  goToVerse(String collection, String bookID, String chapter, String verse) {}
 
   @override
   Widget build(BuildContext context) {
     print('Scripture Column build');
-    print(widget.bibleReference.collectionID);
+    int numberOfColumns =
+        Provider.of<UserPrefs>(context, listen: false).userColumns.length;
     double windowWidth = MediaQuery.of(context).size.width;
-    if (windowWidth > 500 && widget.numberOfColumns == 1) {
+    // print('windowWidth $windowWidth');
+    // print('numberOfColumns $numberOfColumns');
+    if (windowWidth > 500 && numberOfColumns == 1) {
       wideWindow = true;
       wideWindowPadding = windowWidth / 5;
     }
@@ -138,7 +248,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         children: [
           //Scripture column toolbar
           Padding(
-            padding: const EdgeInsets.all(5.0),
+            padding: const EdgeInsets.only(top: 5.0, right: 5, left: 5),
             child: Card(
               padding: EdgeInsets.only(top: 12, bottom: 12, left: 12, right: 6),
               child: Row(
@@ -159,6 +269,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                           crossAxisAlignment: WrapCrossAlignment.center,
                           alignment: WrapAlignment.start,
                           children: [
+                            //Collections/translations
                             SizedBox(
                               width: 150,
                               child: Combobox<String>(
@@ -174,10 +285,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                     .toList(),
                                 value: currentCollection,
                                 onChanged: (value) {
-                                  print(value);
-                                  if (value != null) {
-                                    setState(() => currentCollection = value);
-                                  }
+                                  scrollToReference(collection: value);
                                 },
                               ),
                             ),
@@ -195,10 +303,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                     .toList(),
                                 value: currentBook,
                                 onChanged: (value) {
-                                  print(value);
-                                  if (value != null) {
-                                    setState(() => currentBook = value);
-                                  }
+                                  scrollToReference(bookID: value);
                                 },
                               ),
                             ),
@@ -217,10 +322,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                       .toList(),
                                   value: currentChapter,
                                   onChanged: (value) {
-                                    print(value);
-                                    if (value != null) {
-                                      setState(() => currentChapter = value);
-                                    }
+                                    scrollToReference(chapter: value);
                                   },
                                 ),
                               ),
@@ -242,10 +344,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                       .toList(),
                                   value: currentVerse,
                                   onChanged: (value) {
-                                    print(value);
-                                    if (value != null) {
-                                      setState(() => currentVerse = value);
-                                    }
+                                    scrollToReference(verse: value);
                                   },
                                 ),
                               ),
@@ -291,8 +390,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                   if (widget.myColumnIndex != 0)
                     IconButton(
                       onPressed: () {
-                        Provider.of<UserPrefs>(context, listen: false)
-                            .deleteColumn(widget.bibleReference.key);
+                        widget.deleteColumn(widget.key);
                       },
                       icon: const Icon(FluentIcons.calculator_multiply),
                     ),
@@ -312,28 +410,38 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
           // The scripture container
           Expanded(
-            child: ScrollConfiguration(
-              behavior:
-                  ScrollConfiguration.of(context).copyWith(scrollbars: true),
-              child: Padding(
-                padding: wideWindow
-                    ? EdgeInsets.only(
-                        left: wideWindowPadding,
-                        right: wideWindowPadding,
-                        top: 12,
-                        bottom: 0)
-                    : const EdgeInsets.only(
-                        left: 12.0, right: 12, top: 12, bottom: 0),
-                child: ScrollablePositionedList.builder(
-                    itemScrollController: itemScrollController,
-                    itemCount: versesByParagraph.length,
-                    shrinkWrap: true,
-                    physics: const BouncingScrollPhysics(),
-                    itemBuilder: (ctx, i) {
-                      return ParagraphBuilder(
-                        paragraph: versesByParagraph[i],
-                      );
-                    }),
+            child: NotificationListener(
+              onNotification: (dynamic notification) {
+                if (notification is ScrollEndNotification) {
+                  setSelectorsToClosestReference();
+                }
+
+                return true;
+              },
+              child: ScrollConfiguration(
+                behavior:
+                    ScrollConfiguration.of(context).copyWith(scrollbars: true),
+                child: Padding(
+                  padding: wideWindow
+                      ? EdgeInsets.only(
+                          left: wideWindowPadding,
+                          right: wideWindowPadding,
+                          top: 0,
+                          bottom: 0)
+                      : const EdgeInsets.only(
+                          left: 12.0, right: 12, top: 0, bottom: 0),
+                  child: ScrollablePositionedList.builder(
+                      itemScrollController: itemScrollController,
+                      itemPositionsListener: itemPositionsListener,
+                      itemCount: versesByParagraph.length,
+                      shrinkWrap: true,
+                      physics: const BouncingScrollPhysics(),
+                      itemBuilder: (ctx, i) {
+                        return ParagraphBuilder(
+                          paragraph: versesByParagraph[i],
+                        );
+                      }),
+                ),
               ),
             ),
           ),
