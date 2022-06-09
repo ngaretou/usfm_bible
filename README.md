@@ -2,10 +2,13 @@
 
 An extension of Scripture App Builder primarily for web apps but also can be used to produce Windows and macOS apps.
 
+Current demo at https://coreygarrett.org/usfm_bible/
+
 ## Getting Started
 
 ### To use built web version:
 
+- Download /build/web/ folder contents.
 - Copy contents of SAB .appDef and \_data folder into the assets/project folder
   - and _rename_ your appDef file to "appDef.appDef" and your data file to "data".
 - Change font names in the project/data/fonts/ folder as follows:
@@ -27,7 +30,7 @@ An extension of Scripture App Builder primarily for web apps but also can be use
 
 Book Collection ID must follow C01, C02 pattern.
 
-## TODO:
+## To do:
 
 Remember window size and position, column references visible on close...
 Figure out localizations from appDef rather than from Flutter localizations

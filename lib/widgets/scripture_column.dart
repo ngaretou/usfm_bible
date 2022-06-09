@@ -153,7 +153,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
           break;
         }
       } //for loop
-
+      setUpComboBoxesChVs(currentBook, currentChapter, currentVerse);
       //Navigate to the paragraph.
       itemScrollController.scrollTo(
           index: navigateToParagraph, duration: Duration(milliseconds: 500));

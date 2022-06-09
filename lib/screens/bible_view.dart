@@ -124,8 +124,11 @@ class _BibleViewState extends State<BibleView> {
       openSearch();
     });
 
-    return Row(
-      children: scriptureColumns,
+    return Container(
+      color: FluentTheme.of(context).inactiveBackgroundColor,
+      child: Row(
+        children: scriptureColumns,
+      ),
     );
   }
 }

@@ -3,6 +3,8 @@
 .vscode
 .fvm
 
+
+
 # Miscellaneous
 *.class
 *.log
@@ -36,6 +38,7 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
+!/build/web
 /macos/
 /test/
 /windows/
