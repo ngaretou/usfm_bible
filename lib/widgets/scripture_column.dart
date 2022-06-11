@@ -2,6 +2,8 @@
 
 // import 'dart:async';
 
+import 'dart:async';
+
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
@@ -70,10 +72,10 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         verse: widget.bibleReference.verse,
         isInitState: true);
 
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      //do after whole widget builds
-      // setSelectorsToClosestReference();
-    });
+    // WidgetsBinding.instance.addPostFrameCallback((_) {
+    //   //do after whole widget builds
+    //   // setSelectorsToClosestReferenceAfterScroll();
+    // });
 
     super.initState();
   }
@@ -111,7 +113,20 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         currentBook = currentCollectionBooks[0].id;
       }
 
-      setUpComboBoxesChVs(currentBook, currentChapter, currentVerse);
+      //get some reasonable initial values based on the contents if no explicit destination
+      if (chapter == null) {
+        currentChapter = versesInCollection
+            .firstWhere((element) => element.book == currentBook)
+            .chapter;
+      }
+      if (verse == null) {
+        currentVerse = versesInCollection
+            .firstWhere((element) =>
+                element.book == currentBook &&
+                element.chapter == currentChapter &&
+                element.verse != "")
+            .verse;
+      }
 
       //Because the collection changed, we're leaving the book/ch/vs as they were, but have to
       //TODO check to see if currentBook/ch/vs exists in the collection and choose what to do
@@ -132,45 +147,66 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
           // }
         }
       }
+      setUpComboBoxesChVs(currentBook, currentChapter, currentVerse);
       if (!isInitState) setState(() {});
     } else {
       //Above is collection change, which resets the whole column.
       //Here is where the choice of book, ch, vs comes, and is a scrollTo with the same content
       //Find index of the paragraph that has the desired verse
       //We don't know which the user has navigated to, so sort that out
-      if (bookID != null) currentBook = bookID;
-      if (chapter != null) currentChapter = chapter;
-      if (verse != null) currentVerse = verse;
+      if (bookID != null) {
+        currentBook = bookID;
+        currentChapter = '1';
+        currentVerse = '1';
+      } else if (chapter != null) {
+        currentChapter = chapter;
+        currentVerse = '1';
+      } else if (verse != null) {
+        currentVerse = verse;
+      }
 
       int navigateToParagraph = 0;
+
       for (int i = 0; i < versesByParagraph.length; i++) {
-        var test = versesByParagraph[i].indexWhere((element) =>
-            element.book == currentBook &&
-            element.chapter == currentChapter &&
-            element.verse == currentVerse);
+        int test;
+        if (chapter == '1' && verse == '1') {
+          test = versesByParagraph[i]
+              .indexWhere((element) => element.book == currentBook);
+        } else {
+          test = versesByParagraph[i].indexWhere((element) =>
+              element.book == currentBook &&
+              element.chapter == currentChapter &&
+              element.verse == currentVerse);
+        }
+
         if (test != -1) {
           navigateToParagraph = i;
           break;
         }
       } //for loop
       setUpComboBoxesChVs(currentBook, currentChapter, currentVerse);
+      print('here');
+      // setSelectorsToClosestReferenceAfterScroll();
+
+      //This is so that it will leave a bit more space at the beginning for the book title to show
+      bool firstVerseOfChapter = currentChapter == '1' && currentVerse == '1';
+
       //Navigate to the paragraph.
       itemScrollController.scrollTo(
-          index: navigateToParagraph, duration: Duration(milliseconds: 500));
-      setState(() {});
+          index: navigateToParagraph,
+          alignment: firstVerseOfChapter ? 0.125 : 0,
+          duration: Duration(milliseconds: 500));
 
-      // print(navigateToParagraph.toString());
+      setState(() {});
     } //end of book/ch/vs else
-    // print(currentCollection);
-    // print(currentBook);
-    // print(currentChapter);
-    // print(currentVerse);
   }
 
   //On user end scroll notification
-  setSelectorsToClosestReference() {
-    var oldBook = currentBook;
-    var oldChapter = currentChapter;
+  setSelectorsToClosestReferenceAfterScroll() {
+    print('setSelectorsToClosestReferenceAfterScroll');
+
+    // var oldBook = currentBook;
+    // var oldChapter = currentChapter;
 
     var p = itemPositionsListener.itemPositions.value.first.index;
 
@@ -186,11 +222,9 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
             currentBook = para[l].book;
             currentChapter = para[l].chapter;
             currentVerse = para[l].verse;
-            if (currentBook != oldBook || currentChapter != oldChapter) {
-              //reset combobox
-              setUpComboBoxesChVs(currentBook, currentChapter, currentVerse);
-            }
-
+            // if (currentBook != oldBook || currentChapter != oldChapter) {
+            //reset combobox
+            setUpComboBoxesChVs(currentBook, currentChapter, currentVerse);
             // print(para[l].book);
             // print(para[l].chapter);
             // print(para[l].verse);
@@ -198,6 +232,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
             setState(() {});
 
             break outerloop;
+            // }
           }
         }
       }
@@ -225,7 +260,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         .map((e) => e.verse)
         .toList();
 
-    currentVerse = newVerse;
+    // currentVerse = newVerse;
   }
 
   @override
@@ -412,8 +447,9 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
           Expanded(
             child: NotificationListener(
               onNotification: (dynamic notification) {
-                if (notification is ScrollEndNotification) {
-                  setSelectorsToClosestReference();
+                if (notification is UserScrollNotification) {
+                  Timer(Duration(milliseconds: 200),
+                      setSelectorsToClosestReferenceAfterScroll);
                 }
 
                 return true;
@@ -431,6 +467,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                       : const EdgeInsets.only(
                           left: 12.0, right: 12, top: 0, bottom: 0),
                   child: ScrollablePositionedList.builder(
+                      initialAlignment: 1,
                       itemScrollController: itemScrollController,
                       itemPositionsListener: itemPositionsListener,
                       itemCount: versesByParagraph.length,

@@ -91,6 +91,7 @@ class MyApp extends StatelessWidget {
       create: (_) => AppTheme(),
       builder: (context, _) {
         final appTheme = context.watch<AppTheme>();
+
         return FluentApp(
           title: appTitle,
 
@@ -172,6 +173,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
   void initState() {
     windowManager.addListener(this);
     callInititalizationAppName();
+
     super.initState();
   }
 

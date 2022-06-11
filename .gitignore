@@ -1,6 +1,5 @@
 
 .idea
-.vscode
 .fvm
 
 
@@ -37,8 +36,10 @@ migrate_working_dir/
 .packages
 .pub-cache/
 .pub/
+
 /build/*
 !/build/web/
+
 /macos/
 /test/
 /windows/
