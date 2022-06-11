@@ -89,7 +89,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
       bool isInitState = false}) {
     //If we're changing the collection, we need to rebuild the whole column's content.
     //If just navigating in the collection it's scrollTo.
-    print('here');
+
     if ((collection != null && currentCollection != collection) ||
         currentCollection == "" ||
         isInitState == true) {
@@ -203,8 +203,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
   //On user end scroll notification
   setSelectorsToClosestReferenceAfterScroll() {
-    print('setSelectorsToClosestReferenceAfterScroll');
-
     // var oldBook = currentBook;
     // var oldChapter = currentChapter;
 
@@ -465,8 +463,9 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                           top: 0,
                           bottom: 0)
                       : const EdgeInsets.only(
-                          left: 12.0, right: 12, top: 0, bottom: 0),
+                          left: 12.0, right: 4, top: 0, bottom: 0),
                   child: ScrollablePositionedList.builder(
+                      padding: EdgeInsets.only(right: 12),
                       initialAlignment: 1,
                       itemScrollController: itemScrollController,
                       itemPositionsListener: itemPositionsListener,

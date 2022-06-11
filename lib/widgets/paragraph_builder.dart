@@ -4,13 +4,11 @@ import 'package:fluent_ui/fluent_ui.dart';
 
 import '../models/database_builder.dart';
 import 'package:flutter/gestures.dart';
-// import 'package:google_fonts/google_fonts.dart';
+
+import 'package:contextmenu/contextmenu.dart';
 
 class ParagraphBuilder extends StatefulWidget {
-  // final List<ParsedLine> lines;
-
   final List<ParsedLine> paragraph;
-
   const ParagraphBuilder({Key? key, required this.paragraph}) : super(key: key);
 
   @override
@@ -18,17 +16,17 @@ class ParagraphBuilder extends StatefulWidget {
 }
 
 class _ParagraphBuilderState extends State<ParagraphBuilder> {
+  final flyoutController = FlyoutController();
   double baseFontSize = 20;
   late TextStyle mainTextStyle;
   bool underlined = false;
   String? fontFromAssets;
 
-  // @override
-  // void initState() {
-  //   // style = TextStyle(fontSize: baseFontSize);
-
-  //   super.initState();
-  // }
+  @override
+  void dispose() {
+    flyoutController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,10 +41,6 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
       fontSize: baseFontSize,
       color: DefaultTextStyle.of(context).style.color,
     );
-    // mainTextStyle = TextStyle(
-    //   fontFamily: Charis,
-    //   package:
-    // )
 
 //font experimentation
 
@@ -67,24 +61,27 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
 
     TextSpan normalVerseFragment(ParsedLine line) {
       return TextSpan(
-          text: '${line.verseText} ',
-          style: underlined ? underlineStyle : mainTextStyle,
-          mouseCursor: SystemMouseCursors.basic,
+        text: '${line.verseText} ',
+        style: underlined ? underlineStyle : mainTextStyle,
+        mouseCursor: SystemMouseCursors.basic,
 
-          //Note here that right click gets overridden on web by the browser's right click menu -
-          //maybe just have a popout menu on click and no right click if can not override browser menu
-          recognizer: TapGestureRecognizer()
-            ..onTap = () {
-              print(
-                  '${line.collectionid} ${line.book} ${line.chapter} ${line.verse}');
-              setState(() {
-                underlined = !underlined;
-              });
-            }
-            ..onSecondaryTap = () {
-              print(
-                  'right click on ${line.collectionid} ${line.book} ${line.chapter} ${line.verse}');
+        //Note here that right click gets overridden on web by the browser's right click menu -
+        //maybe just have a popout menu on click and no right click if can not override browser menu
+        recognizer: TapGestureRecognizer()
+          ..onTap = () {
+            print(
+                '${line.collectionid} ${line.book} ${line.chapter} ${line.verse}');
+            setState(() {
+              underlined = !underlined;
             });
+          }
+          ..onSecondaryTap = () {
+            // showContextMenu(
+            // details.globalPosition, context, items, verticalPadding, width),
+            print(
+                'right click on ${line.collectionid} ${line.book} ${line.chapter} ${line.verse}');
+          },
+      );
     }
 
     TextSpan s(String paragraphFragment) {
@@ -128,11 +125,31 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 8.0),
-      child: RichText(
-        text: TextSpan(
-          children: styledParagraphFragments,
+      child: ContextMenuArea(
+        builder: (context) => [
+          GestureDetector(
+            child: const ListTile(
+                leading: Icon(FluentIcons.copy), title: Text('Copy')),
+            onTap: () {
+              Navigator.of(context).pop();
+              print(styledParagraphFragments.toString());
+            },
+          ),
+          GestureDetector(
+            child: const ListTile(
+                leading: Icon(FluentIcons.share), title: Text('Share')),
+            onTap: () {
+              Navigator.of(context).pop();
+              print('sharing via share_plus');
+            },
+          ),
+        ],
+        child: RichText(
+          text: TextSpan(
+            children: styledParagraphFragments,
+          ),
+          textAlign: header ? TextAlign.center : TextAlign.left,
         ),
-        textAlign: header ? TextAlign.center : TextAlign.left,
       ),
     );
   }
