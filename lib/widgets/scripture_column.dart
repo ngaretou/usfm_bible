@@ -10,6 +10,7 @@ import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import '../models/database_builder.dart';
 import '../widgets/paragraph_builder.dart';
+import 'package:contextmenu/contextmenu.dart';
 import '../providers/user_prefs.dart';
 
 class ScriptureColumn extends StatefulWidget {
@@ -38,6 +39,9 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   late double wideWindowPadding = 0;
   bool partOfScrollGroup = true;
 
+  late double baseFontSize;
+  List<BibleReference> rangeOfVersesToCopy = [];
+
   List<ParsedLine> versesInCollection = []; //All verses in Collection
   List<ParsedLine> versesToDisplay =
       []; //the specific verses to display in a paragraph
@@ -63,6 +67,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   @override
   void initState() {
     print('scripture column initState');
+    baseFontSize = 20;
     itemScrollController = ItemScrollController();
 
     scrollToReference(
@@ -261,6 +266,18 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     // currentVerse = newVerse;
   }
 
+  addVerseToCopyRange(BibleReference ref) {
+    if (rangeOfVersesToCopy.any((BibleReference element) =>
+        element.bookID == ref.bookID &&
+        element.chapter == ref.chapter &&
+        element.verse == ref.verse)) {
+      rangeOfVersesToCopy.add(ref);
+    }
+
+    print(rangeOfVersesToCopy.length);
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     print('Scripture Column build');
@@ -273,6 +290,27 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
       wideWindow = true;
       wideWindowPadding = windowWidth / 5;
     }
+
+// ContextMenuArea(
+//       builder: (context) => [
+//         GestureDetector(
+//           child: const ListTile(
+//               leading: Icon(FluentIcons.copy), title: Text('Copy')),
+//           onTap: () {
+//             Navigator.of(context).pop();
+//             print('copying');
+//           },
+//         ),
+//         GestureDetector(
+//           child: const ListTile(
+//               leading: Icon(FluentIcons.share), title: Text('Share')),
+//           onTap: () {
+//             Navigator.of(context).pop();
+//             print('sharing via share_plus');
+//           },
+//         ),
+//       ],
+//https://pub.dev/packages/contextmenu/example
 
     return Expanded(
       child: Column(
@@ -389,12 +427,23 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                               children: [
                                 //Font increase/decrease
                                 Button(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    if (baseFontSize < 37) {
+                                      setState(() {
+                                        baseFontSize = baseFontSize + 1;
+                                        print(baseFontSize);
+                                      });
+                                    }
+                                  },
                                   child: const Icon(FluentIcons.font_increase),
                                 ),
                                 Button(
                                   onPressed: () {
-                                    print('${widget.myColumnIndex}');
+                                    if (baseFontSize > 10) {
+                                      setState(() {
+                                        baseFontSize = baseFontSize - 1;
+                                      });
+                                    }
                                   },
                                   child: const Icon(FluentIcons.font_decrease),
                                 ),
@@ -464,19 +513,44 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                           bottom: 0)
                       : const EdgeInsets.only(
                           left: 12.0, right: 4, top: 0, bottom: 0),
-                  child: ScrollablePositionedList.builder(
-                      padding: EdgeInsets.only(right: 12),
-                      initialAlignment: 1,
-                      itemScrollController: itemScrollController,
-                      itemPositionsListener: itemPositionsListener,
-                      itemCount: versesByParagraph.length,
-                      shrinkWrap: true,
-                      physics: const BouncingScrollPhysics(),
-                      itemBuilder: (ctx, i) {
-                        return ParagraphBuilder(
-                          paragraph: versesByParagraph[i],
-                        );
-                      }),
+                  child: ContextMenuArea(
+                    builder: (context) => [
+                      GestureDetector(
+                        child: const ListTile(
+                            leading: Icon(FluentIcons.copy),
+                            title: Text('Copy')),
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          print('received copy instruction');
+                        },
+                      ),
+                      GestureDetector(
+                        child: const ListTile(
+                            leading: Icon(FluentIcons.share),
+                            title: Text('Share')),
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          print('sharing via share_plus');
+                        },
+                      ),
+                    ],
+                    child: ScrollablePositionedList.builder(
+                        padding: EdgeInsets.only(right: 12),
+                        initialAlignment: 1,
+                        itemScrollController: itemScrollController,
+                        itemPositionsListener: itemPositionsListener,
+                        itemCount: versesByParagraph.length,
+                        shrinkWrap: true,
+                        physics: const BouncingScrollPhysics(),
+                        itemBuilder: (ctx, i) {
+                          return ParagraphBuilder(
+                            paragraph: versesByParagraph[i],
+                            fontSize: baseFontSize,
+                            rangeOfVersesToCopy: rangeOfVersesToCopy,
+                            addVerseToCopyRange: addVerseToCopyRange,
+                          );
+                        }),
+                  ),
                 ),
               ),
             ),

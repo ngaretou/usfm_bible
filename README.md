@@ -48,5 +48,4 @@ Book Collection ID must follow C01, C02 pattern in your SAB project.
 - read in styles from appdef
 - audio
 
-- show vs by paragraph
-- get nav by selectors showing right ref
+- Incorporate ContextMenuArea into ScriptureColumn
