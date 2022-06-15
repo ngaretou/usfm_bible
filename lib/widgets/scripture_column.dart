@@ -273,7 +273,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         element.verse == ref.verse)) {
       rangeOfVersesToCopy.add(ref);
     }
-
+    //TODO do something w/ this
     print(rangeOfVersesToCopy.length);
     setState(() {});
   }

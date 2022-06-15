@@ -47,5 +47,4 @@ Book Collection ID must follow C01, C02 pattern in your SAB project.
 - reader mode/no verses
 - read in styles from appdef
 - audio
-
-- Incorporate ContextMenuArea into ScriptureColumn
+- Better scrollbars
