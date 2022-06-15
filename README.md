@@ -6,7 +6,11 @@ To use the pre-built version for your SAB project, upload it to your web server,
 
 Demo of current version at https://coreygarrett.org/usfm_bible/
 
-[screenshot]: screenshot.png  "screenshot"
+<p align="center">
+  <img src="https://github.com/ngaretou/usfm_bible/blob/master/screenshot.png">
+  <br>
+  <i>Screenshot of usfm_bible on a web browser</i>
+</p>
 
 ## Getting Started
 
