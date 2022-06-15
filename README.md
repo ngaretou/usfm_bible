@@ -1,10 +1,18 @@
 # usfm_bible
 
+_Still in development, not production ready_
+
 An extension of [Scripture App Builder](https://software.sil.org/scriptureappbuilder/) primarily for web apps that also can be used to produce offline Windows and macOS.
 
 To use the pre-built version for your SAB project, upload it to your web server, drop in your SAB project, and it generates a multi-collection multi-column web app.
 
 Demo of current version at https://coreygarrett.org/usfm_bible/
+
+<p align="center">
+  <img src="https://github.com/ngaretou/usfm_bible/blob/master/screenshot.png">
+  <br>
+  <i>Screenshot of usfm_bible on a web browser</i>
+</p>
 
 ## Getting Started
 
