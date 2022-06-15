@@ -6,6 +6,8 @@ To use the pre-built version for your SAB project, upload it to your web server,
 
 Demo of current version at https://coreygarrett.org/usfm_bible/
 
+[screenshot]: screenshot.png  "screenshot"
+
 ## Getting Started
 
 ### To use pre-built web version with your SAB project:
