@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:usfm_bible/providers/user_prefs.dart';
+// import 'package:usfm_bible/providers/user_prefs.dart';
 
 import '../models/database_builder.dart';
 import 'package:flutter/gestures.dart';
@@ -9,7 +9,7 @@ import 'package:flutter/gestures.dart';
 class ParagraphBuilder extends StatefulWidget {
   final List<ParsedLine> paragraph;
   final double fontSize;
-  final List<BibleReference> rangeOfVersesToCopy;
+  final List<ParsedLine> rangeOfVersesToCopy;
   final Function addVerseToCopyRange;
 
   const ParagraphBuilder(
@@ -51,65 +51,40 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
     WidgetSpan verseNumber(String verseNumber) {
       return WidgetSpan(
         child: Transform.translate(
-          offset: const Offset(0.0, -4.0),
-          child: Text('$verseNumber ',
-              style: mainTextStyle.copyWith(
-                  fontSize: widget.fontSize / 2,
-                  color: FluentTheme.of(context).accentColor)),
+          offset: const Offset(0.0, -6.0),
+          child: Text(
+            ' $verseNumber ',
+            style: mainTextStyle.copyWith(
+                fontSize: widget.fontSize / 2,
+                color: FluentTheme.of(context).accentColor,
+                decoration: TextDecoration.none),
+          ),
         ),
       );
     }
-    //verse number is a WidgetSpan rather than TextSpan - this vanilla TextSpan version is for testing
-    // TextSpan verseNumber(String verseNumber) {
-    //   return TextSpan(
-    //       text: ('$verseNumber '),
-    //       style: mainTextStyle.copyWith(
-    //           fontSize: fontSize / 2,
-    //           color: FluentTheme.of(context).accentColor));
-    // }
 
     TextSpan normalVerseFragment(ParsedLine line) {
       //Rearrange the incoming data
-      BibleReference ref = BibleReference(
-          key: UniqueKey(),
-          partOfScrollGroup: true,
-          collectionID: line.collectionid,
-          bookID: line.book,
-          chapter: line.chapter,
-          verse: line.verse);
 
-      // bool textSpanUnderline = widget.rangeOfVersesToCopy.contains((element) =>
-      //     element.book == ref.bookID &&
-      //     element.chapter == ref.chapter &&
-      //     element.verse == ref.verse);
       bool? textSpanUnderline = widget.rangeOfVersesToCopy.any(
-          (BibleReference element) =>
-              element.bookID == ref.bookID &&
-              element.chapter == ref.chapter &&
-              element.verse == ref.verse);
+          (ParsedLine element) =>
+              element.book == line.book &&
+              element.chapter == line.chapter &&
+              element.verse == line.verse);
 
       return TextSpan(
-          text: '${line.verseText} ',
+          text: line.verseText,
           style: textSpanUnderline ? underlineStyle : mainTextStyle,
           mouseCursor: SystemMouseCursors.basic,
-
-          //Note here that right click gets overridden on web by the browser's right click menu -
-          //maybe just have a popout menu on click and no right click if can not override browser menu
           recognizer: TapGestureRecognizer()
             ..onTap = () {
               print(
                   '${line.collectionid} ${line.book} ${line.chapter} ${line.verse}');
-              widget.addVerseToCopyRange(BibleReference(
-                  key: UniqueKey(),
-                  partOfScrollGroup: true,
-                  collectionID: line.collectionid,
-                  bookID: line.book,
-                  chapter: line.chapter,
-                  verse: line.verse));
+              widget.addVerseToCopyRange(line);
 
               setState(() {});
             }
-          //Just keeping this here for the format but the ContextMenuArea takes the right click
+          //Just keeping this here for the syntax but the ContextMenuArea takes the right click
           // ..onSecondaryTap = () {
           //   // showContextMenu(
           //   // details.globalPosition, context, items, verticalPadding, width),
@@ -154,7 +129,9 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
           0,
           TextSpan(
             text: '    ',
-            style: DefaultTextStyle.of(context).style,
+            style: DefaultTextStyle.of(context)
+                .style
+                .copyWith(decoration: TextDecoration.none),
           ));
     }
 

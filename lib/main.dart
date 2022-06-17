@@ -15,7 +15,7 @@ import 'theme.dart';
 import 'models/database_builder.dart';
 
 import 'providers/user_prefs.dart';
-import 'providers/add_column.dart';
+import 'providers/column_manager.dart';
 
 String appTitle = "Placeholder App Title";
 
@@ -66,13 +66,11 @@ void main() async {
           create: (ctx) => UserPrefs(),
         ),
 
-        //This seems a bit hacky but there are two buttons in the
+        //This seems a bit hacky but there are two buttons in the navpane that are hard to reference so this provider helps there
         ChangeNotifierProvider(
-          create: (ctx) => AddColumn(),
+          create: (ctx) => ColumnManager(),
         ),
-        ChangeNotifierProvider(
-          create: (ctx) => OpenSearch(),
-        ),
+
         // ChangeNotifierProvider(
         //   create: (ctx) => PlayerManager(),
         // ),
@@ -332,12 +330,14 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                 title: const Text('Search'),
                 icon: const Icon(FluentIcons.search),
                 functionToRun:
-                    Provider.of<OpenSearch>(context, listen: false).openSearch),
+                    Provider.of<ColumnManager>(context, listen: false)
+                        .openSearch),
             RunFunctionPaneItemAction(
                 title: const Text('Add Column'),
                 icon: const Icon(FluentIcons.calculator_addition),
                 functionToRun:
-                    Provider.of<AddColumn>(context, listen: false).addColumn),
+                    Provider.of<ColumnManager>(context, listen: false)
+                        .addColumn),
             LightDarkModePaneItemAction(
               icon: FluentTheme.of(context).brightness.isDark
                   ? const Icon(FluentIcons.sunny)

@@ -7,7 +7,7 @@ import 'package:usfm_bible/providers/user_prefs.dart';
 import '../models/database_builder.dart';
 import '../widgets/scripture_column.dart';
 import '../providers/user_prefs.dart';
-import '../providers/add_column.dart';
+import '../providers/column_manager.dart';
 
 class BibleView extends StatefulWidget {
   final AppInfo appInfo;
@@ -68,7 +68,8 @@ class _BibleViewState extends State<BibleView> {
     userColumns.removeWhere((element) => element.key == keyToDelete);
     //and the widget
     scriptureColumns.removeWhere((element) => element.key == keyToDelete);
-
+    Provider.of<ColumnManager>(context, listen: false)
+        .deleteColumnRebuildCall();
     setState(() {});
   }
 
@@ -104,7 +105,7 @@ class _BibleViewState extends State<BibleView> {
   }
 
   void openSearch() {
-    print('opening search pane  ${DateTime.now().toLocal().toString()}');
+    print('opening search pane ${DateTime.now().toLocal().toString()}');
   }
 
   @override
@@ -113,14 +114,15 @@ class _BibleViewState extends State<BibleView> {
 
     //Listen around the corner from the main.dart NavPaneButtons
 
-    if (Provider.of<AddColumn>(context, listen: true).readyToAddColumn) {
+    if (Provider.of<ColumnManager>(context, listen: true).readyToAddColumn) {
       print('AddColumn notified');
       addColumn();
     }
 
-    Provider.of<OpenSearch>(context, listen: true).addListener(() {
+    if (Provider.of<ColumnManager>(context, listen: true).readyToOpenSearch) {
+      print('OpenSearch notified');
       openSearch();
-    });
+    }
 
     return Container(
       color: FluentTheme.of(context).inactiveBackgroundColor,

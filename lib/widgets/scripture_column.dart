@@ -7,6 +7,7 @@ import 'dart:async';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+import 'package:usfm_bible/providers/column_manager.dart';
 
 import '../models/database_builder.dart';
 import '../widgets/paragraph_builder.dart';
@@ -36,11 +37,11 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   late ItemScrollController itemScrollController;
   ItemPositionsListener itemPositionsListener = ItemPositionsListener.create();
   bool wideWindow = false;
-  late double wideWindowPadding = 0;
+  late double wideWindowPadding;
   bool partOfScrollGroup = true;
 
   late double baseFontSize;
-  List<BibleReference> rangeOfVersesToCopy = [];
+  List<ParsedLine> rangeOfVersesToCopy = [];
 
   List<ParsedLine> versesInCollection = []; //All verses in Collection
   List<ParsedLine> versesToDisplay =
@@ -133,8 +134,8 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
             .verse;
       }
 
-      //Because the collection changed, we're leaving the book/ch/vs as they were, but have to
-      //TODO check to see if currentBook/ch/vs exists in the collection and choose what to do
+      //TODO Because the collection changed, we're leaving the book/ch/vs as they were, but have to
+      // check to see if currentBook/ch/vs exists in the collection and choose what to do
 
       //Now get chapters in current book
 
@@ -265,52 +266,144 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
     // currentVerse = newVerse;
   }
+  // //If the verse is not already in the group of verses
 
-  addVerseToCopyRange(BibleReference ref) {
-    if (rangeOfVersesToCopy.any((BibleReference element) =>
-        element.bookID == ref.bookID &&
+  addVerseToCopyRange(ParsedLine ref) {
+    addVersesBetweenIndexes(int startIndex, int endIndex) {
+      rangeOfVersesToCopy = [];
+      for (var i = startIndex; i <= endIndex; i++) {
+        rangeOfVersesToCopy.add(versesInCollection[i]);
+      }
+    }
+
+    int startIndex = 0;
+    int endIndex = 0;
+
+    bool verseAlreadyInRange = rangeOfVersesToCopy.any((ParsedLine element) =>
+        element.book == ref.book &&
         element.chapter == ref.chapter &&
-        element.verse == ref.verse)) {
+        element.verse == ref.verse);
+
+    //If no verses yet, just add the ref
+    if (rangeOfVersesToCopy.isEmpty) {
       rangeOfVersesToCopy.add(ref);
     }
-    //TODO do something w/ this
-    print(rangeOfVersesToCopy.length);
+    // if there is only one verse, and the incoming verse is the same as the one that's in there, get rid of it.
+    else if (rangeOfVersesToCopy.length == 1 && verseAlreadyInRange) {
+      rangeOfVersesToCopy = [];
+    }
+    // if the verses to copy does not contain the ref that the user just sent, add all the refs between the first and last ref
+    else if (!verseAlreadyInRange) {
+      print('third case');
+      //add this verse and then
+      rangeOfVersesToCopy.add(ref);
+      //add all between the first and last
+      int oneEnd = versesInCollection.indexWhere((element) =>
+          element.book == rangeOfVersesToCopy.first.book &&
+          element.chapter == rangeOfVersesToCopy.first.chapter &&
+          element.verse == rangeOfVersesToCopy.first.verse);
+
+      int otherEnd = versesInCollection.indexWhere((element) =>
+          element.book == rangeOfVersesToCopy.last.book &&
+          element.chapter == rangeOfVersesToCopy.last.chapter &&
+          element.verse == rangeOfVersesToCopy.last.verse);
+
+      //See which way round the entries are - later verse first or earlier first
+      int result = oneEnd.compareTo(otherEnd);
+      if (result < 0) {
+        startIndex = oneEnd;
+        endIndex = otherEnd;
+      } else {
+        startIndex = otherEnd;
+        endIndex = oneEnd;
+      }
+      addVersesBetweenIndexes(startIndex, endIndex);
+    }
+    //if the user has changed their minds and wants to shorten the list of verses to work with
+    else if (rangeOfVersesToCopy.length >= 2 && verseAlreadyInRange) {
+      print('fourth option');
+      startIndex = versesInCollection.indexWhere((element) =>
+          element.book == rangeOfVersesToCopy[0].book &&
+          element.chapter == rangeOfVersesToCopy[0].chapter &&
+          element.verse == rangeOfVersesToCopy[0].verse);
+
+      endIndex = versesInCollection.indexWhere((element) =>
+          element.book == ref.book &&
+          element.chapter == ref.chapter &&
+          element.verse == ref.verse);
+      addVersesBetweenIndexes(startIndex, endIndex);
+    }
     setState(() {});
+  }
+
+  String textToShareOrCopy() {
+    String textToReturn = '';
+    String reference = '';
+
+    //Get collection name in regular text
+    String currentCollectionName = collections
+        .where((element) => element.id == currentCollection)
+        .first
+        .name;
+
+    for (var i = 0; i < rangeOfVersesToCopy.length; i++) {
+      textToReturn = '$textToReturn${rangeOfVersesToCopy[i].verseText} ';
+    }
+
+
+    //Reference
+//TODO keep getting the ref here
+    //Get the books
+    if (rangeOfVersesToCopy.first.book == rangeOfVersesToCopy.last.book) {
+      Book bookName = currentCollectionBooks
+          .where((element) => element.id == rangeOfVersesToCopy.first.book)
+          .first;
+      if (rangeOfVersesToCopy.first.chapter ==
+          rangeOfVersesToCopy.last.chapter) {
+        String chapterName = rangeOfVersesToCopy.first.chapter;
+      } else {
+        String chapterName = 
+      }
+    } else {
+      // ...
+    }
+
+    textToReturn = '$textToReturn $reference $currentCollectionName';
+    rangeOfVersesToCopy = [];
+    setState(() {});
+    return textToReturn;
   }
 
   @override
   Widget build(BuildContext context) {
     print('Scripture Column build');
-    int numberOfColumns =
-        Provider.of<UserPrefs>(context, listen: false).userColumns.length;
-    double windowWidth = MediaQuery.of(context).size.width;
-    // print('windowWidth $windowWidth');
-    // print('numberOfColumns $numberOfColumns');
-    if (windowWidth > 500 && numberOfColumns == 1) {
-      wideWindow = true;
-      wideWindowPadding = windowWidth / 5;
+
+    if (Provider.of<ColumnManager>(context, listen: true).readyToAddColumn) {
+      //this rebuilds when adding a column
+      //TODO setstate when deleting a column
+      setState(() {});
     }
 
-// ContextMenuArea(
-//       builder: (context) => [
-//         GestureDetector(
-//           child: const ListTile(
-//               leading: Icon(FluentIcons.copy), title: Text('Copy')),
-//           onTap: () {
-//             Navigator.of(context).pop();
-//             print('copying');
-//           },
-//         ),
-//         GestureDetector(
-//           child: const ListTile(
-//               leading: Icon(FluentIcons.share), title: Text('Share')),
-//           onTap: () {
-//             Navigator.of(context).pop();
-//             print('sharing via share_plus');
-//           },
-//         ),
-//       ],
-//https://pub.dev/packages/contextmenu/example
+    if (Provider.of<ColumnManager>(context, listen: true)
+        .timeToRebuildColumns) {
+      print('Rebuild request received');
+      setState(() {});
+    }
+
+    int numberOfColumns =
+        Provider.of<UserPrefs>(context, listen: true).userColumns.length;
+
+    double windowWidth = MediaQuery.of(context).size.width;
+    // print(currentCollection);
+    // print('windowWidth $windowWidth');
+    // print('numberOfColumns $numberOfColumns');
+
+    if (windowWidth > 1024 && numberOfColumns == 1) {
+      wideWindow = true;
+      wideWindowPadding = windowWidth / 5;
+    } else {
+      wideWindow = false;
+    }
 
     return Expanded(
       child: Column(
@@ -521,7 +614,8 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                             title: Text('Copy')),
                         onTap: () {
                           Navigator.of(context).pop();
-                          print('received copy instruction');
+
+                          print(textToShareOrCopy());
                         },
                       ),
                       GestureDetector(

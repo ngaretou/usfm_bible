@@ -112,9 +112,3 @@ class UserPrefs with ChangeNotifier {
 
   //TODO add user feedback on too many columns
 }
-
-class OpenSearch with ChangeNotifier {
-  void openSearch() {
-    notifyListeners();
-  }
-}
