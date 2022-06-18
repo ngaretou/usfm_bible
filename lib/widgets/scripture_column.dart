@@ -8,6 +8,10 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:usfm_bible/providers/column_manager.dart';
+import 'package:share_plus/share_plus.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/services.dart';
 
 import '../models/database_builder.dart';
 import '../widgets/paragraph_builder.dart';
@@ -16,7 +20,6 @@ import '../providers/user_prefs.dart';
 
 class ScriptureColumn extends StatefulWidget {
   final int myColumnIndex;
-
   final AppInfo appInfo;
   final BibleReference bibleReference;
   final Function deleteColumn;
@@ -266,7 +269,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
     // currentVerse = newVerse;
   }
-  // //If the verse is not already in the group of verses
 
   addVerseToCopyRange(ParsedLine ref) {
     addVersesBetweenIndexes(int startIndex, int endIndex) {
@@ -291,6 +293,10 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     // if there is only one verse, and the incoming verse is the same as the one that's in there, get rid of it.
     else if (rangeOfVersesToCopy.length == 1 && verseAlreadyInRange) {
       rangeOfVersesToCopy = [];
+    }
+    //if only 2 verses, and the one clicked is already in, remove it
+    else if (rangeOfVersesToCopy.length == 2 && verseAlreadyInRange) {
+      rangeOfVersesToCopy.remove(ref);
     }
     // if the verses to copy does not contain the ref that the user just sent, add all the refs between the first and last ref
     else if (!verseAlreadyInRange) {
@@ -339,6 +345,8 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   String textToShareOrCopy() {
     String textToReturn = '';
     String reference = '';
+    // String lineBreak = kIsWeb ? '%0d%0a' : '\n';
+    String lineBreak = '\n';
 
     //Get collection name in regular text
     String currentCollectionName = collections
@@ -350,25 +358,47 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
       textToReturn = '$textToReturn${rangeOfVersesToCopy[i].verseText} ';
     }
 
-
     //Reference
-//TODO keep getting the ref here
+
     //Get the books
     if (rangeOfVersesToCopy.first.book == rangeOfVersesToCopy.last.book) {
-      Book bookName = currentCollectionBooks
+      String bookName = currentCollectionBooks
           .where((element) => element.id == rangeOfVersesToCopy.first.book)
-          .first;
-      if (rangeOfVersesToCopy.first.chapter ==
+          .first
+          .name;
+
+      //only one verse: Genesis 1.1
+      if (rangeOfVersesToCopy.length == 1) {
+        reference =
+            '$bookName ${rangeOfVersesToCopy.first.chapter}.${rangeOfVersesToCopy.first.verse}';
+      }
+      //same chapter: Genesis 1.2-10
+      else if (rangeOfVersesToCopy.first.chapter ==
           rangeOfVersesToCopy.last.chapter) {
-        String chapterName = rangeOfVersesToCopy.first.chapter;
+        reference =
+            '$bookName ${rangeOfVersesToCopy.first.chapter}.${rangeOfVersesToCopy.first.verse}-${rangeOfVersesToCopy.last.verse}';
       } else {
-        String chapterName = 
+        //same book different chapter: Genesis 1.20-2.2
+        reference =
+            '$bookName ${rangeOfVersesToCopy.first.chapter}.${rangeOfVersesToCopy.first.verse}-${rangeOfVersesToCopy.last.chapter}.${rangeOfVersesToCopy.last.verse}';
       }
     } else {
-      // ...
+      // range is across books so just take first and last
+      String firstBookName = currentCollectionBooks
+          .where((element) => element.id == rangeOfVersesToCopy.first.book)
+          .first
+          .name;
+      String lastBookName = currentCollectionBooks
+          .where((element) => element.id == rangeOfVersesToCopy.last.book)
+          .last
+          .name;
+
+      //Genesis 50.30-Exodus 1.20
+      reference =
+          '$firstBookName ${rangeOfVersesToCopy.first.chapter}.${rangeOfVersesToCopy.first.verse}-$lastBookName ${rangeOfVersesToCopy.last.chapter}.${rangeOfVersesToCopy.last.verse}';
     }
 
-    textToReturn = '$textToReturn $reference $currentCollectionName';
+    textToReturn = '$textToReturn$lineBreak$reference ($currentCollectionName)';
     rangeOfVersesToCopy = [];
     setState(() {});
     return textToReturn;
@@ -380,7 +410,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
     if (Provider.of<ColumnManager>(context, listen: true).readyToAddColumn) {
       //this rebuilds when adding a column
-      //TODO setstate when deleting a column
       setState(() {});
     }
 
@@ -614,17 +643,31 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                             title: Text('Copy')),
                         onTap: () {
                           Navigator.of(context).pop();
-
-                          print(textToShareOrCopy());
+                          Clipboard.setData(
+                              ClipboardData(text: textToShareOrCopy()));
                         },
                       ),
                       GestureDetector(
                         child: const ListTile(
                             leading: Icon(FluentIcons.share),
                             title: Text('Share')),
-                        onTap: () {
+                        onTap: () async {
                           Navigator.of(context).pop();
-                          print('sharing via share_plus');
+                          //if it's not the web app, share using the device share function
+                          String textToShare = textToShareOrCopy();
+                          if (!kIsWeb) {
+                            Share.share(textToShare);
+                          } else {
+                            //If it's the web app version best way to share is probably email, so put the text to share in an email
+                            final String url =
+                                "mailto:?subject=&body=$textToShare";
+
+                            if (await canLaunchUrl(Uri.parse(url))) {
+                              await launchUrl(Uri.parse(url));
+                            } else {
+                              throw 'Could not launch $url';
+                            }
+                          }
                         },
                       ),
                     ],

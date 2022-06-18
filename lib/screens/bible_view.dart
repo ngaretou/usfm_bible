@@ -8,6 +8,7 @@ import '../models/database_builder.dart';
 import '../widgets/scripture_column.dart';
 import '../providers/user_prefs.dart';
 import '../providers/column_manager.dart';
+import '../widgets/search.dart';
 
 class BibleView extends StatefulWidget {
   final AppInfo appInfo;
@@ -26,7 +27,9 @@ class _BibleViewState extends State<BibleView> {
   late int numberOfColumns;
   int currentIndex = 0;
   List<Widget> scriptureColumns = [];
+  List<Widget> columnsToShow = [];
   List<BibleReference> userColumns = [];
+  Widget? search;
 
   @override
   void initState() {
@@ -59,6 +62,8 @@ class _BibleViewState extends State<BibleView> {
         deleteColumn: deleteColumn,
       );
     });
+
+    columnsToShow = scriptureColumns;
     super.initState();
   }
 
@@ -90,7 +95,11 @@ class _BibleViewState extends State<BibleView> {
 
       userColumns.add(newDefaultRef);
       //new default column
-      scriptureColumns.add(
+      int position = search == null
+          ? scriptureColumns.length
+          : scriptureColumns.length - 1;
+      scriptureColumns.insert(
+        position,
         ScriptureColumn(
             key: key,
             myColumnIndex: scriptureColumns.length,
@@ -98,6 +107,7 @@ class _BibleViewState extends State<BibleView> {
             bibleReference: newDefaultRef,
             deleteColumn: deleteColumn),
       );
+
       setState(() {});
     }
 
@@ -105,7 +115,16 @@ class _BibleViewState extends State<BibleView> {
   }
 
   void openSearch() {
-    print('opening search pane ${DateTime.now().toLocal().toString()}');
+    setState(() {
+      search = SearchWidget(closeSearch: closeSearch);
+      columnsToShow.add(search!);
+    });
+  }
+
+  void closeSearch() {
+    search = null;
+    columnsToShow.removeLast();
+    setState(() {});
   }
 
   @override
@@ -121,14 +140,14 @@ class _BibleViewState extends State<BibleView> {
 
     if (Provider.of<ColumnManager>(context, listen: true).readyToOpenSearch) {
       print('OpenSearch notified');
-      openSearch();
+      if (search == null) {
+        openSearch();
+      }
     }
 
     return Container(
       color: FluentTheme.of(context).inactiveBackgroundColor,
-      child: Row(
-        children: scriptureColumns,
-      ),
+      child: Row(children: scriptureColumns),
     );
   }
 }
