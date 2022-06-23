@@ -79,7 +79,7 @@ class _BibleViewState extends State<BibleView> {
   }
 
   void addColumn() {
-    print('adding a column in Bible View');
+    // print('adding a column in Bible View');
     if (userColumns.length <= 3) {
       //This common key helps us keep track of refs and columns
       Key key = UniqueKey();
@@ -109,9 +109,9 @@ class _BibleViewState extends State<BibleView> {
       );
 
       setState(() {});
+    } else {
+      //TODO add user feedback when trying to create too many columns
     }
-
-    //TODO add user feedback when trying to create too many columns
   }
 
   void openSearch() {
@@ -146,7 +146,7 @@ class _BibleViewState extends State<BibleView> {
     }
 
     return Container(
-      color: FluentTheme.of(context).inactiveBackgroundColor,
+      color: FluentTheme.of(context).scaffoldBackgroundColor,
       child: Row(children: scriptureColumns),
     );
   }

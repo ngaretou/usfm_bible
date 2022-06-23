@@ -16,8 +16,11 @@ class SearchWidget extends StatefulWidget {
 
 class _SearchWidgetState extends State<SearchWidget> {
   final searchController = TextEditingController();
+  final expanderKey = GlobalKey<ExpanderState>();
+
   List<bool> collectionsToSearch = [];
   List<Checkbox> checkBoxes = [];
+  List<ParsedLine> searchResults = [];
 
   @override
   void initState() {
@@ -35,6 +38,20 @@ class _SearchWidgetState extends State<SearchWidget> {
     super.dispose();
   }
 
+  void searchFunction(String searchRequest) {
+    List<ParsedLine> results = [];
+
+    results = verses
+        .where((element) =>
+            element.verseText.contains(searchRequest) &&
+            element.verseStyle == 'v')
+        .toList();
+
+    setState(() {
+      searchResults = results;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     checkBoxes = List.generate(collections.length, (i) {
@@ -48,8 +65,6 @@ class _SearchWidgetState extends State<SearchWidget> {
         },
         content: Text(
           collections[i].name,
-          // style: TextStyle(
-          //   color: FluentTheme.of(context).inactiveColor),
         ),
       );
     });
@@ -58,11 +73,10 @@ class _SearchWidgetState extends State<SearchWidget> {
         width: 300,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          //header toolbar/s
           children: [
-            //Scripture column toolbar
             Padding(
-              padding: const EdgeInsets.only(top: 5.0, right: 5, left: 5),
+              padding:
+                  const EdgeInsets.only(top: 5.0, right: 5, left: 5, bottom: 5),
               child: Card(
                 padding: const EdgeInsets.only(
                     top: 12, bottom: 12, left: 12, right: 12),
@@ -75,49 +89,174 @@ class _SearchWidgetState extends State<SearchWidget> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Wrap(
-                            spacing: 5,
-                            runSpacing: 8,
+                          Row(
+                            // direction: Axis.horizontal,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            // alignment: WrapAlignment.start,
+                            // spacing: 5,
+                            // runSpacing: 8,
                             children: [
-                              TextFormBox(
-                                maxLines: null,
-                                controller: searchController,
-                                suffixMode: OverlayVisibilityMode.always,
-                                expands: true,
-                                suffix: searchController.text.isEmpty
-                                    ? null
-                                    : IconButton(
-                                        icon: const Icon(
-                                            material.Icons.backspace),
-                                        onPressed: () {
-                                          searchController.clear();
-                                        },
-                                      ),
-                                placeholder: 'Text box with clear button',
+                              Expanded(
+                                child: TextFormBox(
+                                  maxLines: null,
+                                  controller: searchController,
+                                  suffixMode: OverlayVisibilityMode.always,
+                                  expands: true,
+                                  suffix: searchController.text.isEmpty
+                                      ? null
+                                      : IconButton(
+                                          icon: const Icon(
+                                              material.Icons.backspace),
+                                          onPressed: () {
+                                            searchController.clear();
+                                          },
+                                        ),
+                                  placeholder: 'Search',
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: () {
+                                  widget.closeSearch();
+                                },
+                                icon:
+                                    const Icon(FluentIcons.calculator_multiply),
                               ),
                             ],
                           ),
-                          Wrap(spacing: 5, runSpacing: 8, children: checkBoxes),
-                          Button(
-                            child: const Text('Search'),
-                            onPressed: () {
-                              print('searching');
-                            },
+                          Expander(
+                            key: expanderKey,
+                            leading: Button(
+                              child: const Text('Search'),
+                              onPressed: () {
+                                searchFunction(searchController.value.text);
+                              },
+                            ),
+                            header: const Text(''),
+                            // trailing: ToggleSwitch(
+                            //   checked: true,
+                            //   onChanged: (v) {},
+                            // ),
+                            content: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: checkBoxes,
+                            ),
                           ),
                         ],
                       ),
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        widget.closeSearch();
-                      },
-                      icon: const Icon(FluentIcons.calculator_multiply),
                     ),
                   ],
                 ),
               ),
             ),
+            searchResults.isEmpty
+                ? const SizedBox(
+                    height: 100,
+                    child: Center(child: Icon(FluentIcons.search_and_apps)))
+                : Flexible(
+                    child: ListView.builder(
+                        itemCount: searchResults.length,
+                        // shrinkWrap: true,
+                        itemBuilder: (ctx, i) =>
+                            SearchResultTile(line: searchResults[i])),
+                  ),
           ],
         ));
+  }
+}
+
+class SearchResultTile extends StatefulWidget {
+  final ParsedLine line;
+
+  const SearchResultTile({Key? key, required this.line}) : super(key: key);
+
+  @override
+  State<SearchResultTile> createState() => _SearchResultTileState();
+}
+
+class _SearchResultTileState extends State<SearchResultTile> {
+  Color? cardColor;
+
+  void searchNavigator(ParsedLine line) {
+    print(line.verseText);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // Color cardColor = FluentTheme.of(context)
+    //     .cardColor
+    //     .lerpWith(FluentTheme.of(context).accentColor, .01);
+
+    String currentCollectionName = collections
+        .where((element) => element.id == widget.line.collectionid)
+        .first
+        .name;
+
+    List<Book> currentCollectionBooks = collections
+        .where((element) => element.id == widget.line.collectionid)
+        .toList()[0]
+        .books;
+
+    String bookName = currentCollectionBooks
+        .where((element) => element.id == widget.line.book)
+        .first
+        .name;
+
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: MouseRegion(
+        onEnter: (event) {
+          setState(() {
+            cardColor = FluentTheme.of(context)
+                .cardColor
+                .lerpWith(FluentTheme.of(context).accentColor, .3);
+          });
+        },
+        onExit: (event) {
+          setState(() {
+            cardColor = null;
+          });
+        },
+        cursor: SystemMouseCursors.click,
+        child: GestureDetector(
+          onTap: () {
+            print('tapped');
+            searchNavigator(widget.line);
+          },
+          child: Card(
+            elevation: 1,
+            backgroundColor: cardColor,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.line.verseText,
+                  style: DefaultTextStyle.of(context)
+                      .style
+                      .copyWith(fontFamily: 'font1'),
+                ),
+                const SizedBox(height: 10),
+                Wrap(children: [
+                  Text(
+                    '$bookName ${widget.line.chapter}.${widget.line.verse}  |  ',
+                    style: DefaultTextStyle.of(context).style.copyWith(
+                        fontFamily: 'font1', fontStyle: FontStyle.italic),
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        currentCollectionName,
+                        style: DefaultTextStyle.of(context).style.copyWith(
+                            fontFamily: 'font1', fontStyle: FontStyle.italic),
+                      ),
+                    ],
+                  ),
+                ]),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }

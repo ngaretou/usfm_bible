@@ -29,12 +29,8 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
   String? fontFromAssets;
 
   @override
-  void dispose() {
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    print('paragraph builder build method');
     bool header = false;
 
     List<InlineSpan> styledParagraphFragments = [];
@@ -78,8 +74,8 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
           mouseCursor: SystemMouseCursors.basic,
           recognizer: TapGestureRecognizer()
             ..onTap = () {
-              print(
-                  '${line.collectionid} ${line.book} ${line.chapter} ${line.verse}');
+              // print(
+              //     '${line.collectionid} ${line.book} ${line.chapter} ${line.verse}');
               widget.addVerseToCopyRange(line);
 
               setState(() {});

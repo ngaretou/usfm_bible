@@ -96,15 +96,16 @@ class UserPrefs with ChangeNotifier {
       partOfScrollGroup = true;
 
       userColumns = List.generate(
-          numberOfColumns,
-          (index) => BibleReference(
-              key: UniqueKey(),
-              // columnIndex: index,
-              partOfScrollGroup: partOfScrollGroup,
-              collectionID: "C0${(index + 1).toString()}",
-              bookID: null,
-              chapter: null,
-              verse: null));
+        numberOfColumns,
+        (index) => BibleReference(
+            key: UniqueKey(),
+            // columnIndex: index,
+            partOfScrollGroup: partOfScrollGroup,
+            collectionID: "C0${(index + 1).toString()}",
+            bookID: null,
+            chapter: null,
+            verse: null),
+      );
     }
     // End of default initialization
     _userPrefList = UserPrefList(userColumns: userColumns);

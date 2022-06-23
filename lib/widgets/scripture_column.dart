@@ -2,9 +2,8 @@
 
 // import 'dart:async';
 
-import 'dart:async';
-
 import 'package:fluent_ui/fluent_ui.dart';
+import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:usfm_bible/providers/column_manager.dart';
@@ -17,6 +16,7 @@ import '../models/database_builder.dart';
 import '../widgets/paragraph_builder.dart';
 import 'package:contextmenu/contextmenu.dart';
 import '../providers/user_prefs.dart';
+import '../providers/column_manager.dart';
 
 class ScriptureColumn extends StatefulWidget {
   final int myColumnIndex;
@@ -96,6 +96,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
       String? chapter,
       String? verse,
       bool isInitState = false}) {
+    print('scrollToReference');
     //If we're changing the collection, we need to rebuild the whole column's content.
     //If just navigating in the collection it's scrollTo.
 
@@ -206,12 +207,13 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
           alignment: firstVerseOfChapter ? 0.125 : 0,
           duration: Duration(milliseconds: 500));
 
-      setState(() {});
+      // setState(() {});
     } //end of book/ch/vs else
   }
 
   //On user end scroll notification
   setSelectorsToClosestReferenceAfterScroll() {
+    print('setSelectorsToClosestReferenceAfterScroll');
     // var oldBook = currentBook;
     // var oldChapter = currentChapter;
 
@@ -229,14 +231,26 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
             currentBook = para[l].book;
             currentChapter = para[l].chapter;
             currentVerse = para[l].verse;
-            // if (currentBook != oldBook || currentChapter != oldChapter) {
+
             //reset combobox
             setUpComboBoxesChVs(currentBook, currentChapter, currentVerse);
-            // print(para[l].book);
-            // print(para[l].chapter);
-            // print(para[l].verse);
+            BibleReference ref = BibleReference(
+                key: widget.bibleReference.key,
+                partOfScrollGroup: true,
+                collectionID: currentCollection,
+                bookID: currentBook,
+                chapter: currentChapter,
+                verse: currentVerse);
 
-            setState(() {});
+            // Set scrollgroup ref
+            // Provider.of<ColumnManager>(context, listen: false)
+            //     .setScrollGroupRef = ref;
+
+            // setState(() {
+            //   currentBook = para[l].book;
+            //   currentChapter = para[l].chapter;
+            //   currentVerse = para[l].verse;
+            // });
 
             break outerloop;
             // }
@@ -247,6 +261,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   }
 
   setUpComboBoxesChVs(String newBook, String newChapter, String newVerse) {
+    print('setUpComboBoxesChVs');
     currentBook = newBook;
 
     List<String> temp = versesInCollection
@@ -406,7 +421,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
   @override
   Widget build(BuildContext context) {
-    print('Scripture Column build');
+    print('Scripture Column build ${widget.key}');
 
     if (Provider.of<ColumnManager>(context, listen: true).readyToAddColumn) {
       //this rebuilds when adding a column
@@ -422,7 +437,8 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     int numberOfColumns =
         Provider.of<UserPrefs>(context, listen: true).userColumns.length;
 
-    double windowWidth = MediaQuery.of(context).size.width;
+    double windowWidth = 600;
+    // double windowWidth = MediaQuery.of(context).size.width;
     // print(currentCollection);
     // print('windowWidth $windowWidth');
     // print('numberOfColumns $numberOfColumns');
@@ -615,10 +631,13 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
           // The scripture container
           Expanded(
             child: NotificationListener(
-              onNotification: (dynamic notification) {
-                if (notification is UserScrollNotification) {
-                  Timer(Duration(milliseconds: 200),
-                      setSelectorsToClosestReferenceAfterScroll);
+              onNotification: (ScrollNotification notification) {
+                //This if reduces the number of times the selector method is triggered
+                // print(notification);
+                if (notification is UserScrollNotification &&
+                    notification.direction == ScrollDirection.idle) {
+                  // print(notification.direction);
+                  setSelectorsToClosestReferenceAfterScroll();
                 }
 
                 return true;
@@ -678,7 +697,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                         itemPositionsListener: itemPositionsListener,
                         itemCount: versesByParagraph.length,
                         shrinkWrap: true,
-                        physics: const BouncingScrollPhysics(),
+                        physics: ClampingScrollPhysics(),
                         itemBuilder: (ctx, i) {
                           return ParagraphBuilder(
                             paragraph: versesByParagraph[i],
