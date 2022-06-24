@@ -15,9 +15,24 @@ class ColumnManager with ChangeNotifier {
   }
 
   set setScrollGroupRef(BibleReference ref) {
-    scrollGroupBibleReference = ref;
-    print('setScrollGroupRef in provider');
-    print('${ref.bookID} ${ref.chapter} ${ref.verse}');
+    void setScrollGroup() {
+      scrollGroupBibleReference = ref;
+      print('setScrollGroupRef in provider');
+      print('${ref.bookID} ${ref.chapter} ${ref.verse}');
+      notifyListeners();
+    }
+
+    if (scrollGroupBibleReference == null) {
+      setScrollGroup();
+    } else {
+      bool same = (scrollGroupBibleReference!.bookID == ref.bookID &&
+          scrollGroupBibleReference!.chapter == ref.chapter &&
+          scrollGroupBibleReference!.verse == ref.verse);
+
+      if (!same) {
+        setScrollGroup();
+      }
+    }
   }
 
   void addColumn() {

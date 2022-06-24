@@ -2,8 +2,11 @@
 
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/material.dart' as material;
+import 'package:provider/provider.dart';
 
 import '../models/database_builder.dart';
+import '../providers/user_prefs.dart';
+import '../providers/column_manager.dart';
 
 class SearchWidget extends StatefulWidget {
   final Function closeSearch;
@@ -98,10 +101,10 @@ class _SearchWidgetState extends State<SearchWidget> {
                             children: [
                               Expanded(
                                 child: TextFormBox(
-                                  maxLines: null,
+                                  maxLines: 1,
                                   controller: searchController,
                                   suffixMode: OverlayVisibilityMode.always,
-                                  expands: true,
+                                  expands: false,
                                   suffix: searchController.text.isEmpty
                                       ? null
                                       : IconButton(
@@ -219,8 +222,16 @@ class _SearchResultTileState extends State<SearchResultTile> {
         cursor: SystemMouseCursors.click,
         child: GestureDetector(
           onTap: () {
-            print('tapped');
-            searchNavigator(widget.line);
+            BibleReference ref = BibleReference(
+                key: UniqueKey(),
+                partOfScrollGroup: true,
+                collectionID: widget.line.collectionid,
+                bookID: widget.line.book,
+                chapter: widget.line.chapter,
+                verse: widget.line.verse);
+
+            Provider.of<ColumnManager>(context, listen: false)
+                .setScrollGroupRef = ref;
           },
           child: Card(
             elevation: 1,

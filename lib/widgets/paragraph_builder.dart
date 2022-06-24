@@ -1,10 +1,12 @@
 // ignore_for_file: avoid_print
 
 import 'package:fluent_ui/fluent_ui.dart';
-// import 'package:usfm_bible/providers/user_prefs.dart';
+import 'package:provider/provider.dart';
 
 import '../models/database_builder.dart';
 import 'package:flutter/gestures.dart';
+import '../providers/user_prefs.dart';
+import '../providers/column_manager.dart';
 
 class ParagraphBuilder extends StatefulWidget {
   final List<ParsedLine> paragraph;
@@ -60,17 +62,27 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
     }
 
     TextSpan normalVerseFragment(ParsedLine line) {
-      //Rearrange the incoming data
-
       bool? textSpanUnderline = widget.rangeOfVersesToCopy.any(
           (ParsedLine element) =>
               element.book == line.book &&
               element.chapter == line.chapter &&
               element.verse == line.verse);
 
+      late TextStyle computedTextStyle;
+      BibleReference? ref =
+          Provider.of<ColumnManager>(context, listen: false).getScrollGroupRef;
+// bool test = (
+
+      if (textSpanUnderline) {
+        computedTextStyle = underlineStyle;
+      } else {
+        computedTextStyle = mainTextStyle;
+      }
+
       return TextSpan(
           text: line.verseText,
-          style: textSpanUnderline ? underlineStyle : mainTextStyle,
+          // style: textSpanUnderline ? underlineStyle : mainTextStyle,
+          style: computedTextStyle,
           mouseCursor: SystemMouseCursors.basic,
           recognizer: TapGestureRecognizer()
             ..onTap = () {
