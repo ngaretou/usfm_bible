@@ -268,8 +268,10 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
               verseNumber = "";
             }
 
-            //TODO: final verseText string cleanup - incorporate Changes from appDef
-            // example --- to long dash
+            //TODO: incorporate Changes from appDef
+
+            verseText = verseText.replaceAll('---', '—');
+            verseText = verseText.replaceAll('°', '');
 
             //Now finally add the elements to the List<ParsedVerse>
             verses.add(ParsedLine(

@@ -37,8 +37,11 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
   Widget build(BuildContext context) {
     // print('paragraph builder build method');
     bool header = false;
+    bool poetry = false;
 
     List<InlineSpan> styledParagraphFragments = [];
+
+    Color accentTextColor = FluentTheme.of(context).accentColor;
 
     mainTextStyle = TextStyle(
       fontFamily: 'font1',
@@ -51,6 +54,9 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
 
     TextStyle italicStyle = mainTextStyle.copyWith(fontStyle: FontStyle.italic);
 
+    TextStyle footnoteCallerStyle =
+        mainTextStyle.copyWith(color: accentTextColor);
+
     WidgetSpan verseNumber(String verseNumber) {
       return WidgetSpan(
         child: Transform.translate(
@@ -59,7 +65,7 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
             ' $verseNumber ',
             style: mainTextStyle.copyWith(
                 fontSize: widget.fontSize / 2,
-                color: FluentTheme.of(context).accentColor,
+                color: accentTextColor,
                 decoration: TextDecoration.none),
           ),
         ),
@@ -128,7 +134,7 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
               message: footnoteText,
               child: Text(
                 '*',
-                style: computedTextStyle,
+                style: footnoteCallerStyle,
               ),
             ),
           ),
@@ -154,8 +160,10 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
           String leftToDealWith = line.verseText.substring(dealtWithSoFar);
 
           //Now get the first bit of the string + pre-usfm pair
+
           RegExpMatch? textPlusUsfmPair =
-              RegExp(r'(.*?)(\\)(\w+)(.*?)(\\\w+\*)')
+              //        1     2   3     4   5   6   7
+              RegExp(r'(.*?)(\\)(\w+)(.*?)(\\)(\w+)(\*)')
                   .firstMatch(leftToDealWith);
 
           addThisString(textPlusUsfmPair!.group(1)!); //Pre-USFM pair text
@@ -174,7 +182,35 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
                   textPlusUsfmPair.group(1)!.length;
               continue;
             case 'f':
-              addFootnote(textPlusUsfmPair.group(4)!);
+            case 'ef':
+              //Footnotes \f...\f* and \ef...\ef* contain other paired USFM markers so take care of the footnotes first.
+              //Make sure this is getting the whole footnote
+              if (textPlusUsfmPair.group(3)! == textPlusUsfmPair.group(6)!) {
+                addFootnote(textPlusUsfmPair.group(4)!);
+                dealtWithSoFar = dealtWithSoFar +
+                    textPlusUsfmPair.group(0)!.length -
+                    textPlusUsfmPair.group(1)!.length;
+              } else {
+                String? usfmToPair = textPlusUsfmPair.group(3)!;
+
+                RegExpMatch? footnotePair =
+                    //        1     2   3           4   5   6            7
+                    RegExp("(.*?)(\\\\)($usfmToPair)(.*?)(\\\\)($usfmToPair)(\\*)")
+                        .firstMatch(leftToDealWith);
+                addFootnote(footnotePair!.group(4)!);
+                dealtWithSoFar = dealtWithSoFar +
+                    footnotePair.group(0)!.length -
+                    footnotePair.group(1)!.length;
+              }
+
+              continue;
+            case 'w':
+              // example: \q1 Isaaxa jur °\w Yanqóoba|Yanqóoba:\w*;
+              int endAt = textPlusUsfmPair.group(4)!.indexOf('|');
+
+              addThisString(
+                textPlusUsfmPair.group(4)!.substring(1, endAt),
+              );
               dealtWithSoFar = dealtWithSoFar +
                   textPlusUsfmPair.group(0)!.length -
                   textPlusUsfmPair.group(1)!.length;
@@ -245,13 +281,18 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
           styledParagraphFragments.add(s(line.verseText, fontScaling: 1.2));
           header = true;
           break;
+        case 'q1':
+        case 'q2':
+          normalVerseFragment(line);
+          poetry = true;
+          break;
         default:
           normalVerseFragment(line);
       }
     }
 
     //indentation hack for paragraphs
-    if (styledParagraphFragments.length > 1) {
+    if (styledParagraphFragments.length > 1 && !poetry) {
       styledParagraphFragments.insert(
           0,
           TextSpan(
@@ -263,7 +304,9 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
     }
 
     return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
+      padding: poetry
+          ? const EdgeInsets.only(left: 20, bottom: 0.0)
+          : const EdgeInsets.only(bottom: 8.0),
       child: RichText(
         text: TextSpan(
           children: styledParagraphFragments,

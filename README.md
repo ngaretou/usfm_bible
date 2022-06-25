@@ -46,14 +46,17 @@ Book Collection ID must follow C01, C02 pattern in your SAB project.
 
 ## To do:
 
-- Remember window size and position, column references visible on close...
+- Add in full Charis font and LSG and Ajami Wolof
+- Better scrollbars
+
+- Remember window size and position on close...
+- Remember column references visible on close...
 - Figure out localizations from appDef rather than from Flutter localizations
 - Change window title on desktop https://stackoverflow.com/questions/64800455/how-to-change-app-icon-and-app-name-for-flutter-desktop-application
 - NavPane buttons: Search, Contact Us, About
-- Each column options: font size up and down
 - Figure out permissions - right now you have to manually change permissions to 744 for appdef and all sfm book files after output :(
 - reader mode/no verses
 - read in styles from appdef
 - audio
-- Better scrollbars
 - Pass in ref via URL to go straight there? 
+
