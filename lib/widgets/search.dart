@@ -3,8 +3,10 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/material.dart' as material;
 import 'package:provider/provider.dart';
+import 'package:usfm_bible/widgets/paragraph_builder.dart';
 
 import '../models/database_builder.dart';
+
 import '../providers/user_prefs.dart';
 import '../providers/column_manager.dart';
 
@@ -153,8 +155,8 @@ class _SearchWidgetState extends State<SearchWidget> {
             ),
             searchResults.isEmpty
                 ? const SizedBox(
-                    height: 100,
-                    child: Center(child: Icon(FluentIcons.search_and_apps)))
+                    height: 200,
+                    child: Center(child: Icon(FluentIcons.search, size: 40)))
                 : Flexible(
                     child: ListView.builder(
                         itemCount: searchResults.length,
@@ -185,10 +187,6 @@ class _SearchResultTileState extends State<SearchResultTile> {
 
   @override
   Widget build(BuildContext context) {
-    // Color cardColor = FluentTheme.of(context)
-    //     .cardColor
-    //     .lerpWith(FluentTheme.of(context).accentColor, .01);
-
     String currentCollectionName = collections
         .where((element) => element.id == widget.line.collectionid)
         .first
@@ -203,6 +201,19 @@ class _SearchResultTileState extends State<SearchResultTile> {
         .where((element) => element.id == widget.line.book)
         .first
         .name;
+
+    TextStyle computedTextStyle = TextStyle(
+      fontFamily: 'font1',
+      fontSize: 14,
+      color: DefaultTextStyle.of(context).style.color,
+    );
+
+    List<InlineSpan> styledParagraphFragments = verseComposer(
+      line: widget.line,
+      computedTextStyle: computedTextStyle,
+      includeFootnotes: false,
+      accentTextColor: FluentTheme.of(context).accentColor,
+    ).versesAsSpans;
 
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -234,17 +245,22 @@ class _SearchResultTileState extends State<SearchResultTile> {
                 .setScrollGroupRef = ref;
           },
           child: Card(
-            elevation: 1,
+            // elevation: 1,
             backgroundColor: cardColor,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  widget.line.verseText,
-                  style: DefaultTextStyle.of(context)
-                      .style
-                      .copyWith(fontFamily: 'font1'),
+                RichText(
+                  text: TextSpan(
+                    children: styledParagraphFragments,
+                  ),
                 ),
+                // Text(
+                //   widget.line.verseText,
+                //   style: DefaultTextStyle.of(context)
+                //       .style
+                //       .copyWith(fontFamily: 'font1'),
+                // ),
                 const SizedBox(height: 10),
                 Wrap(children: [
                   Text(

@@ -104,6 +104,22 @@ class MyApp extends StatelessWidget {
             focusTheme: FocusThemeData(
               glowFactor: is10footScreen() ? 2.0 : 0.0,
             ),
+            scrollbarTheme: const ScrollbarThemeData(
+              // scrollbarColor: Colors.red,
+              // scrollbarPressingColor: Colors.green,
+              thickness: 6.0,
+              hoveringThickness: 7.0,
+              // backgroundColor: Color.fromARGB(204, 126, 126, 126),
+              // radius: const Radius.circular(100.0),
+              // hoveringRadius: const Radius.circular(100.0),
+              crossAxisMargin: 2.0,
+              hoveringCrossAxisMargin: 1.5,
+              mainAxisMargin: 4.0,
+              hoveringMainAxisMargin: 3.0,
+              minThumbLength: 48.0,
+              trackBorderColor: Color.fromARGB(204, 126, 126, 126),
+              hoveringTrackBorderColor: Color.fromARGB(204, 126, 126, 126),
+            ),
           ),
           theme: ThemeData(
             accentColor: appTheme.color,
@@ -111,7 +127,24 @@ class MyApp extends StatelessWidget {
             focusTheme: FocusThemeData(
               glowFactor: is10footScreen() ? 2.0 : 0.0,
             ),
+            scrollbarTheme: const ScrollbarThemeData(
+              // scrollbarColor: Colors.red,
+              // scrollbarPressingColor: Colors.green,
+              thickness: 6.0,
+              hoveringThickness: 7.0,
+              // backgroundColor: Color.fromARGB(204, 126, 126, 126),
+              // radius: const Radius.circular(100.0),
+              // hoveringRadius: const Radius.circular(100.0),
+              crossAxisMargin: 2.0,
+              hoveringCrossAxisMargin: 1.5,
+              mainAxisMargin: 4.0,
+              hoveringMainAxisMargin: 3.0,
+              minThumbLength: 48.0,
+              trackBorderColor: Color.fromARGB(204, 126, 126, 126),
+              hoveringTrackBorderColor: Color.fromARGB(204, 126, 126, 126),
+            ),
           ),
+
           //Local
           // localizationsDelegates: const [
           //   // AppLocalizations.delegate,

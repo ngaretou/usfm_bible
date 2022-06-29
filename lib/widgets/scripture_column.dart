@@ -4,6 +4,7 @@
 
 import 'dart:async';
 
+// import 'package:flutter/material.dart' as material;
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
@@ -152,7 +153,8 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
       for (var i = 0; i < versesInCollection.length; i++) {
         //if not new paragraph marker, add the line to the current paragraph
-        if (!versesInCollection[i].verseStyle.contains(RegExp(r'[p,m,s\d*]'))) {
+        if (!versesInCollection[i].verseStyle.contains(RegExp(
+            r'[p,m,po,pr,cls,pmo,pm,pmc,pmr,pi\d,mi,nb,pc,ph\d,b,mt\d,mte\d,ms\d,mr,s\d*,sr,r,d,sp,sd\d,q,q1,q2,qr,qc,qa,qm\d,qd,lh,li\d,lf,lim\d]'))) {
           currentParagraph.add(versesInCollection[i]);
         } else {
           //If it is a new paragraph marker, add the existing verses to the big list, and start over with a new paragraph
@@ -408,17 +410,19 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     // String lineBreak = kIsWeb ? '%0d%0a' : '\n';
     String lineBreak = '\n';
 
+    for (var i = 0; i < rangeOfVersesToCopy.length; i++) {
+      var temp =
+          verseComposer(line: rangeOfVersesToCopy[i], includeFootnotes: false)
+              .versesAsString;
+      textToReturn = '$textToReturn$temp ';
+    }
+
+    //Reference
     //Get collection name in regular text
     String currentCollectionName = collections
         .where((element) => element.id == currentCollection.value)
         .first
         .name;
-
-    for (var i = 0; i < rangeOfVersesToCopy.length; i++) {
-      textToReturn = '$textToReturn${rangeOfVersesToCopy[i].verseText} ';
-    }
-
-    //Reference
 
     //Get the books
     if (rangeOfVersesToCopy.first.book == rangeOfVersesToCopy.last.book) {
@@ -719,71 +723,72 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
                 return true;
               },
-              child: ScrollConfiguration(
-                behavior:
-                    ScrollConfiguration.of(context).copyWith(scrollbars: true),
-                child: Padding(
-                  padding: wideWindow
-                      ? EdgeInsets.only(
-                          left: wideWindowPadding,
-                          right: wideWindowPadding,
-                          top: 0,
-                          bottom: 0)
-                      : const EdgeInsets.only(
-                          left: 12.0, right: 4, top: 0, bottom: 0),
-                  child: ContextMenuArea(
-                    builder: (context) => [
-                      GestureDetector(
-                        child: const ListTile(
-                            leading: Icon(FluentIcons.copy),
-                            title: Text('Copy')),
-                        onTap: () {
-                          Navigator.of(context).pop();
-                          Clipboard.setData(
-                              ClipboardData(text: textToShareOrCopy()));
-                        },
-                      ),
-                      GestureDetector(
-                        child: const ListTile(
-                            leading: Icon(FluentIcons.share),
-                            title: Text('Share')),
-                        onTap: () async {
-                          Navigator.of(context).pop();
-                          //if it's not the web app, share using the device share function
-                          String textToShare = textToShareOrCopy();
-                          if (!kIsWeb) {
-                            Share.share(textToShare);
-                          } else {
-                            //If it's the web app version best way to share is probably email, so put the text to share in an email
-                            final String url =
-                                "mailto:?subject=&body=$textToShare";
+              // child: ScrollConfiguration(
+              //   behavior: ScrollConfiguration.of(context).copyWith(
+              //     scrollbars: true,
+              //     overscroll: true,
+              //     platform: TargetPlatform.macOS,
+              //   ),
+              child: Padding(
+                padding: wideWindow
+                    ? EdgeInsets.only(
+                        left: wideWindowPadding,
+                        right: wideWindowPadding,
+                        top: 0,
+                        bottom: 0)
+                    : const EdgeInsets.only(
+                        left: 12.0, right: 4, top: 0, bottom: 0),
+                child: ContextMenuArea(
+                  builder: (context) => [
+                    GestureDetector(
+                      child: const ListTile(
+                          leading: Icon(FluentIcons.copy), title: Text('Copy')),
+                      onTap: () {
+                        Navigator.of(context).pop();
+                        Clipboard.setData(
+                            ClipboardData(text: textToShareOrCopy()));
+                      },
+                    ),
+                    GestureDetector(
+                      child: const ListTile(
+                          leading: Icon(FluentIcons.share),
+                          title: Text('Share')),
+                      onTap: () async {
+                        Navigator.of(context).pop();
+                        //if it's not the web app, share using the device share function
+                        String textToShare = textToShareOrCopy();
+                        if (!kIsWeb) {
+                          Share.share(textToShare);
+                        } else {
+                          //If it's the web app version best way to share is probably email, so put the text to share in an email
+                          final String url =
+                              "mailto:?subject=&body=$textToShare";
 
-                            if (await canLaunchUrl(Uri.parse(url))) {
-                              await launchUrl(Uri.parse(url));
-                            } else {
-                              throw 'Could not launch $url';
-                            }
+                          if (await canLaunchUrl(Uri.parse(url))) {
+                            await launchUrl(Uri.parse(url));
+                          } else {
+                            throw 'Could not launch $url';
                           }
-                        },
-                      ),
-                    ],
-                    child: ScrollablePositionedList.builder(
-                        padding: EdgeInsets.only(right: 12),
-                        initialAlignment: 1,
-                        itemScrollController: itemScrollController,
-                        itemPositionsListener: itemPositionsListener,
-                        itemCount: versesByParagraph.length,
-                        shrinkWrap: true,
-                        physics: ClampingScrollPhysics(),
-                        itemBuilder: (ctx, i) {
-                          return ParagraphBuilder(
-                            paragraph: versesByParagraph[i],
-                            fontSize: baseFontSize,
-                            rangeOfVersesToCopy: rangeOfVersesToCopy,
-                            addVerseToCopyRange: addVerseToCopyRange,
-                          );
-                        }),
-                  ),
+                        }
+                      },
+                    ),
+                  ],
+                  child: ScrollablePositionedList.builder(
+                      padding: EdgeInsets.only(right: 12),
+                      initialAlignment: 1,
+                      itemScrollController: itemScrollController,
+                      itemPositionsListener: itemPositionsListener,
+                      itemCount: versesByParagraph.length,
+                      shrinkWrap: false,
+                      physics: ClampingScrollPhysics(),
+                      itemBuilder: (ctx, i) {
+                        return ParagraphBuilder(
+                          paragraph: versesByParagraph[i],
+                          fontSize: baseFontSize,
+                          rangeOfVersesToCopy: rangeOfVersesToCopy,
+                          addVerseToCopyRange: addVerseToCopyRange,
+                        );
+                      }),
                 ),
               ),
             ),
