@@ -31,34 +31,49 @@ ComposedVerses verseComposer(
   List<InlineSpan> spansToReturn = [];
   String textToReturn = '';
   TextStyle? footnoteCallerStyle;
+  int dealtWithSoFar = 0;
+  String leftToDealWith = "";
+
   if (computedTextStyle != null) {
     footnoteCallerStyle = computedTextStyle.copyWith(color: accentTextColor);
   }
 
   //The method for adding the text strings we're about to parse
-  addThisString(String thisString, {TextStyle? textStyle}) {
+  void addThisString(String thisString,
+      {TextStyle? textStyle, Function? cleaningFunction}) {
+    //The function to run when all USFM are accounted for
+    stringIsCleanAddIt() {
+      RegExpMatch? match = RegExp(r'(\\)').firstMatch(thisString);
+
+      if (match != null) {
+        print(
+            'Problem: A slash is here but should not be at ${line.collectionid} ${line.book} ${line.chapter} ${line.verse} $thisString');
+      }
+
+      //if there is no function incoming
+      if (tileOnTap == null) {
+        spansToReturn.add(TextSpan(
+          text: thisString,
+          style: textStyle ?? computedTextStyle,
+        ));
+      } else {
+        //if there is a function (this is usually the add verses to copy range from paragraph builder)
+        spansToReturn.add(TextSpan(
+            text: thisString,
+            style: textStyle ?? computedTextStyle,
+            mouseCursor: SystemMouseCursors.basic,
+            recognizer: TapGestureRecognizer()..onTap = () => tileOnTap()));
+      }
+      textToReturn = '$textToReturn$thisString';
+    }
+
     RegExpMatch? match = RegExp(r'(\\)').firstMatch(thisString);
 
     if (match != null) {
-      // throw 'A slash is here but should not be at ${line.collectionid} ${line.book} ${line.chapter} ${line.verse} $thisString';
-      print(
-          'A slash is here but should not be at ${line.collectionid} ${line.book} ${line.chapter} ${line.verse} $thisString');
-    }
-    //if there is no function incoming
-    if (tileOnTap == null) {
-      spansToReturn.add(TextSpan(
-        text: thisString,
-        style: textStyle ?? computedTextStyle,
-      ));
+      if (cleaningFunction != null) cleaningFunction(thisString);
     } else {
-      //if there is a function (this is usually the add verses to copy range from paragraph builder)
-      spansToReturn.add(TextSpan(
-          text: thisString,
-          style: textStyle ?? computedTextStyle,
-          mouseCursor: SystemMouseCursors.basic,
-          recognizer: TapGestureRecognizer()..onTap = () => tileOnTap()));
+      stringIsCleanAddIt();
     }
-    textToReturn = '$textToReturn$thisString';
   } // addThisString end
 
   addFootnote(String footnoteText) {
@@ -77,109 +92,127 @@ ComposedVerses verseComposer(
     }
   }
 
-  //Here begins the character style searching
-  Iterable<RegExpMatch>? allPairedUsfmMarkers =
-      RegExp(r'(\\)(\w+)(.*?)(\\\w+\*)').allMatches(line.verseText);
+  void pairedUsfmFindingAndFormatting(String text) {
+    //Here begins the character style searching
+    Iterable<RegExpMatch>? allPairedUsfmMarkers =
+        RegExp(r'(\\)(\w+)(.*?)(\\\w+\*)').allMatches(line.verseText);
 
-  //first step - if no slashes, just add the whole line
-  if (allPairedUsfmMarkers.isEmpty) {
-    addThisString(line.verseText);
-  } else {
-    //dealthWithSofar is a little error checking and progress caching, making sure we're dealing with all the text
-    int dealtWithSoFar = 0;
-    String leftToDealWith = "";
+    //first step - if no slashes, just add the whole line
+    if (allPairedUsfmMarkers.isEmpty) {
+      addThisString(line.verseText);
+      dealtWithSoFar = line.verseText.length;
+    } else {
+      //dealthWithSofar is a little error checking and progress caching, making sure we're dealing with all the text
 
-    //So we did find at least one set of paired USFM, for example the 'f' in \f....\f* or the 'add' in \add  ... \add*
-    //We know how many paired usfm markers we found, so we can search for them one at a time.
-    for (var i = 0; i < allPairedUsfmMarkers.length; i++) {
-      //First let's not deal with the whole line, but what we've not dealt with so far - so 'first' becomes 'next' below
-      String leftToDealWith = line.verseText.substring(dealtWithSoFar);
+      //So we did find at least one set of paired USFM, for example the 'f' in \f....\f* or the 'add' in \add  ... \add*
+      //We know how many paired usfm markers we found, so we can search for them one at a time.
+      for (var i = 0; i < allPairedUsfmMarkers.length; i++) {
+        //First let's not deal with the whole line, but what we've not dealt with so far - so 'first' becomes 'next' below
+        String leftToDealWith = line.verseText.substring(dealtWithSoFar);
 
-      //Now get the first bit of the string + pre-usfm pair
+        //Now get the first bit of the string + pre-usfm pair -
+        //note the \3 matches the third group, so this ensures we have a matched pair
+        RegExpMatch? textPlusUsfmPair =
+            //        1     2   3     4   5   6   7
+            RegExp(r'(.*?)(\\)(\+?\w+)(.*?)(\\)(\3)(\*)')
+                .firstMatch(leftToDealWith);
 
-      RegExpMatch? textPlusUsfmPair =
-          //        1     2   3     4   5   6   7
-          RegExp(r'(.*?)(\\)(\+?\w+)(.*?)(\\)(\+?\w+)(\*)')
-              .firstMatch(leftToDealWith);
+        if (textPlusUsfmPair != null) {
+          addThisString(textPlusUsfmPair.group(1)!,
+              cleaningFunction:
+                  pairedUsfmFindingAndFormatting); //Pre-USFM pair text
+          dealtWithSoFar = dealtWithSoFar + textPlusUsfmPair.group(1)!.length;
 
-      addThisString(textPlusUsfmPair!.group(1)!); //Pre-USFM pair text
-      dealtWithSoFar = dealtWithSoFar + textPlusUsfmPair.group(1)!.length;
+          //Note group(0) means all groups. group(1) means first group and so on.
+          //Here match.group(2) is for example the 'f' in \f....\f* or the 'add' in \add  ... \add*
+          //match.group(3) is the text inside those markers
 
-      //Note group(0) means all groups. group(1) means first group and so on.
-      //Here match.group(2) is for example the 'f' in \f....\f* or the 'add' in \add  ... \add*
-      //match.group(3) is the text inside those markers
+          //\q1 «Yàlla du ko wallu!» \qs \+w Selaw|selaw:\+w*\qs*\f + \fr 3.3 \fk Selaw: \ft jàpp nañu ne ndigal la luy taxawloo jàngkat yi, te jombul xalam yi wéy ba tey. Waaye man naa nekk itam ndigal ngir xalam yeek jàngkat yi gëna xumbal.\f*.
+          //    \qs \+w Selaw|selaw:\+w*\qs*
 
-      //\q1 «Yàlla du ko wallu!» \qs \+w Selaw|selaw:\+w*\qs*\f + \fr 3.3 \fk Selaw: \ft jàpp nañu ne ndigal la luy taxawloo jàngkat yi, te jombul xalam yi wéy ba tey. Waaye man naa nekk itam ndigal ngir xalam yeek jàngkat yi gëna xumbal.\f*.
-      switch (textPlusUsfmPair.group(3)) {
-        case 'add':
-        case 'qs':
-          //take one char off the add b/c an extra space is there
-          addThisString(textPlusUsfmPair.group(4)!.substring(1),
-              textStyle: computedTextStyle != null
-                  ? computedTextStyle.copyWith(fontStyle: FontStyle.italic)
-                  : const TextStyle());
-          dealtWithSoFar = dealtWithSoFar +
-              textPlusUsfmPair.group(0)!.length -
-              textPlusUsfmPair.group(1)!.length;
-          continue;
-        case 'f':
-        case 'ef':
-          //Footnotes \f...\f* and \ef...\ef* contain other paired USFM markers so take care of the footnotes first.
-          //Make sure this is getting the whole footnote
-          if (textPlusUsfmPair.group(3)! == textPlusUsfmPair.group(6)!) {
-            addFootnote(textPlusUsfmPair.group(4)!);
-            dealtWithSoFar = dealtWithSoFar +
-                textPlusUsfmPair.group(0)!.length -
-                textPlusUsfmPair.group(1)!.length;
-          } else {
-            String? usfmToPair = textPlusUsfmPair.group(3)!;
+          //these are character styles
+          switch (textPlusUsfmPair.group(3)) {
+            case 'add':
+            case 'qs':
+              //take one char off the add b/c an extra space is there
+              addThisString(textPlusUsfmPair.group(4)!.substring(1),
+                  textStyle: computedTextStyle != null
+                      ? computedTextStyle.copyWith(fontStyle: FontStyle.italic)
+                      : const TextStyle());
+              dealtWithSoFar = dealtWithSoFar +
+                  textPlusUsfmPair.group(0)!.length -
+                  textPlusUsfmPair.group(1)!.length;
+              continue;
+            case 'f':
+            case 'ef':
+              //Footnotes \f...\f* and \ef...\ef* contain other paired USFM markers so take care of the footnotes first.
+              //Make sure this is getting the whole footnote
+              if (textPlusUsfmPair.group(3)! == textPlusUsfmPair.group(6)!) {
+                addFootnote(textPlusUsfmPair.group(4)!);
+                dealtWithSoFar = dealtWithSoFar +
+                    textPlusUsfmPair.group(0)!.length -
+                    textPlusUsfmPair.group(1)!.length;
+              } else {
+                String? usfmToPair = textPlusUsfmPair.group(3)!;
 
-            RegExpMatch? footnotePair =
-                //        1     2   3           4   5   6            7
-                RegExp("(.*?)(\\\\)($usfmToPair)(.*?)(\\\\)($usfmToPair)(\\*)")
-                    .firstMatch(leftToDealWith);
-            addFootnote(footnotePair!.group(4)!);
-            dealtWithSoFar = dealtWithSoFar +
-                footnotePair.group(0)!.length -
-                footnotePair.group(1)!.length;
+                RegExpMatch? footnotePair =
+                    //        1     2   3           4   5   6            7
+                    RegExp("(.*?)(\\\\)($usfmToPair)(.*?)(\\\\)($usfmToPair)(\\*)")
+                        .firstMatch(leftToDealWith);
+                addFootnote(footnotePair!.group(4)!);
+                dealtWithSoFar = dealtWithSoFar +
+                    footnotePair.group(0)!.length -
+                    footnotePair.group(1)!.length;
+              }
+              continue;
+            case 'w':
+              // case '+w':
+              // example: \q1 Isaaxa jur °\w Yanqóoba|Yanqóoba:\w*;
+              int endAt = textPlusUsfmPair.group(4)!.indexOf('|');
+
+              addThisString(
+                textPlusUsfmPair.group(4)!.substring(1, endAt),
+              );
+              dealtWithSoFar = dealtWithSoFar +
+                  textPlusUsfmPair.group(0)!.length -
+                  textPlusUsfmPair.group(1)!.length;
+              continue;
+            default:
+              addThisString(textPlusUsfmPair.group(4)!);
+              dealtWithSoFar = dealtWithSoFar +
+                  textPlusUsfmPair.group(0)!.length -
+                  textPlusUsfmPair.group(1)!.length;
           }
+        } else {
+          //No USFM pairs left
+          addThisString(leftToDealWith,
+              cleaningFunction: pairedUsfmFindingAndFormatting);
+          dealtWithSoFar = dealtWithSoFar + leftToDealWith.length;
+        }
+      } //for loop
 
-          continue;
-        case 'w':
-        case '+w':
-          // example: \q1 Isaaxa jur °\w Yanqóoba|Yanqóoba:\w*;
-          int endAt = textPlusUsfmPair.group(4)!.indexOf('|');
+      //That's the paired usfm...the verse could end with a footnote or could end with more text.
+      leftToDealWith = line.verseText.substring(dealtWithSoFar);
+      RegExpMatch? match = RegExp(r'(.*)').firstMatch(leftToDealWith);
 
-          addThisString(
-            textPlusUsfmPair.group(4)!.substring(1, endAt),
-          );
-          dealtWithSoFar = dealtWithSoFar +
-              textPlusUsfmPair.group(0)!.length -
-              textPlusUsfmPair.group(1)!.length;
-          continue;
-        default:
-          addThisString(textPlusUsfmPair.group(4)!);
-          dealtWithSoFar = dealtWithSoFar +
-              textPlusUsfmPair.group(0)!.length -
-              textPlusUsfmPair.group(1)!.length;
+      if (match != null) {
+        addThisString(match.group(0)!);
+        dealtWithSoFar = dealtWithSoFar + match.group(0)!.length;
       }
-    } //for loop
-
-    //That's the paired usfm...the verse could end with a footnote or could end with more text.
-    leftToDealWith = line.verseText.substring(dealtWithSoFar);
-    RegExpMatch? match = RegExp(r'(.*)').firstMatch(leftToDealWith);
-
-    if (match != null) {
-      addThisString(match.group(0)!);
-      dealtWithSoFar = dealtWithSoFar + match.group(0)!.length;
-    }
-
-    if (dealtWithSoFar != line.verseText.length) {
-      throw "Problem with line parsing in paragraph builder at ${line.collectionid} ${line.book} ${line.chapter} ${line.verse} ${line.verseText}";
     }
   }
+
+  pairedUsfmFindingAndFormatting(line.verseText);
+
   ComposedVerses returnInfo = ComposedVerses(
       versesAsSpans: spansToReturn, versesAsString: textToReturn);
+  if (dealtWithSoFar != line.verseText.length) {
+    // throw "Problem with line parsing in paragraph builder at ${line.collectionid} ${line.book} ${line.chapter} ${line.verse} ${line.verseText}";
+    print(
+        "Problem with line parsing in paragraph builder at ${line.collectionid} ${line.book} ${line.chapter} ${line.verse} ${line.verseText}");
+    print('$dealtWithSoFar dealtWithSoFar');
+    print('${line.verseText.length} line.verseText.length');
+  }
   return returnInfo;
 }
 
@@ -224,6 +257,8 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
     TextStyle underlineStyle =
         mainTextStyle.copyWith(decoration: TextDecoration.underline);
 
+    TextStyle italicStyle = mainTextStyle.copyWith(fontStyle: FontStyle.italic);
+
     WidgetSpan verseNumber(String verseNumber) {
       return WidgetSpan(
         child: Transform.translate(
@@ -242,7 +277,8 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
 //\v 50 Adoña nag ragal Suleymaan, daldi dem jàpp ca béjjén ya ca cati °\w sarxalukaay|sarxalukaay b-:\w* ba, ngir rawale bakkanam\f + \fr 1.50 \ft Jàpp ca sarxalukaay ba ca kër Yàlla ga, nit daan na ko def, di ko sàkkoo rawale bakkanam. Seetal ci \bk Mucc ga\bk* 21.14.\f*.
 //1Ki 1.50 - see paired usfm inside \f...\f* ndeysaan
 
-    List<InlineSpan> normalVerseFragment(ParsedLine line) {
+    List<InlineSpan> normalVerseFragment(ParsedLine line,
+        {TextStyle? paraStyle}) {
       late TextStyle computedTextStyle;
 
       //Check to see if this text belongs to the range of verses to copy
@@ -261,6 +297,8 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
       //Compute the style
       if (textSpanUnderline) {
         computedTextStyle = underlineStyle;
+      } else if (paraStyle != null) {
+        computedTextStyle = paraStyle;
       } else {
         computedTextStyle = mainTextStyle;
       }
@@ -292,6 +330,7 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
     }
 
     for (var line in widget.paragraph) {
+      //These are for paragraph styles
       switch (line.verseStyle) {
         case 'v':
           styledParagraphFragments.add(verseNumber(line.verse));
@@ -333,6 +372,10 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
         case 'q2':
           styledParagraphFragments.addAll(normalVerseFragment(line));
           poetry = true;
+          break;
+        case 'd':
+          styledParagraphFragments
+              .addAll(normalVerseFragment(line, paraStyle: italicStyle));
           break;
         default:
           styledParagraphFragments.addAll(normalVerseFragment(line));

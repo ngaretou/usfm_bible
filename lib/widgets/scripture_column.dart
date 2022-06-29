@@ -165,6 +165,10 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
       setUpComboBoxesChVs(
           currentBook.value, currentChapter.value, currentVerse.value);
     } else {
+      String oldBook = currentBook.value;
+      String oldChapter = currentChapter.value;
+      String oldVerse = currentVerse.value;
+
       //Above is collection change, which resets the whole column.
       //Here is where the choice of book, ch, vs comes, and is a scrollTo with the same content
       //Find index of the paragraph that has the desired verse
@@ -203,28 +207,34 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
           break;
         }
       } //for loop
+
+      //Earlier possibility for no result:
       //If there is no result- the desired reference is not in the collection,
       //unhook from the scrollgroup and go to first reference in collection
-      if (navigateToParagraph == null) {
-        partOfScrollGroup = false;
+      // if (navigateToParagraph == null) {
+      //   partOfScrollGroup = false;
 
-        currentBook.value = currentCollectionBooks[0].id;
+      //   currentBook.value = currentCollectionBooks[0].id;
 
-        currentChapter.value = versesInCollection
-            .firstWhere((element) => element.book == currentBook.value)
-            .chapter;
+      //   currentChapter.value = versesInCollection
+      //       .firstWhere((element) => element.book == currentBook.value)
+      //       .chapter;
 
-        currentVerse.value = versesInCollection
-            .firstWhere((element) =>
-                element.book == currentBook.value &&
-                element.chapter == currentChapter.value &&
-                element.verse != "")
-            .verse;
+      //   currentVerse.value = versesInCollection
+      //       .firstWhere((element) =>
+      //           element.book == currentBook.value &&
+      //           element.chapter == currentChapter.value &&
+      //           element.verse != "")
+      //       .verse;
 
-        itemScrollController.scrollTo(
-            index: 0, alignment: 0.125, duration: Duration(milliseconds: 500));
-        setState(() {});
-      } else {
+      //   itemScrollController.scrollTo(
+      //       index: 0, alignment: 0.125, duration: Duration(milliseconds: 500));
+      //   setState(() {});
+      // }
+
+      //If no result, just hang on, don't scroll, just stay
+      if (navigateToParagraph != null) {
+        //If it's the normal situation, we did find the reference, so go there.
         setUpComboBoxesChVs(
             currentBook.value, currentChapter.value, currentVerse.value);
 
@@ -251,6 +261,10 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
           Provider.of<ColumnManager>(context, listen: false).setScrollGroupRef =
               ref;
         }
+      } else {
+        currentBook.value = oldBook;
+        currentChapter.value = oldChapter;
+        currentVerse.value = oldVerse;
       }
     } //end of book/ch/vs else
   }
