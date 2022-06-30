@@ -46,8 +46,7 @@ Book Collection ID must follow C01, C02 pattern in your SAB project.
 
 ## To do:
 
-- Add in full Charis font and LSG and Ajami Wolof
-- Better scrollbars
+- Add in Ajami Wolof
 
 - Remember window size and position on close...
 - Remember column references visible on close...
