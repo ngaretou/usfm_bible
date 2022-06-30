@@ -222,7 +222,7 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
           verseStyle: 'mt1'));
 
       for (var chapter in chapters) {
-        RegExpMatch? match = RegExp(r'(^\d+)(\s)').firstMatch(chapter);
+        RegExpMatch? match = RegExp(r'(\d+)(\s)').firstMatch(chapter);
         //ˆ: beginning of line; \d digit, + 1 or more; \s whitespace
         String? chapterNumber = match?.group(1);
 
@@ -272,6 +272,8 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
 
             verseText = verseText.replaceAll('---', '—');
             verseText = verseText.replaceAll('°', '');
+            verseText = verseText.replaceAll('⸤', '');
+            verseText = verseText.replaceAll('⸥', '');
 
             //Now finally add the elements to the List<ParsedVerse>
             verses.add(ParsedLine(

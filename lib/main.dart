@@ -117,8 +117,8 @@ class MyApp extends StatelessWidget {
               mainAxisMargin: 4.0,
               hoveringMainAxisMargin: 3.0,
               minThumbLength: 48.0,
-              trackBorderColor: Color.fromARGB(204, 126, 126, 126),
-              hoveringTrackBorderColor: Color.fromARGB(204, 126, 126, 126),
+              trackBorderColor: Color.fromARGB(50, 126, 126, 126),
+              hoveringTrackBorderColor: Color.fromARGB(50, 126, 126, 126),
             ),
           ),
           theme: ThemeData(
@@ -140,8 +140,8 @@ class MyApp extends StatelessWidget {
               mainAxisMargin: 4.0,
               hoveringMainAxisMargin: 3.0,
               minThumbLength: 48.0,
-              trackBorderColor: Color.fromARGB(204, 126, 126, 126),
-              hoveringTrackBorderColor: Color.fromARGB(204, 126, 126, 126),
+              trackBorderColor: Color.fromARGB(50, 126, 126, 126),
+              hoveringTrackBorderColor: Color.fromARGB(50, 126, 126, 126),
             ),
           ),
 

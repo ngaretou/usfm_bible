@@ -3,7 +3,7 @@
   <project-name>Test App Project Name</project-name>
   <project-description></project-description>
 
-  <app-name lang="default">Kàddug Yàlla Gi Web App</app-name>
+  <app-name lang="default">Test App Name</app-name>
   <apk-filename append-version="true">Test_App.apk</apk-filename>
   <package>org.mbs.test.test</package>
   <version code="2" name="1.0"/>
@@ -114,7 +114,7 @@
     <feature name="chapter-number-format" value="drop-cap"/>
     <feature name="verse-layout" value="paragraphs"/>
     <feature name="wj-enabled" value="false"/>
-    <feature name="show-red-letters" value="true"/>
+    <feature name="show-red-letters" value="false"/>
     <feature name="show-glossary-words" value="true"/>
     <feature name="show-footnotes" value="true"/>
     <feature name="show-cross-refs" value="true"/>
@@ -213,31 +213,31 @@
     </font-handling>
 
     <font family="font1">
-      <font-name>Charis SIL Compact</font-name>
-      <display-name>Charis SIL Compact</display-name>
-      <filename format="truetype">CharisSILCompact-R.ttf</filename>
+      <font-name>Charis SIL (Full)</font-name>
+      <display-name>Charis SIL</display-name>
+      <filename format="truetype">CharisSIL-R.ttf</filename>
       <style-decl property="font-weight" value="normal"/>
       <style-decl property="font-style" value="normal"/>
     </font>
     <font family="font1">
-      <font-name>Charis SIL Compact Bold</font-name>
-      <display-name>Charis SIL Compact</display-name>
-      <filename format="truetype">CharisSILCompact-B.ttf</filename>
+      <font-name>Charis SIL (Full) Bold</font-name>
+      <display-name>Charis SIL</display-name>
+      <filename format="truetype">CharisSIL-B.ttf</filename>
       <style-decl property="font-weight" value="bold"/>
       <style-decl property="font-style" value="normal"/>
     </font>
     <font family="font2">
-      <font-name>Gentium Plus Compact</font-name>
-      <display-name>Gentium Plus Compact</display-name>
-      <filename format="truetype">GentiumPlusCompact-R.ttf</filename>
+      <font-name>Harmattan</font-name>
+      <display-name>Harmattan</display-name>
+      <filename format="truetype">Harmattan-Regular.ttf</filename>
       <style-decl property="font-weight" value="normal"/>
       <style-decl property="font-style" value="normal"/>
     </font>
-    <font family="font3">
-      <font-name>Andika Compact</font-name>
-      <display-name>Andika Compact</display-name>
-      <filename format="truetype">AndikaCompact-R.ttf</filename>
-      <style-decl property="font-weight" value="normal"/>
+    <font family="font2">
+      <font-name>Harmattan Bold</font-name>
+      <display-name>Harmattan</display-name>
+      <filename format="truetype">Harmattan-Bold.ttf</filename>
+      <style-decl property="font-weight" value="bold"/>
       <style-decl property="font-style" value="normal"/>
     </font>
   </fonts>
@@ -1213,7 +1213,7 @@
     </book>
   </books>
 
-  <books id="C03">
+  <books id="C04">
     <book-collection-name>Lexham English Bible</book-collection-name>
     <book-collection-abbrev>LEB</book-collection-abbrev>
     <book-collection-description></book-collection-description>
@@ -2156,6 +2156,615 @@
     </book>
   </books>
 
+  <books id="C03">
+    <book-collection-name>Louis Segond</book-collection-name>
+    <book-collection-abbrev>LSG</book-collection-abbrev>
+    <book-collection-description>Louis Segond</book-collection-description>
+
+    <features type="bc">
+      <feature name="show-scripture-refs" value="true"/>
+      <feature name="ref-chapter-verse-separator" value=":"/>
+      <feature name="ref-verse-range-separator" value="-"/>
+      <feature name="ref-verse-list-separator" value=","/>
+      <feature name="ref-chapter-range-separator" value="-"/>
+      <feature name="ref-chapter-list-separator" value=";"/>
+      <feature name="ref-extra-material" value=""/>
+      <feature name="numerals-type" value="default"/>
+      <feature name="bc-allow-single-pane" value="true"/>
+      <feature name="bc-allow-copy-text" value="true"/>
+      <feature name="bc-allow-long-press-select" value="true"/>
+      <feature name="bc-allow-share-text" value="true"/>
+      <feature name="bc-allow-text-on-image" value="true"/>
+      <feature name="bc-allow-text-on-image-edit-text" value="true"/>
+      <feature name="bc-allow-verse-of-the-day" value="true"/>
+      <feature name="bc-allow-share-audio" value="false"/>
+      <feature name="bc-allow-share-video" value="false"/>
+    </features>
+
+    <metadata>
+      <meta name="copyright-text" content="Cette Bible est dans le domaine public. Il n&apos;est pas protégé par copyright."/>
+    </metadata>
+
+    <styles-info>
+      <text-font family="font1"/>
+      <text-size value="20"/>
+      <line-height value="120"/>
+      <text-direction value="LTR"/>
+      <numeral-system value="Default"/>
+      <verse-number-style value="default"/>
+    </styles-info>
+
+    <book-order>
+      <canon-name>Western Protestant Bible</canon-name>
+    </book-order>
+
+    <writing-system code="fra">
+      <display-names>
+        <form lang="default">French</form>
+      </display-names>
+    </writing-system>
+
+    <book id="GEN">
+      <name>Genèse</name>
+      <group>OT</group>
+      <sub-group>Pentateuch</sub-group>
+      <filename>02-GENfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/02-GENfraLSG.usfm</source>
+    </book>
+
+    <book id="EXO">
+      <name>Exode</name>
+      <group>OT</group>
+      <sub-group>Pentateuch</sub-group>
+      <filename>03-EXOfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/03-EXOfraLSG.usfm</source>
+    </book>
+
+    <book id="LEV">
+      <name>Lévitique</name>
+      <group>OT</group>
+      <sub-group>Pentateuch</sub-group>
+      <filename>04-LEVfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/04-LEVfraLSG.usfm</source>
+    </book>
+
+    <book id="NUM">
+      <name>Nombres</name>
+      <group>OT</group>
+      <sub-group>Pentateuch</sub-group>
+      <filename>05-NUMfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/05-NUMfraLSG.usfm</source>
+    </book>
+
+    <book id="DEU">
+      <name>Deutéronome</name>
+      <group>OT</group>
+      <sub-group>Pentateuch</sub-group>
+      <filename>06-DEUfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/06-DEUfraLSG.usfm</source>
+    </book>
+
+    <book id="JOS">
+      <name>Josué</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>07-JOSfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/07-JOSfraLSG.usfm</source>
+    </book>
+
+    <book id="JDG">
+      <name>Juges</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>08-JDGfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/08-JDGfraLSG.usfm</source>
+    </book>
+
+    <book id="RUT">
+      <name>Ruth</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>09-RUTfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/09-RUTfraLSG.usfm</source>
+    </book>
+
+    <book id="1SA">
+      <name>1 Samuel</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>10-1SAfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/10-1SAfraLSG.usfm</source>
+    </book>
+
+    <book id="2SA">
+      <name>2 Samuel</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>11-2SAfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/11-2SAfraLSG.usfm</source>
+    </book>
+
+    <book id="1KI">
+      <name>1 Rois</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>12-1KIfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/12-1KIfraLSG.usfm</source>
+    </book>
+
+    <book id="2KI">
+      <name>2 Rois</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>13-2KIfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/13-2KIfraLSG.usfm</source>
+    </book>
+
+    <book id="1CH">
+      <name>1 Chroniques</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>14-1CHfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/14-1CHfraLSG.usfm</source>
+    </book>
+
+    <book id="2CH">
+      <name>2 Chroniques</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>15-2CHfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/15-2CHfraLSG.usfm</source>
+    </book>
+
+    <book id="EZR">
+      <name>Esdras</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>16-EZRfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/16-EZRfraLSG.usfm</source>
+    </book>
+
+    <book id="NEH">
+      <name>Néhémie</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>17-NEHfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/17-NEHfraLSG.usfm</source>
+    </book>
+
+    <book id="EST">
+      <name>Esther</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>18-ESTfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/18-ESTfraLSG.usfm</source>
+    </book>
+
+    <book id="JOB">
+      <name>Job</name>
+      <group>OT</group>
+      <sub-group>PoetryWisdom</sub-group>
+      <filename>19-JOBfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/19-JOBfraLSG.usfm</source>
+    </book>
+
+    <book id="PSA">
+      <name>Psaumes</name>
+      <group>OT</group>
+      <sub-group>PoetryWisdom</sub-group>
+      <filename>20-PSAfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/20-PSAfraLSG.usfm</source>
+    </book>
+
+    <book id="PRO">
+      <name>Proverbes</name>
+      <group>OT</group>
+      <sub-group>PoetryWisdom</sub-group>
+      <filename>21-PROfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/21-PROfraLSG.usfm</source>
+    </book>
+
+    <book id="ECC">
+      <name>Ecclésiaste</name>
+      <group>OT</group>
+      <sub-group>PoetryWisdom</sub-group>
+      <filename>22-ECCfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/22-ECCfraLSG.usfm</source>
+    </book>
+
+    <book id="SNG">
+      <name>Cantique</name>
+      <group>OT</group>
+      <sub-group>PoetryWisdom</sub-group>
+      <filename>23-SNGfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/23-SNGfraLSG.usfm</source>
+    </book>
+
+    <book id="ISA">
+      <name>Ésaïe</name>
+      <group>OT</group>
+      <sub-group>MajorProphet</sub-group>
+      <filename>24-ISAfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/24-ISAfraLSG.usfm</source>
+    </book>
+
+    <book id="JER">
+      <name>Jérémie</name>
+      <group>OT</group>
+      <sub-group>MajorProphet</sub-group>
+      <filename>25-JERfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/25-JERfraLSG.usfm</source>
+    </book>
+
+    <book id="LAM">
+      <name>Lamentations</name>
+      <group>OT</group>
+      <sub-group>MajorProphet</sub-group>
+      <filename>26-LAMfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/26-LAMfraLSG.usfm</source>
+    </book>
+
+    <book id="EZK">
+      <name>Ézékiel</name>
+      <group>OT</group>
+      <sub-group>MajorProphet</sub-group>
+      <filename>27-EZKfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/27-EZKfraLSG.usfm</source>
+    </book>
+
+    <book id="DAN">
+      <name>Daniel</name>
+      <group>OT</group>
+      <sub-group>MajorProphet</sub-group>
+      <filename>28-DANfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/28-DANfraLSG.usfm</source>
+    </book>
+
+    <book id="HOS">
+      <name>Osée</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>29-HOSfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/29-HOSfraLSG.usfm</source>
+    </book>
+
+    <book id="JOL">
+      <name>Joël</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>30-JOLfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/30-JOLfraLSG.usfm</source>
+    </book>
+
+    <book id="AMO">
+      <name>Amos</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>31-AMOfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/31-AMOfraLSG.usfm</source>
+    </book>
+
+    <book id="OBA">
+      <name>Abdias</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>32-OBAfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/32-OBAfraLSG.usfm</source>
+    </book>
+
+    <book id="JON">
+      <name>Jonas</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>33-JONfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/33-JONfraLSG.usfm</source>
+    </book>
+
+    <book id="MIC">
+      <name>Michée</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>34-MICfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/34-MICfraLSG.usfm</source>
+    </book>
+
+    <book id="NAM">
+      <name>Nahum</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>35-NAMfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/35-NAMfraLSG.usfm</source>
+    </book>
+
+    <book id="HAB">
+      <name>Habacuc</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>36-HABfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/36-HABfraLSG.usfm</source>
+    </book>
+
+    <book id="ZEP">
+      <name>Sophonie</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>37-ZEPfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/37-ZEPfraLSG.usfm</source>
+    </book>
+
+    <book id="HAG">
+      <name>Aggée</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>38-HAGfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/38-HAGfraLSG.usfm</source>
+    </book>
+
+    <book id="ZEC">
+      <name>Zacharie</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>39-ZECfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/39-ZECfraLSG.usfm</source>
+    </book>
+
+    <book id="MAL">
+      <name>Malachie</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>40-MALfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/40-MALfraLSG.usfm</source>
+    </book>
+
+    <book id="MAT">
+      <name>Matthieu</name>
+      <group>NT</group>
+      <sub-group>Gospel</sub-group>
+      <filename>46-MATfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/46-MATfraLSG.usfm</source>
+
+      <features type="book">
+        <feature name="wj-marked" value="true"/>
+      </features>
+    </book>
+
+    <book id="MRK">
+      <name>Marc</name>
+      <group>NT</group>
+      <sub-group>Gospel</sub-group>
+      <filename>47-MRKfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/47-MRKfraLSG.usfm</source>
+
+      <features type="book">
+        <feature name="wj-marked" value="true"/>
+      </features>
+    </book>
+
+    <book id="LUK">
+      <name>Luc</name>
+      <group>NT</group>
+      <sub-group>Gospel</sub-group>
+      <filename>48-LUKfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/48-LUKfraLSG.usfm</source>
+
+      <features type="book">
+        <feature name="wj-marked" value="true"/>
+      </features>
+    </book>
+
+    <book id="JHN">
+      <name>Jean</name>
+      <group>NT</group>
+      <sub-group>Gospel</sub-group>
+      <filename>73-JHNfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/73-JHNfraLSG.usfm</source>
+
+      <features type="book">
+        <feature name="wj-marked" value="true"/>
+      </features>
+    </book>
+
+    <book id="ACT">
+      <name>Actes</name>
+      <group>NT</group>
+      <sub-group>Acts</sub-group>
+      <filename>50-ACTfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/50-ACTfraLSG.usfm</source>
+
+      <features type="book">
+        <feature name="wj-marked" value="true"/>
+      </features>
+    </book>
+
+    <book id="ROM">
+      <name>Romains</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>51-ROMfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/51-ROMfraLSG.usfm</source>
+    </book>
+
+    <book id="1CO">
+      <name>1 Corinthiens</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>52-1COfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/52-1COfraLSG.usfm</source>
+
+      <features type="book">
+        <feature name="wj-marked" value="true"/>
+      </features>
+    </book>
+
+    <book id="2CO">
+      <name>2 Corinthiens</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>53-2COfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/53-2COfraLSG.usfm</source>
+
+      <features type="book">
+        <feature name="wj-marked" value="true"/>
+      </features>
+    </book>
+
+    <book id="GAL">
+      <name>Galates</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>54-GALfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/54-GALfraLSG.usfm</source>
+    </book>
+
+    <book id="EPH">
+      <name>Éphésiens</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>55-EPHfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/55-EPHfraLSG.usfm</source>
+    </book>
+
+    <book id="PHP">
+      <name>Philippiens</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>56-PHPfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/56-PHPfraLSG.usfm</source>
+    </book>
+
+    <book id="COL">
+      <name>Colossiens</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>57-COLfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/57-COLfraLSG.usfm</source>
+    </book>
+
+    <book id="1TH">
+      <name>1 Thessaloniciens</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>58-1THfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/58-1THfraLSG.usfm</source>
+    </book>
+
+    <book id="2TH">
+      <name>2 Thessaloniciens</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>59-2THfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/59-2THfraLSG.usfm</source>
+    </book>
+
+    <book id="1TI">
+      <name>1 Timothée</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>60-1TIfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/60-1TIfraLSG.usfm</source>
+    </book>
+
+    <book id="2TI">
+      <name>2 Timothée</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>61-2TIfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/61-2TIfraLSG.usfm</source>
+    </book>
+
+    <book id="TIT">
+      <name>Tite</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>62-TITfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/62-TITfraLSG.usfm</source>
+    </book>
+
+    <book id="PHM">
+      <name>Philémon</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>63-PHMfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/63-PHMfraLSG.usfm</source>
+    </book>
+
+    <book id="HEB">
+      <name>Hébreux</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>64-HEBfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/64-HEBfraLSG.usfm</source>
+    </book>
+
+    <book id="JAS">
+      <name>Jacques</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>65-JASfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/65-JASfraLSG.usfm</source>
+    </book>
+
+    <book id="1PE">
+      <name>1 Pierre</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>66-1PEfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/66-1PEfraLSG.usfm</source>
+    </book>
+
+    <book id="2PE">
+      <name>2 Pierre</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>91-2PEfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/91-2PEfraLSG.usfm</source>
+    </book>
+
+    <book id="1JN">
+      <name>1 Jean</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>68-1JNfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/68-1JNfraLSG.usfm</source>
+    </book>
+
+    <book id="2JN">
+      <name>2 Jean</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>69-2JNfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/69-2JNfraLSG.usfm</source>
+    </book>
+
+    <book id="3JN">
+      <name>3 Jean</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>70-3JNfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/70-3JNfraLSG.usfm</source>
+    </book>
+
+    <book id="JUD">
+      <name>Jude</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>71-JUDfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/71-JUDfraLSG.usfm</source>
+    </book>
+
+    <book id="REV">
+      <name>Apocalypse</name>
+      <group>NT</group>
+      <sub-group>Revelation</sub-group>
+      <filename>72-REVfraLSG.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/72-REVfraLSG.usfm</source>
+
+      <features type="book">
+        <feature name="wj-marked" value="true"/>
+      </features>
+    </book>
+  </books>
+
   <features type="epub">
     <feature name="epub-toc-book-names" value="true"/>
     <feature name="epub-toc-chapter-numbers" value="true"/>
@@ -2265,7 +2874,7 @@ Please enter your access code:</translation>
         <translation lang="default">Code incorrect. Please ask for an access code for this device.</translation>
       </translation-mapping>
     </translation-mappings>
-
+    
     <user-details>
       <user-detail code="name" type="text">
         <title>

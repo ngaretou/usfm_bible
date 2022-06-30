@@ -79,4 +79,7 @@ version %version-name%
 %copyright-all:C02%
 
 
+%copyright-all:C04%
+
+
 %copyright-all:C03%

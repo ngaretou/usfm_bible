@@ -1,0 +1,1728 @@
+\id MAT MATFLS1910.PTX, Louis Segond 1910, French, 31-10-2011, Moon Sun Kim. Updated for DBL by E. Canales, September 2012.
+\ide UTF-8
+\h MATTHIEU
+\toc1 Évangile selon Matthieu
+\toc2 Matthieu
+\mt1 ÉVANGILE SELON MATTHIEU
+\imt1 INTRODUCTION À L’ÉVANGILE SELON MATTHIEU
+\imt3 (És 40:1-9. Za 9:9. Jn 18:37. Lu 24:44.)
+\ip L’Évangile selon Matthieu est le premier livre du Nouveau Testament. Cette place de choix se justifie du fait que, mieux que tous les autres, il présente Jésus, le personnage central de ce Testament, comme celui qui réalise les promesses de l’Ancien Testament et l’espérance d’Israël.
+\ip Matthieu présente Jésus-Christ comme le Messie, Fils du roi David (Matt 1:1-20; 9:27; 12:23), donc celui qui, selon les promesses de l’Ancien Testament, vient sauver Israël. Jésus-Christ accomplit l’histoire d’Israël.
+\ip Les trois premiers évangiles suivent un plan commun. À ce titre, l’Évangile selon Matthieu présente le ministère de Jésus d’abord en Galilée, puis hors de Galilée, et enfin à Jérusalem, avec les événements majeurs que sont sa mort et sa résurrection. Mais auparavant, il aborde sa naissance et son enfance. Voici du reste les articulations de cet évangile:
+\ib
+\io1 1. Généalogie, naissance et enfance de Jésus-Christ \ior 1:1–2:23\ior*
+\io1 2. Prédication de Jean-Baptiste et baptême de Jésus \ior 3:1-17\ior*
+\io1 3. Tentation de Jésus et commencement de son ministère \ior 4:1-25\ior*
+\io1 4. Le Sermon sur la montagne \ior 5:1–7:29\ior*
+\io1 5. Le ministère de Jésus en Galilée \ior 8:1–13:58\ior*
+\io1 6. Le ministère de Jésus hors de Galilée et en route vers Jérusalem \ior 14:1–20:34\ior*
+\io1 7. Le ministère de Jésus à Jérusalem (sa passion et sa résurrection) \ior 21:1–28:15\ior*
+\io1 8. Conclusion: apparition de Jésus aux disciples et leur envoi jusqu’à la fin du monde \ior 28:16-20\ior*
+\ib
+\ip L’auteur de cet évangile serait Matthieu lui-même. Il rapporte son appel par Jésus, 9:9-13. Marc (2:13-17) et Luc (5:27-32) l’appellent Lévi. Marc précise qu’il est le fils d’Alphée. Avant de suivre Jésus, Matthieu était un péager (voir Matt 5:46; 9:10; 10:3), fonctionnaire romain chargé de percevoir les impôts et les droits de douane. Les Juifs méprisaient cette classe d’employés qu’ils trouvaient corrompus. Ils les associaient aux pécheurs, aux païens et aux prostitués. L’appel de Matthieu par Jésus et le festin que celui-ci a organisé chez lui en son honneur montrent que Jésus a plutôt témoigné beaucoup d’attention à cette classe de personnes. Ce qui ne pouvait que scandaliser les Juifs zélés tels que les pharisiens, et accentuer leur haine à l’égard de Jésus.
+\ip En écrivant son évangile, Matthieu s’adresse essentiellement aux Juifs sortis du judaïsme, qui, comme lui, croyaient désormais que Jésus était véritablement le Christ, Fils de David, et Fils de Dieu. D’où l’abondance, dans ce livre, de citations et références à l’Ancien Testament et aux coutumes juives (5:21, 23, 27, 31, 33, etc.).
+\ip Jésus est la manifestation du Royaume des cieux en personne. Il l’inaugure en fondant l’Église, son Église par laquelle il accomplit l’alliance de Dieu avec Israël. L’Église que le peuple chrétien perpétue depuis des siècles est et reste intimement liée à Jésus. Elle représente ainsi le nouveau peuple élu composé à la fois de Juifs et de non-Juifs.
+\ip \it «Et moi, je te dis que tu es Pierre, et que sur cette pierre je bâtirai mon Église, et que les portes du séjour des morts ne prévaudront point contre elle» \it*(16:17-18, voir aussi 18:17).
+\ip L’Évangile selon Matthieu se présente comme un manuel de pastorale, destiné aux dirigeants de communautés chrétiennes pour l’enseignement et la formation catéchétique. Ses procédés littéraires correspondent aux modèles didactiques des rabbins de l’époque de sa rédaction. L’interprétation des textes de loi de l’Ancien Testament en est une illustration: «Vous avez entendu qu’il a été dit aux anciens… mais moi, je vous dis…». Le Jésus de Matthieu montre ainsi qu’il est venu non pour abolir cette loi, mais pour l’accomplir (Matt 5:17ss).
+\is1 Voici la liste des miracles de Jésus rapportés par Matthieu
+\tr
+\tc1 1. la guérison d’un lépreux 
+\tc2 8:1-4
+\tr
+\tc1 2. la guérison du serviteur d’un centenier 
+\tc2 8:5-13
+\tr
+\tc1 3. la guérison de la belle-mère de Pierre 
+\tc2 8:14-17
+\tr
+\tc1 4. la tempête apaisée 
+\tc2 8:23-27
+\tr
+\tc1 5. la guérison de deux démoniaques 
+\tc2 8:28-34
+\tr
+\tc1 6. la guérison d’un paralytique 
+\tc2 9:1-8
+\tr
+\tc1 7. la résurrection de la fille de Jaïrus 
+\tc2 9:18-19, 23ss
+\tr
+\tc1 8. la guérison d’une femme malade depuis douze ans 
+\tc2 9:20-22
+\tr
+\tc1 9. la guérison de deux aveugles (1 \ord re\ord* fois) 
+\tc2 9:27-31
+\tr
+\tc1 10. la guérison d’un démoniaque muet 
+\tc2 9:32-33
+\tr
+\tc1 11. la guérison de l’homme à la main sèche 
+\tc2 12:9-13
+\tr
+\tc1 12. la multiplication des pains (1 \ord re\ord* fois) 
+\tc2 14:15-21
+\tr
+\tc1 13. la marche sur les eaux 
+\tc2 14:22-33
+\tr
+\tc1 14. la guérison de la fille d’une Cananéenne 
+\tc2 15:21-28
+\tr
+\tc1 15. la multiplication des pains (2 \ord e\ord* fois) 
+\tc2 15:32-39
+\tr
+\tc1 16. la guérison du fils lunatique 
+\tc2 17:14-21
+\tr
+\tc1 17. le statère dans le poisson 
+\tc2 17:24-27
+\tr
+\tc1 18. la guérison de deux aveugles (2 \ord e\ord* fois) 
+\tc2 20:29-34
+\tr
+\tc1 19. le figuier desséché 
+\tc2 21:17-22
+\is1 Également la liste des paraboles de Jésus rapportées par Matthieu
+\tr
+\tc1 1. la maison bâtie sur le roc
+\tc2 7:24-27
+\tr
+\tc1 2. le semeur
+\tc2 13:3-23
+\tr
+\tc1 3. l’ivraie
+\tc2 13:24-43
+\tr
+\tc1 4. le grain de sénevé
+\tc2 13:31-32
+\tr
+\tc1 5. le levain
+\tc2 13:33
+\tr
+\tc1 6. le trésor caché
+\tc2 13:44
+\tr
+\tc1 7. la perle de grand prix
+\tc2 13:45-46
+\tr
+\tc1 8. le filet
+\tc2 13:47-50
+\tr
+\tc1 9. la brebis égarée
+\tc2 18:12-14
+\tr
+\tc1 10. le serviteur impitoyable
+\tc2 18:23-25
+\tr
+\tc1 11. les ouvriers loués à différentes heures
+\tc2 20:1-16
+\tr
+\tc1 12. les deux fils
+\tc2 21:28-32
+\tr
+\tc1 13. les vignerons
+\tc2 21:33-41
+\tr
+\tc1 14. les noces
+\tc2 22:1-4
+\tr
+\tc1 15. le figuier
+\tc2 24:32
+\tr
+\tc1 16. les dix vierges
+\tc2 25:1-13
+\tr
+\tc1 17. les talents
+\tc2 25:14-30
+\ip Jésus enseigna en paroles et en actes de puissance. Il chargea ses disciples de continuer cette œuvre: \it «Tout pouvoir m’a été donné dans le ciel et sur la terre. Allez, faites de toutes les nations mes disciples, les baptisant au nom du Père, du Fils et du Saint-Esprit, et enseignez-leur à observer tout ce que je vous ai prescrit. Et voici, je suis avec vous tous les jours, jusqu’à la fin du monde»\it* (Matt 28:18-20).
+\ie
+\c  1
+\s1 Généalogie de Jésus-Christ
+\r V. 1-17: cf. (1 Ch 2:3-15; 3.) Lu 3:23-38. (1 Ch 17:11-14. Ac 13:23.)
+\p
+\v 1 Généalogie de Jésus-Christ, fils de \x a \xo 1.1 \xt Lu 1:31, 32.\x*David, fils d’Abraham. 
+\v 2 \x b \xo 1.2 \xt Ge 21:2.\x*Abraham engendra Isaac; \x c \xo 1.2 \xt Ge 25:26.\x*Isaac engendra Jacob; \x d \xo 1.2 \xt Ge 29:35.\x*Jacob engendra Juda et ses frères; 
+\v 3 \x e \xo 1.3 \xt Ge 38:27, 29.\x*Juda engendra de Thamar Pharès et Zara; \x f \xo 1.3 \xt Ru 4:18. 1 Ch 2:5.\x*Pharès engendra Esrom; \x g \xo 1.3 \xt Ru 4:19. 1 Ch 2:9.\x*Esrom engendra Aram; 
+\v 4 Aram engendra Aminadab; Aminadab engendra Naasson; Naasson engendra Salmon; 
+\v 5 Salmon engendra Boaz de Rahab; Boaz engendra Obed de Ruth; 
+\v 6 Obed engendra Isaï; \x h \xo 1.6 \xt Ru 4:22. 1 S 16:1; 17:12. 1 Ch 2:15; 12:18.\x*Isaï engendra David. Le roi David engendra Salomon de la femme d’Urie; 
+\v 7 \x i \xo 1.7 \xt 1 Ch 11:43. 1 Ch 3:10.\x*Salomon engendra Roboam; Roboam engendra Abia; Abia engendra Asa; 
+\v 8 Asa engendra Josaphat; Josaphat engendra Joram; Joram engendra Ozias; 
+\v 9 Ozias engendra Joatham; Joatham engendra Achaz; Achaz engendra Ézéchias; 
+\v 10 Ézéchias engendra Manassé; Manassé engendra Amon; Amon engendra Josias; 
+\v 11 \x j \xo 1.11 \xt 1 Ch 3:16.\x*Josias engendra Jéchonias et ses frères, au temps de la déportation à Babylone. 
+\v 12 Après la déportation à Babylone, \x k \xo 1.12 \xt 1 Ch 2:17.\x*Jéchonias engendra Salathiel; \x l \xo 1.12 \xt Esd 3:2.\x*Salathiel engendra Zorobabel; 
+\v 13 Zorobabel engendra Abiud; Abiud engendra Éliakim; Éliakim engendra Azor; 
+\v 14 Azor engendra Sadok; Sadok engendra Achim; Achim engendra Éliud; 
+\v 15 Éliud engendra Éléazar; Éléazar engendra Matthan; Matthan engendra Jacob; 
+\v 16 Jacob engendra Joseph, l’époux de Marie, de laquelle est né Jésus, qui est appelé Christ. 
+\v 17 Il y a donc en tout quatorze générations depuis Abraham jusqu’à David, quatorze générations depuis David jusqu’à la déportation à Babylone, et quatorze générations depuis la déportation à Babylone jusqu’au Christ.
+\s1 Naissance de Jésus-Christ
+\r V. 18-25: cf. Lu 2:1-21. És 7:14. Ga 4:4.
+\p
+\v 18 Voici de quelle manière arriva la naissance de Jésus-Christ. \x m \xo 1.18 \xt Lu 1:27, 34.\x*Marie, sa mère, ayant été fiancée à Joseph, se trouva enceinte, par la vertu du Saint-Esprit, avant qu’ils eussent habité ensemble. 
+\v 19 Joseph, son époux, qui était un homme de bien et qui ne voulait pas la diffamer, se proposa de rompre secrètement avec elle. 
+\v 20 Comme il y pensait, voici, un ange du Seigneur lui apparut en songe, et dit: Joseph, fils de David, ne crains pas de prendre avec toi Marie, ta femme, car l’enfant qu’elle a conçu vient du Saint-Esprit; 
+\v 21 elle enfantera un fils, et \x n \xo 1.21 \xt Lu 1:31.\x*tu lui donneras le nom de Jésus; \x o \xo 1.21 \xt Ac 4:12.\x*c’est lui qui sauvera son peuple de ses péchés. 
+\v 22 Tout cela arriva afin que s’accomplît ce que le Seigneur avait annoncé par le prophète:
+\q1
+\v 23 \x p \xo 1.23 \xt És 7:14.\x*Voici, la vierge sera enceinte, elle enfantera un fils,
+\q1 Et on lui donnera le nom d’Emmanuel,
+\m ce qui signifie Dieu avec nous. 
+\v 24 Joseph s’étant réveillé fit ce que l’ange du Seigneur lui avait ordonné, et il prit sa femme avec lui. 
+\v 25 Mais il ne la connut point jusqu’à ce qu’elle eût enfanté un fils, auquel \x q \xo 1.25 \xt Lu 2:21.\x*il donna le nom de Jésus.
+\c 2
+\s1 Enfance de Jésus-Christ. Les mages à Bethléhem. Hérode
+\r V. 1-12: cf. Lu 2:22-38. (No 24:17. Ps 72:10, 11.)
+\p
+\v 1 Jésus étant \x a \xo 2.1 \xt Lu 2:4.\x*né à Bethléhem en Judée, au temps du roi Hérode, voici des mages d’Orient arrivèrent à Jérusalem, 
+\v 2 et dirent: Où est le roi des Juifs qui vient de naître? Car nous avons vu son étoile en Orient, et nous sommes venus pour l’adorer. 
+\v 3 Le roi Hérode, ayant appris cela, fut troublé, et tout Jérusalem avec lui. 
+\v 4 Il assembla tous les principaux sacrificateurs et les scribes du peuple, et il s’informa auprès d’eux où devait naître le Christ. 
+\v 5 Ils lui dirent: A Bethléhem en Judée; car voici ce qui a été écrit par le prophète:
+\q1
+\v 6 \x b \xo 2.6 \xt Mi 5:1. Jn 7:42.\x*Et toi, Bethléhem, terre de Juda,
+\q1 Tu n’es certes pas la moindre entre les principales villes de Juda,
+\q1 Car de toi sortira un chef
+\q1 Qui paîtra Israël, mon peuple.
+\m
+\v 7 Alors Hérode fit appeler en secret les mages, et s’enquit soigneusement auprès d’eux depuis combien de temps l’étoile brillait. 
+\v 8 Puis il les envoya à Bethléhem, en disant: Allez, et prenez des informations exactes sur le petit enfant; quand vous l’aurez trouvé, faites-le-moi savoir, afin que j’aille aussi moi-même l’adorer. 
+\v 9 Après avoir entendu le roi, ils partirent. Et voici, l’étoile qu’ils avaient vue en Orient marchait devant eux jusqu’à ce qu’étant arrivée au-dessus du lieu où était le petit enfant, elle s’arrêta. 
+\v 10 Quand ils aperçurent l’étoile, ils furent saisis d’une très grande joie. 
+\v 11 Ils entrèrent dans la maison, virent le petit enfant avec Marie, sa mère, se prosternèrent et l’adorèrent; ils ouvrirent ensuite leurs trésors, et lui offrirent en présent de l’or, de l’encens et de la myrrhe. 
+\v 12 Puis, divinement avertis en songe de ne pas retourner vers Hérode, ils regagnèrent leur pays par un autre chemin.
+\s1 Fuite de Joseph en Égypte. Massacre des enfants de Bethléhem
+\r V. 13-18: cf. Ex 1:15, etc. Ps 2:2-4, 10-12; 76:11.
+\p
+\v 13 Lorsqu’ils furent partis, voici, un ange du Seigneur apparut en songe à Joseph, et dit: Lève-toi, prends le petit enfant et sa mère, fuis en Égypte, et restes-y jusqu’à ce que je te parle; car Hérode cherchera le petit enfant pour le faire périr. 
+\v 14 Joseph se leva, prit de nuit le petit enfant et sa mère, et se retira en Égypte. 
+\v 15 Il y resta jusqu’à la mort d’Hérode, afin que s’accomplît ce que le Seigneur avait annoncé par le \x c \xo 2.15 \xt Os 11:1.\x*prophète: J’ai appelé mon fils hors d’Égypte. 
+\v 16 Alors Hérode, voyant qu’il avait été joué par les mages, se mit dans une grande colère, et il envoya tuer tous les enfants de deux ans et au-dessous qui étaient à Bethléhem et dans tout son territoire, selon la date dont il s’était soigneusement enquis auprès des mages. 
+\v 17 Alors s’accomplit ce qui avait été annoncé par Jérémie, le prophète:
+\q1
+\v 18 \x d \xo 2.18 \xt Jé 31:15.\x*On a entendu des cris à Rama,
+\q1 Des pleurs et de grandes lamentations:
+\q1 Rachel pleure ses enfants,
+\q1 Et n’a pas voulu être consolée,
+\q1 Parce qu’ils ne sont plus.
+\s1 Mort d’Hérode. Retour de Joseph, et son établissement à Nazareth
+\r V. 19-23: cf. Lu 2:39, etc.
+\p
+\v 19 Quand Hérode fut mort, voici, un ange du Seigneur apparut en songe à Joseph, en Égypte, 
+\v 20 et dit: Lève-toi, prends le petit enfant et sa mère, et va dans le pays d’Israël, car ceux qui en voulaient à la vie du petit enfant sont morts. 
+\v 21 Joseph se leva, prit le petit enfant et sa mère, et alla dans le pays d’Israël. 
+\v 22 Mais, ayant appris qu’Archélaüs régnait sur la Judée à la place d’Hérode, son père, il craignit de s’y rendre; et, divinement averti en songe, il se retira dans le territoire de la Galilée, 
+\v 23 et vint demeurer dans une ville appelée Nazareth, afin que s’accomplît ce qui avait été annoncé par les \x e \xo 2.23 \xt És 11:1; 60:21. Za 6:12.\x*prophètes: Il sera appelé Nazaréen.
+\c 3
+\s1 Prédication de Jean-Baptiste
+\r V. 1-12: cf. (Mc 1:2-8. Lu 3:1-18.) Ac 19:4.
+\p
+\v 1 En ce temps-là \x a \xo 3.1 \xt Mc 1:14. Lu 3:3.\x*parut Jean-Baptiste, prêchant dans le désert de Judée. 
+\v 2 Il disait: Repentez-vous, car le royaume des cieux est proche. 
+\v 3 Jean est celui qui avait été annoncé par Ésaïe, le prophète, lorsqu’il dit:
+\q1 C’est ici la \x b \xo 3.3 \xt És 40:3. Mc 1:3. Lu 3:4. Jn 1:23.\x*voix de celui qui crie dans le désert:
+\q1 Préparez le chemin du Seigneur,
+\q1 Aplanissez ses sentiers.
+\m
+\v 4 Jean avait un vêtement de \x c \xo 3.4 \xt Mc 1:6.\x*poils de chameau, et une ceinture de cuir autour des reins. Il se nourrissait de sauterelles et de miel sauvage. 
+\v 5 Les habitants de Jérusalem, de toute la Judée et de tout le pays des environs du Jourdain, se rendaient auprès de lui; 
+\v 6 et, confessant leurs péchés, \x d \xo 3.6 \xt Mc 1:5.\x*ils se faisaient baptiser par lui dans le fleuve du Jourdain. 
+\v 7 Mais, voyant venir à son baptême \x e \xo 3.7 \xt Lu 3:7.\x*beaucoup de pharisiens et de sadducéens, il leur dit: \x f \xo 3.7 \xt Mt 12:34; 23:33.\x*Races de vipères, qui vous a appris à fuir la colère à venir? 
+\v 8 \x g \xo 3.8 \xt Lu 3:8.\x*Produisez donc du fruit digne de la repentance, 
+\v 9 et ne prétendez pas dire en vous-mêmes: \x h \xo 3.9 \xt Jn 8:39.\x*Nous avons Abraham pour père! Car je vous déclare que de ces pierres-ci Dieu peut susciter des enfants à Abraham. 
+\v 10 Déjà la cognée est mise à la racine des arbres: \x i \xo 3.10 \xt Mt 7:19. Jn 15:6.\x*tout arbre donc qui ne produit pas de bons fruits sera coupé et jeté au feu. 
+\v 11 Moi, je vous baptise d’eau, pour vous amener à la repentance; \x j \xo 3.11 \xt Mc 1:7. Lu 3:16. Jn 1:15, 26. Ac 1:5; 11:16; 19:4.\x*mais celui qui vient après moi est plus puissant que moi, et je ne suis pas digne de porter ses souliers. Lui, il vous baptisera du Saint-Esprit et de feu. 
+\v 12 Il a son van à la main; il nettoiera son aire, et il amassera son blé dans le grenier, mais il brûlera la paille dans un feu qui ne s’éteint point.
+\s1 Baptême de Jésus-Christ
+\r V. 13-17: cf. (Mc 1:9-11. Lu 3:21, 22.) Jn 1:32-34. Ac 10:38.
+\p
+\v 13 \x k \xo 3.13 \xt Mc 1:9. Lu 3:21.\x*Alors Jésus vint de la Galilée au Jourdain vers Jean, pour être baptisé par lui. 
+\v 14 Mais Jean s’y opposait, en disant: C’est moi qui ai besoin d’être baptisé par toi, et tu viens à moi! 
+\v 15 Jésus lui répondit: \wj Laisse faire maintenant, car il est convenable que nous accomplissions ainsi tout ce qui est juste.\wj* Et Jean ne lui résista plus. 
+\v 16 Dès que Jésus eut été baptisé, il sortit de l’eau. Et voici, les cieux s’ouvrirent, et il vit \x l \xo 3.16 \xt És 11:2; 42:1. Jn 1:32.\x*l’Esprit de Dieu descendre comme une colombe et venir sur lui. 
+\v 17 Et voici, une voix fit entendre des cieux ces paroles: \x m \xo 3.17 \xt És 42:1. Mt 12:18; 17:5. Lu 9:35. Col 1:13. 2 Pi 1:17.\x*Celui-ci est mon Fils bien-aimé, en qui j’ai mis toute mon affection.
+\c 4
+\s1 Tentation de Jésus-Christ
+\r V. 1-11: cf. (Mc 1:12, 13. Lu 4:1-13.) Ge 3:1-6. (Ps 27:2. Hé 4:15.)
+\p
+\v 1 Alors Jésus \x a \xo 4.1 \xt Mc 1:12. Lu 4:1.\x*fut emmené par l’Esprit dans le désert, pour être tenté par le diable. 
+\v 2 Après avoir jeûné quarante jours et quarante nuits, il eut faim. 
+\v 3 Le tentateur, s’étant approché, lui dit: Si tu es Fils de Dieu, ordonne que ces pierres deviennent des pains. 
+\v 4 Jésus répondit: \wj Il est écrit:\wj*
+\q1 \x b \xo 4.4 \xt De 8:3.\x*\wj L’homme ne vivra pas de pain seulement, mais de toute parole qui sort de la bouche de Dieu.\wj*
+\m
+\v 5 Le diable le transporta dans la ville sainte, le plaça sur le haut du temple, 
+\v 6 et lui dit: Si tu es Fils de Dieu, jette-toi en bas; car il est écrit:
+\q1 \x c \xo 4.6 \xt Ps 91:11, 12.\x*Il donnera des ordres à ses anges à ton sujet;
+\q1 Et ils te porteront sur les mains,
+\q1 De peur que ton pied ne heurte contre une pierre.
+\m
+\v 7 Jésus lui dit: \wj Il est aussi écrit:\wj*
+\q1 \x d \xo 4.7 \xt De 6:16.\x*\wj Tu ne tenteras point le Seigneur, ton Dieu.\wj*
+\m
+\v 8 Le diable le transporta encore sur une montagne très élevée, lui montra tous les royaumes du monde et leur gloire, 
+\v 9 et lui dit: Je te donnerai toutes ces choses, si tu te prosternes et m’adores. 
+\v 10 Jésus lui dit: \wj Retire-toi, Satan! Car il est écrit:\wj*
+\q1 \x e \xo 4.10 \xt De 6:13; 10:20.\x*\wj Tu adoreras le Seigneur, ton Dieu, et tu le serviras lui seul.\wj*
+\m
+\v 11 Alors le diable le laissa. Et voici, des anges vinrent auprès de Jésus, et le servaient.
+\s1 Jésus à Capernaüm
+\r V. 12-16: cf. (Mc 1:14, 15. Lu 4:14, 15.) És 8:23; 9:1.
+\p
+\v 12 Jésus, ayant appris que \x f \xo 4.12 \xt Mc 1:14. Lu 4:14.\x*Jean avait été livré, se retira \x g \xo 4.12 \xt Lu 4:16, 31. Jn 4:43.\x*dans la Galilée. 
+\v 13 Il quitta Nazareth, et vint demeurer à Capernaüm, située près de la mer, dans le territoire de Zabulon et de Nephthali, 
+\v 14 afin que s’accomplît ce qui avait été annoncé par Ésaïe, le prophète:
+\q1
+\v 15 \x h \xo 4.15 \xt És 8:23; 9:1.\x*Le peuple de Zabulon et de Nephthali,
+\q1 De la contrée voisine de la mer, du pays au delà du Jourdain,
+\q1 Et de la Galilée des Gentils,
+\q1
+\v 16 Ce peuple, assis dans les ténèbres,
+\q1 A vu une grande lumière;
+\q1 Et sur ceux qui étaient assis dans la région et l’ombre de la mort
+\q1 La lumière s’est levée.
+\s1 Commencement du ministère de Jésus. Vocation de quatre disciples
+\r V. 17-22: cf. (Mc 1:16-20. Lu 5:1-11.) 1 R 19:19-21.
+\p
+\v 17 Dès ce moment Jésus commença à prêcher, et à dire: \x i \xo 4.17 \xt Mc 1:15.\x*\wj Repentez-vous, car le royaume des cieux est proche.\wj*
+\v 18 \x j \xo 4.18 \xt Mc 1:16.\x*Comme il marchait le long de la mer de Galilée, il vit deux frères, Simon, appelé Pierre, et André, son frère, qui jetaient un filet dans la mer; car ils étaient pêcheurs. 
+\v 19 Il leur dit: \wj Suivez-moi, et je vous ferai pêcheurs d’hommes.\wj*
+\v 20 Aussitôt, ils laissèrent les filets, et le suivirent. 
+\v 21 De là étant allé plus loin, il vit deux autres frères, Jacques, fils de Zébédée, et Jean, son frère, qui étaient dans une barque avec Zébédée, leur père, et qui réparaient leurs filets. 
+\v 22 Il les appela, et aussitôt ils laissèrent la barque et leur père, et le suivirent.
+\r V. 23-25: cf. Mt 9:35; 8:16, 17. Mc 1:32-39. Lu 4:43, 44; 6:17-20.
+\p
+\v 23 Jésus parcourait toute la Galilée, enseignant dans les synagogues, prêchant la bonne nouvelle du royaume, et guérissant toute maladie et toute infirmité parmi le peuple. 
+\v 24 Sa renommée se répandit dans toute la Syrie, et on lui amenait tous ceux qui souffraient de maladies et de douleurs de divers genres, des démoniaques, des lunatiques, des paralytiques; et il les guérissait. 
+\v 25 Une grande foule le suivit, de la Galilée, de la Décapole, de Jérusalem, de la Judée, et d’au delà du Jourdain.
+\c 5
+\s1 Sermon sur la montagne. Les béatitudes
+\r V. 1-12: cf. Lu 6:20-26. Ps 34:12-20. (De 18:15, 18, 19. És 61:1-3.)
+\p
+\v 1 Voyant la foule, Jésus monta sur la montagne; et, après qu’il se fut assis, ses disciples s’approchèrent de lui. 
+\v 2 Puis, ayant ouvert la bouche, il les enseigna, et dit:
+\p
+\v 3 \x a \xo 5.3 \xt Lu 6:20.\x*\wj Heureux les pauvres en esprit, car le royaume des cieux est à eux!\wj*
+\v 4 \x b \xo 5.4 \xt Lu 6:21.\x*\wj Heureux les affligés, car ils seront consolés!\wj*
+\v 5 \x c \xo 5.5 \xt Ps 37:11.\x*\wj Heureux les débonnaires, car ils hériteront la terre!\wj*
+\v 6 \x d \xo 5.6 \xt És 55:1.\x*\wj Heureux ceux qui ont faim et soif de la justice, car ils seront rassasiés!\wj*
+\v 7 \wj Heureux les miséricordieux, car ils obtiendront miséricorde!\wj*
+\v 8 \x e \xo 5.8 \xt Ps 15:2; 24:4. Hé 12:14.\x*\wj Heureux ceux qui ont le cœur pur, car ils verront Dieu!\wj*
+\v 9 \wj Heureux ceux qui procurent la paix, car ils seront appelés fils de Dieu!\wj*
+\v 10 \x f \xo 5.10 \xt 2 Co 4:10. 2 Ti 2:12. 1 Pi 3:14.\x*\wj Heureux ceux qui sont persécutés pour la justice, car le royaume des cieux est à eux!\wj*
+\v 11 \wj Heureux serez-vous, lorsqu’on vous outragera, qu’on vous persécutera et qu’on dira faussement de vous toute sorte de mal,\wj*\x g \xo 5.11 \xt 1 Pi 4:14.\x*\wj à cause de moi.\wj*
+\v 12 \x h \xo 5.12 \xt Lu 6:23.\x*\wj Réjouissez-vous et soyez dans l’allégresse, parce que votre récompense sera grande dans les cieux; car c’est ainsi qu’on a persécuté les prophètes qui ont été avant vous.\wj*
+\s1 Les disciples, sel de la terre et lumière du monde
+\r V. 13-16: cf. 1 Pi 2:9-12.
+\p
+\v 13 \x i \xo 5.13 \xt Mc 9:50. Lu 14:34.\x*\wj Vous êtes le sel de la terre. Mais si le sel perd sa saveur, avec quoi la lui rendra-t-on? Il ne sert plus qu’à être jeté dehors, et foulé aux pieds par les hommes.\wj*
+\v 14 \wj Vous êtes la lumière du monde. Une ville située sur une montagne ne peut être cachée;\wj*
+\v 15 \wj et\wj*\x j \xo 5.15 \xt Mc 4:21. Lu 3:16; 11:33.\x*\wj on n’allume pas une lampe pour la mettre sous le boisseau, mais on la met sur le chandelier, et elle éclaire tous ceux qui sont dans la maison.\wj*
+\v 16 \x k \xo 5.16 \xt 1 Pi 2:12.\x*\wj Que votre lumière luise ainsi devant les hommes, afin qu’ils voient vos bonnes œuvres, et qu’ils glorifient votre Père qui est dans les cieux.\wj*
+\s1 L’accomplissement de la loi et des prophètes
+\r V. 17-20: cf. (Ps 40:7-11. Ro 8:3, 4.) Lu 24:44.
+\p
+\v 17 \wj Ne croyez pas que je sois venu pour abolir la loi ou les prophètes; je suis venu non pour abolir, mais pour accomplir.\wj*
+\v 18 \wj Car, je vous le dis en vérité,\wj*\x l \xo 5.18 \xt Lu 16:17.\x*\wj tant que le ciel et la terre ne passeront point, il ne disparaîtra pas de la loi un seul iota ou un seul trait de lettre, jusqu’à ce que tout soit arrivé.\wj*
+\v 19 \x m \xo 5.19 \xt Ja 2:10.\x*\wj Celui donc qui supprimera l’un de ces plus petits commandements, et qui enseignera aux hommes à faire de même, sera appelé le plus petit dans le royaume des cieux; mais celui qui les observera, et qui enseignera à les observer, celui-là sera appelé grand dans le royaume des cieux.\wj*
+\v 20 \wj Car, je vous le dis, si votre justice ne surpasse celle des scribes et des pharisiens, vous n’entrerez point dans le royaume des cieux.\wj*
+\r V. 21-26: cf. (1 Jn 3:15. Lu 12:58, 59.) Ps 119:96.
+\p
+\v 21 \wj Vous avez entendu qu’il a été dit aux anciens:\wj*\x n \xo 5.21 \xt Ex 20:13. De 5:17.\x*\wj Tu ne tueras point; celui qui tuera mérite d’être puni par les juges.\wj*
+\v 22 \wj Mais moi, je vous dis que quiconque se met en colère contre son frère mérite d’être puni par les juges; que celui qui dira à son frère: Raca! Mérite d’être puni par le sanhédrin; et que celui qui lui dira: Insensé! Mérite d’être puni par le feu de la géhenne.\wj*
+\v 23 \wj Si donc tu présentes ton offrande à l’autel, et que là tu te souviennes que ton frère a quelque chose contre toi,\wj*
+\v 24 \wj laisse là ton offrande devant l’autel, et va d’abord te réconcilier avec ton frère; puis, viens présenter ton offrande.\wj*
+\v 25 \x o \xo 5.25 \xt Lu 12:58. Ép 4:26.\x*\wj Accorde-toi promptement avec ton adversaire, pendant que tu es en chemin avec lui, de peur qu’il ne te livre au juge, que le juge ne te livre à l’officier de justice, et que tu ne sois mis en prison.\wj*
+\v 26 \wj Je te le dis en vérité, tu ne sortiras pas de là que tu n’aies payé le dernier quadrant.\wj*
+\r V. 27-32: cf. (2 S 11:2, 3. Mc 9:43-48. Ga 5:24.) Pr 16:30. Mc 10:2-12.
+\p
+\v 27 \wj Vous avez appris qu’il a été dit:\wj*\x p \xo 5.27 \xt Ex 20:14. De 5:18.\x*\wj Tu ne commettras point d’adultère.\wj*
+\v 28 \wj Mais moi, je vous dis que quiconque\wj*\x q \xo 5.28 \xt Job 31:1. Ps 119:37.\x*\wj regarde une femme pour la convoiter a déjà commis un adultère avec elle dans son cœur.\wj*
+\v 29 \x r \xo 5.29 \xt Mt 18:8. Mc 9:43.\x*\wj Si ton œil droit est pour toi une occasion de chute, arrache-le et jette-le loin de toi; car il est avantageux pour toi qu’un seul de tes membres périsse, et que ton corps entier ne soit pas jeté dans la géhenne.\wj*
+\v 30 \wj Et si ta main droite est pour toi une occasion de chute, coupe-la et jette-la loin de toi; car il est avantageux pour toi qu’un seul de tes membres périsse, et que ton corps entier n’aille pas dans la géhenne.\wj*
+\v 31 \wj Il a été dit:\wj*\x s \xo 5.31 \xt De 24:1.\x*\wj Que celui qui répudie sa femme lui donne une lettre de divorce.\wj*
+\v 32 \x t \xo 5.32 \xt Mt 19:7. Mc 10:4, 11. Lu 16:18. 1 Co 7:10.\x*\wj Mais moi, je vous dis que celui qui répudie sa femme, sauf pour cause d’infidélité, l’expose à devenir adultère, et que celui qui épouse une femme répudiée commet un adultère.\wj*
+\r V. 33-37: cf. Mt 12:36; 23:16-22. Ja 5:12.
+\p
+\v 33 \wj Vous avez encore appris qu’il a été dit aux anciens:\wj*\x u \xo 5.33 \xt Ex 20:7. Lé 19:12. De 5:11.\x*\wj Tu ne te parjureras point, mais tu t’acquitteras envers le Seigneur de ce que tu as déclaré par serment.\wj*
+\v 34 \wj Mais moi, je vous dis de\wj*\x v \xo 5.34 \xt Ja 5:12.\x*\wj ne jurer aucunement, ni par le ciel, parce que c’est le trône de Dieu;\wj*
+\v 35 \wj ni par la terre,\wj*\x w \xo 5.35 \xt Jé 66:1.\x*\wj parce que c’est son marchepied; ni par Jérusalem,\wj*\x x \xo 5.35 \xt Ps 48:3.\x*\wj parce que c’est la ville du grand roi.\wj*
+\v 36 \wj Ne jure pas non plus par ta tête, car tu ne peux rendre blanc ou noir un seul cheveu.\wj*
+\v 37 \wj Que votre parole soit oui, oui, non, non; ce qu’on y ajoute vient du malin.\wj*
+\r V. 38-48: cf. Lu 6:27-36. (Ro 12:17-21.)
+\p
+\v 38 \wj Vous avez appris qu’il a été\wj*\x y \xo 5.38 \xt Ex 21:24. Lé 24:20. De 19:21.\x*\wj dit: œil pour œil, et dent pour dent.\wj*
+\v 39 \wj Mais moi, je vous dis de\wj*\x z \xo 5.39 \xt Pr 24:29. Lu 6:29. Ro 12:17. 1 Co 6:7. 1 Th 5:15. 1 Pi 3:9.\x*\wj ne pas résister au méchant. Si quelqu’un te frappe sur la joue droite, présente-lui aussi l’autre.\wj*
+\v 40 \wj Si quelqu’un veut plaider contre toi, et prendre ta tunique, laisse-lui encore ton manteau.\wj*
+\v 41 \wj Si quelqu’un te force à faire un mille, fais-en deux avec lui.\wj*
+\v 42 \x a \xo 5.42 \xt De 15:8. Lu 6:35.\x*\wj Donne à celui qui te demande, et ne te détourne pas de celui qui veut emprunter de toi.\wj*
+\v 43 \wj Vous avez appris qu’il a été dit:\wj*\x b \xo 5.43 \xt Lé 19:18.\x*\wj Tu aimeras ton prochain, et tu haïras ton ennemi.\wj*
+\v 44 \wj Mais moi, je vous dis:\wj*\x c \xo 5.44 \xt Lu 6:27. Ro 12:20.\x*\wj Aimez vos ennemis, bénissez ceux qui vous maudissent, faites du bien à ceux qui vous haïssent, et\wj*\x d \xo 5.44 \xt Lu 23:34. Ac 7:60. 1 Co 1:13. 1 Pi 2:23.\x*\wj priez pour ceux qui vous maltraitent et qui vous persécutent,\wj*
+\v 45 \wj afin que vous soyez fils de votre Père qui est dans les cieux; car il fait lever son soleil sur les méchants et sur les bons, et il fait pleuvoir sur les justes et sur les injustes.\wj*
+\v 46 \x e \xo 5.46 \xt Lu 6:32.\x*\wj Si vous aimez ceux qui vous aiment, quelle récompense méritez-vous? Les publicains aussi n’agissent-ils pas de même?\wj*
+\v 47 \wj Et si vous saluez seulement vos frères, que faites-vous d’extraordinaire? Les païens aussi n’agissent-ils pas de même?\wj*
+\v 48 \wj Soyez donc parfaits, comme votre Père céleste est parfait.\wj*
+\c 6
+\s1 Préceptes sur: — l’aumône, — la prière, — le pardon des offenses, — le jeûne, — les trésors sur la terre et dans le ciel, — l’impossibilité de servir deux maîtres, — les soucis et les inquiétudes
+\r V. 1-6: cf. Lu 12:1, 2. Col 3:23, 24.
+\p
+\v 1 \wj Gardez-vous de pratiquer votre justice devant les hommes, pour en être vus; autrement, vous n’aurez point de récompense auprès de votre Père qui est dans les cieux.\wj*
+\v 2 \x a \xo 6.2 \xt Ro 12:8.\x*\wj Lors donc que tu fais l’aumône, ne sonne pas de la trompette devant toi, comme font les hypocrites dans les synagogues et dans les rues, afin d’être glorifiés par les hommes. Je vous le dis en vérité, ils reçoivent leur récompense.\wj*
+\v 3 \wj Mais quand tu fais l’aumône, que ta main gauche ne sache pas ce que fait ta droite,\wj*
+\v 4 \wj afin que ton aumône se fasse en secret; et ton Père, qui voit dans le secret, te le\wj*\x b \xo 6.4 \xt Lu 14:14.\x*\wj rendra.\wj*
+\v 5 \wj Lorsque vous priez, ne soyez pas comme les hypocrites, qui aiment à prier debout dans les synagogues et aux coins des rues, pour être vus des hommes. Je vous le dis en vérité, ils reçoivent leur récompense.\wj*
+\v 6 \wj Mais quand tu pries,\wj*\x c \xo 6.6 \xt 2 R 4:33. Ac 10:4.\x*\wj entre dans ta chambre, ferme ta porte, et prie ton Père qui est là dans le lieu secret; et ton Père, qui voit dans le secret, te le rendra.\wj*
+\r V. 7-15: cf. Lu 11:1-5. Mt 18:21-35.
+\p
+\v 7 \wj En priant,\wj*\x d \xo 6.7 \xt 1 R 18:28. És 1:15.\x*\wj ne multipliez pas de vaines paroles, comme les païens, qui s’imaginent qu’à force de paroles ils seront exaucés.\wj*
+\v 8 \wj Ne leur ressemblez pas; car votre Père sait de quoi vous avez besoin, avant que vous le lui demandiez.\wj*
+\v 9 \wj Voici donc comment vous devez prier:\wj*\x e \xo 6.9 \xt Lu 11:2.\x*\wj Notre Père qui es aux cieux! Que ton nom soit sanctifié;\wj*
+\v 10 \wj que ton règne vienne; que ta volonté soit faite sur la terre comme au ciel.\wj*
+\v 11 \wj Donne-nous aujourd’hui notre pain quotidien;\wj*
+\v 12 \wj pardonne-nous nos offenses, comme nous aussi nous pardonnons à ceux qui nous ont offensés;\wj*
+\v 13 \wj ne nous induis pas en tentation, mais délivre-nous du\wj*\x f \xo 6.13 \xt Mt 13:19.\x*\wj malin. Car c’est à toi qu’appartiennent, dans tous les siècles, le règne, la puissance et la gloire. Amen!\wj*
+\v 14 \x g \xo 6.14 \xt Mc 11:25. Col 3:13.\x*\wj Si vous pardonnez aux hommes leurs offenses, votre Père céleste vous pardonnera aussi;\wj*
+\v 15 \x h \xo 6.15 \xt Mt 18:35. Ja 2:13.\x*\wj mais si vous ne pardonnez pas aux hommes, votre Père ne vous pardonnera pas non plus vos offenses.\wj*
+\r V. 16-18: cf. És 58:3-8.
+\p
+\v 16 \x i \xo 6.16 \xt És 58:3. Mt 9:14. Mc 2:18. Lu 5:33.\x*\wj Lorsque vous jeûnez, ne prenez pas un air triste, comme les hypocrites, qui se rendent le visage tout défait, pour montrer aux hommes qu’ils jeûnent. Je vous le dis en vérité, ils reçoivent leur récompense.\wj*
+\v 17 \wj Mais quand tu jeûnes, parfume ta tête et lave ton visage,\wj*
+\v 18 \wj afin de ne pas montrer aux hommes que tu jeûnes, mais à ton Père qui est là dans le lieu secret; et ton Père, qui voit dans le secret, te le rendra.\wj*
+\r V. 19-34: cf. (Lu 11:34-36; 12:15-34.) 1 Ti 6:9, 10.
+\p
+\v 19 \wj Ne vous amassez pas des\wj*\x j \xo 6.19 \xt Pr 23:4. Hé 13:5. Ja 5:1.\x*\wj trésors sur la terre, où la teigne et la rouille détruisent, et où les voleurs percent et dérobent;\wj*
+\v 20 \wj mais\wj*\x k \xo 6.20 \xt Lu 12:33. 1 Ti 6:19.\x*\wj amassez-vous des trésors dans le ciel, où la teigne et la rouille ne détruisent point, et où les voleurs ne percent ni ne dérobent.\wj*
+\v 21 \wj Car là où est ton trésor, là aussi sera ton cœur.\wj*
+\v 22 \x l \xo 6.22 \xt Lu 11:34.\x*\wj L’œil est la lampe du corps. Si ton œil est en bon état, tout ton corps sera éclairé;\wj*
+\v 23 \wj mais si ton œil est en mauvais état, tout ton corps sera dans les ténèbres. Si donc la lumière qui est en toi est ténèbres, combien seront grandes ces ténèbres!\wj*
+\v 24 \x m \xo 6.24 \xt Lu 16:13.\x*\wj Nul ne peut servir deux maîtres. Car, ou il haïra l’un, et aimera l’autre; ou il s’attachera à l’un, et méprisera l’autre. Vous ne pouvez servir Dieu et Mamon.\wj*
+\v 25 \x n \xo 6.25 \xt Ps 37:5; 55:23. Lu 12:22. Ph 4:6. 1 Ti 6:8. 1 Pi 5:7.\x*\wj C’est pourquoi je vous dis: Ne vous inquiétez pas pour votre vie de ce que vous mangerez, ni pour votre corps, de quoi vous serez vêtus. La vie n’est-elle pas plus que la nourriture, et le corps plus que le vêtement?\wj*
+\v 26 \x o \xo 6.26 \xt Job 39:3. Ps 147:9.\x*\wj Regardez les oiseaux du ciel: ils ne sèment ni ne moissonnent, et ils n’amassent rien dans des greniers; et votre Père céleste les nourrit. Ne valez-vous pas beaucoup plus qu’eux?\wj*
+\v 27 \wj Qui de vous, par ses inquiétudes, peut ajouter une coudée à la durée de sa vie?\wj*
+\v 28 \wj Et pourquoi vous inquiéter au sujet du vêtement? Considérez comment croissent les lis des champs: ils ne travaillent ni ne filent;\wj*
+\v 29 \wj cependant je vous dis que Salomon même, dans toute sa gloire, n’a pas été vêtu comme l’un d’eux.\wj*
+\v 30 \wj Si Dieu revêt ainsi l’herbe des champs, qui existe aujourd’hui et qui demain sera jetée au four, ne vous vêtira-t-il pas à plus forte raison, gens de peu de foi?\wj*
+\v 31 \wj Ne vous inquiétez donc point, et ne dites pas: Que mangerons-nous? Que boirons-nous? De quoi serons-nous vêtus?\wj*
+\v 32 \wj Car toutes ces choses, ce sont les païens qui les recherchent. Votre Père céleste sait que vous en avez besoin.\wj*
+\v 33 \x p \xo 6.33 \xt 1 R 3:13. Ps 37:25; 55:23.\x*\wj Cherchez premièrement le royaume et la justice de Dieu; et toutes ces choses vous seront données par-dessus.\wj*
+\v 34 \wj Ne vous inquiétez donc pas du lendemain; car le lendemain aura soin de lui-même. A chaque jour suffit sa peine.\wj*
+\c 7
+\s1 Sermon sur la montagne (fin). Préceptes divers: — les jugements téméraires, — la paille et la poutre, — les choses saintes données aux chiens, — la persévérance dans la prière, — la porte étroite, — les faux prophètes, — la maison bâtie sur le roc
+\r V. 1-6: cf. Lu 6:37, 38, 41, 42.
+\p
+\v 1 \x a \xo 7.1 \xt Lu 6:37. Ro 2:1. 1 Co 4:3, 5.\x*\wj Ne jugez point, afin que vous ne soyez point jugés.\wj*
+\v 2 \x b \xo 7.2 \xt Mc 4:24. Lu 6:38.\x*\wj Car on vous jugera du jugement dont vous jugez, et l’on vous mesurera avec la mesure dont vous mesurez.\wj*
+\v 3 \x c \xo 7.3 \xt Lu 6:41, 42.\x*\wj Pourquoi vois-tu la paille qui est dans l’œil de ton frère, et n’aperçois-tu pas la poutre qui est dans ton œil?\wj*
+\v 4 \wj Ou comment peux-tu dire à ton frère: Laisse-moi ôter une paille de ton œil, toi qui as une poutre dans le tien?\wj*
+\v 5 \x d \xo 7.5 \xt Pr 18:17.\x*\wj Hypocrite, ôte premièrement la poutre de ton œil, et alors tu verras comment ôter la paille de l’œil de ton frère.\wj*
+\v 6 \x e \xo 7.6 \xt Pr 9:8; 23:9.\x*\wj Ne donnez pas les choses saintes aux chiens, et ne jetez pas vos perles devant les pourceaux, de peur qu’ils ne les foulent aux pieds, ne se retournent et ne vous déchirent.\wj*
+\r V. 7-12: cf. Lu 11:5-13; 18:1-7.
+\p
+\v 7 \wj Demandez,\wj*\x f \xo 7.7 \xt Mt 21:22. Mc 11:24. Lu 11:9. Jn 14:13, 16, 24. Ja 1:5, 6. 1 Jn 3:22; 5:14.\x*\wj et l’on vous donnera; cherchez, et vous trouverez; frappez, et l’on vous ouvrira.\wj*
+\v 8 \x g \xo 7.8 \xt Pr 8:17. Jé 29:12.\x*\wj Car quiconque demande reçoit, celui qui cherche trouve, et l’on ouvre à celui qui frappe.\wj*
+\v 9 \wj Lequel de vous donnera une pierre à son fils, s’il lui demande du pain?\wj*
+\v 10 \wj Ou, s’il demande un poisson, lui donnera-t-il un serpent?\wj*
+\v 11 \wj Si donc,\wj*\x h \xo 7.11 \xt Ge 6:5; 8:21.\x*\wj méchants comme vous l’êtes, vous savez donner de bonnes choses à vos enfants, à combien plus forte raison votre Père qui est dans les cieux donnera-t-il de bonnes choses à ceux qui les lui demandent.\wj*
+\v 12 \x i \xo 7.12 \xt Lu 6:31.\x*\wj Tout ce que vous voulez que les hommes fassent pour vous, faites-le de même pour eux, car c’est la loi et les prophètes.\wj*
+\r V. 13-14: cf. Lu 13:23-25.
+\p
+\v 13 \x j \xo 7.13 \xt Lu 13:24.\x*\wj Entrez par la porte étroite. Car large est la porte, spacieux est le chemin qui mènent à la perdition, et il y en a beaucoup qui entrent par là.\wj*
+\v 14 \x k \xo 7.14 \xt Ac 14:22.\x*\wj Mais étroite est la porte, resserré le chemin qui mènent à la vie, et il y en a peu qui les trouvent.\wj*
+\r V. 15-20: cf. Lu 6:43-45. (2 Ti 3:5-9. 2 Pi 2:1-3.)
+\p
+\v 15 \x l \xo 7.15 \xt De 13:3. Jé 23:16. Mt 24:4. Ro 16:17. Ép 5:6. Col 2:8. 1 Jn 4:1.\x*\wj Gardez-vous des faux prophètes. Ils viennent à vous en vêtements de brebis, mais au-dedans ce sont des loups ravisseurs.\wj*
+\v 16 \wj Vous les reconnaîtrez à leurs fruits. Cueille-t-on des raisins sur des épines, ou des figues sur des chardons?\wj*
+\v 17 \x m \xo 7.17 \xt Mt 3:10; 12:33. Mc 11:13. Lu 8:8.\x*\wj Tout bon arbre porte de bons fruits, mais le mauvais arbre porte de mauvais fruits.\wj*
+\v 18 \wj Un bon arbre ne peut porter de mauvais fruits, ni un mauvais arbre porter de bons fruits.\wj*
+\v 19 \wj Tout arbre qui ne porte pas de bons fruits est coupé et jeté au feu.\wj*
+\v 20 \wj C’est donc à leurs fruits que vous les reconnaîtrez.\wj*
+\r V. 21-29: cf. (Lu 13:25-28; 6:46-49.) Ps 1. Éz 13:10-15.
+\p
+\v 21 \x n \xo 7.21 \xt Mt 25:11. Lu 6:46; 13:25. Ac 19:13. Ro 2:13. Ja 1:22.\x*\wj Ceux qui me disent: Seigneur, Seigneur! N’entreront pas tous dans le royaume des cieux, mais celui-là seul qui fait la volonté de mon Père qui est dans les cieux.\wj*
+\v 22 \x o \xo 7.22 \xt Jé 14:14; 27:15. Lu 13:26.\x*\wj Plusieurs me diront en ce jour-là: Seigneur, Seigneur, n’avons-nous pas prophétisé par ton nom? N’avons-nous pas chassé des démons par ton nom? Et n’avons-nous pas fait beaucoup de miracles par ton nom?\wj*
+\v 23 \x p \xo 7.23 \xt Ps 6:9. Mt 25:12. Lu 13:25, 27.\x*\wj Alors je leur dirai ouvertement: Je ne vous ai jamais connus,\wj*\x q \xo 7.23 \xt Mt 25:41. Lu 13:25, 26.\x*\wj retirez-vous de moi, vous qui commettez l’iniquité.\wj*
+\v 24 \x r \xo 7.24 \xt Jé 17:8. Lu 6:47. Ro 2:13. Ja 1:25.\x*\wj C’est pourquoi, quiconque entend ces paroles que je dis et les met en pratique, sera semblable à un homme prudent qui a bâti sa maison sur le roc.\wj*
+\v 25 \wj La pluie est tombée, les torrents sont venus, les vents ont soufflé et se sont jetés contre cette maison: elle n’est point tombée, parce qu’elle était fondée sur le roc.\wj*
+\v 26 \x s \xo 7.26 \xt Éz 13:11. Ro 2:13. Ja 1:23.\x*\wj Mais quiconque entend ces paroles que je dis, et ne les met pas en pratique, sera semblable à un homme insensé qui a bâti sa maison sur le sable.\wj*
+\v 27 \wj La pluie est tombée, les torrents sont venus, les vents ont soufflé et ont battu cette maison: elle est tombée, et sa ruine a été grande.\wj*
+\v 28 Après que Jésus eut achevé ces discours, la foule fut frappée de sa doctrine; 
+\v 29 \x t \xo 7.29 \xt Mc 1:22; 6:2. Lu 4:32.\x*car il enseignait comme ayant autorité, et non pas comme leurs scribes.
+\c 8
+\s1 Guérison d’un lépreux
+\r V. 1-4: cf. (Mc 1:40-45. Lu 5:12-16.)
+\p
+\v 1 Lorsque Jésus fut descendu de la montagne, une grande foule le suivit. 
+\v 2 \x a \xo 8.2 \xt Mc 1:40. Lu 5:12.\x*Et voici, un lépreux s’étant approché se prosterna devant lui, et dit: Seigneur, si tu le veux, tu peux me rendre pur. 
+\v 3 Jésus étendit la main, le toucha, et dit: \wj Je le veux, sois pur.\wj* Aussitôt il fut purifié de sa lèpre. 
+\v 4 Puis Jésus lui dit: \wj Garde-toi d’en parler à personne;\wj*\x b \xo 8.4 \xt Lu 5:14.\x*\wj mais va te montrer au sacrificateur, et présente l’offrande que\wj*\x c \xo 8.4 \xt Lé 13:2; 14:2.\x*\wj Moïse a prescrite, afin que cela leur serve de témoignage.\wj*
+\s1 Guérison du serviteur d’un centenier
+\r V. 5-13: cf. Lu 7:1-10.
+\p
+\v 5 \x d \xo 8.5 \xt Lu 7:1.\x*Comme Jésus entrait dans Capernaüm, un centenier l’aborda, 
+\v 6 le priant et disant: Seigneur, mon serviteur est couché à la maison, atteint de paralysie et souffrant beaucoup. 
+\v 7 Jésus lui dit: \wj J’irai, et je le guérirai.\wj*
+\v 8 Le centenier répondit: Seigneur, je ne suis pas digne que tu entres sous mon toit; mais \x e \xo 8.8 \xt Ps 107:20.\x*dis seulement un mot, et mon serviteur sera guéri. 
+\v 9 Car, moi qui suis soumis à des supérieurs, j’ai des soldats sous mes ordres; et je dis à l’un: Va! Et il va; à l’autre: Viens! Et il vient; et à mon serviteur: Fais cela! Et il le fait. 
+\v 10 Après l’avoir entendu, Jésus fut dans l’étonnement, et il dit à ceux qui le suivaient: \wj Je vous le dis en vérité, même en Israël je n’ai pas trouvé une aussi grande foi.\wj*
+\p
+\v 11 \x f \xo 8.11 \xt Lu 13:29.\x*\wj Or, je vous déclare que plusieurs viendront de l’orient et de l’occident, et seront à table avec Abraham, Isaac et Jacob, dans le royaume des cieux.\wj*
+\v 12 \x g \xo 8.12 \xt Mt 21:43.\x*\wj Mais les fils du royaume seront jetés dans les ténèbres du dehors,\wj*\x h \xo 8.12 \xt Mt 13:42; 22:13; 24:51. Lu 13:28.\x*\wj où il y aura des pleurs et des grincements de dents.\wj*
+\v 13 Puis Jésus dit au centenier: \wj Va, qu’il te soit fait selon ta foi.\wj* Et à l’heure même le serviteur fut guéri.
+\s1 Guérison de la belle-mère de Pierre et de plusieurs malades
+\r V. 14-17: cf. (Mc 1:29-34. Lu 4:38-41.)
+\p
+\v 14 \x i \xo 8.14 \xt Mc 1:29. Lu 4:38.\x*Jésus se rendit ensuite à la maison de Pierre, dont il vit la belle-mère couchée et ayant la fièvre. 
+\v 15 Il toucha sa main, et la fièvre la quitta; puis elle se leva, et le servit. 
+\v 16 Le soir, on amena auprès de Jésus plusieurs démoniaques. Il chassa les esprits par sa parole, et il guérit tous les malades, 
+\v 17 afin que s’accomplît ce qui avait été annoncé par Ésaïe, le prophète: \x j \xo 8.17 \xt És 53:4. 1 Pi 2:24.\x*Il a pris nos infirmités, et il s’est chargé de nos maladies.
+\s1 Comment suivre Jésus
+\r V. 18-22: cf. Lu 9:57-62.
+\p
+\v 18 Jésus, voyant une grande foule autour de lui, donna l’ordre de passer à l’autre bord. 
+\v 19 \x k \xo 8.19 \xt Lu 9:57.\x*Un scribe s’approcha, et lui dit: Maître, je te suivrai partout où tu iras. 
+\v 20 Jésus lui répondit: \wj Les renards ont des tanières, et les oiseaux du ciel ont des nids; mais le Fils de l’homme n’a pas où reposer sa tête.\wj*
+\v 21 Un autre, d’entre les disciples, lui dit: Seigneur, permets-moi d’aller d’abord ensevelir mon père. 
+\v 22 Mais Jésus lui répondit: \wj Suis-moi, et\wj*\x l \xo 8.22 \xt 1 Ti 5:6.\x*\wj laisse les morts ensevelir leurs morts.\wj*
+\s1 Tempête apaisée
+\r V. 23-27: cf. (Mc 4:35-41. Lu 8:22-25.) Ps 107:23-31.
+\p
+\v 23 \x m \xo 8.23 \xt Mc 4:35. Lu 8:22.\x*Il monta dans la barque, et ses disciples le suivirent. 
+\v 24 Et voici, il s’éleva sur la mer une si grande tempête que la barque était couverte par les flots. Et lui, il dormait. 
+\v 25 Les disciples s’étant approchés le réveillèrent, et dirent: Seigneur, sauve-nous, nous périssons! 
+\v 26 Il leur dit: \wj Pourquoi avez-vous peur, gens de peu de foi?\wj*\x n \xo 8.26 \xt Job 26:12. Ps 107:29. És 51:10.\x*Alors il se leva, menaça les vents et la mer, et il y eut un grand calme. 
+\v 27 Ces hommes furent saisis d’étonnement: Quel est celui-ci, disaient-ils, à qui obéissent même les vents et la mer?
+\s1 Jésus sur le territoire des Gadaréniens; deux démoniaques guéris
+\r V. 28-34: cf. (Mc 5:1-20. Lu 8:26-39.) 1 Jn 3:8.
+\p
+\v 28 \x o \xo 8.28 \xt Mc 5:1. Lu 8:26.\x*Lorsqu’il fut à l’autre bord, dans le pays des Gadaréniens, deux démoniaques, sortant des sépulcres, vinrent au-devant de lui. Ils étaient si furieux que personne n’osait passer par là. 
+\v 29 Et voici, ils s’écrièrent: Qu’y a-t-il entre nous et toi, Fils de Dieu? Es-tu venu ici pour nous tourmenter avant le temps? 
+\v 30 Il y avait loin d’eux un grand troupeau de pourceaux qui paissaient. 
+\v 31 Les démons priaient Jésus, disant: Si tu nous chasses, envoie-nous dans ce troupeau de pourceaux. 
+\v 32 Il leur dit: \wj Allez!\wj* Ils sortirent, et entrèrent dans les pourceaux. Et voici, tout le troupeau se précipita des pentes escarpées dans la mer, et ils périrent dans les eaux. 
+\v 33 Ceux qui les faisaient paître s’enfuirent, et allèrent dans la ville raconter tout ce qui s’était passé et ce qui était arrivé aux démoniaques. 
+\v 34 Alors toute la ville sortit à la rencontre de Jésus; et, dès qu’ils le virent, ils le \x p \xo 8.34 \xt Ac 16:39.\x*supplièrent de quitter leur territoire.
+\c 9
+\s1 Guérison d’un paralytique
+\r V. 1-8: cf. (Mc 2:1-12. Lu 5:17-26.)
+\p
+\v 1 Jésus, étant monté dans une barque, traversa la mer, et alla dans sa ville. 
+\v 2 \x a \xo 9.2 \xt Mc 2:3. Lu 5:18. Ac 9:33.\x*Et voici, on lui amena un paralytique couché sur un lit. Jésus, voyant leur foi, dit au paralytique: \wj Prends courage, mon enfant, tes péchés te sont pardonnés.\wj*
+\v 3 Sur quoi, quelques scribes dirent au-dedans d’eux: \x b \xo 9.3 \xt Ps 32:5. És 43:25.\x*Cet homme blasphème. 
+\v 4 Et Jésus, connaissant leurs pensées, dit: \wj Pourquoi avez-vous de mauvaises pensées dans vos cœurs?\wj*
+\p
+\v 5 \wj Car, lequel est le plus aisé, de dire: Tes péchés sont pardonnés, ou de dire: Lève-toi, et marche?\wj*
+\v 6 \wj Or, afin que vous sachiez que le Fils de l’homme a sur la terre le pouvoir de pardonner les péchés: Lève-toi,\wj* dit-il au paralytique, \wj prends ton lit, et va dans ta maison.\wj*
+\v 7 Et il se leva, et s’en alla dans sa maison. 
+\v 8 Quand la foule vit cela, elle fut saisie de crainte, et elle glorifia Dieu, qui a donné aux hommes un tel pouvoir.
+\s1 Vocation de Matthieu
+\r V. 9-13: cf. (Mc 2:13-17. Lu 5:27-32.) Mt 4:18-22. Ps 113:7.
+\p
+\v 9 \x c \xo 9.9 \xt Mc 2:14. Lu 5:27.\x*De là étant allé plus loin, Jésus vit un homme assis au lieu des péages, et qui s’appelait Matthieu. Il lui dit: \wj Suis-moi.\wj* Cet homme se leva, et le suivit. 
+\v 10 Comme Jésus était à table dans la maison, voici, beaucoup de publicains et de gens de mauvaise vie vinrent se mettre à table avec lui et avec ses disciples. 
+\v 11 Les pharisiens virent cela, et ils dirent à ses disciples: Pourquoi votre maître mange-t-il avec les publicains et les gens de mauvaise vie? 
+\v 12 Ce que Jésus ayant entendu, il dit: \wj Ce ne sont pas ceux qui se portent bien qui ont besoin de médecin, mais les malades.\wj*
+\p
+\v 13 \wj Allez, et apprenez ce que signifie:\wj*\x d \xo 9.13 \xt Os 6:6. Mi 6:8. Mt 12:7.\x*\wj Je prends plaisir à la miséricorde, et non aux sacrifices.\wj*\x e \xo 9.13 \xt Mc 2:17. Lu 5:32; 19:10. 1 Ti 1:15.\x*\wj Car je ne suis pas venu appeler des justes, mais des pécheurs.\wj*
+\s1 Question des disciples de Jean-Baptiste sur le jeûne
+\r V. 14-17: cf. (Mc 2:18-22. Lu 5:33-39.)
+\p
+\v 14 \x f \xo 9.14 \xt Mc 2:18. Lu 5:33.\x*Alors les disciples de Jean vinrent auprès de Jésus, et dirent: Pourquoi nous et les pharisiens jeûnons-nous, tandis que tes disciples ne jeûnent point? 
+\v 15 Jésus leur répondit: \x g \xo 9.15 \xt 2 Co 11:2.\x*\wj Les amis de l’époux peuvent-ils s’affliger pendant que l’époux est avec eux? Les jours viendront où l’époux leur sera enlevé, et alors ils jeûneront.\wj*
+\p
+\v 16 \wj Personne ne met une pièce de drap neuf à un vieil habit; car elle emporterait une partie de l’habit, et la déchirure serait pire.\wj*
+\v 17 \x h \xo 9.17 \xt Mc 2:22.\x*\wj On ne met pas non plus du vin nouveau dans de vieilles outres; autrement, les outres se rompent, le vin se répand, et les outres sont perdues; mais on met le vin nouveau dans des outres neuves, et le vin et les outres se conservent.\wj*
+\s1 Résurrection de la fille de Jaïrus, et guérison d’une femme malade depuis douze ans
+\r V. 18-26: cf. (Mc 5:22-43. Lu 8:41-56.) Jn 5:21, 28.
+\p
+\v 18 Tandis qu’il leur adressait ces paroles, \x i \xo 9.18 \xt Mc 5:22. Lu 8:41.\x*voici, un chef arriva, se prosterna devant lui, et dit: Ma fille est morte il y a un instant; mais viens, impose-lui les mains, et elle vivra. 
+\v 19 Jésus se leva, et le suivit avec ses disciples. 
+\v 20 \x j \xo 9.20 \xt Lé 15:25. Mc 5:25. Lu 8:43.\x*Et voici, une femme atteinte d’une perte de sang depuis douze ans s’approcha par derrière, et toucha le bord de son vêtement. 
+\v 21 Car elle disait en elle-même: Si je puis seulement toucher son vêtement, je serai guérie. 
+\v 22 Jésus se retourna, et dit, en la voyant: \x k \xo 9.22 \xt Mc 5:34. Lu 8:48.\x*\wj Prends courage, ma fille, ta foi t’a guérie.\wj* Et cette femme fut guérie à l’heure même. 
+\v 23 \x l \xo 9.23 \xt Mc 5:38. Lu 8:51.\x*Lorsque Jésus fut arrivé à la maison du chef, et qu’il vit les joueurs de flûte et la foule bruyante, 
+\v 24 il leur dit: \wj Retirez-vous; car la jeune fille n’est pas morte, mais elle\wj*\x m \xo 9.24 \xt Jn 11:11.\x*\wj dort.\wj* Et ils se moquaient de lui. 
+\v 25 Quand la foule eut été renvoyée, il entra, prit la main de la jeune fille, et la jeune fille se leva. 
+\v 26 Le bruit s’en répandit dans toute la contrée.
+\s1 Diverses guérisons
+\r V. 27-31: cf. Mc 8:22-26; 10:46-53. És 35:5.
+\p
+\v 27 Étant parti de là, Jésus fut suivi par deux aveugles, qui criaient: Aie pitié de nous, Fils de David! 
+\v 28 Lorsqu’il fut arrivé à la maison, les aveugles s’approchèrent de lui, et Jésus leur dit: \wj Croyez-vous que je puisse faire cela?\wj* Oui, Seigneur, lui répondirent-ils. 
+\v 29 Alors il leur toucha les yeux, en disant: \wj Qu’il vous soit fait selon votre foi.\wj*
+\v 30 Et leurs yeux s’ouvrirent. \x n \xo 9.30 \xt Mt 12:16. Lu 5:14.\x*Jésus leur fit cette recommandation sévère: \wj Prenez garde que personne ne le sache.\wj*
+\v 31 \x o \xo 9.31 \xt Mc 7:36.\x*Mais, dès qu’ils furent sortis, ils répandirent sa renommée dans tout le pays.
+\r V. 32-34: cf. Mt 12:22-37. És 35:6.
+\p
+\v 32 \x p \xo 9.32 \xt Mt 12:22. Lu 11:14.\x*Comme ils s’en allaient, voici, on amena à Jésus un démoniaque muet. 
+\v 33 Le démon ayant été chassé, le muet parla. Et la foule étonnée disait: Jamais pareille chose ne s’est vue en Israël. 
+\v 34 Mais les pharisiens dirent: \x q \xo 9.34 \xt Mt 12:24. Mc 3:22. Lu 11:15.\x*C’est par le prince des démons qu’il chasse les démons.
+\s1 Mission des douze apôtres
+\r V. 35-38: cf. Mc 6:34. (Mt 4:23-25. Ac 10:38.)
+\p
+\v 35 \x r \xo 9.35 \xt Mc 6:6. Lu 13:22.\x*Jésus parcourait toutes les villes et les villages, enseignant dans les synagogues, prêchant la bonne nouvelle du royaume, et guérissant toute maladie et toute infirmité. 
+\v 36 \x s \xo 9.36 \xt Mc 6:34.\x*Voyant la foule, il fut ému de compassion pour elle, parce qu’elle était languissante et abattue, \x t \xo 9.36 \xt Jé 23:1. Éz 34:2.\x*comme des brebis qui n’ont point de berger. 
+\v 37 Alors il dit à ses disciples: \wj La moisson est grande, mais il y a peu d’ouvriers.\wj*
+\p
+\v 38 \x u \xo 9.38 \xt 2 Th 3:1.\x*\wj Priez donc le maître de la moisson d’envoyer des ouvriers dans sa moisson.\wj*
+\c 10
+\r V. 1-15: cf. (Mc 3:13-19; 6:7-11. Lu 6:12-16; 9:1-5.) Lu 10:1-12. Ac 1:13.
+\p
+\v 1 \x a \xo 10.1 \xt Mc 3:13. Lu 6:13; 9:1.\x*Puis, ayant appelé ses douze disciples, il leur donna le pouvoir de chasser les esprits impurs, et de guérir toute maladie et toute infirmité. 
+\v 2 Voici les noms des douze apôtres. Le premier, Simon appelé Pierre, et André, son frère; Jacques, fils de Zébédée, et Jean, son frère; 
+\v 3 Philippe, et Barthélemy; Thomas, et Matthieu, le publicain; Jacques, fils d’Alphée, et Thaddée; 
+\v 4 Simon le Cananite, et Judas l’Iscariot, celui qui livra Jésus. 
+\v 5 Tels sont les douze que Jésus envoya, après leur avoir donné les instructions suivantes: \wj N’allez pas vers les païens, et n’entrez pas dans les villes des Samaritains;\wj*
+\p
+\v 6 \x b \xo 10.6 \xt Ac 3:26; 13:26, 46.\x*\wj allez plutôt vers les brebis perdues de la maison d’Israël.\wj*
+\v 7 \wj Allez,\wj*\x c \xo 10.7 \xt Lu 9:2.\x*\wj prêchez, et dites: Le royaume des cieux est proche.\wj*
+\v 8 \x d \xo 10.8 \xt Lu 10:9.\x*\wj Guérissez les malades, ressuscitez les morts, purifiez les lépreux, chassez les démons.\wj*\x e \xo 10.8 \xt Ac 8:18, 20.\x*\wj Vous avez reçu gratuitement, donnez gratuitement.\wj*
+\v 9 \x f \xo 10.9 \xt Mc 6:8. Lu 9:3; 22:35.\x*\wj Ne prenez ni or, ni argent, ni monnaie, dans vos ceintures;\wj*
+\v 10 \wj ni sac pour le voyage, ni deux tuniques, ni souliers, ni bâton;\wj*\x g \xo 10.10 \xt Lé 19:13. De 24:14; 25:4. Lu 10:7. 1 Co 9:4, 14. 1 Ti 5:18.\x*\wj car l’ouvrier mérite sa nourriture.\wj*
+\v 11 \x h \xo 10.11 \xt Mc 6:10. Lu 9:4; 10:8.\x*\wj Dans quelque ville ou village que vous entriez, informez-vous s’il s’y trouve quelque homme digne de vous recevoir; et demeurez chez lui jusqu’à ce que vous partiez.\wj*
+\v 12 \wj En entrant dans la maison, saluez-la;\wj*
+\v 13 \wj et, si la maison en est digne, que votre paix vienne sur elle; mais si elle n’en est pas digne, que votre paix retourne à vous.\wj*
+\v 14 \x i \xo 10.14 \xt Mc 6:11. Lu 9:5.\x*\wj Lorsqu’on ne vous recevra pas et qu’on n’écoutera pas vos paroles, sortez de cette maison ou de cette ville et\wj*\x j \xo 10.14 \xt Ac 13:51; 18:6.\x*\wj secouez la poussière de vos pieds.\wj*
+\v 15 \x k \xo 10.15 \xt Mc 6:11. Lu 10:12.\x*\wj Je vous le dis en vérité: au jour du jugement, le pays de Sodome et de Gomorrhe sera traité moins rigoureusement que cette ville-là.\wj*
+\r V. 16-39: cf. Lu 12:4-12, 51-53; 14:26-33; 21:12-17.
+\p
+\v 16 \x l \xo 10.16 \xt Lu 10:3.\x*\wj Voici, je vous envoie comme des brebis au milieu des loups. Soyez donc prudents comme les serpents, et simples comme les colombes.\wj*
+\v 17 \wj Mettez-vous en garde contre les hommes;\wj*\x m \xo 10.17 \xt Mt 24:9. Lu 21:12. Jn 15:20; 16:2. Ap 2:10.\x*\wj car ils vous livreront aux tribunaux, et ils vous battront de verges dans leurs synagogues;\wj*
+\v 18 \x n \xo 10.18 \xt Ac 24:1; 25:4.\x*\wj vous serez menés, à cause de moi, devant des gouverneurs et devant des rois, pour servir de témoignage à eux et aux païens.\wj*
+\v 19 \x o \xo 10.19 \xt Mc 13:11. Lu 12:11; 21:14.\x*\wj Mais, quand on vous livrera, ne vous inquiétez ni de la manière dont vous parlerez ni de ce que vous direz: ce que vous aurez à dire vous sera donné à l’heure même;\wj*
+\v 20 \wj car ce n’est pas vous qui parlerez, c’est l’Esprit de votre Père qui parlera en vous.\wj*
+\v 21 \x p \xo 10.21 \xt Mi 7:2, 5. Lu 21:16.\x*\wj Le frère livrera son frère à la mort, et le père son enfant; les enfants se soulèveront contre leurs parents, et les feront mourir.\wj*
+\v 22 \wj Vous serez haïs de tous, à cause de mon nom;\wj*\x q \xo 10.22 \xt Mt 24:13. Mc 13:13. Lu 21:19. Ap 2:10; 3:10.\x*\wj mais celui qui persévérera jusqu’à la fin sera sauvé.\wj*
+\v 23 \x r \xo 10.23 \xt Mt 2:13; 4:12; 12:15. Ac 8:1; 9:25; 14:6.\x*\wj Quand on vous persécutera dans une ville, fuyez dans une autre. Je vous le dis en vérité, vous n’aurez pas achevé de parcourir les villes d’Israël que le Fils de l’homme sera venu.\wj*
+\v 24 \x s \xo 10.24 \xt Lu 6:40. Jn 13:16; 15:20.\x*\wj Le disciple n’est pas plus que le maître, ni le serviteur plus que son seigneur.\wj*
+\v 25 \wj Il suffit au disciple d’être traité comme son maître, et au serviteur comme son seigneur.\wj*\x t \xo 10.25 \xt Mt 9:34; 12:24. Mc 3:22. Lu 11:15. Jn 8:48.\x*\wj S’ils ont appelé le maître de la maison Béelzébul, à combien plus forte raison appelleront-ils ainsi les gens de sa maison!\wj*
+\v 26 \x u \xo 10.26 \xt És 8:12. Jé 1:8.\x*\wj Ne les craignez donc point;\wj*\x v \xo 10.26 \xt Job 12:22. Mc 4:22. Lu 8:17; 12:2.\x*\wj car il n’y a rien de caché qui ne doive être découvert, ni de secret qui ne doive être connu.\wj*
+\v 27 \wj Ce que je vous dis dans les ténèbres, dites-le en plein jour; et ce qui vous est dit à l’oreille, prêchez-le sur les toits.\wj*
+\v 28 \x w \xo 10.28 \xt Jé 1:8. Lu 12:4.\x*\wj Ne craignez pas ceux qui tuent le corps et qui ne peuvent tuer l’âme; craignez plutôt celui qui peut faire périr l’âme et le corps dans la géhenne.\wj*
+\v 29 \wj Ne vend-on pas deux passereaux pour un sou? Cependant, il n’en tombe pas un à terre sans la volonté de votre Père.\wj*
+\v 30 \wj Et même les\wj*\x x \xo 10.30 \xt 1 S 14:45.\x*\wj cheveux de votre tête sont tous comptés.\wj*
+\v 31 \wj Ne craignez donc point: vous valez plus que beaucoup de passereaux.\wj*
+\v 32 \x y \xo 10.32 \xt Mc 8:38. Lu 9:26; 12:8. 2 Ti 2:12.\x*\wj C’est pourquoi, quiconque me confessera devant les hommes, je le confesserai aussi devant mon Père qui est dans les cieux;\wj*
+\v 33 \wj mais quiconque me reniera devant les hommes, je le renierai aussi devant mon Père qui est dans les cieux.\wj*
+\v 34 \x z \xo 10.34 \xt Lu 12:51.\x*\wj Ne croyez pas que je sois venu apporter la paix sur la terre; je ne suis pas venu apporter la paix, mais l’épée.\wj*
+\v 35 \x a \xo 10.35 \xt Mi 7:6.\x*\wj Car je suis venu mettre la division entre l’homme et son père, entre la fille et sa mère, entre la belle-fille et sa belle-mère;\wj*
+\v 36 \x b \xo 10.36 \xt Ps 41:10; 55:13. Jn 13:18.\x*\wj et l’homme aura pour ennemis les gens de sa maison.\wj*
+\v 37 \x c \xo 10.37 \xt Lu 14:26.\x*\wj Celui qui aime son père ou sa mère plus que moi n’est pas digne de moi, et celui qui aime son fils ou sa fille plus que moi n’est pas digne de moi;\wj*
+\v 38 \x d \xo 10.38 \xt Mt 16:24. Mc 8:34. Lu 9:23; 14:27.\x*\wj celui qui ne prend pas sa croix, et ne me suit pas, n’est pas digne de moi.\wj*
+\v 39 \x e \xo 10.39 \xt Mt 16:25. Mc 8:35. Lu 9:24; 17:33. Jn 12:25.\x*\wj Celui qui conservera sa vie la perdra, et celui qui perdra sa vie à cause de moi la retrouvera.\wj*
+\r 10 v. 40 à 11 v. 1: cf. Mt 25:34-40.
+\p
+\v 40 \x f \xo 10.40 \xt Lu 10:16. Jn 13:20.\x*\wj Celui qui vous reçoit me reçoit, et celui qui me reçoit, reçoit celui qui m’a envoyé.\wj*
+\v 41 \x g \xo 10.41 \xt 1 R 17:10; 18:4. 2 R 4:8.\x*\wj Celui qui reçoit un prophète en qualité de prophète recevra une récompense de prophète, et celui qui reçoit un juste en qualité de juste recevra une récompense de juste.\wj*
+\v 42 \x h \xo 10.42 \xt Mt 25:40. Mc 9:41. Hé 6:10.\x*\wj Et quiconque donnera seulement un verre d’eau froide à l’un de ces petits parce qu’il est mon disciple, je vous le dis en vérité, il ne perdra point sa récompense.\wj*
+\c 11
+\p
+\v 1 Lorsque Jésus eut achevé de donner ses instructions à ses douze disciples, il partit de là, pour enseigner et prêcher dans les villes du pays.
+\s1 Message de Jean-Baptiste à Jésus
+\r V. 2-6: cf. Lu 7:18-23. (Jn 5:36. És 35:4-6; 61:1-3.)
+\p
+\v 2 \x a \xo 11.2 \xt Lu 7:18.\x*Jean, ayant entendu parler dans sa prison des œuvres du Christ, lui fit dire par ses disciples: 
+\v 3 Es-tu celui qui doit venir, ou devons-nous en attendre un autre? 
+\v 4 Jésus leur répondit: \wj Allez rapporter à Jean ce que vous entendez et ce que vous voyez:\wj*
+\v 5 \x b \xo 11.5 \xt És 29:18; 35:5; 61:1. Lu 4:18.\x*\wj les aveugles voient, les boiteux marchent, les lépreux sont purifiés, les sourds entendent, les morts ressuscitent, et la bonne nouvelle est annoncée aux pauvres.\wj*
+\v 6 \wj Heureux celui pour qui je ne serai pas une occasion de chute!\wj*
+\s1 Témoignage sur Jean-Baptiste
+\r V. 7-19: cf. Lu 7:24-35.
+\p
+\v 7 \x c \xo 11.7 \xt Lu 7:24.\x*Comme ils s’en allaient, Jésus se mit à dire à la foule, au sujet de Jean: \wj Qu’êtes-vous allés voir au désert? Un roseau agité par le vent?\wj*
+\p
+\v 8 \wj Mais, qu’êtes-vous allés voir? Un homme vêtu d’habits précieux? Voici, ceux qui portent des habits précieux sont dans les maisons des rois.\wj*
+\v 9 \wj Qu’êtes-vous donc allés voir? Un prophète? Oui, vous dis-je, et plus qu’un prophète.\wj*
+\v 10 \wj Car c’est celui dont il est écrit:\wj*
+\q1 \x d \xo 11.10 \xt Mal 3:1. Mc 1:2. Lu 7:27.\x*\wj Voici, j’envoie mon messager devant ta face,\wj*
+\q1 \wj Pour préparer ton chemin devant toi.\wj*
+\m
+\v 11 \wj Je vous le dis en vérité, parmi ceux qui sont nés de femmes, il n’en a point paru de plus grand que Jean-Baptiste. Cependant, le plus petit dans le royaume des cieux est plus grand que lui.\wj*
+\v 12 \x e \xo 11.12 \xt Lu 16:16.\x*\wj Depuis le temps de Jean-Baptiste jusqu’à présent, le royaume des cieux est forcé, et ce sont les violents qui s’en emparent.\wj*
+\v 13 \wj Car tous les prophètes et la loi ont prophétisé jusqu’à Jean;\wj*
+\v 14 \x f \xo 11.14 \xt Mal 4:5. Lu 1:17.\x*\wj et, si vous voulez le comprendre, c’est lui qui est l’Élie qui devait venir.\wj*
+\v 15 \wj Que celui qui a des oreilles pour entendre entende.\wj*
+\v 16 \wj A qui comparerai-je cette génération?\wj*\x g \xo 11.16 \xt Lu 7:31.\x*\wj Elle ressemble à des enfants assis dans des places publiques, et qui, s’adressant à d’autres enfants,\wj*
+\v 17 \wj disent: Nous vous avons joué de la flûte, et vous n’avez pas dansé; nous avons chanté des complaintes, et vous ne vous êtes pas lamentés.\wj*
+\v 18 \x h \xo 11.18 \xt Mt 3:4. Mc 1:6.\x*\wj Car Jean est venu, ne mangeant ni ne buvant, et ils disent: Il a un démon.\wj*
+\v 19 \wj Le Fils de l’homme est venu, mangeant et buvant, et ils disent: C’est un mangeur et un buveur, un ami des publicains et des gens de mauvaise vie. Mais la sagesse a été justifiée par ses œuvres.\wj*
+\s1 Reproches aux villes impénitentes
+\r V. 20-24: cf. Lu 10:10-16; 12:47, 48.
+\p
+\v 20 \x i \xo 11.20 \xt Lu 10:13.\x*Alors il se mit à faire des reproches aux villes dans lesquelles avaient eu lieu la plupart de ses miracles, parce qu’elles ne s’étaient pas repenties.
+\p
+\v 21 \wj Malheur à toi, Chorazin! Malheur à toi, Bethsaïda! Car, si les miracles qui ont été faits au milieu de vous avaient été faits dans Tyr et dans Sidon, il y a longtemps qu’elles se seraient repenties, en prenant\wj*\x j \xo 11.21 \xt 2 S 13:19. 2 R 6:30; 19:1.\x*\wj le sac et la cendre.\wj*
+\v 22 \x k \xo 11.22 \xt Mt 10:15.\x*\wj C’est pourquoi je vous le dis: au jour du jugement, Tyr et Sidon seront traitées moins rigoureusement que vous.\wj*
+\v 23 \wj Et toi, Capernaüm, seras-tu élevée jusqu’au ciel? Non. Tu seras abaissée jusqu’au séjour des morts; car, si les miracles qui ont été faits au milieu de toi avaient été faits dans Sodome, elle subsisterait encore aujourd’hui.\wj*
+\v 24 \wj C’est pourquoi je vous le dis:\wj*\x l \xo 11.24 \xt Mt 10:15.\x*\wj au jour du jugement, le pays de Sodome sera traité moins rigoureusement que toi.\wj*
+\s1 Les choses révélées aux enfants. Aller à Jésus et accepter son joug
+\r V. 25-30: cf. Lu 10:17-22; 1:51-53. 1 Co 1:26-29. És 55:1-3.
+\p
+\v 25 \x m \xo 11.25 \xt Lu 10:21.\x*En ce temps-là, Jésus prit la parole, et dit: \wj Je te loue, Père, Seigneur du ciel et de la terre,\wj*\x n \xo 11.25 \xt Jn 5:12. És 29:14. Lu 10:21. 1 Co 1:19; 2:7, 8.\x*\wj de ce que tu as caché ces choses aux sages et aux intelligents, et de ce que tu les as révélées aux enfants.\wj*
+\p
+\v 26 \wj Oui, Père, je te loue de ce que tu l’as voulu ainsi.\wj*
+\v 27 \x o \xo 11.27 \xt Mt 28:18. Lu 10:22. Jn 3:35.\x*\wj Toutes choses m’ont été données par mon Père, et\wj*\x p \xo 11.27 \xt Jn 1:18; 6:46.\x*\wj personne ne connaît le Fils, si ce n’est le Père; personne non plus ne connaît le Père, si ce n’est le Fils et celui à qui le Fils veut le révéler.\wj*
+\v 28 \wj Venez à moi, vous tous qui êtes fatigués et chargés, et je vous donnerai du repos.\wj*
+\v 29 \wj Prenez mon joug sur vous et recevez mes instructions, car je suis\wj*\x q \xo 11.29 \xt Ps 45:5.\x*\wj doux et humble de cœur;\wj*\x r \xo 11.29 \xt Jé 6:16.\x*\wj et vous trouverez du repos pour vos âmes.\wj*
+\v 30 \x s \xo 11.30 \xt 1 Jn 5:3.\x*\wj Car mon joug est doux, et mon fardeau léger.\wj*
+\c 12
+\s1 Les épis de blé et le sabbat
+\r V. 1-8: cf. (Mc 2:23-28. Lu 6:1-5.) Mt 11:30.
+\p
+\v 1 \x a \xo 12.1 \xt De 23:25. Mc 2:23. Lu 6:1.\x*En ce temps-là, Jésus traversa des champs de blé un jour de sabbat. Ses disciples, qui avaient faim, se mirent à arracher des épis et à manger. 
+\v 2 Les pharisiens, voyant cela, lui dirent: Voici, tes disciples font \x b \xo 12.2 \xt Ex 20:10.\x*ce qu’il n’est pas permis de faire pendant le sabbat. 
+\v 3 Mais Jésus leur répondit: \wj N’avez-vous pas lu ce que fit David, lorsqu’il eut faim, lui et ceux qui étaient avec lui;\wj*
+\p
+\v 4 \wj comment il entra dans la maison de Dieu, et mangea\wj*\x c \xo 12.4 \xt 1 S 21:6.\x*\wj les pains de proposition, qu’il ne lui était pas permis de manger, non plus qu’à ceux qui étaient avec lui, et\wj*\x d \xo 12.4 \xt Ex 29:33. Lé 24:9.\x*\wj qui étaient réservés aux sacrificateurs seuls?\wj*
+\v 5 \x e \xo 12.5 \xt No 28:9.\x*\wj Ou, n’avez-vous pas lu dans la loi que, les jours de sabbat, les sacrificateurs violent le sabbat dans le temple, sans se rendre coupables?\wj*
+\v 6 \wj Or, je vous le dis,\wj*\x f \xo 12.6 \xt 2 Ch 6:18.\x*\wj il y a ici quelque chose de plus grand que le temple.\wj*
+\v 7 \wj Si vous saviez ce que signifie:\wj*\x g \xo 12.7 \xt Os 6:6. Mi 6:8. Mt 9:13; 23:23.\x*\wj Je prends plaisir à la miséricorde, et non aux sacrifices, vous n’auriez pas condamné des innocents.\wj*
+\v 8 \x h \xo 12.8 \xt Mc 2:28. Lu 6:5.\x*\wj Car le Fils de l’homme est maître du sabbat.\wj*
+\s1 L’homme qui a la main sèche
+\r V. 9-15: cf. Mc 3:1-6. Lu 6:6-11.
+\p
+\v 9 \x i \xo 12.9 \xt Mc 3:1. Lu 6:6.\x*Étant parti de là, Jésus entra dans la synagogue. 
+\v 10 Et voici, il s’y trouvait un homme qui avait la main sèche. Ils demandèrent à Jésus: \x j \xo 12.10 \xt Lu 14:3.\x*Est-il permis de faire une guérison les jours de sabbat? C’était afin de pouvoir l’accuser. 
+\v 11 Il leur répondit: \wj Lequel d’entre vous, s’il n’a qu’une brebis et qu’elle tombe\wj*\x k \xo 12.11 \xt Ex 23:4. De 22:4.\x*\wj dans une fosse le jour du sabbat, ne la saisira pour l’en retirer?\wj*
+\p
+\v 12 \x l \xo 12.12 \xt Ge 1:27.\x*\wj Combien un homme ne vaut-il pas plus qu’une brebis! Il est donc permis de faire du bien les jours de sabbat.\wj*
+\v 13 Alors il dit à l’homme: \wj Étends ta main.\wj* Il l’étendit, et elle devint saine comme l’autre. 
+\v 14 \x m \xo 12.14 \xt Mc 3:6. Jn 5:18; 10:39; 11:53.\x*Les pharisiens sortirent, et ils se consultèrent sur les moyens de le faire périr. 
+\v 15 Mais Jésus, l’ayant su, \x n \xo 12.15 \xt Mt 10:23.\x*s’éloigna de ce lieu.
+\r V. 16-21: cf. Mc 3:7-12. (És 42:1-4.)
+\p Une grande foule le suivit. Il guérit tous les malades, 
+\v 16 et \x o \xo 12.16 \xt Mt 9:30. Lu 5:14.\x*il leur recommanda sévèrement de ne pas le faire connaître, 
+\v 17 afin que s’accomplît ce qui avait été annoncé par Ésaïe, le prophète:
+\q1
+\v 18 \x p \xo 12.18 \xt És 42:1. Mt 3:17; 17:5. Mc 1:11. Col 1:13. 2 Pi 1:17.\x*Voici mon serviteur que j’ai choisi,
+\q1 Mon bien-aimé en qui mon âme a pris plaisir.
+\q1 Je mettrai mon Esprit sur lui,
+\q1 Et il annoncera la justice aux nations.
+\q1
+\v 19 Il ne contestera point, il ne criera point,
+\q1 Et personne n’entendra sa voix dans les rues.
+\q1
+\v 20 Il ne brisera point le roseau cassé,
+\q1 Et il n’éteindra point le lumignon qui fume,
+\q1 Jusqu’à ce qu’il ait fait triompher la justice.
+\q1
+\v 21 Et les nations espéreront en son nom.
+\s1 Le démoniaque aveugle et muet. Attaque des pharisiens et réponse de Jésus. — Le péché contre le Saint-Esprit
+\r V. 22-37: cf. (Mc 3:20-30. Lu 11:14-26.) Hé 6:4-8; 10:26-29.
+\p
+\v 22 \x q \xo 12.22 \xt Mt 9:32. Lu 11:14.\x*Alors on lui amena un démoniaque aveugle et muet, et il le guérit, de sorte que le muet parlait et voyait. 
+\v 23 Toute la foule étonnée disait: \x r \xo 12.23 \xt Jn 4:29.\x*N’est-ce point là le Fils de David? 
+\v 24 Les pharisiens, ayant entendu cela, dirent: \x s \xo 12.24 \xt Mt 9:34. Mc 3:22. Lu 11:15.\x*Cet homme ne chasse les démons que par Béelzébul, prince des démons. 
+\v 25 Comme Jésus connaissait leurs pensées, il leur dit: \wj Tout royaume divisé contre lui-même est dévasté, et toute ville ou maison divisée contre elle-même ne peut subsister.\wj*
+\p
+\v 26 \wj Si Satan chasse Satan, il est divisé contre lui-même; comment donc son royaume subsistera-t-il?\wj*
+\v 27 \wj Et si moi, je chasse les démons par Béelzébul, vos fils, par qui les chassent-ils? C’est pourquoi ils seront eux-mêmes vos juges.\wj*
+\v 28 \wj Mais, si c’est par l’Esprit de Dieu que je chasse les démons, le royaume de Dieu est donc venu vers vous.\wj*
+\v 29 \wj Ou, comment quelqu’un peut-il entrer dans la maison d’un homme fort et piller ses biens, sans avoir auparavant lié cet homme fort? Alors seulement il pillera sa maison.\wj*
+\v 30 \wj Celui qui n’est pas avec moi est contre moi, et celui qui n’assemble pas avec moi disperse.\wj*
+\v 31 \x t \xo 12.31 \xt Mc 3:28. Lu 12:10. 1 Jn 5:16.\x*\wj C’est pourquoi je vous dis: Tout péché et tout blasphème sera pardonné aux hommes, mais le blasphème contre l’Esprit ne sera point pardonné.\wj*
+\v 32 \x u \xo 12.32 \xt 1 S 2:25.\x*\wj Quiconque parlera contre le Fils de l’homme, il lui sera pardonné;\wj*\x v \xo 12.32 \xt No 15:30. 1 Jn 5:16.\x*\wj mais quiconque parlera contre le Saint-Esprit, il ne lui sera pardonné ni dans ce siècle ni dans le siècle à venir.\wj*
+\v 33 \x w \xo 12.33 \xt Mt 7:18.\x*\wj Ou dites que l’arbre est bon et que son fruit est bon, ou dites que l’arbre est mauvais et que son fruit est mauvais; car on connaît l’arbre par le fruit.\wj*
+\v 34 \x x \xo 12.34 \xt Mt 3:7.\x*\wj Races de vipères, comment pourriez-vous dire de bonnes chose, méchants comme vous l’êtes?\wj*\x y \xo 12.34 \xt Ps 40:11. Lu 6:45.\x*\wj Car c’est de l’abondance du cœur que la bouche parle.\wj*
+\v 35 \wj L’homme bon tire de bonnes choses de son bon trésor, et l’homme méchant tire de mauvaises choses de son mauvais trésor.\wj*
+\v 36 \wj Je vous le dis:\wj*\x z \xo 12.36 \xt Ép 5:4.\x*\wj au jour du jugement, les hommes rendront compte de\wj*\x a \xo 12.36 \xt Ec 12:14.\x*\wj toute parole vaine qu’ils auront proférée.\wj*
+\v 37 \x b \xo 12.37 \xt 2 S 1:16. Lu 19:22.\x*\wj Car par tes paroles tu seras justifié, et par tes paroles tu seras condamné.\wj*
+\s1 Un miracle refusé
+\r V. 38-45: cf. Lu 11:29-32, 24-28. (Mt 16:1-4; 11:20-24; 23:32-38.)
+\p
+\v 38 \x c \xo 12.38 \xt Mt 16:1. Mc 8:11. Lu 11:29. 1 Co 1:22.\x*Alors quelques-uns des scribes et des pharisiens prirent la parole, et dirent: Maître, nous voudrions te voir faire un miracle. 
+\v 39 Il leur répondit: \wj Une génération méchante et adultère demande un miracle; il ne lui sera donné d’autre miracle que celui du prophète Jonas.\wj*
+\p
+\v 40 \x d \xo 12.40 \xt Jon 1:17; 2:10.\x*\wj Car, de même que Jonas fut trois jours et trois nuits dans le ventre d’un grand poisson, de même le Fils de l’homme sera trois jours et trois nuits dans le sein de la terre.\wj*
+\v 41 \x e \xo 12.41 \xt Lu 11:32.\x*\wj Les hommes de Ninive se lèveront, au jour du jugement, avec cette génération et la condamneront, parce qu’ils se repentirent\wj*\x f \xo 12.41 \xt Jon 3:5.\x*\wj à la prédication de Jonas; et voici, il y a ici plus que Jonas.\wj*
+\v 42 \x g \xo 12.42 \xt 1 R 10:1. 2 Ch 9:1. Lu 11:31.\x*\wj La reine du Midi se lèvera, au jour du jugement, avec cette génération et la condamnera, parce qu’elle vint des extrémités de la terre pour entendre la sagesse de Salomon, et voici, il y a ici plus que Salomon.\wj*
+\v 43 \x h \xo 12.43 \xt Lu 11:24.\x*\wj Lorsque l’esprit impur est sorti d’un homme, il va par des lieux arides, cherchant du repos, et il n’en trouve point.\wj*
+\v 44 \wj Alors il dit: Je retournerai dans ma maison d’où je suis sorti; et, quand il arrive, il la trouve vide, balayée et ornée.\wj*
+\v 45 \wj Il s’en va, et il prend avec lui sept autres esprits plus méchants que lui;\wj*\x i \xo 12.45 \xt Hé 6:4, 5; 10:26. 2 Pi 2:20.\x*\wj ils entrent dans la maison, s’y établissent, et la dernière condition de cet homme est pire que la première. Il en sera de même pour cette génération méchante.\wj*
+\s1 La mère et les frères de Jésus
+\r V. 46-50: cf. (Mc 3:31-35. Lu 8:19-21.) Hé 2:11-13.
+\p
+\v 46 \x j \xo 12.46 \xt Mc 3:31. Lu 8:20.\x*Comme Jésus s’adressait encore à la foule, voici, sa mère et ses frères, qui étaient dehors, cherchèrent à lui parler. 
+\v 47 Quelqu’un lui dit: Voici, ta mère et tes frères sont dehors, et ils cherchent à te parler. 
+\v 48 Mais Jésus répondit à celui qui le lui disait: \wj Qui est ma mère, et qui sont mes frères?\wj*
+\v 49 Puis, étendant la main sur ses disciples, il dit: \wj Voici ma mère et mes frères.\wj*
+\p
+\v 50 \x k \xo 12.50 \xt Jn 15:14. 2 Co 5:16. Ga 5:6; 6:15. Col 3:11.\x*\wj Car, quiconque fait la volonté de mon Père qui est dans les cieux, celui-là est mon frère, et ma sœur, et ma mère.\wj*
+\c 13
+\s1 Paraboles du semeur, — de l’ivraie, — du grain de sénevé, — du levain, — du trésor caché, — de la perle, — du filet
+\r V. 1-23: cf. (Mc 4:1-20. Lu 8:4-15.) 1 Co 3:9.
+\p
+\v 1 \x a \xo 13.1 \xt Mc 4:1. Lu 8:4, 5.\x*Ce même jour, Jésus sortit de la maison, et s’assit au bord de la mer. 
+\v 2 Une grande foule s’étant assemblée auprès de lui, il monta \x b \xo 13.2 \xt Lu 5:3.\x*dans une barque, et il s’assit. Toute la foule se tenait sur le rivage. 
+\v 3 Il leur parla en paraboles sur beaucoup de choses, et il dit:
+\p
+\v 4 \wj Un semeur sortit pour semer. Comme il semait, une partie de la semence tomba le long du chemin: les oiseaux vinrent, et la mangèrent.\wj*
+\v 5 \wj Une autre partie tomba dans les endroits pierreux, où elle n’avait pas beaucoup de terre: elle leva aussitôt, parce qu’elle ne trouva pas un sol profond;\wj*
+\v 6 \wj mais, quand le soleil parut, elle fut brûlée et sécha, faute de racines.\wj*
+\v 7 \wj Une autre partie tomba parmi les épines: les épines montèrent, et l’étouffèrent.\wj*
+\v 8 \wj Une autre partie tomba dans la bonne terre: elle donna du fruit, un grain cent, un autre soixante, un autre trente.\wj*
+\v 9 \wj Que celui qui a des oreilles pour entendre entende.\wj*
+\v 10 \x c \xo 13.10 \xt Mc 4:10. Lu 8:9.\x*Les disciples s’approchèrent, et lui dirent: Pourquoi leur parles-tu en paraboles? 
+\v 11 Jésus leur répondit: \x d \xo 13.11 \xt 2 Co 3:14.\x*\wj Parce qu’il vous a été donné de connaître les mystères du royaume des cieux, et\wj*\x e \xo 13.11 \xt Mt 11:25.\x*\wj que cela ne leur a pas été donné.\wj*
+\p
+\v 12 \x f \xo 13.12 \xt Mt 25:29. Mc 4:24, 25. Lu 8:18; 19:26.\x*\wj Car on donnera à celui qui a, et il sera dans l’abondance, mais à celui qui n’a pas on ôtera même ce qu’il a.\wj*
+\v 13 \wj C’est pourquoi je leur parle en paraboles, parce qu’en voyant ils ne voient point, et qu’en entendant ils n’entendent ni ne comprennent.\wj*
+\v 14 \wj Et pour eux s’accomplit cette prophétie d’Ésaïe:\wj*
+\q1 \x g \xo 13.14 \xt És 6:9. Mc 4:12. Lu 8:10. Jn 12:40. Ac 28:26. Ro 11:8.\x*\wj Vous entendrez de vos oreilles, et vous ne comprendrez point;\wj*
+\q1 \wj Vous regarderez de vos yeux, et vous ne verrez point.\wj*
+\v 15 \wj Car le cœur de ce peuple est devenu insensible;\wj*
+\q1 \wj Ils ont endurci leurs oreilles, et ils ont fermé leurs yeux,\wj*
+\q1 \wj De peur qu’ils ne voient de leurs yeux, qu’ils n’entendent de leurs oreilles,\wj*
+\q1 \wj Qu’ils ne comprennent de leur cœur,\wj*
+\q1 \wj Qu’ils ne se convertissent, et que je ne les guérisse.\wj*
+\m
+\v 16 \x h \xo 13.16 \xt Lu 10:23. Jn 20:29. 1 Pi 1:8.\x*\wj Mais heureux sont vos yeux, parce qu’ils voient, et vos oreilles, parce qu’elles entendent!\wj*
+\v 17 \wj Je vous le dis en vérité,\wj*\x i \xo 13.17 \xt 1 Pi 1:10.\x*\wj beaucoup de prophètes et de justes ont désiré voir ce que vous voyez, et ne l’ont pas vu, entendre ce que vous entendez, et ne l’ont pas entendu.\wj*
+\v 18 \x j \xo 13.18 \xt Mc 4:13. Lu 8:11.\x*\wj Vous donc, écoutez ce que signifie la parabole du semeur.\wj*
+\v 19 \wj Lorsqu’un homme écoute la parole du\wj*\x k \xo 13.19 \xt Mt 4:23.\x*\wj royaume et ne la comprend pas, le malin vient et enlève ce qui a été semé dans son cœur: cet homme est celui qui a reçu la semence le long du chemin.\wj*
+\v 20 \wj Celui qui a reçu la semence dans les endroits pierreux, c’est celui qui entend la parole et la reçoit aussitôt avec joie;\wj*
+\v 21 \wj mais il n’a pas de racines en lui-même, il manque de persistance, et, dès que survient une tribulation ou une persécution à cause de la parole, il y trouve une occasion de chute.\wj*
+\v 22 \x l \xo 13.22 \xt Mt 19:23. Mc 10:23. Lu 18:24. 1 Ti 6:9.\x*\wj Celui qui a reçu la semence parmi les épines, c’est celui qui entend la parole, mais en qui les soucis du siècle et la séduction des richesses étouffent cette parole, et la rendent infructueuse.\wj*
+\v 23 \wj Celui qui a reçu la semence dans la bonne terre, c’est celui qui entend la parole et la comprend; il porte du fruit, et un grain en donne cent, un autre soixante, un autre trente.\wj*
+\r V. 24-30: cf. v. 36-43, 47-50. 1 Co 3:9; 4:5.
+\p
+\v 24 Il leur proposa une autre parabole, et il dit: \wj Le royaume des cieux est semblable à un homme qui a semé une bonne semence dans son champ.\wj*
+\v 25 \wj Mais, pendant que les gens dormaient, son ennemi vint, sema de l’ivraie parmi le blé, et s’en alla.\wj*
+\v 26 \wj Lorsque l’herbe eut poussé et donné du fruit, l’ivraie parut aussi.\wj*
+\v 27 \wj Les serviteurs du maître de la maison vinrent lui dire: Seigneur, n’as-tu pas semé une bonne semence dans ton champ? D’où vient donc qu’il y a de l’ivraie?\wj*
+\v 28 \wj Il leur répondit: C’est un ennemi qui a fait cela. Et les serviteurs lui dirent: Veux-tu que nous allions l’arracher?\wj*
+\v 29 \wj Non, dit-il, de peur qu’en arrachant l’ivraie, vous ne déraciniez en même temps le blé.\wj*
+\v 30 \wj Laissez croître ensemble l’un et l’autre jusqu’à la moisson, et, à l’époque de la moisson, je dirai aux moissonneurs: Arrachez d’abord l’ivraie, et liez-la en gerbes pour la brûler,\wj*\x m \xo 13.30 \xt Mt 3:12.\x*\wj mais amassez le blé dans mon grenier.\wj*
+\r V. 31-35: cf. (Mc 4:30-34. Lu 13:18-21.) Da 2:34, 35. Éz 47:1-9. Za 4:10.
+\p
+\v 31 Il leur proposa une autre parabole, et il dit: \x n \xo 13.31 \xt Mc 4:30. Lu 13:18.\x*\wj Le royaume des cieux est semblable à un grain de sénevé qu’un homme a pris et semé dans son champ.\wj*
+\p
+\v 32 \wj C’est la plus petite de toutes les semences; mais, quand il a poussé, il est plus grand que les légumes et devient un arbre, de sorte que les oiseaux du ciel viennent habiter dans ses branches.\wj*
+\v 33 Il leur dit cette autre parabole: \x o \xo 13.33 \xt Lu 13:20, 21.\x*\wj Le royaume des cieux est semblable à du levain qu’une femme a pris et mis dans trois mesures de farine, jusqu’à ce que la pâte soit toute levée.\wj*
+\v 34 \x p \xo 13.34 \xt Mc 4:33.\x*Jésus dit à la foule toutes ces choses en paraboles, et il ne lui parlait point sans parabole, 
+\v 35 afin que s’accomplît ce qui avait été annoncé par le prophète:
+\q1 \x q \xo 13.35 \xt Ps 78:2.\x*J’ouvrirai ma bouche en paraboles,
+\q1 Je publierai des choses cachées depuis la création du monde.
+\r V. 36-43: cf. v. 24-30, 47-50.
+\p
+\v 36 Alors il renvoya la foule, et entra dans la maison. Ses disciples s’approchèrent de lui, et dirent: Explique-nous la parabole de l’ivraie du champ. 
+\v 37 Il répondit: \wj Celui qui sème la bonne semence, c’est le Fils de l’homme;\wj*
+\p
+\v 38 \wj le champ, c’est le monde; la bonne semence, ce sont les fils du royaume; l’ivraie, ce sont les fils du malin;\wj*
+\v 39 \wj l’ennemi qui l’a semée, c’est le diable;\wj*\x r \xo 13.39 \xt Joë 3:13. Ap 14:15.\x*\wj la moisson, c’est la fin du monde; les moissonneurs, ce sont les anges.\wj*
+\v 40 \wj Or, comme on arrache l’ivraie et qu’on la jette au feu, il en sera de même à la fin du monde.\wj*
+\v 41 \wj Le Fils de l’homme enverra ses anges, qui arracheront de son royaume tous les scandales et ceux qui commettent l’iniquité:\wj*
+\v 42 \wj et ils les jetteront dans la fournaise ardente,\wj*\x s \xo 13.42 \xt Mt 8:12; 22:13; 24:51; 25:30. Lu 13:28.\x*\wj où il y aura des pleurs et des grincements de dents.\wj*
+\v 43 \x t \xo 13.43 \xt Da 12:3. 1 Co 15:42.\x*\wj Alors les justes resplendiront comme le soleil dans le royaume de leur Père. Que celui qui a des oreilles pour entendre entende.\wj*
+\r V. 44-46: cf. Ph 3:7-11. Hé 11:24-26.
+\p
+\v 44 \wj Le royaume des cieux est encore semblable à un trésor caché dans un champ. L’homme qui l’a trouvé le cache; et, dans sa joie,\wj*\x u \xo 13.44 \xt Ph 3:7.\x*\wj il va vendre tout ce qu’il a, et achète ce champ.\wj*
+\v 45 \wj Le royaume des cieux est encore semblable à un marchand qui cherche de belles perles.\wj*
+\v 46 \wj Il a trouvé une perle de grand prix; et il est allé vendre tout ce qu’il avait, et l’a achetée.\wj*
+\r V. 47-52: cf. v. 24-30, 36-43.
+\p
+\v 47 \wj Le royaume des cieux est encore semblable à un filet jeté dans la mer et ramassant des poissons de toute espèce.\wj*
+\v 48 \wj Quand il est rempli, les pêcheurs le tirent; et, après s’être assis sur le rivage, ils mettent dans des vases ce qui est bon, et ils jettent ce qui est mauvais.\wj*
+\v 49 \wj Il en sera de même à la fin du monde. Les anges viendront séparer les méchants d’avec les justes,\wj*
+\v 50 \wj et ils les jetteront dans la fournaise ardente,\wj*\x v \xo 13.50 \xt v. 42.\x*\wj où il y aura des pleurs et des grincements de dents.\wj*
+\v 51 \wj Avez-vous compris toutes ces choses?\wj* Oui, répondirent-ils. 
+\v 52 Et il leur dit: \wj C’est pourquoi, tout scribe instruit de ce qui regarde le royaume des cieux est semblable à un maître de maison qui tire de son trésor des choses nouvelles et des choses anciennes.\wj*
+\s1 Jésus à Nazareth. Incrédulité des habitants
+\r V. 53-58: cf. Mc 6:1-6. (Lu 4:16-30.) Jn 1:11.
+\p
+\v 53 \x w \xo 13.53 \xt Mc 6:1. Lu 4:16.\x*Lorsque Jésus eut achevé ces paraboles, il partit de là. 
+\v 54 S’étant rendu dans sa patrie, il enseignait dans la synagogue, de sorte que ceux qui l’entendirent étaient étonnés et disaient: \x x \xo 13.54 \xt Mc 6:2.\x*D’où lui viennent cette sagesse et ces miracles? 
+\v 55 \x y \xo 13.55 \xt Jn 6:42.\x*N’est-ce pas le fils du charpentier? N’est-ce pas Marie qui est sa mère? Jacques, Joseph, Simon et Jude, ne sont-ils pas ses frères? 
+\v 56 et ses sœurs ne sont-elles pas toutes parmi nous? D’où lui viennent donc toutes ces choses? 
+\v 57 Et il était pour eux une occasion de chute. Mais Jésus leur dit: \x z \xo 13.57 \xt Mc 6:4. Lu 4:24. Jn 4:44.\x*\wj Un prophète n’est méprisé que dans sa patrie et dans sa maison.\wj*
+\v 58 Et il ne fit pas beaucoup de miracles dans ce lieu, à cause de leur incrédulité.
+\c 14
+\s1 Mort de Jean-Baptiste
+\r V. 1-12: cf. (Mc 6:14-29. Lu 9:7-9.)
+\p
+\v 1 \x a \xo 14.1 \xt Mc 6:14. Lu 9:7.\x*En ce temps-là, Hérode le tétrarque, ayant entendu parler de Jésus, dit à ses serviteurs: C’est Jean-Baptiste! 
+\v 2 Il est ressuscité des morts, et c’est pour cela qu’il se fait par lui des miracles. 
+\v 3 \x b \xo 14.3 \xt Mc 6:17. Lu 3:19.\x*Car Hérode, qui avait fait arrêter Jean, l’avait lié et mis en prison, à cause d’Hérodias, femme de Philippe, son frère, 
+\v 4 parce que Jean lui disait: \x c \xo 14.4 \xt Lé 18:16.\x*Il ne t’est pas permis de l’avoir pour femme. 
+\v 5 Il voulait le faire mourir, mais il craignait la foule, \x d \xo 14.5 \xt Mt 21:26.\x*parce qu’elle regardait Jean comme un prophète. 
+\v 6 Or, lorsqu’on célébra \x e \xo 14.6 \xt Ge 40:20. Mc 6:21.\x*l’anniversaire de la naissance d’Hérode, la fille d’Hérodias dansa au milieu des convives, et plut à Hérode, 
+\v 7 \x f \xo 14.7 \xt Jg 11:30.\x*de sorte qu’il promit avec serment de lui donner ce qu’elle demanderait. 
+\v 8 A l’instigation de sa mère, elle dit: Donne-moi ici, sur un plat, la tête de Jean-Baptiste. 
+\v 9 Le roi fut attristé; mais, à cause de ses serments et des convives, il commanda qu’on la lui donne, 
+\v 10 et il envoya décapiter Jean dans la prison. 
+\v 11 Sa tête fut apportée sur un plat, et donnée à la jeune fille, qui la porta à sa mère. 
+\v 12 Les disciples de Jean vinrent prendre son corps, et l’ensevelirent. Et ils allèrent l’annoncer à Jésus.
+\s1 Multiplication des pains
+\r V. 13-21: cf. (Mc 6:30-44. Lu 9:10-17. Jn 6:1-14.) Ph 4:19.
+\p
+\v 13 \x g \xo 14.13 \xt Mt 12:15. Mc 6:31. Lu 9:10.\x*A cette nouvelle, Jésus partit de là dans une barque, pour se retirer à l’écart dans un lieu désert; et la foule, l’ayant su, sortit des villes et le suivit à pied. 
+\v 14 \x h \xo 14.14 \xt Jn 6:5.\x*Quand il sortit de la barque, il vit une grande foule, et \x i \xo 14.14 \xt Mt 9:36.\x*fut ému de compassion pour elle, et il guérit les malades. 
+\v 15 \x j \xo 14.15 \xt Mc 6:35. Lu 9:12.\x*Le soir étant venu, les disciples s’approchèrent de lui, et dirent: Ce lieu est désert, et l’heure est déjà avancée; renvoie la foule, afin qu’elle aille dans les villages, pour s’acheter des vivres. 
+\v 16 Jésus leur répondit: \wj Ils n’ont pas besoin de s’en aller; donnez-leur vous-mêmes à manger.\wj*
+\v 17 Mais ils lui dirent: Nous n’avons ici que cinq pains et deux poissons. 
+\v 18 Et il dit: \wj Apportez-les-moi.\wj*
+\v 19 Il fit asseoir la foule sur l’herbe, prit les cinq pains et les deux poissons, et, levant les yeux vers le ciel, \x k \xo 14.19 \xt 1 S 9:13.\x*il rendit grâces. Puis, il rompit les pains et les donna aux disciples, qui les distribuèrent à la foule. 
+\v 20 Tous mangèrent et furent rassasiés, et l’on emporta douze paniers pleins des morceaux qui restaient. 
+\v 21 Ceux qui avaient mangé étaient environ cinq mille hommes, sans les femmes et les enfants.
+\s1 Jésus marche sur les eaux. Guérisons à Génésareth
+\r V. 22-36: cf. (Mc 6:45-56. Jn 6:15-21.) Mt 8:23-27.
+\p
+\v 22 \x l \xo 14.22 \xt Mc 6:45. Jn 6:17.\x*Aussitôt après, il obligea les disciples à monter dans la barque et à passer avant lui de l’autre côté, pendant qu’il renverrait la foule. 
+\v 23 \x m \xo 14.23 \xt Mc 6:46. Jn 6:15.\x*Quand il l’eut renvoyée, il monta sur la montagne, pour prier à l’écart; et, comme le soir était venu, il était là seul. 
+\v 24 La barque, déjà au milieu de la mer, était battue par les flots; car le vent était contraire. 
+\v 25 A la quatrième veille de la nuit, Jésus alla vers eux, marchant sur la mer. 
+\v 26 Quand les disciples le virent marcher sur la mer, ils furent troublés, et dirent: C’est un fantôme! Et, dans leur frayeur, ils poussèrent des cris. 
+\v 27 Jésus leur dit aussitôt: \wj Rassurez-vous, c’est moi; n’ayez pas peur!\wj*
+\v 28 Pierre lui répondit: Seigneur, si c’est toi, ordonne que j’aille vers toi sur les eaux. 
+\v 29 Et il dit: \wj Viens!\wj* Pierre sortit de la barque, et marcha sur les eaux, pour aller vers Jésus. 
+\v 30 Mais, voyant que le vent était fort, il eut peur; et, comme il commençait à enfoncer, il s’écria: Seigneur, sauve-moi! 
+\v 31 Aussitôt Jésus étendit la main, le saisit, et lui dit: \wj Homme de peu de foi, pourquoi as-tu douté?\wj*
+\v 32 Et ils montèrent dans la barque, et le vent cessa. 
+\v 33 Ceux qui étaient dans la barque vinrent se prosterner devant Jésus, et dirent: Tu es véritablement le Fils de Dieu. 
+\v 34 \x n \xo 14.34 \xt Mc 6:53.\x*Après avoir traversé la mer, ils vinrent dans le pays de Génésareth. 
+\v 35 Les gens de ce lieu, ayant reconnu Jésus, envoyèrent des messagers dans tous les environs, et on lui amena tous les malades. 
+\v 36 Ils le prièrent de leur permettre seulement de toucher le bord de son vêtement. Et tous ceux qui le touchèrent furent guéris.
+\c 15
+\s1 Les pharisiens et la tradition
+\r V. 1-9: cf. (Mc 7:1-13.) Lu 11:37-41.
+\p
+\v 1 \x a \xo 15.1 \xt Mc 7:1.\x*Alors des pharisiens et des scribes vinrent de Jérusalem auprès de Jésus, et dirent: 
+\v 2 Pourquoi tes disciples transgressent-ils la tradition des anciens? Car ils ne se lavent pas les mains, quand ils prennent leurs repas. 
+\v 3 Il leur répondit: \wj Et vous, pourquoi transgressez-vous le commandement de Dieu au profit de votre tradition?\wj*
+\p
+\v 4 \x b \xo 15.4 \xt Ex 20:12. De 5:16. Ép 6:2.\x*\wj Car Dieu a dit: Honore ton père et ta mère; et:\wj*\x c \xo 15.4 \xt Ex 21:17. Lé 20:9. Pr 20:20.\x*\wj Celui qui maudira son père ou sa mère sera puni de mort.\wj*
+\v 5 \wj Mais vous, vous dites: Celui qui dira à son père ou à sa mère: Ce dont j’aurais pu t’assister est une offrande à Dieu, n’est pas tenu d’honorer son père ou sa mère.\wj*
+\v 6 \x d \xo 15.6 \xt Mc 7:13. 1 Ti 4:3. 2 Ti 3:2.\x*\wj Vous annulez ainsi la parole de Dieu au profit de votre tradition.\wj*
+\v 7 \wj Hypocrites, Ésaïe a bien prophétisé sur vous, quand il a dit:\wj*
+\v 8 \x e \xo 15.8 \xt És 29:13. Éz 33:31. Mc 7:6.\x*\wj Ce peuple m’honore des lèvres,\wj*
+\q1 \wj Mais son cœur est éloigné de moi.\wj*
+\v 9 \wj C’est en vain qu’ils m’honorent,\wj*
+\q1 \wj En enseignant des préceptes qui sont\wj*\x f \xo 15.9 \xt Mc 7:6, 7. Col 2:18, 20, 22.\x*\wj des commandements d’hommes.\wj*
+\r V. 10-20: cf. Mc 7:14-23. (Pr 4:23. Ga 5:19-21. Ps 51:12.)
+\m
+\v 10 \x g \xo 15.10 \xt Mc 7:14.\x*Ayant appelé à lui la foule, il lui dit: \wj Écoutez, et comprenez.\wj*
+\p
+\v 11 \x h \xo 15.11 \xt Ac 10:15. Ro 14:17, 20. Tit 1:15.\x*\wj Ce n’est pas ce qui entre dans la bouche qui souille l’homme; mais ce qui sort de la bouche, c’est ce qui souille l’homme.\wj*
+\v 12 Alors ses disciples s’approchèrent, et lui dirent: Sais-tu que les pharisiens ont été scandalisés des paroles qu’ils ont entendues? 
+\v 13 Il répondit: \x i \xo 15.13 \xt Jn 15:2.\x*\wj Toute plante que n’a pas plantée mon Père céleste sera déracinée.\wj*
+\p
+\v 14 \wj Laissez-les:\wj*\x j \xo 15.14 \xt És 42:19. Lu 6:39.\x*\wj ce sont des aveugles qui conduisent des aveugles; si un aveugle conduit un aveugle, ils tomberont tous deux dans une fosse.\wj*
+\v 15 \x k \xo 15.15 \xt Mc 7:17.\x*Pierre, prenant la parole, lui dit: Explique-nous cette parabole. 
+\v 16 Et Jésus dit: \wj Vous aussi, êtes-vous encore sans intelligence?\wj*
+\p
+\v 17 \wj Ne comprenez-vous pas que tout ce qui entre dans la bouche va dans le ventre, puis est jeté dans les lieux secrets?\wj*
+\v 18 \wj Mais ce qui sort de la bouche vient du cœur, et c’est ce qui souille l’homme.\wj*
+\v 19 \x l \xo 15.19 \xt Ge 6:5; 8:21. Pr 6:14. Jé 17:9.\x*\wj Car c’est du cœur que viennent les mauvaises pensées, les meurtres, les adultères, les impudicités, les vols, les faux témoignages, les calomnies.\wj*
+\v 20 \wj Voilà les choses qui souillent l’homme; mais manger sans s’être lavé les mains, cela ne souille point l’homme.\wj*
+\s1 Jésus sur le territoire de Tyr et Sidon. La femme canaéenne
+\r V. 21-28: cf. (Mc 7:24-30.) Ge 32:24-29. Ps 123:2.
+\p
+\v 21 \x m \xo 15.21 \xt Mc 7:24.\x*Jésus, étant parti de là, se retira dans le territoire de Tyr et de Sidon. 
+\v 22 Et voici, une femme cananéenne, qui venait de ces contrées, lui cria: Aie pitié de moi, Seigneur, Fils de David! Ma fille est cruellement tourmentée par le démon. 
+\v 23 Il ne lui répondit pas un mot, et ses disciples s’approchèrent, et lui dirent avec instance: Renvoie-la, car elle crie derrière nous. 
+\v 24 Il répondit: \x n \xo 15.24 \xt Mt 10:6. Ac 13:46.\x*\wj Je n’ai été envoyé qu’aux brebis perdues de la maison d’Israël.\wj*
+\v 25 Mais elle vint se prosterner devant lui, disant: Seigneur, secours-moi! 
+\v 26 Il répondit: \wj Il n’est pas bien de prendre le pain des enfants, et de le jeter aux petits chiens.\wj*
+\v 27 Oui, Seigneur, dit-elle, mais les petits chiens mangent les miettes qui tombent de la table de leurs maîtres. 
+\v 28 Alors Jésus lui dit: \wj Femme, ta foi est grande; qu’il te soit fait comme tu veux.\wj* Et, à l’heure même, sa fille fut guérie.
+\s1 Jésus de retour vers la mer de Galilée. Nombreuses guérisons. Seconde multiplication des pains
+\r V. 29-39: cf. (Mc 7:31-37; 8:1-10.) Mt 14:15-21.
+\p
+\v 29 \x o \xo 15.29 \xt Mc 7:31.\x*Jésus quitta ces lieux, et vint près de la mer de Galilée. Étant monté sur la montagne, il s’y assit. 
+\v 30 \x p \xo 15.30 \xt És 29:18; 35:5. Mt 11:5. Lu 7:22.\x*Alors s’approcha de lui une grande foule, ayant avec elle des boiteux, des aveugles, des muets, des estropiés, et beaucoup d’autres malades. On les mit à ses pieds, et il les guérit; 
+\v 31 en sorte que la foule était dans l’admiration de voir que les muets parlaient, que les estropiés étaient guéris, que les boiteux marchaient, que les aveugles voyaient; et elle glorifiait le Dieu d’Israël. 
+\v 32 \x q \xo 15.32 \xt Mc 8:1.\x*Jésus, ayant appelé ses disciples, dit: \wj Je suis ému de compassion pour cette foule; car voilà trois jours qu’ils sont près de moi, et ils n’ont rien à manger. Je ne veux pas les renvoyer à jeun, de peur que les forces ne leur manquent en chemin.\wj*
+\v 33 Les disciples lui dirent: Comment nous procurer dans ce lieu désert assez de pains pour rassasier une si grande foule? 
+\v 34 Jésus leur demanda: \wj Combien avez-vous de pains?\wj* Sept, répondirent-ils, et quelques petits poissons. 
+\v 35 Alors il fit asseoir la foule par terre, 
+\v 36 prit les sept pains et les poissons, et, après avoir \x r \xo 15.36 \xt 1 S 9:13.\x*rendu grâces, il les rompit et les donna à ses disciples, qui les distribuèrent à la foule. 
+\v 37 Tous mangèrent et furent rassasiés, et l’on emporta sept corbeilles pleines des morceaux qui restaient. 
+\v 38 Ceux qui avaient mangé étaient quatre mille hommes, sans les femmes et les enfants. 
+\v 39 Ensuite, il renvoya la foule, monta dans la barque, et se rendit dans la contrée de Magadan.
+\c 16
+\s1 Un signe du ciel demandé par les pharisiens et les sadducéens. Le levain des pharisiens
+\r V. 1-12: cf. (Mc 8:11-21.) Mt 12:38-42.
+\p
+\v 1 \x a \xo 16.1 \xt Mt 12:38. Mc 8:11. Lu 11:29; 12:54. Jn 6:30.\x*Les pharisiens et les sadducéens abordèrent Jésus et, pour l’éprouver, lui demandèrent de leur faire voir un signe venant du ciel. 
+\v 2 Jésus leur répondit: \x b \xo 16.2 \xt Lu 12:54.\x*\wj Le soir, vous dites: Il fera beau, car le ciel est rouge; et le matin:\wj*
+\p
+\v 3 \wj Il y aura de l’orage aujourd’hui, car le ciel est d’un rouge sombre. Vous savez discerner l’aspect du ciel, et vous ne pouvez discerner les signes des temps.\wj*
+\v 4 \x c \xo 16.4 \xt Mt 12:39. Lu 11:29.\x*\wj Une génération méchante et adultère demande un miracle; il ne lui sera donné d’autre miracle que celui de\wj*\x d \xo 16.4 \xt Jon 1:17.\x*\wj Jonas.\wj* Puis il les quitta, et s’en alla. 
+\v 5 Les disciples, en passant à l’autre bord, avaient oublié de prendre des pains. 
+\v 6 \x e \xo 16.6 \xt Mc 8:15. Lu 12:1.\x*Jésus leur dit: \wj Gardez-vous avec soin du levain des pharisiens et des sadducéens.\wj*
+\v 7 Les disciples raisonnaient en eux-mêmes, et disaient: C’est parce que nous n’avons pas pris de pains. 
+\v 8 Jésus, l’ayant connu, dit: \wj Pourquoi raisonnez-vous en vous-mêmes, gens de peu de foi, sur ce que vous n’avez pas pris de pains?\wj*
+\p
+\v 9 \x f \xo 16.9 \xt Mt 14:17. Mc 6:38. Lu 9:13. Jn 6:9.\x*\wj Êtes-vous encore sans intelligence, et ne vous rappelez-vous plus les cinq pains des cinq mille hommes et combien de paniers vous avez emportés,\wj*
+\v 10 \x g \xo 16.10 \xt Mt 15:34.\x*\wj ni les sept pains des quatre mille hommes et combien de corbeilles vous avez emportées?\wj*
+\v 11 \wj Comment ne comprenez-vous pas que ce n’est pas au sujet de pains que je vous ai parlé? Gardez-vous du levain des pharisiens et des sadducéens.\wj*
+\v 12 Alors ils comprirent que ce n’était pas du levain du pain qu’il avait dit de se garder, mais de l’enseignement des pharisiens et des sadducéens.
+\s1 Jésus sur le territoire de Césarée de Philippe. — Opinions diverses sur le Christ. — Confession de Pierre
+\r V. 13-20: cf. (Mc 8:27-30. Lu 9:18-21.) Jn 6:66-69.
+\p
+\v 13 \x h \xo 16.13 \xt Mc 8:27. Lu 9:18.\x*Jésus, étant arrivé dans le territoire de Césarée de Philippe, demanda à ses disciples: \wj Qui dit-on que je suis, moi, le Fils de l’homme?\wj*
+\v 14 Ils répondirent: \x i \xo 16.14 \xt Mt 14:2.\x*Les uns disent que tu es Jean-Baptiste; les autres, Élie; les autres, Jérémie, ou l’un des prophètes. 
+\v 15 \wj Et vous,\wj* leur dit-il, \wj qui dites-vous que je suis?\wj*
+\v 16 \x j \xo 16.16 \xt Jn 6:69.\x*Simon Pierre répondit: Tu es le Christ, le Fils du Dieu vivant. 
+\v 17 Jésus, reprenant la parole, lui dit: \wj Tu es heureux, Simon, fils de Jonas; car ce ne sont pas la chair et le sang qui t’ont révélé cela, mais\wj*\x k \xo 16.17 \xt Mt 11:25.\x*\wj c’est mon Père qui est dans les cieux.\wj*
+\p
+\v 18 \x l \xo 16.18 \xt Ps 118:22. Jn 1:43.\x*\wj Et moi, je te dis que tu es Pierre, et que sur\wj*\x m \xo 16.18 \xt És 28:16. 1 Co 3:11.\x*\wj cette pierre je bâtirai mon Église, et que les\wj*\x n \xo 16.18 \xt És 33:20.\x*\wj portes du séjour des morts ne prévaudront point contre elle.\wj*
+\v 19 \x o \xo 16.19 \xt Mt 18:18. Jn 20:22.\x*\wj Je te donnerai les clefs du royaume des cieux: ce que tu lieras sur la terre sera lié dans les cieux, et ce que tu délieras sur la terre sera délié dans les cieux.\wj*
+\v 20 Alors il recommanda aux disciples de ne dire à personne qu’il était le Christ.
+\s1 Jésus annonce ses souffrances et sa mort. — Comment suivre Jésus
+\r V. 21-28: cf. (Mc 8:31 à 9:1. Lu 9:22-27.) Lu 14:25-27.
+\p
+\v 21 \x p \xo 16.21 \xt Mt 17:22; 20:18. Mc 8:31; 9:31; 10:33. Lu 9:22; 18:31; 24:7.\x*Dès lors Jésus commença à faire connaître à ses disciples qu’il fallait qu’il allât à Jérusalem, qu’il souffrît beaucoup de la part des anciens, des principaux sacrificateurs et des scribes, qu’il fût mis à mort, et qu’il ressuscitât le troisième jour. 
+\v 22 Pierre, l’ayant pris à part, se mit à le reprendre, et dit: A Dieu ne plaise, Seigneur! Cela ne t’arrivera pas. 
+\v 23 Mais Jésus, se retournant, dit à Pierre: \wj Arrière de moi, Satan!\wj*\x q \xo 16.23 \xt 2 S 19:22.\x*\wj tu m’es en scandale; car tes pensées ne sont pas les pensées de Dieu, mais celles des hommes.\wj*
+\v 24 Alors Jésus dit à ses disciples: \x r \xo 16.24 \xt Mt 10:38. Mc 8:34. Lu 9:23; 14:27.\x*\wj Si quelqu’un veut venir après moi, qu’il renonce à lui-même, qu’il se charge de sa croix, et qu’il me suive.\wj*
+\p
+\v 25 \x s \xo 16.25 \xt Mt 10:39. Mc 8:35. Lu 9:24; 17:33. Jn 12:25.\x*\wj Car celui qui voudra sauver sa vie la perdra, mais celui qui la perdra à cause de moi la trouvera.\wj*
+\v 26 \x t \xo 16.26 \xt Lu 9:25.\x*\wj Et que servirait-il à un homme de gagner tout le monde, s’il perdait son âme? Ou,\wj*\x u \xo 16.26 \xt Ps 49:9. Mc 8:37.\x*\wj que donnerait un homme en échange de son âme?\wj*
+\v 27 \x v \xo 16.27 \xt Mt 24:30; 25:31; 26:64.\x*\wj Car le Fils de l’homme doit venir dans la\wj*\x w \xo 16.27 \xt Mt 25:31.\x*\wj gloire de son Père, avec ses anges; et\wj*\x x \xo 16.27 \xt Job 34:11. Ps 62:13. Ro 2:6.\x*\wj alors il rendra à chacun selon ses œuvres.\wj*
+\v 28 \x y \xo 16.28 \xt Mc 9:1. Lu 9:27.\x*\wj Je vous le dis en vérité, quelques-uns de ceux qui sont ici ne mourront point, qu’ils n’aient vu le Fils de l’homme venir dans son règne.\wj*
+\c 17
+\s1 Jésus sur une haute montagne: la transfiguration
+\r V. 1-13: cf. (Mc 9:2-13. Lu 9:28-36. 2 Pi 1:16-18.) Ap 1:13-18.
+\p
+\v 1 \x a \xo 17.1 \xt Mc 9:2. Lu 9:28. 2 Pi 1:17.\x*Six jours après, Jésus prit avec lui Pierre, Jacques, et Jean, son frère, et il les conduisit à l’écart sur une haute montagne. 
+\v 2 Il fut transfiguré devant eux; son visage resplendit comme le soleil, et ses vêtements devinrent blancs comme la lumière. 
+\v 3 Et voici, Moïse et Élie leur apparurent, s’entretenant avec lui. 
+\v 4 Pierre, prenant la parole, dit à Jésus: Seigneur, il est bon que nous soyons ici; si tu le veux, je dresserai ici trois tentes, une pour toi, une pour Moïse, et une pour Élie. 
+\v 5 Comme il parlait encore, une nuée lumineuse les couvrit. Et voici, une voix fit entendre de la nuée ces paroles: \x b \xo 17.5 \xt És 42:1. Mt 3:17. Mc 1:11; 9:7. Lu 3:22; 9:35. Col 1:13. 2 Pi 1:17.\x*Celui-ci est mon Fils bien-aimé, en qui j’ai mis toute mon affection: \x c \xo 17.5 \xt De 18:19. Ac 3:22.\x*écoutez-le! 
+\v 6 Lorsqu’ils entendirent cette voix, les disciples tombèrent sur leur face, et furent saisis d’une grande frayeur. 
+\v 7 Mais Jésus, s’approchant, les toucha, et dit: \wj Levez-vous, n’ayez pas peur!\wj*
+\v 8 Ils levèrent les yeux, et ne virent que Jésus seul. 
+\v 9 \x d \xo 17.9 \xt Mc 9:9. Lu 9:36.\x*Comme ils descendaient de la montagne, Jésus leur donna cet ordre: \wj Ne parlez à personne de cette vision, jusqu’à ce que le Fils de l’homme soit ressuscité des morts.\wj*
+\v 10 \x e \xo 17.10 \xt Mc 9:11.\x*Les disciples lui firent cette question: Pourquoi donc les scribes disent-ils \x f \xo 17.10 \xt Mal 4:5. Mt 11:14. Mc 9:11.\x*qu’Élie doit venir premièrement? 
+\v 11 Il répondit: \wj Il est vrai qu’Élie doit venir, et rétablir toutes choses.\wj*
+\p
+\v 12 \wj Mais je vous dis qu’Élie est déjà venu, qu’ils ne l’ont pas reconnu, et qu’ils l’ont traité comme ils ont voulu. De même le Fils de l’homme souffrira de leur part.\wj*
+\v 13 Les disciples comprirent alors qu’il leur parlait de Jean-Baptiste.
+\s1 Guérison d’un lunatique
+\r V. 14-21: cf. (Mc 9:14-29. Lu 9:37-43.)
+\p
+\v 14 \x g \xo 17.14 \xt Mc 9:16. Lu 9:37.\x*Lorsqu’ils furent arrivés près de la foule, un homme vint se jeter à genoux devant Jésus, et dit: 
+\v 15 Seigneur, aie pitié de mon fils, qui est lunatique, et qui souffre cruellement; il tombe souvent dans le feu, et souvent dans l’eau. 
+\v 16 Je l’ai amené à tes disciples, et ils n’ont pas pu le guérir.
+\p
+\v 17 \wj Race incrédule et perverse,\wj* répondit Jésus, \wj jusques à quand serai-je avec vous? Jusques à quand vous supporterai-je? Amenez-le-moi ici.\wj*
+\v 18 Jésus parla sévèrement au démon, qui sortit de lui, et l’enfant fut guéri à l’heure même. 
+\v 19 \x h \xo 17.19 \xt Mc 9:28.\x*Alors les disciples s’approchèrent de Jésus, et lui dirent en particulier: Pourquoi n’avons-nous pu chasser ce démon?
+\p
+\v 20 \wj C’est à cause de votre incrédulité,\wj* leur dit Jésus. \x i \xo 17.20 \xt Mt 21:21. Lu 17:6.\x*\wj Je vous le dis en vérité, si vous aviez de la foi comme un grain de sénevé, vous diriez à cette montagne: Transporte-toi d’ici là, et elle se transporterait; rien ne vous serait impossible.\wj*
+\v 21 \wj Mais cette sorte de démon ne sort que par la prière et par le jeûne.\wj*
+\s1 Jésus annonce sa mort et sa résurrection
+\r V. 22-23: cf. (Mc 9:30-32. Lu 9:43-45.)
+\p
+\v 22 \x j \xo 17.22 \xt Mt 16:21; 20:18. Mc 8:31; 9:31; 10:33. Lu 9:22, 44; 18:31.\x*Pendant qu’ils parcouraient la Galilée, Jésus leur dit: \wj Le Fils de l’homme doit être livré entre les mains des hommes;\wj*
+\p
+\v 23 \wj ils le feront mourir, et le troisième jour il ressuscitera.\wj* Ils furent profondément attristés.
+\s1 Jésus de retour à Capernaüm. Il paie le tribut
+\r V. 24-27: cf. 1 Co 10:32, 33; 11:1.
+\p
+\v 24 Lorsqu’ils arrivèrent à Capernaüm, ceux qui percevaient les deux drachmes s’adressèrent à Pierre, et lui dirent: Votre maître ne paie-t-il pas les deux drachmes? 
+\v 25 \x k \xo 17.25 \xt Mt 22:21. Ro 13:7.\x*Oui, dit-il. Et quand il fut entré dans la maison, Jésus le prévint, et dit: \wj Que t’en semble, Simon? Les rois de la terre, de qui perçoivent-ils des tributs ou des impôts? De leurs fils, ou des étrangers?\wj*
+\v 26 Il lui dit: Des étrangers. Et Jésus lui répondit: \wj Les fils en sont donc exempts.\wj*
+\p
+\v 27 \wj Mais, pour ne pas les scandaliser, va à la mer, jette l’hameçon, et tire le premier poisson qui viendra; ouvre-lui la bouche, et tu trouveras un statère. Prends-le, et donne-le-leur pour moi et pour toi.\wj*
+\c 18
+\s1 Le plus grand dans le royaume des cieux. — Les scandales
+\r V. 1-9: cf. (Mc 9:33-37. Lu 9:46-48.) Lu 22:24-27.
+\p
+\v 1 \x a \xo 18.1 \xt Mc 9:34. Lu 9:46; 22:24.\x*En ce moment, les disciples s’approchèrent de Jésus, et dirent: Qui donc est le plus grand dans le royaume des cieux? 
+\v 2 Jésus, ayant appelé un petit enfant, le plaça au milieu d’eux, 
+\v 3 et dit: \wj Je vous le dis en vérité,\wj*\x b \xo 18.3 \xt Mt 19:14. 1 Co 14:20. 1 Pi 2:2.\x*\wj si vous ne vous convertissez et si vous ne devenez comme les petits enfants, vous n’entrerez pas dans le royaume des cieux.\wj*
+\p
+\v 4 \x c \xo 18.4 \xt 1 Pi 5:6.\x*\wj C’est pourquoi, quiconque se rendra humble comme ce petit enfant sera le plus grand dans le royaume des cieux.\wj*
+\v 5 \x d \xo 18.5 \xt Mc 9:37. Lu 9:48. Jn 13:20.\x*\wj Et quiconque reçoit en mon nom un petit enfant comme celui-ci, me reçoit moi-même.\wj*
+\v 6 \x e \xo 18.6 \xt Mc 9:42. Lu 17:2.\x*\wj Mais, si quelqu’un scandalisait un de ces petits qui croient en moi, il vaudrait mieux pour lui qu’on suspendît à son cou une meule de moulin, et qu’on le jetât au fond de la mer.\wj*
+\v 7 \wj Malheur au monde à cause des scandales!\wj*\x f \xo 18.7 \xt 1 Co 11:19.\x*\wj Car il est nécessaire qu’il arrive des scandales;\wj*\x g \xo 18.7 \xt Mt 26:24. Ac 2:23; 4:27, 28.\x*\wj mais malheur à l’homme par qui le scandale arrive!\wj*
+\v 8 \x h \xo 18.8 \xt De 13:6. Mt 5:29, 30. Mc 9:43.\x*\wj Si ta main ou ton pied est pour toi une occasion de chute, coupe-les et jette-les loin de toi; mieux vaut pour toi entrer dans la vie boiteux ou manchot, que d’avoir deux pieds ou deux mains et d’être jeté dans le feu éternel.\wj*
+\v 9 \wj Et si ton œil est pour toi une occasion de chute, arrache-le et jette-le loin de toi; mieux vaut pour toi entrer dans la vie, n’ayant qu’un œil, que d’avoir deux yeux et d’être jeté dans le feu de la géhenne.\wj*
+\s1 La brebis égarée
+\r V. 10-14: cf. Lu 15.
+\p
+\v 10 \wj Gardez-vous de mépriser un seul de ces petits; car je vous dis\wj*\x i \xo 18.10 \xt Ps 34:8.\x*\wj que leurs anges dans les cieux voient continuellement la face de mon Père qui est dans les cieux.\wj*
+\v 11 \x j \xo 18.11 \xt Lu 19:10.\x*\wj Car le Fils de l’homme est venu sauver ce qui était perdu.\wj*
+\v 12 \x k \xo 18.12 \xt Lu 15:3.\x*\wj Que vous en semble? Si un homme a cent brebis, et que l’une d’elles s’égare, ne laisse-t-il pas les quatre-vingt-dix-neuf autres sur les montagnes, pour aller chercher celle qui s’est égarée?\wj*
+\v 13 \wj Et, s’il la trouve, je vous le dis en vérité, elle lui cause plus de joie que les quatre-vingt-dix-neuf qui ne se sont pas égarées.\wj*
+\v 14 \wj De même, ce n’est pas la volonté de votre Père qui est dans les cieux qu’il se perde un seul de ces petits.\wj*
+\s1 Le pardon des offenses
+\r V. 15-20: cf. Ga 6:1. 1 Co 5. 2 Th 3:6, 14, 15.
+\p
+\v 15 \x l \xo 18.15 \xt Lé 19:17. Pr 17:10. Lu 17:3. Ja 5:19.\x*\wj Si ton frère a péché, va et reprends-le entre toi et lui seul. S’il t’écoute, tu as gagné ton frère.\wj*
+\v 16 \wj Mais, s’il ne t’écoute pas, prends avec toi une ou deux personnes,\wj*\x m \xo 18.16 \xt No 35:30. De 17:6; 19:15. Jn 8:17. 2 Co 13:1. Hé 10:28.\x*\wj afin que toute l’affaire se règle sur la déclaration de deux ou de trois témoins.\wj*
+\v 17 \wj S’il refuse de les écouter,\wj*\x n \xo 18.17 \xt 2 Th 3:14.\x*\wj dis-le à l’Église; et s’il refuse aussi d’écouter l’Église,\wj*\x o \xo 18.17 \xt 1 Co 5:9. 2 Th 3:14.\x*\wj qu’il soit pour toi comme un païen et un publicain.\wj*
+\v 18 \x p \xo 18.18 \xt Mt 16:19. Jn 20:23.\x*\wj Je vous le dis en vérité, tout ce que vous lierez sur la terre sera lié dans le ciel, et tout ce que vous délierez sur la terre sera délié dans le ciel.\wj*
+\v 19 \wj Je vous dis encore que, si deux d’entre vous s’accordent sur la terre pour demander une chose quelconque, elle leur sera accordée par mon Père qui est dans les cieux.\wj*
+\v 20 \x q \xo 18.20 \xt Lu 24:15, 36.\x*\wj Car là où deux ou trois sont assemblés en mon nom, je suis au milieu d’eux.\wj*
+\s1 Parabole du serviteur impitoyable
+\r V. 21-35: cf. Mt 6:12, 14, 15. Ép 4:32; 5:1, 2. Ja 2:13.
+\p
+\v 21 Alors Pierre s’approcha de lui, et dit: Seigneur, combien de fois pardonnerai-je à mon frère, lorsqu’il péchera contre moi? Sera-ce jusqu’à \x r \xo 18.21 \xt Lu 17:4.\x*sept fois? 
+\v 22 Jésus lui dit: \wj Je ne te dis pas jusqu’à sept fois, mais jusqu’à\wj*\x s \xo 18.22 \xt Mt 6:14. Mc 11:24. Col 3:13.\x*\wj septante fois sept fois.\wj*
+\p
+\v 23 \wj C’est pourquoi, le royaume des cieux est semblable à un roi qui voulut faire rendre compte à ses serviteurs.\wj*
+\v 24 \wj Quand il se mit à compter, on lui en amena un qui devait dix mille talents.\wj*
+\v 25 \x t \xo 18.25 \xt Mt 5:25.\x*\wj Comme il n’avait pas de quoi payer, son maître ordonna qu’il fût vendu, lui, sa femme, ses enfants, et tout ce qu’il avait, et que la dette fût acquittée.\wj*
+\v 26 \wj Le serviteur, se jetant à terre, se prosterna devant lui, et dit: Seigneur, aie patience envers moi, et je te paierai tout.\wj*
+\v 27 \wj Ému de compassion, le maître de ce serviteur le laissa aller, et lui remit la dette.\wj*
+\v 28 \wj Après qu’il fut sorti, ce serviteur rencontra un de ses compagnons qui lui devait cent deniers. Il le saisit et l’étranglait, en disant: Paie ce que tu me dois.\wj*
+\v 29 \wj Son compagnon, se jetant à terre, le suppliait, disant: Aie patience envers moi, et je te paierai.\wj*
+\v 30 \wj Mais l’autre ne voulut pas, et il alla le jeter en prison, jusqu’à ce qu’il eût payé ce qu’il devait.\wj*
+\v 31 \wj Ses compagnons, ayant vu ce qui était arrivé, furent profondément attristés, et ils allèrent raconter à leur maître tout ce qui s’était passé.\wj*
+\v 32 \wj Alors le maître fit appeler ce serviteur, et lui dit: Méchant serviteur, je t’avais remis en entier ta dette, parce que tu m’en avais supplié;\wj*
+\v 33 \wj ne devais-tu pas aussi avoir pitié de ton compagnon, comme j’ai eu pitié de toi?\wj*
+\v 34 \wj Et son maître, irrité, le livra aux bourreaux, jusqu’à ce qu’il eût payé tout ce qu’il devait.\wj*
+\v 35 \x u \xo 18.35 \xt Mt 6:14. Mc 11:26. Ja 2:13.\x*\wj C’est ainsi que mon Père céleste vous traitera, si chacun de vous ne pardonne à son frère de tout son cœur.\wj*
+\c 19
+\s1 Jésus en Pérée. Le divorce et le célibat
+\r V. 1-12: cf. Mc 10:1-12. (De 24:1-4. Mt 5:31, 32. 1 Co 7.)
+\p
+\v 1 \x a \xo 19.1 \xt Mc 10:1.\x*Lorsque Jésus eut achevé ces discours, il quitta la Galilée, et alla dans le territoire de la Judée, au-delà du Jourdain. 
+\v 2 Une grande foule le suivit, et là il guérit les malades. 
+\v 3 \x b \xo 19.3 \xt Mc 10:2.\x*Les pharisiens l’abordèrent, et dirent, pour l’éprouver: Est-il permis à un homme de répudier sa femme pour un motif quelconque? 
+\v 4 Il répondit: \wj N’avez-vous pas lu que le créateur,\wj*\x c \xo 19.4 \xt Ge 1:27.\x*\wj au commencement, fit l’homme et la femme\wj*
+\p
+\v 5 \x d \xo 19.5 \xt Ge 2:24. Ép 5:31.\x*\wj et qu’il dit: C’est pourquoi l’homme quittera son père et sa mère, et s’attachera à sa femme, et\wj*\x e \xo 19.5 \xt 1 Co 6:16.\x*\wj les deux deviendront une seule chair?\wj*
+\v 6 \wj Ainsi ils ne sont plus deux, mais ils sont une seule chair.\wj*\x f \xo 19.6 \xt 1 Co 7:10.\x*\wj Que l’homme donc ne sépare pas ce que Dieu a joint.\wj*
+\v 7 \x g \xo 19.7 \xt De 24:1. Jé 3:1.\x*Pourquoi donc, lui dirent-ils, Moïse a-t-il prescrit de donner à la femme une lettre de divorce et de la répudier? 
+\v 8 Il leur répondit: \wj C’est à cause de la dureté de votre cœur que Moïse vous a permis de répudier vos femmes; au commencement, il n’en était pas ainsi.\wj*
+\p
+\v 9 \x h \xo 19.9 \xt Mt 5:32. Mc 10:11. Lu 16:18. 1 Co 7:10.\x*\wj Mais je vous dis que celui qui répudie sa femme, sauf pour infidélité, et qui en épouse une autre, commet un adultère.\wj*
+\v 10 Ses disciples lui dirent: Si telle est la condition de l’homme à l’égard de la femme, il n’est pas avantageux de se marier. 
+\v 11 Il leur répondit: \x i \xo 19.11 \xt 1 Co 7:7, 17.\x*\wj Tous ne comprennent pas cette parole, mais seulement ceux à qui cela est donné.\wj*
+\p
+\v 12 \wj Car il y a des eunuques qui le sont dès le ventre de leur mère; il y en a qui le sont devenus par les hommes; et il y en a qui se sont rendus tels eux-mêmes, à cause du royaume des cieux. Que celui qui peut comprendre comprenne.\wj*
+\s1 Les petits enfants
+\r V. 13-15: cf. (Mc 10:13-16. Lu 18:15-17.)
+\p
+\v 13 \x j \xo 19.13 \xt Mc 10:13. Lu 18:15.\x*Alors on lui amena des petits enfants, afin qu’il leur imposât les mains et priât pour eux. Mais les disciples les repoussèrent. 
+\v 14 Et Jésus dit: \x k \xo 19.14 \xt Mc 18:3. 1 Co 14:20. 1 Pi 2:2.\x*\wj Laissez les petits enfants, et ne les empêchez pas de venir à moi; car le royaume des cieux est pour ceux qui leur ressemblent.\wj*
+\v 15 Il leur imposa les mains, et il partit de là.
+\s1 Le jeune homme riche
+\r V. 16-26: cf. (Mc 10:17-27. Lu 18:18-27.) 1 Ti 6:9, 10, 17-19.
+\p
+\v 16 \x l \xo 19.16 \xt Mc 10:17. Lu 18:18.\x*Et voici, un homme s’approcha, et dit à Jésus: Maître, que dois-je faire de bon pour avoir la vie éternelle? 
+\v 17 Il lui répondit: \wj Pourquoi m’interroges-tu sur ce qui est bon? Un seul est le bon. Si tu veux entrer dans la vie, observe les commandements.\wj* Lesquels? Lui dit-il. 
+\v 18 Et Jésus répondit: \x m \xo 19.18 \xt Ex 20:12. De 5:17. Ro 13:9.\x*\wj Tu ne tueras point; tu ne commettras point d’adultère; tu ne déroberas point; tu ne diras point de faux témoignage;\wj*
+\p
+\v 19 \wj honore ton père et ta mère; et:\wj*\x n \xo 19.19 \xt Lé 19:17. Mt 22:39. Mc 12:31. Ga 5:14. Ja 2:8.\x*\wj tu aimeras ton prochain comme toi-même.\wj*
+\v 20 Le jeune homme lui dit: J’ai observé toutes ces choses; que me manque-t-il encore? 
+\v 21 Jésus lui dit: \wj Si tu veux être parfait,\wj*\x o \xo 19.21 \xt Lu 12:33; 16:9.\x*\wj va, vends ce que tu possèdes,\wj*\x p \xo 19.21 \xt Mt 6:19. 1 Ti 6:19.\x*\wj donne-le aux pauvres, et tu auras un trésor dans le ciel. Puis viens, et suis-moi.\wj*
+\v 22 Après avoir entendu ces paroles, le jeune homme s’en alla tout triste; car il avait de grands biens. 
+\v 23 Jésus dit à ses disciples: \wj Je vous le dis en vérité,\wj*\x q \xo 19.23 \xt Pr 11:28. Mc 10:23. Lu 18:24.\x*\wj un riche entrera difficilement dans le royaume des cieux.\wj*
+\p
+\v 24 \wj Je vous le dis encore, il est plus facile à un chameau de passer par le trou d’une aiguille qu’à un riche d’entrer dans le royaume de Dieu.\wj*
+\v 25 Les disciples, ayant entendu cela, furent très étonnés, et dirent: Qui peut donc être sauvé? 
+\v 26 Jésus les regarda, et leur dit: \wj Aux hommes cela est impossible,\wj*\x r \xo 19.26 \xt Job 42:2. Jé 32:17. Za 8:6. Lu 1:37; 18:27.\x*\wj mais à Dieu tout est possible.\wj*
+\s1 L’héritage de la vie éternelle
+\r V. 27-30: cf. (Mc 10:28-31. Lu 18:28-30.)
+\p
+\v 27 \x s \xo 19.27 \xt Mt 4:20. Mc 10:28. Lu 5:11; 18:28.\x*Pierre, prenant alors la parole, lui dit: Voici, nous avons tout quitté, et nous t’avons suivi; qu’en sera-t-il pour nous? 
+\v 28 Jésus leur répondit: \wj Je vous le dis en vérité, quand le Fils de l’homme, au renouvellement de toutes choses, sera assis sur le trône de sa gloire, vous qui m’avez suivi,\wj*\x t \xo 19.28 \xt Lu 22:30.\x*\wj vous serez de même assis sur douze trônes, et vous jugerez les douze tribus d’Israël.\wj*
+\p
+\v 29 \x u \xo 19.29 \xt De 33:9.\x*\wj Et quiconque aura quitté, à cause de mon nom, ses frères, ou ses sœurs, ou son père, ou sa mère, ou sa femme, ou ses enfants, ou ses terres, ou ses maisons,\wj*\x v \xo 19.29 \xt Job 42:12.\x*\wj recevra le centuple, et héritera la vie éternelle.\wj*
+\v 30 \x w \xo 19.30 \xt Mc 10:31. Lu 13:30.\x*\wj Plusieurs des premiers seront les derniers, et plusieurs des derniers seront les premiers.\wj*
+\c 20
+\s1 Parabole des ouvriers loués à différentes heures
+\r V. 1-16: cf. Mt 19:30. Ps 145:17. 1 Co 4:7. 2 Co 8:12.
+\p
+\v 1 \wj Car le royaume des cieux est semblable à un maître de maison qui sortit dès le matin, afin de louer des ouvriers pour sa vigne.\wj*
+\v 2 \wj Il convint avec eux d’un denier par jour, et il les envoya à sa vigne.\wj*
+\v 3 \wj Il sortit vers la troisième heure, et il en vit d’autres qui étaient sur la place sans rien faire.\wj*
+\v 4 \wj Il leur dit: Allez aussi à ma vigne, et je vous donnerai ce qui sera raisonnable.\wj*
+\v 5 \wj Et ils y allèrent. Il sortit de nouveau vers la sixième heure et vers la neuvième, et il fit de même.\wj*
+\v 6 \wj Étant sorti vers la onzième heure, il en trouva d’autres qui étaient sur la place, et il leur dit: Pourquoi vous tenez-vous ici toute la journée sans rien faire?\wj*
+\v 7 \wj Ils lui répondirent: C’est que personne ne nous a loués. Allez aussi à ma vigne, leur dit-il.\wj*
+\v 8 \wj Quand le soir fut venu, le maître de la vigne dit à son intendant: Appelle les ouvriers, et paie-leur le salaire, en allant des derniers aux premiers.\wj*
+\v 9 \wj Ceux de la onzième heure vinrent, et reçurent chacun un denier.\wj*
+\v 10 \wj Les premiers vinrent ensuite, croyant recevoir davantage; mais ils reçurent aussi chacun un denier.\wj*
+\v 11 \wj En le recevant, ils murmurèrent contre le maître de la maison,\wj*
+\v 12 \wj et dirent: Ces derniers n’ont travaillé qu’une heure, et tu les traites à l’égal de nous, qui avons supporté la fatigue du jour et la chaleur.\wj*
+\v 13 \wj Il répondit à l’un d’eux: Mon ami, je ne te fais pas tort; n’es-tu pas convenu avec moi d’un denier?\wj*
+\v 14 \wj Prends ce qui te revient, et va-t’en. Je veux donner à ce dernier autant qu’à toi.\wj*
+\v 15 \x a \xo 20.15 \xt Ro 9:21.\x*\wj Ne m’est-il pas permis de faire de mon bien ce que je veux? Ou vois-tu de mauvais œil que je sois bon?\wj*
+\v 16 \x b \xo 20.16 \xt Mt 19:30. Mc 10:31. Lu 13:30.\x*\wj Ainsi les derniers seront les premiers, et les premiers seront les derniers.\wj*
+\s1 Jésus annonce sa mort et sa résurrection
+\r V. 17-19: cf. (Mc 10:32-34. Lu 18:31-34.) Mt 16:21.
+\p
+\v 17 \x c \xo 20.17 \xt Mc 10:32. Lu 18:31; 24:7.\x*Pendant que Jésus montait à Jérusalem, il prit à part les douze disciples, et il leur dit en chemin:
+\p
+\v 18 \wj Voici, nous montons à Jérusalem, et le Fils de l’homme sera livré aux principaux sacrificateurs et aux scribes. Ils le condamneront à mort,\wj*
+\v 19 \x d \xo 20.19 \xt Mt 27:2. Lu 23:1. Jn 18:28, 31. Ac 3:13.\x*\wj et ils le livreront aux païens, pour qu’ils se moquent de lui, le battent de verges, et le crucifient; et le troisième jour il ressuscitera.\wj*
+\s1 Demande des fils de Zébédée
+\r V. 20-28: cf. (Mc 10:35-45. Lu 22:24-27.)
+\p
+\v 20 \x e \xo 20.20 \xt Mc 10:35.\x*Alors la mère des fils de Zébédée s’approcha de Jésus avec ses fils, et se prosterna, pour lui faire une demande. 
+\v 21 Il lui dit: \wj Que veux-tu?\wj* Ordonne, lui dit-elle, que mes deux fils, que voici, soient assis, dans ton royaume, l’un à ta droite et l’autre à ta gauche. 
+\v 22 Jésus répondit: \x f \xo 20.22 \xt Ro 8:26.\x*\wj Vous ne savez ce que vous demandez. Pouvez-vous boire la coupe que je dois boire?\wj* Nous le pouvons, dirent-ils. 
+\v 23 Et il leur répondit: \wj Il est vrai que vous boirez ma coupe; mais pour ce qui est d’être assis à ma droite et à ma gauche, cela ne dépend pas de moi, et ne sera donné qu’à ceux à qui\wj*\x g \xo 20.23 \xt Mt 25:34.\x*\wj mon Père l’a réservé.\wj*
+\v 24 Les dix, ayant entendu cela, furent indignés contre les deux frères. 
+\v 25 Jésus les appela, et dit: \x h \xo 20.25 \xt Mc 10:42. Lu 22:25.\x*\wj Vous savez que les chefs des nations les tyrannisent, et que les grands les asservissent.\wj*
+\p
+\v 26 \x i \xo 20.26 \xt 1 Pi 5:3.\x*\wj Il n’en sera pas de même au milieu de vous. Mais quiconque veut être grand parmi vous, qu’il soit votre serviteur;\wj*
+\v 27 \x j \xo 20.27 \xt Mc 23:11. Mc 9:35; 10:43.\x*\wj et quiconque veut être le premier parmi vous, qu’il soit votre esclave.\wj*
+\v 28 \x k \xo 20.28 \xt Lu 22:27. Jn 13:14. Ph 2:7.\x*\wj C’est ainsi que le Fils de l’homme est venu, non pour être servi, mais pour servir et\wj*\x l \xo 20.28 \xt Ép 1:7. 1 Ti 2:6. 1 Pi 1:19.\x*\wj donner sa vie comme la rançon de plusieurs.\wj*
+\s1 Deux aveugles guéris à Jéricho
+\r V. 29-34: cf. (Mc 10:46-53. Lu 18:35-43.)
+\p
+\v 29 \x m \xo 20.29 \xt Mc 10:46. Lu 18:35.\x*Lorsqu’ils sortirent de Jéricho, une grande foule suivit Jésus. 
+\v 30 Et voici, deux aveugles, assis au bord du chemin, entendirent que Jésus passait, et crièrent: Aie pitié de nous, Seigneur, Fils de David! 
+\v 31 La foule les reprenait, pour les faire taire; mais ils crièrent plus fort: Aie pitié de nous, Seigneur, Fils de David! 
+\v 32 Jésus s’arrêta, les appela, et dit: \wj Que voulez-vous que je vous fasse?\wj*
+\v 33 Ils lui dirent: Seigneur, que nos yeux s’ouvrent. 
+\v 34 Ému de compassion, Jésus toucha leurs yeux; et aussitôt ils recouvrèrent la vue, et le suivirent.
+\c 21
+\s1 Entrée de Jésus à Jérusalem
+\r V. 1-9: cf. (Mc 11:1-10. Lu 19:28-44. Jn 12:12-19.) És 12:6.
+\p
+\v 1 \x a \xo 21.1 \xt Mc 11:1. Lu 19:29.\x*Lorsqu’ils approchèrent de Jérusalem, et qu’ils furent arrivés à Bethphagé, vers la montagne des oliviers, Jésus envoya deux disciples, 
+\v 2 en leur disant: \wj Allez au village qui est devant vous; vous trouverez aussitôt une ânesse attachée, et un ânon avec elle; détachez-les, et amenez-les-moi.\wj*
+\p
+\v 3 \wj Si quelqu’un vous dit quelque chose, vous répondrez: Le Seigneur en a besoin. Et à l’instant il les laissera aller.\wj*
+\v 4 Or, ceci arriva afin que s’accomplît ce qui avait été annoncé par le prophète: 
+\v 5 \x b \xo 21.5 \xt És 62:11. Za 9:9. Jn 12:15.\x*Dites à la fille de Sion:
+\q1 Voici, ton roi vient à toi,
+\q1 Plein de douceur, et monté sur un âne,
+\q1 Sur un ânon, le petit d’une ânesse.
+\m
+\v 6 Les disciples allèrent, et firent ce que Jésus leur avait ordonné. 
+\v 7 Ils amenèrent l’ânesse et l’ânon, \x c \xo 21.7 \xt 2 R 9:13.\x*mirent sur eux leurs vêtements, et \x d \xo 21.7 \xt Jn 12:14.\x*le firent asseoir dessus. 
+\v 8 La plupart des gens de la foule étendirent leurs vêtements sur le chemin; d’autres coupèrent des branches d’arbres, et en jonchèrent la route. 
+\v 9 Ceux qui précédaient et ceux qui suivaient Jésus criaient: Hosanna au Fils de David! \x e \xo 21.9 \xt Ps 118:25, 26.\x*Béni soit celui qui vient au nom du Seigneur! Hosanna dans les lieux très hauts!
+\s1 Les vendeurs chassés du temple. Irritation des sacrificateurs
+\r V. 10-17: cf. (Mc 11:11, 15-19. Lu 19:45-48.) Jn 2:13-22.
+\p
+\v 10 Lorsqu’il entra dans Jérusalem, toute la ville fut émue, et l’on disait: Qui est celui-ci? 
+\v 11 La foule répondait: C’est Jésus, le prophète, de Nazareth en Galilée. 
+\v 12 \x f \xo 21.12 \xt De 14:26. Mc 11:15. Lu 19:45. Jn 2:14.\x*Jésus entra dans le temple de Dieu. Il chassa tous ceux qui vendaient et qui achetaient dans le temple; il renversa les tables des changeurs, et les sièges des vendeurs de pigeons. 
+\v 13 Et il leur dit: \wj Il est écrit:\wj*\x g \xo 21.13 \xt 1 R 8:29. És 56:7. Jé 7:11. Lu 19:46.\x*\wj Ma maison sera appelée une maison de prière. Mais vous, vous en faites une caverne de voleurs.\wj*
+\v 14 Des aveugles et des boiteux s’approchèrent de lui dans le temple. Et il les guérit. 
+\v 15 \x h \xo 21.15 \xt Mc 11:27.\x*Mais les principaux sacrificateurs et les scribes furent indignés, à la vue des choses merveilleuses qu’il avait faites, et des enfants qui criaient dans le temple: Hosanna au Fils de David! 
+\v 16 Ils lui dirent: Entends-tu ce qu’ils disent? \wj Oui,\wj* leur répondit Jésus. \wj N’avez-vous jamais lu ces paroles:\wj*\x i \xo 21.16 \xt Ps 8:3.\x*\wj Tu as tiré des louanges de la bouche des enfants et de ceux qui sont à la mamelle?\wj*
+\v 17 Et, les ayant laissés, il sortit de la ville pour aller à Béthanie, où il passa la nuit.
+\s1 Le figuier maudit. La puissance de la foi
+\r V. 18-22: cf. (Mc 11:12-14, 19-26.) Lu 13:6-9.
+\p
+\v 18 \x j \xo 21.18 \xt Mc 11:12, 20.\x*Le matin, en retournant à la ville, il eut faim. 
+\v 19 Voyant un figuier sur le chemin, il s’en approcha; mais il n’y trouva que des feuilles, et il lui dit: \wj Que jamais fruit ne naisse de toi!\wj* Et à l’instant le figuier sécha. 
+\v 20 Les disciples, qui virent cela, furent étonnés, et dirent: Comment ce figuier est-il devenu sec en un instant? 
+\v 21 Jésus leur répondit: \wj Je vous le dis en vérité,\wj*\x k \xo 21.21 \xt Mt 17:20. Lu 17:6.\x*\wj si vous aviez de la foi et que vous ne doutiez point, non seulement vous feriez ce qui a été fait à ce figuier, mais quand vous diriez à cette montagne: Ote-toi de là et jette-toi dans la mer, cela se ferait.\wj*
+\p
+\v 22 \x l \xo 21.22 \xt Mt 7:7. Mc 11:24. Lu 11:9. Jn 14:13; 16:24. Ja 1:5. 1 Jn 3:22.\x*\wj Tout ce que vous demanderez avec foi par la prière, vous le recevrez.\wj*
+\s1 L’autorité de Jésus. Parabole des deux fils
+\r V. 23-32: cf. (Mc 11:27-33. Lu 20:1-8.) Lu 7:29-35.
+\p
+\v 23 \x m \xo 21.23 \xt Mc 11:27. Lu 20:1.\x*Jésus se rendit dans le temple, et, pendant qu’il enseignait, les principaux sacrificateurs et les anciens du peuple vinrent lui dire: \x n \xo 21.23 \xt Ex 2:14. Ac 4:7; 7:27.\x*Par quelle autorité fais-tu ces choses, et qui t’a donné cette autorité? 
+\v 24 Jésus leur répondit: \wj Je vous adresserai aussi une question; et, si vous m’y répondez, je vous dirai par quelle autorité je fais ces choses.\wj*
+\p
+\v 25 \wj Le baptême de Jean, d’où venait-il? Du ciel, ou des hommes?\wj* Mais ils raisonnèrent ainsi entre eux; Si nous répondons: Du ciel, il nous dira: Pourquoi donc n’avez-vous pas cru en lui? 
+\v 26 Et si nous répondons: Des hommes, nous avons à craindre la foule, \x o \xo 21.26 \xt Mt 14:5. Mc 6:20.\x*car tous tiennent Jean pour un prophète. 
+\v 27 Alors ils répondirent à Jésus: Nous ne savons. Et il leur dit à son tour: \wj Moi non plus, je ne vous dirai pas par quelle autorité je fais ces choses.\wj*
+\p
+\v 28 \wj Que vous en semble? Un homme avait deux fils; et, s’adressant au premier, il dit: Mon enfant, va travailler aujourd’hui dans ma vigne.\wj*
+\v 29 \wj Il répondit: Je ne veux pas. Ensuite, il se repentit, et il alla.\wj*
+\v 30 \wj S’adressant à l’autre, il dit la même chose. Et ce fils répondit:\wj*\x p \xo 21.30 \xt Éz 33:31.\x*\wj Je veux bien, seigneur. Et il n’alla pas.\wj*
+\v 31 \wj Lequel des deux a fait la volonté du père?\wj* Ils répondirent: Le premier. Et Jésus leur dit: \wj Je vous le dis en vérité, les publicains et les prostituées vous devanceront dans le royaume de Dieu.\wj*
+\p
+\v 32 \x q \xo 21.32 \xt Mt 3:1.\x*\wj Car Jean est venu à vous dans la voie de la justice, et vous n’avez pas cru en lui. Mais les publicains et les prostituées ont cru en lui; et vous, qui avez vu cela, vous ne vous êtes pas ensuite repentis pour croire en lui.\wj*
+\s1 Parabole des vignerons. La pierre de l’angle
+\r V. 33-46: cf. (Mc 12:1-12. Lu 20:9-19.) És 5:1-7.
+\p
+\v 33 \wj Écoutez une autre parabole.\wj*\x r \xo 21.33 \xt Ps 80:9. És 5:1. Jé 2:21; 12:10. Mc 12:1. Lu 20:9.\x*\wj Il y avait un homme, maître de maison, qui planta une vigne. Il l’entoura d’une haie, y creusa un pressoir, et bâtit une tour; puis il l’afferma à des vignerons, et quitta le pays.\wj*
+\v 34 \wj Lorsque le temps de la récolte fut arrivé, il envoya ses serviteurs vers les vignerons, pour recevoir le produit de sa vigne.\wj*
+\v 35 \wj Les vignerons, s’étant saisis de ses serviteurs, battirent l’un, tuèrent l’autre, et\wj*\x s \xo 21.35 \xt 2 Ch 24:21.\x*\wj lapidèrent le troisième.\wj*
+\v 36 \wj Il envoya encore d’autres serviteurs, en plus grand nombre que les premiers; et les vignerons les traitèrent de la même manière.\wj*
+\v 37 \wj Enfin, il envoya vers eux son fils, en disant: Ils auront du respect pour mon fils.\wj*
+\v 38 \wj Mais, quand les vignerons virent le fils, ils dirent entre eux:\wj*\x t \xo 21.38 \xt Ps 2:8. Hé 1:2.\x*\wj Voici l’héritier;\wj*\x u \xo 21.38 \xt Ge 37:18. Ps 2:1. Mt 26:3; 27:1. Jn 11:53.\x*\wj venez, tuons-le, et emparons-nous de son héritage.\wj*
+\v 39 \wj Et ils se saisirent de lui, le jetèrent hors de la vigne, et le tuèrent.\wj*
+\v 40 \wj Maintenant, lorsque le maître de la vigne viendra, que fera-t-il à ces vignerons?\wj*
+\v 41 Ils lui répondirent: Il fera périr misérablement ces misérables, et il affermera la vigne à d’autres vignerons, qui lui en donneront le produit au temps de la récolte. 
+\v 42 Jésus leur dit: \wj N’avez-vous jamais lu dans les Écritures:\wj*
+\q1 \x v \xo 21.42 \xt Ps 118:22. És 8:14; 28:16. Mc 12:10. Lu 20:17. Ac 4:11. Ro 9:33. 1 Pi 2:6.\x*\wj La pierre qu’ont rejetée ceux qui bâtissaient\wj*
+\q1 \wj Est devenue la principale de l’angle;\wj*
+\q1 \wj C’est du Seigneur que cela est venu,\wj*
+\q1 \wj Et c’est un prodige à nos yeux?\wj*
+\m
+\v 43 \wj C’est pourquoi, je vous le dis,\wj*\x w \xo 21.43 \xt Ex 32:10. Mt 8:12.\x*\wj le royaume de Dieu vous\wj*\x x \xo 21.43 \xt És 55:5.\x*\wj sera enlevé, et sera donné à une nation qui en rendra les fruits.\wj*
+\v 44 \x y \xo 21.44 \xt És 8:15. Za 12:3. Lu 20:18.\x*\wj Celui qui tombera sur cette pierre s’y brisera, et\wj*\x z \xo 21.44 \xt Da 2:34.\x*\wj celui sur qui elle tombera sera écrasé.\wj*
+\v 45 \x a \xo 21.45 \xt Lu 20:19.\x*Après avoir entendu ses paraboles, les principaux sacrificateurs et les pharisiens comprirent que c’était d’eux que Jésus parlait, 
+\v 46 et ils cherchaient à se saisir de lui; mais ils craignaient la foule, parce qu’elle le tenait \x b \xo 21.46 \xt Lu 7:16. Jn 7:40.\x*pour un prophète.
+\c 22
+\s1 Parabole des noces
+\r V. 1-14: cf. Lu 14:16-24. Mt 20:16.
+\p
+\v 1 Jésus, prenant la parole, leur parla de nouveau en paraboles, et il dit:
+\p
+\v 2 \x a \xo 22.2 \xt Lu 14:16. Ap 19:7.\x*\wj Le royaume des cieux est semblable à un roi qui fit des noces pour son fils.\wj*
+\v 3 \wj Il envoya ses serviteurs appeler ceux qui étaient invités aux noces; mais ils ne voulurent pas venir.\wj*
+\v 4 \wj Il envoya encore d’autres serviteurs, en disant: Dites aux conviés: Voici, j’ai préparé mon festin; mes bœufs et mes bêtes grasses sont tués, tout est prêt, venez aux noces.\wj*
+\v 5 \wj Mais, sans s’inquiéter de l’invitation, ils s’en allèrent, celui-ci à son champ, celui-là à son trafic;\wj*
+\v 6 \wj et les autres se saisirent des serviteurs, les outragèrent et les tuèrent.\wj*
+\v 7 \wj Le roi fut irrité; il envoya ses troupes, fit périr ces meurtriers, et brûla leur ville.\wj*
+\v 8 \wj Alors il dit à ses serviteurs: Les noces sont prêtes; mais les conviés n’en étaient pas dignes.\wj*
+\v 9 \wj Allez donc dans les carrefours, et appelez aux noces tous ceux que vous trouverez.\wj*
+\v 10 \wj Ces serviteurs allèrent dans les chemins, rassemblèrent tous ceux qu’ils trouvèrent, méchants et bons, et la salle des noces fut pleine de convives.\wj*
+\v 11 \wj Le roi entra pour voir ceux qui étaient à table, et il aperçut là un homme qui n’avait pas revêtu un habit de noces.\wj*
+\v 12 \wj Il lui dit: Mon ami, comment es-tu entré ici sans avoir un habit de noces? Cet homme eut la bouche fermée.\wj*
+\v 13 \wj Alors le roi dit aux serviteurs: Liez-lui les pieds et les mains, et jetez-le dans les ténèbres du dehors,\wj*\x b \xo 22.13 \xt Mt 8:12; 13:42; 24:51; 25:30. Lu 13:28.\x*\wj où il y aura des pleurs et des grincements de dents.\wj*
+\v 14 \wj Car\wj*\x c \xo 22.14 \xt Mt 20:16.\x*\wj il y a beaucoup d’appelés, mais peu d’élus.\wj*
+\s1 Questions captieuses proposées à Jésus sur: — le tribut à César, — la résurrection, — le plus grand commandement. — De qui le Christ est-il fils?
+\r V. 15-22: cf. (Mc 12:13-17. Lu 20:20-26.) Job 5:13.
+\p
+\v 15 \x d \xo 22.15 \xt Mc 12:13. Lu 20:20.\x*Alors les pharisiens allèrent se consulter sur les moyens de surprendre Jésus par ses propres paroles. 
+\v 16 Ils envoyèrent auprès de lui leurs disciples avec les hérodiens, qui dirent: Maître, nous savons que tu es vrai, et que tu enseignes la voie de Dieu selon la vérité, sans t’inquiéter de personne, car tu ne regardes pas à l’apparence des hommes. 
+\v 17 Dis-nous donc ce qu’il t’en semble: est-il permis, ou non, de payer le tribut à César? 
+\v 18 Jésus, connaissant leur méchanceté, répondit: \wj Pourquoi me tentez-vous, hypocrites?\wj*
+\p
+\v 19 \wj Montrez-moi la monnaie avec laquelle on paie le tribut.\wj* Et ils lui présentèrent un denier. 
+\v 20 Il leur demanda: \wj De qui sont cette effigie et cette inscription?\wj*
+\v 21 De César, lui répondirent-ils. Alors il leur dit: \x e \xo 22.21 \xt Mt 17:25. Ro 13:7.\x*\wj Rendez donc à César ce qui est à César, et à Dieu ce qui est à Dieu.\wj*
+\v 22 Étonnés de ce qu’ils entendaient, ils le quittèrent, et s’en allèrent.
+\r V. 23-33: cf. (Mc 12:18-27. Lu 20:27-40.) 2 Ti 3:7-9.
+\p
+\v 23 \x f \xo 22.23 \xt Mc 12:18. Lu 20:27. Ac 23:8.\x*Le même jour, les sadducéens, qui disent qu’il n’y a point de résurrection, vinrent auprès de Jésus, et lui firent cette question: 
+\v 24 \x g \xo 22.24 \xt De 25:5.\x*Maître, Moïse a dit: Si quelqu’un meurt sans enfants, son frère épousera sa veuve, et suscitera une postérité à son frère. 
+\v 25 Or, il y avait parmi nous sept frères. Le premier se maria, et mourut; et, comme il n’avait pas d’enfants, il laissa sa femme à son frère. 
+\v 26 Il en fut de même du second, puis du troisième, jusqu’au septième. 
+\v 27 Après eux tous, la femme mourut aussi. 
+\v 28 A la résurrection, duquel des sept sera-t-elle donc la femme? Car tous l’ont eue. 
+\v 29 Jésus leur répondit: \wj Vous êtes dans l’erreur, parce que vous ne comprenez ni les Écritures, ni la puissance de Dieu.\wj*
+\p
+\v 30 \wj Car, à la résurrection, les hommes ne prendront point de femmes, ni les femmes de maris,\wj*\x h \xo 22.30 \xt 1 Jn 3:2.\x*\wj mais ils seront comme les anges de Dieu dans le ciel.\wj*
+\v 31 \wj Pour ce qui est de la résurrection des morts, n’avez-vous pas lu ce que Dieu vous a dit:\wj*
+\v 32 \x i \xo 22.32 \xt Ex 3:6.\x*\wj Je suis le Dieu d’Abraham, le Dieu d’Isaac, et le Dieu de Jacob? Dieu n’est pas Dieu des morts, mais des vivants.\wj*
+\v 33 La foule, qui écoutait, \x j \xo 22.33 \xt Mt 7:28.\x*fut frappée de l’enseignement de Jésus.
+\r V. 34-40: cf. Mc 12:28-34. (Lu 10:25-37.)
+\p
+\v 34 \x k \xo 22.34 \xt Mc 12:28.\x*Les pharisiens, ayant appris qu’il avait réduit au silence les sadducéens, se rassemblèrent, 
+\v 35 \x l \xo 22.35 \xt Lu 10:25.\x*et l’un d’eux, docteur de la loi, lui fit cette question, pour l’éprouver: 
+\v 36 Maître, quel est le plus grand commandement de la loi? 
+\v 37 Jésus lui répondit: \x m \xo 22.37 \xt De 6:5; 10:12; 30:6. Lu 10:27.\x*\wj Tu aimeras le Seigneur, ton Dieu, de tout ton cœur, de toute ton âme, et de toute ta pensée.\wj*
+\p
+\v 38 \wj C’est le premier et le plus grand commandement.\wj*
+\v 39 \wj Et voici le second, qui lui est semblable:\wj*\x n \xo 22.39 \xt Lé 19:18. Mc 12:31. Ro 13:9. Ga 5:14. Ép 5:2. 1 Th 4:9. Ja 2:8.\x*\wj Tu aimeras ton prochain comme toi-même.\wj*
+\v 40 \wj De ces deux commandements dépendent toute la loi et les prophètes.\wj*
+\r V. 41-46: cf. (Mc 12:35-37. Lu 20:41-44.)
+\p
+\v 41 \x o \xo 22.41 \xt Mc 12:35. Lu 20:41.\x*Comme les pharisiens étaient assemblés, Jésus les interrogea, 
+\v 42 en disant: \wj Que pensez-vous du Christ? De qui est-il fils?\wj* Ils lui répondirent: De David. 
+\v 43 Et Jésus leur dit: \wj Comment donc David, animé par l’Esprit, l’appelle-t-il Seigneur, lorsqu’il dit:\wj*
+\q1
+\v 44 \x p \xo 22.44 \xt Ps 110:1. Ac 2:34. 1 Co 15:25. Hé 1:13; 10:13.\x*\wj Le Seigneur a dit à mon Seigneur:\wj*
+\q1 \wj Assieds-toi à ma droite,\wj*
+\q1 \wj Jusqu’à ce que je fasse de tes ennemis ton marchepied?\wj*
+\m
+\v 45 \wj Si donc David l’appelle Seigneur, comment est-il son fils?\wj*
+\v 46 Nul ne put lui répondre un mot. Et, depuis ce jour, personne n’osa plus lui proposer des questions.
+\c 23
+\s1 Les scribes et les pharisiens censurés par Jésus
+\r V. 1-12: cf. (Mc 12:38, 39. Lu 20:45-47; 11:43, 46.) (Mt 6:1-5, 16. Lu 14:7-11.)
+\p
+\v 1 Alors Jésus, parlant à la foule et à ses disciples, dit:
+\p
+\v 2 \x a \xo 23.2 \xt Né 8:4.\x*\wj Les scribes et les pharisiens sont assis dans la chaire de Moïse.\wj*
+\v 3 \x b \xo 23.3 \xt De 17:19. Mal 2:6.\x*\wj Faites donc et observez tout ce qu’ils vous disent; mais n’agissez pas selon leurs œuvres.\wj*\x c \xo 23.3 \xt Ro 2:19.\x*\wj Car ils disent, et ne font pas.\wj*
+\v 4 \x d \xo 23.4 \xt És 10:1. Lu 11:46. Ac 15:10.\x*\wj Ils lient des fardeaux pesants, et les mettent sur les épaules des hommes, mais ils ne veulent pas les remuer du doigt.\wj*
+\v 5 \wj Ils font toutes leurs actions\wj*\x e \xo 23.5 \xt Mt 6:5.\x*\wj pour être vus des hommes. Ainsi, ils portent de\wj*\x f \xo 23.5 \xt De 6:8; 22:12.\x*\wj larges phylactères, et ils ont de longues franges à leurs vêtements;\wj*
+\v 6 \x g \xo 23.6 \xt Mc 12:38, 39. Lu 11:43; 20:46.\x*\wj ils aiment la première place dans les festins, et les premiers sièges dans les synagogues;\wj*
+\v 7 \wj ils aiment à être salués dans les places publiques, et à être\wj*\x h \xo 23.7 \xt Ja 3:1.\x*\wj appelés par les hommes Rabbi, Rabbi.\wj*
+\v 8 \wj Mais vous, ne vous faites pas appeler Rabbi; car un seul est votre Maître, et vous êtes tous frères.\wj*
+\v 9 \wj Et n’appelez personne sur la terre votre père;\wj*\x i \xo 23.9 \xt Mal 1:6.\x*\wj car un seul est votre Père, celui qui est dans les cieux.\wj*
+\v 10 \wj Ne vous faites pas appeler directeurs; car un seul est votre Directeur, le Christ.\wj*
+\v 11 \x j \xo 23.11 \xt Mt 20:26.\x*\wj Le plus grand parmi vous sera votre serviteur.\wj*
+\v 12 \x k \xo 23.12 \xt Job 22:29. Pr 29:23. Lu 14:11; 18:14. Ja 4:6, 10. 1 Pi 5:5.\x*\wj Quiconque s’élèvera sera abaissé, et quiconque s’abaissera sera élevé.\wj*
+\r V. 13-36: cf. (Mc 12:40. Lu 11:38-52.)
+\p
+\v 13 \x l \xo 23.13 \xt Lu 11:52.\x*\wj Malheur à vous, scribes et pharisiens hypocrites! Parce que vous fermez aux hommes le royaume des cieux; vous n’y entrez pas vous-mêmes, et vous n’y laissez pas entrer ceux qui veulent entrer.\wj*
+\v 14 \x m \xo 23.14 \xt Mc 12:40. Lu 20:47. 2 Ti 3:6. Tit 1:11.\x*\wj Malheur à vous, scribes et pharisiens hypocrites! Parce que vous dévorez les maisons des veuves, et que vous faites pour l’apparence de longues prières; à cause de cela, vous serez jugés plus sévèrement.\wj*
+\v 15 \wj Malheur à vous, scribes et pharisiens hypocrites! Parce que vous courez la mer et la terre pour faire un prosélyte; et, quand il l’est devenu, vous en faites un fils de la géhenne deux fois plus que vous.\wj*
+\v 16 \wj Malheur à vous, conducteurs aveugles! Qui dites: Si quelqu’un jure par le temple, ce n’est rien; mais, si quelqu’un jure par l’or du temple, il est engagé.\wj*
+\v 17 \wj Insensés et aveugles! Lequel est le plus grand, l’or, ou le temple qui sanctifie l’or?\wj*
+\v 18 \wj Si quelqu’un, dites-vous encore, jure par l’autel, ce n’est rien; mais, si quelqu’un jure par l’offrande qui est sur l’autel, il est engagé.\wj*
+\v 19 \wj Aveugles! Lequel est le plus grand, l’offrande, ou\wj*\x n \xo 23.19 \xt Ex 29:37.\x*\wj l’autel qui sanctifie l’offrande?\wj*
+\v 20 \wj Celui qui jure par l’autel jure par l’autel et par tout ce qui est dessus;\wj*
+\v 21 \x o \xo 23.21 \xt 1 R 8:13. 2 Ch 6:1, 2.\x*\wj celui qui jure par le temple jure par le temple et par celui qui l’habite;\wj*
+\v 22 \x p \xo 23.22 \xt 2 Ch 8:33. És 66:1. Mt 5:34. Ac 7:49.\x*\wj et celui qui jure par le ciel jure par le trône de Dieu et par celui qui y est assis.\wj*
+\v 23 \x q \xo 23.23 \xt Lu 11:42.\x*\wj Malheur à vous, scribes et pharisiens hypocrites! Parce que vous payez la dîme de la menthe, de l’aneth et du cumin,\wj*\x r \xo 23.23 \xt 1 S 15:22. Os 6:6. Mi 6:8.\x*\wj et que vous laissez ce qui est plus important dans la loi, la justice, la miséricorde et la fidélité:\wj*\x s \xo 23.23 \xt Mt 9:13; 12:7.\x*\wj c’est là ce qu’il fallait pratiquer, sans négliger les autres choses.\wj*
+\v 24 \wj Conducteurs aveugles! Qui coulez le moucheron, et qui avalez le chameau.\wj*
+\v 25 \x t \xo 23.25 \xt Lu 11:39.\x*\wj Malheur à vous, scribes et pharisiens hypocrites! Parce que vous nettoyez le dehors de la coupe et du plat, et qu’au dedans ils sont pleins de rapine et d’intempérance.\wj*
+\v 26 \wj Pharisien aveugle! Nettoie premièrement\wj*\x u \xo 23.26 \xt Tit 1:15.\x*\wj l’intérieur de la coupe et du plat, afin que l’extérieur aussi devienne net.\wj*
+\v 27 \wj Malheur à vous, scribes et pharisiens hypocrites! Parce que vous ressemblez à\wj*\x v \xo 23.27 \xt Ac 23:3.\x*\wj des sépulcres blanchis, qui paraissent beaux au-dehors, et qui, au-dedans, sont pleins d’ossements de morts et de toute espèce d’impuretés.\wj*
+\v 28 \wj Vous de même, au-dehors, vous paraissez justes aux hommes, mais, au-dedans, vous êtes pleins d’hypocrisie et d’iniquité.\wj*
+\v 29 \x w \xo 23.29 \xt Lu 11:47.\x*\wj Malheur à vous, scribes et pharisiens hypocrites! Parce que vous bâtissez les tombeaux des prophètes et ornez les sépulcres des justes,\wj*
+\v 30 \wj et que vous dites: Si nous avions vécu du temps de nos pères, nous ne nous serions pas joints à eux pour répandre le sang des prophètes.\wj*
+\v 31 \wj Vous témoignez ainsi contre vous-mêmes\wj*\x x \xo 23.31 \xt Ac 7:51. 1 Th 2:15.\x*\wj que vous êtes les fils de ceux qui ont tué les prophètes.\wj*
+\v 32 \wj Comblez donc la mesure de vos pères.\wj*
+\v 33 \x y \xo 23.33 \xt Mt 3:7.\x*\wj Serpents, race de vipères! Comment échapperez-vous au châtiment de la géhenne?\wj*
+\v 34 \x z \xo 23.34 \xt Lu 11:49.\x*\wj C’est pourquoi, voici,\wj*\x a \xo 23.34 \xt Mt 10:16. Lu 10:3. Jn 16:2. Ac 7:52.\x*\wj je vous envoie des prophètes, des sages et des scribes. Vous tuerez et crucifierez les uns,\wj*\x b \xo 23.34 \xt Mt 10:17. Ac 5:40.\x*\wj vous battrez de verges les autres dans vos synagogues, et vous les persécuterez de ville en ville,\wj*
+\v 35 \wj afin que retombe sur vous tout le sang innocent répandu sur la terre,\wj*\x c \xo 23.35 \xt Ge 4:8. Hé 11:4.\x*\wj depuis le sang d’Abel le juste jusqu’au\wj*\x d \xo 23.35 \xt 2 Ch 24:21.\x*\wj sang de Zacharie, fils de Barachie, que vous avez tué entre le temple et l’autel.\wj*
+\v 36 \wj Je vous le dis en vérité, tout cela retombera sur cette génération.\wj*
+\s1 Crimes et châtiment de Jérusalem
+\r V. 37-39: cf. Lu 13:33-35; 19:41-44. Éz 24:6-14.
+\p
+\v 37 \x e \xo 23.37 \xt Lu 13:34.\x*\wj Jérusalem, Jérusalem, qui tues les prophètes et qui\wj*\x f \xo 23.37 \xt Mt 21:35, 36.\x*\wj lapides ceux qui te sont envoyés,\wj*\x g \xo 23.37 \xt Ps 17:8; 91:4.\x*\wj combien de fois ai-je voulu rassembler tes enfants, comme une poule rassemble ses poussins sous ses ailes, et vous ne l’avez pas voulu!\wj*
+\v 38 \x h \xo 23.38 \xt Ps 69:26. És 1:7. Jé 7:34. Mi 3:12. Ac 1:20.\x*\wj Voici, votre maison vous sera laissée déserte;\wj*
+\v 39 \wj car, je vous le dis, vous ne me verrez plus désormais, jusqu’à ce que vous disiez:\wj*\x i \xo 23.39 \xt Ps 118:26.\x*\wj Béni soit celui qui vient au nom du Seigneur!\wj*
+\c 24
+\s1 La destruction de Jérusalem et l’avènement du Fils de l’homme
+\r V. 1-14: cf. (Mc 13:1-13. Lu 21:5-19.)
+\p
+\v 1 \x a \xo 24.1 \xt Mc 13:1. Lu 21:5.\x*Comme Jésus s’en allait, au sortir du temple, ses disciples s’approchèrent pour lui en faire remarquer les constructions. 
+\v 2 Mais il leur dit: \wj Voyez-vous tout cela? Je vous le dis en vérité,\wj*\x b \xo 24.2 \xt 1 R 9:7, 8. Mi 3:12. Lu 19:44.\x*\wj il ne restera pas ici pierre sur pierre qui ne soit renversée.\wj*
+\v 3 \x c \xo 24.3 \xt Mc 13:1, 3. Lu 21:7.\x*Il s’assit sur la montagne des oliviers. Et les disciples vinrent en particulier lui faire cette question: \x d \xo 24.3 \xt Ac 1:6.\x*Dis-nous, quand cela arrivera-t-il, et quel sera le signe de ton avènement et de la fin du monde? 
+\v 4 Jésus leur répondit: \x e \xo 24.4 \xt Jé 29:8. Ép 5:6. Col 2:18. 2 Th 2:3. 1 Jn 4:1.\x*\wj Prenez garde que personne ne vous séduise.\wj*
+\p
+\v 5 \x f \xo 24.5 \xt Jé 14:14; 23:25. Jn 5:43.\x*\wj Car plusieurs viendront sous mon nom, disant: C’est moi qui suis le Christ. Et ils séduiront beaucoup de gens.\wj*
+\v 6 \wj Vous entendrez parler de guerres et de bruits de guerres: gardez-vous d’être troublés, car il faut que ces choses arrivent. Mais ce ne sera pas encore la fin.\wj*
+\v 7 \x g \xo 24.7 \xt És 19:2.\x*\wj Une nation s’élèvera contre une nation, et un royaume contre un royaume, et il y aura, en divers lieux, des famines et des tremblements de terre.\wj*
+\v 8 \wj Tout cela ne sera que le commencement des douleurs.\wj*
+\v 9 \x h \xo 24.9 \xt Mt 10:17. Lu 21:11, 12. Jn 15:20; 16:2. Ap 2:10.\x*\wj Alors on vous livrera aux tourments, et l’on vous fera mourir; et vous serez haïs de toutes les nations, à cause de mon nom.\wj*
+\v 10 \wj Alors aussi plusieurs succomberont, et ils se trahiront, se haïront les uns les autres.\wj*
+\v 11 \x i \xo 24.11 \xt 2 Pi 2:1.\x*\wj Plusieurs faux prophètes s’élèveront, et ils séduiront beaucoup de gens.\wj*
+\v 12 \wj Et,\wj*\x j \xo 24.12 \xt 2 Ti 3:1, etc.\x*\wj parce que l’iniquité se sera accrue, la charité du plus grand nombre se refroidira.\wj*
+\v 13 \x k \xo 24.13 \xt Mt 10:22. Mc 13:13. Lu 21:19. Ap 2:7, 10; 3:10.\x*\wj Mais celui qui persévérera jusqu’à la fin sera sauvé.\wj*
+\v 14 \wj Cette bonne nouvelle du royaume sera prêchée dans le monde entier, pour servir de témoignage à toutes les nations. Alors viendra la fin.\wj*
+\r V. 15-35: cf. (Mc 13:14-31. Lu 21:20-33; 17:22-25, 31, 37.)
+\p
+\v 15 \x l \xo 24.15 \xt Mc 13:14. Lu 21:20.\x*\wj C’est pourquoi, lorsque vous verrez l’abomination de la désolation, dont a parlé le prophète\wj*\x m \xo 24.15 \xt Da 9:27.\x*\wj Daniel, établie en lieu saint, que celui qui lit fasse attention!\wj*
+\v 16 \wj alors, que ceux qui seront en Judée fuient dans les montagnes;\wj*
+\v 17 \wj que celui qui sera sur le toit ne descende pas pour prendre ce qui est dans sa maison;\wj*
+\v 18 \wj et que celui qui sera dans les champs ne retourne pas en arrière pour prendre son manteau.\wj*
+\v 19 \wj Malheur aux femmes qui seront enceintes et à celles qui allaiteront en ces jours-là!\wj*
+\v 20 \wj Priez pour que votre fuite n’arrive pas en hiver, ni un jour de\wj*\x n \xo 24.20 \xt Ac 1:12.\x*\wj sabbat.\wj*
+\v 21 \x o \xo 24.21 \xt Da 12:1.\x*\wj Car alors, la détresse sera si grande qu’il n’y en a point eu de pareille depuis le commencement du monde jusqu’à présent, et qu’il n’y en aura jamais.\wj*
+\v 22 \wj Et, si ces jours n’étaient abrégés, personne ne serait sauvé; mais, à cause des élus, ces jours seront abrégés.\wj*
+\v 23 \wj Si quelqu’un vous dit alors:\wj*\x p \xo 24.23 \xt Mc 13:21. Lu 21:8.\x*\wj Le Christ est ici, ou: Il est là, ne le croyez pas.\wj*
+\v 24 \x q \xo 24.24 \xt De 13:1. 2 Th 2:11.\x*\wj Car il s’élèvera de faux Christs et de faux prophètes; ils feront de grands prodiges et des miracles, au point de séduire, s’il était possible, même les élus.\wj*
+\v 25 \wj Voici, je vous l’ai annoncé d’avance.\wj*
+\v 26 \x r \xo 24.26 \xt Lu 17:23.\x*\wj Si donc on vous dit: Voici, il est dans le désert, n’y allez pas; voici, il est dans les chambres, ne le croyez pas.\wj*
+\v 27 \wj Car, comme l’éclair part de l’orient et se montre jusqu’en occident, ainsi sera l’avènement du Fils de l’homme.\wj*
+\v 28 \x s \xo 24.28 \xt Job 39:33. Lu 17:37.\x*\wj En quelque lieu que soit le cadavre, là s’assembleront les aigles.\wj*
+\v 29 \x t \xo 24.29 \xt És 13:10. Éz 32:7. Joë 2:31; 3:15. Mc 13:24. Lu 21:25.\x*\wj Aussitôt après ces jours de détresse, le soleil s’obscurcira, la lune ne donnera plus sa lumière, les étoiles tomberont du ciel, et les puissances des cieux seront ébranlées.\wj*
+\v 30 \x u \xo 24.30 \xt Da 7:10. Mt 16:27; 25:31; 26:64. Mc 13:26; 14:62. Lu 21:27. Ac 1:11. 2 Th 1:10. Ap 1:7.\x*\wj Alors le signe du Fils de l’homme paraîtra dans le ciel, toutes les tribus de la terre\wj*\x v \xo 24.30 \xt Ap 1:7.\x*\wj se lamenteront, et elles verront le Fils de l’homme venant sur les nuées du ciel avec puissance et une grande gloire.\wj*
+\v 31 \wj Il enverra ses anges avec\wj*\x w \xo 24.31 \xt 1 Co 15:52. 1 Th 4:16.\x*\wj la trompette retentissante, et ils rassembleront ses élus des quatre vents, depuis une extrémité des cieux jusqu’à l’autre.\wj*
+\v 32 \x x \xo 24.32 \xt Mc 13:28. Lu 21:29.\x*\wj Instruisez-vous par une comparaison tirée du figuier. Dès que ses branches deviennent tendres, et que les feuilles poussent, vous connaissez que l’été est proche.\wj*
+\v 33 \wj De même, quand vous verrez toutes ces choses, sachez que le Fils de l’homme est proche, à la porte.\wj*
+\v 34 \wj Je vous le dis en vérité, cette génération ne passera point, que tout cela n’arrive.\wj*
+\v 35 \x y \xo 24.35 \xt Ps 102:27. És 51:6. Mc 13:31. Hé 1:11.\x*\wj Le ciel et la terre passeront, mais mes paroles ne passeront point.\wj*
+\s1 Exhortation à la vigilance
+\r V. 36-51: cf. (Mc 13:32-37. Lu 21:34-36; 17:26-30, 34-36.)
+\p
+\v 36 \x z \xo 24.36 \xt Mc 13:32. Ac 1:7.\x*\wj Pour ce qui est du jour et de l’heure, personne ne le sait, ni les anges des cieux, ni le Fils, mais le Père seul.\wj*
+\v 37 \x a \xo 24.37 \xt Ge 6:2. Lu 17:26. 1 Pi 3:20. 2 Pi 2:5.\x*\wj Ce qui arriva du temps de Noé arrivera de même à l’avènement du Fils de l’homme.\wj*
+\v 38 \wj Car, dans les jours qui précédèrent le déluge, les hommes mangeaient et buvaient, se mariaient et mariaient leurs enfants,\wj*\x b \xo 24.38 \xt Ge 7:7.\x*\wj jusqu’au jour où Noé entra dans l’arche;\wj*
+\v 39 \wj et ils ne se doutèrent de rien, jusqu’à ce que le déluge vînt et les emportât tous: il en sera de même à l’avènement du Fils de l’homme.\wj*
+\v 40 \x c \xo 24.40 \xt Lu 17:34. 1 Th 4:17.\x*\wj Alors, de deux hommes qui seront dans un champ, l’un sera pris et l’autre laissé;\wj*
+\v 41 \wj de deux femmes qui moudront à la meule, l’une sera prise et l’autre laissée.\wj*
+\v 42 \x d \xo 24.42 \xt Mt 25:13. Mc 13:33. Lu 12:40; 21:36.\x*\wj Veillez donc, puisque vous ne savez pas quel jour votre Seigneur viendra.\wj*
+\v 43 \x e \xo 24.43 \xt Lu 12:39. 1 Th 5:2. 2 Pi 3:10. Ap 3:3; 16:15.\x*\wj Sachez-le bien, si le maître de la maison savait à quelle veille de la nuit le voleur doit venir, il veillerait et ne laisserait pas percer sa maison.\wj*
+\v 44 \wj C’est pourquoi, vous aussi, tenez-vous prêts, car le Fils de l’homme viendra à l’heure où vous n’y penserez pas.\wj*
+\v 45 \x f \xo 24.45 \xt Mt 25:21. Lu 12:42.\x*\wj Quel est donc le serviteur fidèle et prudent, que son maître a établi sur ses gens, pour leur donner la nourriture au temps convenable?\wj*
+\v 46 \wj Heureux ce serviteur, que son maître, à son arrivée, trouvera faisant ainsi!\wj*
+\v 47 \wj Je vous le dis en vérité, il l’établira sur tous ses biens.\wj*
+\v 48 \wj Mais, si c’est un méchant serviteur, qui dise en lui-même: Mon maître tarde à venir,\wj*
+\v 49 \wj s’il se met à battre ses compagnons, s’il mange et boit avec les ivrognes,\wj*
+\v 50 \wj le maître de ce serviteur viendra le jour où il ne s’y attend pas et à l’heure qu’il ne connaît pas,\wj*
+\v 51 \wj il le mettra en pièces, et lui donnera sa part avec les hypocrites:\wj*\x g \xo 24.51 \xt Mt 8:12; 13:42; 22:13; 25:30. Lu 13:28.\x*\wj c’est là qu’il y aura des pleurs et des grincements de dents.\wj*
+\c 25
+\s1 Parabole des dix vierges
+\r V. 1-13: cf. Mt 24:42, 44. Lu 12:35-40. 1 Th 5:1-11. (Ap 3:1-5; 19:6-9.)
+\p
+\v 1 \wj Alors le royaume des cieux sera semblable à dix vierges qui, ayant pris leurs lampes, allèrent à la rencontre de l’époux.\wj*
+\v 2 \wj Cinq d’entre elles étaient folles, et cinq sages.\wj*
+\v 3 \wj Les folles, en prenant leurs lampes, ne prirent point d’huile avec elles;\wj*
+\v 4 \wj mais les sages prirent, avec leurs lampes, de l’huile dans des vases.\wj*
+\v 5 \wj Comme l’époux tardait, toutes s’assoupirent et s’endormirent.\wj*
+\v 6 \wj Au milieu de la nuit, on cria: Voici l’époux, allez à sa rencontre!\wj*
+\v 7 \wj Alors toutes ces vierges se réveillèrent, et préparèrent leurs lampes.\wj*
+\v 8 \wj Les folles dirent aux sages: Donnez-nous de votre huile, car nos lampes s’éteignent.\wj*
+\v 9 \wj Les sages répondirent: Non; il n’y en aurait pas assez pour nous et pour vous; allez plutôt chez ceux qui en vendent, et achetez-en pour vous.\wj*
+\v 10 \wj Pendant qu’elles allaient en acheter, l’époux arriva; celles qui étaient prêtes entrèrent avec lui dans la salle des noces, et la porte fut fermée.\wj*
+\v 11 \wj Plus tard, les autres vierges vinrent, et dirent: Seigneur, Seigneur, ouvre-nous.\wj*
+\v 12 \wj Mais il répondit: Je vous le dis en vérité, je ne vous\wj*\x a \xo 25.12 \xt Mt 7:23. Lu 13:25.\x*\wj connais pas.\wj*
+\v 13 \x b \xo 25.13 \xt Mt 24:42. Mc 13:33, 35.\x*\wj Veillez donc, puisque vous ne savez ni le jour, ni l’heure.\wj*
+\s1 Parabole des talents
+\r V. 14-30: cf. Lu 19:12-27. Ro 14:7, 8.
+\p
+\v 14 \x c \xo 25.14 \xt Lu 19:12.\x*\wj Il en sera comme d’un homme qui, partant pour un voyage, appela ses serviteurs, et leur remit ses biens.\wj*
+\v 15 \wj Il donna cinq talents à l’un, deux à l’autre, et un au troisième, à chacun selon sa capacité, et il partit.\wj*
+\v 16 \wj Aussitôt celui qui avait reçu les cinq talents s’en alla, les fit valoir, et il gagna cinq autres talents.\wj*
+\v 17 \wj De même, celui qui avait reçu les deux talents en gagna deux autres.\wj*
+\v 18 \wj Celui qui n’en avait reçu qu’un alla faire un creux dans la terre, et cacha l’argent de son maître.\wj*
+\v 19 \wj Longtemps après, le maître de ces serviteurs revint, et leur fit rendre compte.\wj*
+\v 20 \wj Celui qui avait reçu les cinq talents s’approcha, en apportant cinq autres talents, et il dit: Seigneur, tu m’as remis cinq talents; voici, j’en ai gagné cinq autres.\wj*
+\v 21 \wj Son maître lui dit: C’est bien, bon et fidèle serviteur; tu as été fidèle en\wj*\x d \xo 25.21 \xt Mt 24:45. Lu 12:42.\x*\wj peu de chose, je te confierai beaucoup; entre dans la joie de ton maître.\wj*
+\v 22 \wj Celui qui avait reçu les deux talents s’approcha aussi, et il dit: Seigneur, tu m’as remis deux talents; voici, j’en ai gagné deux autres.\wj*
+\v 23 \wj Son maître lui dit: C’est bien, bon et fidèle serviteur; tu as été fidèle en peu de chose, je te confierai beaucoup; entre dans la joie de ton maître.\wj*
+\v 24 \wj Celui qui n’avait reçu qu’un talent s’approcha ensuite, et il dit: Seigneur, je savais que tu es un homme dur, qui moissonnes où tu n’as pas semé, et qui amasses où tu n’as pas vanné;\wj*
+\v 25 \wj j’ai eu peur, et je suis allé cacher ton talent dans la terre; voici, prends ce qui est à toi.\wj*
+\v 26 \wj Son maître lui répondit: Serviteur méchant et paresseux, tu savais que je moissonne où je n’ai pas semé, et que j’amasse où je n’ai pas vanné;\wj*
+\v 27 \wj il te fallait donc remettre mon argent aux banquiers, et, à mon retour, j’aurais retiré ce qui est à moi avec un intérêt.\wj*
+\v 28 \wj Otez-lui donc le talent, et donnez-le à celui qui a les dix talents.\wj*
+\v 29 \x e \xo 25.29 \xt Mt 13:12. Mc 4:25. Lu 8:18; 19:26.\x*\wj Car on donnera à celui qui a, et il sera dans l’abondance, mais à celui qui n’a pas on ôtera même ce qu’il a.\wj*
+\v 30 \wj Et le serviteur inutile, jetez-le dans les ténèbres du dehors,\wj*\x f \xo 25.30 \xt Mt 8:12; 13:42; 22:13; 24:51. Lu 13:28.\x*\wj où il y aura des pleurs et des grincements de dents.\wj*
+\s1 Jugement des nations par le Fils de l’homme
+\r V. 31-46: cf. Jn 5:22, 23, 26-29. Ap 20:11-15. 2 Th 1:6-10. Ga 6:7-10.
+\p
+\v 31 \x g \xo 25.31 \xt Mt 16:27; 26:64. Mc 14:62. Lu 21:17. Ac 1:11. 1 Th 4:16. 2 Th 1:10. Ap 1:7.\x*\wj Lorsque le Fils de l’homme viendra dans sa gloire, avec tous les anges, il s’assiéra sur le\wj*\x h \xo 25.31 \xt Mt 19:28.\x*\wj trône de sa gloire.\wj*
+\v 32 \wj Toutes les nations seront assemblées devant lui.\wj*\x i \xo 25.32 \xt Éz 34:17, 20. Mt 13:49.\x*\wj Il séparera les uns d’avec les autres, comme le berger sépare les brebis d’avec les boucs;\wj*
+\v 33 \wj et il mettra les brebis à sa droite, et les boucs à sa gauche.\wj*
+\v 34 \wj Alors le roi dira à ceux qui seront à sa droite: Venez, vous qui êtes bénis de mon Père; prenez possession du royaume\wj*\x j \xo 25.34 \xt Mt 20:23. Mc 10:40.\x*\wj qui vous a été préparé dès la fondation du monde.\wj*
+\v 35 \x k \xo 25.35 \xt És 58:7. Éz 18:7.\x*\wj Car j’ai eu faim, et vous m’avez donné à manger; j’ai eu soif, et vous m’avez donné à boire;\wj*\x l \xo 25.35 \xt Hé 13:2.\x*\wj j’étais étranger, et vous m’avez recueilli;\wj*
+\v 36 \wj j’étais\wj*\x m \xo 25.36 \xt És 58:7. Ja 2:15, 16.\x*\wj nu, et vous m’avez vêtu; j’étais malade, et vous m’avez visité; j’étais\wj*\x n \xo 25.36 \xt 2 Ti 1:16.\x*\wj en prison, et vous êtes venus vers moi.\wj*
+\v 37 \wj Les justes lui répondront: Seigneur, quand t’avons-nous vu avoir faim, et t’avons-nous donné à manger; ou avoir soif, et t’avons-nous donné à boire?\wj*
+\v 38 \wj Quand t’avons-nous vu étranger, et t’avons-nous recueilli; ou nu, et t’avons-nous vêtu?\wj*
+\v 39 \wj Quand t’avons-nous vu malade, ou en prison, et sommes-nous allés vers toi?\wj*
+\v 40 \wj Et le roi leur répondra: Je vous le dis en vérité,\wj*\x o \xo 25.40 \xt Pr 19:17. Mt 10:42. Mc 9:41. Jn 13:20. 2 Co 9:6.\x*\wj toutes les fois que vous avez fait ces choses à l’un de ces plus petits de mes frères, c’est à moi que vous les avez faites.\wj*
+\v 41 \wj Ensuite il dira à ceux qui seront à sa gauche:\wj*\x p \xo 25.41 \xt Ps 6:9. Mt 7:23. Lu 13:25, 27. És 30:33. Ap 19:20.\x*\wj Retirez-vous de moi, maudits; allez dans le feu éternel qui a été préparé pour le diable et pour ses anges.\wj*
+\v 42 \wj Car j’ai eu faim, et vous ne m’avez pas donné à manger; j’ai eu soif, et vous ne m’avez pas donné à boire;\wj*
+\v 43 \wj j’étais étranger, et vous ne m’avez pas recueilli; j’étais nu, et vous ne m’avez pas vêtu; j’étais malade et en prison, et vous ne m’avez pas visité.\wj*
+\v 44 \wj Ils répondront aussi: Seigneur, quand t’avons-nous vu ayant faim, ou ayant soif, ou étranger, ou nu, ou malade, ou en prison, et ne t’avons-nous pas assisté?\wj*
+\v 45 \wj Et il leur répondra: Je vous le dis en vérité,\wj*\x q \xo 25.45 \xt Pr 14:31; 17:5. Za 2:8.\x*\wj toutes les fois que vous n’avez pas fait ces choses à l’un de ces plus petits, c’est à moi que vous ne les avez pas faites.\wj*
+\v 46 \x r \xo 25.46 \xt Da 12:2. Jn 5:29.\x*\wj Et ceux-ci iront au châtiment éternel, mais les justes à la vie éternelle.\wj*
+\c 26
+\s1 Histoire de la passion. Complot contre Jésus
+\r V. 1-5: cf. (Mc 14:1, 2. Lu 22:1, 2.)
+\p
+\v 1 Lorsque Jésus eut achevé tous ces discours, il dit à ses disciples:
+\p
+\v 2 \x a \xo 26.2 \xt Mc 14:1. Lu 22:1. Jn 13:1.\x*\wj Vous savez que la Pâque a lieu dans deux jours, et que le Fils de l’homme sera livré pour être crucifié.\wj*
+\v 3 \x b \xo 26.3 \xt Ps 2:2. Jn 11:47. Ac 4:27.\x*Alors les principaux sacrificateurs et les anciens du peuple se réunirent dans la cour du souverain sacrificateur, appelé Caïphe; 
+\v 4 et ils délibérèrent sur les moyens d’arrêter Jésus par ruse, et de le faire mourir. 
+\v 5 Mais ils dirent: Que ce ne soit pas pendant la fête, afin qu’il n’y ait pas de tumulte parmi le peuple.
+\s1 Parfum répandu sur la tête de Jésus à Béthanie
+\r V. 6-13: cf. (Mc 14:3-9. Jn 12:1-8.) Lu 7:36-50.
+\p
+\v 6 Comme Jésus était à Béthanie, dans la maison de Simon le lépreux, 
+\v 7 \x c \xo 26.7 \xt Mc 14:3. Lu 7:37. Jn 11:2; 12:3.\x*une femme s’approcha de lui, tenant un vase d’albâtre, qui renfermait un parfum de grand prix; et, pendant qu’il était à table, elle répandit le parfum sur sa tête. 
+\v 8 Les disciples, voyant cela, s’indignèrent, et dirent: A quoi bon cette perte? 
+\v 9 On aurait pu vendre ce parfum très cher, et en donner le prix aux pauvres. 
+\v 10 Jésus, s’en étant aperçu, leur dit: \wj Pourquoi faites-vous de la peine à cette femme? Elle a fait une bonne action à mon égard;\wj*
+\p
+\v 11 \x d \xo 26.11 \xt De 15:11. Mc 14:7. Jn 12:8.\x*\wj car vous avez toujours des pauvres avec vous, mais vous ne m’avez pas toujours.\wj*
+\v 12 \wj En répandant ce parfum sur mon corps, elle l’a fait pour ma sépulture.\wj*
+\v 13 \wj Je vous le dis en vérité, partout où cette bonne nouvelle sera prêchée, dans le monde entier, on racontera aussi en mémoire de cette femme ce qu’elle a fait.\wj*
+\s1 Trahison de Judas
+\r V. 14-16: cf. (Mc 14:10, 11. Lu 22:3-6.) Ex 12:3.
+\p
+\v 14 \x e \xo 26.14 \xt Mc 14:10. Lu 22:4.\x*Alors l’un des douze, appelé Judas Iscariot, alla vers les principaux sacrificateurs, 
+\v 15 et dit: Que voulez-vous me donner, et je vous le livrerai? Et ils lui payèrent \x f \xo 26.15 \xt Za 11:12.\x*trente pièces d’argent. 
+\v 16 Depuis ce moment, il cherchait une occasion favorable pour livrer Jésus.
+\s1 Célébration de la Pâque et institution de la sainte cène
+\r V. 17-25: cf. Mc 14:12-21. Lu 22:7-18, 21-23. Jn 13:1-30.
+\p
+\v 17 \x g \xo 26.17 \xt Mc 14:12. Lu 22:7.\x*Le premier jour \x h \xo 26.17 \xt Ex 12:17.\x*des pains sans levain, les disciples s’adressèrent à Jésus, pour lui dire: Où veux-tu que nous te préparions le repas de la Pâque? 
+\v 18 Il répondit: \wj Allez à la ville chez un tel, et vous lui direz: Le maître dit: Mon temps est proche; je ferai chez toi la Pâque avec mes disciples.\wj*
+\v 19 Les disciples firent ce que Jésus leur avait ordonné, et ils préparèrent la Pâque. 
+\v 20 \x i \xo 26.20 \xt Mc 14:17. Lu 22:14. Jn 13:21.\x*Le soir étant venu, il se mit à table avec les douze. 
+\v 21 Pendant qu’ils mangeaient, il dit: \wj Je vous le dis en vérité,\wj*\x j \xo 26.21 \xt Ac 1:17.\x*\wj l’un de vous me livrera.\wj*
+\v 22 Ils furent profondément attristés, et chacun se mit à lui dire: Est-ce moi, Seigneur? 
+\v 23 Il répondit: \x k \xo 26.23 \xt Ps 41:10. Lu 22:21. Jn 13:18.\x*\wj Celui qui a mis avec moi la main dans le plat, c’est celui qui me livrera.\wj*
+\p
+\v 24 \wj Le Fils de l’homme s’en va, selon ce qui est écrit de lui. Mais malheur à l’homme par qui le Fils de l’homme est livré! Mieux vaudrait pour cet homme qu’il ne fût pas né.\wj*
+\v 25 Judas, qui le livrait, prit la parole et dit: Est-ce moi, Rabbi? Jésus lui répondit: \wj Tu l’as dit.\wj*
+\r V. 26-29: cf. (Mc 14:22-25. Lu 22:15-20. 1 Co 11:23-25.) (1 Co 10:16, 17.)
+\p
+\v 26 \x l \xo 26.26 \xt Mc 14:22. Lu 22:19. 1 Co 11:23.\x*Pendant qu’ils mangeaient, Jésus prit du pain; et, après avoir rendu grâces, il le rompit, et le donna aux disciples, en disant: \wj Prenez, mangez, ceci est mon corps.\wj*
+\v 27 Il prit ensuite une coupe; et, après avoir rendu grâces, il la leur donna, en disant: \wj Buvez-en tous;\wj*
+\p
+\v 28 \wj car ceci est mon sang,\wj*\x m \xo 26.28 \xt Ex 24:8.\x*\wj le sang de l’alliance, qui est répandu pour plusieurs, pour la rémission des péchés.\wj*
+\v 29 \wj Je vous le dis, je ne boirai plus désormais de ce fruit de la vigne, jusqu’au jour où j’en boirai du nouveau avec vous dans le royaume de mon Père.\wj*
+\s1 Gethsémané
+\r V. 30-35: cf. Mc 14:26-31. Lu 22:31-39. Jn 13:36-38.
+\p
+\v 30 \x n \xo 26.30 \xt Mc 14:26. Lu 22:39. Jn 18:1.\x*Après avoir chanté les cantiques, ils se rendirent à la montagne des oliviers. 
+\v 31 Alors Jésus leur dit: \wj Je serai pour vous tous, cette nuit, une occasion de chute; car il est écrit:\wj*\x o \xo 26.31 \xt Za 13:7. Jn 16:32.\x*\wj Je frapperai le berger, et les brebis du troupeau seront dispersées.\wj*
+\p
+\v 32 \x p \xo 26.32 \xt Mc 14:28; 16:7.\x*\wj Mais, après que je serai ressuscité, je vous précèderai en Galilée.\wj*
+\v 33 Pierre, prenant la parole, lui dit: \x q \xo 26.33 \xt Lu 22:33.\x*Quand tu serais pour tous une occasion de chute, tu ne le seras jamais pour moi. 
+\v 34 Jésus lui dit: \x r \xo 26.34 \xt Jn 13:38.\x*\wj Je te le dis en vérité, cette nuit même, avant que le coq chante, tu me renieras trois fois.\wj*
+\v 35 Pierre lui répondit: Quand il me faudrait mourir avec toi, je ne te renierai pas. Et tous les disciples dirent la même chose.
+\r V. 36-46: cf. Mc 14:32-42. Lu 22:39-46. Jn 18:1. (Hé 5:7.)
+\p
+\v 36 \x s \xo 26.36 \xt Mc 14:32. Lu 22:39. Jn 18:1.\x*Là-dessus, Jésus alla avec eux dans un lieu appelé Gethsémané, et il dit aux disciples: \wj Asseyez-vous ici, pendant que je m’éloignerai pour prier.\wj*
+\v 37 Il prit avec lui Pierre et les deux fils de Zébédée, et il commença à éprouver de la tristesse et des angoisses. 
+\v 38 \x t \xo 26.38 \xt Jn 12:27.\x*Il leur dit alors: \wj Mon âme est triste jusqu’à la mort; restez ici, et veillez avec moi.\wj*
+\v 39 Puis, ayant fait quelques pas en avant, il se jeta sur sa face, et pria ainsi: \x u \xo 26.39 \xt Lu 22:41.\x*\wj Mon Père, s’il est possible, que cette\wj*\x v \xo 26.39 \xt Mt 20:22, 23.\x*\wj coupe s’éloigne de moi!\wj*\x w \xo 26.39 \xt Jn 6:38.\x*\wj Toutefois, non pas ce que je veux, mais ce que tu veux.\wj*
+\v 40 Et il vint vers les disciples, qu’il trouva endormis, et il dit à Pierre: \wj Vous n’avez donc pu veiller une heure avec moi!\wj*
+\p
+\v 41 \wj Veillez et priez, afin que vous ne tombiez pas dans la tentation;\wj*\x x \xo 26.41 \xt Ga 5:17.\x*\wj l’esprit est bien disposé, mais la chair est faible.\wj*
+\v 42 Il s’éloigna une seconde fois, et pria ainsi: \wj Mon Père, s’il n’est pas possible que cette coupe s’éloigne sans que je la boive, que ta volonté soit faite!\wj*
+\v 43 Il revint, et les trouva encore endormis; car leurs yeux étaient appesantis. 
+\v 44 Il les quitta, et, s’éloignant, il pria pour la troisième fois, répétant les mêmes paroles. 
+\v 45 Puis il alla vers ses disciples, et leur dit: \wj Vous dormez maintenant, et vous vous reposez! Voici, l’heure est proche, et le Fils de l’homme est livré aux mains des pécheurs.\wj*
+\p
+\v 46 \wj Levez-vous, allons; voici, celui qui me livre s’approche.\wj*
+\s1 Arrestation de Jésus
+\r V. 47-56: cf. Mc 14:43-50. Lu 22:47-53. Jn 18:3-11.
+\p
+\v 47 \x y \xo 26.47 \xt Mc 14:43. Lu 22:47. Jn 18:3.\x*Comme il parlait encore, voici, Judas, l’un des douze, arriva, et avec lui une foule nombreuse armée d’épées et de bâtons, envoyée par les principaux sacrificateurs et par les anciens du peuple. 
+\v 48 Celui qui le livrait leur avait donné ce signe: Celui que je baiserai, c’est lui; saisissez-le. 
+\v 49 Aussitôt, s’approchant de Jésus, il dit: Salut, Rabbi! \x z \xo 26.49 \xt 2 S 20:9.\x*Et il le baisa. 
+\v 50 Jésus lui dit: \wj Mon ami, ce que tu es venu faire, fais-le.\wj* Alors ces gens s’avancèrent, mirent la main sur Jésus, et le saisirent. 
+\v 51 Et voici, un de ceux qui étaient avec Jésus étendit la main, et tira son épée; il frappa le serviteur du souverain sacrificateur, et lui emporta l’oreille. 
+\v 52 Alors Jésus lui dit: \wj Remets ton épée à sa place;\wj*\x a \xo 26.52 \xt Ge 9:6. Ap 13:10.\x*\wj car tous ceux qui prendront l’épée périront par l’épée.\wj*
+\p
+\v 53 \wj Penses-tu que je ne puisse pas invoquer mon Père, qui me donnerait à l’instant plus de douze légions d’anges?\wj*
+\v 54 \wj Comment donc s’accompliraient les\wj*\x b \xo 26.54 \xt Ps 22:7; 69:2, 10. Lu 24:25.\x*\wj Écritures, d’après lesquelles il doit en être ainsi?\wj*
+\v 55 En ce moment, Jésus dit à la foule: \wj Vous êtes venus, comme après un brigand, avec des épées et des bâtons, pour vous emparer de moi. J’étais tous les jours assis parmi vous, enseignant dans le temple, et vous ne m’avez pas saisi.\wj*
+\p
+\v 56 \wj Mais tout cela est arrivé afin que les écrits des prophètes fussent accomplis.\wj* Alors tous les disciples l’abandonnèrent, et \x c \xo 26.56 \xt Job 19:13. Ps 88:9.\x*prirent la fuite.
+\s1 Jésus devant le Sanhédrin présidé par Caïphe
+\r V. 57-68: cf. Mc 14:53-65. Lu 22:54, 63-65. Jn 18:12; 13:19-24.
+\p
+\v 57 \x d \xo 26.57 \xt Mc 14:53. Lu 22:54. Jn 18:12.\x*Ceux qui avaient saisi Jésus l’emmenèrent chez le souverain sacrificateur Caïphe, où les scribes et les anciens étaient assemblés. 
+\v 58 Pierre le suivit de loin jusqu’à la cour du souverain sacrificateur, y entra, et s’assit avec les serviteurs, pour voir comment cela finirait. 
+\v 59 \x e \xo 26.59 \xt Mc 14:55. Ac 6:13.\x*Les principaux sacrificateurs et tout le sanhédrin cherchaient quelque faux témoignage contre Jésus, suffisant pour le faire mourir. 
+\v 60 Mais ils n’en trouvèrent point, quoique plusieurs faux témoins se fussent présentés. Enfin, il en vint deux, qui dirent: 
+\v 61 Celui-ci a dit: \x f \xo 26.61 \xt Jn 2:19.\x*Je puis détruire le temple de Dieu, et le rebâtir en trois jours. 
+\v 62 \x g \xo 26.62 \xt Mc 14:60.\x*Le souverain sacrificateur se leva, et lui dit: Ne réponds-tu rien? Qu’est-ce que ces hommes déposent contre toi? 
+\v 63 \x h \xo 26.63 \xt És 53:7. Mt 27:12, 14.\x*Jésus garda le silence. Et le souverain sacrificateur, prenant la parole, lui dit: Je t’adjure, par le Dieu vivant, de nous dire si tu es le Christ, le Fils de Dieu. 
+\v 64 Jésus lui répondit: \wj Tu l’as dit.\wj*\x i \xo 26.64 \xt Ps 110:1. Da 7:13. Mt 16:27; 24:30. Mc 14:62. Lu 22:69. Ac 1:11. Ro 14:10. 1 Th 4:16. Ap 1:7.\x*\wj De plus, je vous le déclare, vous verrez désormais le Fils de l’homme assis à la droite de la puissance de Dieu, et venant sur les nuées du ciel.\wj*
+\v 65 Alors le souverain sacrificateur déchira ses vêtements, disant: Il a blasphémé! Qu’avons-nous encore besoin de témoins? Voici, vous venez d’entendre son blasphème. Que vous en semble? 
+\v 66 Ils répondirent: \x j \xo 26.66 \xt Lé 24:16.\x*Il mérite la mort. 
+\v 67 \x k \xo 26.67 \xt És 50:6.\x*Là-dessus, ils lui crachèrent au visage, et \x l \xo 26.67 \xt Job 16:10. Jn 19:3.\x*lui donnèrent des coups de poing et des soufflets en disant: 
+\v 68 Christ, prophétise; \x m \xo 26.68 \xt Lu 22:64.\x*dis-nous qui t’a frappé.
+\s1 Reniement de Pierre
+\r V. 69-75: cf. Mc 14:66-72. Lu 22:55-62. Jn 18:15-18, 25-27.
+\p
+\v 69 \x n \xo 26.69 \xt Mc 14:66. Lu 22:55. Jn 18:16, 25.\x*Cependant, Pierre était assis dehors dans la cour. Une servante s’approcha de lui, et dit: Toi aussi, tu étais avec Jésus le Galiléen. 
+\v 70 Mais il le nia devant tous, disant: Je ne sais ce que tu veux dire. 
+\v 71 Comme il se dirigeait vers la porte, une autre servante le vit, et dit à ceux qui se trouvaient là; Celui-ci était aussi avec Jésus de Nazareth. 
+\v 72 Il le nia de nouveau, avec serment: Je ne connais pas cet homme. 
+\v 73 Peu après, ceux qui étaient là, s’étant approchés, dirent à Pierre: Certainement tu es aussi de ces gens-là, car ton langage te fait reconnaître. 
+\v 74 Alors il se mit à faire des imprécations et à jurer: Je ne connais pas cet homme. Aussitôt le coq chanta. 
+\v 75 Et Pierre se souvint de la parole que Jésus avait dite: \x o \xo 26.75 \xt Mt 26:34. Mc 14:30. Lu 22:61. Jn 13:38.\x*\wj Avant que le coq chante, tu me renieras trois fois.\wj* Et étant sorti, il pleura amèrement.
+\c 27
+\s1 Condamnation
+\r V. 1-2: cf. Mc 15:1. Lu 22:66-71; 23:1. Jn 18:28.
+\p
+\v 1 \x a \xo 27.1 \xt Ps 2:2. Mc 15:1. Lu 22:66; 23:2. Jn 18:28.\x*Dès que le matin fut venu, tous les principaux sacrificateurs et les anciens du peuple tinrent conseil contre Jésus, pour le faire mourir. 
+\v 2 Après l’avoir lié, ils l’emmenèrent, et le livrèrent à \x b \xo 27.2 \xt Ac 3:13.\x*Ponce Pilate, le gouverneur.
+\s1 Suicide de Judas
+\r V. 3-10: cf. Ac 1:16-20. Za 11:12, 13.
+\p
+\v 3 Alors Judas, qui l’avait livré, voyant qu’il était condamné, se repentit, et rapporta les trente pièces d’argent aux principaux sacrificateurs et aux anciens, 
+\v 4 en disant: J’ai péché, en livrant le sang innocent. Ils répondirent: Que nous importe? Cela te regarde. 
+\v 5 Judas jeta les pièces d’argent dans le temple, \x c \xo 27.5 \xt 2 S 17:23. Ac 1:18.\x*se retira, et alla se pendre. 
+\v 6 Les principaux sacrificateurs les ramassèrent, et dirent: Il n’est pas permis de les mettre dans le trésor sacré, puisque c’est le prix du sang. 
+\v 7 Et, après en avoir délibéré, ils achetèrent avec cet argent le \x d \xo 27.7 \xt Ac 1:19.\x*champ du potier, pour la sépulture des étrangers. 
+\v 8 C’est pourquoi ce champ a été appelé champ du sang, jusqu’à ce jour. 
+\v 9 Alors s’accomplit ce qui avait été annoncé \x e \xo 27.9 \xt Za 11:12.\x*par Jérémie, le prophète: Ils ont pris les trente pièces d’argent, la valeur de celui qui a été estimé, qu’on a estimé de la part des enfants d’Israël; 
+\v 10 et ils les ont données pour le champ du potier, comme le Seigneur me l’avait ordonné.
+\s1 Jésus devant Pilate, gouverneur romain
+\r V. 11-14: cf. Mc 15:2-5. Lu 23:1-4. Jn 18:28-38.
+\p
+\v 11 \x f \xo 27.11 \xt Mc 15:2. Lu 23:3. Jn 18:33.\x*Jésus comparut devant le gouverneur. Le gouverneur l’interrogea, en ces termes: Es-tu le roi des Juifs? Jésus lui répondit: \wj Tu le dis.\wj*
+\v 12 Mais il ne répondit rien aux accusations des principaux sacrificateurs et des anciens. 
+\v 13 \x g \xo 27.13 \xt Mt 26:62.\x*Alors Pilate lui dit: N’entends-tu pas de combien de choses ils t’accusent? 
+\v 14 \x h \xo 27.14 \xt És 53:7. Ac 8:32.\x*Et Jésus ne lui donna de réponse sur aucune parole, ce qui étonna beaucoup le gouverneur.
+\s1 Sentence de mort confirmée
+\r V. 15-25: cf. Mc 15:6-15. Lu 23:13-25. Jn 18:39, 40.
+\p
+\v 15 \x i \xo 27.15 \xt Mc 15:6. Lu 23:17. Jn 18:39.\x*A chaque fête, le gouverneur avait coutume de relâcher un prisonnier, celui que demandait la foule. 
+\v 16 \x j \xo 27.16 \xt Mc 15:7. Lu 23:19. Jn 18:40.\x*Ils avaient alors un prisonnier fameux, nommé Barabbas. 
+\v 17 Comme ils étaient assemblés, Pilate leur dit: Lequel voulez-vous que je vous relâche, Barabbas, ou Jésus, qu’on appelle Christ? 
+\v 18 Car il savait que c’était par envie qu’ils avaient livré Jésus. 
+\v 19 Pendant qu’il était assis sur le tribunal, sa femme lui fit dire: Qu’il n’y ait rien entre toi et ce juste; car aujourd’hui j’ai beaucoup souffert en songe à cause de lui. 
+\v 20 \x k \xo 27.20 \xt Mc 15:11. Lu 23:18. Jn 18:40. Ac 3:14.\x*Les principaux sacrificateurs et les anciens persuadèrent à la foule de demander Barabbas, et de faire périr Jésus. 
+\v 21 Le gouverneur prenant la parole, leur dit: Lequel des deux voulez-vous que je vous relâche? Ils répondirent: Barabbas. 
+\v 22 Pilate leur dit: Que ferai-je donc de Jésus, qu’on appelle Christ? Tous répondirent: Qu’il soit crucifié! 
+\v 23 Le gouverneur dit: Mais quel mal a-t-il fait? Et ils crièrent encore plus fort: Qu’il soit crucifié! 
+\v 24 Pilate, voyant qu’il ne gagnait rien, mais que le tumulte augmentait, prit de l’eau, se lava les mains en présence de la foule, et dit: Je suis innocent du sang de ce juste. Cela vous regarde. 
+\v 25 Et tout le peuple répondit: \x l \xo 27.25 \xt Ac 5:28.\x*Que son sang retombe sur nous et sur nos enfants!
+\s1 Outrages des soldats
+\r V. 26-31: cf. (Mc 15:15-20. Lu 23:25. Jn 19:1-3, 16.)
+\p
+\v 26 Alors Pilate leur relâcha Barabbas; et, après avoir fait battre de verges Jésus, il le livra pour être crucifié. 
+\v 27 \x m \xo 27.27 \xt Mc 15:16. Jn 19:2.\x*Les soldats du gouverneur conduisirent Jésus dans le prétoire, et ils assemblèrent autour de lui toute la cohorte. 
+\v 28 Ils lui ôtèrent ses vêtements, et le couvrirent d’un manteau écarlate. 
+\v 29 Ils tressèrent une couronne d’épines, qu’ils posèrent sur sa tête, et ils lui mirent un roseau dans la main droite; puis, s’agenouillant devant lui, ils le raillaient, en disant: Salut, roi des Juifs! 
+\v 30 Et ils crachaient contre lui, prenaient le roseau, et frappaient sur sa tête. 
+\v 31 Après s’être ainsi moqués de lui, ils lui ôtèrent le manteau, lui remirent ses vêtements, et l’emmenèrent pour le crucifier.
+\s1 Jésus crucifié
+\r V. 32-38: cf. (Mc 15:21-28. Lu 23:26-34, 38. Jn 19:16-24.)
+\p
+\v 32 \x n \xo 27.32 \xt Mc 15:21. Lu 23:26.\x*Lorsqu’ils sortirent, ils rencontrèrent un homme de Cyrène, appelé Simon, et ils le forcèrent à porter la croix de Jésus. 
+\v 33 \x o \xo 27.33 \xt Ps 69:22. Mc 15:22. Lu 23:33. Jn 19:17.\x*Arrivés au lieu nommé Golgotha, ce qui signifie lieu du crâne, 
+\v 34 \x p \xo 27.34 \xt Ps 69:22.\x*ils lui donnèrent à boire du vin mêlé de fiel; mais, quand il l’eut goûté, il ne voulut pas boire. 
+\v 35 \x q \xo 27.35 \xt Mc 15:24. Jn 19:23.\x*Après l’avoir crucifié, ils se partagèrent ses vêtements, en tirant au sort, afin que s’accomplît ce qui avait été annoncé par le prophète:
+\q1 \x r \xo 27.35 \xt Ps 22:19.\x*Ils se sont partagé mes vêtements, et ils ont tiré au sort ma tunique.
+\m
+\v 36 Puis ils s’assirent, et le gardèrent. 
+\v 37 \x s \xo 27.37 \xt Mc 15:26. Lu 23:38. Jn 19:19.\x*Pour indiquer le sujet de sa condamnation, on écrivit au-dessus de sa tête: Celui-ci est Jésus, le roi des Juifs. 
+\v 38 \x t \xo 27.38 \xt És 53:12.\x*Avec lui furent crucifiés deux brigands, l’un à sa droite, et l’autre à sa gauche.
+\r V. 39-44: cf. (Mc 15:29-32. Lu 23:35-43. Jn 19:25-27.)
+\p
+\v 39 \x u \xo 27.39 \xt Ps 22:8; 69:21. Mc 15:29. Lu 23:35.\x*Les passants l’injuriaient, et secouaient la tête, 
+\v 40 en disant: \x v \xo 27.40 \xt Mt 26:61. Jn 2:19.\x*Toi qui détruis le temple, et qui le rebâtis en trois jours, sauve-toi toi-même! Si tu es le Fils de Dieu, descends de la croix! 
+\v 41 Les principaux sacrificateurs, avec les scribes et les anciens, se moquaient aussi de lui, et disaient: 
+\v 42 Il a sauvé les autres, et il ne peut se sauver lui-même! S’il est roi d’Israël, qu’il descende de la croix, et nous croirons en lui. 
+\v 43 \x w \xo 27.43 \xt Ps 22:9.\x*Il s’est confié en Dieu; que Dieu le délivre maintenant, s’il l’aime. Car il a dit: Je suis Fils de Dieu. 
+\v 44 Les brigands, crucifiés avec lui, l’insultaient de la même manière.
+\r V. 45-50: cf. (Mc 15:33-37. Lu 23:44-46. Jn 19:28-30.) (Ps 22. És 53:5-8, 10.) Ro 5:6-8. 1 Pi 2:21-24. 1 Jn 4:9-11.
+\p
+\v 45 \x x \xo 27.45 \xt Mc 15:33. Lu 23:44.\x*Depuis la sixième heure jusqu’à la neuvième, il y eut des ténèbres sur toute la terre. 
+\v 46 Et vers la neuvième heure, \x y \xo 27.46 \xt Ps 22:2. Hé 5:7.\x*Jésus s’écria d’une voix forte: \wj Éli, Éli, lama sabachthani?\wj* c’est-à-dire: Mon Dieu, mon Dieu, pourquoi m’as-tu abandonné? 
+\v 47 Quelques-uns de ceux qui étaient là, l’ayant entendu, dirent: Il appelle Élie. 
+\v 48 \x z \xo 27.48 \xt Ps 69:22. Jn 19:29.\x*Et aussitôt l’un d’eux courut prendre une éponge, qu’il remplit de vinaigre, et, l’ayant fixée à un roseau, il lui donna à boire. 
+\v 49 Mais les autres disaient: Laisse, voyons si Élie viendra le sauver. 
+\v 50 \x a \xo 27.50 \xt Lu 23:46.\x*Jésus poussa de nouveau un grand cri, et rendit l’esprit.
+\r V. 51-56: cf. (Mc 15:38-41. Lu 23:45, 47-49.)
+\p
+\v 51 \x b \xo 27.51 \xt 2 Ch 3:14. Mc 15:38. Lu 23:45.\x*Et voici, le voile du temple se déchira en deux, depuis le haut jusqu’en bas, la terre trembla, les rochers se fendirent, 
+\v 52 les sépulcres s’ouvrirent, et plusieurs corps des saints qui étaient morts ressuscitèrent. 
+\v 53 Étant sortis des sépulcres, après la résurrection de Jésus, ils entrèrent dans la ville sainte, et apparurent à un grand nombre de personnes. 
+\v 54 \x c \xo 27.54 \xt Mc 15:39. Lu 23:47.\x*Le centenier et ceux qui étaient avec lui pour garder Jésus, ayant vu le tremblement de terre et ce qui venait d’arriver, furent saisis d’une grande frayeur, et dirent: Assurément, cet homme était Fils de Dieu. 
+\v 55 \x d \xo 27.55 \xt Mc 15:40. Lu 23:49.\x*Il y avait là plusieurs femmes \x e \xo 27.55 \xt Ps 38:12.\x*qui regardaient de loin; qui avaient accompagné Jésus depuis la Galilée, \x f \xo 27.55 \xt Lu 8:2.\x*pour le servir. 
+\v 56 Parmi elles étaient Marie de Magdala, Marie, mère de Jacques et de Joseph, et la mère des fils de Zébédée.
+\s1 Le corps de Jésus mis dans un sépulcre
+\r V. 57-61: cf. (Mc 15:42-47. Lu 23:50-56. Jn 19:38-42.)
+\p
+\v 57 \x g \xo 27.57 \xt Mc 15:42. Lu 23:50. Jn 19:38.\x*Le soir étant venu, arriva un homme riche d’Arimathée, nommé Joseph, lequel était aussi disciple de Jésus. 
+\v 58 Il se rendit vers Pilate, et demanda le corps de Jésus. Et Pilate ordonna de le remettre. 
+\v 59 Joseph prit le corps, l’enveloppa d’un linceul blanc, 
+\v 60 \x h \xo 27.60 \xt Mc 15:46. Lu 23:53.\x*et le déposa dans un sépulcre neuf, qu’il s’était fait tailler dans le roc. Puis il roula une grande pierre à l’entrée du sépulcre, et il s’en alla. 
+\v 61 Marie de Magdala et l’autre Marie étaient là, assises vis-à-vis du sépulcre.
+\s1 La garde auprès du sépulcre
+\r V. 62-66: cf. Mt 28:1-4, 11-15.
+\p
+\v 62 Le lendemain, qui était le jour après la préparation, les principaux sacrificateurs et les pharisiens allèrent ensemble auprès de Pilate, 
+\v 63 et dirent: Seigneur, nous nous souvenons que cet imposteur a dit, quand il vivait encore: \x i \xo 27.63 \xt Mt 16:21; 17:23; 20:19. Mc 8:31; 10:34. Lu 9:22; 18:33; 24:6.\x*Après trois jours je ressusciterai. 
+\v 64 Ordonne donc que le sépulcre soit gardé jusqu’au troisième jour, afin que ses disciples ne viennent pas dérober le corps, et dire au peuple: Il est ressuscité des morts. Cette dernière imposture serait pire que la première. 
+\v 65 Pilate leur dit: Vous avez une garde; allez, gardez-le comme vous l’entendrez. 
+\v 66 Ils s’en allèrent, et s’assurèrent du sépulcre au moyen de la garde, après avoir scellé la pierre.
+\c 28
+\s1 Résurrection de Jésus-Christ
+\r V. 1-7: cf. (Mc 16:1-7. Lu 24:1-8. Jn 20:1, 2.) (Ps 16:8-10. Ac 2:24-32.) Ro 1:3, 4; 4:25. 1 Co 15:1-28. Ap 1:17, 18.
+\p
+\v 1 \x a \xo 28.1 \xt Mc 16:1. Lu 24:1. Jn 20:1.\x*Après le sabbat, à l’aube du premier jour de la semaine, Marie de Magdala et l’autre Marie allèrent voir le sépulcre. 
+\v 2 Et voici, il y eut un grand tremblement de terre; car un ange du Seigneur descendit du ciel, vint rouler la pierre, et s’assit dessus. 
+\v 3 Son aspect était comme l’éclair, et \x b \xo 28.3 \xt Da 7:9. Ac 1:10.\x*son vêtement blanc comme la neige. 
+\v 4 Les gardes tremblèrent de peur, et devinrent comme morts. 
+\v 5 Mais l’ange prit la parole, et dit aux femmes: Pour vous, ne craignez pas; \x c \xo 28.5 \xt Mc 16:6. Lu 24:4.\x*car je sais que vous cherchez Jésus qui a été crucifié. 
+\v 6 Il n’est point ici; il est ressuscité, comme il l’avait \x d \xo 28.6 \xt Mt 16:21; 17:23; 20:19. Mc 8:31; 9:31; 10:34. Lu 9:22; 18:33; 24:6.\x*dit. Venez, voyez le lieu où il était couché, 
+\v 7 et allez promptement dire à ses disciples qu’il est ressuscité des morts. Et voici, il vous précède en Galilée: \x e \xo 28.7 \xt Mt 26:32. Mc 16:7.\x*c’est là que vous le verrez. Voici, je vous l’ai dit.
+\r V. 8-10: cf. (Mc 16:8-11. Lu 24:9-12. Jn 20:3-18).
+\p
+\v 8 \x f \xo 28.8 \xt Mc 16:8. Jn 20:18.\x*Elles s’éloignèrent promptement du sépulcre, avec crainte et avec une grande joie, et elles coururent porter la nouvelle aux disciples. 
+\v 9 Et voici, \x g \xo 28.9 \xt Mc 16:9. Jn 20:14.\x*Jésus vint à leur rencontre, et dit: \wj Je vous salue.\wj* Elles s’approchèrent pour saisir ses pieds, et elles se prosternèrent devant lui. 
+\v 10 Alors Jésus leur dit: \wj Ne craignez pas; allez dire à mes frères de se rendre en Galilée:\wj*\x h \xo 28.10 \xt Ac 1:3; 13:31. 1 Co 15:5.\x*\wj c’est là qu’ils me verront.\wj*
+\r V. 11-15: cf. Mt 27:62-66; 28:1-6.
+\p
+\v 11 Pendant qu’elles étaient en chemin, quelques hommes de la garde entrèrent dans la ville, et annoncèrent aux principaux sacrificateurs tout ce qui était arrivé. 
+\v 12 Ceux-ci, après s’être assemblés avec les anciens et avoir tenu conseil, donnèrent aux soldats une forte somme d’argent, 
+\v 13 en disant: Dites: Ses disciples sont venus de nuit le dérober, pendant que nous dormions. 
+\v 14 Et si le gouverneur l’apprend, nous l’apaiserons, et nous vous tirerons de peine. 
+\v 15 Les soldats prirent l’argent, et suivirent les instructions qui leur furent données. Et ce bruit s’est répandu parmi les Juifs, jusqu’à ce jour.
+\r V. 16-20: cf. (Mc 16:12-20. Lu 24:13-53. Jn 20:19-29; 21:1-24. Ac 1:1-12.) 1 Co 15:6, 7.
+\p
+\v 16 Les onze disciples allèrent en Galilée, sur la montagne \x i \xo 28.16 \xt Mt 26:32. Mc 14:28.\x*que Jésus leur avait désignée. 
+\v 17 Quand ils le virent, ils se prosternèrent devant lui. Mais quelques-uns eurent des doutes. 
+\v 18 Jésus, s’étant approché, leur parla ainsi: \x j \xo 28.18 \xt Ps 8:7. Mt 11:27. Lu 10:22. Jn 3:35; 17:2. 1 Co 15:27. Ép 1:22. Hé 2:8.\x*\wj Tout pouvoir m’a été donné dans le ciel et sur la terre.\wj*
+\p
+\v 19 \x k \xo 28.19 \xt Mc 16:15. Jn 15:16.\x*\wj Allez, faites de toutes les nations des disciples, les baptisant au nom du Père, du Fils et du Saint-Esprit,\wj*
+\v 20 \wj et enseignez-leur à observer tout ce que je vous ai prescrit.\wj*\x l \xo 28.20 \xt Jn 14:18.\x*\wj Et voici, je suis avec vous tous les jours, jusqu’à la fin du monde.\wj*

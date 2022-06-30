@@ -23,7 +23,7 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 - Copy contents of your SAB .appDef and \_data folder into the assets/project folder
   - and _rename_ your appDef file to "appDef.appDef" and your data file to "data".
 - Change font names in the project/data/fonts/ folder as follows:
-  - main font: _font1-R.ttf_ and _font1-B.ttf_
+    - main font: _font1-R.ttf_ and _font1-B.ttf_
   - secondary font: _font2-R.ttf_ and _font2-B.ttf_.
   - Note there must be those four fonts - if you only have one font, make copies and rename so those files are there.
     - This is a hack to deal with a Flutter limitation and hopefully will be eliminated. https://docs.flutter.dev/cookbook/design/fonts#2-declare-the-font-in-the-pubspec

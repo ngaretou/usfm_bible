@@ -152,14 +152,22 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
       //Now get chapters in current book
 
       for (var i = 0; i < versesInCollection.length; i++) {
-        //if not new paragraph marker, add the line to the current paragraph
-        if (!versesInCollection[i].verseStyle.contains(RegExp(
-            r'[p,m,po,pr,cls,pmo,pm,pmc,pmr,pi\d,mi,nb,pc,ph\d,b,mt\d,mte\d,ms\d,mr,s\d*,sr,r,d,sp,sd\d,q,q1,q2,qr,qc,qa,qm\d,qd,lh,li\d,lf,lim\d]'))) {
-          currentParagraph.add(versesInCollection[i]);
-        } else {
-          //If it is a new paragraph marker, add the existing verses to the big list, and start over with a new paragraph
+        //If it is a new paragraph marker, add the existing verses to the big list, and start over with a new paragraph
+
+        if (versesInCollection[i].verseStyle.contains(RegExp(
+            r'[p,po,pr,cls,pmo,pm,pmc,pmr,pi\d,mi,nb,pc,ph\d,b,mt\d,mte\d,ms\d,mr,s\d*,sr,sp,sd\d,q,q1,q2,qr,qc,qa,qm\d,qd,lh,li\d,lf,lim\d]'))) {
           versesByParagraph.add(currentParagraph);
           currentParagraph = [versesInCollection[i]];
+          // currentParagraph = [];
+        } else if ((versesInCollection[i]
+            .verseStyle
+            .contains(RegExp(r'[m,r,d]')))) {
+          versesByParagraph.add(currentParagraph);
+          versesByParagraph.add([versesInCollection[i]]);
+          currentParagraph = [];
+        } else {
+          //if new paragraph marker, add the line to the current paragraph
+          currentParagraph.add(versesInCollection[i]);
         }
       }
       setUpComboBoxesChVs(
@@ -737,12 +745,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
                 return true;
               },
-              // child: ScrollConfiguration(
-              //   behavior: ScrollConfiguration.of(context).copyWith(
-              //     scrollbars: true,
-              //     overscroll: true,
-              //     platform: TargetPlatform.macOS,
-              //   ),
               child: Padding(
                 padding: wideWindow
                     ? EdgeInsets.only(
@@ -752,57 +754,68 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                         bottom: 0)
                     : const EdgeInsets.only(
                         left: 12.0, right: 4, top: 0, bottom: 0),
-                child: ContextMenuArea(
-                  builder: (context) => [
-                    GestureDetector(
-                      child: const ListTile(
-                          leading: Icon(FluentIcons.copy), title: Text('Copy')),
-                      onTap: () {
-                        Navigator.of(context).pop();
-                        Clipboard.setData(
-                            ClipboardData(text: textToShareOrCopy()));
-                      },
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border(
+                      right: BorderSide(
+                        width: 1.0,
+                        color: Color.fromARGB(50, 126, 126, 126),
+                      ),
                     ),
-                    GestureDetector(
-                      child: const ListTile(
-                          leading: Icon(FluentIcons.share),
-                          title: Text('Share')),
-                      onTap: () async {
-                        Navigator.of(context).pop();
-                        //if it's not the web app, share using the device share function
-                        String textToShare = textToShareOrCopy();
-                        if (!kIsWeb) {
-                          Share.share(textToShare);
-                        } else {
-                          //If it's the web app version best way to share is probably email, so put the text to share in an email
-                          final String url =
-                              "mailto:?subject=&body=$textToShare";
-
-                          if (await canLaunchUrl(Uri.parse(url))) {
-                            await launchUrl(Uri.parse(url));
+                  ),
+                  child: ContextMenuArea(
+                    builder: (context) => [
+                      GestureDetector(
+                        child: const ListTile(
+                            leading: Icon(FluentIcons.copy),
+                            title: Text('Copy')),
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          Clipboard.setData(
+                              ClipboardData(text: textToShareOrCopy()));
+                        },
+                      ),
+                      GestureDetector(
+                        child: const ListTile(
+                            leading: Icon(FluentIcons.share),
+                            title: Text('Share')),
+                        onTap: () async {
+                          Navigator.of(context).pop();
+                          //if it's not the web app, share using the device share function
+                          String textToShare = textToShareOrCopy();
+                          if (!kIsWeb) {
+                            Share.share(textToShare);
                           } else {
-                            throw 'Could not launch $url';
+                            //If it's the web app version best way to share is probably email, so put the text to share in an email
+                            final String url =
+                                "mailto:?subject=&body=$textToShare";
+
+                            if (await canLaunchUrl(Uri.parse(url))) {
+                              await launchUrl(Uri.parse(url));
+                            } else {
+                              throw 'Could not launch $url';
+                            }
                           }
-                        }
-                      },
-                    ),
-                  ],
-                  child: ScrollablePositionedList.builder(
-                      padding: EdgeInsets.only(right: 12),
-                      initialAlignment: 1,
-                      itemScrollController: itemScrollController,
-                      itemPositionsListener: itemPositionsListener,
-                      itemCount: versesByParagraph.length,
-                      shrinkWrap: false,
-                      physics: ClampingScrollPhysics(),
-                      itemBuilder: (ctx, i) {
-                        return ParagraphBuilder(
-                          paragraph: versesByParagraph[i],
-                          fontSize: baseFontSize,
-                          rangeOfVersesToCopy: rangeOfVersesToCopy,
-                          addVerseToCopyRange: addVerseToCopyRange,
-                        );
-                      }),
+                        },
+                      ),
+                    ],
+                    child: ScrollablePositionedList.builder(
+                        padding: EdgeInsets.only(right: 12),
+                        initialAlignment: 1,
+                        itemScrollController: itemScrollController,
+                        itemPositionsListener: itemPositionsListener,
+                        itemCount: versesByParagraph.length,
+                        shrinkWrap: false,
+                        physics: ClampingScrollPhysics(),
+                        itemBuilder: (ctx, i) {
+                          return ParagraphBuilder(
+                            paragraph: versesByParagraph[i],
+                            fontSize: baseFontSize,
+                            rangeOfVersesToCopy: rangeOfVersesToCopy,
+                            addVerseToCopyRange: addVerseToCopyRange,
+                          );
+                        }),
+                  ),
                 ),
               ),
             ),

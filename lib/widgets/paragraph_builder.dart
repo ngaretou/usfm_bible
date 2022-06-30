@@ -364,7 +364,9 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
           header = true;
           break;
         case 'ms':
-          styledParagraphFragments.add(s(line.verseText, fontScaling: 1.2));
+        case 'ms1':
+        case 'ms2':
+          styledParagraphFragments.add(s(line.verseText, fontScaling: 1));
           header = true;
           break;
         case 'q':
@@ -374,8 +376,10 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
           poetry = true;
           break;
         case 'd':
+        case 'r':
           styledParagraphFragments
               .addAll(normalVerseFragment(line, paraStyle: italicStyle));
+          // styledParagraphFragments.add(s(line.verseText, fontScaling: .7));
           break;
         default:
           styledParagraphFragments.addAll(normalVerseFragment(line));
