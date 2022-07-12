@@ -91,11 +91,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     super.initState();
   }
 
-  // changeCollection(String newCollection) {
-  //   // do something to rebuild only 1st column Text not the whole page
-  //   currentCollection.value = newCollection;
-  // }
-
   //from combobox selectors
   scrollToReference(
       {String? collection,
@@ -172,6 +167,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
       }
       setUpComboBoxesChVs(
           currentBook.value, currentChapter.value, currentVerse.value);
+      if (!isInitState) setState(() {});
     } else {
       String oldBook = currentBook.value;
       String oldChapter = currentChapter.value;
@@ -198,6 +194,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
       int? navigateToParagraph;
 
+      // Get the reference to the paragraph we're heading to - at the same time test if it does exist.
       for (int i = 0; i < versesByParagraph.length; i++) {
         int test;
         if (chapter == '1' && verse == '1') {
@@ -210,6 +207,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
               element.verse == currentVerse.value);
         }
 
+        //if the destination does exist in the collection, initiate a scroll to it.
         if (test != -1) {
           navigateToParagraph = i;
           break;
@@ -254,7 +252,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         itemScrollController.scrollTo(
           index: navigateToParagraph,
           alignment: firstVerseOfChapter ? 0.125 : 0,
-          duration: Duration(milliseconds: 500),
+          duration: Duration(milliseconds: 200),
         );
 
         BibleReference ref = BibleReference(
@@ -500,14 +498,14 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         if (currentBook.value != ref.bookID ||
             currentChapter.value != ref.chapter ||
             currentVerse.value != ref.verse) {
-          print('trying to simulscroll in ${widget.key}');
-          print('${ref.bookID} ${ref.chapter} ${ref.verse}');
+          // print('trying to simulscroll in ${widget.key}');
+          // print('${ref.bookID} ${ref.chapter} ${ref.verse}');
           scrollToReference(
               bookID: ref.bookID, chapter: ref.chapter, verse: ref.verse);
         }
       }
     });
-    print('Scripture Column build ${widget.key}');
+    // print('Scripture Column build ${widget.key}');
 
     // var ref = Provider.of<ColumnManager>(context, listen: true).getScrollGroupRef;
 
@@ -678,6 +676,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                   },
                                   child: const Icon(FluentIcons.font_increase),
                                 ),
+                                SizedBox(width: 5),
                                 Button(
                                   onPressed: () {
                                     if (baseFontSize > 10) {
@@ -717,6 +716,10 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                       },
                       icon: const Icon(FluentIcons.calculator_multiply),
                     ),
+                  if (widget.myColumnIndex == 0)
+                    SizedBox(
+                      width: 30,
+                    )
                   // Column(
                   //   mainAxisSize: MainAxisSize.max,
                   //   mainAxisAlignment: MainAxisAlignment.end,

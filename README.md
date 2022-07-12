@@ -27,6 +27,7 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
   - secondary font: _font2-R.ttf_ and _font2-B.ttf_.
   - Note there must be those four fonts - if you only have one font, make copies and rename so those files are there.
     - This is a hack to deal with a Flutter limitation and hopefully will be eliminated. https://docs.flutter.dev/cookbook/design/fonts#2-declare-the-font-in-the-pubspec
+- Some translations are available in the appDef and pulled directly from your existing project. Some are not a part of SAB's translation strings and you can provide those five that usfm_bible uses for your language in assets/translations.json. Include the translations there with the language codes from the Interface/Language/Language Codes column.
 - In index.html:
   - Change app name in the \<title> tag
   - Change \<base href> to your subfolder if your web app is not in the root of your site. (More instructions in the comments of index.html.)
@@ -42,17 +43,18 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 
 ### Be aware
 
-Book Collection ID must follow C01, C02 pattern in your SAB project.
+- Book Collection ID must follow C01, C02 pattern in your SAB project.
+- Footnote text is without formatting, just plain text stripped of USFM. The Tooltip widget only allows one style.  https://ubsicap.github.io/usfm/notes_basic/fnotes.html#fq etc.
 
 ## To do:
-
+### Minimal
 - Add in Ajami Wolof
+- NavPane buttons: Search, Contact Us, About
 
+### Maximal
 - Remember window size and position on close...
 - Remember column references visible on close...
-- Figure out localizations from appDef rather than from Flutter localizations
 - Change window title on desktop https://stackoverflow.com/questions/64800455/how-to-change-app-icon-and-app-name-for-flutter-desktop-application
-- NavPane buttons: Search, Contact Us, About
 - Figure out permissions - right now you have to manually change permissions to 744 for appdef and all sfm book files after output :(
 - reader mode/no verses
 - read in styles from appdef

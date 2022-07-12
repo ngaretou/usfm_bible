@@ -76,6 +76,7 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/
     - assets/project/
     - assets/project/data/
     - assets/project/data/about/

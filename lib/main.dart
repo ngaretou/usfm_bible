@@ -5,7 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart' as flutter_acrylic;
 import 'package:provider/provider.dart';
 import 'package:system_theme/system_theme.dart';
-import 'package:url_launcher/link.dart';
+// import 'package:url_launcher/link.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'package:window_manager/window_manager.dart';
 
@@ -18,6 +18,8 @@ import 'providers/user_prefs.dart';
 import 'providers/column_manager.dart';
 
 String appTitle = "Placeholder App Title";
+String search = '';
+String settings = '';
 
 /// Checks if the current environment is a desktop environment.
 bool get isDesktop {
@@ -92,7 +94,6 @@ class MyApp extends StatelessWidget {
 
         return FluentApp(
           title: appTitle,
-
           themeMode: appTheme.mode,
           debugShowCheckedModeBanner: false,
           home: const MyHomePage(),
@@ -144,27 +145,6 @@ class MyApp extends StatelessWidget {
               hoveringTrackBorderColor: Color.fromARGB(50, 126, 126, 126),
             ),
           ),
-
-          //Local
-          // localizationsDelegates: const [
-          //   // AppLocalizations.delegate,
-
-          //   GlobalMaterialLocalizations.delegate,
-          //   GlobalWidgetsLocalizations.delegate,
-          //   GlobalCupertinoLocalizations.delegate,
-          // ],
-          // supportedLocales: const [
-          //   Locale('en', ''),
-          //   Locale('fr', 'FR'),
-          //   // Unfortunately there is a ton of setup to add a new language
-          //   // to Flutter post version 2.0 and intl 0.17.
-          //   // The most doable way to stick with the official Flutter l10n method
-          //   // is to use Swiss French as the main source for the translations
-          //   // and add in the Wolof to the app_fr_ch.arb in the l10n folder.
-          //   // So when we switch locale to fr_CH, that's Wolof.
-          //   Locale('fr', 'CH'),
-          // ],
-          // locale: appTheme.locale,
           builder: (context, child) {
             return Directionality(
               textDirection: appTheme.textDirection,
@@ -194,6 +174,7 @@ class MyHomePage extends StatefulWidget {
 
 class MyHomePageState extends State<MyHomePage> with WindowListener {
   late Future<AppInfo> init = callInititalization();
+  late Future<void> langInit = callTranslationInitialization();
 
   int index = 0;
 
@@ -210,9 +191,14 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
   Future<AppInfo> callInititalization() async {
     AppInfo appInfo = await buildDatabaseFromXML(context);
-    Provider.of<UserPrefs>(context, listen: false).loadUserPrefs(appInfo);
+    await Provider.of<UserPrefs>(context, listen: false).loadUserPrefs(appInfo);
+
     // print('returning future from initialization');
     return appInfo;
+  }
+
+  Future<void> callTranslationInitialization() async {
+    await asyncGetTranslations(context);
   }
 
   Future<void> callInititalizationAppName() async {
@@ -264,166 +250,191 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
   Widget build(BuildContext context) {
     final appTheme = context.watch<AppTheme>();
 
-    return NavigationView(
-        key: viewKey,
-        //appBar is across top of the screen in place of normal OS specific title bar.
-        // appBar: NavigationAppBar(
-        //   automaticallyImplyLeading: false,
-        //   title: () {
-        //     if (kIsWeb) return Text(appTitle);
-        //     return DragToMoveArea(
-        //       child: Row(
-        //         children: [
-        //           const SizedBox(width: 15),
-        //           Align(
-        //             alignment: AlignmentDirectional.centerStart,
-        //             child: Text(appTitle),
-        //           ),
-        //         ],
-        //       ),
-        //     );
-        //   }(),
-        //   actions: Row(
-        //     crossAxisAlignment: CrossAxisAlignment.center,
-        //     mainAxisAlignment: MainAxisAlignment.end,
-        //     children: [
-        //       IconButton(
-        //           icon: const Icon(FluentIcons.add),
-        //           onPressed: () {
-        //             numberOfColumns <= 3 //keep it to four columns
-        //                 ? changeNumberColumns(add: true)
-        //                 : null;
+    return FutureBuilder(
+      future: langInit,
+      builder: (ctx, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: ProgressRing());
+        }
+        //Main row that holds the text columns
+        else {
+          return NavigationView(
+            key: viewKey,
+            //appBar is across top of the screen in place of normal OS specific title bar.
+            // appBar: NavigationAppBar(
+            //   automaticallyImplyLeading: false,
+            //   title: () {
+            //     if (kIsWeb) return Text(appTitle);
+            //     return DragToMoveArea(
+            //       child: Row(
+            //         children: [
+            //           const SizedBox(width: 15),
+            //           Align(
+            //             alignment: AlignmentDirectional.centerStart,
+            //             child: Text(appTitle),
+            //           ),
+            //         ],
+            //       ),
+            //     );
+            //   }(),
+            //   actions: Row(
+            //     crossAxisAlignment: CrossAxisAlignment.center,
+            //     mainAxisAlignment: MainAxisAlignment.end,
+            //     children: [
+            //       IconButton(
+            //           icon: const Icon(FluentIcons.add),
+            //           onPressed: () {
+            //             numberOfColumns <= 3 //keep it to four columns
+            //                 ? changeNumberColumns(add: true)
+            //                 : null;
 
-        //             print(numberOfColumns);
-        //             // setState(() {});
-        //           }),
+            //             print(numberOfColumns);
+            //             // setState(() {});
+            //           }),
 
-        //       // Spacer(),
+            //       // Spacer(),
 
-        //       // ToggleSwitch(
-        //       //   content: const Text('Dark Mode'),
-        //       //   checked: FluentTheme.of(context).brightness.isDark,
-        //       //   onChanged: (v) {
-        //       //     if (v) {
-        //       //       appTheme.mode = ThemeMode.dark;
-        //       //     } else {
-        //       //       appTheme.mode = ThemeMode.light;
-        //       //     }
-        //       //   },
-        //       // ),
-        //       // if (!kIsWeb) WindowButtons(),
-        //     ],
-        //   ),
-        // ),
-        pane: NavigationPane(
-          selected: index,
-          onChanged: (i) => setState(() => index = i),
-          size: const NavigationPaneSize(
-            openMinWidth: 250.0,
-            openMaxWidth: 320.0,
-          ),
-          header: Container(
-            height: kOneLineTileHeight,
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
-
-            // child: Align(
-            //   alignment: Alignment.centerLeft,
-            //   child: FlutterLogo(
-            //     style: appTheme.displayMode == PaneDisplayMode.top
-            //         ? FlutterLogoStyle.markOnly
-            //         : FlutterLogoStyle.horizontal,
-            //     size: appTheme.displayMode == PaneDisplayMode.top ? 24 : 100.0,
+            //       // ToggleSwitch(
+            //       //   content: const Text('Dark Mode'),
+            //       //   checked: FluentTheme.of(context).brightness.isDark,
+            //       //   onChanged: (v) {
+            //       //     if (v) {
+            //       //       appTheme.mode = ThemeMode.dark;
+            //       //     } else {
+            //       //       appTheme.mode = ThemeMode.light;
+            //       //     }
+            //       //   },
+            //       // ),
+            //       // if (!kIsWeb) WindowButtons(),
+            //     ],
             //   ),
             // ),
-          ),
-          displayMode: appTheme.displayMode,
-          indicator: () {
-            switch (appTheme.indicator) {
-              case NavigationIndicators.end:
-                return const EndNavigationIndicator();
-              case NavigationIndicators.sticky:
-              default:
-                return const StickyNavigationIndicator();
-            }
-          }(),
-          items: [
-            // It doesn't look good when resizing from compact to open
-            // PaneItemHeader(header: Text('User Interaction')),
-            PaneItem(
-                icon: const Icon(FluentIcons.reading_mode),
-                title: Text(appTitle)),
-          ],
-          footerItems: [
-            //Actions label?
-            // PaneItemHeader(
-            //   header: Text('paneitemheader'),
-            // ),
-            PaneItemSeparator(),
-            RunFunctionPaneItemAction(
-                title: const Text('Search'),
-                icon: const Icon(FluentIcons.search),
-                functionToRun:
-                    Provider.of<ColumnManager>(context, listen: false)
-                        .openSearch),
-            RunFunctionPaneItemAction(
-                title: const Text('Add Column'),
-                icon: const Icon(FluentIcons.calculator_addition),
-                functionToRun:
-                    Provider.of<ColumnManager>(context, listen: false)
+            pane: NavigationPane(
+              selected: index,
+              onChanged: (i) => setState(() => index = i),
+              size: const NavigationPaneSize(
+                openMinWidth: 250.0,
+                openMaxWidth: 320.0,
+              ),
+              header: Container(
+                height: kOneLineTileHeight,
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+
+                // child: Align(
+                //   alignment: Alignment.centerLeft,
+                //   child: FlutterLogo(
+                //     style: appTheme.displayMode == PaneDisplayMode.top
+                //         ? FlutterLogoStyle.markOnly
+                //         : FlutterLogoStyle.horizontal,
+                //     size: appTheme.displayMode == PaneDisplayMode.top ? 24 : 100.0,
+                //   ),
+                // ),
+              ),
+              displayMode: appTheme.displayMode,
+              indicator: () {
+                switch (appTheme.indicator) {
+                  case NavigationIndicators.end:
+                    return const EndNavigationIndicator();
+                  case NavigationIndicators.sticky:
+                  default:
+                    return const StickyNavigationIndicator();
+                }
+              }(),
+              items: [
+                // It doesn't look good when resizing from compact to open
+                // PaneItemHeader(header: Text('User Interaction')),
+                PaneItem(
+                    icon: const Icon(FluentIcons.reading_mode),
+                    title: Text(appTitle)),
+              ],
+              footerItems: [
+                //Actions label?
+                // PaneItemHeader(
+                //   header: Text('paneitemheader'),
+                // ),
+                PaneItemSeparator(),
+                RunFunctionPaneItemAction(
+                    title: Text(Provider.of<UserPrefs>(context, listen: true)
+                        .currentTranslation
+                        .search),
+                    icon: const Icon(FluentIcons.search),
+                    functionToRun:
+                        Provider.of<ColumnManager>(context, listen: false)
+                            .openSearch),
+                RunFunctionPaneItemAction(
+                    title: Text(Provider.of<UserPrefs>(context, listen: true)
+                        .currentTranslation
                         .addColumn),
-            LightDarkModePaneItemAction(
-              icon: FluentTheme.of(context).brightness.isDark
-                  ? const Icon(FluentIcons.sunny)
-                  : const Icon(FluentIcons.clear_night),
-              title: const Text('Light/Dark Toggle'),
-              appTheme: appTheme,
+                    icon: const Icon(FluentIcons.calculator_addition),
+                    functionToRun:
+                        Provider.of<ColumnManager>(context, listen: false)
+                            .addColumn),
+                LightDarkModePaneItemAction(
+                  icon: FluentTheme.of(context).brightness.isDark
+                      ? const Icon(FluentIcons.sunny)
+                      : const Icon(FluentIcons.clear_night),
+                  title: FluentTheme.of(context).brightness.isDark
+                      ? Text(Provider.of<UserPrefs>(context, listen: true)
+                          .currentTranslation
+                          .lightTheme)
+                      : Text(Provider.of<UserPrefs>(context, listen: true)
+                          .currentTranslation
+                          .darkTheme),
+                  appTheme: appTheme,
+                ),
+
+                PaneItemSeparator(),
+                PaneItem(
+                  icon: const Icon(FluentIcons.settings),
+                  title: Text(Provider.of<UserPrefs>(context, listen: true)
+                      .currentTranslation
+                      .settings),
+                ),
+                // _LinkPaneItemAction(
+                //   icon: const Icon(FluentIcons.open_source),
+                //   title: const Text('Source code'),
+                //   link: 'https://github.com/ngaretou/usfm_bible',
+                // ),
+              ],
             ),
+            content: FutureBuilder(
+              future: init,
+              builder: (ctx, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(child: ProgressRing());
+                }
+                //Main row that holds the text columns
+                else {
+                  AppInfo appInfo = snapshot.data as AppInfo;
 
-            PaneItemSeparator(),
-            PaneItem(
-              icon: const Icon(FluentIcons.settings),
-              title: const Text('Settings'),
+                  return NavigationBody(index: index, children: [
+                    BibleView(
+                      appInfo: appInfo,
+                    ), //main view
+
+                    //must include dummy destination here for each custom action, apparently
+
+                    BibleView(
+                      appInfo: snapshot.data as AppInfo,
+                    ), //taking place of Search
+
+                    BibleView(
+                      appInfo: snapshot.data as AppInfo,
+                    ), //taking place of add a pane
+
+                    BibleView(
+                      appInfo: snapshot.data as AppInfo,
+                    ), //taking place of toggle light/dark mode
+
+                    Settings(controller: settingsController),
+                  ]);
+                }
+              },
             ),
-            _LinkPaneItemAction(
-              icon: const Icon(FluentIcons.open_source),
-              title: const Text('Source code'),
-              link: 'https://github.com/ngaretou/usfm_bible',
-            ),
-          ],
-        ),
-        content: FutureBuilder(
-            future: init,
-            builder: (ctx, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return const Center(child: ProgressRing());
-              }
-              //Main row that holds the text columns
-              else {
-                AppInfo appInfo = snapshot.data as AppInfo;
-
-                return NavigationBody(index: index, children: [
-                  BibleView(
-                    appInfo: appInfo,
-                  ), //main view
-
-                  //must include dummy destination here for each custom action, apparently
-
-                  BibleView(
-                    appInfo: snapshot.data as AppInfo,
-                  ), //taking place of Search BibleView
-
-                  BibleView(
-                    appInfo: snapshot.data as AppInfo,
-                  ), //taking place of add a pane
-
-                  BibleView(
-                    appInfo: snapshot.data as AppInfo,
-                  ), //taking place of toggle light/dark mode
-
-                  Settings(controller: settingsController),
-                ]);
-              }
-            }));
+          );
+        }
+      },
+    );
   }
 
   @override
@@ -557,43 +568,43 @@ class LightDarkModePaneItemAction extends PaneItem {
   }
 }
 
-class _LinkPaneItemAction extends PaneItem {
-  _LinkPaneItemAction({
-    required Widget icon,
-    required this.link,
-    title,
-    infoBadge,
-    focusNode,
-    autofocus = false,
-  }) : super(
-          icon: icon,
-          title: title,
-          infoBadge: infoBadge,
-          focusNode: focusNode,
-          autofocus: autofocus,
-        );
+// class _LinkPaneItemAction extends PaneItem {
+//   _LinkPaneItemAction({
+//     required Widget icon,
+//     required this.link,
+//     title,
+//     infoBadge,
+//     focusNode,
+//     autofocus = false,
+//   }) : super(
+//           icon: icon,
+//           title: title,
+//           infoBadge: infoBadge,
+//           focusNode: focusNode,
+//           autofocus: autofocus,
+//         );
 
-  final String link;
+//   final String link;
 
-  @override
-  Widget build(
-    BuildContext context,
-    bool selected,
-    VoidCallback? onPressed, {
-    PaneDisplayMode? displayMode,
-    bool showTextOnTop = true,
-    bool? autofocus,
-  }) {
-    return Link(
-      uri: Uri.parse(link),
-      builder: (context, followLink) => super.build(
-        context,
-        selected,
-        followLink,
-        displayMode: displayMode,
-        showTextOnTop: showTextOnTop,
-        autofocus: autofocus,
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(
+//     BuildContext context,
+//     bool selected,
+//     VoidCallback? onPressed, {
+//     PaneDisplayMode? displayMode,
+//     bool showTextOnTop = true,
+//     bool? autofocus,
+//   }) {
+//     return Link(
+//       uri: Uri.parse(link),
+//       builder: (context, followLink) => super.build(
+//         context,
+//         selected,
+//         followLink,
+//         displayMode: displayMode,
+//         showTextOnTop: showTextOnTop,
+//         autofocus: autofocus,
+//       ),
+//     );
+//   }
+// }

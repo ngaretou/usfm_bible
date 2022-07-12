@@ -2192,6 +2192,11 @@
       <text-direction value="LTR"/>
       <numeral-system value="Default"/>
       <verse-number-style value="default"/>
+
+      <styles>
+        <style name="div.footer">
+        </style>
+      </styles>
     </styles-info>
 
     <book-order>
@@ -2919,7 +2924,7 @@ Please enter your access code:</translation>
         <trait name="text-direction" value="LTR"/>
       </writing-system>
 
-      <writing-system code="fr" type="interface" enabled="false">
+      <writing-system code="fr" type="interface">
         <display-names>
           <form lang="en">French</form>
           <form lang="fr">Français</form>
@@ -3302,6 +3307,15 @@ Please enter your access code:</translation>
         <font-family>system</font-family>
         <trait name="text-direction" value="LTR"/>
       </writing-system>
+
+      <writing-system code="wol" type="interface">
+        <display-names>
+          <form lang="en">Wolof</form>
+        </display-names>
+        <font-family>system</font-family>
+        <trait name="font-relative-size" value="90"/>
+        <trait name="text-direction" value="LTR"/>
+      </writing-system>
     </writing-systems>
   </interface-languages>
 
@@ -3327,6 +3341,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Kandungan</translation>
       <translation lang="nl">Index</translation>
       <translation lang="ta">உள்ளடக்கம்</translation>
+      <translation lang="hin">अंतर्वस्तु</translation>
+      <translation lang="wol">Li ci biir</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Search">
       <translation lang="en">Search</translation>
@@ -3336,7 +3352,7 @@ Please enter your access code:</translation>
       <translation lang="ru">Поиск</translation>
       <translation lang="uk">Пошук</translation>
       <translation lang="tr">Arama</translation>
-      <translation lang="id">Pencarian</translation>
+      <translation lang="id">Penelusuran</translation>
       <translation lang="zh">搜索</translation>
       <translation lang="mal">തിരയുക</translation>
       <translation lang="vi">Tìm kiếm</translation>
@@ -3350,15 +3366,17 @@ Please enter your access code:</translation>
       <translation lang="ms">Carian</translation>
       <translation lang="nl">Zoeken</translation>
       <translation lang="ta">தேடுதல்</translation>
+      <translation lang="hin">खोज</translation>
+      <translation lang="wol">Gëstu</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Layout">
-      <translation lang="en">Language &amp; Layout</translation>
-      <translation lang="fr">Langue et agencement</translation>
+      <translation lang="en">Version</translation>
+      <translation lang="fr">Version</translation>
       <translation lang="tr">Dil ve Yerleşim</translation>
       <translation lang="id">Bahasa dan Tata Letak</translation>
       <translation lang="mal">ഭാഷയും ലേഔട്ടും</translation>
-      <translation lang="es">Idioma y Diseño</translation>
-      <translation lang="pt">Idioma &amp; Layout</translation>
+      <translation lang="es">Versión</translation>
+      <translation lang="pt">Versão</translation>
       <translation lang="zh">语言布局</translation>
       <translation lang="vi">Ngôn ngữ &amp; Trình bày</translation>
       <translation lang="fa">زبان و آرایش</translation>
@@ -3371,6 +3389,8 @@ Please enter your access code:</translation>
       <translation lang="ko">언어 &amp; 배치</translation>
       <translation lang="nl">Taal &amp; Lay out</translation>
       <translation lang="ta">தள அமைப்பு</translation>
+      <translation lang="hin">भाषा और ख़ाका</translation>
+      <translation lang="wol">Sotti yi</translation>
     </translation-mapping>
     <translation-mapping id="Menu_History">
       <translation lang="en">History</translation>
@@ -3388,11 +3408,12 @@ Please enter your access code:</translation>
       <translation lang="ko">사용기록</translation>
       <translation lang="nl">Geschiedenis</translation>
       <translation lang="ta">முந்தைய வாசிப்புகள்</translation>
+      <translation lang="wol">Tànk yi</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Settings">
       <translation lang="en">Settings</translation>
       <translation lang="fr">Paramètres</translation>
-      <translation lang="es">Configuraciones</translation>
+      <translation lang="es">Configuración</translation>
       <translation lang="pt">Configurações</translation>
       <translation lang="ru">Настройки</translation>
       <translation lang="uk">Налаштування</translation>
@@ -3411,6 +3432,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Tetapan</translation>
       <translation lang="nl">Instellingen</translation>
       <translation lang="ta">செயலி அமைப்புகள்</translation>
+      <translation lang="hin">सेटिंग्स</translation>
+      <translation lang="wol">Kërale yi</translation>
     </translation-mapping>
     <translation-mapping id="Menu_About">
       <translation lang="en">About</translation>
@@ -3434,6 +3457,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Tentang</translation>
       <translation lang="nl">Info</translation>
       <translation lang="ta">எங்களைப் பற்றி</translation>
+      <translation lang="hin">विषय</translation>
+      <translation lang="wol">Ci mbirum appli bi</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Text_Appearance">
       <translation lang="en">Text Appearance</translation>
@@ -3457,12 +3482,14 @@ Please enter your access code:</translation>
       <translation lang="ms">Penampilan teks</translation>
       <translation lang="nl">Tekstweergave</translation>
       <translation lang="ta">எழுத்து அமைப்பு</translation>
+      <translation lang="hin">दिखावट</translation>
+      <translation lang="wol">Melow mbind mi</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Share_App">
       <translation lang="en">Share App</translation>
       <translation lang="fr">Partager application</translation>
       <translation lang="es">Compartir aplicación</translation>
-      <translation lang="pt">Compartilhar Aplicativo</translation>
+      <translation lang="pt">Compartilhar aplicativo</translation>
       <translation lang="tr">Uygulamayı Paylaş</translation>
       <translation lang="id">Bagikan aplikasi</translation>
       <translation lang="mal">ആപ്പ് ഷെയര്‍ ചെയ്യുക</translation>
@@ -3479,6 +3506,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Kangsi App</translation>
       <translation lang="nl">App delen</translation>
       <translation lang="ta">செயலியைப் பகிர</translation>
+      <translation lang="hin">ऐप को लागू करना</translation>
+      <translation lang="wol">Séddoo appli bi</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Downloads">
       <translation lang="en">Downloads</translation>
@@ -3512,6 +3541,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Edit</translation>
       <translation lang="nl">Bewerken</translation>
       <translation lang="ta">திருத்தி அமைக்க</translation>
+      <translation lang="hin">सम्पादित</translation>
+      <translation lang="wol">Defaraat</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Users_Add">
       <translation lang="en">Add User</translation>
@@ -3560,6 +3591,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Kembali</translation>
       <translation lang="nl">Home</translation>
       <translation lang="ta">முகப்பு</translation>
+      <translation lang="hin">होम</translation>
+      <translation lang="wol">Agsil</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Reset_Contents">
       <translation lang="en">Reset Contents</translation>
@@ -3617,6 +3650,8 @@ Please enter your access code:</translation>
       <translation lang="ko">책갈피</translation>
       <translation lang="nl">Favorieten</translation>
       <translation lang="ta">குறிக்கப்பட்ட வசனங்கள்</translation>
+      <translation lang="hin">बुक मार्क</translation>
+      <translation lang="wol">Denc yi</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Highlights">
       <translation lang="en">Highlights</translation>
@@ -3628,7 +3663,7 @@ Please enter your access code:</translation>
       <translation lang="pt">Destaques</translation>
       <translation lang="zh">突出</translation>
       <translation lang="vi">Làm nổi bật</translation>
-      <translation lang="fa">نکات برجسته</translation>
+      <translation lang="fa">برجسته ها</translation>
       <translation lang="ru">Выделенный текст</translation>
       <translation lang="de">Farbmarkierungen</translation>
       <translation lang="az">Vurğulamalar</translation>
@@ -3638,6 +3673,8 @@ Please enter your access code:</translation>
       <translation lang="ko">하이라이트</translation>
       <translation lang="nl">Hoogtepunten</translation>
       <translation lang="ta">முக்கிய வசனங்கள்</translation>
+      <translation lang="hin">प्रमुख्ताएं</translation>
+      <translation lang="wol">Fésal yi</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Notes">
       <translation lang="en">Notes</translation>
@@ -3659,6 +3696,8 @@ Please enter your access code:</translation>
       <translation lang="ko">노트</translation>
       <translation lang="nl">Aantekeningen</translation>
       <translation lang="ta">எனது குறிப்புகள்</translation>
+      <translation lang="hin">टिप्पणियाँ</translation>
+      <translation lang="wol">Jàngat yi</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Note_Add">
       <translation lang="en">Add Note</translation>
@@ -3680,6 +3719,8 @@ Please enter your access code:</translation>
       <translation lang="ko">노트 추가</translation>
       <translation lang="nl">Aantekening toevoegen</translation>
       <translation lang="ta">குறிப்பு எடு</translation>
+      <translation lang="hin">नोट जोड़ें</translation>
+      <translation lang="wol"></translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Note_Edit">
       <translation lang="en">Edit Note</translation>
@@ -3701,6 +3742,8 @@ Please enter your access code:</translation>
       <translation lang="ko">노트 편집</translation>
       <translation lang="nl">Aantekening bewerken</translation>
       <translation lang="ta">குறிப்பை திருத்து</translation>
+      <translation lang="hin">नोट सम्पादित करें</translation>
+      <translation lang="wol">Defaraat Jàngat bi</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Menu_View">
       <translation lang="en">View</translation>
@@ -3722,6 +3765,8 @@ Please enter your access code:</translation>
       <translation lang="ko">보기</translation>
       <translation lang="nl">Beeld</translation>
       <translation lang="ta">நோக்கு</translation>
+      <translation lang="hin">अवलोकन</translation>
+      <translation lang="wol">Xoolal</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Menu_Delete">
       <translation lang="en">Delete</translation>
@@ -3743,6 +3788,8 @@ Please enter your access code:</translation>
       <translation lang="ko">삭제</translation>
       <translation lang="nl">Verwijderen</translation>
       <translation lang="ta">அழி</translation>
+      <translation lang="hin">डिलीट</translation>
+      <translation lang="wol">Faral</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Menu_Edit">
       <translation lang="en">Edit</translation>
@@ -3764,6 +3811,8 @@ Please enter your access code:</translation>
       <translation lang="ko">편집</translation>
       <translation lang="nl">Bewerken</translation>
       <translation lang="ta">திருத்து</translation>
+      <translation lang="hin">संपादन</translation>
+      <translation lang="wol">Defaraat</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Menu_Share">
       <translation lang="en">Share</translation>
@@ -3785,6 +3834,8 @@ Please enter your access code:</translation>
       <translation lang="ko">공유</translation>
       <translation lang="nl">Delen</translation>
       <translation lang="ta">பகிர்</translation>
+      <translation lang="hin">अंश</translation>
+      <translation lang="wol">Séddool</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Sort_Order_Reference">
       <translation lang="en">By Reference</translation>
@@ -3806,12 +3857,14 @@ Please enter your access code:</translation>
       <translation lang="ko">참고문헌별</translation>
       <translation lang="nl">Sorteer op naam</translation>
       <translation lang="ta">வசனங்களின் படி</translation>
+      <translation lang="hin">संदर्भ से</translation>
+      <translation lang="wol">Jekkal bu topp jukki</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Sort_Order_Date">
       <translation lang="en">By Date</translation>
       <translation lang="fr">Par date</translation>
       <translation lang="tr">Tarihe göre</translation>
-      <translation lang="id">Oleh tanggal</translation>
+      <translation lang="id">Oleh referensi</translation>
       <translation lang="mal">തീയതി പ്രകാരം</translation>
       <translation lang="es">Por fecha</translation>
       <translation lang="pt">Por Data</translation>
@@ -3827,6 +3880,8 @@ Please enter your access code:</translation>
       <translation lang="ko">날짜별</translation>
       <translation lang="nl">Sorteer op datum</translation>
       <translation lang="ta">தேதியின் படி</translation>
+      <translation lang="hin">तिथि के अनुसार</translation>
+      <translation lang="wol">Jekkal bu topp bés</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Sort_Order_Color">
       <translation lang="en">By Color</translation>
@@ -3848,6 +3903,8 @@ Please enter your access code:</translation>
       <translation lang="ko">색깔별</translation>
       <translation lang="nl">Sorteer op kleur</translation>
       <translation lang="ta">நிறத்தின் படி</translation>
+      <translation lang="hin">रंग से</translation>
+      <translation lang="wol">Jekkal bu topp melo</translation>
     </translation-mapping>
     <translation-mapping id="Button_OK">
       <translation lang="en">OK</translation>
@@ -3871,6 +3928,8 @@ Please enter your access code:</translation>
       <translation lang="ms">OK</translation>
       <translation lang="nl">Oké</translation>
       <translation lang="ta">சரி</translation>
+      <translation lang="hin">ठीक</translation>
+      <translation lang="wol">WK</translation>
     </translation-mapping>
     <translation-mapping id="Button_Yes">
       <translation lang="en">Yes</translation>
@@ -3894,6 +3953,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Ya</translation>
       <translation lang="nl">Ja</translation>
       <translation lang="ta">ஆம்</translation>
+      <translation lang="hin">हाँ</translation>
+      <translation lang="wol">Waaw</translation>
     </translation-mapping>
     <translation-mapping id="Button_No">
       <translation lang="en">No</translation>
@@ -3917,6 +3978,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Tidak</translation>
       <translation lang="nl">Nee</translation>
       <translation lang="ta">இல்லை</translation>
+      <translation lang="hin">नहीं</translation>
+      <translation lang="wol">Déet</translation>
     </translation-mapping>
     <translation-mapping id="Button_Close">
       <translation lang="en">Close</translation>
@@ -3940,6 +4003,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Tutup</translation>
       <translation lang="nl">Sluiten</translation>
       <translation lang="ta">பின்செல்</translation>
+      <translation lang="hin">बंद</translation>
+      <translation lang="wol">Ub</translation>
     </translation-mapping>
     <translation-mapping id="Button_Cancel">
       <translation lang="en">Cancel</translation>
@@ -3963,6 +4028,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Batal</translation>
       <translation lang="nl">Annuleren</translation>
       <translation lang="ta">நீக்கு</translation>
+      <translation lang="hin">निरस्त</translation>
+      <translation lang="wol">Fomm</translation>
     </translation-mapping>
     <translation-mapping id="Button_Delete">
       <translation lang="en">Delete</translation>
@@ -4027,6 +4094,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Kemukakan</translation>
       <translation lang="nl">Verzenden</translation>
       <translation lang="ta">அமை</translation>
+      <translation lang="hin">प्रस्तुत</translation>
+      <translation lang="wol"></translation>
     </translation-mapping>
     <translation-mapping id="Button_Sign_Up">
       <translation lang="en">Sign Up</translation>
@@ -4038,6 +4107,7 @@ Please enter your access code:</translation>
       <translation lang="ar">تسجيل حساب</translation>
       <translation lang="nl">Inschrijven</translation>
       <translation lang="ta">பதியவும்</translation>
+      <translation lang="wol"></translation>
     </translation-mapping>
     <translation-mapping id="Button_Skip">
       <translation lang="en">Skip</translation>
@@ -4060,6 +4130,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Lezen</translation>
       <translation lang="ta">படிக்க</translation>
       <translation lang="ru">Читать</translation>
+      <translation lang="wol">Jàngal</translation>
     </translation-mapping>
     <translation-mapping id="Button_Listen">
       <translation lang="en">Listen</translation>
@@ -4118,6 +4189,7 @@ Please enter your access code:</translation>
       <translation lang="ms">Hantar</translation>
       <translation lang="nl">Vandaag</translation>
       <translation lang="ta">இன்று</translation>
+      <translation lang="wol">Tey</translation>
     </translation-mapping>
     <translation-mapping id="Date_Yesterday">
       <translation lang="en">Yesterday</translation>
@@ -4136,12 +4208,13 @@ Please enter your access code:</translation>
       <translation lang="ms">Semalam</translation>
       <translation lang="nl">Gisteren</translation>
       <translation lang="ta">நேற்று</translation>
+      <translation lang="wol">Démb</translation>
     </translation-mapping>
     <translation-mapping id="Grandroid_Load_Fail">
       <translation lang="en">Sorry, the text may not display correctly on this device.</translation>
       <translation lang="fr">Désolé, le texte peut ne pas s&apos;afficher correctement sur cet appareil.</translation>
-      <translation lang="es">Lamentablemente el texto no puede mostrarse correctamente en este dispositivo.</translation>
-      <translation lang="pt">Sinto muito, mas o texto talvéz não exiba corretamente neste dispositivo.</translation>
+      <translation lang="es">Lo siento, el texto no puede ser mostrado correctamente en este dispositivo.</translation>
+      <translation lang="pt">Infelizmente o texto pode não ser exibido corretamente neste dispositivo.</translation>
       <translation lang="ru">Извините, на этом устройстве текст может отображаться некорректно</translation>
       <translation lang="uk">Вибачте, текст може відображатися некоректно на цьому пристрої</translation>
       <translation lang="tr">Üzgünüz, metin bu cihazda doğru şekilde görüntülenmeyebilir.</translation>
@@ -4159,12 +4232,14 @@ Please enter your access code:</translation>
       <translation lang="ms">Maaf, mesej mungkin tidak dipaparkan dengan betul pada peranti ini.</translation>
       <translation lang="nl">Sorry, de tekst wordt wellicht niet goed weergegeven op dit apparaat.</translation>
       <translation lang="ta">மன்னிக்கவும், இந்த சாதனத்தில் வார்த்தைகள் சரியாக இயங்கவில்லை</translation>
+      <translation lang="hin">क्षमा करें, यह इस साधन पर सही तरीके से प्रदर्शित नहीं होगा।</translation>
+      <translation lang="wol">Jéggalu, jombul mbind mi melul ni mu wara mel ci jumtukaay bii</translation>
     </translation-mapping>
     <translation-mapping id="Grandroid_Load_Fail_42_43_Intel">
       <translation lang="en">Sorry, the text may not display correctly on Intel devices for Android 4.2 or 4.3.</translation>
       <translation lang="fr">Désolé, le texte peut ne pas s&apos;afficher correctement sur les appareils Intel pour Android 4.2 ou 4.3.</translation>
-      <translation lang="es">Lamentablemente el texto no puede mostrarse correctamente en dispositivos Intel para Android 4.2 o 4.3.</translation>
-      <translation lang="pt">Sinto muito, mas o texto talvéz não exiba corretamente em dispositivos Intel com Android 4.2 ou 4.3.</translation>
+      <translation lang="es">Lo siento, el texto no puede ser mostrado correctamente en dispositivos Intel para Android 4.2 o 4.3.</translation>
+      <translation lang="pt">Infelizmente o texto pode não ser exibido corretamente em dispositivos Intel para Android 4.2 ou 4.3.</translation>
       <translation lang="ru">Извините, на устройствах на базе Intel + Android 4.2 или 4.3 текст может отображаться некорректно</translation>
       <translation lang="uk">Вибачте, текст може відображатися некоректно на пристроях Intel під керуванням Android 4.2 або 4.3</translation>
       <translation lang="tr">Üzgünüz, metin Android 4.2 veya 4.3 için Intel cihazlarda doğru görüntülenmeyebilir.</translation>
@@ -4181,14 +4256,17 @@ Please enter your access code:</translation>
       <translation lang="ms">Maaf, mesej mungkin tidak dipaparkan dengan betul pada peranti Intel untuk Android 4.2 atau 4.3.</translation>
       <translation lang="nl">Sorry, de tekst wordt wellicht niet goed weergegeven op Intel apparaten voor Android 4.2 of 4.3.</translation>
       <translation lang="ta">மன்னிக்கவும், இன்டெல் கொண்ட ஆண்ட்ராய்டு 4.2 (அ) 4.3 சாதனங்களில் வார்த்தைகள் சரியாக இயங்கவில்லை</translation>
+      <translation lang="te"></translation>
+      <translation lang="hin">क्षमा करें, यह इस एंड्राइड 4.2 या 4.3 के लिए इंटेल के साधन पर ठीक से प्रदर्शित नहीं हो सकता है</translation>
+      <translation lang="wol">Jéggalu, jombul mbind mi melul ni mu ware ci jumtukaayi xarala yi dëppook Android 4.2 mbaa 4.3</translation>
     </translation-mapping>
     <translation-mapping id="Grandroid_Load_Fail_42_43_Other">
       <translation lang="en">Sorry, the text may not display correctly on this device for Android 4.2 or 4.3.</translation>
       <translation lang="fr">Désolé, le texte peut ne pas s&apos;afficher correctement sur cet appareil pour Android 4.2 ou 4.3.</translation>
-      <translation lang="es">Lamentablemente el texto no puede mostrarse correctamente en dispositivos Intel para Android 4.2 o 4.3.</translation>
-      <translation lang="pt">Sinto muito, mas o texto talvéz não exiba corretamente neste dispositivo com Android 4.2 ou 4.3.</translation>
-      <translation lang="ru">Извините, текст может отображаться некорректно, если данное устройство работает под управлением ОС Android 4.2 или 4.3.</translation>
-      <translation lang="uk">Вибачте, текст може відображатися некоректно, якщо цей пристрій працює під керуванням ОС Android 4.2 або 4.3.</translation>
+      <translation lang="es">Lo siento, el texto no puede ser mostrado correctamente en dispositivos Intel para Android 4.2 o 4.3.</translation>
+      <translation lang="pt">Infelizmente o texto pode não ser exibido corretamente neste dispositivo para Android 4.2 ou 4.3.</translation>
+      <translation lang="ru">Извините, текст может отображаться некорректно, если данное устройство работает под управлением ОС Android 4.2 или 4.3</translation>
+      <translation lang="uk">Вибачте, текст може відображатися некоректно, якщо цей пристрій працює під керуванням ОС Android 4.2 або 4.3</translation>
       <translation lang="tr">Üzgünüz, metin bu cihazda Android 4.2 veya 4.3 için doğru şekilde görüntülenmeyebilir.</translation>
       <translation lang="zh">文本无法为安卓4.2或4.3的设备上正确地显示。</translation>
       <translation lang="id">Maaf, mungkin teks tidak akan ditampilkan dengan benar pada alat Android 4.2/4.3 ini.</translation>
@@ -4203,16 +4281,19 @@ Please enter your access code:</translation>
       <translation lang="ms">Maaf, mesej mungkin tidak dipaparkan dengan betul pada peranti ini untuk Android 4.2 atau 4.3.</translation>
       <translation lang="nl">Sorry, de tekst wordt wellicht niet goed weergegeven op dit apparaat voor Android 4.2 of 4.3.</translation>
       <translation lang="ta">மன்னிக்கவும், இந்த சாதனத்தில் உள்ள ஆண்ட்ராய்டு 4.2 (அ) 4.3 ல் வார்த்தைகள் சரியாக இயங்கவில்லை</translation>
+      <translation lang="te"></translation>
+      <translation lang="hin">क्षमा करें, इस साधन  पर एंड्रॉइड 4.2 या 4.3 के लिए ठीक से प्रदर्शित नहीं होगा।</translation>
+      <translation lang="wol">Jéggalu, jombul mbind mi melul ni mu ware ci jumtukaayi xarala yi dëppook Android 4.2 mbaa 4.3</translation>
     </translation-mapping>
     <translation-mapping id="Search">
       <translation lang="en">Search</translation>
       <translation lang="fr">Recherche</translation>
-      <translation lang="es">Buscar</translation>
+      <translation lang="es">Búsqueda</translation>
       <translation lang="pt">Pesquisar</translation>
       <translation lang="ru">Поиск</translation>
       <translation lang="uk">Пошук</translation>
       <translation lang="tr">Ara</translation>
-      <translation lang="id">Pencarian</translation>
+      <translation lang="id">Penelusuran</translation>
       <translation lang="zh">搜索</translation>
       <translation lang="mal">തിരയുക</translation>
       <translation lang="vi">Tìm kiếm</translation>
@@ -4226,16 +4307,18 @@ Please enter your access code:</translation>
       <translation lang="ms">Carian</translation>
       <translation lang="nl">Zoeken</translation>
       <translation lang="ta">தேடு</translation>
+      <translation lang="hin">खोज</translation>
+      <translation lang="wol">Gëstu</translation>
     </translation-mapping>
     <translation-mapping id="Search_Text_Hint">
       <translation lang="en">Search</translation>
       <translation lang="fr">Recherche</translation>
-      <translation lang="es">Buscar</translation>
+      <translation lang="es">Búsqueda</translation>
       <translation lang="pt">Pesquisar</translation>
       <translation lang="ru">найти...</translation>
       <translation lang="uk">знайти...</translation>
       <translation lang="tr">Ara</translation>
-      <translation lang="id">Pencarian</translation>
+      <translation lang="id">Penelusuran</translation>
       <translation lang="zh">搜索</translation>
       <translation lang="mal">മലയാളത്തില്‍ ടൈപ്പ് ചെയ്യുക</translation>
       <translation lang="vi">Tìm kiếm</translation>
@@ -4249,16 +4332,18 @@ Please enter your access code:</translation>
       <translation lang="ms">Carian</translation>
       <translation lang="nl">Zoeken</translation>
       <translation lang="ta">தேடு</translation>
+      <translation lang="hin">खोज</translation>
+      <translation lang="wol">Gëstu</translation>
     </translation-mapping>
     <translation-mapping id="Search_Match_Whole_Words">
       <translation lang="en">Match whole words</translation>
       <translation lang="fr">Mots entiers</translation>
-      <translation lang="es">Coincidir Palabras Completas</translation>
-      <translation lang="pt">Apenas Palavras Inteiras</translation>
+      <translation lang="es">Palabras completas</translation>
+      <translation lang="pt">Palavras Inteiras</translation>
       <translation lang="ru">Слова целиком</translation>
       <translation lang="uk">Цілі слова</translation>
       <translation lang="tr">Sözcukleri eşleştir</translation>
-      <translation lang="id">Mencari kata lengkap</translation>
+      <translation lang="id">Semua kata cocok</translation>
       <translation lang="zh">全字匹配</translation>
       <translation lang="mal">മുഴുവൻ വാക്കുകള്‍ പൊരുത്തപ്പെടുക</translation>
       <translation lang="vi">Trùng khớp toàn bộ từ ngữ</translation>
@@ -4272,16 +4357,18 @@ Please enter your access code:</translation>
       <translation lang="ms">Padan semua perkataan</translation>
       <translation lang="nl">Hele woorden</translation>
       <translation lang="ta">வாரத்தையை உள்ளதுபோல் தேடு</translation>
+      <translation lang="hin">पूरे शब्दों से मिलान करें</translation>
+      <translation lang="wol">Na méngook baat yu mat</translation>
     </translation-mapping>
     <translation-mapping id="Search_Match_Accents">
       <translation lang="en">Match accents and tones</translation>
       <translation lang="fr">Accents et tons</translation>
-      <translation lang="es">Coincidir Acentos y tonos</translation>
-      <translation lang="pt">Diferenciar acentos e tons</translation>
+      <translation lang="es">Acentos y tonos</translation>
+      <translation lang="pt">Acentos e Tons</translation>
       <translation lang="ru">С учётом ударений и тонов</translation>
       <translation lang="uk">З урахуванням знаків наголосу й тонів</translation>
       <translation lang="tr">Vurguları ve tonları eşleştir</translation>
-      <translation lang="id">Aksen dan bunyi harus sesuai</translation>
+      <translation lang="id">Aksen dan bunyi cocok</translation>
       <translation lang="zh">比赛的口音和色调</translation>
       <translation lang="mal">ഉച്ചാരണവും, ശബ്‌ദവും പൊരുത്തപ്പെടുക</translation>
       <translation lang="vi">Trùng khớp dấu</translation>
@@ -4294,6 +4381,7 @@ Please enter your access code:</translation>
       <translation lang="ms">Pandankan loghart dan nada</translation>
       <translation lang="nl">Inclusief accenten</translation>
       <translation lang="ta">உச்சரிப்பு மற்றும் தொனியை ஒப்பிடு</translation>
+      <translation lang="hin">भाषा और सुर को मिलाये</translation>
     </translation-mapping>
     <translation-mapping id="Search_Searching">
       <translation lang="en">Searching...</translation>
@@ -4303,7 +4391,7 @@ Please enter your access code:</translation>
       <translation lang="ru">Идёт поиск...</translation>
       <translation lang="uk">Пошук триває...</translation>
       <translation lang="tr">Aranıyor...</translation>
-      <translation lang="id">Mencari...</translation>
+      <translation lang="id">Penelusuran...</translation>
       <translation lang="zh">正在搜索…</translation>
       <translation lang="mal">തിരയുന്നു...</translation>
       <translation lang="vi">Đang tìm kiếm...</translation>
@@ -4317,6 +4405,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Mencari...</translation>
       <translation lang="nl">Bezig...</translation>
       <translation lang="ta">தேடுகின்றது...</translation>
+      <translation lang="hin">खोज</translation>
+      <translation lang="wol">Gëstu...</translation>
     </translation-mapping>
     <translation-mapping id="Search_Number_Found">
       <translation lang="en">Found: %,d</translation>
@@ -4340,11 +4430,13 @@ Please enter your access code:</translation>
       <translation lang="ms">Jumpa: %,d</translation>
       <translation lang="nl">Gevonden: %,d</translation>
       <translation lang="ta">கண்டுபிடித்தவைகள்: %,d</translation>
+      <translation lang="hin">मिला:%, डी</translation>
+      <translation lang="wol">Li feeñ: %,d</translation>
     </translation-mapping>
     <translation-mapping id="Search_No_Matches_Found">
       <translation lang="en">No matches found</translation>
       <translation lang="fr">Aucun résultat trouvé</translation>
-      <translation lang="es">No hay ninguna coincidencia</translation>
+      <translation lang="es">No se encontró ninguna coincidencia</translation>
       <translation lang="pt">Nenhum resultado encontrado</translation>
       <translation lang="ru">Ничего не найдено</translation>
       <translation lang="uk">Немає відповідників</translation>
@@ -4363,16 +4455,18 @@ Please enter your access code:</translation>
       <translation lang="ms">Tida pad anan</translation>
       <translation lang="nl">Geen resultaten gevonden</translation>
       <translation lang="ta">தேடப்பட்ட வார்த்தை கிடைக்கவில்லை</translation>
+      <translation lang="hin">कोई मेल नहीं मिले</translation>
+      <translation lang="wol">Gisul lu ni mel</translation>
     </translation-mapping>
     <translation-mapping id="Search_Again_Button">
       <translation lang="en">Search</translation>
       <translation lang="fr">Recherche</translation>
-      <translation lang="es">Buscar</translation>
+      <translation lang="es">Búsqueda</translation>
       <translation lang="pt">Pesquisar</translation>
       <translation lang="ru">Искать</translation>
       <translation lang="uk">Шукати</translation>
       <translation lang="tr">Ara</translation>
-      <translation lang="id">Cari</translation>
+      <translation lang="id">Telusur</translation>
       <translation lang="zh">搜索</translation>
       <translation lang="mal">വീണ്ടും തിരയുക</translation>
       <translation lang="vi">Tìm kiếm</translation>
@@ -4386,6 +4480,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Carian</translation>
       <translation lang="nl">Zoeken</translation>
       <translation lang="ta">மீண்டும் தேட</translation>
+      <translation lang="hin">खोज</translation>
+      <translation lang="wol">Gëstu</translation>
     </translation-mapping>
     <translation-mapping id="Search_Cancel_Button">
       <translation lang="en">Cancel</translation>
@@ -4409,17 +4505,19 @@ Please enter your access code:</translation>
       <translation lang="ms">Batal</translation>
       <translation lang="nl">Annuleren</translation>
       <translation lang="ta">நீக்கு</translation>
+      <translation lang="hin">निरस्त करना</translation>
+      <translation lang="wol">Fomm</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Download_Title">
       <translation lang="en">Audio Download</translation>
       <translation lang="fr">Téléchargement audio</translation>
       <translation lang="es">Descarga de audio</translation>
-      <translation lang="pt">Download de Áudio</translation>
+      <translation lang="pt">Download de áudio</translation>
       <translation lang="ru">Загрузка аудио</translation>
       <translation lang="uk">Завантаження аудіо</translation>
       <translation lang="tr">Ses İndir</translation>
       <translation lang="zh">音频下载</translation>
-      <translation lang="id">Mengunduh audio</translation>
+      <translation lang="id">Unduh audio</translation>
       <translation lang="mal">ഓഡിയോ ഡൌണ്‍ലോഡ്</translation>
       <translation lang="vi">Tải tiếng</translation>
       <translation lang="fa">دانلود صوتی</translation>
@@ -4432,20 +4530,22 @@ Please enter your access code:</translation>
       <translation lang="ms">Muat turun audio</translation>
       <translation lang="nl">Naam van geluidsbestand</translation>
       <translation lang="ta">ஒலிவடிவ வசன பதிவிறக்கம்</translation>
+      <translation lang="hin">ऑडियो डाउनलोड</translation>
+      <translation lang="wol">Yebbi dégtal yi</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Download_Confirm">
       <translation lang="en">Download audio file?</translation>
-      <translation lang="fr">Télécharger fichier audio ?</translation>
+      <translation lang="fr">Télécharger fichier audio?</translation>
       <translation lang="es">¿Descargar archivo de audio?</translation>
       <translation lang="pt">Baixar arquivo de áudio?</translation>
       <translation lang="ru">Загрузить аудио файл?</translation>
       <translation lang="uk">Завантажити аудіо файл?</translation>
       <translation lang="tr">Ses dosyasını indirmek istiyor musun?</translation>
       <translation lang="zh">下载音频文件吗？</translation>
-      <translation lang="id">Apakah mau mengunduh file audio?</translation>
+      <translation lang="id">Anda mau unduh file audio?</translation>
       <translation lang="mal">ഓഡിയോ ഫയൽ ഡൗൺലോഡു ചെയ്യണോ?</translation>
       <translation lang="vi">Tải file tiếng?</translation>
-      <translation lang="fa">آیا تمایل به دانلود فایل صوتی دارید؟</translation>
+      <translation lang="fa">فایل صوتی را دانلود می کنید؟</translation>
       <translation lang="de">Audiodatei herunterladen?</translation>
       <translation lang="az">Audio faylı yükləmək?</translation>
       <translation lang="ar">تحميل الملف الصوتي</translation>
@@ -4455,20 +4555,22 @@ Please enter your access code:</translation>
       <translation lang="ms">Muat turun fail audio</translation>
       <translation lang="nl">Geluidsbestand downloaden?</translation>
       <translation lang="ta">ஒலிவடிவ வசனத்தை பதிவிறக்கம் செய்ய வேண்டுமா?</translation>
+      <translation lang="hin">ऑडियो पंक्ति डाउनलोड</translation>
+      <translation lang="wol">Mu yebbi kàrtu dégtal bi?</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Download_Auto">
       <translation lang="en">Download automatically from now on</translation>
       <translation lang="fr">Télécharger automatiquement à partir de maintenant</translation>
-      <translation lang="es">Descargar audio automáticamente a partir de ahora</translation>
-      <translation lang="pt">Baixar automaticamente daqui para a frente</translation>
+      <translation lang="es">Siempre descargar audio automáticamente</translation>
+      <translation lang="pt">Baixar automaticamente a partir de agora</translation>
       <translation lang="ru">В дальнейшем загружать автоматически</translation>
       <translation lang="uk">Надалі завантажувати автоматично</translation>
       <translation lang="tr">Bundan sonra otomatik olarak indir</translation>
       <translation lang="zh">后来自动下载</translation>
-      <translation lang="id">Selalu mengunduh secara otomatis</translation>
+      <translation lang="id">Selalu unduh secara otomatis</translation>
       <translation lang="mal">ഇനി മുതല്‍ ചോദിക്കാതെ ഡൌണ്‍ലോഡ് ചെയ്യുക</translation>
       <translation lang="vi">Tải tự động kể từ lúc này</translation>
-      <translation lang="fa">از این به بعد دانلود صوتی بصورت اتوماتیک انجام شود</translation>
+      <translation lang="fa">از این به بعد دانلود صوتی بصورت اتوماتیک وار انجام شود</translation>
       <translation lang="de">Ab jetzt automatisch herunterladen</translation>
       <translation lang="az">İndi avtomatik olaraq yüklə</translation>
       <translation lang="ar">التحميل بصورة الية منذ الأن</translation>
@@ -4478,12 +4580,14 @@ Please enter your access code:</translation>
       <translation lang="ms">Muat turun secara automatik dari sekarang</translation>
       <translation lang="nl">Automatisch downloaden vanaf nu</translation>
       <translation lang="ta">இனி தானாகவே பதிவிறக்கம் செய்துகொள்</translation>
+      <translation lang="hin">स्वचालित रूप से अब से डाउनलोड करें</translation>
+      <translation lang="wol">Gannaaw-si tey, na yebbi gi doxal boppam</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Download_Connect">
       <translation lang="en">To download audio files, please connect to the internet.</translation>
       <translation lang="fr">Pour télécharger les fichiers audio, veuillez vous connecter à l&apos;internet</translation>
-      <translation lang="es">Para descargar archivos de audio, por favor conectese a internet</translation>
-      <translation lang="pt">Para baixar arquivos de áudio, favor conectar à Internet.</translation>
+      <translation lang="es">Para descargar archivos de audio, favor  conectarse a internet</translation>
+      <translation lang="pt">Para baixar arquivos de áudio, conecte-se à Internet.</translation>
       <translation lang="ru">Для загрузки аудио файлов, пожалуйста, подключитесь к интернету</translation>
       <translation lang="uk">Щоб завантажити аудіо файли, будь ласка, під&apos;єднайтеся до інтернету</translation>
       <translation lang="tr">Ses dosyalarını indirmek için, lütfen internete bağlanın.</translation>
@@ -4500,12 +4604,14 @@ Please enter your access code:</translation>
       <translation lang="ko">오디오 파일을 내려 받으려면, 인터넷에 접속하세요.</translation>
       <translation lang="nl">Internet nodig voor downloaden</translation>
       <translation lang="ta">ஒலிவடிவ வசனத்தைப் பதிவிறக்கம் செய்வதற்கு இணையத் தொடர்பு வேண்டும்</translation>
+      <translation lang="hin">ऑडियो फ़ाइलों को डाउनलोड करने के लिए, कृपया इंटरनेट से कनेक्ट करें</translation>
+      <translation lang="wol">Jokkool ak Internet ngir yebbi kàrti dégtal yi.</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Download_Error">
       <translation lang="en">Download Error:</translation>
       <translation lang="fr">Erreur de téléchargement :</translation>
       <translation lang="es">Error de descarga:</translation>
-      <translation lang="pt">Erro no Download</translation>
+      <translation lang="pt">Erro de download:</translation>
       <translation lang="ru">Ошибка загрузки</translation>
       <translation lang="uk">Помилка завантаження</translation>
       <translation lang="tr">İndirme hatası:</translation>
@@ -4522,6 +4628,8 @@ Please enter your access code:</translation>
       <translation lang="ko">내려받기 오류</translation>
       <translation lang="nl">Download fout:</translation>
       <translation lang="ta">பதிவிறக்க பழுது:</translation>
+      <translation lang="hin">डाउनलोड त्रुटि</translation>
+      <translation lang="wol">Njuumte ci yebbi gi:</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Download_Timeout">
       <translation lang="en">Timed out connecting to audio server.</translation>
@@ -4531,21 +4639,22 @@ Please enter your access code:</translation>
       <translation lang="nl">Onderbreking</translation>
       <translation lang="ta">இணையத் தொடர்பு சரியாக இயங்கவில்லை.</translation>
       <translation lang="ru">Время соединения с аудиосервером истекло</translation>
+      <translation lang="wol">Jàllale dégtal bi yàgg na ba wees àpp.</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Downloading">
       <translation lang="en">Downloading %book %chapter...</translation>
       <translation lang="fr">Téléchargement de %book %chapter...</translation>
       <translation lang="es">Descargando %book %chapter...</translation>
-      <translation lang="pt">Baixando %book %chapter...</translation>
+      <translation lang="pt">Carregando %book %chapter...</translation>
       <translation lang="ru">Загружается %book %chapter...</translation>
       <translation lang="uk">Завантажується %book %chapter...</translation>
       <translation lang="tr">%book %chapter indiriliyor...</translation>
-      <translation lang="zh">正在下载 %book %chapter...</translation>
+      <translation lang="zh">正在下载％书％章…</translation>
       <translation lang="id">Sedang mengunduh %book %chapter...</translation>
       <translation lang="mal">%book %chapter ഡൌണ്‍ലോഡ് ചെയ്തു കൊണ്ടിരിക്കുന്നു...</translation>
-      <translation lang="vi">Đang tải %book %chapter...</translation>
+      <translation lang="vi">Đang tải % sách % chương…</translation>
       <translation lang="fa">در حال دانلود</translation>
-      <translation lang="de">Heruntergeladen %book %chapter</translation>
+      <translation lang="de">Heruntergeladen %Buch %Kapitel</translation>
       <translation lang="az">Kitab fəslinin yüklənməsi...</translation>
       <translation lang="ar">تحميل %book%chapter</translation>
       <translation lang="hi">%book %chapter डाउनलोड कर रहा है ..</translation>
@@ -4554,12 +4663,14 @@ Please enter your access code:</translation>
       <translation lang="ms">Muat turun %book %chapter...</translation>
       <translation lang="nl">Downloaden %book %chapter...</translation>
       <translation lang="ta">%book %chapter பதிவிறக்கம் ஆகிக்கொண்டிருக்கிறது...</translation>
+      <translation lang="hin">%book %chapter डाउनलोड कर रहा है ..</translation>
+      <translation lang="wol">Mu ngi yebbi %book %chapter…</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Check_Connection">
       <translation lang="en">Please check your internet connection.</translation>
       <translation lang="fr">Veuillez vérifier votre connexion internet</translation>
       <translation lang="es">Por favor revise su conexión a Internet</translation>
-      <translation lang="pt">Favor verificar a sua conexão à Internet.</translation>
+      <translation lang="pt">Verifique a sua conexão com a Internet.</translation>
       <translation lang="ru">Пожалуйста, проверьте интернет-соединение</translation>
       <translation lang="uk">Будь ласка, перевірте інтернет з&apos;єднання</translation>
       <translation lang="tr">Lütfen internet bağlantınızı kontrol edin.</translation>
@@ -4577,11 +4688,13 @@ Please enter your access code:</translation>
       <translation lang="ms">Sila semak sambungan internet anda</translation>
       <translation lang="nl">Controleer uw internetverbinding</translation>
       <translation lang="ta">உங்களது இணையத்தொடர்பை சரிபார்க்கவும்.</translation>
+      <translation lang="hin">कृपया अपने इंटरनेट कनेक्शन की जाँच करें।</translation>
+      <translation lang="wol">Seetaatal sa jokkoo ak Internet</translation>
     </translation-mapping>
     <translation-mapping id="Audio_File_Not_Found">
       <translation lang="en">Audio file not found</translation>
       <translation lang="fr">Fichier audio introuvable</translation>
-      <translation lang="es">Archivo de audio no encontrado</translation>
+      <translation lang="es">Archivo no encontrado</translation>
       <translation lang="pt">Arquivo de áudio não encontrado</translation>
       <translation lang="ru">Аудио файл не найден</translation>
       <translation lang="uk">Аудіо файл не знайдено</translation>
@@ -4600,12 +4713,14 @@ Please enter your access code:</translation>
       <translation lang="ms">Fail audio tidak dijumpai</translation>
       <translation lang="nl">Geluidsbestand niet gevonden</translation>
       <translation lang="ta">ஒலிவடிவ வசனம் கிடைக்கவில்லை</translation>
+      <translation lang="hin">ऑडियो फ़ाइल नहीं मिली</translation>
+      <translation lang="wol">Kàrtu dégtal bi feeñul</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Fail_DBT_Location">
       <translation lang="en">Failed to get audio download information</translation>
       <translation lang="fr">Informations de téléchargement introuvables</translation>
-      <translation lang="es">Fallo al conseguir información sobre la descarga de audio</translation>
-      <translation lang="pt">Não consequiu obter informações do download de áudio</translation>
+      <translation lang="es">No se encontró información sobre la descarga</translation>
+      <translation lang="pt">Falha ao obter informações para baixar o áudio</translation>
       <translation lang="ru">Не удалось найти информацию для загрузки аудио</translation>
       <translation lang="uk">Не вдалося отримати інформацію для завантаження аудіо</translation>
       <translation lang="tr">Sesli indirme bilgisi alınamadı.</translation>
@@ -4622,6 +4737,8 @@ Please enter your access code:</translation>
       <translation lang="ko">오디오 파일 내려받기 정보 습득 실패</translation>
       <translation lang="nl">Geluidsbestandinformatie onvindbaar</translation>
       <translation lang="ta">பதிவிறக்க விவரம் பெற இயலவில்லை</translation>
+      <translation lang="hin">ऑडियो डाउनलोड जानकारी प्राप्त करने में विफल</translation>
+      <translation lang="wol">Ameesul ay tegtal ngir yebbi.</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Looking_For_File">
       <translation lang="en">Looking for audio file on your device...</translation>
@@ -4740,7 +4857,7 @@ Please enter your access code:</translation>
       <translation lang="ta">வசனக் காணொளி உருவாக்கப்படுகின்றது...</translation>
     </translation-mapping>
     <translation-mapping id="App_Downloading_App">
-      <translation lang="en">Downloading app...</translation>
+      <translation lang="en">Downloading App...</translation>
       <translation lang="fr">Téléchargement de l&apos;application...</translation>
       <translation lang="ru">Приложение загружается…</translation>
     </translation-mapping>
@@ -4765,6 +4882,7 @@ Please enter your access code:</translation>
       <translation lang="ar">كتاب</translation>
       <translation lang="nl">BOEK</translation>
       <translation lang="ta">புத்தகம்</translation>
+      <translation lang="wol">Téere</translation>
     </translation-mapping>
     <translation-mapping id="Selector_Chapter">
       <translation lang="en">CHAPTER</translation>
@@ -4786,6 +4904,8 @@ Please enter your access code:</translation>
       <translation lang="ko">장</translation>
       <translation lang="nl">HOOFDSTUK</translation>
       <translation lang="ta">அதிகாரம்</translation>
+      <translation lang="hin">अध्याय</translation>
+      <translation lang="wol">Saar</translation>
     </translation-mapping>
     <translation-mapping id="Selector_Verse">
       <translation lang="en">VERSE</translation>
@@ -4807,12 +4927,14 @@ Please enter your access code:</translation>
       <translation lang="ko">절</translation>
       <translation lang="nl">VERS</translation>
       <translation lang="ta">வசனம்</translation>
+      <translation lang="hin">आयत</translation>
+      <translation lang="wol">Aaya</translation>
     </translation-mapping>
     <translation-mapping id="Share_Apk_File">
       <translation lang="en">Share App Installer File</translation>
       <translation lang="fr">Partager fichier d&apos;installation de l&apos;appli</translation>
-      <translation lang="es">Compartir archivo del instalador de la aplicación</translation>
-      <translation lang="pt">Compartilhar Arquivo de Instalação do Aplicativo</translation>
+      <translation lang="es">Compartir archivo del instalador de aplicacion</translation>
+      <translation lang="pt">Compartilhar arquivo de instalação do aplicativo</translation>
       <translation lang="tr">Uygulama Yükleyici Dosyasını Paylaş</translation>
       <translation lang="id">Bagikan file aplikasi (APK)</translation>
       <translation lang="mal">ആപ്പ് ഇൻസ്റ്റാളർ ഫയൽ ഷെയര്‍ ചെയ്യുക</translation>
@@ -4828,12 +4950,14 @@ Please enter your access code:</translation>
       <translation lang="ko">앱 설치 파일 공유하기</translation>
       <translation lang="nl">Delen van installatiebestand van app</translation>
       <translation lang="ta">செயலியை பகிர்</translation>
+      <translation lang="hin">स्थापनाकर्ता पंक्ति के ऐप को साझा करे</translation>
+      <translation lang="wol">Séddoo sosukaayu appli bi</translation>
     </translation-mapping>
     <translation-mapping id="Share_Apk_File_Via">
       <translation lang="en">Share App via</translation>
       <translation lang="fr">Partager application par</translation>
       <translation lang="tr">Üzerinden uygulama paylaşın</translation>
-      <translation lang="id">Bagi app ini melalui link</translation>
+      <translation lang="id">Bagi app ini lewat link</translation>
       <translation lang="mal">എ.പി.കെ ഫയൽ ഷെയര്‍ ചെയ്യുക</translation>
       <translation lang="es">es: Compartir a través de</translation>
       <translation lang="pt">Compartilhar Aplicativo via</translation>
@@ -4849,17 +4973,18 @@ Please enter your access code:</translation>
       <translation lang="ko">앱 공유</translation>
       <translation lang="nl">Delen van app via</translation>
       <translation lang="ta">செயலியைப் பகிரும் வழி</translation>
+      <translation lang="hin">एप्लिकेशन के माध्यम से साझा करें</translation>
     </translation-mapping>
     <translation-mapping id="Share_App_Link">
       <translation lang="en">Share Link to App on Google Play</translation>
       <translation lang="fr">Partager lien à l&apos;appli sur Google Play</translation>
-      <translation lang="es">Compartir enlace de aplicación en Google Play</translation>
-      <translation lang="pt">Compartilhar hiperlink ao Aplicativo no Google Play</translation>
+      <translation lang="es">Compartir enlace de la aplicación en Google Play</translation>
+      <translation lang="pt">Compartilhar link para o aplicativo no Google Play</translation>
       <translation lang="tr">Google Play&apos;de Uygulamaya Bağlantı Paylaşın</translation>
       <translation lang="id">Membagi link ke app ini di Google Play Store</translation>
       <translation lang="mal">ഗൂഗിൾ പ്ലേയിലെ ആപ്പ് ലിങ്ക് ഷെയര്‍ ചെയ്യുക</translation>
       <translation lang="vi">Chia sẻ đường dẫn đến App trên Google Play</translation>
-      <translation lang="fa">به اشتراک گذاری لینک دسترسی به Google Play</translation>
+      <translation lang="fa">پیوند به برنامه را در Google play به اشتراک بگذارید</translation>
       <translation lang="ru">Поделиться ссылкой на приложение в Google Play</translation>
       <translation lang="de">Den Link der App zu Google Play weitergeben</translation>
       <translation lang="az">Google Play-də tətbiqə keçmək üçün linki paylaş</translation>
@@ -4869,6 +4994,8 @@ Please enter your access code:</translation>
       <translation lang="ko">구글 플레이에서 앱 링크 공유하기</translation>
       <translation lang="nl">Delen van link naar de app in Google Play</translation>
       <translation lang="ta">கூகுள் இணைப்பு வழியே செயலியை பகிர்</translation>
+      <translation lang="hin">गूगल प्ले के ऐप के  लिंक को साझा करें</translation>
+      <translation lang="wol">Séddoo lëkkaale bi ci appli bi ci Google Play</translation>
     </translation-mapping>
     <translation-mapping id="Share_App_Link_Recommend">
       <translation lang="en">I can recommend this app:</translation>
@@ -4890,12 +5017,14 @@ Please enter your access code:</translation>
       <translation lang="ko">이 앱을 추천합니다:</translation>
       <translation lang="nl">Ik kan deze app aanbevelen:</translation>
       <translation lang="ta">இந்த செயலியை நான் பரிந்துரை செய்கிறேன்:</translation>
+      <translation lang="hin">मै इस ऐप की अनुशंसा करता हूँ</translation>
+      <translation lang="wol">Fii ngay ame Kàddug Yàlla gi ci wolof:</translation>
     </translation-mapping>
     <translation-mapping id="Share_App_Link_Via">
       <translation lang="en">Share Link via</translation>
       <translation lang="fr">Partager lien par</translation>
       <translation lang="tr">Üzerinden uygulama paylaşın</translation>
-      <translation lang="id">Membagi link melalui</translation>
+      <translation lang="id">Membagi link lewat</translation>
       <translation lang="mal">ലിങ്ക് ഷെയര്‍ ചെയ്യുക</translation>
       <translation lang="es">Compartir enlace a través de</translation>
       <translation lang="pt">Compartilhar Hiperlink via</translation>
@@ -4911,12 +5040,14 @@ Please enter your access code:</translation>
       <translation lang="ko">링크를 통해 공유하기</translation>
       <translation lang="nl">Delen van link via</translation>
       <translation lang="ta">செயலியின் இணைப்பை பகிரும் வழி</translation>
+      <translation lang="hin">लिंक के माध्यम से साझा करें</translation>
+      <translation lang="wol"></translation>
     </translation-mapping>
     <translation-mapping id="Share_Via">
       <translation lang="en">Share via</translation>
       <translation lang="fr">Partager par</translation>
       <translation lang="tr">Üzerinden paylaş</translation>
-      <translation lang="id">Berbagi melalui</translation>
+      <translation lang="id">Berbagi oleh</translation>
       <translation lang="mal">ഷെയര്‍ ചെയ്യുക</translation>
       <translation lang="es">Compartir a través de</translation>
       <translation lang="pt">Compartilhar via</translation>
@@ -4932,6 +5063,8 @@ Please enter your access code:</translation>
       <translation lang="ko">공유</translation>
       <translation lang="nl">Delen via</translation>
       <translation lang="ta">பகிரும் வழி</translation>
+      <translation lang="hin">के माध्यम से बाँटे</translation>
+      <translation lang="wol"></translation>
     </translation-mapping>
     <translation-mapping id="Share_Text">
       <translation lang="en">Share Text</translation>
@@ -4942,6 +5075,7 @@ Please enter your access code:</translation>
       <translation lang="ar">مشاركة النص</translation>
       <translation lang="nl">Tekst delen</translation>
       <translation lang="ta">வசனத்தை பகிர்</translation>
+      <translation lang="wol">Séddool kàddu gu ñu bind</translation>
     </translation-mapping>
     <translation-mapping id="Share_Audio">
       <translation lang="en">Share Audio</translation>
@@ -4952,6 +5086,7 @@ Please enter your access code:</translation>
       <translation lang="ar">مشاركة الصوت</translation>
       <translation lang="nl">Audio delen</translation>
       <translation lang="ta">ஒலிவடிவ வசனத்தை பகிர்</translation>
+      <translation lang="wol">Séddool Audio</translation>
     </translation-mapping>
     <translation-mapping id="Share_Image">
       <translation lang="en">Share Image</translation>
@@ -4962,6 +5097,7 @@ Please enter your access code:</translation>
       <translation lang="ar">مشاركة الصورة</translation>
       <translation lang="nl">Afbeelding delen</translation>
       <translation lang="ta">வசனப் படத்தை பகிர்</translation>
+      <translation lang="wol">Séddool Image</translation>
     </translation-mapping>
     <translation-mapping id="Share_Video">
       <translation lang="en">Share Video</translation>
@@ -4972,11 +5108,12 @@ Please enter your access code:</translation>
       <translation lang="ar">مشاركة الفيديو</translation>
       <translation lang="nl">Video delen</translation>
       <translation lang="ta">வசனக் காணொளியை பகிர்</translation>
+      <translation lang="wol">Séddool Wideo</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Title">
       <translation lang="en">Settings</translation>
       <translation lang="fr">Paramètres</translation>
-      <translation lang="es">Configuraciones</translation>
+      <translation lang="es">Configuración</translation>
       <translation lang="pt">Configurações</translation>
       <translation lang="tr">Ayarlar</translation>
       <translation lang="id">Pengaturan</translation>
@@ -4994,6 +5131,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Tetapan</translation>
       <translation lang="nl">Instellingen</translation>
       <translation lang="ta">செயலி அமைப்புகள்</translation>
+      <translation lang="hin">अस्त</translation>
+      <translation lang="wol">Kërale yi</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Category_Text_Display">
       <translation lang="en">Text Display</translation>
@@ -5016,6 +5155,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Paparan Teks</translation>
       <translation lang="nl">Tekstweergave</translation>
       <translation lang="ta">வசனங்கள்</translation>
+      <translation lang="hin">पाठ का प्रकाशन</translation>
+      <translation lang="wol">Taxawaayu mbind mi</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Category_Navigation">
       <translation lang="en">Navigation</translation>
@@ -5038,6 +5179,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Navigasi</translation>
       <translation lang="nl">Gebruiksaanwijzingen</translation>
       <translation lang="ta">தெரிந்தெடுத்தல்</translation>
+      <translation lang="hin">नेविगेशन</translation>
+      <translation lang="wol">Ceet mi</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Category_Notifications">
       <translation lang="en">Notifications</translation>
@@ -5049,6 +5192,7 @@ Please enter your access code:</translation>
       <translation lang="ar">الإشعارات</translation>
       <translation lang="nl">Meldingen</translation>
       <translation lang="ta">நினைவூட்டல்</translation>
+      <translation lang="wol">Ay yégle</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Category_Audio">
       <translation lang="en">Audio</translation>
@@ -5067,6 +5211,7 @@ Please enter your access code:</translation>
       <translation lang="ms">Audio</translation>
       <translation lang="nl">Geluidsbestand</translation>
       <translation lang="ta">ஒலிவடிவ வசனங்கள்</translation>
+      <translation lang="wol">Dégtal</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Category_Interface">
       <translation lang="en">User Interface</translation>
@@ -5089,12 +5234,14 @@ Please enter your access code:</translation>
       <translation lang="ms">Antara pengguna</translation>
       <translation lang="nl">Gebruikershandleiding</translation>
       <translation lang="ta">வாசித்தல்</translation>
+      <translation lang="hin">उपयोक्ता इंटरफेस</translation>
+      <translation lang="wol">Diisookaayu jëfookat bi</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Book_Selection">
-      <translation lang="en">Book selection</translation>
+      <translation lang="en">Book Selection</translation>
       <translation lang="fr">Sélection de livres</translation>
-      <translation lang="es">Selección de Libros</translation>
-      <translation lang="pt">Seleção de Livro</translation>
+      <translation lang="es">Selección de Libro</translation>
+      <translation lang="pt">Seleção de livros</translation>
       <translation lang="tr">Kitap Seçimi</translation>
       <translation lang="id">Susunan Pemilihan Kitab</translation>
       <translation lang="mal">പുസ്തകം തിരഞ്ഞെടുക്കൽ</translation>
@@ -5110,12 +5257,14 @@ Please enter your access code:</translation>
       <translation lang="ko">선택</translation>
       <translation lang="nl">Selectie van boek</translation>
       <translation lang="ta">புத்தக தெரிந்தெடுப்பு முறை</translation>
+      <translation lang="hin">पुस्तक चयन</translation>
+      <translation lang="wol">Noo bëgg téere yi feeñe?</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Book_Selection_List">
       <translation lang="en">List of book names</translation>
       <translation lang="fr">Liste de noms de livres</translation>
-      <translation lang="es">Lista de nombres de libros</translation>
-      <translation lang="pt">Lista de Nomes dos Livros</translation>
+      <translation lang="es">Lista de nobres de libros</translation>
+      <translation lang="pt">Lista de livros</translation>
       <translation lang="tr">Kitap isimleri listesi</translation>
       <translation lang="id">Daftar nama-nama kitab</translation>
       <translation lang="mal">പുസ്തക പേരുകളുടെ ലിസ്റ്റ്</translation>
@@ -5131,12 +5280,14 @@ Please enter your access code:</translation>
       <translation lang="ko">목록별</translation>
       <translation lang="nl">Lijst van boeken</translation>
       <translation lang="ta">புத்தகங்களின் பெயர் பட்டியல்</translation>
+      <translation lang="hin">पुस्तक नामों की सूची</translation>
+      <translation lang="wol">Limeefu turi téere</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Book_Selection_Grid">
       <translation lang="en">Grid of book abbreviations</translation>
       <translation lang="fr">Grille d&apos;abréviations de livres</translation>
-      <translation lang="es">Cuadrícula de abreviaturas de libros</translation>
-      <translation lang="pt">Quadra de abreviaturas de livros</translation>
+      <translation lang="es">Menú de abreviaturas de libros</translation>
+      <translation lang="pt">Ícones de livros</translation>
       <translation lang="tr">Kitap kısaltmalarının kılavuzu</translation>
       <translation lang="id">Singkatan nama kitab</translation>
       <translation lang="mal">പുസ്തകം ചുരുക്കെഴുത്തുകളുടെ ഗ്രിഡ്</translation>
@@ -5152,12 +5303,14 @@ Please enter your access code:</translation>
       <translation lang="ko">약자별</translation>
       <translation lang="nl">Overzicht van boekafkortingen</translation>
       <translation lang="ta">பெயர் சுருக்க  பட்டியல்</translation>
+      <translation lang="hin">पुस्तक संक्षिप्त की ग्रिड</translation>
+      <translation lang="wol">Limeefu gàttali téere</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Red_Letters">
-      <translation lang="en">Red letters</translation>
+      <translation lang="en">Red Letters</translation>
       <translation lang="fr">Paroles de Jésus en rouge</translation>
       <translation lang="es">Letras rojas</translation>
-      <translation lang="pt">Letras Vermelhas</translation>
+      <translation lang="pt">Letras vermelhas</translation>
       <translation lang="tr">Kırmızı Harfler</translation>
       <translation lang="id">Huruf-huruf Merah</translation>
       <translation lang="mal">ചുവന്ന അക്ഷരങ്ങൾ</translation>
@@ -5172,12 +5325,13 @@ Please enter your access code:</translation>
       <translation lang="ko">붉은 글자</translation>
       <translation lang="nl">Rode letters</translation>
       <translation lang="ta">சிவப்பு எழுத்து வசனங்கள்</translation>
+      <translation lang="hin">लाल अक्षर</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Red_Letters_Summary">
       <translation lang="en">Show the words of Jesus in red</translation>
       <translation lang="fr">Afficher les paroles de Jésus en rouge</translation>
-      <translation lang="es">Mostrar Palabras de Jesús en rojo</translation>
-      <translation lang="pt">Exibir as palavras de Jesus em vermelho</translation>
+      <translation lang="es">Mostrar las palabras de Jesus en rojo</translation>
+      <translation lang="pt">Mostrar as palavras de Jesus em vermelho</translation>
       <translation lang="tr">İsa&apos;nın sözlerini kırmızıya göster</translation>
       <translation lang="id">Tampilkan kata-kata Yesus dengan huruf merah</translation>
       <translation lang="mal">യേശുവിന്റെ വാക്കുകള്‍ ചുവന്ന അക്ഷരങ്ങളില്‍ കാണിക്കുക</translation>
@@ -5192,6 +5346,7 @@ Please enter your access code:</translation>
       <translation lang="ko">예수님의 말씀을 붉은 색으로 표기</translation>
       <translation lang="nl">Toon de woorden van Jezus in rood</translation>
       <translation lang="ta">கிறிஸ்துவின் வார்த்தைகளை சிவப்பு நிறத்தில் காண்பித்தல்</translation>
+      <translation lang="hin">यीशु के शब्दों को लाल रंग में दिखाओ</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Display_Images_In_Bible_Text">
       <translation lang="en">Images in Bible text</translation>
@@ -5254,6 +5409,7 @@ Please enter your access code:</translation>
       <translation lang="ms">Tunjuk sempadan</translation>
       <translation lang="nl">Toon rand</translation>
       <translation lang="ta">வசனங்களுக்கு சுற்று வர்ணம் அமை</translation>
+      <translation lang="hin">सीमा दिखाना</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Show_Border_Summary">
       <translation lang="en">Show decorative border around text</translation>
@@ -5264,7 +5420,7 @@ Please enter your access code:</translation>
       <translation lang="es">Mostrar un borde decorativo alrededor del texto</translation>
       <translation lang="pt">Exibir bordas decorativas ao redor do texto</translation>
       <translation lang="vi">Hiển thị đường viền trang trí xung quanh văn bản</translation>
-      <translation lang="fa">کادر حاشیه اطراف متن را نشان بده</translation>
+      <translation lang="fa">کادر تزئینی اطراف متن را نشان بده</translation>
       <translation lang="ru">Показывать декоративную рамку вокруг текста</translation>
       <translation lang="de">Einen dekorativen Rahmen um den Text anzeigen</translation>
       <translation lang="az">Mətn ətrafında dekorativ haşiyələr göstər</translation>
@@ -5275,12 +5431,13 @@ Please enter your access code:</translation>
       <translation lang="ms">Tunjukkan sempadan hiasan sekitar teks</translation>
       <translation lang="nl">Toon sierrand rondom de tekst</translation>
       <translation lang="ta">வசனங்களுக்கு சுற்று வர்ணம் (அ) படம் அமைத்தல்</translation>
+      <translation lang="hin">पाठ के आसपास सजावटी सीमा दिखाएं</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Numbers">
-      <translation lang="en">Show verse numbers</translation>
+      <translation lang="en">Show Verse Numbers</translation>
       <translation lang="fr">Afficher numéros de versets</translation>
       <translation lang="es">Mostrar números de versículos</translation>
-      <translation lang="pt">Exibir Números de Versículo</translation>
+      <translation lang="pt">Mostrar números dos versículos</translation>
       <translation lang="tr">Ayet Numaralarını Göster</translation>
       <translation lang="id">Tampilkan Nomor Ayat</translation>
       <translation lang="mal">വാക്യ നമ്പറുകള്‍ കാണിക്കുക</translation>
@@ -5296,12 +5453,14 @@ Please enter your access code:</translation>
       <translation lang="ko">구절 숫자 표기</translation>
       <translation lang="nl">Toon de vers nummers</translation>
       <translation lang="ta">வசன எண்களைக் காண்பி</translation>
+      <translation lang="hin">आयत गिनतियों को दिखाना</translation>
+      <translation lang="wol">Woneel nimero aaya</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Layout">
-      <translation lang="en">Verse layout</translation>
+      <translation lang="en">Verse Layout</translation>
       <translation lang="fr">Mise en page des versets</translation>
-      <translation lang="es">Distribución de Versículos</translation>
-      <translation lang="pt">Layout de versículos</translation>
+      <translation lang="es">Diseño de Versículos</translation>
+      <translation lang="pt">Esboço do versículo</translation>
       <translation lang="tr">Verse Düzeni</translation>
       <translation lang="id">Penataan Ayat</translation>
       <translation lang="mal">വാക്യ ലേഔട്ട്</translation>
@@ -5316,6 +5475,8 @@ Please enter your access code:</translation>
       <translation lang="ko">구절 배치</translation>
       <translation lang="nl">Weergave van verzen</translation>
       <translation lang="ta">வசனங்களை காண்பிக்கும் விதம்</translation>
+      <translation lang="hin">आयत अभिन्यास</translation>
+      <translation lang="wol">Noo bëgg aaya yi feeñe?</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Layout_Paragraphs">
       <translation lang="en">Verses in paragraphs</translation>
@@ -5336,11 +5497,13 @@ Please enter your access code:</translation>
       <translation lang="ko">단락별 보기</translation>
       <translation lang="nl">Verzen in alinea&apos;s</translation>
       <translation lang="ta">பத்திகளாக காண்பி</translation>
+      <translation lang="hin">पैराग्राफ में आयत</translation>
+      <translation lang="wol">Aaya yi ci ay dog</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Layout_One_Per_Line">
       <translation lang="en">One verse per line</translation>
       <translation lang="fr">Un verset par ligne</translation>
-      <translation lang="es">Un versículo por línea</translation>
+      <translation lang="es">Un versículo por linea</translation>
       <translation lang="pt">Um versículo por linha</translation>
       <translation lang="tr">Hat başına bir ayet</translation>
       <translation lang="id">Terpisah</translation>
@@ -5356,6 +5519,8 @@ Please enter your access code:</translation>
       <translation lang="ko">줄당 한 구절</translation>
       <translation lang="nl">Één vers per regel</translation>
       <translation lang="ta">ஒவ்வொன்றாக காண்பி</translation>
+      <translation lang="hin">प्रति पंक्ति एक कविता</translation>
+      <translation lang="wol">Benn aaya ci rëdd wu nekk</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Selection">
       <translation lang="en">Show verse selector</translation>
@@ -5377,12 +5542,14 @@ Please enter your access code:</translation>
       <translation lang="ko">구절 선택창 표기</translation>
       <translation lang="nl">Toon selectie van verzen</translation>
       <translation lang="ta">வசனத் தெரிந்தெடுப்பானைக் காண்பி</translation>
+      <translation lang="hin">श्वेयर चयनकर्ता दिखाएं</translation>
+      <translation lang="wol">Woneel tippukaayu aaya bi</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Interface_Language">
-      <translation lang="en">Language</translation>
-      <translation lang="fr">Langue</translation>
-      <translation lang="es">Idioma</translation>
-      <translation lang="pt">Idioma da Interface</translation>
+      <translation lang="en">Interface Language</translation>
+      <translation lang="fr">Langue d&apos;interface</translation>
+      <translation lang="es">Idioma del interfaz</translation>
+      <translation lang="pt">Idioma da interface</translation>
       <translation lang="tr">Arayüz Dili</translation>
       <translation lang="id">Bahasa antarmuka</translation>
       <translation lang="mal">ഭാഷ</translation>
@@ -5399,6 +5566,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Bahasa</translation>
       <translation lang="nl">Gebruikerstaal</translation>
       <translation lang="ta">மொழி</translation>
+      <translation lang="hin">भाषा</translation>
+      <translation lang="wol">Làmmiñu diisookaay bi</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Layout_Direction">
       <translation lang="en">Layout direction</translation>
@@ -5410,7 +5579,7 @@ Please enter your access code:</translation>
       <translation lang="pt">Direção do Layout</translation>
       <translation lang="zh">布局方向</translation>
       <translation lang="vi">Hướng trình bày</translation>
-      <translation lang="fa">مدیریت شیوه نمایش</translation>
+      <translation lang="fa">مدیریت آرایش</translation>
       <translation lang="ru">Направление разметки</translation>
       <translation lang="de">Richtung des Layouts</translation>
       <translation lang="az">düzümü istiqaməti</translation>
@@ -5420,6 +5589,8 @@ Please enter your access code:</translation>
       <translation lang="ko">배치 방향</translation>
       <translation lang="nl">Layoutorientatie</translation>
       <translation lang="ta">தளஅமைவின் திசை</translation>
+      <translation lang="hin">लेआउट दिशा</translation>
+      <translation lang="wol"></translation>
     </translation-mapping>
     <translation-mapping id="Settings_Layout_Direction_LTR">
       <translation lang="en">Left to Right</translation>
@@ -5442,6 +5613,7 @@ Please enter your access code:</translation>
       <translation lang="ms">Kiri ke Kanan</translation>
       <translation lang="nl">Van links naar rechts</translation>
       <translation lang="ta">இடமிருந்து வலம்</translation>
+      <translation lang="hin">बाएं से दाएं</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Layout_Direction_RTL">
       <translation lang="en">Right to Left</translation>
@@ -5464,6 +5636,7 @@ Please enter your access code:</translation>
       <translation lang="ms">Kanan ke Kiri</translation>
       <translation lang="nl">Van rechts naar links</translation>
       <translation lang="ta">வலமிருந்து இடம்</translation>
+      <translation lang="hin">दाएं से बाएं</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Layout_Direction_Interface_Language">
       <translation lang="en">Direction of interface language</translation>
@@ -5485,6 +5658,7 @@ Please enter your access code:</translation>
       <translation lang="ms">Hala tuju antara muka Bahasa</translation>
       <translation lang="nl">Tekstrichting van gebruikerstaal</translation>
       <translation lang="ta">இடைமுக மொழி எழுத்தின் திசை</translation>
+      <translation lang="hin">अंतराफलक भाषा की दिशा</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Layout_Direction_Text">
       <translation lang="en">Direction of current text</translation>
@@ -5506,6 +5680,7 @@ Please enter your access code:</translation>
       <translation lang="ms">Arahan teks semasa</translation>
       <translation lang="nl">Tekstrichting</translation>
       <translation lang="ta">தற்போதைய வாக்கியங்களின் திசை</translation>
+      <translation lang="hin">वर्तमान पाठ की दिशा</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Highlight_Phrase">
       <translation lang="en">Highlight synchronized phrases</translation>
@@ -5526,6 +5701,7 @@ Please enter your access code:</translation>
       <translation lang="ms">Serlahkan frasa disegerakkan</translation>
       <translation lang="nl">Markeer gesynchroniseerde zinnen</translation>
       <translation lang="ta">மஞ்சள் நிறப் பின்னணியோடு வசனங்களை வாசி</translation>
+      <translation lang="wol">Kàddu yi lëkkaloo ci melo wu mboq</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Highlight_Phrase_Summary">
       <translation lang="en">Show current phrase in yellow when playing audio</translation>
@@ -5545,6 +5721,7 @@ Please enter your access code:</translation>
       <translation lang="ms">Tunjukkan frasa semasa dengan warna kuning apabila memainkan audio</translation>
       <translation lang="nl">Toon zin in geel tijdens het afspelen</translation>
       <translation lang="ta">ஒலிவடிவ வசனம் இயங்கும்போது வாக்கியம் மஞ்சள் நிறப் பின்னணியில் காணப்படும்</translation>
+      <translation lang="wol">Fésalal kàddu giy jib ci melo wu mboq</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Speed">
       <translation lang="en">Playback speed</translation>
@@ -5563,6 +5740,7 @@ Please enter your access code:</translation>
       <translation lang="ms">Kelajuan main semula</translation>
       <translation lang="nl">Afspeelsnelheid</translation>
       <translation lang="ta">ஒலிவடிவ வசனம் இயங்கும் வேகம்</translation>
+      <translation lang="wol">Gaawaayu njàng mi</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Speed_Normal">
       <translation lang="en">Normal</translation>
@@ -5581,6 +5759,7 @@ Please enter your access code:</translation>
       <translation lang="ms">Normal</translation>
       <translation lang="nl">Normaal</translation>
       <translation lang="ta">இயல்பான வேகம்</translation>
+      <translation lang="wol">Li jaadu</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Access_Method">
       <translation lang="en">Audio download or streaming</translation>
@@ -5626,6 +5805,7 @@ Please enter your access code:</translation>
       <translation lang="ms">Serlahkan frasa disegerakkan</translation>
       <translation lang="nl">Downloaden van geluidsbestand</translation>
       <translation lang="ta">ஒலிவடிவ வசனம் பதிவிறக்கும் விதம்</translation>
+      <translation lang="wol">Yebbi kàrti dégtal yi</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Download_Prompt">
       <translation lang="en">Always ask before downloading</translation>
@@ -5644,11 +5824,12 @@ Please enter your access code:</translation>
       <translation lang="ms">Sentiasa tanya sebelum memuat turun</translation>
       <translation lang="nl">Toestemming vragen voor het downloaden</translation>
       <translation lang="ta">அனுமதி பெற்று பதிவிறக்கு</translation>
+      <translation lang="wol">Laajte doora yebbi</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Download_Automatic">
       <translation lang="en">Download automatically</translation>
       <translation lang="fr">Télécharger automatiquement</translation>
-      <translation lang="fa">دانلود به صورت اتوماتیک</translation>
+      <translation lang="fa">دانلود اتوماتیک وار</translation>
       <translation lang="ru">Скачивать автоматически</translation>
       <translation lang="es">Descargar automáticamente</translation>
       <translation lang="pt">Baixar automaticamente</translation>
@@ -5662,11 +5843,12 @@ Please enter your access code:</translation>
       <translation lang="ms">Muat turun secara automatik</translation>
       <translation lang="nl">Downloaden zonder vragen</translation>
       <translation lang="ta">தானாக பதிவிறக்கு</translation>
+      <translation lang="wol">Na yebbi gi doxal boppam</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Download_Automatic_Wifi">
       <translation lang="en">Download automatically if using WiFi</translation>
       <translation lang="fr">Télécharger automatiquement si vous êtes sur WiFi</translation>
-      <translation lang="fa">دانلود به صورت اتوماتیک هنگام استفاده از WiFi</translation>
+      <translation lang="fa">دانلود اتوماتیک وار هنگام استفاده از WiFi</translation>
       <translation lang="ru">Скачивать автоматически при подключении по WiFi</translation>
       <translation lang="es">Descargar automáticamente si usa WiFi</translation>
       <translation lang="pt">Baixar automaticamente usando a rede sem fio</translation>
@@ -5680,10 +5862,11 @@ Please enter your access code:</translation>
       <translation lang="ms">Muat turun secara automatik jika menggunakan WiFi</translation>
       <translation lang="nl">Automatisch downloaden bij internetverbinding</translation>
       <translation lang="ta">வைஃபை இணைப்பில் மட்டும் தானாக பதிவிறக்கு</translation>
+      <translation lang="wol">Na yebbi gi doxal boppam su WiFi jàppandee</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Keep_Screen_On">
       <translation lang="en">Keep screen on</translation>
-      <translation lang="fr">Garder l&apos;écran allumé</translation>
+      <translation lang="fr">Gardez l&apos;écran allumé</translation>
       <translation lang="fa">روشن نگه داشتن صفحه نمایش</translation>
       <translation lang="ru">Не выключать экран</translation>
       <translation lang="es">Mantener la pantalla encendida</translation>
@@ -5698,6 +5881,7 @@ Please enter your access code:</translation>
       <translation lang="ms">Teruskan skrin</translation>
       <translation lang="nl">Scherm zichtbaar laten</translation>
       <translation lang="ta">திரை அணையாமல் வை</translation>
+      <translation lang="wol">Bàyyil tablo bi muy takk</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Share_Usage_Data">
       <translation lang="en">Share usage data</translation>
@@ -5716,6 +5900,7 @@ Please enter your access code:</translation>
       <translation lang="ru">Поделиться данными об использовании</translation>
       <translation lang="nl">Gebruiksdata delen</translation>
       <translation lang="ta">பயன்படுத்தியதைப் பகிர்</translation>
+      <translation lang="wol"></translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Of_The_Day">
       <translation lang="en">Verse of the day</translation>
@@ -5725,6 +5910,7 @@ Please enter your access code:</translation>
       <translation lang="id">Nats harian</translation>
       <translation lang="ar">آية اليوم</translation>
       <translation lang="ta">இன்றைய வசனம்</translation>
+      <translation lang="wol">Aaya bés bi</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Of_The_Day_Time">
       <translation lang="en">Time for verse of the day</translation>
@@ -5734,6 +5920,7 @@ Please enter your access code:</translation>
       <translation lang="id">Jadwal nats harian</translation>
       <translation lang="ar">حان الوقت لآية اليوم</translation>
       <translation lang="ta">இன்றைய வசன நேரம்</translation>
+      <translation lang="wol">Waxtuw aaya bés bi</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Of_The_Day_Book_Collection">
       <translation lang="en">Translation for verse of the day</translation>
@@ -5743,6 +5930,7 @@ Please enter your access code:</translation>
       <translation lang="id">Terjemahan nats harian</translation>
       <translation lang="ar">ترجمة آية اليوم</translation>
       <translation lang="ta">இன்றைய வசனத்தின் மொழிபெயர்ப்பு</translation>
+      <translation lang="wol">Sottib aaya bés bi</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Daily_Reminder">
       <translation lang="en">Daily reminder</translation>
@@ -5752,6 +5940,7 @@ Please enter your access code:</translation>
       <translation lang="id">Peringatan harian</translation>
       <translation lang="ar">تذكير يومي</translation>
       <translation lang="ta">தினசரி வேத வாசிப்பு</translation>
+      <translation lang="wol">Fàttlee ci bés bu nekk</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Daily_Reminder_Time">
       <translation lang="en">Time for daily reminder</translation>
@@ -5761,6 +5950,7 @@ Please enter your access code:</translation>
       <translation lang="id">Jadwal peringatan harian</translation>
       <translation lang="ar">حان الوقت للتذكير اليومي</translation>
       <translation lang="ta">தினசரி வேத வாசிப்பின் நேரம்</translation>
+      <translation lang="wol">Waxtuw fàttli</translation>
     </translation-mapping>
     <translation-mapping id="Account_Page_Title">
       <translation lang="en">My Account</translation>
@@ -6044,6 +6234,7 @@ Please enter your access code:</translation>
       <translation lang="id">Nats Harian</translation>
       <translation lang="ar">آية اليوم</translation>
       <translation lang="ta">இன்றைய வசனம்</translation>
+      <translation lang="wol">Aaya bés bi</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Daily_Reminder_Title">
       <translation lang="en">Daily Reminder</translation>
@@ -6053,6 +6244,7 @@ Please enter your access code:</translation>
       <translation lang="id">Peringatan Harian</translation>
       <translation lang="ar">تذكير يومي</translation>
       <translation lang="ta">வேத வாசிப்பு</translation>
+      <translation lang="wol">Fàttlee ci bés bu nekk</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Daily_Reminder_Message">
       <translation lang="en">Time to read or listen to God&apos;s Word</translation>
@@ -6062,6 +6254,7 @@ Please enter your access code:</translation>
       <translation lang="id">Ini saatnya untuk membaca/mendengar Firman Allah</translation>
       <translation lang="ar">حان الوقت للإستماع أو لقراءة كلمة الله</translation>
       <translation lang="ta">வேத வசனம் வாசிக்கும் நேரம்</translation>
+      <translation lang="wol">Waxtuw jàng Kàddug Yàlla</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Channel_Name_Messages">
       <translation lang="en">Messages</translation>
@@ -6070,6 +6263,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Berichten</translation>
       <translation lang="ta">தகவல்கள்</translation>
       <translation lang="ru">Сообщения</translation>
+      <translation lang="wol"></translation>
     </translation-mapping>
     <translation-mapping id="Notification_Channel_Name_Verse_Of_The_Day">
       <translation lang="en">Verse of the Day</translation>
@@ -6079,6 +6273,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Vers van de dag</translation>
       <translation lang="ta">இன்றைய வசனம்</translation>
       <translation lang="ru">Стих дня</translation>
+      <translation lang="wol">Aaya bés bi</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Channel_Name_Daily_Reminder">
       <translation lang="en">Daily Reminder</translation>
@@ -6088,6 +6283,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Dagelijkse herinnering</translation>
       <translation lang="ta">இன்றைய வேத வாசிப்பு</translation>
       <translation lang="ru">Ежедневное напоминание</translation>
+      <translation lang="wol">Man ngaa jot aaya bés bi ak ay fàttliy bés</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Channel_Name_Images">
       <translation lang="en">Images</translation>
@@ -6098,6 +6294,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Afbeeldingen</translation>
       <translation lang="ta">படங்கள்</translation>
       <translation lang="ru">Изображения</translation>
+      <translation lang="wol"></translation>
     </translation-mapping>
     <translation-mapping id="Notification_Please_Allow">
       <translation lang="en">Please allow this app to send notifications.</translation>
@@ -6107,6 +6304,7 @@ Please enter your access code:</translation>
       <translation lang="ar">برجاء السماح لهذا التطبيق بإرسال إشعارات</translation>
       <translation lang="nl">Sta toe dat deze app je berichten stuurt.</translation>
       <translation lang="ta">உங்களைக்கு நினைவூட்ட இந்த செயலியை அனுமதிக்கிறீரா?</translation>
+      <translation lang="wol">Mayal app bi mu yónnee ay yégle</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Please_Allow_Info">
       <translation lang="en">You can get a verse of the day and daily reminders.</translation>
@@ -6116,6 +6314,7 @@ Please enter your access code:</translation>
       <translation lang="ar">يمكنك أن تتلقى آية وتذكيرًا يوميًا</translation>
       <translation lang="nl">Je kunt een vers van de dag en dagelijkse herinneringen ontvangen.</translation>
       <translation lang="ta">இன்றைய வசனம் மற்றும் தினசரி நினைவூட்டல்களையும் நீங்கள் பெறலாம்</translation>
+      <translation lang="wol">Man ngaa jot aaya bés bi ak ay fàttliy bés</translation>
     </translation-mapping>
     <translation-mapping id="Song_List_By_Number">
       <translation lang="en">BY NUMBER</translation>
@@ -6137,6 +6336,7 @@ Please enter your access code:</translation>
       <translation lang="ms">IKUT NOMBOR</translation>
       <translation lang="nl">PER NUMMER</translation>
       <translation lang="ta">வரிசை எண் படி</translation>
+      <translation lang="hin">संख्या से</translation>
     </translation-mapping>
     <translation-mapping id="Song_List_By_Title">
       <translation lang="en">BY TITLE</translation>
@@ -6159,6 +6359,7 @@ Please enter your access code:</translation>
       <translation lang="ms">IKUT TAJUK</translation>
       <translation lang="nl">PER TITEL</translation>
       <translation lang="ta">தலைப்பின் படி</translation>
+      <translation lang="hin">शीर्षक से</translation>
     </translation-mapping>
     <translation-mapping id="Text_On_Image_Title">
       <translation lang="en">Image</translation>
@@ -6179,6 +6380,7 @@ Please enter your access code:</translation>
       <translation lang="ar">تم حفظ الصورة</translation>
       <translation lang="nl">Afbeelding opgeslagen</translation>
       <translation lang="ta">வசனப் படம் சேர்த்துவைக்கப்பட்டது</translation>
+      <translation lang="wol">Denc nga image bi ci sa masin</translation>
     </translation-mapping>
     <translation-mapping id="Text_On_Image_Video_Saved">
       <translation lang="en">Video saved</translation>
@@ -6246,6 +6448,8 @@ Please enter your access code:</translation>
       <translation lang="ko">구약</translation>
       <translation lang="nl">Oude Testament</translation>
       <translation lang="ta">பழைய ஏற்பாடு</translation>
+      <translation lang="hin">पुराना नियम</translation>
+      <translation lang="wol">Kóllëre gu Jëkk gi</translation>
     </translation-mapping>
     <translation-mapping id="Book_Group_NT">
       <translation lang="en">New Testament</translation>
@@ -6268,12 +6472,14 @@ Please enter your access code:</translation>
       <translation lang="ko">신약</translation>
       <translation lang="nl">Nieuwe Testament</translation>
       <translation lang="ta">புதிய ஏற்பாடு</translation>
+      <translation lang="hin">नया नियम</translation>
+      <translation lang="wol">Kóllëre gu Bees gi</translation>
     </translation-mapping>
     <translation-mapping id="Book_Group_DC">
       <translation lang="en">Deuterocanonical</translation>
       <translation lang="fr">Deutérocanonique</translation>
       <translation lang="es">Deuterocanónico</translation>
-      <translation lang="pt">Deuterocanônico</translation>
+      <translation lang="pt">Deuterocanônicos</translation>
       <translation lang="ru">Второканонические книги</translation>
       <translation lang="uk">Второканонічні книги</translation>
       <translation lang="tr">Deuterocanonical</translation>
@@ -6284,11 +6490,12 @@ Please enter your access code:</translation>
       <translation lang="de">Apokryphen</translation>
       <translation lang="az">Deuterocanonical</translation>
       <translation lang="ar">الأسفار القانونية الثانية</translation>
-      <translation lang="hi">अपोक्रिफा</translation>
+      <translation lang="hi"></translation>
       <translation lang="te">డ్యూటెరోకేనానికల్</translation>
       <translation lang="fa">اضافه شده</translation>
       <translation lang="nl">Deuterokanonieke boeken</translation>
       <translation lang="ta">தள்ளுபடி ஆகமங்கள்</translation>
+      <translation lang="hin">अपोक्रिफा</translation>
     </translation-mapping>
     <translation-mapping id="Layout_Screen_Title">
       <translation lang="en">Select Language &amp; Layout</translation>
@@ -6309,6 +6516,8 @@ Please enter your access code:</translation>
       <translation lang="te">ఒక ప్యానెల్</translation>
       <translation lang="ko">하나의 단</translation>
       <translation lang="ta">ஒரு சட்டத்தில்</translation>
+      <translation lang="hin">एक शाखा</translation>
+      <translation lang="wol">Ci wenn laf</translation>
     </translation-mapping>
     <translation-mapping id="Layout_Two_Pane">
       <translation lang="en">Two Pane</translation>
@@ -6324,6 +6533,8 @@ Please enter your access code:</translation>
       <translation lang="te">రెండు ప్యానెల్స్</translation>
       <translation lang="ko">두개의 단</translation>
       <translation lang="ta">இரண்டு சட்டத்தில்</translation>
+      <translation lang="hin">दो शाखा</translation>
+      <translation lang="wol">Ci ñaari laf</translation>
     </translation-mapping>
     <translation-mapping id="Layout_Interlinear">
       <translation lang="en">Verse by Verse</translation>
@@ -6339,11 +6550,13 @@ Please enter your access code:</translation>
       <translation lang="te">వచనం తరవాత వచనం</translation>
       <translation lang="ko">절별</translation>
       <translation lang="ta">வசனத்தின் பின் வசனமாக</translation>
+      <translation lang="hin">आयत बय आयत</translation>
+      <translation lang="wol">Aaya yi benn-benn</translation>
     </translation-mapping>
     <translation-mapping id="Editor_Insert">
       <translation lang="en">Insert Marker</translation>
       <translation lang="fr">Insérer Marqueur</translation>
-      <translation lang="es">Insertar Marcador</translation>
+      <translation lang="es">Insertar marcador</translation>
       <translation lang="pt">Inserir Marcador</translation>
       <translation lang="ru">Вставить маркер</translation>
       <translation lang="uk">Вставити мітку</translation>
@@ -6354,6 +6567,7 @@ Please enter your access code:</translation>
       <translation lang="hi">निशान डालें</translation>
       <translation lang="te">గురుతు పెట్టండి</translation>
       <translation lang="ko">마커 삽입</translation>
+      <translation lang="hin">निशान डालें</translation>
     </translation-mapping>
     <translation-mapping id="Editor_Insert_Paragraph">
       <translation lang="en">Paragraph (\\p)</translation>
@@ -6369,6 +6583,7 @@ Please enter your access code:</translation>
       <translation lang="hi">अनुच्छेद (\p)</translation>
       <translation lang="te">పేరా (\\ p)</translation>
       <translation lang="ko">단락 (\\p)</translation>
+      <translation lang="hin">अनुच्छेद (\p)</translation>
     </translation-mapping>
     <translation-mapping id="Editor_Insert_Poetry">
       <translation lang="en">Poetry (\\q1)</translation>
@@ -6383,11 +6598,12 @@ Please enter your access code:</translation>
       <translation lang="ar">الشعر (\\q1)</translation>
       <translation lang="hi">कविता  (\q1)</translation>
       <translation lang="te">కవిత్వం (\q1)</translation>
+      <translation lang="hin">कविता  (\q1)</translation>
     </translation-mapping>
     <translation-mapping id="Editor_Insert_SubHeading">
       <translation lang="en">Sub Heading (\\s)</translation>
       <translation lang="fr">Sous-titre (\\s)</translation>
-      <translation lang="es">Subtítulo (\s)</translation>
+      <translation lang="es">Sub-título (\s)</translation>
       <translation lang="pt">Subtítulo (\s)</translation>
       <translation lang="ru">Подзаголовок (\s)</translation>
       <translation lang="uk">Підзаголовок (\s)</translation>
@@ -6398,11 +6614,12 @@ Please enter your access code:</translation>
       <translation lang="hi">उप शीर्षक (\s)</translation>
       <translation lang="te">ఉపశీర్షిక (\s)</translation>
       <translation lang="ko">부제 (\\s)</translation>
+      <translation lang="hin">उप शीर्षक (\s)</translation>
     </translation-mapping>
     <translation-mapping id="Editor_Insert_Footnote">
       <translation lang="en">Footnote (\\f ...\\f*)</translation>
       <translation lang="fr">Note (\\f ...\\f*)</translation>
-      <translation lang="es">Nota de pie de página (\f ...\f*)</translation>
+      <translation lang="es">Nota al pie de página (\f ...\f*)</translation>
       <translation lang="pt">Nota de rodapé (\f ...\f*)</translation>
       <translation lang="ru">Сноска (\f... \f*)</translation>
       <translation lang="uk">Виноска (\f... \f*)</translation>
@@ -6413,6 +6630,7 @@ Please enter your access code:</translation>
       <translation lang="hi">पाद लेख (\f... \f*)</translation>
       <translation lang="te">ఫుట్‌నోట్ (\f... \f*)</translation>
       <translation lang="ko">각주 (\\f ...\\f*)</translation>
+      <translation lang="hin">पाद लेख (\f... \f*)</translation>
     </translation-mapping>
     <translation-mapping id="Editor_Insert_Other">
       <translation lang="en">Other (\\)</translation>
@@ -6429,6 +6647,7 @@ Please enter your access code:</translation>
       <translation lang="hi">अन्य  (\\)</translation>
       <translation lang="te">ఇతర (\\)</translation>
       <translation lang="ko">추가 (\\)</translation>
+      <translation lang="hin">अन्य  (\\)</translation>
     </translation-mapping>
     <translation-mapping id="Quiz_Score_Page_Message_Before">
       <translation lang="en">You scored</translation>
@@ -6459,6 +6678,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Teks yang disalin</translation>
       <translation lang="nl">Tekst gekopieerd</translation>
       <translation lang="ta">வாக்கியம் நகல் எடுக்கப்பட்டது</translation>
+      <translation lang="hin">टेक्स्ट की प्रतिलिपि बनाई गई</translation>
+      <translation lang="wol"></translation>
     </translation-mapping>
     <translation-mapping id="Version_Number">
       <translation lang="en">Version %s</translation>
@@ -6567,6 +6788,7 @@ Please enter your access code:</translation>
       <translation lang="ko">영어</translation>
       <translation lang="nl">Engels</translation>
       <translation lang="ta">ஆங்கிலம்</translation>
+      <translation lang="hin">अंग्रेजी</translation>
     </translation-mapping>
     <translation-mapping id="Language_fr">
       <translation lang="en">French</translation>
@@ -6585,6 +6807,7 @@ Please enter your access code:</translation>
       <translation lang="te">ఫ్రెంచ్</translation>
       <translation lang="ko">프랑스어</translation>
       <translation lang="nl">Frans</translation>
+      <translation lang="hin">फ्रांसीसी</translation>
     </translation-mapping>
     <translation-mapping id="Language_ar">
       <translation lang="en">Arabic</translation>
@@ -6632,6 +6855,7 @@ Please enter your access code:</translation>
       <translation lang="te">ఇండోనేషియన్</translation>
       <translation lang="ko">인도네시아어</translation>
       <translation lang="nl">Indonesisch</translation>
+      <translation lang="hin">इन्डोनेशियाई</translation>
     </translation-mapping>
     <translation-mapping id="Language_ko">
       <translation lang="en">Korean</translation>
@@ -6674,6 +6898,7 @@ Please enter your access code:</translation>
       <translation lang="te">పోర్చుగీస్</translation>
       <translation lang="ko">푸르투갈어</translation>
       <translation lang="nl">Portugees</translation>
+      <translation lang="hin">पुर्तगाली</translation>
     </translation-mapping>
     <translation-mapping id="Language_ru">
       <translation lang="en">Russian</translation>
@@ -6692,6 +6917,7 @@ Please enter your access code:</translation>
       <translation lang="te">రష్యన్</translation>
       <translation lang="ko">러시아어</translation>
       <translation lang="nl">Russisch</translation>
+      <translation lang="hin">रूसी</translation>
     </translation-mapping>
     <translation-mapping id="Language_es">
       <translation lang="en">Spanish</translation>
@@ -6710,6 +6936,7 @@ Please enter your access code:</translation>
       <translation lang="te">స్పానిష్</translation>
       <translation lang="ko">스페인어</translation>
       <translation lang="nl">Spaans</translation>
+      <translation lang="hin">स्पेनिश</translation>
     </translation-mapping>
     <translation-mapping id="Language_tr">
       <translation lang="en">Turkish</translation>
@@ -6761,6 +6988,7 @@ Please enter your access code:</translation>
       <translation lang="te">ఉక్రేని</translation>
       <translation lang="ko">우크라이너어</translation>
       <translation lang="nl">Oekraïens</translation>
+      <translation lang="hin">यूक्रेनी</translation>
     </translation-mapping>
     <translation-mapping id="Language_zh">
       <translation lang="en">Chinese (Simplified)</translation>
@@ -6780,6 +7008,7 @@ Please enter your access code:</translation>
       <translation lang="te">చైనీస్</translation>
       <translation lang="ko">중국어</translation>
       <translation lang="nl">Chinees (vereenvoudigd)</translation>
+      <translation lang="hin">चीनी</translation>
     </translation-mapping>
     <translation-mapping id="Language_hi">
       <translation lang="en">Hindi</translation>
@@ -6873,6 +7102,8 @@ Please enter your access code:</translation>
       <translation lang="ms">Pengenalan</translation>
       <translation lang="nl">Introductie</translation>
       <translation lang="ta">முன்னுரை</translation>
+      <translation lang="hin">परिचय</translation>
+      <translation lang="wol">Ubbite Gi</translation>
     </translation-mapping>
     <translation-mapping id="Chapter_Introduction_Symbol">
       <translation lang="en">i</translation>
@@ -6882,7 +7113,7 @@ Please enter your access code:</translation>
       <translation lang="ru">п</translation>
       <translation lang="uk">п</translation>
       <translation lang="tr">I</translation>
-      <translation lang="id">p</translation>
+      <translation lang="id">i</translation>
       <translation lang="zh">引</translation>
       <translation lang="mal">ആ.</translation>
       <translation lang="vi">GT</translation>
@@ -6895,6 +7126,8 @@ Please enter your access code:</translation>
       <translation lang="ms">i</translation>
       <translation lang="nl">i</translation>
       <translation lang="ta">மு</translation>
+      <translation lang="hin">प.</translation>
+      <translation lang="wol">i</translation>
     </translation-mapping>
     <translation-mapping id="Share_Apk_Link">
       <translation lang="en">Share Link to App Installer File</translation>
@@ -6950,6 +7183,7 @@ Please enter your access code:</translation>
       <translation lang="ar">عرض قائمة الكلمات</translation>
       <translation lang="nl">Toon woordenlijst</translation>
       <translation lang="ta">அருஞ்சொற்கள் விளக்கம் காண்பி</translation>
+      <translation lang="wol"></translation>
     </translation-mapping>
     <translation-mapping id="Security_Permission_Denied">
       <translation lang="en">This device does not have permission to use this app.</translation>
@@ -6969,12 +7203,42 @@ Please enter your access code:</translation>
       <translation lang="nl">zodat we je een keuze aan achtergrondafbeeldingen kunnen geven</translation>
       <translation lang="ta">அதனால் இந்தப் படங்களை உங்களுக்குத் தருகிறோம்</translation>
       <translation lang="ru">чтобы предоставить вам выбор фоновых изображений</translation>
+      <translation lang="wol">Ndax ñu man la may nga tànn ci photo yi</translation>
     </translation-mapping>
     <translation-mapping id="iOS_Photo_Library_Add_Usage_Description">
       <translation lang="en">so we can save the images you create</translation>
       <translation lang="fr">afin que nous puissions enregistrer les images que vous créez</translation>
       <translation lang="es">para que podamos guardar las imágenes que crea</translation>
       <translation lang="ar">يمكننا حفظ الصورة التي أنشأتها</translation>
+      <translation lang="wol">Ndax nga man denc photos yi nga defar</translation>
+    </translation-mapping>
+    <translation-mapping id="Menu_Text_Size">
+      <translation lang="en">Text Size</translation>
+      <translation lang="fr">Taille de police</translation>
+      <translation lang="es">Tamaño de texto</translation>
+      <translation lang="pt">Tamanho do texto</translation>
+      <translation lang="ru">Размер текста</translation>
+      <translation lang="uk">Розмір тексту</translation>
+      <translation lang="id">Ukuran teks</translation>
+      <translation lang="zh">文字大小</translation>
+      <translation lang="wol">Dayob mbind mi</translation>
+    </translation-mapping>
+    <translation-mapping id="Menu_Access_Code">
+      <translation lang="en">Generate Access Code</translation>
+      <translation lang="wol"></translation>
+    </translation-mapping>
+    <translation-mapping id="Settings_General">
+      <translation lang="en">General</translation>
+      <translation lang="fr">Général</translation>
+      <translation lang="es">General</translation>
+      <translation lang="pt">Geral</translation>
+      <translation lang="wol">Kërale bu yaatu</translation>
+    </translation-mapping>
+    <translation-mapping id="Language_wol">
+      <translation lang="wol">Wolof</translation>
+      <translation lang="en">Wolof</translation>
+    </translation-mapping>
+    <translation-mapping id="Language_wol">
     </translation-mapping>
   </translation-mappings>
 

@@ -25,10 +25,9 @@ class BibleReference {
 
 class UserPrefList {
   List<BibleReference>? userColumns;
+  String? userLang;
 
-  UserPrefList({
-    this.userColumns,
-  });
+  UserPrefList({this.userColumns, this.userLang});
 }
 
 class UserPrefs with ChangeNotifier {
@@ -36,6 +35,21 @@ class UserPrefs with ChangeNotifier {
 
   UserPrefList get userPrefList {
     return _userPrefList;
+  }
+
+  String? userLang;
+
+  Translation get currentTranslation {
+    return translations
+        .where((element) => element.langCode == currentLang)
+        .first;
+  }
+
+  String? get currentLang => userLang;
+
+  set setUserLang(String lang) {
+    userLang = lang;
+    notifyListeners();
   }
 
   List<BibleReference> userColumns = [];

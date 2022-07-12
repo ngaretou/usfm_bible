@@ -83,5 +83,5 @@ AccentColor get systemAccentColor {
       'lightest': SystemTheme.accentColor.lightest,
     });
   }
-  return Colors.blue;
+  return Colors.teal;
 }

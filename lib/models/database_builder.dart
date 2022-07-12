@@ -1,7 +1,10 @@
 // ignore_for_file: avoid_print, avoid_function_literals_in_foreach_calls
-
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:usfm_bible/providers/user_prefs.dart';
 import 'package:xml/xml.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 class Font {
   final String fontFamily;
@@ -89,9 +92,35 @@ class AppInfo {
   });
 }
 
+class Translation {
+  String langCode;
+  String langName;
+  String search;
+  String addColumn;
+  String settingsTheme;
+  String systemTheme;
+  String lightTheme;
+  String darkTheme;
+  String settings;
+  String settingsInterfaceLanguage;
+
+  Translation(
+      {required this.langCode,
+      required this.langName,
+      required this.search,
+      required this.addColumn,
+      required this.settingsTheme,
+      required this.systemTheme,
+      required this.lightTheme,
+      required this.darkTheme,
+      required this.settings,
+      required this.settingsInterfaceLanguage});
+}
+
 List<Collection> collections = [];
 List<ParsedLine> verses = [];
 List<Font> allFonts = [];
+List<Translation> translations = [];
 
 Future<String> asyncGetProjectName(BuildContext context) async {
   AssetBundle assetBundle = DefaultAssetBundle.of(context);
@@ -110,6 +139,125 @@ Future<String> asyncGetProjectName(BuildContext context) async {
   return projectName;
 }
 
+Future<void> asyncGetTranslations(BuildContext context) async {
+  //Stuff for supplemental translations
+  Map<String, String> translationSupplement = {};
+  String translationsJSON =
+      await rootBundle.loadString("assets/translations.json");
+  final translationData = json.decode(translationsJSON) as List<dynamic>;
+
+  //TODO get initialLanguage from appDef
+  String initialLang = 'wol';
+  AssetBundle assetBundle = DefaultAssetBundle.of(context);
+
+  //get the appDef xml from outside the flutter project
+  String appDefLocation = 'assets/project/appDef.appDef';
+  String xmlFileString = await assetBundle.loadString(appDefLocation);
+  //get the document into a usable iterable
+  final document = XmlDocument.parse(xmlFileString);
+
+  XmlElement? xmlLangsSection = document
+      .getElement('app-definition')!
+      .getElement('interface-languages')!
+      .getElement('writing-systems');
+
+  Iterable<XmlElement> xmlLangs =
+      xmlLangsSection!.findAllElements('writing-system');
+  //Loop through langs gathering info about each
+  for (var lang in xmlLangs) {
+    String? enabled = lang.getAttribute('enabled')?.toString();
+
+    if (enabled != 'false') {
+      String langCode = lang.getAttribute('code').toString();
+      late String langName;
+      XmlElement? displayNames = lang.getElement('display-names');
+      Iterable<XmlElement> langForms = displayNames!.findAllElements('form');
+
+      Map<String, String> langInfo = {};
+      for (var langForm in langForms) {
+        langInfo.addAll(
+            {langForm.getAttribute('lang').toString(): langForm.innerText});
+      }
+      if (langInfo.keys.contains(langCode)) {
+        langName = langInfo[langCode].toString();
+      } else {
+        langName = langInfo['en'].toString();
+      }
+
+      print(langCode);
+      print(langName);
+
+      Iterable<XmlElement> searchTextXML = document
+          .getElement('app-definition')!
+          .getElement('translation-mappings')!
+          .findAllElements('translation-mapping')
+          .where((element) => element.getAttribute('id') == 'Search')
+          .first
+          .findAllElements('translation')
+          .toList()
+          .where(
+              (element) => element.getAttribute('lang').toString() == langCode);
+      String searchText = searchTextXML.first.innerText;
+
+      Iterable<XmlElement> settingsTextXml = document
+          .getElement('app-definition')!
+          .getElement('translation-mappings')!
+          .findAllElements('translation-mapping')
+          .where((element) => element.getAttribute('id') == 'Settings_Title')
+          .first
+          .findAllElements('translation')
+          .toList()
+          .where(
+              (element) => element.getAttribute('lang').toString() == langCode);
+      String settingsText = settingsTextXml.first.innerText;
+
+      Iterable<XmlElement> settingsInterfaceLanguageTextXml = document
+          .getElement('app-definition')!
+          .getElement('translation-mappings')!
+          .findAllElements('translation-mapping')
+          .where((element) =>
+              element.getAttribute('id') == 'Settings_Interface_Language')
+          .first
+          .findAllElements('translation')
+          .toList()
+          .where(
+              (element) => element.getAttribute('lang').toString() == langCode);
+      String settingsInterfaceLanguageText =
+          settingsInterfaceLanguageTextXml.first.innerText;
+
+      // ----
+      //Now get supplemental translations
+      translationSupplement = {};
+      for (var translation in translationData) {
+        if (translation['langCode'] == langCode) {
+          translationSupplement.addAll({
+            'langCode': translation['langCode'],
+            "addColumn": translation['addColumn'],
+            "settingsTheme": translation['settingsTheme'],
+            "systemTheme": translation['systemTheme'],
+            "lightTheme": translation['lightTheme'],
+            "darkTheme": translation['darkTheme'],
+          });
+        }
+      }
+      // ----
+
+      translations.add(Translation(
+          langCode: langCode,
+          langName: langName,
+          search: searchText,
+          addColumn: translationSupplement['addColumn']!,
+          settingsTheme: translationSupplement['settingsTheme']!,
+          systemTheme: translationSupplement['systemTheme']!,
+          lightTheme: translationSupplement['lightTheme']!,
+          darkTheme: translationSupplement['darkTheme']!,
+          settings: settingsText,
+          settingsInterfaceLanguage: settingsInterfaceLanguageText));
+    }
+  }
+  Provider.of<UserPrefs>(context, listen: false).setUserLang = initialLang;
+}
+
 Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
   print('buildDatabaseFromXML');
   AssetBundle assetBundle = DefaultAssetBundle.of(context);
@@ -125,7 +273,7 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
   String fontStyle = "";
 
   // var xmlFontsSection = document.findElements('fonts');
-  var xmlFontsSection =
+  XmlElement? xmlFontsSection =
       document.getElement('app-definition')!.getElement('fonts');
   if (xmlFontsSection != null) {
     Iterable<XmlElement> xmlFonts = xmlFontsSection.findAllElements('font');

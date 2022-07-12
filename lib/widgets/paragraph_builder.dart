@@ -77,11 +77,28 @@ ComposedVerses verseComposer(
   } // addThisString end
 
   addFootnote(String footnoteText) {
+    String composeFootnotes(String textToClean) {
+      String cleanedText = "";
+      RegExpMatch? footnoteText =
+          RegExp(r'(.*?\\ft )(.*)').firstMatch(textToClean);
+      if (footnoteText != null) {
+        cleanedText = footnoteText.group(2)!;
+      }
+
+      //This just removes the rest of the USFM.
+      //This is a hack as the message cannot be a list of inline spans (which we need to do character level formatting)
+      //but just a string or one inline span (with one style).
+      //Would need to extend ToolTip to alllow List<InlineSpan>, which I'm not up to right now.
+      cleanedText = cleanedText.replaceAll(RegExp(r'\\\w+\*\s*'), '');
+      cleanedText = cleanedText.replaceAll(RegExp(r'\\\w+\s*'), '');
+      return cleanedText;
+    }
+
     if (includeFootnotes) {
       spansToReturn.add(
         WidgetSpan(
           child: Tooltip(
-            message: footnoteText,
+            message: composeFootnotes(footnoteText),
             child: Text(
               '*',
               style: footnoteCallerStyle,
