@@ -3,14 +3,19 @@
 import 'package:fluent_ui/fluent_ui.dart';
 
 import 'dart:core';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 // import 'package:flutter/material.dart' as material;
 
 import '../models/database_builder.dart';
 import 'package:flutter/gestures.dart';
-import '../providers/user_prefs.dart';
-import '../providers/column_manager.dart';
+// import '../providers/user_prefs.dart';
+// import '../providers/column_manager.dart';
 
+/* this class and associated verseComposer function is exposed as we have to use it several different places. 
+It gets confusing but it is this way to avoid code duplication.
+Sometimes we need the verses composed with footnotes for display - sometimes composed without for Copy and Share
+functions. This processes a given range and gives us both the verses as a List of InLineSpans and as one String.
+*/
 class ComposedVerses {
   List<InlineSpan> versesAsSpans;
   String versesAsString;
@@ -21,22 +26,17 @@ class ComposedVerses {
   });
 }
 
-// this function is exposed as we have to use it several different places
 ComposedVerses verseComposer(
     {required ParsedLine line,
     TextStyle? computedTextStyle,
-    Color? accentTextColor,
     required bool includeFootnotes,
-    Function? tileOnTap}) {
+    Function? tileOnTap,
+    required BuildContext context}) {
   List<InlineSpan> spansToReturn = [];
   String textToReturn = '';
-  TextStyle? footnoteCallerStyle;
+
   int dealtWithSoFar = 0;
   String leftToDealWith = "";
-
-  if (computedTextStyle != null) {
-    footnoteCallerStyle = computedTextStyle.copyWith(color: accentTextColor);
-  }
 
   //The method for adding the text strings we're about to parse
   void addThisString(String thisString,
@@ -94,19 +94,53 @@ ComposedVerses verseComposer(
       return cleanedText;
     }
 
+    // if (includeFootnotes) {
+    //   spansToReturn.add(
+    //     WidgetSpan(
+    //       child: Transform.translate(
+    //           offset: const Offset(0.0, -6.0),
+    //           child: Tooltip(
+    //             message: composeFootnotes(footnoteText),
+    //             child: Text(
+    //               '*',
+    //               style: DefaultTextStyle.of(context)
+    //                   .style
+    //                   .copyWith(color: FluentTheme.of(context).accentColor),
+    //             ),
+    //           )),
+    //     ),
+    //   );
+    // }
     if (includeFootnotes) {
       spansToReturn.add(
         WidgetSpan(
-          child: Tooltip(
-            message: composeFootnotes(footnoteText),
-            child: Text(
-              '*',
-              style: footnoteCallerStyle,
-            ),
-          ),
+          child: Transform.translate(
+              offset: const Offset(0.0, -6.0),
+              child: Tooltip(
+                message: composeFootnotes(footnoteText),
+                child: Text(
+                  '*',
+                  style: DefaultTextStyle.of(context)
+                      .style
+                      .copyWith(color: FluentTheme.of(context).accentColor),
+                ),
+              )),
         ),
       );
     }
+    //  if (includeFootnotes) {
+    //   spansToReturn.add(
+    //     WidgetSpan(
+    //       child: Tooltip(
+    //         message: composeFootnotes(footnoteText),
+    //         child: const Text('*'
+    //             // style: footnoteCallerStyle,
+    //             // style:
+    //             ),
+    //       ),
+    //     ),
+    //   );
+    // }
   }
 
   void pairedUsfmFindingAndFormatting(String text) {
@@ -122,7 +156,7 @@ ComposedVerses verseComposer(
       //dealthWithSofar is a little error checking and progress caching, making sure we're dealing with all the text
 
       //So we did find at least one set of paired USFM, for example the 'f' in \f....\f* or the 'add' in \add  ... \add*
-      //We know how many paired usfm markers we found, so we can search for them one at a time.
+      //We know how many paired usfm markers we found (allPairedUsfmMarkers is an Iterable of matches), so we can search for them one at a time.
       for (var i = 0; i < allPairedUsfmMarkers.length; i++) {
         //First let's not deal with the whole line, but what we've not dealt with so far - so 'first' becomes 'next' below
         String leftToDealWith = line.verseText.substring(dealtWithSoFar);
@@ -233,6 +267,8 @@ ComposedVerses verseComposer(
   return returnInfo;
 }
 
+////////////////////////////////
+
 class ParagraphBuilder extends StatefulWidget {
   final List<ParsedLine> paragraph;
   final double fontSize;
@@ -306,8 +342,8 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
               element.verse == line.verse);
 
       //Check to see if this is the simultaneous scroll group ref
-      BibleReference? ref =
-          Provider.of<ColumnManager>(context, listen: false).getScrollGroupRef;
+      // BibleReference? ref =
+      //     Provider.of<ColumnManager>(context, listen: false).getScrollGroupRef;
 
       //TODO this is where the fading highlight animation will go on nav
 
@@ -328,8 +364,8 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
       return verseComposer(
               line: line,
               computedTextStyle: computedTextStyle,
-              accentTextColor: accentTextColor,
               includeFootnotes: true,
+              context: context,
               tileOnTap: tileOnTap)
           .versesAsSpans;
     }
