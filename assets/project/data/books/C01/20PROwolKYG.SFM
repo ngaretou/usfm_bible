@@ -1,8 +1,8 @@
 \id PRO (WOL)
-\h Kàddu yu Xelu
-\toc1 Kàddu yu Xelu
-\toc2 Kàddu yu Xelu
-\mt1 Kàddu yu Xelu
+\h Kàddu yu xelu
+\toc1 Kàddu yu xelu
+\toc2 Kàddu yu xelu
+\mt1 Kàddu yu xelu
 \c 1
 \s1 Li tax téere bi jóg
 \p
@@ -15,9 +15,9 @@
 \v 6 ngir mana xam aw léeb aku taas ak kàddug boroomi xel yu rafet ak seeni cax.
 \b
 \q1
-\v 7 Ragal \w Aji Sax|Aji Sax j-:\w* ji di njàlbéenu xam-xam,
+\v 7 Ragal Aji Sax ji di njàlbéenu xam-xam,
 \q1 te xel mu rafet akub yar, dof yaa ko xeeb.
-\ms Déglul, waajur àrtu la
+\ms Déglul, waajur artu la
 \mr (Saar 1.8---7.27)
 \q1
 \v 8 Doom, toppal yaru baay,
@@ -62,13 +62,13 @@
 \q1 di xaacu ca pénc ma.
 \q1
 \v 21 Ma ngay wootee bérab yu gëna xumb,
-\q1 di dégtaley kàddoom, bunt dëkk ba.
+\q1 di dégtaley kàddoom ca bunt dëkk ba.
 \q1
 \v 22 Ma nga naan: «Moo téxét bi, foo àppal sa téxét gi?
 \q1 Ñaawlekat bi, foo àppal sa ñaawle bi?
 \q1 Dof bi, ñaata yoon ngay bañ xam-xam?
 \q1
-\v 23 Soo dëppee ba déglu, ma àrtu la.
+\v 23 Soo dëppee ba déglu, ma artu la.
 \q1 Ma ne, kon ma xellil la samam xel,
 \q1 xamal la samay kàddu.
 \q1
@@ -76,10 +76,10 @@
 \q1 ma tàllal loxo, faaleesu ma.
 \q1
 \v 25 Sofental nga samay digle,
-\q1 nanguwoo samay àrtu.
+\q1 nanguwoo samay artu.
 \q1
 \v 26 Kon boo sëngéemee, man it ma ree,
-\q1 njàqare dab la, may textexi.
+\q1 njàqare dab la, may tex-texi.
 \q1
 \v 27 Njàqare di ngëlén, dab la,
 \q1 sa musiba def callweer, buub la,
@@ -89,10 +89,10 @@
 \q1 nga seet ma, seet, doo ma gis.
 \q1
 \v 29 Daa fekk nga baña xam,
-\q1 te ragal Yàlla du loo taamu.
+\q1 te ragal Yàlla du loo tànn.
 \q1
 \v 30 Dégluwoo samay digle it,
-\q1 xanaa xeeb samay àrtu yépp.
+\q1 xanaa xeeb samay artu yépp.
 \q1
 \v 31 Waaye loo ci góobe, gar ko,
 \q1 say pexe suur la këll.
@@ -117,7 +117,7 @@
 \v 4 Sàkkul xel mu rafet ni xaalis,
 \q1 wut ko ni alal ju làqu.
 \q1
-\v 5 Kon nga xam luy ragal \w Aji Sax|Aji Sax j-:\w* ji,
+\v 5 Kon nga xam luy ragal Aji Sax ji,
 \q1 xam Yàllaa di kan;
 \q1
 \v 6 ndax Aji Sax jeey maye xel mu rafet,
@@ -151,13 +151,13 @@
 \q1 jaaruwaayam dëng.
 \b
 \q1
-\v 16 Xel mu rafet da lay musal ci ndaw su yemadi,
+\v 16 Xel mu rafet da lay musal ci jigéenu njaalookat,
 \q1 bokk feneen, di wax lu neex.
 \q1
 \v 17 Day dëddu wóllëreem, ba muy ndaw,
-\q1 fàtte °\w kóllëreem|kóllëre g-:\w* ak Yàllaam.
+\q1 fàtte \w kóllëreem|kóllëre g-:\w* ak Yàllaam.
 \q1
-\v 18 Këram day joy wuti ndee,
+\v 18 Këram day joy wuti dee,
 \q1 ay jaaruwaayam jëm njaniiw.
 \q1
 \v 19 Ku dem ca moom dootoo délsi,
@@ -170,12 +170,12 @@
 \v 21 ndax kuy jubal ay dëkke réew mi,
 \q1 te ku mat a fiy des.
 \q1
-\v 22 Ku bon, ñu dagge ci réew mi;
+\v 22 Ku bon, ñu génne réew mi;
 \q1 kuy fecci worma, ñu buddi, sànni.
 \c 3
 \s1 Wóolul Yàlla
 \q1
-\v 1 Doom, bul fàtte sama njàngle,
+\v 1 Doom, bul fàtte sama njàngale,
 \q1 defal sa xel ci saay santaane,
 \q1
 \v 2 ngir fan wi gudd lool,
@@ -188,7 +188,7 @@
 \v 4 Kon nga xam lu jaadu,
 \q1 neex Yàllaak doom aadama.
 \q1
-\v 5 Nanga wóoloo \w Aji Sax|Aji Sax j-:\w* ji, sa léppi xol,
+\v 5 Nanga wóoloo Aji Sax ji sa léppi xol,
 \q1 te bul wéeru ci saw déggin.
 \q1
 \v 6 Loo mébét, bàyyil Yàlla xel,
@@ -230,10 +230,11 @@
 \v 17 Fa muy jaare yiw la,
 \q1 fu mu awe jàmm la.
 \q1
-\v 18 Mooy garabu gudd fan ci ku ko jàpp,
+\v 18 Mooy garab giy taxa dund
+\q1 ci ku ko jàpp,
 \q1 di mbégtey ku ca ŋoy.
 \q1
-\v 19 \w Aji Sax|Aji Sax j-:\w* ji xel mu rafet la sose suuf,
+\v 19 Aji Sax ji xel mu rafet la sose suuf,
 \q1 lale asamaan ag dégg.
 \q1
 \v 20 Ci xam-xamam la ndoxi xóote ya ne jàyy,
@@ -247,7 +248,7 @@
 \q1 di rafetal sa jikko.
 \q1
 \v 23 Kon sab dox wóor,
-\q1 doo fakktalu.
+\q1 doo fakkastalu.
 \q1
 \v 24 Soo tëddee doo tiit;
 \q1 say nelaw day neex.
@@ -255,7 +256,7 @@
 \v 25 Kon doo ragal njàqare lu bette
 \q1 ak saaysaay buy songe,
 \q1
-\v 26 ndax \w Aji Sax|Aji Sax j-:\w* ji da lay yiir,
+\v 26 ndax Aji Sax ji da lay yiir,
 \q1 di la musal cig fiir.
 \b
 \q1
@@ -291,10 +292,10 @@
 \s1 Ku dégg ndigal, jariñu
 \q1
 \v 1 Gone yi, tee ngeena dégg yaru baay,
-\q1 te déglu, ba am ug dégg?
+\q1 te déglu, ba am ug dégg.
 \q1
 \v 2 Maa ngi leen di jàngal lu baax,
-\q1 buleen fàtte sama njàngle.
+\q1 buleen fàtte sama njàngale.
 \q1
 \v 3 Man it amoon naa baay,
 \q1 di benn bàjjo ci saa ndey.
@@ -359,7 +360,7 @@
 \v 22 Mooy dundloo ku ci jàpp,
 \q1 di wéral jëmmam jépp.
 \q1
-\v 23 Sàmmala sàmm sab xol,
+\v 23 Sàmmal a sàmm sab xol,
 \q1 nde xalaati xol ngay jëfe.
 \q1
 \v 24 Dàqal wor, mu sore la;
@@ -382,13 +383,13 @@
 \v 2 kon nga saxoo foog,
 \q1 say wax tegu ci xam-xam.
 \q1
-\v 3 Lu mel ni lem la ndaw su yemadi di wax,
+\v 3 Lu mel ni lem la jigéenu njaalookat di wax,
 \q1 làmmiñ wa ni diw gu ñu lay raay.
 \q1
 \v 4 Muj ga mu wex xàtt,
 \q1 di gaañe ni ñawkay saamar.
 \q1
-\v 5 Tànk ya day bartalu wuti ndee,
+\v 5 Tànk ya day bartalu wuti dee,
 \q1 ay jéegoom àkki njaniiw.
 \q1
 \v 6 Rëddul yoonu dund,
@@ -411,7 +412,7 @@
 \q1 desey yax, jeex tàkk.
 \q1
 \v 12 Nga naan: «Su ma yégoon, sopp ab yar
-\q1 te baña sofental waxi àrtu.
+\q1 te baña sofental waxi artu.
 \q1
 \v 13 Lu ma tee woona dégg ku may digal,
 \q1 tey teewlu sama waxi sëriñ ya?
@@ -437,10 +438,10 @@
 \q1 na la xañ sago saa su ne.
 \q1
 \v 20 Doom, ana looy xemmeme keneen,
-\q1 bay foye céri jaambur?
+\q1 bay fowe céri jaambur?
 \b
 \q1
-\v 21 Lu waay jëf, \w Aji Sax|Aji Sax j-:\w* ji gis,
+\v 21 Lu waay jëf, Aji Sax ji gis,
 \q1 di xool mboolem fu mu jaare.
 \q1
 \v 22 Jëf ju bon day fiir ka ko sàlloo,
@@ -481,8 +482,8 @@
 \v 9 Moo yaafus bi, foo àppal tëraay bi?
 \q1 Loo deeti xaar ci yewwu?
 \q1
-\v 10 Ngay dajjant ak a for bët,
-\q1 di tegley loxook a jaaxaan.
+\v 10 Ngay dajjant aka for bët,
+\q1 di tegley loxooka jaaxaan.
 \q1
 \v 11 Néewlee ngi lay dikkal nib sàcc,
 \q1 ñàkk gànnaayul la.
@@ -501,8 +502,8 @@
 \q1 mu jekki yàqu, ba wees paj.
 \s1 Aji Sax ji bañ na lii
 \q1
-\v 16 Juróom benn a ngii yu \w Aji Sax|Aji Sax j-:\w* ji bañ,
-\q1 ba ci juróom yaar yu mu seexlu:
+\v 16 Juróom benn a ngii yu Aji Sax ji bañ,
+\q1 ba ci juróom ñaar yu mu seexlu:
 \q1
 \v 17 kuy daŋŋiiral,
 \q1 kuy fen,
@@ -527,7 +528,7 @@
 \q1
 \v 23 Santaane da lay niital,
 \q2 ndigal leeralal la,
-\q1 artook ub yar di yoonu dund.
+\q1 artookub yar di yoonu dund.
 \q1
 \v 24 Da lay aar ci ndaw su bon
 \q1 ak jabaru jaambur ak làmmiñam wu neex.
@@ -551,7 +552,7 @@
 \v 30 Deesul sikk ku sàcc aw ñam,
 \q1 def ci biiram ndax xiif.
 \q1
-\v 31 Waaye bu feeñee, fey boroom juróom yaari yoon,
+\v 31 Waaye bu feeñee, fey boroom juróom ñaari yoon,
 \q1 joxe alalu këram yépp.
 \q1
 \v 32 Njaaloo di ñàkk bopp,
@@ -566,7 +567,7 @@
 \v 35 Du faale ndàmpaay,
 \q1 loo ko may, may, du giif.
 \c 7
-\s1 Ndaw su yemadi da lay fiir
+\s1 Jigéenu njaalookat da lay fiir
 \q1
 \v 1 Doom, sàmmal samay wax,
 \q1 fonk samay santaane.
@@ -580,9 +581,9 @@
 \v 4 Safool xel mu rafet, muy sab jigéen,
 \q1 te nga xejjoo dég-dég ni sa mbokk lenqe.
 \q1
-\v 5 Dina la aar ci ndaw su yemadi,
+\v 5 Dina la aar ci jigéenu njaalookat,
 \q1 bokk feneen, di wax lu neex.
-\s1 Ndaw su yemadi woote na
+\s1 Jigéenu njaalookat woote na
 \q1
 \v 6 Damaa tollu sama palanteer,
 \q1 séentu ca xarante ya,
@@ -628,10 +629,10 @@
 \q1 daa dem yoon wu sore.
 \q1
 \v 20 Mbuusum xaalis la ŋàbb, yóbbu,
-\q1 du ñibbsi ndare weer wi fees dell.»
+\q1 du ñibbisi ndare weer wi fees dell.»
 \b
 \q1
-\v 21 Muy mocc ak a moccaat, ba nax ko,
+\v 21 Muy mocc aka moccaat, ba nax ko,
 \q1 di wax lu neex, ba man ko.
 \q1
 \v 22 Waa ja jekki, topp ko,
@@ -653,7 +654,7 @@
 \q1 maneesula waññ ñi mu rey ñépp.
 \q1
 \v 27 Këram yoonu njaniiw la,
-\q1 daa bartalu, tàbbi néegi ndee.
+\q1 daa bartalu, tàbbi néegi dee.
 \c 8
 \ms Xel mu Rafet bàkku na
 \mr (Saar 8)
@@ -688,14 +689,14 @@
 \v 10 Na la samab yar gënal xaalis,
 \q1 xam-xam dàqal la ngën-gi-wurus.
 \q1
-\v 11 Ndax man, xel mu rafet, maa gën gànjar,
+\v 11 Ndax man, Xel mu Rafet, maa gën gànjar,
 \q1 loo bëgg maa ko raw.
 \b
 \q1
 \v 12 «Man, Xel mu Rafet, foog di sama kër;
 \q1 xam-xam ak pexe, ma for.
 \q1
-\v 13 Ragal \w Aji Sax|Aji Sax j-:\w* ji mooy bañ lu bon.
+\v 13 Ragal Aji Sax ji mooy bañ lu bon.
 \q1 Réy, xeebaate, yoonu mbon,
 \q1 ak wax ju jekkadi, ma boole bañ.
 \q1
@@ -714,7 +715,7 @@
 \v 18 Alal ak teraangaa ngi fi man,
 \q1 am-am bu sax it ak yoolu njekk.
 \q1
-\v 19 Li may mayee gën wurus, wa gën,
+\v 19 Li may mayee gën wurus, muy wurus wa gën,
 \q1 sama njariñ wees xaalis ba gën.
 \q1
 \v 20 Yoonu njekk laay jaare,
@@ -725,7 +726,7 @@
 \s1 Xel mu Rafet a mag lépp
 \q1
 \v 22 Soxna si, Xel mu Rafet nee na:
-\q1 «\w Aji Sax|Aji Sax j-:\w* ji jagoo na ma ca njàlbéen,
+\q1 «Aji Sax ji jagoo na ma ca njàlbéen,
 \q1 ma jiitu ca jëfam ya woon.
 \q1
 \v 23 Bu yàgg lañu ma dëj,
@@ -755,13 +756,13 @@
 \q1 tey bànneexu fi kanamam.
 \q1
 \v 31 May bége wërngalu àddinaam,
-\q1 di bànneexoo doomi aadama.»
+\q1 di bànneexoo doomi aadama.
 \s1 Xel mu Rafet dénkaane na
 \q1
 \v 32 «Kon nag, doom, dégluleen ma.
 \q1 Mbégte ñeel na ki may topp.
 \q1
-\v 33 Dégluleen ku leen di yar, daldi muus.
+\v 33 Nangeen déglu ku leen di yar, daldi muus.
 \q1 Buleen ko sàggane!
 \q1
 \v 34 Mbégte ñeel na ki may déglu,
@@ -769,17 +770,17 @@
 \q1 di ma toogaanu sama bunt kër.
 \q1
 \v 35 Ku ma daj, gudd fan,
-\q1 \w Aji Sax|Aji Sax j-:\w* ji bége la.
+\q1 Aji Sax ji bége la.
 \q1
 \v 36 Ku ma moy loru,
 \q1 ku ma bañ, daa repp.»
 \c 9
-\ms Ñaari berndee ngi
+\ms Ñaari berndee ngii
 \mr (Saar 9)
 \s1 Xel mu Rafet a ngi berndeel
 \q1
 \v 1 Soxna si, Xel mu Rafet daa tabax këram,
-\q1 yett juróom yaari kenoom.
+\q1 yett juróom ñaari kenoom.
 \q1
 \v 2 Mu rendi ag juram,
 \q2 njafaan ay biiñam, xelli,
@@ -792,11 +793,11 @@
 \q1 Ku ñàkk bopp, mu ne ko:
 \q1
 \v 5 «Kaay, ma may la, nga lekk,
-\q1 xellil lay biiñ, nga naan.
+\q1 xellil la biiñ bi ma njafaan, nga naan.
 \q1
 \v 6 Dëddul jëfi téxét ba dund,
 \q1 di jubal ci yoonu dégg.»
-\s1 Kuy xeloo ngi ak kuy ñaawle
+\s1 Kuy xeloo ngii ak kuy ñaawle
 \q1
 \v 7 Artu kuy ñaawle, feyoo saaga rekk,
 \q1 yedd ab soxor, yooloo loraange.
@@ -807,7 +808,7 @@
 \v 9 Xelalal ku xelu, mu yokku.
 \q1 Xamalal ku jub, mu yokk njàngam.
 \q1
-\v 10 Ragal \w Aji Sax|Aji Sax j-:\w* ji di njàlbéenu rafet xel,
+\v 10 Ragal Aji Sax ji di njàlbéenu rafet xel,
 \q1 xam Aji °Sell ji di am ug dégg.
 \q1
 \v 11 Maay Xel mu Rafet, ku ma topp gudd fan,
@@ -815,9 +816,9 @@
 \q1
 \v 12 Rafet xel, jariñu,
 \q1 kuy kókkalee, wéetook sa añ.
-\s1 Ku dofee ngi berndeel
+\s1 Jigéen ju Dof ngi berndeel
 \q1
-\v 13 Jigéen ju dof day xumb,
+\v 13 Soxna si, Jigéen ju Dof day xumb,
 \q1 reew, du xam lu xew.
 \q1
 \v 14 Day toog bunt këram,
@@ -833,9 +834,9 @@
 \q1 ñamu làqu-lekk dàqati.»
 \q1
 \v 18 Waaye kooka du xam ne waa njaniiw a nga fa,
-\q1 te ku wuyji, tàbbi biir bàmmeel.
+\q1 te ku wuyuji, tàbbi biir bàmmeel.
 \c 10
-\ms Kàddu yu Xelu yu Suleymaan
+\ms Kàddu yu xelu yu Suleymaan
 \mr (Saar 10---24)
 \p
 \v 1 Kàddu yu xelu yu Suleymaan.
@@ -848,7 +849,7 @@
 \q1 jub, mucc ci gàtt fan.
 \b
 \q1
-\v 3 \w Aji Sax|Aji Sax j-:\w* ji du seetaan ku jub, di xiif,
+\v 3 Aji Sax ji du seetaan ku jub, di xiif,
 \q1 waaye day xañ ab soxor la mu xemmem.
 \b
 \q1
@@ -869,7 +870,7 @@
 \b
 \q1
 \v 8 Ku rafet xel day jëfe santaane,
-\q1 ab dof waxa wax, ba loru.
+\q1 ab dof wax a wax, ba loru.
 \b
 \q1
 \v 9 Maandu, fegu;
@@ -877,15 +878,15 @@
 \b
 \q1
 \v 10 Piiseek làq-làqal, sabab njàqare;
-\q1 ab dof waxa wax, ba loru.
+\q1 ab dof wax a wax, ba loru.
 \b
 \q1
 \v 11 Kàdduy ku jub bëtu ndox la, day naatal;
 \q1 waaye ku soxor, wax ja làq fitna.
 \b
 \q1
-\v 12 Mbañeelak ayoo;
-\q1 cofeelak jéggale bépp tooñ.
+\v 12 Mbañeel ak ayoo;
+\q1 cofeel ak jéggale bépp tooñ.
 \b
 \q1
 \v 13 Kuy dégg, say wax rafet;
@@ -905,7 +906,7 @@
 \b
 \q1
 \v 17 Yaru, gudd fan;
-\q1 sàgganey àrtu, sànku.
+\q1 sàgganey artu, sànku.
 \b
 \q1
 \v 18 Ku la nëbbal mbañeel, da lay fen;
@@ -928,7 +929,7 @@
 \q1 kër-këri taxula barele.
 \b
 \q1
-\v 23 Jëf ju bon la dof di foye;
+\v 23 Jëf ju bon la dof di fowe;
 \q1 ku am dég-dég safoo lu xelu.
 \b
 \q1
@@ -967,7 +968,6 @@
 \q1
 \v 32 Ku jub day xam wax ju yiw;
 \q1 ab soxor sàlloo waxi njekkar.
-\b
 \c 11
 \q1
 \v 1 Aji Sax ji bañ na njublaŋ ci nattub diisaay,
@@ -1054,7 +1054,7 @@
 \q1 te ku jub, saw askan mucc.
 \b
 \q1
-\v 22 Taaru jongama ju xel ma gàtt,
+\v 22 Taaru jongama ju xel maa gàtt,
 \q1 mooy jaaro wurus ci noppu mbaam-xuux.
 \b
 \q1
@@ -1074,7 +1074,7 @@
 \q1 di gërëm ka koy jaay.
 \b
 \q1
-\v 27 Wutala wut lu baax, ñu nawloo la;
+\v 27 Wutal a wut lu baax, ñu nawloo la;
 \q1 ku sàkku lu bon, yaa koy yenu.
 \b
 \q1
@@ -1086,17 +1086,16 @@
 \q1 ku dof, boroom xel yilif la.
 \b
 \q1
-\v 30 Nit ku jub garab la, doom ya di dundal;
-\q1 ku rafet xel wut nit ñi.
+\v 30 Kuy def lu jekk mbete garab guy taxa dund,
+\q1 ku rafet xel am nit ñi.
 \b
 \q1
-\v 31 Ku jub, jot sa yool ci kaw suuf,
+\v 31 Kuy def lu jekk, jot yoolam ci kaw suuf,
 \q1 moykat beek soxor bi it daw raw.
-\b
 \c 12
 \q1
 \v 1 Ku bëgga xam, bëgg ku la yedd;
-\q1 ku bañ ku la àrtu, bàyyima nga.
+\q1 ku bañ ku la artu, bàyyima nga.
 \b
 \q1
 \v 2 Ku baax, Aji Sax ji bége la;
@@ -1131,7 +1130,7 @@
 \q1 moo gën réyal turki tey dee ak xiif.
 \b
 \q1
-\v 10 Ku jub day topptoo ag juram,
+\v 10 Ku jub day toppatoo ag juram,
 \q1 ab soxor néeg cig juram.
 \b
 \q1
@@ -1195,7 +1194,7 @@
 \q1 wax ju neex di tooyal xolam.
 \b
 \q1
-\v 26 Ku jub day seetlu ku muy xaritool\f + \fr 12.26 \ft Mbaa: \fqa Ku jub day teg moroomam ciw yoon.\f*;
+\v 26 Ku jub day seetlu ku muy xaritool\f + \fr 12.26 \ft Mbaa: \fqa Ku jub day teg moroomam ciw yoon;\f*;
 \q1 soxor bi, jikkoom a koy sànk.
 \b
 \q1
@@ -1204,12 +1203,11 @@
 \b
 \q1
 \v 28 Jaaral ci njekk, ba gudd fan;
-\q1 yoon wu baax deesu fa dee.
-\b
+\q1 yoon wu baax deesu fa deewe.
 \c 13
 \q1
 \v 1 Doom ju xelu dégg yaru baay,
-\q1 kuy ñaawle faalewuli àrtu.
+\q1 kuy ñaawle faalewuli artu.
 \b
 \q1
 \v 2 Wax ju rafet yool na boroom,
@@ -1249,19 +1247,19 @@
 \b
 \q1
 \v 11 Alal ju lewul day naaw;
-\q1 foral benn-benn, ba biibal.
+\q1 foral benn-benn, ba barele.
 \b
 \q1
 \v 12 Yaakaar ju tas day jeexal xol,
-\q1 aajo ju faju di suuxat bakkan.
+\q1 aajo ju faju di garab guy taxa dund.
 \b
 \q1
 \v 13 Ku sofental ndigalu Yàlla, yàqule;
 \q1 ku jëfe santaane Yàlla, yoolu.
 \b
 \q1
-\v 14 Njàngle mu xelu day suuxat bakkan,
-\q1 ba boroom du tàbbi ci fiiri ndee.
+\v 14 Njàngale mu xelu day suuxat bakkan,
+\q1 ba boroom du tàbbi ci fiiri dee.
 \b
 \q1
 \v 15 Dangay xam lu jaadu, ñu naw la;
@@ -1277,7 +1275,7 @@
 \b
 \q1
 \v 18 Ku sàggane yoonu yar, séddoo ñàkk ak gàcce;
-\q1 kuy déggi àrtu, am teraanga.
+\q1 kuy déggi artu, am teraanga.
 \b
 \q1
 \v 19 Aajo ju faju tooyal na xol,
@@ -1285,7 +1283,7 @@
 \b
 \q1
 \v 20 Àndal ak ku xelu, sam xel rafet;
-\q1 ku lëngook ub dof, loru.
+\q1 ku lëngookub dof, loru.
 \b
 \q1
 \v 21 Ay topp na moykat,
@@ -1306,7 +1304,6 @@
 \q1
 \v 25 Ku jub day lekk ba regg,
 \q1 soxor ba dëkke xiif.
-\b
 \c 14
 \q1
 \v 1 Jigéen, rafet xel, dimbali waa këram,
@@ -1334,7 +1331,7 @@
 \b
 \q1
 \v 7 Dàndal ab dof,
-\q1 du la yokk xam-xam.
+\q1 dof du la yokk xam-xam.
 \b
 \q1
 \v 8 Ku ñaw day xelu, xam li muy def;
@@ -1414,7 +1411,7 @@
 \b
 \q1
 \v 27 Ragal Aji Sax ji day suuxat bakkan,
-\q1 ba boroom du tàbbi ci fiiri ndee.
+\q1 ba boroom du tàbbi ci fiiri dee.
 \b
 \q1
 \v 28 Su mbooloo baree, buur am ndam;
@@ -1429,8 +1426,8 @@
 \q1 fiiraange semmal boroom.
 \b
 \q1
-\v 31 Ku sonal ku ñàkk, tooñ nga ka ko sàkk;
-\q1 ku baaxe ku néewle, teral nga ka ko sàkk.
+\v 31 Ku sonal ku ñàkk, tooñ nga Ka ko sàkk;
+\q1 ku baaxe ku néewle, teral nga Ka ko sàkk.
 \b
 \q1
 \v 32 Coxor detteel boroom;
@@ -1447,7 +1444,6 @@
 \q1
 \v 35 Buur day bége jawriñ ju xelu,
 \q1 di mbugal nitu gàcce.
-\b
 \c 15
 \q1
 \v 1 Tont lu neex day giifal,
@@ -1462,12 +1458,12 @@
 \q1 di xool ku baax ak ku bon.
 \b
 \q1
-\v 4 Wax ju neex garab la, doom ya di dundal,
+\v 4 Wax ju neex mooy garab guy taxa dund,
 \q1 kàddu yu jekkadi di jeexal xol.
 \b
 \q1
 \v 5 Ab dof day xeeb yaru baay ba,
-\q1 kuy dégg waxi àrtu, xelu nga.
+\q1 kuy dégg waxi artu, xelu nga.
 \b
 \q1
 \v 6 Kër ku jub, koom gu yaa;
@@ -1487,14 +1483,14 @@
 \b
 \q1
 \v 10 Mbugal tar na, ñeel ku wacc yoon;
-\q1 ku bañ waxi àrtu, dangay dee.
+\q1 ku bañ waxi artu, dangay dee.
 \b
 \q1
 \v 11 Njaniiw ak biir suuf, Aji Sax ji di gis,
 \q1 xolu doom aadama waxi noppi.
 \b
 \q1
-\v 12 Kuy ñaawle buggul ku ko àrtu,
+\v 12 Kuy ñaawle bëggul ku ko artu,
 \q1 te du laaji ku rafet xel.
 \b
 \q1
@@ -1534,8 +1530,8 @@
 \q1 ku am ug dégg def njub.
 \b
 \q1
-\v 22 Diisoo ñàkk, pexe moy;
-\q1 digle takku, pexe joy.
+\v 22 Diisoo ñàkk, pexe sànku;
+\q1 digle yu takku, pexe àntu.
 \b
 \q1
 \v 23 Nit bége na tontam lu dal,
@@ -1570,17 +1566,16 @@
 \q1 xibaaru jàmm, jàmmu yaram.
 \b
 \q1
-\v 31 Kuy dégg àrtu yu koy musal,
+\v 31 Kuy dégg artu yu koy musal,
 \q1 ku rafet xel a ngoog.
 \b
 \q1
-\v 32 Xalab waxi yar, foye sa bopp la;
-\q1 deel déggi àrtu, yokk sam xel.
+\v 32 Xalab waxi yar, fowe sa bopp la;
+\q1 deel déggi artu, yokk sam xel.
 \b
 \q1
 \v 33 Ragal Aji Sax ji day rafetal xel;
 \q1 jëkke woyof, mujje tedd.
-\b
 \c 16
 \q1
 \v 1 Nit ay dogu ci xolam,
@@ -1679,8 +1674,8 @@
 \q1 neexa ñam, di jàmmi yaram.
 \b
 \q1
-\v 25 Yoon a ngi, nit defe ne jub na,
-\q1 te mu jëme ko ci ndee.
+\v 25 Yoon a ngii, nit defe ne jub na,
+\q1 te mu jëme ko ci dee.
 \b
 \q1
 \v 26 Ku bëgg lu neex, liggéey;
@@ -1713,7 +1708,6 @@
 \q1
 \v 33 Tegoo bant nit a koy def,
 \q1 dogal ba Aji Sax ji la.
-\b
 \c 17
 \q1
 \v 1 Feppu dugub wu ànd ak dal
@@ -1732,7 +1726,7 @@
 \q1 fen-kat di teewlu ay sos.
 \b
 \q1
-\v 5 Kuy ñaawal ku ñàkk, tooñ nga ka ko sàkk;
+\v 5 Kuy ñaawal ku ñàkk, tooñ nga Ka ko sàkk;
 \q1 kuy reetaan ku jàq, mbugalam du jaas.
 \b
 \q1
@@ -1748,7 +1742,7 @@
 \q1 ba fu mu jublu, mu nooy.
 \b
 \q1
-\v 9 Bale tooñ, yokk cofeel;
+\v 9 Baale tooñ, yokk cofeel;
 \q1 sulliw ay, tas xarit.
 \b
 \q1
@@ -1773,11 +1767,11 @@
 \b
 \q1
 \v 15 Dëggal ku sikk ak daan ku jub,
-\q1 Aji Sax ji sib na yooyu yaar.
+\q1 Aji Sax ji sib na yooyu ñaar.
 \b
 \q1
 \v 16 Ab dof du am xaalis, jënde xel mu rafet;
-\q1 buggu ca dara.
+\q1 bëggu ca dara.
 \b
 \q1
 \v 17 Xarit du bëgg, di bañ;
@@ -1826,7 +1820,6 @@
 \q1
 \v 28 Ab dof sax bu noppee, nirook boroom xel;
 \q1 ku ne cell, ñu fooge lag muus.
-\b
 \c 18
 \q1
 \v 1 Ab siis, bànneexu boppam rekk,
@@ -1870,7 +1863,7 @@
 \b
 \q1
 \v 11 Alal day aar boroom ni ab tata,
-\q1 mu xalaat ne maneesu koo bëtt.
+\q1 mu foog ne maneesu koo bëtt.
 \b
 \q1
 \v 12 Bew, yàqule;
@@ -1890,7 +1883,7 @@
 \b
 \q1
 \v 16 Deel maye, da lay ubbil bunt,
-\q1 di la àggle ci boroom daraja.
+\q1 di la àggale ci boroom daraja.
 \b
 \q1
 \v 17 Ku jëkke layoo, ñu ne yaa yey,
@@ -1924,7 +1917,6 @@
 \q1
 \v 24 Barey àndandoo lor a ngi ci,
 \q1 waaye xarit a ngi gëna taq nit mbokkam.
-\b
 \c 19
 \q1
 \v 1 Ñàkk te mat,
@@ -2001,7 +1993,7 @@
 \b
 \q1
 \v 19 Ku naqari deret, sonal nga sa bopp;
-\q1 ku la xettli, tóllanti ko.
+\q1 ku la xettali, tóllanti ko.
 \b
 \q1
 \v 20 Déggal ndigal te yaru,
@@ -2017,7 +2009,7 @@
 \b
 \q1
 \v 23 Ragalal Aji Sax ji ndax nga gudd fan,
-\q1 nopplu te baña loru.
+\q1 noppalu te baña loru.
 \b
 \q1
 \v 24 Ab yaafus day yeb loxoom ci ndab,
@@ -2042,7 +2034,6 @@
 \q1
 \v 29 Na ñaawlekat bi séentu mbugal;
 \q1 ab dof, yeti gannaaw.
-\b
 \c 20
 \q1
 \v 1 Naan biiñ ak ñaawle, naan ñoll, tanqale,
@@ -2163,7 +2154,6 @@
 \q1
 \v 30 Dóor yu la gaañ faj na sag mbon,
 \q1 ay yar fóot na xolu boroom.
-\b
 \c 21
 \q1
 \v 1 Xolu buur walum ndox la ci loxol Aji Sax ji,
@@ -2210,7 +2200,7 @@
 \q1 nga jàngal ku rafet xel, mu yokku.
 \b
 \q1
-\v 12 Aji Jub ji Yàlla xam na la ne ca biir kër ku bon,
+\v 12 Aji Njub ji Yàlla xam na la ne ca biir kër ku bon,
 \q1 te mooy sànk ku bon.
 \b
 \q1
@@ -2227,7 +2217,7 @@
 \b
 \q1
 \v 16 Ku noppee jëfe xel,
-\q1 noppluji njaniiw.
+\q1 noppaluji njaniiw.
 \b
 \q1
 \v 17 Ku topp sa bànneex, mujje ñàkk;
@@ -2263,10 +2253,10 @@
 \b
 \q1
 \v 25 Ab yaafus day bëgg lu mu amul ba dee,
-\q1 ndax du nangoo liggéey;
+\q1 ndax du nangoo liggéey,
 \q1
-\v 26 day yendoo xemmem, te du am,
-\q1 ka jub di joxeek a joxewaat.
+\v 26 day yendoo xemmem, te du am;
+\q1 ka jub di joxeeka joxewaat.
 \b
 \q1
 \v 27 Saraxu nit ku bon ñaawtéef la,
@@ -2287,7 +2277,6 @@
 \q1
 \v 31 Nit ay takk, bésub xare,
 \q1 Aji Sax ji di maye ndam.
-\b
 \c 22
 \q1
 \v 1 Jëw bu rafet a gën barele,
@@ -2310,7 +2299,7 @@
 \q1 ku sàmm sa bakkan sore ko.
 \b
 \q1
-\v 6 Tegal gone ciw yoon,
+\v 6 Tegal gone ciw yoon;
 \q1 ba bu màggee, du ko wacc.
 \b
 \q1
@@ -2342,7 +2331,7 @@
 \q1 dañu may rey ci mbedd mi!»
 \b
 \q1
-\v 14 Waxi ndaw su yemadi am yeer la,
+\v 14 Waxi jigéenu njaalookat am yeer la,
 \q1 ku Aji Sax ji rëbb moo cay tàbbi.
 \b
 \q1
@@ -2350,10 +2339,10 @@
 \q1 boo bantalee, mu tàggook moom.
 \b
 \q1
-\v 16 Not néew-ji-doole ngir yokkule,
+\v 16 Noot néew-ji-doole ngir yokkule,
 \q1 mbaa may boroom alal,
 \q1 loo ci def mu wàññi la.
-\s1 Fanweeri tegtal a ngi
+\s1 Fanweeri tegtal a ngii
 \q1
 \v 17 Teewlul te déglu li boroom xel yi wax.
 \q1 Defal sam xel ci li ma lay xamal.
@@ -2362,7 +2351,7 @@
 \q1 muy sa mbégte.
 \q1
 \v 19 Yaw laa koy xamal tey jii,
-\q1 ndax nga wóolu \w Aji Sax|Aji Sax j-:\w* ji.
+\q1 ndax nga wóolu Aji Sax ji.
 \q1
 \v 20 Dama laa bindal fanweeri dénkaane,
 \q1 ci wàllu digal ak xam-xam,
@@ -2372,10 +2361,10 @@
 \q1 yoo tontoo ña la yebal.
 \s2 [1]
 \q1
-\v 22 Bul xañ néew-ji-doole; néew-ji-doole la.
+\v 22 Bul xañ néew-ji-doole ndax li muy néew-ji-doole.
 \q1 Ku tumurànke, bu ko soxore cib àtte,
 \q1
-\v 23 \w Aji Sax|Aji Sax j-:\w* ji da koy taxawu,
+\v 23 Aji Sax ji da koy taxawu,
 \q1 ku ko xañ, mu xañ la bakkan.
 \s2 [2]
 \q1
@@ -2400,7 +2389,6 @@
 \v 29 Seetlul ku man liggéeyam,
 \q1 buur lay liggéeyal,
 \q1 du liggéeyal baadoolo.
-\b
 \c 23
 \s2 [6]
 \q1
@@ -2463,7 +2451,7 @@
 \s2 [14]
 \q1
 \v 17 Bul ñee bàkkaarkat,
-\q1 saxool ragal \w Aji Sax|Aji Sax j-:\w* ji,
+\q1 saxool ragal Aji Sax ji,
 \q1
 \v 18 ndax kat moo am muj,
 \q1 te kon sa yaakaar du tas.
@@ -2472,10 +2460,10 @@
 \v 19 Déglul, doom, muusal
 \q1 te yebu ci yoonu njub.
 \q1
-\v 20 Bul bokk ci ñiy lekk lu ëpp,
-\q1 ak a màndi,
+\v 20 Bul bokk ci ñiy lekk lu ëpp
+\q1 aka màndi,
 \q1
-\v 21 ndax ku bëgg lekk ak a màndi, ñàkk dab la,
+\v 21 ndax ku bëgg lekk aka màndi, ñàkk dab la,
 \q1 dajjant it, rafle rekk.
 \s2 [16]
 \q1
@@ -2492,8 +2480,7 @@
 \q1 rawatina ndey ji la jur.
 \s2 [17]
 \q1
-\v 26 Doom, teewloo ma xel
-\q1 te roy ma.
+\v 26 Doom, teewloo ma xel te roy ma.
 \q1
 \v 27 Ab gànc yeer mu xóot la,
 \q1 jabaru jaambur di teen bu xat.
@@ -2503,7 +2490,7 @@
 \s2 [18]
 \q1
 \v 29 Ana kuy tiislu, naan: «Wóoy, ngalla man!»
-\q1 Ana kuy xulook a jàmbat,
+\q1 Ana kuy xulooka jàmbat,
 \q1 di gaañu ci dara,
 \q1 bët ya xonq curr?
 \q1
@@ -2514,7 +2501,7 @@
 \q1 Aka yànj cib kaas
 \q1 te neexa jolu!
 \q1
-\v 32 Bu weesee mu màtt la ni jaan,
+\v 32 Bu weesoo mu màtt la ni jaan,
 \q1 ne la càppit ni ñàngóor.
 \q1
 \v 33 Dangay mel ni kuy gis lu doy waar,
@@ -2567,7 +2554,7 @@
 \s2 [25]
 \q1
 \v 11 Wallul ku ñuy reyi te tooñul,
-\q1 xettlil kuy tërëf, ñu di ko reyi.
+\q1 xettalil kuy tërëf, ñu di ko reyi.
 \q1
 \v 12 Soo nee sa yoon nekku ci it,
 \q1 kiy natt xol yi, xam na,
@@ -2586,14 +2573,14 @@
 \v 15 Soxor bi, bul tëru ku jub ci këram,
 \q1 bul yàq dëkkuwaayam.
 \q1
-\v 16 Ku jub day daanu juróom yaari yoon, jógaat,
+\v 16 Ku jub day daanu juróom ñaari yoon, jógaat,
 \q1 ab soxor sërëx ci njekkar.
 \s2 [28]
 \q1
 \v 17 Bu sab noon daanoo, bu ko bànneexoo,
 \q1 bu tërëfee, bu ko bége.
 \q1
-\v 18 Lu ko moy \w Aji Sax|Aji Sax j-:\w* ji gis la, ñaawlu ko,
+\v 18 Lu ko moy Aji Sax ji gis la, ñaawlu ko,
 \q1 daldi giif, dootu ko mbugal.
 \s2 [29]
 \q1
@@ -2604,12 +2591,12 @@
 \q1 ku soxor day mel ni taal bu fey.
 \s2 [30]
 \q1
-\v 21 Doom, ragalal \w Aji Sax|Aji Sax j-:\w* ji, wormaal buur.
+\v 21 Doom, ragalal Aji Sax ji, wormaal buur.
 \q1 Bul lëngook kuy fippu.
 \q1
 \v 22 Yàllaak buur a koy bette mbugal,
 \q1 te kenn xamul musiba mu muy doon.
-\s1 Yeneen tegtal a ngi
+\s1 Yeneen tegtal a ngii
 \q1
 \v 23 Lii it ñi rafet xel a ko wax.
 \b
@@ -2646,13 +2633,13 @@
 \v 32 Maa ko gis, di xalaat,
 \q1 xoolaat ko, jànge ca.
 \q1
-\v 33 Booy dajjant ak a for bët,
-\q1 di tegley loxook a jaaxaan,
+\v 33 Booy dajjant aka for bët,
+\q1 di tegley loxooka jaaxaan,
 \q1
 \v 34 néewlee ngi lay dikkal nib sàcc,
 \q1 ñàkk gànnaayul la.
 \c 25
-\ms Yeneen kàddu yu xeloo ngi yu tukkee ci Suleymaan
+\ms Yeneen kàddu yu xeloo ngii yu tukkee ci Suleymaan
 \mr (Saar 25---29)
 \p
 \v 1 Lii it ay kàddu yu xelu la, di yu Suleymaan, ay niti Esekiyas buurub Yuda sotti ko.
@@ -2662,7 +2649,7 @@
 \q1 darajay buur a ngi ci li mu feeñal.
 \q1
 \v 3 Maneesula daj li ci xelu buur,
-\q1 xalaatam daa kawe ni asamaan, xóot ni suuf.
+\q1 xalaatam daa kawe ni asamaan, xóote ni suuf.
 \b
 \q1
 \v 4 Xellil xaalis, tonni lu ca rax,
@@ -2676,7 +2663,7 @@
 \q1 bul tooge jataayu boroom daraja,
 \q1
 \v 7 ndax ñu ne la: «Yéegal, jegesi fii,»
-\q1 moo gën ñu torxal la ci kanam kilifa.
+\q1 moo gën ñu toroxal la ci kanam kilifa.
 \b
 \q1 Boo gisalee sa bopp it,
 \q1
@@ -2702,7 +2689,7 @@
 \b
 \q1
 \v 14 Kuy dige te doo joxe,
-\q1 yaay xiin wu ngelaw, mu naaxsaay.
+\q1 yaay xiin wu ngelaw, mu naaxsaay/ naxasaay.
 \b
 \q1
 \v 15 Muñ mer ay nax kilifa,
@@ -2734,7 +2721,7 @@
 \q1 bu maree, may ko mu naan,
 \q1
 \v 22 day rus ba mel ni koo yeni xal,
-\q1 te \w Aji Sax|Aji Sax j-:\w* jee lay fey.
+\q1 te Aji Sax jee lay fey.
 \b
 \q1
 \v 23 Jëw, mer a cay topp;
@@ -2753,7 +2740,7 @@
 \q1 ni seyaan bu nëx mbaa teen bu xàbb.
 \b
 \q1
-\v 27 Lekk lem ju ëpp baaxul,
+\v 27 Lekk lem ju ëpp b aaxul,
 \q1 te wut waaw-góor du ngóora.
 \b
 \q1
@@ -2797,12 +2784,12 @@
 \q1
 \v 12 Ana koo gis mu ne: «Maa xelu»?
 \q1 Kooku ab dof a ko gën demin.
-\s1 Ab yaafus a ngi
+\s1 Ab yaafus a ngii
 \q1
 \v 13 Ab yaafus da naan: «Gayndee ngi ci yoon wi!
 \q1 Gayndee ngi ci mbedd mi!»
 \q1
-\v 14 Ab yaafus day tëdd ak a walbatiku,
+\v 14 Ab yaafus day tëdd aka walbatiku,
 \q1 mooy bunt, day jaayu, demul fenn.
 \q1
 \v 15 Ab yaafus day yeb loxoom ci ndab,
@@ -2810,7 +2797,7 @@
 \q1
 \v 16 Ab yaafus day foog ne moo gëna muus
 \q1 juróom ñaari boroom xel yu xam tont.
-\s1 Ay nit ñuy loree ngi
+\s1 Ay nit ñuy loree ngii
 \q1
 \v 17 Kuy xuloo lu sa yoon newul,
 \q1 yaa jàpp ci noppi xaj buy romb.
@@ -2818,7 +2805,7 @@
 \v 18-19 Nit kuy naxe,
 \q1 naan: «Damay fo!»
 \q1 yaay dof buy sànniy jum,
-\q1 di fitteek a reye.
+\q1 di fitteeka reye.
 \q1
 \v 20 Bu matt amul, ab taal fey,
 \q1 fu soskat amul it, xuloo jeex fa.
@@ -2886,7 +2873,7 @@
 \b
 \q1
 \v 10 Bul fàtte sab xarit mbaa sa xaritu baay,
-\q1 bul jàq ba seeti sa mbokk;
+\q1 boo jàqee, bul seeti sa mbokk;
 \q1 dëkkandoo bu jegee gën mbokk mu sore.
 \b
 \q1
@@ -2899,7 +2886,7 @@
 \b
 \q1
 \v 13 Ku gàddul jaambur bor, jëlal mbubbam;
-\q1 tayle ko, moo dige feyal ndaw su yemadi.
+\q1 tayle ko, moo dige feyal jigéenu njaalookat.
 \b
 \q1
 \v 14 Nuyoo bu xumb, suba teel
@@ -2918,7 +2905,7 @@
 \b
 \q1
 \v 18 Ku aar garab, lekk ca doom ya;
-\q1 ku topptoo sa sang, am ngërëm.
+\q1 ku toppatoo sa sang, am ngërëm.
 \b
 \q1
 \v 19 Ku xool cim ndox, gis sa kanam,
@@ -2930,7 +2917,7 @@
 \b
 \q1
 \v 21 Xaalis ak wurus sawaraa koy xelli,
-\q1 waaye àtteb nit ca jëëm.
+\q1 waaye àtteb nit ca taggam.
 \b
 \q1
 \v 22 Soo jëloon ub dof, yeb ci gënn,
@@ -2949,7 +2936,7 @@
 \q1 ñu dajale ngooñ ma ca tund ya\f + \fr 27.25 \ft Ca Israyil tund yaa ëpp lu muy taw, te fa la ñax ma ëppe.\f*,
 \q1
 \v 26 say xar da lay amal koddaay,
-\q1 bëy yi génneel la njégu tool.
+\q1 bëy yi génneel la njëgu tool.
 \q1
 \v 27 Meewum bëy daldi am, ba doy la dund,
 \q1 yaak sa waa kër
@@ -2974,7 +2961,7 @@
 \b
 \q1
 \v 5 Ku bon xamul njub,
-\q1 kuy wut \w Aji Sax|Aji Sax j-:\w* ji, xam nga njub bu wér.
+\q1 kuy wut Aji Sax ji, xam nga njub bu wér.
 \b
 \q1
 \v 6 Ñàkk te mat
@@ -3010,7 +2997,7 @@
 \q1 ku koy nangu, tuub ko, am yërmandey Yàlla.
 \b
 \q1
-\v 14 Mbégte ñeel na ku saxoo ragal,
+\v 14 Mbégte ñeel na ku saxoo ragal Yàlla,
 \q1 waaye ku dëgër bopp tàbbi ci njekkar.
 \b
 \q1
@@ -3069,10 +3056,9 @@
 \q1
 \v 28 Bu ab soxor faloo, ñépp làquji,
 \q1 bu daanoo, ku jub teg tànk.
-\b
 \c 29
 \q1
-\v 1 Ku ñuy àrtu, nga të ticc,
+\v 1 Ku ñuy artu, nga të ticc,
 \q1 dangay jekki yàqu, ba wees am paj.
 \b
 \q1
@@ -3093,7 +3079,7 @@
 \b
 \q1
 \v 6 Ku bon day moy, ba dugal boppam;
-\q1 ku jub di woy ak a bànneexu.
+\q1 ku jub di woy aka bànneexu.
 \b
 \q1
 \v 7 Ku jub a xam àqu néew-ji-doole,
@@ -3128,12 +3114,12 @@
 \q1 ab jalam sax.
 \b
 \q1
-\v 15 Deel bantal ak a yedde, day rafetal xel;
+\v 15 Deel bantal aka yedde, day rafetal xel;
 \q1 gone goo bay-bayal, mu gàcceel ndeyam.
 \b
 \q1
 \v 16 Bu ku bon féetee kaw, ag moy law,
-\q1 waaye ku jub, fekke jéllu ku bon.
+\q1 waaye ku jub fekke jéllu ku bon.
 \b
 \q1
 \v 17 Yaral sa doom, mu noppal la,
@@ -3183,7 +3169,7 @@
 \ms Kàddu yi Agur wax
 \mr (Saar 30)
 \p
-\v 1 Lii waxi Agur la, góor gay doomu Yake mu Maasa\f + \fr 30.1 \fk Maasa \ft bérab la bu genn giirug Israyil sancoon ca bëj-gànnaaru Arabi.\f*. Góor ga daa wax ak Itiyel, wax ak Itiyel ak Ukal. Mu ne:
+\v 1 Lii waxi Agur la, góor gay doomu Yake mu Maasa\f + \fr 30.1 \fk Maasa, \ft bérab la bu genn giirug Israyil sancoon ca bëj-gànnaaru Arabi.\f*. Góor ga daa wax ak Itiyel, wax ak Itiyel ak Ukal. Mu ne:
 \b
 \q1
 \v 2 Maa dofe dëgg, ba yées ci nit ñi,
@@ -3208,7 +3194,7 @@
 \q1 mu weddi say fen, nga weeru.
 \b
 \q1
-\v 7 Éy Yàlla, yaar laa la ñaan,
+\v 7 Éy Yàlla, ñaar laa la ñaan,
 \q1 ngalla may ma ko sama giiru dund:
 \q1
 \v 8 caaxaan aki fen, yal na ma sore,
@@ -3216,7 +3202,7 @@
 \q1 leel ma lu ma doy;
 \q1
 \v 9 lu ko moy ma regg, weddi la,
-\q1 ba naan: «Kuy \w Aji Sax|Aji Sax j-:\w* ji?»
+\q1 ba naan: «Kuy Aji Sax ji?»
 \q1 Mbaa ma ñàkk bay sàcc,
 \q1 di la ñàkke worma, yaw sama Yàlla.
 \b
@@ -3237,9 +3223,9 @@
 \q1 seeni gëñ niy paaka,
 \q1 ñuy lekk néew-ji-doole, ba raafal leen ci réew mi,
 \q1 ba ku ñàkk jeex ci biir nit ñi.
-\s1 Ay kàddoo ngi yu ànd ak lim
+\s1 Ay kàddoo ngii yu ànd ak lim
 \q1
-\v 15 Saxu watar du suur, ñaar ñu jigéen la am:
+\v 15 Saxu watar\f + \fr 30.15 \fk watar \ft sax la wu nekk ci ndox, di manq deret.\f* du suur, ñaar ñu jigéen la am:
 \q1 Jox Ma ak Jox Ma.
 \b
 \q1 Ñett a ngii ñu dul suur,
@@ -3266,8 +3252,8 @@
 \q1 yoon wi góor di jaar as ndaw.
 \b
 \q1
-\v 20 Jikkoy jigéenu moykat a ngi.
-\q1 Day lekk, wommiku, te naan:
+\v 20 Jikkoy jigéenu moykat a ngii:
+\q1 day lekk, wommiku, te naan:
 \q1 «Defuma dara lu aay!»
 \b
 \q1
@@ -3287,14 +3273,14 @@
 \v 25 xorondom, néew na doole,
 \q1 waaye bu jotee, mu denc dundam;
 \q1
-\v 26 daman\f + \fr 30.26 \fk Daman \ft xaw na nirook njomboor.\f*, barewul kàttan,
+\v 26 daman\f + \fr 30.26 \fk daman \ft xaw naa nirook njomboor.\f*, barewul kàttan,
 \q1 te day dëkk ciy doj;
 \q1
 \v 27 soccet, amul buur,
 \q1 teewul ñuy àndandoo, diy gàngoor;
 \q1
 \v 28 sindax, manees na koo ŋëb,
-\q1 teewul ma nga biir kër buur.
+\q1 teewul ma nga biir kër Buur.
 \b
 \q1
 \v 29 Ñett a ngii, ñu jekk um ndaag,
@@ -3319,7 +3305,7 @@
 \ms Buur Lemuyel a ngi yeete
 \mr (Saar 31)
 \p
-\v 1 Lii waxi Lemuyel la, buuru Maasa\f + \fr 31.1 \fk Maasa \ft bérab la bu genn giirug Israyil sancoon ca bëj-gànnaaru Arabi.\f*, te ndeyam jàngal ko ko. Mu ne:
+\v 1 Lii waxi Lemuyel la, buuru Maasa\f + \fr 31.1 \fk Maasa, \ft bérab la bu genn giirug Israyil sancoon ca bëj-gànnaaru Arabi.\f*, te ndeyam jàngal ko ko. Mu ne:
 \b
 \q1
 \v 2 Ngóor si doom, saa doomi bopp!
@@ -3333,13 +3319,13 @@
 \q1 kilifa moomul di sàkku ñoll.
 \q1
 \v 5 Lu ko moy mu naan, ba fàtte lu yoon tëral,
-\q1 xañ néew-ji-doole ju ne, àqam.
+\q1 xañ néew-ji-doole ju ne àqam.
 \q1
 \v 6 Bàyyeel ñoll kuy sànku,
-\q1 bàyyi biiñ ak boroom naqar.
+\q1 bàyyeel biiñ boroom naqar.
 \q1
 \v 7 Bu ñu naanee, fàtte seen néewle,
-\q1 ba dootuñu fàttliku seenu tiis.
+\q1 ba dootuñu fàttaliku seenu tiis.
 \b
 \q1
 \v 8 Nanga àddul ku amul kàddu,
@@ -3347,7 +3333,7 @@
 \q1
 \v 9 Deel àddu, di àtte njub;
 \q1 ku ñàkk ak ku néewle, nga sàmm àqam.
-\s1 Jeeg bu baax nii lay mel
+\s1 Jeeg bu ragal Aji Sax ji nii lay mel
 \q1
 \v 10 Jeeg bu jàmbaare, ndaw lu jafe,
 \q1 ba rawati gànjar!
@@ -3356,7 +3342,7 @@
 \q1 te jëkkër ja day am xéewal, du ko ñàkk.
 \q1
 \v 12 Day defal jëkkëram lu baax, du ko lor,
-\q1 tey ànd ak bakkan.
+\q1 te di ànd ak bakkan.
 \q1
 \v 13 Day wut kawari gàtt aki wëñ,
 \q1 di ca liggéeye mbégte.
@@ -3366,13 +3352,13 @@
 \q1
 \v 15 Day jóg te bët setul,
 \q1 di waajal njëlu njabootam,
-\q1 ak a sas ay janqam.
+\q1 aka sas ay janqam.
 \q1
 \v 16 Day seetlu ab tool, jënd ko,
 \q1 sàkk ciw ñaqam, jëmbat tóokër.
 \q1
-\v 17 Day gañu di góor-góorlu,
-\q1 ak a dëgëral përëg ya.
+\v 17 Day gañu di góor-góorlu
+\q1 aka dëgëral përëg ya.
 \q1
 \v 18 Day gis njartel liggéeyam,
 \q1 te làmpam du fey guddi.
@@ -3405,13 +3391,13 @@
 \q1 te du nangoo yàccaaral.
 \q1
 \v 28 Doom ya dañu ko naan: «Jarawlakk!»
-\q1 jëkkër ja di ko gërëm naan:
+\q1 Jëkkër ja di ko gërëm naan:
 \q1
 \v 29 «Jeeg bu jàmbaare bare na,
 \q1 waaye yaw, yaa ci raw.»
 \q1
 \v 30 Melokaan wu jekk day naxe, taar day wéy,
-\q1 waaye jigéen ju ragal \w Aji Sax|Aji Sax j-:\w* ji,
+\q1 waaye jigéen ju ragal Aji Sax ji,
 \q1 kookoo jara gërëm.
 \q1
 \v 31 Joxleen ko njukkalu ñaqam,

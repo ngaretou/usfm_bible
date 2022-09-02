@@ -1,6 +1,5 @@
 // ignore_for_file: constant_identifier_names, avoid_print
 
-import 'package:fluent_ui/generated/l10n.dart';
 import 'package:flutter/foundation.dart';
 
 import 'package:fluent_ui/fluent_ui.dart';

@@ -49,7 +49,10 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 ## To do:
 ### Minimal
 - Add in Ajami Wolof
-- NavPane buttons: Search, Contact Us, About
+- NavPane buttons: 
+  - Contact Us (?)
+- Copy and Share translations in Scripture_column.dart
+- Complete search - searching by collection
 
 ### Maximal
 - Remember window size and position on close...

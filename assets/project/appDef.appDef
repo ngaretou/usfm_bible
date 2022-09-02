@@ -3,7 +3,7 @@
   <project-name>Test App Project Name</project-name>
   <project-description></project-description>
 
-  <app-name lang="default">Test App Name</app-name>
+  <app-name lang="default">Kàddug Yàlla Gi</app-name>
   <apk-filename append-version="true">Test_App.apk</apk-filename>
   <package>org.mbs.test.test</package>
   <version code="2" name="1.0"/>
@@ -423,7 +423,7 @@
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
       <filename>01GENwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/01GENwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/01GENwolKYG.SFM</source>
     </book>
 
     <book id="EXO">
@@ -431,7 +431,7 @@
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
       <filename>02EXOwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/02EXOwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/02EXOwolKYG.SFM</source>
     </book>
 
     <book id="LEV">
@@ -439,7 +439,7 @@
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
       <filename>03LEVwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/03LEVwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/03LEVwolKYG.SFM</source>
     </book>
 
     <book id="NUM">
@@ -447,7 +447,7 @@
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
       <filename>04NUMwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/04NUMwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/04NUMwolKYG.SFM</source>
     </book>
 
     <book id="DEU">
@@ -455,7 +455,7 @@
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
       <filename>05DEUwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/05DEUwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/05DEUwolKYG.SFM</source>
     </book>
 
     <book id="JOS">
@@ -463,7 +463,7 @@
       <group>OT</group>
       <sub-group>Historical</sub-group>
       <filename>06JOSwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/06JOSwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/06JOSwolKYG.SFM</source>
     </book>
 
     <book id="JDG">
@@ -471,7 +471,7 @@
       <group>OT</group>
       <sub-group>Historical</sub-group>
       <filename>07JDGwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/07JDGwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/07JDGwolKYG.SFM</source>
     </book>
 
     <book id="RUT">
@@ -479,7 +479,7 @@
       <group>OT</group>
       <sub-group>Historical</sub-group>
       <filename>08RUTwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/08RUTwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/08RUTwolKYG.SFM</source>
     </book>
 
     <book id="1SA">
@@ -487,7 +487,7 @@
       <group>OT</group>
       <sub-group>Historical</sub-group>
       <filename>091SAwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/091SAwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/091SAwolKYG.SFM</source>
     </book>
 
     <book id="2SA">
@@ -495,7 +495,7 @@
       <group>OT</group>
       <sub-group>Historical</sub-group>
       <filename>102SAwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/102SAwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/102SAwolKYG.SFM</source>
     </book>
 
     <book id="1KI">
@@ -503,7 +503,7 @@
       <group>OT</group>
       <sub-group>Historical</sub-group>
       <filename>111KIwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/111KIwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/111KIwolKYG.SFM</source>
     </book>
 
     <book id="2KI">
@@ -511,7 +511,7 @@
       <group>OT</group>
       <sub-group>Historical</sub-group>
       <filename>122KIwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/122KIwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/122KIwolKYG.SFM</source>
     </book>
 
     <book id="1CH">
@@ -519,7 +519,7 @@
       <group>OT</group>
       <sub-group>Historical</sub-group>
       <filename>131CHwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/131CHwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/131CHwolKYG.SFM</source>
     </book>
 
     <book id="2CH">
@@ -527,7 +527,7 @@
       <group>OT</group>
       <sub-group>Historical</sub-group>
       <filename>142CHwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/142CHwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/142CHwolKYG.SFM</source>
     </book>
 
     <book id="EZR">
@@ -535,7 +535,7 @@
       <group>OT</group>
       <sub-group>Historical</sub-group>
       <filename>15EZRwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/15EZRwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/15EZRwolKYG.SFM</source>
     </book>
 
     <book id="NEH">
@@ -543,7 +543,7 @@
       <group>OT</group>
       <sub-group>Historical</sub-group>
       <filename>16NEHwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/16NEHwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/16NEHwolKYG.SFM</source>
     </book>
 
     <book id="EST">
@@ -551,7 +551,7 @@
       <group>OT</group>
       <sub-group>Historical</sub-group>
       <filename>17ESTwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/17ESTwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/17ESTwolKYG.SFM</source>
     </book>
 
     <book id="JOB">
@@ -559,7 +559,7 @@
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
       <filename>18JOBwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/18JOBwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/18JOBwolKYG.SFM</source>
     </book>
 
     <book id="PSA">
@@ -567,7 +567,7 @@
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
       <filename>19PSAwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/19PSAwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/19PSAwolKYG.SFM</source>
     </book>
 
     <book id="PRO">
@@ -575,7 +575,7 @@
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
       <filename>20PROwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/20PROwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/20PROwolKYG.SFM</source>
     </book>
 
     <book id="ECC">
@@ -583,7 +583,7 @@
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
       <filename>21ECCwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/21ECCwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/21ECCwolKYG.SFM</source>
     </book>
 
     <book id="SNG">
@@ -591,7 +591,7 @@
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
       <filename>22SNGwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/22SNGwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/22SNGwolKYG.SFM</source>
     </book>
 
     <book id="ISA">
@@ -599,7 +599,7 @@
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
       <filename>23ISAwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/23ISAwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/23ISAwolKYG.SFM</source>
     </book>
 
     <book id="JER">
@@ -607,7 +607,7 @@
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
       <filename>24JERwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/24JERwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/24JERwolKYG.SFM</source>
     </book>
 
     <book id="LAM">
@@ -615,7 +615,7 @@
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
       <filename>25LAMwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/25LAMwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/25LAMwolKYG.SFM</source>
     </book>
 
     <book id="EZK">
@@ -623,7 +623,7 @@
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
       <filename>26EZKwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/26EZKwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/26EZKwolKYG.SFM</source>
     </book>
 
     <book id="DAN">
@@ -631,7 +631,7 @@
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
       <filename>27DANwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/27DANwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/27DANwolKYG.SFM</source>
     </book>
 
     <book id="HOS">
@@ -639,7 +639,7 @@
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
       <filename>28HOSwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/28HOSwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/28HOSwolKYG.SFM</source>
     </book>
 
     <book id="JOL">
@@ -647,7 +647,7 @@
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
       <filename>29JOLwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/29JOLwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/29JOLwolKYG.SFM</source>
     </book>
 
     <book id="AMO">
@@ -655,7 +655,7 @@
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
       <filename>30AMOwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/30AMOwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/30AMOwolKYG.SFM</source>
     </book>
 
     <book id="OBA">
@@ -663,7 +663,7 @@
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
       <filename>31OBAwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/31OBAwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/31OBAwolKYG.SFM</source>
     </book>
 
     <book id="JON">
@@ -671,7 +671,7 @@
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
       <filename>32JONwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/32JONwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/32JONwolKYG.SFM</source>
     </book>
 
     <book id="MIC">
@@ -679,7 +679,7 @@
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
       <filename>33MICwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/33MICwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/33MICwolKYG.SFM</source>
     </book>
 
     <book id="NAM">
@@ -687,7 +687,7 @@
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
       <filename>34NAMwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/34NAMwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/34NAMwolKYG.SFM</source>
     </book>
 
     <book id="HAB">
@@ -695,7 +695,7 @@
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
       <filename>35HABwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/35HABwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/35HABwolKYG.SFM</source>
     </book>
 
     <book id="ZEP">
@@ -703,7 +703,7 @@
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
       <filename>36ZEPwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/36ZEPwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/36ZEPwolKYG.SFM</source>
     </book>
 
     <book id="HAG">
@@ -711,7 +711,7 @@
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
       <filename>37HAGwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/37HAGwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/37HAGwolKYG.SFM</source>
     </book>
 
     <book id="ZEC">
@@ -719,7 +719,7 @@
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
       <filename>38ZECwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/38ZECwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/38ZECwolKYG.SFM</source>
     </book>
 
     <book id="MAL">
@@ -727,7 +727,7 @@
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
       <filename>39MALwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/39MALwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/39MALwolKYG.SFM</source>
     </book>
 
     <book id="MAT">
@@ -735,7 +735,7 @@
       <group>NT</group>
       <sub-group>Gospel</sub-group>
       <filename>41MATwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/41MATwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/41MATwolKYG.SFM</source>
     </book>
 
     <book id="MRK">
@@ -743,7 +743,7 @@
       <group>NT</group>
       <sub-group>Gospel</sub-group>
       <filename>42MRKwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/42MRKwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/42MRKwolKYG.SFM</source>
     </book>
 
     <book id="LUK">
@@ -751,7 +751,7 @@
       <group>NT</group>
       <sub-group>Gospel</sub-group>
       <filename>43LUKwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/43LUKwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/43LUKwolKYG.SFM</source>
     </book>
 
     <book id="JHN">
@@ -759,7 +759,7 @@
       <group>NT</group>
       <sub-group>Gospel</sub-group>
       <filename>44JHNwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/44JHNwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/44JHNwolKYG.SFM</source>
     </book>
 
     <book id="ACT">
@@ -767,7 +767,7 @@
       <group>NT</group>
       <sub-group>Acts</sub-group>
       <filename>45ACTwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/45ACTwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/45ACTwolKYG.SFM</source>
     </book>
 
     <book id="ROM">
@@ -775,7 +775,7 @@
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>46ROMwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/46ROMwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/46ROMwolKYG.SFM</source>
     </book>
 
     <book id="1CO">
@@ -783,7 +783,7 @@
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>471COwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/471COwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/471COwolKYG.SFM</source>
     </book>
 
     <book id="2CO">
@@ -791,7 +791,7 @@
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>482COwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/482COwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/482COwolKYG.SFM</source>
     </book>
 
     <book id="GAL">
@@ -799,7 +799,7 @@
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>49GALwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/49GALwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/49GALwolKYG.SFM</source>
     </book>
 
     <book id="EPH">
@@ -807,7 +807,7 @@
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>50EPHwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/50EPHwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/50EPHwolKYG.SFM</source>
     </book>
 
     <book id="PHP">
@@ -815,7 +815,7 @@
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>51PHPwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/51PHPwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/51PHPwolKYG.SFM</source>
     </book>
 
     <book id="COL">
@@ -823,7 +823,7 @@
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>52COLwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/52COLwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/52COLwolKYG.SFM</source>
     </book>
 
     <book id="1TH">
@@ -831,7 +831,7 @@
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>531THwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/531THwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/531THwolKYG.SFM</source>
     </book>
 
     <book id="2TH">
@@ -839,7 +839,7 @@
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>542THwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/542THwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/542THwolKYG.SFM</source>
     </book>
 
     <book id="1TI">
@@ -847,7 +847,7 @@
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>551TIwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/551TIwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/551TIwolKYG.SFM</source>
     </book>
 
     <book id="2TI">
@@ -855,7 +855,7 @@
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>562TIwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/562TIwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/562TIwolKYG.SFM</source>
     </book>
 
     <book id="TIT">
@@ -863,7 +863,7 @@
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>57TITwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/57TITwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/57TITwolKYG.SFM</source>
     </book>
 
     <book id="PHM">
@@ -871,7 +871,7 @@
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>58PHMwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/58PHMwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/58PHMwolKYG.SFM</source>
     </book>
 
     <book id="HEB">
@@ -879,7 +879,7 @@
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
       <filename>59HEBwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/59HEBwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/59HEBwolKYG.SFM</source>
     </book>
 
     <book id="JAS">
@@ -887,7 +887,7 @@
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
       <filename>60JASwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/60JASwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/60JASwolKYG.SFM</source>
     </book>
 
     <book id="1PE">
@@ -895,7 +895,7 @@
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
       <filename>611PEwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/611PEwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/611PEwolKYG.SFM</source>
     </book>
 
     <book id="2PE">
@@ -903,7 +903,7 @@
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
       <filename>622PEwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/622PEwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/622PEwolKYG.SFM</source>
     </book>
 
     <book id="1JN">
@@ -911,7 +911,7 @@
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
       <filename>631JNwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/631JNwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/631JNwolKYG.SFM</source>
     </book>
 
     <book id="2JN">
@@ -919,7 +919,7 @@
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
       <filename>642JNwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/642JNwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/642JNwolKYG.SFM</source>
     </book>
 
     <book id="3JN">
@@ -927,7 +927,7 @@
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
       <filename>653JNwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/653JNwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/653JNwolKYG.SFM</source>
     </book>
 
     <book id="JUD">
@@ -935,7 +935,7 @@
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
       <filename>66JUDwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/66JUDwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/66JUDwolKYG.SFM</source>
     </book>
 
     <book id="REV">
@@ -943,7 +943,7 @@
       <group>NT</group>
       <sub-group>Revelation</sub-group>
       <filename>67REVwolKYG.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext 8 projects/wolKYG/67REVwolKYG.SFM</source>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/67REVwolKYG.SFM</source>
     </book>
   </books>
 
@@ -7237,8 +7237,6 @@ Please enter your access code:</translation>
     <translation-mapping id="Language_wol">
       <translation lang="wol">Wolof</translation>
       <translation lang="en">Wolof</translation>
-    </translation-mapping>
-    <translation-mapping id="Language_wol">
     </translation-mapping>
   </translation-mappings>
 

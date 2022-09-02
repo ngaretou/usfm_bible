@@ -5,12 +5,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart' as flutter_acrylic;
 import 'package:provider/provider.dart';
 import 'package:system_theme/system_theme.dart';
-// import 'package:url_launcher/link.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'package:window_manager/window_manager.dart';
+import 'package:context_menus/context_menus.dart';
 
+import 'screens/about.dart';
 import 'screens/bible_view.dart';
 import 'screens/settings.dart';
+
 import 'theme.dart';
 import 'models/database_builder.dart';
 
@@ -258,178 +260,187 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
         }
         //Main row that holds the text columns
         else {
-          return NavigationView(
-            key: viewKey,
-            //appBar is across top of the screen in place of normal OS specific title bar.
-            // appBar: NavigationAppBar(
-            //   automaticallyImplyLeading: false,
-            //   title: () {
-            //     if (kIsWeb) return Text(appTitle);
-            //     return DragToMoveArea(
-            //       child: Row(
-            //         children: [
-            //           const SizedBox(width: 15),
-            //           Align(
-            //             alignment: AlignmentDirectional.centerStart,
-            //             child: Text(appTitle),
-            //           ),
-            //         ],
-            //       ),
-            //     );
-            //   }(),
-            //   actions: Row(
-            //     crossAxisAlignment: CrossAxisAlignment.center,
-            //     mainAxisAlignment: MainAxisAlignment.end,
-            //     children: [
-            //       IconButton(
-            //           icon: const Icon(FluentIcons.add),
-            //           onPressed: () {
-            //             numberOfColumns <= 3 //keep it to four columns
-            //                 ? changeNumberColumns(add: true)
-            //                 : null;
+          return ContextMenuOverlay(
+            child: NavigationView(
+              key: viewKey,
+              //appBar is across top of the screen in place of normal OS specific title bar.
+              // appBar: NavigationAppBar(
+              //   automaticallyImplyLeading: false,
+              //   title: () {
+              //     if (kIsWeb) return Text(appTitle);
+              //     return DragToMoveArea(
+              //       child: Row(
+              //         children: [
+              //           const SizedBox(width: 15),
+              //           Align(
+              //             alignment: AlignmentDirectional.centerStart,
+              //             child: Text(appTitle),
+              //           ),
+              //         ],
+              //       ),
+              //     );
+              //   }(),
+              //   actions: Row(
+              //     crossAxisAlignment: CrossAxisAlignment.center,
+              //     mainAxisAlignment: MainAxisAlignment.end,
+              //     children: [
+              //       IconButton(
+              //           icon: const Icon(FluentIcons.add),
+              //           onPressed: () {
+              //             numberOfColumns <= 3 //keep it to four columns
+              //                 ? changeNumberColumns(add: true)
+              //                 : null;
 
-            //             print(numberOfColumns);
-            //             // setState(() {});
-            //           }),
+              //             print(numberOfColumns);
+              //             // setState(() {});
+              //           }),
 
-            //       // Spacer(),
+              //       // Spacer(),
 
-            //       // ToggleSwitch(
-            //       //   content: const Text('Dark Mode'),
-            //       //   checked: FluentTheme.of(context).brightness.isDark,
-            //       //   onChanged: (v) {
-            //       //     if (v) {
-            //       //       appTheme.mode = ThemeMode.dark;
-            //       //     } else {
-            //       //       appTheme.mode = ThemeMode.light;
-            //       //     }
-            //       //   },
-            //       // ),
-            //       // if (!kIsWeb) WindowButtons(),
-            //     ],
-            //   ),
-            // ),
-            pane: NavigationPane(
-              selected: index,
-              onChanged: (i) => setState(() => index = i),
-              size: const NavigationPaneSize(
-                openMinWidth: 250.0,
-                openMaxWidth: 320.0,
-              ),
-              header: Container(
-                height: kOneLineTileHeight,
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              //       // ToggleSwitch(
+              //       //   content: const Text('Dark Mode'),
+              //       //   checked: FluentTheme.of(context).brightness.isDark,
+              //       //   onChanged: (v) {
+              //       //     if (v) {
+              //       //       appTheme.mode = ThemeMode.dark;
+              //       //     } else {
+              //       //       appTheme.mode = ThemeMode.light;
+              //       //     }
+              //       //   },
+              //       // ),
+              //       // if (!kIsWeb) WindowButtons(),
+              //     ],
+              //   ),
+              // ),
+              pane: NavigationPane(
+                selected: index,
+                onChanged: (i) => setState(() => index = i),
+                size: const NavigationPaneSize(
+                  openMinWidth: 250.0,
+                  openMaxWidth: 320.0,
+                ),
+                header: Container(
+                  height: kOneLineTileHeight,
+                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
 
-                // child: Align(
-                //   alignment: Alignment.centerLeft,
-                //   child: FlutterLogo(
-                //     style: appTheme.displayMode == PaneDisplayMode.top
-                //         ? FlutterLogoStyle.markOnly
-                //         : FlutterLogoStyle.horizontal,
-                //     size: appTheme.displayMode == PaneDisplayMode.top ? 24 : 100.0,
-                //   ),
-                // ),
-              ),
-              displayMode: appTheme.displayMode,
-              indicator: () {
-                switch (appTheme.indicator) {
-                  case NavigationIndicators.end:
-                    return const EndNavigationIndicator();
-                  case NavigationIndicators.sticky:
-                  default:
-                    return const StickyNavigationIndicator();
-                }
-              }(),
-              items: [
-                // It doesn't look good when resizing from compact to open
-                // PaneItemHeader(header: Text('User Interaction')),
-                PaneItem(
-                    icon: const Icon(FluentIcons.reading_mode),
-                    title: Text(appTitle)),
-              ],
-              footerItems: [
-                //Actions label?
-                // PaneItemHeader(
-                //   header: Text('paneitemheader'),
-                // ),
-                PaneItemSeparator(),
-                RunFunctionPaneItemAction(
+                  // child: Align(
+                  //   alignment: Alignment.centerLeft,
+                  //   child: FlutterLogo(
+                  //     style: appTheme.displayMode == PaneDisplayMode.top
+                  //         ? FlutterLogoStyle.markOnly
+                  //         : FlutterLogoStyle.horizontal,
+                  //     size: appTheme.displayMode == PaneDisplayMode.top ? 24 : 100.0,
+                  //   ),
+                  // ),
+                ),
+                displayMode: appTheme.displayMode,
+                indicator: () {
+                  switch (appTheme.indicator) {
+                    case NavigationIndicators.end:
+                      return const EndNavigationIndicator();
+                    case NavigationIndicators.sticky:
+                    default:
+                      return const StickyNavigationIndicator();
+                  }
+                }(),
+                items: [
+                  // It doesn't look good when resizing from compact to open
+                  // PaneItemHeader(header: Text('User Interaction')),
+                  PaneItem(
+                      icon: const Icon(FluentIcons.reading_mode),
+                      title: Text(appTitle)),
+                ],
+                footerItems: [
+                  //Actions label?
+                  // PaneItemHeader(
+                  //   header: Text('paneitemheader'),
+                  // ),
+                  PaneItemSeparator(),
+                  RunFunctionPaneItemAction(
+                      title: Text(Provider.of<UserPrefs>(context, listen: true)
+                          .currentTranslation
+                          .search),
+                      icon: const Icon(FluentIcons.search),
+                      functionToRun:
+                          Provider.of<ColumnManager>(context, listen: false)
+                              .openSearch),
+                  RunFunctionPaneItemAction(
+                      title: Text(Provider.of<UserPrefs>(context, listen: true)
+                          .currentTranslation
+                          .addColumn),
+                      icon: const Icon(FluentIcons.calculator_addition),
+                      functionToRun:
+                          Provider.of<ColumnManager>(context, listen: false)
+                              .addColumn),
+                  LightDarkModePaneItemAction(
+                    icon: FluentTheme.of(context).brightness.isDark
+                        ? const Icon(FluentIcons.sunny)
+                        : const Icon(FluentIcons.clear_night),
+                    title: FluentTheme.of(context).brightness.isDark
+                        ? Text(Provider.of<UserPrefs>(context, listen: true)
+                            .currentTranslation
+                            .lightTheme)
+                        : Text(Provider.of<UserPrefs>(context, listen: true)
+                            .currentTranslation
+                            .darkTheme),
+                    appTheme: appTheme,
+                  ),
+
+                  PaneItemSeparator(),
+                  PaneItem(
+                      icon: const Icon(FluentIcons.info),
+                      title: Text(Provider.of<UserPrefs>(context, listen: true)
+                          .currentTranslation
+                          .about)),
+                  PaneItem(
+                    icon: const Icon(FluentIcons.settings),
                     title: Text(Provider.of<UserPrefs>(context, listen: true)
                         .currentTranslation
-                        .search),
-                    icon: const Icon(FluentIcons.search),
-                    functionToRun:
-                        Provider.of<ColumnManager>(context, listen: false)
-                            .openSearch),
-                RunFunctionPaneItemAction(
-                    title: Text(Provider.of<UserPrefs>(context, listen: true)
-                        .currentTranslation
-                        .addColumn),
-                    icon: const Icon(FluentIcons.calculator_addition),
-                    functionToRun:
-                        Provider.of<ColumnManager>(context, listen: false)
-                            .addColumn),
-                LightDarkModePaneItemAction(
-                  icon: FluentTheme.of(context).brightness.isDark
-                      ? const Icon(FluentIcons.sunny)
-                      : const Icon(FluentIcons.clear_night),
-                  title: FluentTheme.of(context).brightness.isDark
-                      ? Text(Provider.of<UserPrefs>(context, listen: true)
-                          .currentTranslation
-                          .lightTheme)
-                      : Text(Provider.of<UserPrefs>(context, listen: true)
-                          .currentTranslation
-                          .darkTheme),
-                  appTheme: appTheme,
-                ),
+                        .settings),
+                  ),
+                  // _LinkPaneItemAction(
+                  //   icon: const Icon(FluentIcons.open_source),
+                  //   title: const Text('Source code'),
+                  //   link: 'https://github.com/ngaretou/usfm_bible',
+                  // ),
+                ],
+              ),
+              content: FutureBuilder(
+                future: init,
+                builder: (ctx, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(child: ProgressRing());
+                  }
+                  //Main row that holds the text columns
+                  else {
+                    AppInfo appInfo = snapshot.data as AppInfo;
 
-                PaneItemSeparator(),
-                PaneItem(
-                  icon: const Icon(FluentIcons.settings),
-                  title: Text(Provider.of<UserPrefs>(context, listen: true)
-                      .currentTranslation
-                      .settings),
-                ),
-                // _LinkPaneItemAction(
-                //   icon: const Icon(FluentIcons.open_source),
-                //   title: const Text('Source code'),
-                //   link: 'https://github.com/ngaretou/usfm_bible',
-                // ),
-              ],
-            ),
-            content: FutureBuilder(
-              future: init,
-              builder: (ctx, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const Center(child: ProgressRing());
-                }
-                //Main row that holds the text columns
-                else {
-                  AppInfo appInfo = snapshot.data as AppInfo;
+                    return NavigationBody(index: index, children: [
+                      BibleView(
+                        appInfo: appInfo,
+                      ), //main view
 
-                  return NavigationBody(index: index, children: [
-                    BibleView(
-                      appInfo: appInfo,
-                    ), //main view
+                      //must include dummy destination here for each custom action, apparently
 
-                    //must include dummy destination here for each custom action, apparently
+                      BibleView(
+                        appInfo: snapshot.data as AppInfo,
+                      ), //taking place of Search
 
-                    BibleView(
-                      appInfo: snapshot.data as AppInfo,
-                    ), //taking place of Search
+                      BibleView(
+                        appInfo: snapshot.data as AppInfo,
+                      ), //taking place of add a pane
 
-                    BibleView(
-                      appInfo: snapshot.data as AppInfo,
-                    ), //taking place of add a pane
+                      BibleView(
+                        appInfo: snapshot.data as AppInfo,
+                      ), //taking place of toggle light/dark mode
 
-                    BibleView(
-                      appInfo: snapshot.data as AppInfo,
-                    ), //taking place of toggle light/dark mode
+                      const About(),
 
-                    Settings(controller: settingsController),
-                  ]);
-                }
-              },
+                      Settings(controller: settingsController),
+                    ]);
+                  }
+                },
+              ),
             ),
           );
         }

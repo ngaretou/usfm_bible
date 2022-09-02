@@ -101,6 +101,7 @@ class Translation {
   String systemTheme;
   String lightTheme;
   String darkTheme;
+  String about;
   String settings;
   String settingsInterfaceLanguage;
 
@@ -113,6 +114,7 @@ class Translation {
       required this.systemTheme,
       required this.lightTheme,
       required this.darkTheme,
+      required this.about,
       required this.settings,
       required this.settingsInterfaceLanguage});
 }
@@ -184,9 +186,6 @@ Future<void> asyncGetTranslations(BuildContext context) async {
         langName = langInfo['en'].toString();
       }
 
-      print(langCode);
-      print(langName);
-
       Iterable<XmlElement> searchTextXML = document
           .getElement('app-definition')!
           .getElement('translation-mappings')!
@@ -225,6 +224,18 @@ Future<void> asyncGetTranslations(BuildContext context) async {
       String settingsInterfaceLanguageText =
           settingsInterfaceLanguageTextXml.first.innerText;
 
+      Iterable<XmlElement> aboutTextXml = document
+          .getElement('app-definition')!
+          .getElement('translation-mappings')!
+          .findAllElements('translation-mapping')
+          .where((element) => element.getAttribute('id') == 'Menu_About')
+          .first
+          .findAllElements('translation')
+          .toList()
+          .where(
+              (element) => element.getAttribute('lang').toString() == langCode);
+      String aboutText = aboutTextXml.first.innerText;
+
       // ----
       //Now get supplemental translations
       translationSupplement = {};
@@ -251,6 +262,7 @@ Future<void> asyncGetTranslations(BuildContext context) async {
           systemTheme: translationSupplement['systemTheme']!,
           lightTheme: translationSupplement['lightTheme']!,
           darkTheme: translationSupplement['darkTheme']!,
+          about: aboutText,
           settings: settingsText,
           settingsInterfaceLanguage: settingsInterfaceLanguageText));
     }
@@ -412,9 +424,10 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
                 if (match.group(1) != null) verseNumber = match.group(1)!;
                 if (match.group(3) != null) verseText = match.group(3)!;
               }
-            } else {
-              verseNumber = "";
             }
+            // else {
+            //   // verseNumber = "";
+            // }
 
             //TODO: incorporate Changes from appDef
 

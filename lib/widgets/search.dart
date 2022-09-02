@@ -209,11 +209,11 @@ class _SearchResultTileState extends State<SearchResultTile> {
     );
 
     List<InlineSpan> styledParagraphFragments = verseComposer(
-      line: widget.line,
-      computedTextStyle: computedTextStyle,
-      includeFootnotes: false,
-      accentTextColor: FluentTheme.of(context).accentColor,
-    ).versesAsSpans;
+            line: widget.line,
+            computedTextStyle: computedTextStyle,
+            includeFootnotes: false,
+            context: context)
+        .versesAsSpans;
 
     return Padding(
       padding: const EdgeInsets.all(8.0),

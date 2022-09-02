@@ -1,10 +1,6 @@
 // ignore_for_file: avoid_print, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
-// import 'dart:async';
-
 import 'dart:async';
-
-// import 'package:flutter/material.dart' as material;
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
@@ -14,12 +10,12 @@ import 'package:share_plus/share_plus.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/services.dart';
+import 'package:context_menus/context_menus.dart';
 
 import '../models/database_builder.dart';
 import '../widgets/paragraph_builder.dart';
-import 'package:contextmenu/contextmenu.dart';
+
 import '../providers/user_prefs.dart';
-import '../providers/column_manager.dart';
 
 class ScriptureColumn extends StatefulWidget {
   final int myColumnIndex;
@@ -353,6 +349,9 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   }
 
   addVerseToCopyRange(ParsedLine ref) {
+    print(
+        'received request to add ${ref.book} ${ref.chapter} ${ref.verse} to copy range');
+
     addVersesBetweenIndexes(int startIndex, int endIndex) {
       rangeOfVersesToCopy = [];
       for (var i = startIndex; i <= endIndex; i++) {
@@ -424,68 +423,76 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     setState(() {});
   }
 
-  String textToShareOrCopy() {
+  String? textToShareOrCopy() {
+    print('textToShareOrCopy');
     String textToReturn = '';
     String reference = '';
     // String lineBreak = kIsWeb ? '%0d%0a' : '\n';
     String lineBreak = '\n';
 
-    for (var i = 0; i < rangeOfVersesToCopy.length; i++) {
-      var temp =
-          verseComposer(line: rangeOfVersesToCopy[i], includeFootnotes: false)
-              .versesAsString;
-      textToReturn = '$textToReturn$temp ';
-    }
-
-    //Reference
-    //Get collection name in regular text
-    String currentCollectionName = collections
-        .where((element) => element.id == currentCollection.value)
-        .first
-        .name;
-
-    //Get the books
-    if (rangeOfVersesToCopy.first.book == rangeOfVersesToCopy.last.book) {
-      String bookName = currentCollectionBooks
-          .where((element) => element.id == rangeOfVersesToCopy.first.book)
-          .first
-          .name;
-
-      //only one verse: Genesis 1.1
-      if (rangeOfVersesToCopy.length == 1) {
-        reference =
-            '$bookName ${rangeOfVersesToCopy.first.chapter}.${rangeOfVersesToCopy.first.verse}';
-      }
-      //same chapter: Genesis 1.2-10
-      else if (rangeOfVersesToCopy.first.chapter ==
-          rangeOfVersesToCopy.last.chapter) {
-        reference =
-            '$bookName ${rangeOfVersesToCopy.first.chapter}.${rangeOfVersesToCopy.first.verse}-${rangeOfVersesToCopy.last.verse}';
-      } else {
-        //same book different chapter: Genesis 1.20-2.2
-        reference =
-            '$bookName ${rangeOfVersesToCopy.first.chapter}.${rangeOfVersesToCopy.first.verse}-${rangeOfVersesToCopy.last.chapter}.${rangeOfVersesToCopy.last.verse}';
-      }
+    if (rangeOfVersesToCopy.isEmpty) {
+      return null;
     } else {
-      // range is across books so just take first and last
-      String firstBookName = currentCollectionBooks
-          .where((element) => element.id == rangeOfVersesToCopy.first.book)
+      for (var i = 0; i < rangeOfVersesToCopy.length; i++) {
+        var temp = verseComposer(
+                line: rangeOfVersesToCopy[i],
+                includeFootnotes: false,
+                context: context)
+            .versesAsString;
+        textToReturn = '$textToReturn$temp ';
+      }
+
+      //Reference
+      //Get collection name in regular text
+      String currentCollectionName = collections
+          .where((element) => element.id == currentCollection.value)
           .first
           .name;
-      String lastBookName = currentCollectionBooks
-          .where((element) => element.id == rangeOfVersesToCopy.last.book)
-          .last
-          .name;
 
-      //Genesis 50.30-Exodus 1.20
-      reference =
-          '$firstBookName ${rangeOfVersesToCopy.first.chapter}.${rangeOfVersesToCopy.first.verse}-$lastBookName ${rangeOfVersesToCopy.last.chapter}.${rangeOfVersesToCopy.last.verse}';
+      //Get the books
+      if (rangeOfVersesToCopy.first.book == rangeOfVersesToCopy.last.book) {
+        String bookName = currentCollectionBooks
+            .where((element) => element.id == rangeOfVersesToCopy.first.book)
+            .first
+            .name;
+
+        //only one verse: Genesis 1.1
+        if (rangeOfVersesToCopy.length == 1) {
+          reference =
+              '$bookName ${rangeOfVersesToCopy.first.chapter}.${rangeOfVersesToCopy.first.verse}';
+        }
+        //same chapter: Genesis 1.2-10
+        else if (rangeOfVersesToCopy.first.chapter ==
+            rangeOfVersesToCopy.last.chapter) {
+          reference =
+              '$bookName ${rangeOfVersesToCopy.first.chapter}.${rangeOfVersesToCopy.first.verse}-${rangeOfVersesToCopy.last.verse}';
+        } else {
+          //same book different chapter: Genesis 1.20-2.2
+          reference =
+              '$bookName ${rangeOfVersesToCopy.first.chapter}.${rangeOfVersesToCopy.first.verse}-${rangeOfVersesToCopy.last.chapter}.${rangeOfVersesToCopy.last.verse}';
+        }
+      } else {
+        // range is across books so just take first and last
+        String firstBookName = currentCollectionBooks
+            .where((element) => element.id == rangeOfVersesToCopy.first.book)
+            .first
+            .name;
+        String lastBookName = currentCollectionBooks
+            .where((element) => element.id == rangeOfVersesToCopy.last.book)
+            .last
+            .name;
+
+        //Genesis 50.30-Exodus 1.20
+        reference =
+            '$firstBookName ${rangeOfVersesToCopy.first.chapter}.${rangeOfVersesToCopy.first.verse}-$lastBookName ${rangeOfVersesToCopy.last.chapter}.${rangeOfVersesToCopy.last.verse}';
+      }
+
+      textToReturn =
+          '$textToReturn$lineBreak$reference ($currentCollectionName)';
+      rangeOfVersesToCopy = [];
+      setState(() {});
+      return textToReturn;
     }
-
-    textToReturn = '$textToReturn$lineBreak$reference ($currentCollectionName)';
-    rangeOfVersesToCopy = [];
-    setState(() {});
-    return textToReturn;
   }
 
   @override
@@ -646,6 +653,8 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                         placeholder: const Text('150'),
                                         // isExpanded: true,
                                         items: currentChapterVerseNumbers
+                                            .toSet()
+                                            .toList()
                                             .map((e) => ComboboxItem<String>(
                                                   value: e,
                                                   child: Text(e),
@@ -762,46 +771,65 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                     border: Border(
                       right: BorderSide(
                         width: 1.0,
-                        color: Color.fromARGB(50, 126, 126, 126),
+                        color: Color.fromARGB(255, 126, 126, 126),
                       ),
                     ),
                   ),
-                  child: ContextMenuArea(
-                    builder: (context) => [
-                      GestureDetector(
-                        child: const ListTile(
-                            leading: Icon(FluentIcons.copy),
-                            title: Text('Copy')),
-                        onTap: () {
-                          Navigator.of(context).pop();
-                          Clipboard.setData(
-                              ClipboardData(text: textToShareOrCopy()));
-                        },
-                      ),
-                      GestureDetector(
-                        child: const ListTile(
-                            leading: Icon(FluentIcons.share),
-                            title: Text('Share')),
-                        onTap: () async {
-                          Navigator.of(context).pop();
-                          //if it's not the web app, share using the device share function
-                          String textToShare = textToShareOrCopy();
-                          if (!kIsWeb) {
-                            Share.share(textToShare);
-                          } else {
-                            //If it's the web app version best way to share is probably email, so put the text to share in an email
-                            final String url =
-                                "mailto:?subject=&body=$textToShare";
+                  child: ContextMenuRegion(
+                    contextMenu: GenericContextMenu(
+                      buttonStyle: ContextMenuButtonStyle(
+                          fgColor: DefaultTextStyle.of(context).style.color,
+                          bgColor:
+                              FluentTheme.of(context).acrylicBackgroundColor,
+                          hoverFgColor:
+                              DefaultTextStyle.of(context).style.color,
+                          hoverBgColor: FluentTheme.of(context)
+                              .acrylicBackgroundColor
+                              .lerpWith(
+                                  FluentTheme.of(context).accentColor, .1),
+                          textStyle: DefaultTextStyle.of(context).style,
+                          disabledOpacity: 1),
+                      buttonConfigs: [
+                        ContextMenuButtonConfig(
+                          "Copy",
+                          icon: Icon(FluentIcons.copy),
+                          onPressed: () {
+                            print('allegedly copying');
+                            String? text = textToShareOrCopy();
 
-                            if (await canLaunchUrl(Uri.parse(url))) {
-                              await launchUrl(Uri.parse(url));
-                            } else {
-                              throw 'Could not launch $url';
+                            if (text != null) {
+                              Clipboard.setData(ClipboardData(text: text));
                             }
-                          }
-                        },
-                      ),
-                    ],
+                          },
+                        ),
+                        ContextMenuButtonConfig(
+                          "Share",
+                          icon: Icon(FluentIcons.share),
+                          onPressed: () async {
+                            print('allegedly sharing');
+                            String? text = textToShareOrCopy();
+
+                            if (text != null) {
+                              //if it's not the web app, share using the device share function
+
+                              if (!kIsWeb) {
+                                Share.share(text);
+                              } else {
+                                //If it's the web app version best way to share is probably email, so put the text to share in an email
+                                final String url =
+                                    "mailto:?subject=&body=$text";
+
+                                if (await canLaunchUrl(Uri.parse(url))) {
+                                  await launchUrl(Uri.parse(url));
+                                } else {
+                                  throw 'Could not launch $url';
+                                }
+                              }
+                            }
+                          },
+                        )
+                      ],
+                    ),
                     child: ScrollablePositionedList.builder(
                         padding: EdgeInsets.only(right: 12),
                         initialAlignment: 1,
@@ -828,3 +856,64 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     );
   }
 }
+
+
+
+// ContextMenuArea(
+//                     builder: (context) {
+//                       print('begin context menu area');
+//                       return [
+//                         GestureDetector(
+//                           child: const ListTile(
+//                               leading: Icon(FluentIcons.copy),
+//                               title: Text('Copy here')),
+//                           onTap: () {
+//                             print('allegedly copying');
+//                             Navigator.of(context).pop();
+//                             Clipboard.setData(
+//                                 ClipboardData(text: textToShareOrCopy()));
+//                           },
+//                         ),
+//                         GestureDetector(
+//                           child: const ListTile(
+//                               leading: Icon(FluentIcons.share),
+//                               title: Text('Share')),
+//                           onTap: () async {
+//                             print('allegedly sharing');
+//                             Navigator.of(context).pop();
+//                             //if it's not the web app, share using the device share function
+//                             String textToShare = textToShareOrCopy();
+//                             if (!kIsWeb) {
+//                               Share.share(textToShare);
+//                             } else {
+//                               //If it's the web app version best way to share is probably email, so put the text to share in an email
+//                               final String url =
+//                                   "mailto:?subject=&body=$textToShare";
+
+//                               if (await canLaunchUrl(Uri.parse(url))) {
+//                                 await launchUrl(Uri.parse(url));
+//                               } else {
+//                                 throw 'Could not launch $url';
+//                               }
+//                             }
+//                           },
+//                         ),
+//                       ];
+//                     },
+//                     child: ScrollablePositionedList.builder(
+//                         padding: EdgeInsets.only(right: 12),
+//                         initialAlignment: 1,
+//                         itemScrollController: itemScrollController,
+//                         itemPositionsListener: itemPositionsListener,
+//                         itemCount: versesByParagraph.length,
+//                         shrinkWrap: false,
+//                         physics: ClampingScrollPhysics(),
+//                         itemBuilder: (ctx, i) {
+//                           return ParagraphBuilder(
+//                             paragraph: versesByParagraph[i],
+//                             fontSize: baseFontSize,
+//                             rangeOfVersesToCopy: rangeOfVersesToCopy,
+//                             addVerseToCopyRange: addVerseToCopyRange,
+//                           );
+//                         }),
+//                   ),
