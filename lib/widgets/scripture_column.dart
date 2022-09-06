@@ -788,18 +788,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                   ),
                   child: ContextMenuRegion(
                     contextMenu: GenericContextMenu(
-                      buttonStyle: ContextMenuButtonStyle(
-                          fgColor: DefaultTextStyle.of(context).style.color,
-                          bgColor:
-                              FluentTheme.of(context).acrylicBackgroundColor,
-                          hoverFgColor:
-                              DefaultTextStyle.of(context).style.color,
-                          hoverBgColor: FluentTheme.of(context)
-                              .acrylicBackgroundColor
-                              .lerpWith(
-                                  FluentTheme.of(context).accentColor, .1),
-                          textStyle: DefaultTextStyle.of(context).style,
-                          disabledOpacity: 1),
                       buttonConfigs: [
                         ContextMenuButtonConfig(
                           Provider.of<UserPrefs>(context, listen: true)
@@ -807,7 +795,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                               .copy,
                           icon: Icon(FluentIcons.copy),
                           onPressed: () {
-                            print('allegedly copying');
                             String? text = textToShareOrCopy();
 
                             if (text != null) {
@@ -821,7 +808,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                               .share,
                           icon: Icon(FluentIcons.share),
                           onPressed: () async {
-                            print('allegedly sharing');
                             String? text = textToShareOrCopy();
 
                             if (text != null) {

@@ -261,6 +261,29 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
         //Main row that holds the text columns
         else {
           return ContextMenuOverlay(
+            buttonStyle: ContextMenuButtonStyle(
+              fgColor: DefaultTextStyle.of(context).style.color,
+              hoverFgColor: DefaultTextStyle.of(context).style.color,
+            ),
+            cardBuilder: (_, children) => Container(
+                decoration: BoxDecoration(
+                  color: FluentTheme.of(context)
+                      .acrylicBackgroundColor
+                      .lerpWith(DefaultTextStyle.of(context).style.color!, .1),
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(5),
+                  ),
+                  boxShadow: const [
+                    BoxShadow(
+                        color: Colors.grey, //New
+                        blurRadius: 25.0,
+                        offset: Offset(0, 10))
+                  ],
+                ),
+                width: 200,
+                padding: const EdgeInsets.symmetric(horizontal: 1, vertical: 6),
+                // color: Colors.purple,
+                child: Column(children: children)),
             child: NavigationView(
               key: viewKey,
               //appBar is across top of the screen in place of normal OS specific title bar.
