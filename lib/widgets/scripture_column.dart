@@ -384,7 +384,10 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
       print('third case');
       //add this verse and then
       rangeOfVersesToCopy.add(ref);
-      //add all between the first and last
+
+      /*add all between the first and last index. 
+      Because the user can select up as well as down (select vs 5 then 1 as well as 1 and then 5)
+      Check first which way round we're going */
       int oneEnd = versesInCollection.indexWhere((element) =>
           element.book == rangeOfVersesToCopy.first.book &&
           element.chapter == rangeOfVersesToCopy.first.chapter &&
@@ -399,10 +402,17 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
       int result = oneEnd.compareTo(otherEnd);
       if (result < 0) {
         startIndex = oneEnd;
-        endIndex = otherEnd;
+        // endIndex = otherEnd;
+        endIndex = versesInCollection.lastIndexWhere((element) =>
+            element.book == rangeOfVersesToCopy.last.book &&
+            element.chapter == rangeOfVersesToCopy.last.chapter &&
+            element.verse == rangeOfVersesToCopy.last.verse);
       } else {
         startIndex = otherEnd;
-        endIndex = oneEnd;
+        endIndex = versesInCollection.lastIndexWhere((element) =>
+            element.book == rangeOfVersesToCopy.first.book &&
+            element.chapter == rangeOfVersesToCopy.first.chapter &&
+            element.verse == rangeOfVersesToCopy.first.verse);
       }
       addVersesBetweenIndexes(startIndex, endIndex);
     }
@@ -430,6 +440,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     // String lineBreak = kIsWeb ? '%0d%0a' : '\n';
     String lineBreak = '\n';
 
+    //Get the text of the verses to share or copy
     if (rangeOfVersesToCopy.isEmpty) {
       return null;
     } else {
@@ -442,7 +453,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         textToReturn = '$textToReturn$temp ';
       }
 
-      //Reference
+      //Now get the reference for the selection
       //Get collection name in regular text
       String currentCollectionName = collections
           .where((element) => element.id == currentCollection.value)
@@ -791,7 +802,9 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                           disabledOpacity: 1),
                       buttonConfigs: [
                         ContextMenuButtonConfig(
-                          "Copy",
+                          Provider.of<UserPrefs>(context, listen: true)
+                              .currentTranslation
+                              .copy,
                           icon: Icon(FluentIcons.copy),
                           onPressed: () {
                             print('allegedly copying');
@@ -803,7 +816,9 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                           },
                         ),
                         ContextMenuButtonConfig(
-                          "Share",
+                          Provider.of<UserPrefs>(context, listen: true)
+                              .currentTranslation
+                              .share,
                           icon: Icon(FluentIcons.share),
                           onPressed: () async {
                             print('allegedly sharing');
@@ -856,8 +871,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     );
   }
 }
-
-
 
 // ContextMenuArea(
 //                     builder: (context) {

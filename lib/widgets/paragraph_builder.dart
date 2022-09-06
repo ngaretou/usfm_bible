@@ -94,23 +94,6 @@ ComposedVerses verseComposer(
       return cleanedText;
     }
 
-    // if (includeFootnotes) {
-    //   spansToReturn.add(
-    //     WidgetSpan(
-    //       child: Transform.translate(
-    //           offset: const Offset(0.0, -6.0),
-    //           child: Tooltip(
-    //             message: composeFootnotes(footnoteText),
-    //             child: Text(
-    //               '*',
-    //               style: DefaultTextStyle.of(context)
-    //                   .style
-    //                   .copyWith(color: FluentTheme.of(context).accentColor),
-    //             ),
-    //           )),
-    //     ),
-    //   );
-    // }
     if (includeFootnotes) {
       spansToReturn.add(
         WidgetSpan(
@@ -128,19 +111,6 @@ ComposedVerses verseComposer(
         ),
       );
     }
-    //  if (includeFootnotes) {
-    //   spansToReturn.add(
-    //     WidgetSpan(
-    //       child: Tooltip(
-    //         message: composeFootnotes(footnoteText),
-    //         child: const Text('*'
-    //             // style: footnoteCallerStyle,
-    //             // style:
-    //             ),
-    //       ),
-    //     ),
-    //   );
-    // }
   }
 
   void pairedUsfmFindingAndFormatting(String text) {
@@ -266,7 +236,7 @@ ComposedVerses verseComposer(
   }
   return returnInfo;
 }
-
+//end verseComposer
 ////////////////////////////////
 
 class ParagraphBuilder extends StatefulWidget {

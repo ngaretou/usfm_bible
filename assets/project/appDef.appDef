@@ -3598,6 +3598,7 @@ Please enter your access code:</translation>
       <translation lang="en">Reset Contents</translation>
       <translation lang="fr">Réinitialiser le contenu</translation>
       <translation lang="ru">Сбросить настройки содержания</translation>
+      <translation lang="wol"></translation>
     </translation-mapping>
     <translation-mapping id="Menu_Item_Copy">
       <translation lang="en">Copy</translation>
@@ -3608,6 +3609,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Kopiëren</translation>
       <translation lang="ta">நகல் எடு</translation>
       <translation lang="ru">Копировать</translation>
+      <translation lang="wol">Copier</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Item_Share">
       <translation lang="en">Share</translation>
@@ -3619,6 +3621,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Delen</translation>
       <translation lang="ta">பகிர்</translation>
       <translation lang="ru">Поделиться</translation>
+      <translation lang="wol">Séddool</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Item_Image">
       <translation lang="en">Image</translation>

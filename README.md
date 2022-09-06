@@ -28,6 +28,13 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
   - Note there must be those four fonts - if you only have one font, make copies and rename so those files are there.
     - This is a hack to deal with a Flutter limitation and hopefully will be eliminated. https://docs.flutter.dev/cookbook/design/fonts#2-declare-the-font-in-the-pubspec
 - Some translations are available in the appDef and pulled directly from your existing project. Some are not a part of SAB's translation strings and you can provide those five that usfm_bible uses for your language in assets/translations.json. Include the translations there with the language codes from the Interface/Language/Language Codes column.
+  - Before using make sure the following Interface translations are filled in for all of the languages you want to use in the interface: 
+    - Search
+    - Settings_Title
+    - Settings_Interface_Language
+    - Menu_About
+    - Menu_Item_Copy
+    - Menu_Item_Share
 - In index.html:
   - Change app name in the \<title> tag
   - Change \<base href> to your subfolder if your web app is not in the root of your site. (More instructions in the comments of index.html.)
@@ -46,13 +53,15 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 - Book Collection ID must follow C01, C02 pattern in your SAB project.
 - Footnote text is without formatting, just plain text stripped of USFM. The Tooltip widget only allows one style.  https://ubsicap.github.io/usfm/notes_basic/fnotes.html#fq etc.
 
+
 ## To do:
 ### Minimal
 - Add in Ajami Wolof
 - NavPane buttons: 
   - Contact Us (?)
-- Copy and Share translations in Scripture_column.dart
 - Complete search - searching by collection
+- Scroll bars are wierd on hover now
+- Context menu should not be transparent
 
 ### Maximal
 - Remember window size and position on close...

@@ -116,7 +116,10 @@ class _SearchWidgetState extends State<SearchWidget> {
                                             searchController.clear();
                                           },
                                         ),
-                                  placeholder: 'Search',
+                                  placeholder: Provider.of<UserPrefs>(context,
+                                          listen: true)
+                                      .currentTranslation
+                                      .search,
                                 ),
                               ),
                               IconButton(
@@ -131,7 +134,10 @@ class _SearchWidgetState extends State<SearchWidget> {
                           Expander(
                             key: expanderKey,
                             leading: Button(
-                              child: const Text('Search'),
+                              child: Text(
+                                  Provider.of<UserPrefs>(context, listen: true)
+                                      .currentTranslation
+                                      .search),
                               onPressed: () {
                                 searchFunction(searchController.value.text);
                               },

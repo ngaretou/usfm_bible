@@ -104,6 +104,8 @@ class Translation {
   String about;
   String settings;
   String settingsInterfaceLanguage;
+  String copy;
+  String share;
 
   Translation(
       {required this.langCode,
@@ -116,7 +118,9 @@ class Translation {
       required this.darkTheme,
       required this.about,
       required this.settings,
-      required this.settingsInterfaceLanguage});
+      required this.settingsInterfaceLanguage,
+      required this.copy,
+      required this.share});
 }
 
 List<Collection> collections = [];
@@ -236,6 +240,30 @@ Future<void> asyncGetTranslations(BuildContext context) async {
               (element) => element.getAttribute('lang').toString() == langCode);
       String aboutText = aboutTextXml.first.innerText;
 
+      Iterable<XmlElement> copyTextXml = document
+          .getElement('app-definition')!
+          .getElement('translation-mappings')!
+          .findAllElements('translation-mapping')
+          .where((element) => element.getAttribute('id') == 'Menu_Item_Copy')
+          .first
+          .findAllElements('translation')
+          .toList()
+          .where(
+              (element) => element.getAttribute('lang').toString() == langCode);
+      String copyText = copyTextXml.first.innerText;
+
+      Iterable<XmlElement> shareTextXml = document
+          .getElement('app-definition')!
+          .getElement('translation-mappings')!
+          .findAllElements('translation-mapping')
+          .where((element) => element.getAttribute('id') == 'Menu_Item_Share')
+          .first
+          .findAllElements('translation')
+          .toList()
+          .where(
+              (element) => element.getAttribute('lang').toString() == langCode);
+      String shareText = shareTextXml.first.innerText;
+
       // ----
       //Now get supplemental translations
       translationSupplement = {};
@@ -264,7 +292,9 @@ Future<void> asyncGetTranslations(BuildContext context) async {
           darkTheme: translationSupplement['darkTheme']!,
           about: aboutText,
           settings: settingsText,
-          settingsInterfaceLanguage: settingsInterfaceLanguageText));
+          settingsInterfaceLanguage: settingsInterfaceLanguageText,
+          copy: copyText,
+          share: shareText));
     }
   }
   Provider.of<UserPrefs>(context, listen: false).setUserLang = initialLang;
