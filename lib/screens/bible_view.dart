@@ -109,7 +109,7 @@ class _BibleViewState extends State<BibleView> {
 
       setState(() {});
     } else {
-      //TODO add user feedback when trying to create too many columns
+      //may in the future add user feedback when trying to create too many columns
     }
   }
 

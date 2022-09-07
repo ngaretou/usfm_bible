@@ -59,9 +59,8 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 - Add in Ajami Wolof
 - NavPane buttons: 
   - Contact Us (?)
-- Complete search - searching by collection
+
 - Scroll bars are wierd on hover now
-- Context menu should not be transparent
 
 ### Maximal
 - Remember window size and position on close...

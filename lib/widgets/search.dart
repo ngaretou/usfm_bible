@@ -23,13 +23,14 @@ class _SearchWidgetState extends State<SearchWidget> {
   final searchController = TextEditingController();
   final expanderKey = GlobalKey<ExpanderState>();
 
-  List<bool> collectionsToSearch = [];
+  List<String> collectionsToSearch = [];
   List<Checkbox> checkBoxes = [];
   List<ParsedLine> searchResults = [];
 
   @override
   void initState() {
-    collectionsToSearch = List.generate(collections.length, (i) => true);
+    collectionsToSearch =
+        List.generate(collections.length, (i) => collections[i].id);
 
     searchController.addListener(() {
       if (searchController.text.length == 1 && mounted) setState(() {});
@@ -48,6 +49,7 @@ class _SearchWidgetState extends State<SearchWidget> {
 
     results = verses
         .where((element) =>
+            collectionsToSearch.any((id) => id == element.collectionid) &&
             element.verseText.contains(searchRequest) &&
             element.verseStyle == 'v')
         .toList();
@@ -61,11 +63,16 @@ class _SearchWidgetState extends State<SearchWidget> {
   Widget build(BuildContext context) {
     checkBoxes = List.generate(collections.length, (i) {
       return Checkbox(
-        checked: collectionsToSearch[i],
+        checked: collectionsToSearch.contains(collections[i].id),
         onChanged: (bool? value) {
           setState(() {
-            print('setting ${collectionsToSearch[i]} to $value');
-            collectionsToSearch[i] = value!;
+            // print('setting ${collectionsToSearch[i]} to $value');
+            if (collectionsToSearch.contains(collections[i].id)) {
+              collectionsToSearch
+                  .removeWhere((element) => element == collections[i].id);
+            } else {
+              collectionsToSearch.add(collections[i].id);
+            }
           });
         },
         content: Text(
@@ -79,6 +86,7 @@ class _SearchWidgetState extends State<SearchWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            //Search tool card
             Padding(
               padding:
                   const EdgeInsets.only(top: 5.0, right: 5, left: 5, bottom: 5),
@@ -96,13 +104,15 @@ class _SearchWidgetState extends State<SearchWidget> {
                         children: [
                           Row(
                             // direction: Axis.horizontal,
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            // crossAxisAlignment: CrossAxisAlignment.start,
                             // alignment: WrapAlignment.start,
                             // spacing: 5,
                             // runSpacing: 8,
                             children: [
                               Expanded(
                                 child: TextFormBox(
+                                  onEditingComplete: () => searchFunction(
+                                      searchController.value.text),
                                   maxLines: 1,
                                   controller: searchController,
                                   suffixMode: OverlayVisibilityMode.always,
@@ -120,33 +130,33 @@ class _SearchWidgetState extends State<SearchWidget> {
                                           listen: true)
                                       .currentTranslation
                                       .search,
+                                  placeholderStyle: DefaultTextStyle.of(context)
+                                      .style
+                                      .copyWith(
+                                          color: DefaultTextStyle.of(context)
+                                              .style
+                                              .color!
+                                              .withOpacity(.4)),
                                 ),
-                              ),
-                              IconButton(
-                                onPressed: () {
-                                  widget.closeSearch();
-                                },
-                                icon:
-                                    const Icon(FluentIcons.calculator_multiply),
                               ),
                             ],
                           ),
+                          const SizedBox(height: 8),
                           Expander(
                             key: expanderKey,
+                            //change the default icon here from down/up arrow:
+                            // icon: Icon(FluentIcons.settings),
                             leading: Button(
                               child: Text(
                                   Provider.of<UserPrefs>(context, listen: true)
                                       .currentTranslation
                                       .search),
-                              onPressed: () {
-                                searchFunction(searchController.value.text);
-                              },
+                              onPressed: () =>
+                                  searchFunction(searchController.value.text),
                             ),
                             header: const Text(''),
-                            // trailing: ToggleSwitch(
-                            //   checked: true,
-                            //   onChanged: (v) {},
-                            // ),
+                            // headerHeight: 15,
+
                             content: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: checkBoxes,
@@ -154,6 +164,12 @@ class _SearchWidgetState extends State<SearchWidget> {
                           ),
                         ],
                       ),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        widget.closeSearch();
+                      },
+                      icon: const Icon(FluentIcons.calculator_multiply),
                     ),
                   ],
                 ),
@@ -166,7 +182,6 @@ class _SearchWidgetState extends State<SearchWidget> {
                 : Flexible(
                     child: ListView.builder(
                         itemCount: searchResults.length,
-                        // shrinkWrap: true,
                         itemBuilder: (ctx, i) =>
                             SearchResultTile(line: searchResults[i])),
                   ),

@@ -137,8 +137,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
             .verse;
       }
 
-      //TODO Because the collection changed, we're leaving the book/ch/vs as they were, but have to
-      // check to see if currentBook/ch/vs exists in the collection and choose what to do
+      // Because the collection changed, we're leaving the book/ch/vs as they were, so if the current ref is not in the selected selection, it will go to first ref in selection
 
       //Now get chapters in current book
 
@@ -555,7 +554,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         //header toolbar/s
         children: [
-          //Scripture column toolbar
+          //Scripture column ref selection card
           Padding(
             padding: const EdgeInsets.only(top: 5.0, right: 5, left: 5),
             child: Card(
@@ -779,10 +778,11 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                         left: 12.0, right: 4, top: 0, bottom: 0),
                 child: Container(
                   decoration: BoxDecoration(
+                    //This is the border between each scripture column and its neighbor to the right
                     border: Border(
                       right: BorderSide(
                         width: 1.0,
-                        color: Color.fromARGB(255, 126, 126, 126),
+                        color: Color.fromARGB(85, 126, 126, 126),
                       ),
                     ),
                   ),
@@ -857,62 +857,3 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     );
   }
 }
-
-// ContextMenuArea(
-//                     builder: (context) {
-//                       print('begin context menu area');
-//                       return [
-//                         GestureDetector(
-//                           child: const ListTile(
-//                               leading: Icon(FluentIcons.copy),
-//                               title: Text('Copy here')),
-//                           onTap: () {
-//                             print('allegedly copying');
-//                             Navigator.of(context).pop();
-//                             Clipboard.setData(
-//                                 ClipboardData(text: textToShareOrCopy()));
-//                           },
-//                         ),
-//                         GestureDetector(
-//                           child: const ListTile(
-//                               leading: Icon(FluentIcons.share),
-//                               title: Text('Share')),
-//                           onTap: () async {
-//                             print('allegedly sharing');
-//                             Navigator.of(context).pop();
-//                             //if it's not the web app, share using the device share function
-//                             String textToShare = textToShareOrCopy();
-//                             if (!kIsWeb) {
-//                               Share.share(textToShare);
-//                             } else {
-//                               //If it's the web app version best way to share is probably email, so put the text to share in an email
-//                               final String url =
-//                                   "mailto:?subject=&body=$textToShare";
-
-//                               if (await canLaunchUrl(Uri.parse(url))) {
-//                                 await launchUrl(Uri.parse(url));
-//                               } else {
-//                                 throw 'Could not launch $url';
-//                               }
-//                             }
-//                           },
-//                         ),
-//                       ];
-//                     },
-//                     child: ScrollablePositionedList.builder(
-//                         padding: EdgeInsets.only(right: 12),
-//                         initialAlignment: 1,
-//                         itemScrollController: itemScrollController,
-//                         itemPositionsListener: itemPositionsListener,
-//                         itemCount: versesByParagraph.length,
-//                         shrinkWrap: false,
-//                         physics: ClampingScrollPhysics(),
-//                         itemBuilder: (ctx, i) {
-//                           return ParagraphBuilder(
-//                             paragraph: versesByParagraph[i],
-//                             fontSize: baseFontSize,
-//                             rangeOfVersesToCopy: rangeOfVersesToCopy,
-//                             addVerseToCopyRange: addVerseToCopyRange,
-//                           );
-//                         }),
-//                   ),

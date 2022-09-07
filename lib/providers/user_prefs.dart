@@ -56,7 +56,7 @@ class UserPrefs with ChangeNotifier {
 
   Future<void> loadUserPrefs(AppInfo appInfo) async {
     bool hasPrefs = false;
-    //TODO Check if the user has an existing session.
+    //May in the future Check if the user has an existing session.
 
     //If not, set up the initial session.
     if (!hasPrefs) {
@@ -124,6 +124,4 @@ class UserPrefs with ChangeNotifier {
     // End of default initialization
     _userPrefList = UserPrefList(userColumns: userColumns);
   }
-
-  //TODO add user feedback on too many columns
 }
