@@ -53,22 +53,24 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 - Book Collection ID must follow C01, C02 pattern in your SAB project.
 - Footnote text is without formatting, just plain text stripped of USFM. The Tooltip widget only allows one style.  https://ubsicap.github.io/usfm/notes_basic/fnotes.html#fq etc.
 
-
 ## To do:
 ### Minimal
 - Add in Ajami Wolof
+- Get initial lang from appDef
+- Clean up HTML variables in about screen a bit
 - NavPane buttons: 
   - Contact Us (?)
 
-- Scroll bars are wierd on hover now
-
 ### Maximal
-- Remember window size and position on close...
-- Remember column references visible on close...
-- Change window title on desktop https://stackoverflow.com/questions/64800455/how-to-change-app-icon-and-app-name-for-flutter-desktop-application
-- Figure out permissions - right now you have to manually change permissions to 744 for appdef and all sfm book files after output :(
-- reader mode/no verses
-- read in styles from appdef
-- audio
-- Pass in ref via URL to go straight there? 
+- Higher priority
+  - Remember column references visible on close
+- Other
+  - Figure out permissions - right now you have to manually change permissions to 744 for appdef and all sfm book files after output :(
+  - reader mode/no verses
+  - read in styles from appdef
+  - audio
+  - Pass in ref via URL to go straight there? 
+- Desktop only items
+  - Remember window size and position on close (this only applies to desktop so low priority)...
+  - Change window title on desktop https://stackoverflow.com/questions/64800455/how-to-change-app-icon-and-app-name-for-flutter-desktop-application
 

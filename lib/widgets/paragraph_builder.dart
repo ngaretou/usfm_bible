@@ -175,7 +175,7 @@ ComposedVerses verseComposer(
                     textPlusUsfmPair.group(1)!.length;
               } else {
                 String? usfmToPair = textPlusUsfmPair.group(3)!;
-
+                //Note this RegExp is not raw stringed - usually RegExp(r'...') so you have to double escape
                 RegExpMatch? footnotePair =
                     //        1     2   3           4   5   6            7
                     RegExp("(.*?)(\\\\)($usfmToPair)(.*?)(\\\\)($usfmToPair)(\\*)")

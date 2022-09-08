@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print, avoid_function_literals_in_foreach_calls
+// ignore_for_file: avoid_print, avoid_function_literals_in_foreach_calls, use_build_context_synchronously
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -152,7 +152,8 @@ Future<void> asyncGetTranslations(BuildContext context) async {
       await rootBundle.loadString("assets/translations.json");
   final translationData = json.decode(translationsJSON) as List<dynamic>;
 
-  //TODO get initialLanguage from appDef
+  //TODO get initial Language from appDef
+
   String initialLang = 'wol';
   AssetBundle assetBundle = DefaultAssetBundle.of(context);
 
