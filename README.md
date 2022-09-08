@@ -56,8 +56,6 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 ## To do:
 ### Minimal
 - Add in Ajami Wolof
-- Get initial lang from appDef
-- Clean up HTML variables in about screen a bit
 - NavPane buttons: 
   - Contact Us (?)
 

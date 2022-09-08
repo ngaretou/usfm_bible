@@ -152,9 +152,6 @@ Future<void> asyncGetTranslations(BuildContext context) async {
       await rootBundle.loadString("assets/translations.json");
   final translationData = json.decode(translationsJSON) as List<dynamic>;
 
-  //TODO get initial Language from appDef
-
-  String initialLang = 'wol';
   AssetBundle assetBundle = DefaultAssetBundle.of(context);
 
   //get the appDef xml from outside the flutter project
@@ -162,6 +159,12 @@ Future<void> asyncGetTranslations(BuildContext context) async {
   String xmlFileString = await assetBundle.loadString(appDefLocation);
   //get the document into a usable iterable
   final document = XmlDocument.parse(xmlFileString);
+
+  String initialLang = document
+      .getElement('app-definition')!
+      .getElement('translation-mappings')!
+      .getAttribute('default-lang')
+      .toString(); // e.g. 'en'
 
   XmlElement? xmlLangsSection = document
       .getElement('app-definition')!

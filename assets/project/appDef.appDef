@@ -3324,7 +3324,7 @@ Please enter your access code:</translation>
     </writing-systems>
   </interface-languages>
 
-  <translation-mappings default-lang="en">
+  <translation-mappings default-lang="wol">
     <translation-mapping id="Menu_Contents">
       <translation lang="en">Contents</translation>
       <translation lang="fr">Contenu</translation>
