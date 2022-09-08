@@ -13,6 +13,7 @@ import 'package:flutter/services.dart';
 import 'package:context_menus/context_menus.dart';
 
 import '../models/database_builder.dart';
+import '../models/verse_composer.dart';
 import '../widgets/paragraph_builder.dart';
 
 import '../providers/user_prefs.dart';
@@ -50,7 +51,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
       []; //the specific verses to display in a paragraph
   // late BibleReference bibleReference;
   List<String> collectionNames = [];
-  late Collection currentCollectionInfo;
+  // late Collection currentCollectionInfo;
   ValueNotifier<String> currentCollection = ValueNotifier("C01");
   List<Book> currentCollectionBooks = [];
   ValueNotifier<String> currentBook = ValueNotifier("GEN");
@@ -271,7 +272,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   }
 
   //On user end scroll notification
-  setSelectorsToClosestReferenceAfterScroll() {
+  void setSelectorsToClosestReferenceAfterScroll() {
     // print('setSelectorsToClosestReferenceAfterScroll');
     // var oldBook = currentBook;
     // var oldChapter = currentChapter;
@@ -322,7 +323,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     }
   }
 
-  setUpComboBoxesChVs(String newBook, String newChapter, String newVerse) {
+  void setUpComboBoxesChVs(String newBook, String newChapter, String newVerse) {
     // print('setUpComboBoxesChVs');
     currentBook.value = newBook;
 
@@ -347,7 +348,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     // currentVerse = newVerse;
   }
 
-  addVerseToCopyRange(ParsedLine ref) {
+  void addVerseToCopyRange(ParsedLine ref) {
     print(
         'received request to add ${ref.book} ${ref.chapter} ${ref.verse} to copy range');
 
@@ -524,8 +525,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     });
     // print('Scripture Column build ${widget.key}');
 
-    // var ref = Provider.of<ColumnManager>(context, listen: true).getScrollGroupRef;
-
     if (Provider.of<ColumnManager>(context, listen: true).readyToAddColumn) {
       //this rebuilds when adding a column
       setState(() {});
@@ -548,6 +547,15 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     } else {
       wideWindow = false;
     }
+
+    //Couple of things to get to pass in to the Paragraph Builder
+
+    Collection thisCollection = collections
+        .firstWhere((element) => element.id == currentCollection.value);
+
+    String fontName = thisCollection.fonts.first.fontFamily;
+
+    String textDirection = thisCollection.textDirection;
 
     return Expanded(
       child: Column(
@@ -775,7 +783,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                         top: 0,
                         bottom: 0)
                     : const EdgeInsets.only(
-                        left: 12.0, right: 4, top: 0, bottom: 0),
+                        left: 12.0, right: 12, top: 0, bottom: 0),
                 child: Container(
                   decoration: BoxDecoration(
                     //This is the border between each scripture column and its neighbor to the right
@@ -843,6 +851,8 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                           return ParagraphBuilder(
                             paragraph: versesByParagraph[i],
                             fontSize: baseFontSize,
+                            fontName: fontName,
+                            textDirection: textDirection,
                             rangeOfVersesToCopy: rangeOfVersesToCopy,
                             addVerseToCopyRange: addVerseToCopyRange,
                           );

@@ -93,7 +93,7 @@
     <feature name="text-line-height-slider" value="true"/>
     <feature name="audio-allow-turn-on-off" value="true"/>
     <feature name="audio-turn-on-at-startup" value="false"/>
-    <feature name="audio-phrase-end-chars" value=".?!:;,"/>
+    <feature name="audio-phrase-end-chars" value=".?!:;, \u060C \u061F"/>
     <feature name="audio-goto-next-chapter" value="true"/>
     <feature name="audio-goto-next-book" value="false"/>
     <feature name="audio-pause-on-phone-call" value="true"/>
@@ -1244,7 +1244,7 @@
     </features>
 
     <metadata>
-      <meta name="copyright-text" content="Lexham English Bible. Copyright 2012 Logos Bible Software. Lexham is a registered trademark of Logos Bible Software.\n&lt;br&gt;\n&lt;a href=&quot;https://lexhampress.com/LEB-License&quot;&gt;https://lexhampress.com/LEB-License&lt;/a&gt;"/>
+      <meta name="copyright-text" content="Lexham English Bible. Copyright 2012 Logos Bible Software. Lexham is a registered trademark of Logos Bible Software.\n&lt;a href=&quot;https://lexhampress.com/LEB-License&quot;&gt;https://lexhampress.com/LEB-License&lt;/a&gt;"/>
     </metadata>
 
     <styles-info>
@@ -2775,6 +2775,584 @@
     </book>
   </books>
 
+  <books id="C05">
+    <book-collection-name>ڪࣵدُّگْ يࣵلَّ گِ</book-collection-name>
+    <book-collection-abbrev></book-collection-abbrev>
+    <book-collection-description>ڪࣵدُّگْ يࣵلَّ گِ ݖِ وࣷلࣷفْ</book-collection-description>
+
+    <features type="bc">
+      <feature name="show-scripture-refs" value="true"/>
+      <feature name="ref-chapter-verse-separator" value="."/>
+      <feature name="ref-verse-range-separator" value="-"/>
+      <feature name="ref-verse-list-separator" value=","/>
+      <feature name="ref-chapter-range-separator" value="-"/>
+      <feature name="ref-chapter-list-separator" value=";"/>
+      <feature name="ref-extra-material" value=""/>
+      <feature name="numerals-type" value="default"/>
+      <feature name="bc-allow-single-pane" value="true"/>
+      <feature name="bc-allow-copy-text" value="true"/>
+      <feature name="bc-allow-long-press-select" value="true"/>
+      <feature name="bc-allow-share-text" value="true"/>
+      <feature name="bc-allow-text-on-image" value="true"/>
+      <feature name="bc-allow-text-on-image-edit-text" value="true"/>
+      <feature name="bc-allow-verse-of-the-day" value="true"/>
+      <feature name="bc-allow-share-audio" value="false"/>
+      <feature name="bc-allow-share-video" value="false"/>
+    </features>
+
+    <styles-info>
+      <text-font family="font2"/>
+      <text-size value="20"/>
+      <line-height value="120"/>
+      <text-direction value="RTL"/>
+      <numeral-system value="Default"/>
+      <verse-number-style value="default"/>
+
+      <styles>
+        <style name="div.footer">
+        </style>
+      </styles>
+    </styles-info>
+
+    <book-order>
+      <canon-name>Western Protestant Bible</canon-name>
+    </book-order>
+
+    <writing-system code="wol">
+      <display-names>
+        <form lang="default">Wolof</form>
+      </display-names>
+    </writing-system>
+
+    <book id="GEN">
+      <name>نجࣵلْبࣺينْ گَ</name>
+      <group>OT</group>
+      <sub-group>Pentateuch</sub-group>
+      <filename>01GENwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/01GENwPP.SFM</source>
+    </book>
+
+    <book id="EXO">
+      <name>مُݖّ گَ</name>
+      <group>OT</group>
+      <sub-group>Pentateuch</sub-group>
+      <filename>02EXOwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/02EXOwPP.SFM</source>
+    </book>
+
+    <book id="LEV">
+      <name>سَرْخَلْڪَتْ يِ</name>
+      <group>OT</group>
+      <sub-group>Pentateuch</sub-group>
+      <filename>03LEVwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/03LEVwPP.SFM</source>
+    </book>
+
+    <book id="NUM">
+      <name>مࣵنْدِݝْ مَ</name>
+      <group>OT</group>
+      <sub-group>Pentateuch</sub-group>
+      <filename>04NUMwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/04NUMwPP.SFM</source>
+    </book>
+
+    <book id="DEU">
+      <name>بَامْتُگْ يࣷونْ وِ</name>
+      <group>OT</group>
+      <sub-group>Pentateuch</sub-group>
+      <filename>05DEUwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/05DEUwPP.SFM</source>
+    </book>
+
+    <book id="JOS">
+      <name>يࣷسُوࣹ</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>06JOSwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/06JOSwPP.SFM</source>
+    </book>
+
+    <book id="JDG">
+      <name>نجِيتْ يَ</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>07JDGwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/07JDGwPP.SFM</source>
+    </book>
+
+    <book id="RUT">
+      <name>رُوتْ</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>08RUTwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/08RUTwPP.SFM</source>
+    </book>
+
+    <book id="1SA">
+      <name>1.سَمِيࣹلْ</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>091SAwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/091SAwPP.SFM</source>
+    </book>
+
+    <book id="2SA">
+      <name>2.سَمِيࣹلْ</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>102SAwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/102SAwPP.SFM</source>
+    </book>
+
+    <book id="1KI">
+      <name>1.بُورْ يَ</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>111KIwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/111KIwPP.SFM</source>
+    </book>
+
+    <book id="2KI">
+      <name>2.بُورْ يَ</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>122KIwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/122KIwPP.SFM</source>
+    </book>
+
+    <book id="1CH">
+      <name>1.جَارْ-جَارْ يَ</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>131CHwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/131CHwPP.SFM</source>
+    </book>
+
+    <book id="2CH">
+      <name>2.جَارْ-جَارْ يَ</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>142CHwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/142CHwPP.SFM</source>
+    </book>
+
+    <book id="EZR">
+      <name>اࣹسْرَ</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>15EZRwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/15EZRwPP.SFM</source>
+    </book>
+
+    <book id="NEH">
+      <name>نࣹيࣹمِ</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>16NEHwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/16NEHwPP.SFM</source>
+    </book>
+
+    <book id="EST">
+      <name>اࣹسْتࣹيرْ</name>
+      <group>OT</group>
+      <sub-group>Historical</sub-group>
+      <filename>17ESTwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/17ESTwPP.SFM</source>
+    </book>
+
+    <book id="JOB">
+      <name>اَيٗوبَ</name>
+      <group>OT</group>
+      <sub-group>PoetryWisdom</sub-group>
+      <filename>18JOBwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/18JOBwPP.SFM</source>
+    </book>
+
+    <book id="PSA">
+      <name>سَبٗورْ</name>
+      <group>OT</group>
+      <sub-group>PoetryWisdom</sub-group>
+      <filename>19PSAwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/19PSAwPP.SFM</source>
+    </book>
+
+    <book id="PRO">
+      <name>ڪࣵدُّ يُ خࣹلُ</name>
+      <group>OT</group>
+      <sub-group>PoetryWisdom</sub-group>
+      <filename>20PROwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/20PROwPP.SFM</source>
+    </book>
+
+    <book id="ECC">
+      <name>ڪࣵدُّيْ وَارࣹ</name>
+      <group>OT</group>
+      <sub-group>PoetryWisdom</sub-group>
+      <filename>21ECCwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/21ECCwPP.SFM</source>
+    </book>
+
+    <book id="SNG">
+      <name>نگࣴنْ-گِ-وࣷيْ</name>
+      <group>OT</group>
+      <sub-group>PoetryWisdom</sub-group>
+      <filename>22SNGwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/22SNGwPP.SFM</source>
+    </book>
+
+    <book id="ISA">
+      <name>اࣹسَيِ</name>
+      <group>OT</group>
+      <sub-group>MajorProphet</sub-group>
+      <filename>23ISAwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/23ISAwPP.SFM</source>
+    </book>
+
+    <book id="JER">
+      <name>يࣹرࣹمِ</name>
+      <group>OT</group>
+      <sub-group>MajorProphet</sub-group>
+      <filename>24JERwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/24JERwPP.SFM</source>
+    </book>
+
+    <book id="LAM">
+      <name>جࣷويْتُ</name>
+      <group>OT</group>
+      <sub-group>MajorProphet</sub-group>
+      <filename>25LAMwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/25LAMwPP.SFM</source>
+    </book>
+
+    <book id="EZK">
+      <name>اࣹسࣹڪِيࣹلْ</name>
+      <group>OT</group>
+      <sub-group>MajorProphet</sub-group>
+      <filename>26EZKwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/26EZKwPP.SFM</source>
+    </book>
+
+    <book id="DAN">
+      <name>دَݧࣹيلْ</name>
+      <group>OT</group>
+      <sub-group>MajorProphet</sub-group>
+      <filename>27DANwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/27DANwPP.SFM</source>
+    </book>
+
+    <book id="HOS">
+      <name>اࣷسࣹ</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>28HOSwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/28HOSwPP.SFM</source>
+    </book>
+
+    <book id="JOL">
+      <name>يࣷوࣹلْ</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>29JOLwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/29JOLwPP.SFM</source>
+    </book>
+
+    <book id="AMO">
+      <name>اَمࣷسْ</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>30AMOwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/30AMOwPP.SFM</source>
+    </book>
+
+    <book id="OBA">
+      <name>اَبْدِيَسْ</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>31OBAwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/31OBAwPP.SFM</source>
+    </book>
+
+    <book id="JON">
+      <name>يُنُسْ</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>32JONwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/32JONwPP.SFM</source>
+    </book>
+
+    <book id="MIC">
+      <name>مِسࣹ</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>33MICwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/33MICwPP.SFM</source>
+    </book>
+
+    <book id="NAM">
+      <name>نَوُمْ</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>34NAMwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/34NAMwPP.SFM</source>
+    </book>
+
+    <book id="HAB">
+      <name>اَبَڪُگْ</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>35HABwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/35HABwPP.SFM</source>
+    </book>
+
+    <book id="ZEP">
+      <name>ݖࣹفَݧَ</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>36ZEPwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/36ZEPwPP.SFM</source>
+    </book>
+
+    <book id="HAG">
+      <name>اَسࣹ</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>37HAGwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/37HAGwPP.SFM</source>
+    </book>
+
+    <book id="ZEC">
+      <name>سࣵڪَّرْيَا</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>38ZECwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/38ZECwPP.SFM</source>
+    </book>
+
+    <book id="MAL">
+      <name>مَلَسِ</name>
+      <group>OT</group>
+      <sub-group>MinorProphet</sub-group>
+      <filename>39MALwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/39MALwPP.SFM</source>
+    </book>
+
+    <book id="MAT">
+      <name>مَݖࣴ</name>
+      <group>NT</group>
+      <sub-group>Gospel</sub-group>
+      <filename>41MATwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/41MATwPP.SFM</source>
+    </book>
+
+    <book id="MRK">
+      <name>مࣵرڪّ</name>
+      <group>NT</group>
+      <sub-group>Gospel</sub-group>
+      <filename>42MRKwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/42MRKwPP.SFM</source>
+    </book>
+
+    <book id="LUK">
+      <name>لُوگْ</name>
+      <group>NT</group>
+      <sub-group>Gospel</sub-group>
+      <filename>43LUKwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/43LUKwPP.SFM</source>
+    </book>
+
+    <book id="JHN">
+      <name>يࣷوَانْ</name>
+      <group>NT</group>
+      <sub-group>Gospel</sub-group>
+      <filename>44JHNwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/44JHNwPP.SFM</source>
+    </book>
+
+    <book id="ACT">
+      <name>جࣴفْ يَ</name>
+      <group>NT</group>
+      <sub-group>Acts</sub-group>
+      <filename>45ACTwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/45ACTwPP.SFM</source>
+    </book>
+
+    <book id="ROM">
+      <name>رࣷومْ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>46ROMwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/46ROMwPP.SFM</source>
+    </book>
+
+    <book id="1CO">
+      <name>1.ڪࣷرࣹنتّ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>471COwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/471COwPP.SFM</source>
+    </book>
+
+    <book id="2CO">
+      <name>2.ڪࣷرࣹنتّ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>482COwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/482COwPP.SFM</source>
+    </book>
+
+    <book id="GAL">
+      <name>گَلَسِ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>49GALwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/49GALwPP.SFM</source>
+    </book>
+
+    <book id="EPH">
+      <name>اࣹفࣹسْ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>50EPHwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/50EPHwPP.SFM</source>
+    </book>
+
+    <book id="PHP">
+      <name>فِلِبْ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>51PHPwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/51PHPwPP.SFM</source>
+    </book>
+
+    <book id="COL">
+      <name>ڪࣷلࣷسْ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>52COLwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/52COLwPP.SFM</source>
+    </book>
+
+    <book id="1TH">
+      <name>1.تࣹسَلࣷنِگْ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>531THwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/531THwPP.SFM</source>
+    </book>
+
+    <book id="2TH">
+      <name>2.تࣹسَلࣷنِگْ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>542THwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/542THwPP.SFM</source>
+    </book>
+
+    <book id="1TI">
+      <name>1.تِمࣷتࣹ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>551TIwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/551TIwPP.SFM</source>
+    </book>
+
+    <book id="2TI">
+      <name>2.تِمࣷتࣹ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>562TIwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/562TIwPP.SFM</source>
+    </book>
+
+    <book id="TIT">
+      <name>تِتْ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>57TITwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/57TITwPP.SFM</source>
+    </book>
+
+    <book id="PHM">
+      <name>فِلࣹمࣷنْ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>58PHMwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/58PHMwPP.SFM</source>
+    </book>
+
+    <book id="HEB">
+      <name>يَوُتْ يَ</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>59HEBwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/59HEBwPP.SFM</source>
+    </book>
+
+    <book id="JAS">
+      <name>يَعْقُوبَ</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>60JASwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/60JASwPP.SFM</source>
+    </book>
+
+    <book id="1PE">
+      <name>1.ݒِيࣹيرْ</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>611PEwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/611PEwPP.SFM</source>
+    </book>
+
+    <book id="2PE">
+      <name>2.ݒِيࣹيرْ</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>622PEwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/622PEwPP.SFM</source>
+    </book>
+
+    <book id="1JN">
+      <name>1.يࣷوَانْ</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>631JNwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/631JNwPP.SFM</source>
+    </book>
+
+    <book id="2JN">
+      <name>2.يࣷوَانْ</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>642JNwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/642JNwPP.SFM</source>
+    </book>
+
+    <book id="3JN">
+      <name>3.يࣷوَانْ</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>653JNwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/653JNwPP.SFM</source>
+    </book>
+
+    <book id="JUD">
+      <name>يُدّ</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>66JUDwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/66JUDwPP.SFM</source>
+    </book>
+
+    <book id="REV">
+      <name>ݒࣹيݧُ مَ</name>
+      <group>NT</group>
+      <sub-group>Revelation</sub-group>
+      <filename>67REVwPP.SFM</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/67REVwPP.SFM</source>
+    </book>
+  </books>
+
   <features type="epub">
     <feature name="epub-toc-book-names" value="true"/>
     <feature name="epub-toc-chapter-numbers" value="true"/>
@@ -3324,7 +3902,7 @@ Please enter your access code:</translation>
     </writing-systems>
   </interface-languages>
 
-  <translation-mappings default-lang="wol">
+  <translation-mappings default-lang="en">
     <translation-mapping id="Menu_Contents">
       <translation lang="en">Contents</translation>
       <translation lang="fr">Contenu</translation>

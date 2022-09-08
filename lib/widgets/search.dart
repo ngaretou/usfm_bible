@@ -3,10 +3,9 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/material.dart' as material;
 import 'package:provider/provider.dart';
-import 'package:usfm_bible/widgets/paragraph_builder.dart';
 
 import '../models/database_builder.dart';
-
+import '../models/verse_composer.dart';
 import '../providers/user_prefs.dart';
 import '../providers/column_manager.dart';
 

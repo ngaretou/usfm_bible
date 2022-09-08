@@ -73,22 +73,14 @@ class UserPrefs with ChangeNotifier {
     late int numberOfColumns;
 
     //How many columns should we initially open?
-    switch (appInfo.collections.length) {
-      case 1:
-        numberOfColumns = 2; //if one collection, open two views
-        break;
-      case 2:
-        numberOfColumns = 2;
-        break;
-      case 3:
-        numberOfColumns = 3;
-        break;
-      case 4:
-        numberOfColumns = 4;
-        break;
-
-      default:
-        2;
+    if (appInfo.collections.length == 1) {
+      numberOfColumns = 2;
+    } else if (appInfo.collections.length == 2) {
+      numberOfColumns = 2;
+    } else if (appInfo.collections.length == 3) {
+      numberOfColumns = 2;
+    } else if (appInfo.collections.length > 3) {
+      numberOfColumns = 4;
     }
 
     //If just one collection, initially give the users two views but not tied to the same scrollgroup.

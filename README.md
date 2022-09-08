@@ -56,12 +56,12 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 ## To do:
 ### Minimal
 - Add in Ajami Wolof
-- NavPane buttons: 
-  - Contact Us (?)
+
 
 ### Maximal
 - Higher priority
   - Remember column references visible on close
+  - NavPane buttons: Contact Us
 - Other
   - Figure out permissions - right now you have to manually change permissions to 744 for appdef and all sfm book files after output :(
   - reader mode/no verses
