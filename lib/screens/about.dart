@@ -14,6 +14,11 @@ class About extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String appName = '';
+    String versionName = '';
+    String programType = '';
+    String programVersion = '';
+
     //Get collection copyright strings from the appdef
     Future<Map<String, String>> getCollectionCopyrights(
         BuildContext context) async {
@@ -47,7 +52,37 @@ class About extends StatelessWidget {
       return results;
     }
 
+    Future<void> getVariables(BuildContext context) async {
+      AssetBundle assetBundle = DefaultAssetBundle.of(context);
+
+      //get the appDef xml from outside the flutter project
+      String appDefLocation = 'assets/project/appDef.appDef';
+      String xmlFileString = await assetBundle.loadString(appDefLocation);
+      //get the document into a usable iterable
+      final document = XmlDocument.parse(xmlFileString);
+
+      appName = document
+          .getElement('app-definition')!
+          .getElement('app-name')!
+          .innerText
+          .toString(); // e.g. Kaddug Yalla Gi
+      versionName = document
+          .getElement('app-definition')!
+          .getElement('version')!
+          .getAttribute('name')
+          .toString(); // e.g. 1.0
+      programType = document
+          .getElement('app-definition')!
+          .getAttribute('type')
+          .toString(); // e.g. SAB
+      programVersion = document
+          .getElement('app-definition')!
+          .getAttribute('program-version')
+          .toString(); // e.g. 9.3
+    }
+
     Future<String> getHtml() async {
+      await getVariables(context);
       //First get the copyrights from the appdef
       Map<String, String> copyrights = await getCollectionCopyrights(context);
 
@@ -73,7 +108,13 @@ class About extends StatelessWidget {
 
       //Now all html is in
       //Clean up other variables
-      aboutPageHtml = aboutPageHtml.replaceAll(RegExp(r'%version-name%'), '');
+      aboutPageHtml = aboutPageHtml.replaceAll(RegExp(r'%app-name%'), appName);
+      aboutPageHtml =
+          aboutPageHtml.replaceAll(RegExp(r'%version-name%'), versionName);
+      aboutPageHtml =
+          aboutPageHtml.replaceAll(RegExp(r'%program-type%'), programType);
+      aboutPageHtml = aboutPageHtml.replaceAll(
+          RegExp(r'%program-version%'), programVersion);
 
       //Replace any \n line breaks with html breaks
       aboutPageHtml = aboutPageHtml.replaceAll(RegExp(r'\\n'), '<br>');
