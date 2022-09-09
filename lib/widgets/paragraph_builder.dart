@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:fluent_ui/fluent_ui.dart';
+import 'dart:ui' as ui;
 import 'dart:core';
 import '../models/database_builder.dart';
 import '../models/verse_composer.dart';
@@ -8,7 +9,7 @@ import '../models/verse_composer.dart';
 class ParagraphBuilder extends StatefulWidget {
   final List<ParsedLine> paragraph;
   final String fontName;
-  final String textDirection;
+  final ui.TextDirection textDirection;
   final double fontSize;
   final List<ParsedLine> rangeOfVersesToCopy;
   final Function addVerseToCopyRange;
@@ -30,6 +31,9 @@ class ParagraphBuilder extends StatefulWidget {
 class _ParagraphBuilderState extends State<ParagraphBuilder> {
   @override
   Widget build(BuildContext context) {
+    bool ltrText = widget.textDirection == ui.TextDirection.ltr;
+    TextAlign paraAlignment = ltrText ? TextAlign.left : TextAlign.right;
+
     // print('paragraph builder build method');
 
     bool header = false;
@@ -39,9 +43,11 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
 
     Color accentTextColor = FluentTheme.of(context).accentColor;
 
+    double fontSize = ltrText ? widget.fontSize : widget.fontSize + 7;
+
     TextStyle mainTextStyle = TextStyle(
       fontFamily: widget.fontName,
-      fontSize: widget.fontSize,
+      fontSize: fontSize,
       color: DefaultTextStyle.of(context).style.color,
     );
 
@@ -50,52 +56,37 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
 
     TextStyle italicStyle = mainTextStyle.copyWith(fontStyle: FontStyle.italic);
 
-    // This kind of works - goes right direction - but can't raise heihgt
-    TextSpan verseNumber(String verseNumber) {
+    //AS verseNumber - the WidgetSpan doesn't work for RTL, gets confused somehow.
+    //This is a ready replacement that doesn't look bad.
+    TextSpan verseNumberRTL(String verseNumber) {
       return TextSpan(
         text: ' $verseNumber ',
         style: mainTextStyle.copyWith(
-          fontSize: widget.fontSize / 2,
+          // height: 5,
+          textBaseline: TextBaseline.ideographic,
+          fontSize: fontSize / 2,
           color: accentTextColor,
           decoration: TextDecoration.none,
         ),
       );
     }
 
-    // WidgetSpan verseNumber(String verseNumber) {
-    //   return WidgetSpan(
-    //     alignment: PlaceholderAlignment.bottom,
-    //     baseline: TextBaseline.alphabetic,
-    //     child: Text(
-    //       ' $verseNumber ',
-    //       style: mainTextStyle.copyWith(
-    //           fontSize: widget.fontSize / 2,
-    //           color: accentTextColor,
-    //           decoration: TextDecoration.none),
-    //       textDirection: widget.textDirection == "LTR"
-    //           ? TextDirection.ltr
-    //           : TextDirection.rtl,
-    //     ),
-    //   );
-    // }
-
-    //  WidgetSpan verseNumber(String verseNumber) {
-    //   return WidgetSpan(
-    //     child: Transform.translate(
-    //       offset: const Offset(0.0, -6.0),
-    //       child: Text(
-    //         ' $verseNumber ',
-    //         style: mainTextStyle.copyWith(
-    //             fontSize: widget.fontSize / 2,
-    //             color: accentTextColor,
-    //             decoration: TextDecoration.none),
-    //         textDirection: widget.textDirection == "LTR"
-    //             ? TextDirection.ltr
-    //             : TextDirection.rtl,
-    //       ),
-    //     ),
-    //   );
-    // }
+    //Normal LTR text versenumber with transform for elevation
+    WidgetSpan verseNumberLTR(String verseNumber) {
+      return WidgetSpan(
+        child: Transform.translate(
+          offset: const Offset(0.0, -6.0),
+          child: Text(
+            ' $verseNumber ',
+            style: mainTextStyle.copyWith(
+                fontSize: fontSize / 2,
+                color: accentTextColor,
+                decoration: TextDecoration.none),
+            textDirection: widget.textDirection,
+          ),
+        ),
+      );
+    }
 
 //\v 50 Adoña nag ragal Suleymaan, daldi dem jàpp ca béjjén ya ca cati °\w sarxalukaay|sarxalukaay b-:\w* ba, ngir rawale bakkanam\f + \fr 1.50 \ft Jàpp ca sarxalukaay ba ca kër Yàlla ga, nit daan na ko def, di ko sàkkoo rawale bakkanam. Seetal ci \bk Mucc ga\bk* 21.14.\f*.
 //1Ki 1.50 - see paired usfm inside \f...\f* ndeysaan
@@ -110,10 +101,6 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
               element.book == line.book &&
               element.chapter == line.chapter &&
               element.verse == line.verse);
-
-      //Check to see if this is the simultaneous scroll group ref
-      // BibleReference? ref =
-      //     Provider.of<ColumnManager>(context, listen: false).getScrollGroupRef;
 
       //TODO this is where the fading highlight animation will go on nav
 
@@ -144,9 +131,7 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
       return TextSpan(
         text: paragraphFragment,
         style: mainTextStyle.copyWith(
-            fontSize: fontScaling == null
-                ? widget.fontSize
-                : widget.fontSize * fontScaling,
+            fontSize: fontScaling == null ? fontSize : fontSize * fontScaling,
             fontStyle: italics == null ? FontStyle.normal : FontStyle.italic,
             color: DefaultTextStyle.of(context).style.color),
       );
@@ -156,12 +141,19 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
       //These are for paragraph styles
       switch (line.verseStyle) {
         case 'v':
-          styledParagraphFragments.add(verseNumber(line.verse));
+          if (widget.textDirection == ui.TextDirection.ltr) {
+            styledParagraphFragments.add(verseNumberLTR(line.verse));
+          } else {
+            styledParagraphFragments.add(verseNumberRTL(line.verse));
+          }
+
           styledParagraphFragments.addAll(normalVerseFragment(line));
           header = false;
           break;
+        /*Continuation (margin) paragraph.
+        No first line indent.
+        Followed immediately by a space and paragraph text, or by a new line and a verse marker.*/
         case 'm':
-          styledParagraphFragments.add(verseNumber(line.verse));
           styledParagraphFragments.addAll(normalVerseFragment(line));
           header = false;
           break;
@@ -221,27 +213,16 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
           ));
     }
 
-    late TextAlign paraAlignment;
-    late TextDirection paraTextDirection;
-
-    if (widget.textDirection == "LTR") {
-      paraAlignment = TextAlign.left;
-      paraTextDirection = TextDirection.ltr;
-    } else {
-      paraAlignment = TextAlign.right;
-      paraTextDirection = TextDirection.rtl;
-    }
-
     return Padding(
       padding: poetry
           ? const EdgeInsets.only(left: 20, bottom: 0.0)
-          : const EdgeInsets.only(top: 8.0, right: 12),
+          : const EdgeInsets.only(top: 8.0, left: 12, right: 12),
       child: RichText(
         text: TextSpan(
           children: styledParagraphFragments,
         ),
         textAlign: header ? TextAlign.center : paraAlignment,
-        textDirection: paraTextDirection,
+        textDirection: widget.textDirection,
       ),
     );
   }

@@ -6,8 +6,8 @@ import '../models/database_builder.dart';
 import 'package:flutter/gestures.dart';
 
 /* this class and associated verseComposer function is exposed as we have to use it several different places. 
-It gets confusing but it is this way to avoid code duplication.
-Sometimes we need the verses composed with footnotes for display - sometimes composed without for Copy and Share
+It gets confusing but it is this way to avoid code duplication. Sometimes we need the verses composed 
+with footnotes for display - sometimes composed without for Copy and Share
 functions. This processes a given range and gives us both the verses as a List of InLineSpans and as one String.
 */
 class ComposedVerses {
@@ -28,7 +28,6 @@ ComposedVerses verseComposer(
     required BuildContext context}) {
   List<InlineSpan> spansToReturn = [];
   String textToReturn = '';
-
   int dealtWithSoFar = 0;
   String leftToDealWith = "";
 
@@ -44,14 +43,14 @@ ComposedVerses verseComposer(
             'Problem: A slash is here but should not be at ${line.collectionid} ${line.book} ${line.chapter} ${line.verse} $thisString');
       }
 
-      //if there is no function incoming
+      //if there is no function incoming - a heading etc
       if (tileOnTap == null) {
         spansToReturn.add(TextSpan(
           text: thisString,
           style: textStyle ?? computedTextStyle,
         ));
       } else {
-        //if there is a function (this is usually the add verses to copy range from paragraph builder)
+        //if there is a function (this is when there is a verse you can copy)
         spansToReturn.add(TextSpan(
             text: thisString,
             style: textStyle ?? computedTextStyle,
@@ -59,11 +58,15 @@ ComposedVerses verseComposer(
             recognizer: TapGestureRecognizer()..onTap = () => tileOnTap()));
       }
       textToReturn = '$textToReturn$thisString';
-    }
+    } //end stringIsCleanAddIt
 
+    //This gets things started
     RegExpMatch? match = RegExp(r'(\\)').firstMatch(thisString);
 
     if (match != null) {
+      /*This is to loop back through pairedUsfmFindingAndFormatting below - 
+      we have to bring it with here because we're looping back and forth and this is neededy by that 
+      and that by this function, and so this makes the function declared below accessible here at the top*/
       if (cleaningFunction != null) cleaningFunction(thisString);
     } else {
       stringIsCleanAddIt();
@@ -76,6 +79,7 @@ ComposedVerses verseComposer(
       RegExpMatch? footnoteText =
           RegExp(r'(.*?\\ft )(.*)').firstMatch(textToClean);
       if (footnoteText != null) {
+        //here just grab the text between \ft and \ft*
         cleanedText = footnoteText.group(2)!;
       }
 
@@ -88,6 +92,8 @@ ComposedVerses verseComposer(
       return cleanedText;
     }
 
+    //if includeFootnotes is true, this is for screen display (not string copy) so add it to the spans to return.
+    //Otherwise the footnotes are thrown away as there's no else
     if (includeFootnotes) {
       spansToReturn.add(
         WidgetSpan(
@@ -210,15 +216,19 @@ ComposedVerses verseComposer(
       leftToDealWith = line.verseText.substring(dealtWithSoFar);
       RegExpMatch? match = RegExp(r'(.*)').firstMatch(leftToDealWith);
 
+      //Is there something?
       if (match != null) {
+        //If so just add it
         addThisString(match.group(0)!);
         dealtWithSoFar = dealtWithSoFar + match.group(0)!.length;
       }
     }
   }
 
+  //This is what kicks it all off
   pairedUsfmFindingAndFormatting(line.verseText);
 
+  //Then after all is accounted for it falls back down here
   ComposedVerses returnInfo = ComposedVerses(
       versesAsSpans: spansToReturn, versesAsString: textToReturn);
   if (dealtWithSoFar != line.verseText.length) {
@@ -231,4 +241,3 @@ ComposedVerses verseComposer(
   return returnInfo;
 }
 //end verseComposer
-////////////////////////////////

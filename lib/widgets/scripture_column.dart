@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:ui' as ui;
 import 'dart:async';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/rendering.dart';
@@ -23,6 +24,7 @@ class ScriptureColumn extends StatefulWidget {
   final AppInfo appInfo;
   final BibleReference bibleReference;
   final Function deleteColumn;
+  final String? comboBoxFont;
 
   const ScriptureColumn({
     required Key? key,
@@ -30,6 +32,7 @@ class ScriptureColumn extends StatefulWidget {
     required this.appInfo,
     required this.bibleReference,
     required this.deleteColumn,
+    this.comboBoxFont,
   }) : super(key: key);
 
   @override
@@ -42,7 +45,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   bool wideWindow = false;
   late double wideWindowPadding;
   late bool partOfScrollGroup;
-
   late double baseFontSize;
   List<ParsedLine> rangeOfVersesToCopy = [];
 
@@ -52,7 +54,8 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   // late BibleReference bibleReference;
   List<String> collectionNames = [];
   // late Collection currentCollectionInfo;
-  ValueNotifier<String> currentCollection = ValueNotifier("C01");
+  ValueNotifier<String> currentCollection =
+      ValueNotifier("C01"); //Just default values, will get set below
   List<Book> currentCollectionBooks = [];
   ValueNotifier<String> currentBook = ValueNotifier("GEN");
 
@@ -73,8 +76,8 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
   @override
   void initState() {
-    partOfScrollGroup = widget.bibleReference.partOfScrollGroup;
     print('scripture column initState');
+    partOfScrollGroup = widget.bibleReference.partOfScrollGroup;
     baseFontSize = 20;
     itemScrollController = ItemScrollController();
 
@@ -88,7 +91,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     super.initState();
   }
 
-  //from combobox selectors
+  //Function called on first open and also from combobox selectors to go to a Bible reference
   scrollToReference(
       {String? collection,
       String? bookID,
@@ -144,12 +147,11 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
       for (var i = 0; i < versesInCollection.length; i++) {
         //If it is a new paragraph marker, add the existing verses to the big list, and start over with a new paragraph
-
         if (versesInCollection[i].verseStyle.contains(RegExp(
             r'[p,po,pr,cls,pmo,pm,pmc,pmr,pi\d,mi,nb,pc,ph\d,b,mt\d,mte\d,ms\d,mr,s\d*,sr,sp,sd\d,q,q1,q2,qr,qc,qa,qm\d,qd,lh,li\d,lf,lim\d]'))) {
           versesByParagraph.add(currentParagraph);
           currentParagraph = [versesInCollection[i]];
-          // currentParagraph = [];
+          //If it's a one line paragraph
         } else if ((versesInCollection[i]
             .verseStyle
             .contains(RegExp(r'[m,r,d]')))) {
@@ -157,10 +159,11 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
           versesByParagraph.add([versesInCollection[i]]);
           currentParagraph = [];
         } else {
-          //if new paragraph marker, add the line to the current paragraph
+          //otheriwise just add the line to the paragraph
           currentParagraph.add(versesInCollection[i]);
         }
       }
+
       setUpComboBoxesChVs(
           currentBook.value, currentChapter.value, currentVerse.value);
       if (!isInitState) setState(() {});
@@ -234,7 +237,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
       //   setState(() {});
       // }
 
-      //If no result, just hang on, don't scroll, just stay
       if (navigateToParagraph != null) {
         //If it's the normal situation, we did find the reference, so go there.
         setUpComboBoxesChVs(
@@ -264,6 +266,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
               ref;
         }
       } else {
+        //If no result, just hang on, don't scroll, just stay
         currentBook.value = oldBook;
         currentChapter.value = oldChapter;
         currentVerse.value = oldVerse;
@@ -273,10 +276,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
   //On user end scroll notification
   void setSelectorsToClosestReferenceAfterScroll() {
-    // print('setSelectorsToClosestReferenceAfterScroll');
-    // var oldBook = currentBook;
-    // var oldChapter = currentChapter;
-
     var p = itemPositionsListener.itemPositions.value.first.index;
 
     List<ParsedLine> para = versesByParagraph[p];
@@ -349,9 +348,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   }
 
   void addVerseToCopyRange(ParsedLine ref) {
-    print(
-        'received request to add ${ref.book} ${ref.chapter} ${ref.verse} to copy range');
-
     addVersesBetweenIndexes(int startIndex, int endIndex) {
       rangeOfVersesToCopy = [];
       for (var i = startIndex; i <= endIndex; i++) {
@@ -437,7 +433,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     print('textToShareOrCopy');
     String textToReturn = '';
     String reference = '';
-    // String lineBreak = kIsWeb ? '%0d%0a' : '\n';
     String lineBreak = '\n';
 
     //Get the text of the verses to share or copy
@@ -516,14 +511,11 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         if (currentBook.value != ref.bookID ||
             currentChapter.value != ref.chapter ||
             currentVerse.value != ref.verse) {
-          // print('trying to simulscroll in ${widget.key}');
-          // print('${ref.bookID} ${ref.chapter} ${ref.verse}');
           scrollToReference(
               bookID: ref.bookID, chapter: ref.chapter, verse: ref.verse);
         }
       }
     });
-    // print('Scripture Column build ${widget.key}');
 
     if (Provider.of<ColumnManager>(context, listen: true).readyToAddColumn) {
       //this rebuilds when adding a column
@@ -555,7 +547,19 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
     String fontName = thisCollection.fonts.first.fontFamily;
 
-    String textDirection = thisCollection.textDirection;
+    late ui.TextDirection textDirection;
+    late AlignmentGeometry alignment;
+    double? comboBoxFontSize = 16;
+
+    if (thisCollection.textDirection == 'LTR') {
+      textDirection = ui.TextDirection.ltr;
+      alignment = Alignment.centerLeft;
+      // comboBoxFontSize = DefaultTextStyle.of(context).style.fontSize;
+    } else {
+      textDirection = ui.TextDirection.rtl;
+      alignment = Alignment.centerRight;
+      // comboBoxFontSize = 18;
+    }
 
     return Expanded(
       child: Column(
@@ -564,9 +568,12 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         children: [
           //Scripture column ref selection card
           Padding(
-            padding: const EdgeInsets.only(top: 5.0, right: 5, left: 5),
+            //Each column has 5 above and then 2.5 l and r,
+            //which when beside each other makes 5 between each col.
+            //Padding in bible view makes the first and last column have the full 5.
+            padding: const EdgeInsets.only(top: 5.0, right: 2.5, left: 2.5),
             child: Card(
-              padding: EdgeInsets.only(top: 12, bottom: 12, left: 12, right: 6),
+              padding: EdgeInsets.only(top: 12, bottom: 12, left: 6, right: 6),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -592,14 +599,23 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                   valueListenable: currentCollection,
                                   builder: (context, val, child) {
                                     return Combobox<String>(
+                                      style: DefaultTextStyle.of(context)
+                                          .style
+                                          .copyWith(
+                                              fontFamily: widget.comboBoxFont,
+                                              fontSize: comboBoxFontSize),
                                       isExpanded: true,
                                       items: widget.appInfo.collections
                                           .map((e) => ComboboxItem<String>(
                                                 value: e.id,
-                                                child: Text(
-                                                  e.name,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
+                                                child: Align(
+                                                  alignment: alignment,
+                                                  child: Text(
+                                                    e.name,
+                                                    overflow: TextOverflow.clip,
+                                                    textDirection:
+                                                        textDirection,
+                                                  ),
                                                 ),
                                               ))
                                           .toList(),
@@ -618,13 +634,24 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                   valueListenable: currentBook,
                                   builder: (context, val, child) {
                                     return Combobox<String>(
+                                      style: DefaultTextStyle.of(context)
+                                          .style
+                                          .copyWith(
+                                              fontFamily: widget.comboBoxFont,
+                                              fontSize: comboBoxFontSize),
                                       isExpanded: true,
                                       items: currentCollectionBooks
                                           .map((e) => ComboboxItem<String>(
                                                 value: e.id,
-                                                child: Text(e.name,
-                                                    overflow:
-                                                        TextOverflow.ellipsis),
+                                                child: Align(
+                                                  alignment: alignment,
+                                                  child: Text(
+                                                    e.name,
+                                                    overflow: TextOverflow.clip,
+                                                    textDirection:
+                                                        textDirection,
+                                                  ),
+                                                ),
                                               ))
                                           .toList(),
                                       value: val,
@@ -643,6 +670,11 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                     valueListenable: currentChapter,
                                     builder: (context, val, child) {
                                       return Combobox<String>(
+                                        style: DefaultTextStyle.of(context)
+                                            .style
+                                            .copyWith(
+                                                fontFamily: widget.comboBoxFont,
+                                                fontSize: comboBoxFontSize),
                                         isExpanded: true,
                                         items: currentBookChapters
                                             .map((e) => ComboboxItem<String>(
@@ -668,6 +700,11 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                     valueListenable: currentVerse,
                                     builder: (context, val, child) {
                                       return Combobox<String>(
+                                        style: DefaultTextStyle.of(context)
+                                            .style
+                                            .copyWith(
+                                                fontFamily: widget.comboBoxFont,
+                                                fontSize: comboBoxFontSize),
                                         placeholder: const Text('150'),
                                         // isExpanded: true,
                                         items: currentChapterVerseNumbers
@@ -694,7 +731,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                 //Font increase/decrease
                                 Button(
                                   onPressed: () {
-                                    if (baseFontSize < 37) {
+                                    if (baseFontSize < 50) {
                                       setState(() {
                                         baseFontSize = baseFontSize + 1;
                                         print(baseFontSize);
@@ -747,14 +784,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                     SizedBox(
                       width: 30,
                     )
-                  // Column(
-                  //   mainAxisSize: MainAxisSize.max,
-                  //   mainAxisAlignment: MainAxisAlignment.end,
-                  //   children: [
-                  //     //remove a column
-
-                  //   ],
-                  // ),
                 ],
               ),
             ),
@@ -783,7 +812,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                         top: 0,
                         bottom: 0)
                     : const EdgeInsets.only(
-                        left: 12.0, right: 12, top: 0, bottom: 0),
+                        left: 2.5, right: 2.5, top: 0, bottom: 0),
                 child: Container(
                   decoration: BoxDecoration(
                     //This is the border between each scripture column and its neighbor to the right
@@ -840,7 +869,8 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                       ],
                     ),
                     child: ScrollablePositionedList.builder(
-                        padding: EdgeInsets.only(right: 12),
+                        //this is the space between the right of the column and the text for the scrollbar
+                        padding: EdgeInsets.only(right: 10),
                         initialAlignment: 1,
                         itemScrollController: itemScrollController,
                         itemPositionsListener: itemPositionsListener,

@@ -166,13 +166,11 @@ Future<void> asyncGetTranslations(BuildContext context) async {
       .getAttribute('default-lang')
       .toString(); // e.g. 'en'
 
-  XmlElement? xmlLangsSection = document
+  Iterable<XmlElement> xmlLangs = document
       .getElement('app-definition')!
       .getElement('interface-languages')!
-      .getElement('writing-systems');
-
-  Iterable<XmlElement> xmlLangs =
-      xmlLangsSection!.findAllElements('writing-system');
+      .getElement('writing-systems')!
+      .findAllElements('writing-system');
   //Loop through langs gathering info about each
   for (var lang in xmlLangs) {
     String? enabled = lang.getAttribute('enabled')?.toString();
@@ -347,6 +345,20 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
     }
   }
 
+  //Get Changes
+  Map<String, String> changes = {};
+  Iterable<XmlElement> xmlChanges = document
+      .getElement('app-definition')!
+      .getElement('changes')!
+      .findAllElements('change');
+
+  for (var xmlChange in xmlChanges) {
+    changes.addAll({
+      xmlChange.getElement('find')!.innerText.toString():
+          xmlChange.getElement('replace')!.innerText.toString()
+    });
+  }
+
   //Get each collection's information
   final Iterable<XmlElement> xmlCollections = document.findAllElements('books');
   for (var xmlCollection in xmlCollections) {
@@ -399,8 +411,16 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
     for (var book in books) {
       String url =
           'assets/project/data/books/${collection.id}/${book.filename}';
-      String chapterText = await assetBundle.loadString(url);
-      List<String> chapters = chapterText.split(r"\c ");
+      String bookText = await assetBundle.loadString(url);
+
+      //incorporate Changes from appDef
+      for (var k in changes.keys) {
+        //convert raw string to regular string
+        String findString = k.replaceAll(r'\', '\\');
+        bookText = bookText.replaceAll(RegExp(findString), changes[k]!);
+      }
+
+      List<String> chapters = bookText.split(r"\c ");
       //Removes all the headers etc - this also removes files that have not content - something to look at later
       chapters.removeAt(0);
 
@@ -462,13 +482,6 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
             // else {
             //   // verseNumber = "";
             // }
-
-            //TODO: incorporate Changes from appDef
-
-            verseText = verseText.replaceAll('---', '—');
-            verseText = verseText.replaceAll('°', '');
-            verseText = verseText.replaceAll('⸤', '');
-            verseText = verseText.replaceAll('⸥', '');
 
             //Now finally add the elements to the List<ParsedVerse>
             verses.add(ParsedLine(

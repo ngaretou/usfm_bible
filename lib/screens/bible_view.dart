@@ -11,11 +11,10 @@ import '../widgets/search.dart';
 
 class BibleView extends StatefulWidget {
   final AppInfo appInfo;
+  final String? comboBoxFont;
 
-  const BibleView({
-    Key? key,
-    required this.appInfo,
-  }) : super(key: key);
+  const BibleView({Key? key, required this.appInfo, this.comboBoxFont})
+      : super(key: key);
 
   @override
   State<BibleView> createState() => _BibleViewState();
@@ -34,11 +33,8 @@ class _BibleViewState extends State<BibleView> {
   void initState() {
     userColumns = Provider.of<UserPrefs>(context, listen: false).userColumns;
 
-    // for (var item in userColumns) {
-    //   print(item.collectionID);
-    // }
-
     numberOfColumns = userColumns.length;
+
     /*
     Here and elsewhere, creating the ScriptureColumn we're doing something odd. 
     Normally the data flows into a stateless widget list that gets recreated with data updates. 
@@ -48,6 +44,7 @@ class _BibleViewState extends State<BibleView> {
     and the widgets. I'm not sure this is the right way to go but we have so much data processing with each ScriptureColumn rebuild 
     that it seems like the most likely to serve us here. 
     */
+
     scriptureColumns = List.generate(userColumns.length, (index) {
       Key key = UniqueKey();
 
@@ -59,6 +56,7 @@ class _BibleViewState extends State<BibleView> {
         appInfo: widget.appInfo,
         bibleReference: userColumns[index],
         deleteColumn: deleteColumn,
+        comboBoxFont: widget.comboBoxFont,
       );
     });
 
@@ -78,7 +76,7 @@ class _BibleViewState extends State<BibleView> {
   }
 
   void addColumn() {
-    // print('adding a column in Bible View');
+    //limit to four columns
     if (userColumns.length <= 3) {
       //This common key helps us keep track of refs and columns
       Key key = UniqueKey();
@@ -100,11 +98,13 @@ class _BibleViewState extends State<BibleView> {
       scriptureColumns.insert(
         position,
         ScriptureColumn(
-            key: key,
-            myColumnIndex: scriptureColumns.length,
-            appInfo: widget.appInfo,
-            bibleReference: newDefaultRef,
-            deleteColumn: deleteColumn),
+          key: key,
+          myColumnIndex: scriptureColumns.length,
+          appInfo: widget.appInfo,
+          bibleReference: newDefaultRef,
+          deleteColumn: deleteColumn,
+          comboBoxFont: widget.comboBoxFont,
+        ),
       );
 
       setState(() {});
@@ -145,6 +145,10 @@ class _BibleViewState extends State<BibleView> {
     }
 
     return Container(
+      //Bible view pane overall padding - each column has 5 above and then 2.5 l and r,
+      //which when beside each other makes 5 between each col.
+      //This padding here makes the first and last column have the full 5.
+      padding: EdgeInsets.symmetric(horizontal: 2.5),
       color: FluentTheme.of(context).scaffoldBackgroundColor,
       child: Row(children: scriptureColumns),
     );

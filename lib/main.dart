@@ -74,10 +74,6 @@ void main() async {
         ChangeNotifierProvider(
           create: (ctx) => ColumnManager(),
         ),
-
-        // ChangeNotifierProvider(
-        //   create: (ctx) => PlayerManager(),
-        // ),
       ],
       child: const MyApp(),
     ),
@@ -193,8 +189,6 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
   Future<void> callInititalizationAppName() async {
     String response = await asyncGetProjectName(context);
 
-    // print('returning future from asyncGetProjectName');
-    // print(response);
     setState(() {
       appTitle = response;
     });
@@ -221,20 +215,6 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
   //       });
   // }
 
-  // informationalDialog() {
-  //   ContentDialog(
-  //     title: const Text('No WiFi connection'),
-  //     content: const Text('Check your connection and try again'),
-  //     actions: [
-  //       Button(
-  //           child: const Text('Ok'),
-  //           onPressed: () {
-  //             Navigator.pop(context);
-  //           })
-  //     ],
-  //   );
-  // }
-
   @override
   Widget build(BuildContext context) {
     final appTheme = context.watch<AppTheme>();
@@ -244,9 +224,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
       builder: (ctx, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: ProgressRing());
-        }
-        //Main row that holds the text columns
-        else {
+        } else {
           return ContextMenuOverlay(
             buttonStyle: ContextMenuButtonStyle(
               fgColor: DefaultTextStyle.of(context).style.color,
@@ -322,6 +300,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
               //     ],
               //   ),
               // ),
+              //Main big row that holds the text columns
               pane: NavigationPane(
                 selected: index,
                 onChanged: (i) => setState(() => index = i),
@@ -332,16 +311,6 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                 header: Container(
                   height: kOneLineTileHeight,
                   padding: const EdgeInsets.symmetric(horizontal: 10.0),
-
-                  // child: Align(
-                  //   alignment: Alignment.centerLeft,
-                  //   child: FlutterLogo(
-                  //     style: appTheme.displayMode == PaneDisplayMode.top
-                  //         ? FlutterLogoStyle.markOnly
-                  //         : FlutterLogoStyle.horizontal,
-                  //     size: appTheme.displayMode == PaneDisplayMode.top ? 24 : 100.0,
-                  //   ),
-                  // ),
                 ),
                 displayMode: appTheme.displayMode,
                 indicator: () {
@@ -424,25 +393,32 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                   //Main row that holds the text columns
                   else {
                     AppInfo appInfo = snapshot.data as AppInfo;
+                    late String comboBoxFont;
+                    bool anyRTL = collections
+                        .any((element) => element.textDirection != 'LTR');
+
+                    if (anyRTL) {
+                      String font = collections
+                          .firstWhere(
+                              (element) => element.textDirection == 'RTL')
+                          .fonts
+                          .first
+                          .fontFamily;
+                      comboBoxFont = font;
+                    }
 
                     return NavigationBody(index: index, children: [
                       BibleView(
-                        appInfo: appInfo,
-                      ), //main view
+                          appInfo: appInfo,
+                          comboBoxFont: comboBoxFont), //main view
 
                       //must include dummy destination here for each custom action, apparently
 
-                      BibleView(
-                        appInfo: snapshot.data as AppInfo,
-                      ), //taking place of Search
+                      const About(), //taking place of Search
 
-                      BibleView(
-                        appInfo: snapshot.data as AppInfo,
-                      ), //taking place of add a pane
+                      const About(), //taking place of add a pane
 
-                      BibleView(
-                        appInfo: snapshot.data as AppInfo,
-                      ), //taking place of toggle light/dark mode
+                      const About(), //taking place of toggle light/dark mode
 
                       const About(),
 

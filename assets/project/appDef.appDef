@@ -190,13 +190,29 @@
   </features>
 
   <changes type="main">
-    <change name="insecable i" enabled="false">
-      <find>(?&lt;!\\q1)\s\bi\b</find>
-      <replace>~i</replace>
+    <change name="three dashes to m dash">
+      <find>---</find>
+      <replace>—</replace>
     </change>
-    <change name="eenk2" enabled="false">
-      <find>~</find>
-      <replace>\u202F</replace>
+    <change name="two dashes to n dash">
+      <find>--</find>
+      <replace>–</replace>
+    </change>
+    <change name="stray k marker cleanup">
+      <find>\\p \\k \u000a\\p</find>
+      <replace>\\p</replace>
+    </change>
+    <change name="Take out the circle glossary marker as they are hyperlinks now">
+      <find>°</find>
+      <replace></replace>
+    </change>
+    <change name="Alternate reading marker not available in Charis">
+      <find>⸤</find>
+      <replace></replace>
+    </change>
+    <change name="Alternate reading marker not available in Charis">
+      <find>⸥</find>
+      <replace></replace>
     </change>
   </changes>
 
