@@ -1,0 +1,8 @@
+<h2>Kàddug Yàlla  appli web</h2>
+<p><a href="http://biblewolof.com">http://biblewolof.com</a></p>
+%copyright-all:C01%
+%copyright-all:C02%
+%copyright-all:C03%
+%copyright-all:C04%
+
+%copyright-all:C05%
