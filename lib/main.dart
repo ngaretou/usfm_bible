@@ -8,6 +8,7 @@ import 'package:system_theme/system_theme.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:context_menus/context_menus.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 import 'screens/about.dart';
 import 'screens/bible_view.dart';
@@ -19,9 +20,7 @@ import 'models/database_builder.dart';
 import 'providers/user_prefs.dart';
 import 'providers/column_manager.dart';
 
-String appTitle = "Placeholder App Title";
-String search = '';
-String settings = '';
+String appTitle = '';
 
 /// Checks if the current environment is a desktop environment.
 bool get isDesktop {
@@ -34,7 +33,9 @@ bool get isDesktop {
 }
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  // Keep native splash screen up until app is finished bootstrapping
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   // if it's on the web, windows or android, load the accent color
   if (kIsWeb ||
@@ -102,49 +103,69 @@ class MyApp extends StatelessWidget {
       hoveringPadding: EdgeInsets.all(0),
     );
 
+    Future<String> getAppTitle() async {
+      var response = await asyncGetProjectName(context);
+      print('back from context $response');
+      return response;
+    }
+
+    late Future<String> initAppInfo = getAppTitle();
+
     return ChangeNotifierProvider(
       create: (_) => AppTheme(),
       builder: (context, _) {
         final appTheme = context.watch<AppTheme>();
 
-        return FluentApp(
-          title: appTitle,
-          themeMode: appTheme.mode,
-          debugShowCheckedModeBanner: false,
-          home: const MyHomePage(),
-          color: appTheme.color,
-          darkTheme: ThemeData(
-            brightness: Brightness.dark,
-            accentColor: appTheme.color,
-            visualDensity: VisualDensity.standard,
-            focusTheme: FocusThemeData(
-              glowFactor: is10footScreen() ? 2.0 : 0.0,
-            ),
-            scrollbarTheme: scrollBarTheme,
-          ),
-          theme: ThemeData(
-            accentColor: appTheme.color,
-            visualDensity: VisualDensity.standard,
-            focusTheme: FocusThemeData(
-              glowFactor: is10footScreen() ? 2.0 : 0.0,
-            ),
-            scrollbarTheme: scrollBarTheme,
-          ),
-          builder: (context, child) {
-            return Directionality(
-              textDirection: appTheme.textDirection,
-              child: NavigationPaneTheme(
-                data: NavigationPaneThemeData(
-                  backgroundColor: appTheme.windowEffect !=
-                          flutter_acrylic.WindowEffect.disabled
-                      ? Colors.transparent
-                      : null,
-                ),
-                child: child!,
-              ),
-            );
-          },
-        );
+        return FutureBuilder(
+            future: initAppInfo,
+            builder: (ctx, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return Center(
+                    child: Container(
+                  color: Colors.blue,
+                ));
+              } else {
+                appTitle = snapshot.data.toString();
+                return FluentApp(
+                  title: appTitle,
+                  themeMode: appTheme.mode,
+                  debugShowCheckedModeBanner: false,
+                  home: const MyHomePage(),
+                  color: appTheme.color,
+                  darkTheme: ThemeData(
+                    brightness: Brightness.dark,
+                    accentColor: appTheme.color,
+                    visualDensity: VisualDensity.standard,
+                    focusTheme: FocusThemeData(
+                      glowFactor: is10footScreen() ? 2.0 : 0.0,
+                    ),
+                    scrollbarTheme: scrollBarTheme,
+                  ),
+                  theme: ThemeData(
+                    accentColor: appTheme.color,
+                    visualDensity: VisualDensity.standard,
+                    focusTheme: FocusThemeData(
+                      glowFactor: is10footScreen() ? 2.0 : 0.0,
+                    ),
+                    scrollbarTheme: scrollBarTheme,
+                  ),
+                  builder: (context, child) {
+                    return Directionality(
+                      textDirection: appTheme.textDirection,
+                      child: NavigationPaneTheme(
+                        data: NavigationPaneThemeData(
+                          backgroundColor: appTheme.windowEffect !=
+                                  flutter_acrylic.WindowEffect.disabled
+                              ? Colors.transparent
+                              : null,
+                        ),
+                        child: child!,
+                      ),
+                    );
+                  },
+                );
+              }
+            });
       },
     );
   }
@@ -158,23 +179,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyHomePageState extends State<MyHomePage> with WindowListener {
-  late Future<AppInfo> init = callInititalization();
-  late Future<void> langInit = callTranslationInitialization();
-
   int index = 0;
 
   final settingsController = ScrollController();
   final viewKey = GlobalKey();
 
-  @override
-  void initState() {
-    windowManager.addListener(this);
-    callInititalizationAppName();
-
-    super.initState();
-  }
-
   Future<AppInfo> callInititalization() async {
+    // String response = await asyncGetProjectName(context);
+    // appTitle = response;
+
     AppInfo appInfo = await buildDatabaseFromXML(context);
     await Provider.of<UserPrefs>(context, listen: false).loadUserPrefs(appInfo);
 
@@ -182,17 +195,12 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
     return appInfo;
   }
 
-  Future<void> callTranslationInitialization() async {
+  Future<void> callInterfaceInitialization() async {
     await asyncGetTranslations(context);
   }
 
-  Future<void> callInititalizationAppName() async {
-    String response = await asyncGetProjectName(context);
-
-    setState(() {
-      appTitle = response;
-    });
-  }
+  late Future<AppInfo> initAppInfo = callInititalization();
+  late Future<void> initInterface = callInterfaceInitialization();
 
   @override
   void dispose() {
@@ -201,26 +209,12 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
     super.dispose();
   }
 
-  // Widget delayedAppTitle() {
-  //   return FutureBuilder(
-  //       future: initAppName,
-  //       builder: (ctx, snapshot) {
-  //         if (snapshot.connectionState == ConnectionState.waiting) {
-  //           return const Center(child: ProgressBar());
-  //           // return Text('still waiting');
-  //         } else {
-  //           print('delayedAppTitle $appTitle');
-  //           return Text(snapshot.data.toString());
-  //         }
-  //       });
-  // }
-
   @override
   Widget build(BuildContext context) {
     final appTheme = context.watch<AppTheme>();
 
     return FutureBuilder(
-      future: langInit,
+      future: initInterface,
       builder: (ctx, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: ProgressRing());
@@ -323,11 +317,10 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                   }
                 }(),
                 items: [
-                  // It doesn't look good when resizing from compact to open
-                  // PaneItemHeader(header: Text('User Interaction')),
                   PaneItem(
-                      icon: const Icon(FluentIcons.reading_mode),
-                      title: Text(appTitle)),
+                    icon: const Icon(FluentIcons.reading_mode),
+                    title: Text(appTitle),
+                  ),
                 ],
                 footerItems: [
                   //Actions label?
@@ -385,8 +378,10 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                 ],
               ),
               content: FutureBuilder(
-                future: init,
+                future: initAppInfo,
                 builder: (ctx, snapshot) {
+                  // Remove splash screen when bootstrap is complete
+                  FlutterNativeSplash.remove();
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return const Center(child: ProgressRing());
                   }

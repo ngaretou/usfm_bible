@@ -29,9 +29,7 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
     - Note there must be those four fonts - if you only have one font, make copies and rename so those files are there.
       - This is a hack to deal with a Flutter limitation and hopefully will be eliminated. https://docs.flutter.dev/cookbook/design/fonts#2-declare-the-font-in-the-pubspec
   - In index.html:
-    - Change app name in the \<title> tag
     - Change \<base href> to your subfolder if your web app is not in the root of your site. (More instructions in the comments of index.html.)
-    - Change favicon if desired
   - You may have to change permissions to 744 for your appDef file and your .usfm files in your data/books/C0... collections folders.
 - Incorporate web app-only translations
   - Some translations are available in the appDef and pulled directly from your existing project. Some are not a part of SAB's translation strings and you can provide those five that usfm_bible uses for your language in assets/translations.json. Include the translations there with the language codes from the Interface/Language/Language Codes column.
@@ -70,6 +68,10 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 
 ## To do:
 ### Minimal
+- splash screen
+- startup rework
+- add Greek to example project
+- scrolling seems a bit off - going to para before desired verse now
 
 ### Maximal
 - Higher priority
