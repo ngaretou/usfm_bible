@@ -89,6 +89,7 @@ ComposedVerses verseComposer(
       //Would need to extend ToolTip to alllow List<InlineSpan>, which I'm not up to right now.
       cleanedText = cleanedText.replaceAll(RegExp(r'\\\w+\*\s*'), '');
       cleanedText = cleanedText.replaceAll(RegExp(r'\\\w+\s*'), '');
+
       return cleanedText;
     }
 

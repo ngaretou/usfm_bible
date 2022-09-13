@@ -142,7 +142,6 @@ Future<String> asyncGetProjectName(BuildContext context) async {
       .getElement('app-name')!
       .innerText
       .toString(); // e.g. Kaddug Yalla Gi
-  print(projectName);
   return projectName;
 }
 
@@ -421,8 +420,19 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
         bookText = bookText.replaceAll(RegExp(findString), changes[k]!);
       }
 
+      //Greek NT changes
+
+      //Remove all the extra \+fw
+      bookText = bookText.replaceAll(RegExp(r'\\\+fw\s*'), '');
+
+      // Remove \w | \*w - strong's numbers are too many in Greek NT
+      var wMarkers = RegExp(r'(\\w\s)(.*?)(\|.*?\\w\*)');
+      bookText = bookText.replaceAllMapped(wMarkers, (Match m) => '${m[2]}');
+
+      //end Greek NT
+
       List<String> chapters = bookText.split(r"\c ");
-      //Removes all the headers etc - this also removes files that have not content - something to look at later
+      //Removes all the headers etc - this also removes files that have no content - something to look at later
       chapters.removeAt(0);
 
       //Before going to chapters, add an entry for the book title
@@ -447,6 +457,12 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
         ///\r?\n|\r/g is all linebreaks
         //This juts gets rid of the chapter number
         chapterByLineBreaks.removeAt(0);
+        //Print a bit
+        if (collection.id == 'C06' &&
+            book.id == 'MAT' &&
+            chapterNumber == '1') {
+          print('verseStyle');
+        }
 
         //Set up variables for the chapters - having them here resets them each new chapter also
         String verseStyle = "";
@@ -458,7 +474,7 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
           // This regex matches the initial style -
           //match is an iterable with an element for each matching group of the regexp
           RegExpMatch? match =
-              RegExp(r'(\\)(\w+)(\s)(.*)').firstMatch(line); // \s
+              RegExp(r'(\\)(\w+)(\s*)(.*)').firstMatch(line); // \s
           if (match != null) {
             if (match.group(2) != null) {
               verseStyle = match.group(2)!; //verseStyle

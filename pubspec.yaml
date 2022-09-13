@@ -88,7 +88,7 @@ flutter:
     - assets/project/data/books/C03/
     - assets/project/data/books/C04/
     - assets/project/data/books/C05/
-    # - assets/project/data/books/C06/
+    - assets/project/data/books/C06/
     # - assets/project/data/books/C07/
     # - assets/project/data/books/C08/
     # - assets/project/data/books/C09/
@@ -120,6 +120,11 @@ flutter:
       fonts:
         - asset: assets/project/data/fonts/font2-R.ttf
         - asset: assets/project/data/fonts/font2-B.ttf
+          weight: 700
+    - family: font3
+      fonts:
+        - asset: assets/project/data/fonts/font3-R.ttf
+        - asset: assets/project/data/fonts/font3-B.ttf
           weight: 700
   #
   # For details regarding fonts from package dependencies,

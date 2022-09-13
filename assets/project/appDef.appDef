@@ -256,6 +256,13 @@
       <style-decl property="font-weight" value="bold"/>
       <style-decl property="font-style" value="normal"/>
     </font>
+    <font family="font3">
+      <font-name>SBL Greek</font-name>
+      <display-name>SBL Greek</display-name>
+      <filename format="truetype">SBL_grk.ttf</filename>
+      <style-decl property="font-weight" value="normal"/>
+      <style-decl property="font-style" value="normal"/>
+    </font>
   </fonts>
 
   <color-scheme name="Dark Green"/>
@@ -3366,6 +3373,273 @@
       <sub-group>Revelation</sub-group>
       <filename>67REVwPP.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/67REVwPP.SFM</source>
+    </book>
+  </books>
+
+  <books id="C06">
+    <book-collection-name>SBL NT grec</book-collection-name>
+    <book-collection-abbrev>SBLGNT</book-collection-abbrev>
+    <book-collection-description></book-collection-description>
+
+    <features type="bc">
+      <feature name="show-scripture-refs" value="true"/>
+      <feature name="ref-chapter-verse-separator" value=":"/>
+      <feature name="ref-verse-range-separator" value="-"/>
+      <feature name="ref-verse-list-separator" value=","/>
+      <feature name="ref-chapter-range-separator" value="-"/>
+      <feature name="ref-chapter-list-separator" value=";"/>
+      <feature name="ref-extra-material" value=""/>
+      <feature name="numerals-type" value="default"/>
+      <feature name="bc-allow-single-pane" value="true"/>
+      <feature name="bc-allow-copy-text" value="true"/>
+      <feature name="bc-allow-long-press-select" value="true"/>
+      <feature name="bc-allow-share-text" value="true"/>
+      <feature name="bc-allow-text-on-image" value="true"/>
+      <feature name="bc-allow-text-on-image-edit-text" value="true"/>
+      <feature name="bc-allow-verse-of-the-day" value="true"/>
+      <feature name="bc-allow-share-audio" value="false"/>
+      <feature name="bc-allow-share-video" value="false"/>
+    </features>
+
+    <metadata>
+      <meta name="copyright-text" content="Society of Biblical Literature Greek New Testament copyright © 2010 Society of Biblical Literature and Logos Bible Software\n&lt;a href=&quot;https://sblgnt.com/license/&quot;&gt;https://sblgnt.com/license/e&lt;/a&gt;"/>
+    </metadata>
+
+    <styles-info>
+      <text-font family="font3"/>
+      <text-size value="20"/>
+      <line-height value="120"/>
+      <text-direction value="LTR"/>
+      <numeral-system value="Default"/>
+      <verse-number-style value="default"/>
+
+      <styles>
+        <style name="div.footer">
+        </style>
+      </styles>
+    </styles-info>
+
+    <book-order>
+      <canon-name>Western Protestant Bible</canon-name>
+    </book-order>
+
+    <writing-system code="">
+    </writing-system>
+
+    <book id="MAT">
+      <name>Κατα Μαθθαιον</name>
+      <group>NT</group>
+      <sub-group>Gospel</sub-group>
+      <filename>46-MATgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/46-MATgrcsbl.usfm</source>
+    </book>
+
+    <book id="MRK">
+      <name>Κατα Μαρκον</name>
+      <group>NT</group>
+      <sub-group>Gospel</sub-group>
+      <filename>47-MRKgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/47-MRKgrcsbl.usfm</source>
+    </book>
+
+    <book id="LUK">
+      <name>Κατα Λουκαν</name>
+      <group>NT</group>
+      <sub-group>Gospel</sub-group>
+      <filename>48-LUKgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/48-LUKgrcsbl.usfm</source>
+    </book>
+
+    <book id="JHN">
+      <name>Κατα Ιωαννην</name>
+      <group>NT</group>
+      <sub-group>Gospel</sub-group>
+      <filename>49-JHNgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/49-JHNgrcsbl.usfm</source>
+    </book>
+
+    <book id="ACT">
+      <name>Πραξεισ Αποστολων</name>
+      <group>NT</group>
+      <sub-group>Acts</sub-group>
+      <filename>50-ACTgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/50-ACTgrcsbl.usfm</source>
+    </book>
+
+    <book id="ROM">
+      <name>Προσ Ρωμαιουσ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>51-ROMgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/51-ROMgrcsbl.usfm</source>
+    </book>
+
+    <book id="1CO">
+      <name>Προσ Κορινθιουσ Α</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>52-1COgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/52-1COgrcsbl.usfm</source>
+    </book>
+
+    <book id="2CO">
+      <name>Προσ Κορινθιουσ Β</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>53-2COgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/53-2COgrcsbl.usfm</source>
+    </book>
+
+    <book id="GAL">
+      <name>Προσ Γαλατασ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>54-GALgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/54-GALgrcsbl.usfm</source>
+    </book>
+
+    <book id="EPH">
+      <name>Προσ Εφεσιουσ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>55-EPHgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/55-EPHgrcsbl.usfm</source>
+    </book>
+
+    <book id="PHP">
+      <name>Προσ Φιλιππησιουσ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>56-PHPgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/56-PHPgrcsbl.usfm</source>
+    </book>
+
+    <book id="COL">
+      <name>Προσ Κολοσσαεισ</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>57-COLgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/57-COLgrcsbl.usfm</source>
+    </book>
+
+    <book id="1TH">
+      <name>Προσ Θεσσαλονικεισ Α</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>58-1THgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/58-1THgrcsbl.usfm</source>
+    </book>
+
+    <book id="2TH">
+      <name>Προσ Θεσσαλονικεισ Β</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>59-2THgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/59-2THgrcsbl.usfm</source>
+    </book>
+
+    <book id="1TI">
+      <name>Προσ Τιμοθεον Α</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>60-1TIgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/60-1TIgrcsbl.usfm</source>
+    </book>
+
+    <book id="2TI">
+      <name>Προσ Τιμοθεον Β</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>61-2TIgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/61-2TIgrcsbl.usfm</source>
+    </book>
+
+    <book id="TIT">
+      <name>Προσ Τιτον</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>62-TITgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/62-TITgrcsbl.usfm</source>
+    </book>
+
+    <book id="PHM">
+      <name>Προσ Φιλημονα</name>
+      <group>NT</group>
+      <sub-group>PaulineEpistle</sub-group>
+      <filename>63-PHMgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/63-PHMgrcsbl.usfm</source>
+    </book>
+
+    <book id="HEB">
+      <name>Προσ Εβραιουσ</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>64-HEBgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/64-HEBgrcsbl.usfm</source>
+    </book>
+
+    <book id="JAS">
+      <name>Ιακωβου</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>65-JASgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/65-JASgrcsbl.usfm</source>
+    </book>
+
+    <book id="1PE">
+      <name>Πετρου Α</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>66-1PEgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/66-1PEgrcsbl.usfm</source>
+    </book>
+
+    <book id="2PE">
+      <name>Πετρου Β</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>67-2PEgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/67-2PEgrcsbl.usfm</source>
+    </book>
+
+    <book id="1JN">
+      <name>Ιωαννου Α</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>68-1JNgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/68-1JNgrcsbl.usfm</source>
+    </book>
+
+    <book id="2JN">
+      <name>Ιωαννου Β</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>69-2JNgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/69-2JNgrcsbl.usfm</source>
+    </book>
+
+    <book id="3JN">
+      <name>Ιωαννου Γ</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>70-3JNgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/70-3JNgrcsbl.usfm</source>
+    </book>
+
+    <book id="JUD">
+      <name>Ιουδα</name>
+      <group>NT</group>
+      <sub-group>GeneralEpistle</sub-group>
+      <filename>71-JUDgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/71-JUDgrcsbl.usfm</source>
+    </book>
+
+    <book id="REV">
+      <name>Αποκαλυψισ Ιωαννου</name>
+      <group>NT</group>
+      <sub-group>Revelation</sub-group>
+      <filename>72-REVgrcsbl.usfm</filename>
+      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/72-REVgrcsbl.usfm</source>
     </book>
   </books>
 

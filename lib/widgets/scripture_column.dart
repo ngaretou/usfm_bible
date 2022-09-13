@@ -76,7 +76,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
   @override
   void initState() {
-    print('scripture column initState');
+    // print('scripture column initState');
     partOfScrollGroup = widget.bibleReference.partOfScrollGroup;
     baseFontSize = 20;
     itemScrollController = ItemScrollController();
@@ -98,7 +98,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
       String? chapter,
       String? verse,
       bool isInitState = false}) {
-    print('scrollToReference');
+    // print('scroll To Reference $chapter $verse');
     //If we're changing the collection, we need to rebuild the whole column's content.
     //If just navigating in the collection it's scrollTo.
 
@@ -276,17 +276,26 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
   //On user end scroll notification
   void setSelectorsToClosestReferenceAfterScroll() {
-    var p = itemPositionsListener.itemPositions.value.first.index;
+    int p = itemPositionsListener.itemPositions.value.first.index;
 
     List<ParsedLine> para = versesByParagraph[p];
 
-    outerloop:
+    breakingloop:
+    //This is all verses by paragraph - go through each one starting with the current paragraph - 'p' above
     for (var i = p; i < versesByParagraph.length; i++) {
       para = versesByParagraph[i];
       if (para.isNotEmpty) {
+        //Now in each paragraph start looking to see which verse is the first in the scrolled-to paragraph
         for (var l = 0; l < para.length; l++) {
-          if ((para[l].chapter != "" && para[l].chapter != "0") &&
-              (para[l].verse != "" && para[l].verse != "0")) {
+          //If we're in a sane reference
+          if (
+              //first test: if the ch number is a number
+              (para[l].chapter != "" && para[l].chapter != "0") &&
+                  //second test: the verse number is a number
+                  (para[l].verse != "" && para[l].verse != "0") &&
+                  //third test: if it's a paragraph marker with no text
+                  (para[l].verseText != "")) {
+            //
             if (currentBook.value != para[l].book) {
               currentBook.value = para[l].book;
             }
@@ -294,7 +303,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
               currentChapter.value = para[l].chapter;
             }
             if (currentVerse.value != para[l].verse) {
-              print('verse change');
+              // print('verse change to ${para[l].verse}');
               currentVerse.value = para[l].verse;
             }
 
@@ -307,6 +316,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                 verse: currentVerse.value);
 
             if (partOfScrollGroup) {
+              //communicate to other columns if part of scrollgroup
               Provider.of<ColumnManager>(context, listen: false)
                   .setScrollGroupRef = ref;
             }
@@ -315,7 +325,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
             setUpComboBoxesChVs(
                 currentBook.value, currentChapter.value, currentVerse.value);
 
-            break outerloop;
+            break breakingloop;
           }
         }
       }
@@ -377,7 +387,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     }
     // if the verses to copy does not contain the ref that the user just sent, add all the refs between the first and last ref
     else if (!verseAlreadyInRange) {
-      print('third case');
+      // print('third case');
       //add this verse and then
       rangeOfVersesToCopy.add(ref);
 
@@ -414,7 +424,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     }
     //if the user has changed their minds and wants to shorten the list of verses to work with
     else if (rangeOfVersesToCopy.length >= 2 && verseAlreadyInRange) {
-      print('fourth option');
+      // print('fourth option');
       startIndex = versesInCollection.indexWhere((element) =>
           element.book == rangeOfVersesToCopy[0].book &&
           element.chapter == rangeOfVersesToCopy[0].chapter &&
@@ -430,7 +440,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   }
 
   String? textToShareOrCopy() {
-    print('textToShareOrCopy');
+    // print('textToShareOrCopy');
     String textToReturn = '';
     String reference = '';
     String lineBreak = '\n';
@@ -504,15 +514,17 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   @override
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      BibleReference? ref =
+      BibleReference? scrollGroupRef =
           Provider.of<ColumnManager>(context, listen: false).getScrollGroupRef;
 
-      if (partOfScrollGroup && ref != null) {
-        if (currentBook.value != ref.bookID ||
-            currentChapter.value != ref.chapter ||
-            currentVerse.value != ref.verse) {
+      if (partOfScrollGroup && scrollGroupRef != null) {
+        if (currentBook.value != scrollGroupRef.bookID ||
+            currentChapter.value != scrollGroupRef.chapter ||
+            currentVerse.value != scrollGroupRef.verse) {
           scrollToReference(
-              bookID: ref.bookID, chapter: ref.chapter, verse: ref.verse);
+              bookID: scrollGroupRef.bookID,
+              chapter: scrollGroupRef.chapter,
+              verse: scrollGroupRef.verse);
         }
       }
     });
@@ -524,7 +536,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
     if (Provider.of<ColumnManager>(context, listen: true)
         .timeToRebuildColumns) {
-      print('Rebuild request received');
+      // print('Rebuild request received');
       setState(() {});
     }
 
@@ -734,7 +746,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                     if (baseFontSize < 50) {
                                       setState(() {
                                         baseFontSize = baseFontSize + 1;
-                                        print(baseFontSize);
                                       });
                                     }
                                   },
@@ -795,10 +806,9 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
             child: NotificationListener(
               onNotification: (ScrollNotification notification) {
                 //This if reduces the number of times the selector method is triggered
-                // print(notification);
                 if (notification is UserScrollNotification &&
                     notification.direction == ScrollDirection.idle) {
-                  Timer(Duration(milliseconds: 20),
+                  Timer(Duration(milliseconds: 100),
                       setSelectorsToClosestReferenceAfterScroll);
                 }
 

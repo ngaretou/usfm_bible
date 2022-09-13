@@ -105,7 +105,6 @@ class MyApp extends StatelessWidget {
 
     Future<String> getAppTitle() async {
       var response = await asyncGetProjectName(context);
-      print('back from context $response');
       return response;
     }
 
@@ -191,7 +190,6 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
     AppInfo appInfo = await buildDatabaseFromXML(context);
     await Provider.of<UserPrefs>(context, listen: false).loadUserPrefs(appInfo);
 
-    // print('returning future from initialization');
     return appInfo;
   }
 
@@ -273,7 +271,6 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
               //                 ? changeNumberColumns(add: true)
               //                 : null;
 
-              //             print(numberOfColumns);
               //             // setState(() {});
               //           }),
 
