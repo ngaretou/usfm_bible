@@ -115,7 +115,8 @@ class _BibleViewState extends State<BibleView> {
 
   void openSearch() {
     setState(() {
-      search = SearchWidget(closeSearch: closeSearch);
+      search = SearchWidget(
+          closeSearch: closeSearch, comboBoxFont: widget.comboBoxFont);
       columnsToShow.add(search!);
     });
   }

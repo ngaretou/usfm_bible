@@ -76,14 +76,16 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 
 ## To do:
 ### Minimal
-
+- Navigation
+  - If in a version that has OT and flipping to a version that only has NT, it goes to Revelation
+- Box database
 
 ### Maximal
 - Higher priority
   - Remember column references visible on close
   - NavPane buttons: Contact Us
 - Other
-  - Programmatically change permissions on files in project data folder to 744
+  - Programmatically change permissions on files in project data folder to 744 when needed
   - Programmatically change font names
   - reader mode/no verses
   - read in styles from appdef

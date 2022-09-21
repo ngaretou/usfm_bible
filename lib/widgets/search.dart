@@ -1,5 +1,5 @@
 // ignore_for_file: sized_box_for_whitespace, avoid_print
-
+import 'dart:ui' as ui;
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/material.dart' as material;
 import 'package:provider/provider.dart';
@@ -11,8 +11,11 @@ import '../providers/column_manager.dart';
 
 class SearchWidget extends StatefulWidget {
   final Function closeSearch;
+  final String? comboBoxFont;
 
-  const SearchWidget({Key? key, required this.closeSearch}) : super(key: key);
+  const SearchWidget(
+      {Key? key, required this.closeSearch, required this.comboBoxFont})
+      : super(key: key);
 
   @override
   State<SearchWidget> createState() => _SearchWidgetState();
@@ -60,6 +63,11 @@ class _SearchWidgetState extends State<SearchWidget> {
 
   @override
   Widget build(BuildContext context) {
+    TextStyle searchControlsStyle = DefaultTextStyle.of(context).style.copyWith(
+          fontFamily: widget.comboBoxFont,
+          fontSize: 16,
+        );
+
     checkBoxes = List.generate(collections.length, (i) {
       return Checkbox(
         checked: collectionsToSearch.contains(collections[i].id),
@@ -74,9 +82,7 @@ class _SearchWidgetState extends State<SearchWidget> {
             }
           });
         },
-        content: Text(
-          collections[i].name,
-        ),
+        content: Text(collections[i].name, style: searchControlsStyle),
       );
     });
 
@@ -110,6 +116,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                             children: [
                               Expanded(
                                 child: TextFormBox(
+                                  style: searchControlsStyle,
                                   onEditingComplete: () => searchFunction(
                                       searchController.value.text),
                                   maxLines: 1,
@@ -129,9 +136,8 @@ class _SearchWidgetState extends State<SearchWidget> {
                                           listen: true)
                                       .currentTranslation
                                       .search,
-                                  placeholderStyle: DefaultTextStyle.of(context)
-                                      .style
-                                      .copyWith(
+                                  placeholderStyle:
+                                      searchControlsStyle.copyWith(
                                           color: DefaultTextStyle.of(context)
                                               .style
                                               .color!
@@ -149,7 +155,8 @@ class _SearchWidgetState extends State<SearchWidget> {
                               child: Text(
                                   Provider.of<UserPrefs>(context, listen: true)
                                       .currentTranslation
-                                      .search),
+                                      .search,
+                                  style: searchControlsStyle),
                               onPressed: () =>
                                   searchFunction(searchController.value.text),
                             ),
@@ -181,8 +188,9 @@ class _SearchWidgetState extends State<SearchWidget> {
                 : Flexible(
                     child: ListView.builder(
                         itemCount: searchResults.length,
-                        itemBuilder: (ctx, i) =>
-                            SearchResultTile(line: searchResults[i])),
+                        itemBuilder: (ctx, i) => SearchResultTile(
+                              line: searchResults[i],
+                            )),
                   ),
           ],
         ));
@@ -222,11 +230,32 @@ class _SearchResultTileState extends State<SearchResultTile> {
         .first
         .name;
 
+    Collection thisCollection = collections
+        .firstWhere((element) => element.id == widget.line.collectionid);
+
+    String resultsFont = thisCollection.fonts.first.fontFamily;
+
     TextStyle computedTextStyle = TextStyle(
-      fontFamily: 'font1',
-      fontSize: 14,
+      fontFamily: resultsFont,
+      fontSize: 20,
       color: DefaultTextStyle.of(context).style.color,
     );
+
+    late ui.TextDirection textDirection;
+    // late AlignmentGeometry alignment;
+    late TextAlign textAlign;
+
+    if (thisCollection.textDirection == 'LTR') {
+      textDirection = ui.TextDirection.ltr;
+      textAlign = TextAlign.left;
+      // alignment = Alignment.centerLeft;
+      // comboBoxFontSize = DefaultTextStyle.of(context).style.fontSize;
+    } else {
+      textDirection = ui.TextDirection.rtl;
+      textAlign = TextAlign.right;
+      // alignment = Alignment.centerRight;
+      // comboBoxFontSize = 18;
+    }
 
     List<InlineSpan> styledParagraphFragments = verseComposer(
             line: widget.line,
@@ -234,6 +263,9 @@ class _SearchResultTileState extends State<SearchResultTile> {
             includeFootnotes: false,
             context: context)
         .versesAsSpans;
+
+    String chVsSeparator =
+        textDirection == ui.TextDirection.rtl ? '\u{200F}.' : '.';
 
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -268,12 +300,15 @@ class _SearchResultTileState extends State<SearchResultTile> {
             // elevation: 1,
             backgroundColor: cardColor,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: textAlign == TextAlign.left
+                  ? CrossAxisAlignment.start
+                  : CrossAxisAlignment.end,
               children: [
                 RichText(
                   text: TextSpan(
                     children: styledParagraphFragments,
                   ),
+                  textAlign: textAlign,
                 ),
                 // Text(
                 //   widget.line.verseText,
@@ -282,23 +317,33 @@ class _SearchResultTileState extends State<SearchResultTile> {
                 //       .copyWith(fontFamily: 'font1'),
                 // ),
                 const SizedBox(height: 10),
-                Wrap(children: [
-                  Text(
-                    '$bookName ${widget.line.chapter}.${widget.line.verse}  |  ',
-                    style: DefaultTextStyle.of(context).style.copyWith(
-                        fontFamily: 'font1', fontStyle: FontStyle.italic),
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
+                const Divider(),
+                Wrap(
+                    // crossAxisAlignment: WrapCrossAlignment.end,
+                    textDirection: textDirection,
                     children: [
                       Text(
-                        currentCollectionName,
+                        '$bookName ${widget.line.chapter}$chVsSeparator${widget.line.verse}  |  ',
                         style: DefaultTextStyle.of(context).style.copyWith(
-                            fontFamily: 'font1', fontStyle: FontStyle.italic),
+                            fontFamily: resultsFont,
+                            fontStyle: FontStyle.italic),
+                        textDirection: textDirection,
+                        textAlign: textAlign,
                       ),
-                    ],
-                  ),
-                ]),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            currentCollectionName,
+                            style: DefaultTextStyle.of(context).style.copyWith(
+                                fontFamily: resultsFont,
+                                fontStyle: FontStyle.italic),
+                            textDirection: textDirection,
+                            textAlign: textAlign,
+                          ),
+                        ],
+                      ),
+                    ]),
               ],
             ),
           ),

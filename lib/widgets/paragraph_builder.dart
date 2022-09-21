@@ -102,7 +102,7 @@ class _ParagraphBuilderState extends State<ParagraphBuilder> {
               element.chapter == line.chapter &&
               element.verse == line.verse);
 
-      //TODO this is where the fading highlight animation will go on nav
+      //TO DO this is where the fading highlight animation will go on nav
 
       //Compute the style
       if (textSpanUnderline) {

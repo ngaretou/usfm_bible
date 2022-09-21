@@ -606,7 +606,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                           children: [
                             //Collections/translations
                             SizedBox(
-                              width: 150,
+                              width: 125,
                               child: ValueListenableBuilder<String>(
                                   valueListenable: currentCollection,
                                   builder: (context, val, child) {
@@ -641,7 +641,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
                             // Book
                             SizedBox(
-                              width: 150,
+                              width: 175,
                               child: ValueListenableBuilder<String>(
                                   valueListenable: currentBook,
                                   builder: (context, val, child) {
@@ -652,20 +652,29 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                               fontFamily: widget.comboBoxFont,
                                               fontSize: comboBoxFontSize),
                                       isExpanded: true,
-                                      items: currentCollectionBooks
-                                          .map((e) => ComboboxItem<String>(
-                                                value: e.id,
-                                                child: Align(
-                                                  alignment: alignment,
-                                                  child: Text(
-                                                    e.name,
-                                                    overflow: TextOverflow.clip,
-                                                    textDirection:
-                                                        textDirection,
-                                                  ),
-                                                ),
-                                              ))
-                                          .toList(),
+                                      items: currentCollectionBooks.map((e) {
+                                        late String name;
+                                        if (e.name.contains('Προσ')) {
+                                          name = e.name.substring(5);
+                                        } else {
+                                          name = e.name;
+                                        }
+
+                                        return ComboboxItem<String>(
+                                          value: e.id,
+                                          child: Align(
+                                            alignment: alignment,
+                                            child: SizedBox(
+                                              width: 400,
+                                              child: Text(
+                                                name,
+                                                overflow: TextOverflow.clip,
+                                                textDirection: textDirection,
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      }).toList(),
                                       value: val,
                                       onChanged: (value) {
                                         scrollToReference(bookID: value);
