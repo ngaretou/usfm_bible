@@ -76,8 +76,6 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 
 ## To do:
 ### Minimal
-- Navigation
-  - If in a version that has OT and flipping to a version that only has NT, it goes to Revelation
 - Box database
 
 ### Maximal
