@@ -4,7 +4,6 @@
 import 'dart:ui' as ui;
 import 'dart:async';
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:usfm_bible/providers/column_manager.dart';
@@ -814,16 +813,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                   },
                                   child: const Icon(FluentIcons.link),
                                 ),
-                                Button(
-                                  onPressed: () {
-                                    itemScrollController.jumpTo(
-                                      index: 1568,
-
-                                      // duration: Duration(milliseconds: 200),
-                                    );
-                                  },
-                                  child: const Icon(FluentIcons.help),
-                                ),
                               ],
                             ),
                           ],
@@ -854,11 +843,23 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
           Expanded(
             child: NotificationListener(
               onNotification: (ScrollNotification notification) {
-                //This if reduces the number of times the selector method is triggered
-                if (notification is UserScrollNotification &&
-                    notification.direction == ScrollDirection.idle) {
-                  Timer(Duration(milliseconds: 100),
-                      setSelectorsToClosestReferenceAfterScroll);
+                //Get a reference to this activeColumnKey
+                Key? activeColumnKey =
+                    Provider.of<ColumnManager>(context, listen: false)
+                        .getActiveColumnKey;
+                //We're only interested in scrollnotifications
+                if (notification is ScrollEndNotification) {
+                  //Below if it's this column that is controlloing the scroll we store that for about 2 seconds.
+                  //check if this is the active column. If so, or if no active column, initiate simulscrolling.
+                  if (activeColumnKey == widget.key ||
+                      activeColumnKey == null) {
+                    //We're scrolling, so set this column's key as the active column - resets 2 seconds later
+                    Provider.of<ColumnManager>(context, listen: false)
+                        .setActiveColumnKey = widget.key;
+                    //This if reduces the number of times the selector method is triggered
+                    Timer(Duration(milliseconds: 750),
+                        setSelectorsToClosestReferenceAfterScroll);
+                  }
                 }
 
                 return true;

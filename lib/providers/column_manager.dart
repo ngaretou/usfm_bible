@@ -9,6 +9,7 @@ class ColumnManager with ChangeNotifier {
   bool readyToOpenSearch = false;
   bool timeToRebuildColumns = false;
   BibleReference? scrollGroupBibleReference;
+  Key? activeColumnKey;
 
   BibleReference? get getScrollGroupRef {
     return scrollGroupBibleReference;
@@ -33,6 +34,15 @@ class ColumnManager with ChangeNotifier {
         setScrollGroup();
       }
     }
+  }
+
+  Key? get getActiveColumnKey {
+    return activeColumnKey;
+  }
+
+  set setActiveColumnKey(Key? key) {
+    activeColumnKey = key;
+    Timer(const Duration(milliseconds: 1250), () => activeColumnKey = null);
   }
 
   void addColumn() {
