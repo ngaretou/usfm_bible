@@ -3467,75 +3467,120 @@
     </book>
 
     <book id="ROM">
-      <name>Προσ Ρωμαιουσ</name>
+      <name>Προσ Ρωμαιους</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>51-ROMgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/51-ROMgrcsbl.usfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
     </book>
 
     <book id="1CO">
-      <name>Προσ Κορινθιουσ Α</name>
+      <name>Προσ Κορινθιους Α</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>52-1COgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/52-1COgrcsbl.usfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
     </book>
 
     <book id="2CO">
-      <name>Προσ Κορινθιουσ Β</name>
+      <name>Προσ Κορινθιους Β</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>53-2COgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/53-2COgrcsbl.usfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
     </book>
 
     <book id="GAL">
-      <name>Προσ Γαλατασ</name>
+      <name>Προσ Γαλατας</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>54-GALgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/54-GALgrcsbl.usfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
     </book>
 
     <book id="EPH">
-      <name>Προσ Εφεσιουσ</name>
+      <name>Προσ Εφεσιους</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>55-EPHgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/55-EPHgrcsbl.usfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
     </book>
 
     <book id="PHP">
-      <name>Προσ Φιλιππησιουσ</name>
+      <name>Προσ Φιλιππησιους</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>56-PHPgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/56-PHPgrcsbl.usfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
     </book>
 
     <book id="COL">
-      <name>Προσ Κολοσσαεισ</name>
+      <name>Προσ Κολοσσαεις</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>57-COLgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/57-COLgrcsbl.usfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
     </book>
 
     <book id="1TH">
-      <name>Προσ Θεσσαλονικεισ Α</name>
+      <name>Προσ Θεσσαλονικεις Α</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>58-1THgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/58-1THgrcsbl.usfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
     </book>
 
     <book id="2TH">
-      <name>Προσ Θεσσαλονικεισ Β</name>
+      <name>Προσ Θεσσαλονικεις Β</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
       <filename>59-2THgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/59-2THgrcsbl.usfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
     </book>
 
     <book id="1TI">
@@ -3571,11 +3616,16 @@
     </book>
 
     <book id="HEB">
-      <name>Προσ Εβραιουσ</name>
+      <name>Προσ Εβραιους</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
       <filename>64-HEBgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/64-HEBgrcsbl.usfm</source>
+
+      <features type="book">
+        <feature name="show-chapter-numbers" value="inherit"/>
+        <feature name="lock-orientation" value="none"/>
+      </features>
     </book>
 
     <book id="JAS">

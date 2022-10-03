@@ -30,6 +30,7 @@ ComposedVerses verseComposer(
   String textToReturn = '';
   int dealtWithSoFar = 0;
   String leftToDealWith = "";
+  // int totalCharacters = 0;
 
   //The method for adding the text strings we're about to parse
   void addThisString(String thisString,
@@ -50,7 +51,12 @@ ComposedVerses verseComposer(
           style: textStyle ?? computedTextStyle,
         ));
       } else {
+        //TO DO can we split paragraphs?
         //if there is a function (this is when there is a verse you can copy)
+        // totalCharacters = totalCharacters + thisString.length;
+        // if (totalCharacters > 75 && thisString.endsWith('.')) {
+        //   thisString = '$thisString \n';
+        // }
         spansToReturn.add(TextSpan(
             text: thisString,
             style: textStyle ?? computedTextStyle,

@@ -42,7 +42,7 @@ class ColumnManager with ChangeNotifier {
 
   set setActiveColumnKey(Key? key) {
     activeColumnKey = key;
-    Timer(const Duration(milliseconds: 1250), () => activeColumnKey = null);
+    Timer(const Duration(milliseconds: 500), () => activeColumnKey = null);
   }
 
   void addColumn() {

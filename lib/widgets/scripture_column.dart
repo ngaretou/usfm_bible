@@ -857,7 +857,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                     Provider.of<ColumnManager>(context, listen: false)
                         .setActiveColumnKey = widget.key;
                     //This if reduces the number of times the selector method is triggered
-                    Timer(Duration(milliseconds: 750),
+                    Timer(Duration(milliseconds: 100),
                         setSelectorsToClosestReferenceAfterScroll);
                   }
                 }
