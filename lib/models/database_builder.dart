@@ -519,6 +519,12 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
   }
 
   AppInfo appInfo = AppInfo(collections: collections, verses: verses);
+  // List<ParsedLine> temp = verses
+  //     .where((element) =>
+  //         element.collectionid == 'C03' &&
+  //         element.book == 'REV' &&
+  //         element.chapter == '22')
+  //     .toList();
   print('finished buildDatabaseFromXML');
   return appInfo;
 }

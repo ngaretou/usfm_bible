@@ -127,7 +127,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
           .books;
 
       BibleReference? scrollCollectionRef =
-          Provider.of<ColumnManager>(context, listen: false).getScrollGroupRef;
+          Provider.of<ScrollGroup>(context, listen: false).getScrollGroupRef;
 
       //Does the column belong to scroll group and does scroll group exist?
       bool partOfScrollGroupAndScrollRefExists =
@@ -288,7 +288,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
           verse: currentVerse.value);
 
       if (partOfScrollGroup) {
-        Provider.of<ColumnManager>(context, listen: false).setScrollGroupRef =
+        Provider.of<ScrollGroup>(context, listen: false).setScrollGroupRef =
             ref;
       }
       if (!isInitState) setState(() {});
@@ -343,7 +343,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
             if (partOfScrollGroup) {
               //communicate to other columns if part of scrollgroup
-              Provider.of<ColumnManager>(context, listen: false)
+              Provider.of<ScrollGroup>(context, listen: false)
                   .setScrollGroupRef = ref;
             }
 
@@ -541,7 +541,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   Widget build(BuildContext context) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       BibleReference? scrollGroupRef =
-          Provider.of<ColumnManager>(context, listen: false).getScrollGroupRef;
+          Provider.of<ScrollGroup>(context, listen: false).getScrollGroupRef;
 
       if (partOfScrollGroup && scrollGroupRef != null) {
         if (currentBook.value != scrollGroupRef.bookID ||

@@ -76,8 +76,8 @@ class _BibleViewState extends State<BibleView> {
   }
 
   void addColumn() {
-    //limit to four columns
-    if (userColumns.length <= 3) {
+    //limit to this number below + 1 number of columns - 9 will limit to 10
+    if (userColumns.length <= 9) {
       //This common key helps us keep track of refs and columns
       Key key = UniqueKey();
 
@@ -108,8 +108,8 @@ class _BibleViewState extends State<BibleView> {
       );
 
       setState(() {});
-    } else {
-      //may in the future add user feedback when trying to create too many columns
+      // } else {
+      //   //may in the future add user feedback when trying to create too many columns
     }
   }
 

@@ -70,7 +70,9 @@ void main() async {
         ChangeNotifierProvider(
           create: (ctx) => UserPrefs(),
         ),
-
+        ChangeNotifierProvider(
+          create: (ctx) => ScrollGroup(),
+        ),
         //This seems a bit hacky but there are two buttons in the navpane that are hard to reference so this provider helps there
         ChangeNotifierProvider(
           create: (ctx) => ColumnManager(),

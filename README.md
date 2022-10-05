@@ -76,6 +76,7 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 
 ## To do:
 ### Minimal
+- Rv 22.21 is missing in all translations. 
 - Box database
 
 ### Maximal

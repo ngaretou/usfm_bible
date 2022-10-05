@@ -145,7 +145,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                                           },
                                         ),
                                   placeholder: Provider.of<UserPrefs>(context,
-                                          listen: true)
+                                          listen: false)
                                       .currentTranslation
                                       .search,
                                   placeholderStyle:
@@ -165,7 +165,7 @@ class _SearchWidgetState extends State<SearchWidget> {
                             // icon: Icon(FluentIcons.settings),
                             leading: Button(
                               child: Text(
-                                  Provider.of<UserPrefs>(context, listen: true)
+                                  Provider.of<UserPrefs>(context, listen: false)
                                       .currentTranslation
                                       .search,
                                   style: searchControlsStyle),
@@ -305,8 +305,8 @@ class _SearchResultTileState extends State<SearchResultTile> {
                 chapter: widget.line.chapter,
                 verse: widget.line.verse);
 
-            Provider.of<ColumnManager>(context, listen: false)
-                .setScrollGroupRef = ref;
+            Provider.of<ScrollGroup>(context, listen: false).setScrollGroupRef =
+                ref;
           },
           child: Card(
             // elevation: 1,

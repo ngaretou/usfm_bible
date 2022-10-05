@@ -151,7 +151,7 @@ class About extends StatelessWidget {
 
     return ScaffoldPage.scrollable(
         header: PageHeader(
-          title: Text(Provider.of<UserPrefs>(context, listen: true)
+          title: Text(Provider.of<UserPrefs>(context, listen: false)
               .currentTranslation
               .about),
         ),
