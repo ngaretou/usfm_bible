@@ -76,7 +76,8 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 
 ## To do:
 ### Minimal
-- Rv 22.21 is missing in all translations. 
+- In today’s update, when a user chooses another version in column,
+the previous version’s book titles remain in the drop-down menu.
 - Box database
 
 ### Maximal

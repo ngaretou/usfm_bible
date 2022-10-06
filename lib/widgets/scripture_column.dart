@@ -380,7 +380,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         .map((e) => e.verse)
         .toList();
 
-    // setState(() {});
+    setState(() {});
   }
 
   void addVerseToCopyRange(ParsedLine ref) {
