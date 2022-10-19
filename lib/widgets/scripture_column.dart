@@ -384,38 +384,17 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   }
 
   void addVerseToCopyRange(ParsedLine ref) {
-    addVersesBetweenIndexes(int startIndex, int endIndex) {
-      rangeOfVersesToCopy = [];
-      for (var i = startIndex; i <= endIndex; i++) {
-        rangeOfVersesToCopy.add(versesInCollection[i]);
-      }
-    }
-
-    int startIndex = 0;
-    int endIndex = 0;
-
-    bool verseAlreadyInRange = rangeOfVersesToCopy.any((ParsedLine element) =>
-        element.book == ref.book &&
-        element.chapter == ref.chapter &&
-        element.verse == ref.verse);
-
-    //If no verses yet, just add the ref
-    if (rangeOfVersesToCopy.isEmpty) {
-      rangeOfVersesToCopy.add(ref);
-    }
-    // if there is only one verse, and the incoming verse is the same as the one that's in there, get rid of it.
-    else if (rangeOfVersesToCopy.length == 1 && verseAlreadyInRange) {
-      rangeOfVersesToCopy = [];
-    }
-    //if only 2 verses, and the one clicked is already in, remove it
-    else if (rangeOfVersesToCopy.length == 2 && verseAlreadyInRange) {
-      rangeOfVersesToCopy.remove(ref);
-    }
-    // if the verses to copy does not contain the ref that the user just sent, add all the refs between the first and last ref
-    else if (!verseAlreadyInRange) {
-      // print('third case');
-      //add this verse and then
-      rangeOfVersesToCopy.add(ref);
+    //This function fills in the gaps where there is poetry over many ParsedLines to get the whole verse despite the separation
+    /*
+    Xanaa dungeen bàyyee songandoo nit, 
+    nar koo sànk, 
+    ni kuy màbb tabax bu joy, 
+    mbaa ngay bàddi per mu ràpp?  
+      Sabóor 62.4-4 (Kàddug Yàlla gi)
+     */
+    addLinesBetweenIndexes() {
+      int startIndex = 0;
+      int endIndex = 0;
 
       /*add all between the first and last index. 
       Because the user can select up as well as down (select vs 5 then 1 as well as 1 and then 5)
@@ -446,22 +425,57 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
             element.chapter == rangeOfVersesToCopy.first.chapter &&
             element.verse == rangeOfVersesToCopy.first.verse);
       }
-      addVersesBetweenIndexes(startIndex, endIndex);
+      rangeOfVersesToCopy = [];
+      for (var i = startIndex; i <= endIndex; i++) {
+        rangeOfVersesToCopy.add(versesInCollection[i]);
+      }
     }
-    //if the user has changed their minds and wants to shorten the list of verses to work with
-    else if (rangeOfVersesToCopy.length >= 2 && verseAlreadyInRange) {
-      // print('fourth option');
-      startIndex = versesInCollection.indexWhere((element) =>
-          element.book == rangeOfVersesToCopy[0].book &&
-          element.chapter == rangeOfVersesToCopy[0].chapter &&
-          element.verse == rangeOfVersesToCopy[0].verse);
 
-      endIndex = versesInCollection.indexWhere((element) =>
+    //Start of function
+    bool verseAlreadyInRange = rangeOfVersesToCopy.any((ParsedLine element) =>
+        element.book == ref.book &&
+        element.chapter == ref.chapter &&
+        element.verse == ref.verse);
+
+    // if there is only one verse, and the incoming verse is the same as the one that's in there, get rid of it.
+    if (rangeOfVersesToCopy.length == 1 && verseAlreadyInRange) {
+      rangeOfVersesToCopy = [];
+    }
+    // if vs not in range, add it and arrange the lines
+    else if (!verseAlreadyInRange) {
+      // print('third case');
+      //add this verse and then
+      rangeOfVersesToCopy.add(ref);
+
+      addLinesBetweenIndexes();
+    }
+
+    //if only 2 verses, and the one clicked is already in, remove it and any after it
+    else if (verseAlreadyInRange) {
+      int first = rangeOfVersesToCopy.indexWhere((element) =>
           element.book == ref.book &&
           element.chapter == ref.chapter &&
           element.verse == ref.verse);
-      addVersesBetweenIndexes(startIndex, endIndex);
+
+      rangeOfVersesToCopy.removeRange(first, rangeOfVersesToCopy.length);
     }
+    // if the verses to copy does not contain the ref that the user just sent, add all the refs between the first and last ref
+    // This is the 'normal' case, where there is no selection yet
+
+    //if the user has changed their minds and wants to shorten the list of verses to work with
+    // else if (rangeOfVersesToCopy.length >= 2 && verseAlreadyInRange) {
+    //   // print('fourth option');
+    //   // startIndex = versesInCollection.indexWhere((element) =>
+    //   //     element.book == rangeOfVersesToCopy[0].book &&
+    //   //     element.chapter == rangeOfVersesToCopy[0].chapter &&
+    //   //     element.verse == rangeOfVersesToCopy[0].verse);
+
+    //   // endIndex = versesInCollection.indexWhere((element) =>
+    //   //     element.book == ref.book &&
+    //   //     element.chapter == ref.chapter &&
+    //   //     element.verse == ref.verse);
+    //   // addVersesBetweenIndexes(startIndex, endIndex);
+    // }
     setState(() {});
   }
 

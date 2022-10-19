@@ -133,7 +133,7 @@ class About extends StatelessWidget {
         future: htmlToRender,
         builder: (ctx, snapshot) => snapshot.connectionState ==
                 ConnectionState.waiting
-            ? const Center(child: CircularProgressIndicator())
+            ? const Center(child: ProgressRing())
             //this is actually where the business happens; HTML just takes the data and renders it
             //SelectableHtml makes it selectable but you lose some formatting
             : Html(
@@ -155,6 +155,37 @@ class About extends StatelessWidget {
               .currentTranslation
               .about),
         ),
-        children: [htmlToDisplay()]);
+        children: [
+          htmlToDisplay(),
+          Button(
+              onPressed: () {
+                void showLicensePage({
+                  required BuildContext context,
+                  String? applicationName,
+                  String? applicationVersion,
+                  Widget? applicationIcon,
+                  String? applicationLegalese,
+                  bool useRootNavigator = false,
+                }) {
+                  // assert(context != null);
+                  // assert(useRootNavigator != null);
+                  Navigator.of(context, rootNavigator: useRootNavigator)
+                      .push(MaterialPageRoute<void>(
+                    builder: (BuildContext context) => LicensePage(
+                      applicationName: applicationName,
+                      applicationVersion: applicationVersion,
+                      applicationIcon: applicationIcon,
+                      applicationLegalese: applicationLegalese,
+                    ),
+                  ));
+                }
+
+                showLicensePage(
+                    context: context,
+                    applicationName: '99',
+                    useRootNavigator: true);
+              },
+              child: const Text('Licenses')),
+        ]);
   }
 }

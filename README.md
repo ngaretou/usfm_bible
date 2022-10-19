@@ -76,8 +76,7 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 
 ## To do:
 ### Minimal
-- In today’s update, when a user chooses another version in column,
-the previous version’s book titles remain in the drop-down menu.
+- Copy Ps 62.2 or 3 - the resulting paste only pastes the first line
 - Box database
 
 ### Maximal
