@@ -5,8 +5,8 @@ import 'package:flutter/material.dart' as material;
 import 'package:provider/provider.dart';
 import 'package:diacritic/diacritic.dart';
 
-import '../models/database_builder.dart';
-import '../models/verse_composer.dart';
+import '../logic/database_builder.dart';
+import '../logic/verse_composer.dart';
 import '../providers/user_prefs.dart';
 import '../providers/column_manager.dart';
 

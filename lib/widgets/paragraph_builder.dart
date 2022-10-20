@@ -3,8 +3,9 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'dart:ui' as ui;
 import 'dart:core';
-import '../models/database_builder.dart';
-import '../models/verse_composer.dart';
+import '../logic/database_builder.dart';
+
+import '../logic/verse_composer.dart';
 
 class ParagraphBuilder extends StatefulWidget {
   final List<ParsedLine> paragraph;
