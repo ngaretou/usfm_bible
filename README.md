@@ -76,7 +76,6 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 
 ## To do:
 ### Minimal
-- Copy Ps 62.2 or 3 - the resulting paste only pastes the first line
 - Box database
 
 ### Maximal
