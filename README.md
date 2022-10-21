@@ -76,11 +76,15 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 
 ## To do:
 ### Minimal
-- Box database
+- Remember column references visible on close
+
+Τεκνία, φυλάξατε ἑαυτὰ ἀπὸ τῶν ⸀εἰδώλων.  
+Ιωαννου Α 5.21 (SBL NT grec)
+
+This is wrong
 
 ### Maximal
 - Higher priority
-  - Remember column references visible on close
   - NavPane buttons: Contact Us
 - Other
   - Programmatically change permissions on files in project data folder to 744 when needed
