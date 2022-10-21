@@ -657,11 +657,11 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                           children: [
                             //Collections/translations
                             SizedBox(
-                              width: 125,
+                              width: 150,
                               child: ValueListenableBuilder<String>(
                                   valueListenable: currentCollection,
                                   builder: (context, val, child) {
-                                    return Combobox<String>(
+                                    return ComboBox<String>(
                                       style: DefaultTextStyle.of(context)
                                           .style
                                           .copyWith(
@@ -669,13 +669,13 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                               fontSize: comboBoxFontSize),
                                       isExpanded: true,
                                       items: widget.appInfo.collections
-                                          .map((e) => ComboboxItem<String>(
+                                          .map((e) => ComboBoxItem<String>(
                                                 value: e.id,
                                                 child: Align(
                                                   alignment: alignment,
                                                   child: Text(
                                                     e.name,
-                                                    overflow: TextOverflow.clip,
+                                                    overflow: TextOverflow.fade,
                                                     textDirection:
                                                         textDirection,
                                                   ),
@@ -696,7 +696,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                               child: ValueListenableBuilder<String>(
                                   valueListenable: currentBook,
                                   builder: (context, val, child) {
-                                    return Combobox<String>(
+                                    return ComboBox<String>(
                                       style: DefaultTextStyle.of(context)
                                           .style
                                           .copyWith(
@@ -711,17 +711,14 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                           name = e.name;
                                         }
 
-                                        return ComboboxItem<String>(
+                                        return ComboBoxItem<String>(
                                           value: e.id,
                                           child: Align(
                                             alignment: alignment,
-                                            child: SizedBox(
-                                              width: 400,
-                                              child: Text(
-                                                name,
-                                                overflow: TextOverflow.clip,
-                                                textDirection: textDirection,
-                                              ),
+                                            child: Text(
+                                              name,
+                                              overflow: TextOverflow.clip,
+                                              textDirection: textDirection,
                                             ),
                                           ),
                                         );
@@ -741,7 +738,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                 child: ValueListenableBuilder<String>(
                                     valueListenable: currentChapter,
                                     builder: (context, val, child) {
-                                      return Combobox<String>(
+                                      return ComboBox<String>(
                                         style: DefaultTextStyle.of(context)
                                             .style
                                             .copyWith(
@@ -749,7 +746,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                                 fontSize: comboBoxFontSize),
                                         isExpanded: true,
                                         items: currentBookChapters
-                                            .map((e) => ComboboxItem<String>(
+                                            .map((e) => ComboBoxItem<String>(
                                                   value: e,
                                                   child: Text(e),
                                                 ))
@@ -767,11 +764,11 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
                               // //verse
                               SizedBox(
-                                width: 60,
+                                width: 70,
                                 child: ValueListenableBuilder<String>(
                                     valueListenable: currentVerse,
                                     builder: (context, val, child) {
-                                      return Combobox<String>(
+                                      return ComboBox<String>(
                                         style: DefaultTextStyle.of(context)
                                             .style
                                             .copyWith(
@@ -782,7 +779,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                         items: currentChapterVerseNumbers
                                             .toSet()
                                             .toList()
-                                            .map((e) => ComboboxItem<String>(
+                                            .map((e) => ComboBoxItem<String>(
                                                   value: e,
                                                   child: Text(e),
                                                 ))

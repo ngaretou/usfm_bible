@@ -317,6 +317,36 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                 }(),
                 items: [
                   PaneItem(
+                    body: FutureBuilder(
+                      future: initAppInfo,
+                      builder: (ctx, snapshot) {
+                        // Remove splash screen when bootstrap is complete
+                        FlutterNativeSplash.remove();
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return const Center(child: ProgressRing());
+                        }
+                        //Main row that holds the text columns
+                        else {
+                          AppInfo appInfo = snapshot.data as AppInfo;
+                          late String comboBoxFont;
+                          bool anyRTL = collections
+                              .any((element) => element.textDirection != 'LTR');
+
+                          if (anyRTL) {
+                            String font = collections
+                                .firstWhere(
+                                    (element) => element.textDirection == 'RTL')
+                                .fonts
+                                .first
+                                .fontFamily;
+                            comboBoxFont = font;
+                          }
+                          return BibleView(
+                              appInfo: appInfo, comboBoxFont: comboBoxFont);
+                        }
+                      },
+                    ),
                     icon: const Icon(FluentIcons.reading_mode),
                     title: Text(appTitle),
                   ),
@@ -328,6 +358,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                   // ),
                   PaneItemSeparator(),
                   RunFunctionPaneItemAction(
+                      body: const About(),
                       title: Text(Provider.of<UserPrefs>(context, listen: true)
                           .currentTranslation
                           .search),
@@ -336,6 +367,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                           Provider.of<ColumnManager>(context, listen: false)
                               .openSearch),
                   RunFunctionPaneItemAction(
+                      body: const About(),
                       title: Text(Provider.of<UserPrefs>(context, listen: true)
                           .currentTranslation
                           .addColumn),
@@ -359,11 +391,13 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
                   PaneItemSeparator(),
                   PaneItem(
+                      body: const About(),
                       icon: const Icon(FluentIcons.info),
                       title: Text(Provider.of<UserPrefs>(context, listen: true)
                           .currentTranslation
                           .about)),
                   PaneItem(
+                    body: Settings(controller: settingsController),
                     icon: const Icon(FluentIcons.settings),
                     title: Text(Provider.of<UserPrefs>(context, listen: true)
                         .currentTranslation
@@ -375,51 +409,6 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                   //   link: 'https://github.com/ngaretou/usfm_bible',
                   // ),
                 ],
-              ),
-              content: FutureBuilder(
-                future: initAppInfo,
-                builder: (ctx, snapshot) {
-                  // Remove splash screen when bootstrap is complete
-                  FlutterNativeSplash.remove();
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return const Center(child: ProgressRing());
-                  }
-                  //Main row that holds the text columns
-                  else {
-                    AppInfo appInfo = snapshot.data as AppInfo;
-                    late String comboBoxFont;
-                    bool anyRTL = collections
-                        .any((element) => element.textDirection != 'LTR');
-
-                    if (anyRTL) {
-                      String font = collections
-                          .firstWhere(
-                              (element) => element.textDirection == 'RTL')
-                          .fonts
-                          .first
-                          .fontFamily;
-                      comboBoxFont = font;
-                    }
-
-                    return NavigationBody(index: index, children: [
-                      BibleView(
-                          appInfo: appInfo,
-                          comboBoxFont: comboBoxFont), //main view
-
-                      //must include dummy destination here for each custom action, apparently
-
-                      const About(), //taking place of Search
-
-                      const About(), //taking place of add a pane
-
-                      const About(), //taking place of toggle light/dark mode
-
-                      const About(),
-
-                      Settings(controller: settingsController),
-                    ]);
-                  }
-                },
               ),
             ),
           );
@@ -482,23 +471,28 @@ class RunFunctionPaneItemAction extends PaneItem {
   RunFunctionPaneItemAction({
     required Widget icon,
     required this.functionToRun, //pass in the function
-    title,
+    required super.body,
+    super.title,
     infoBadge,
     focusNode,
     autofocus = false,
   }) : super(
           icon: icon,
-          title: title,
           infoBadge: infoBadge,
           focusNode: focusNode,
           autofocus: autofocus,
         );
   Function functionToRun;
   @override
-  Widget build(BuildContext context, bool selected, VoidCallback? onPressed,
-      {PaneDisplayMode? displayMode,
-      bool showTextOnTop = true,
-      bool? autofocus}) {
+  Widget build(
+    BuildContext context,
+    bool selected,
+    VoidCallback? onPressed, {
+    PaneDisplayMode? displayMode,
+    bool showTextOnTop = true,
+    bool? autofocus,
+    int? itemIndex,
+  }) {
     // Runs this function - referencing the function passed in above
     internalCaller() {
       functionToRun();
@@ -517,6 +511,7 @@ class LightDarkModePaneItemAction extends PaneItem {
     focusNode,
     autofocus = false,
   }) : super(
+          body: const About(),
           icon: icon,
           title: title,
           infoBadge: infoBadge,
@@ -525,10 +520,15 @@ class LightDarkModePaneItemAction extends PaneItem {
         );
   final AppTheme appTheme;
   @override
-  Widget build(BuildContext context, bool selected, VoidCallback? onPressed,
-      {PaneDisplayMode? displayMode,
-      bool showTextOnTop = true,
-      bool? autofocus}) {
+  Widget build(
+    BuildContext context,
+    bool selected,
+    VoidCallback? onPressed, {
+    PaneDisplayMode? displayMode,
+    bool showTextOnTop = true,
+    bool? autofocus,
+    int? itemIndex,
+  }) {
     //Runs this function
     switchThemeMode() {
       /*Couple of cases here - by default it's set to user theme mode, but we want 

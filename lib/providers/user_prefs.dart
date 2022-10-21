@@ -77,10 +77,8 @@ class UserPrefs with ChangeNotifier {
       numberOfColumns = 2;
     } else if (appInfo.collections.length == 2) {
       numberOfColumns = 2;
-    } else if (appInfo.collections.length == 3) {
-      numberOfColumns = 2;
-    } else if (appInfo.collections.length > 3) {
-      numberOfColumns = 4;
+    } else if (appInfo.collections.length > 2) {
+      numberOfColumns = 3;
     }
 
     //If just one collection, initially give the users two views but not tied to the same scrollgroup.

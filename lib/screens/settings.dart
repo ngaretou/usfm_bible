@@ -110,10 +110,10 @@ class Settings extends StatelessWidget {
         spacer,
         SizedBox(
           width: 150,
-          child: Combobox<String>(
+          child: ComboBox<String>(
             isExpanded: true,
             items: translations
-                .map((e) => ComboboxItem<String>(
+                .map((e) => ComboBoxItem<String>(
                       value: e.langCode,
                       child: Text(
                         e.langName,
