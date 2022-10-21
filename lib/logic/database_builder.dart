@@ -2,9 +2,12 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:usfm_bible/models/parsed_lines_db.dart';
 import 'package:usfm_bible/providers/user_prefs.dart';
 import 'package:xml/xml.dart';
 import 'package:flutter/services.dart' show rootBundle;
+// import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class Font {
   final String fontFamily;
@@ -304,6 +307,14 @@ Future<void> asyncGetTranslations(BuildContext context) async {
 
 Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
   print('buildDatabaseFromXML');
+  bool shouldResetDB = true;
+
+  await Hive.initFlutter();
+  Hive.registerAdapter(ParsedLineDBAdapter());
+  var box = await Hive.openBox<ParsedLineDB>('parsedLineDB');
+  // if (shouldResetDB) box.clear();
+  var numLines = box.length;
+
   AssetBundle assetBundle = DefaultAssetBundle.of(context);
   //
   String appDefLocation = 'assets/project/appDef.appDef';
@@ -405,126 +416,167 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
   }
 
   //Now we know about the collections and can populate the content.
+  if (numLines == 0) {
+    print('building local db');
+    for (var collection in collections) {
+      List<Book> books = collection.books;
+      for (var book in books) {
+        String url =
+            'assets/project/data/books/${collection.id}/${book.filename}';
+        String bookText = await assetBundle.loadString(url);
 
-  for (var collection in collections) {
-    List<Book> books = collection.books;
-    for (var book in books) {
-      String url =
-          'assets/project/data/books/${collection.id}/${book.filename}';
-      String bookText = await assetBundle.loadString(url);
-
-      //incorporate Changes from appDef
-      for (var k in changes.keys) {
-        //convert raw string to regular string
-        String findString = k.replaceAll(r'\', '\\');
-        bookText = bookText.replaceAll(RegExp(findString), changes[k]!);
-      }
-
-      //Greek NT changes
-
-      //Remove all the extra \+fw
-      bookText = bookText.replaceAll(RegExp(r'\\\+fw\s*'), '');
-
-      // Remove \w | \*w - strong's numbers are too many in Greek NT
-      var wMarkers = RegExp(r'(\\w\s)(.*?)(\|.*?\\w\*)');
-      bookText = bookText.replaceAllMapped(wMarkers, (Match m) => '${m[2]}');
-
-      //end Greek NT
-
-      List<String> chapters = bookText.split(r"\c ");
-      //Removes all the headers etc - this also removes files that have no content - something to look at later
-      chapters.removeAt(0);
-
-      //Before going to chapters, add an entry for the book title
-      verses.add(ParsedLine(
-          collectionid: collection.id,
-          book: book.id,
-          chapter: "1",
-          verse: "",
-          verseFragment: "",
-          audioMarker: "",
-          verseText: book.name,
-          verseStyle: 'mt1'));
-
-      for (var chapter in chapters) {
-        RegExpMatch? match = RegExp(r'(\d+)(\s)').firstMatch(chapter);
-        //ˆ: beginning of line; \d digit, + 1 or more; \s whitespace
-        String? chapterNumber = match?.group(1);
-
-        //split chapter on line break
-        List<String> chapterByLineBreaks = chapter.split('\n');
-
-        ///\r?\n|\r/g is all linebreaks
-        //This juts gets rid of the chapter number
-        chapterByLineBreaks.removeAt(0);
-        //Print a bit
-        if (collection.id == 'C06' &&
-            book.id == 'MAT' &&
-            chapterNumber == '1') {
-          print('verseStyle');
+        //incorporate Changes from appDef
+        for (var k in changes.keys) {
+          //convert raw string to regular string
+          String findString = k.replaceAll(r'\', '\\');
+          bookText = bookText.replaceAll(RegExp(findString), changes[k]!);
         }
 
-        //Set up variables for the chapters - having them here resets them each new chapter also
-        String verseStyle = "";
-        String verseNumber = "";
-        String verseText = "";
+        //Greek NT changes
 
-        for (var line in chapterByLineBreaks) {
-          // https://medium.com/flutter-community/extracting-text-from-a-string-with-regex-groups-in-dart-b6be604c8a69
-          // This regex matches the initial style -
-          //match is an iterable with an element for each matching group of the regexp
-          RegExpMatch? match =
-              RegExp(r'(\\)(\w+)(\s*)(.*)').firstMatch(line); // \s
-          if (match != null) {
-            if (match.group(2) != null) {
-              verseStyle = match.group(2)!; //verseStyle
-            }
-            if (match.group(4) != null) {
-              verseText = match.group(4)!; //verseText
-              //?? = if_null operator: https://dart-lang.github.io/linter/lints/prefer_if_null_operators.html
+        //Remove all the extra \+fw
+        bookText = bookText.replaceAll(RegExp(r'\\\+fw\s*'), '');
 
-            }
+        // Remove \w | \*w - strong's numbers are too many in Greek NT
+        var wMarkers = RegExp(r'(\\w\s)(.*?)(\|.*?\\w\*)');
+        bookText = bookText.replaceAllMapped(wMarkers, (Match m) => '${m[2]}');
 
-            //New Paragraph section
+        //end Greek NT
 
-            //verse checking
-            if (verseStyle == 'v') {
-              RegExpMatch? match = RegExp(r'(\d+)(\s)(.*)').firstMatch(
-                  verseText); //group 1 \d+ = digits, \s whitespace, group 3 .* is anything
-              if (match != null) {
-                if (match.group(1) != null) verseNumber = match.group(1)!;
-                if (match.group(3) != null) verseText = match.group(3)!;
+        List<String> chapters = bookText.split(r"\c ");
+        //Removes all the headers etc - this also removes files that have no content - something to look at later
+        chapters.removeAt(0);
+
+        //Before going to chapters, add an entry for the book title
+        verses.add(ParsedLine(
+            collectionid: collection.id,
+            book: book.id,
+            chapter: "1",
+            verse: "",
+            verseFragment: "",
+            audioMarker: "",
+            verseText: book.name,
+            verseStyle: 'mt1'));
+
+        var parsedLineDB = ParsedLineDB()
+          ..collectionid = collection.id
+          ..book = book.id
+          ..chapter = '1'
+          ..verse = ''
+          ..verseFragment = ""
+          ..audioMarker = ""
+          ..verseText = book.name
+          ..verseStyle = 'mt1';
+
+        box.add(parsedLineDB);
+
+        for (var chapter in chapters) {
+          RegExpMatch? match = RegExp(r'(\d+)(\s)').firstMatch(chapter);
+          //ˆ: beginning of line; \d digit, + 1 or more; \s whitespace
+          String? chapterNumber = match?.group(1);
+
+          //split chapter on line break
+          List<String> chapterByLineBreaks = chapter.split('\n');
+
+          ///\r?\n|\r/g is all linebreaks
+          //This juts gets rid of the chapter number
+          chapterByLineBreaks.removeAt(0);
+          //Print a bit
+          if (collection.id == 'C06' &&
+              book.id == 'MAT' &&
+              chapterNumber == '1') {
+            print('verseStyle');
+          }
+
+          //Set up variables for the chapters - having them here resets them each new chapter also
+          String verseStyle = "";
+          String verseNumber = "";
+          String verseText = "";
+
+          for (var line in chapterByLineBreaks) {
+            // https://medium.com/flutter-community/extracting-text-from-a-string-with-regex-groups-in-dart-b6be604c8a69
+            // This regex matches the initial style -
+            //match is an iterable with an element for each matching group of the regexp
+            RegExpMatch? match =
+                RegExp(r'(\\)(\w+)(\s*)(.*)').firstMatch(line); // \s
+            if (match != null) {
+              if (match.group(2) != null) {
+                verseStyle = match.group(2)!; //verseStyle
               }
-            }
-            // else {
-            //   // verseNumber = "";
-            // }
+              if (match.group(4) != null) {
+                verseText = match.group(4)!; //verseText
+                //?? = if_null operator: https://dart-lang.github.io/linter/lints/prefer_if_null_operators.html
 
-            //Now finally add the elements to the List<ParsedVerse>
-            verses.add(ParsedLine(
-                collectionid: collection.id,
-                book: book.id,
-                chapter: chapterNumber!,
-                verse: verseNumber,
-                verseFragment: "",
-                audioMarker: "",
-                verseText: verseText,
-                verseStyle: verseStyle));
+              }
+
+              //New Paragraph section
+
+              //verse checking
+              if (verseStyle == 'v') {
+                RegExpMatch? match = RegExp(r'(\d+)(\s)(.*)').firstMatch(
+                    verseText); //group 1 \d+ = digits, \s whitespace, group 3 .* is anything
+                if (match != null) {
+                  if (match.group(1) != null) verseNumber = match.group(1)!;
+                  if (match.group(3) != null) verseText = match.group(3)!;
+                }
+              }
+              // else {
+              //   // verseNumber = "";
+              // }
+
+              //Now finally add the elements to the List<ParsedVerse>
+              verses.add(
+                ParsedLine(
+                    collectionid: collection.id,
+                    book: book.id,
+                    chapter: chapterNumber!,
+                    verse: verseNumber,
+                    verseFragment: "",
+                    audioMarker: "",
+                    verseText: verseText,
+                    verseStyle: verseStyle),
+              );
+
+              var parsedLineDB = ParsedLineDB()
+                ..collectionid = collection.id
+                ..book = book.id
+                ..chapter = chapterNumber
+                ..verse = verseNumber
+                ..verseFragment = ""
+                ..audioMarker = ""
+                ..verseText = verseText
+                ..verseStyle = verseStyle;
+
+              box.add(parsedLineDB);
+            }
           }
         }
+        // print('ending current book ${book.name}');
       }
-      // print('ending current book ${book.name}');
+      // print('ending current collection ${collection.id}');
     }
-    // print('ending current collection ${collection.id}');
+  } else {
+    //use existing box
+    print('using existing local db');
+    for (var i = 0; i < box.length; i++) {
+      ParsedLineDB lineDB = box.getAt(i)!;
+      verses.add(ParsedLine(
+          collectionid: lineDB.collectionid,
+          book: lineDB.book,
+          chapter: lineDB.chapter,
+          verse: lineDB.verse,
+          verseFragment: lineDB.verseFragment,
+          audioMarker: lineDB.audioMarker,
+          verseText: lineDB.verseText,
+          verseStyle: lineDB.verseStyle));
+    }
   }
 
+  print(verses.length);
+  print(box.length);
+
   AppInfo appInfo = AppInfo(collections: collections, verses: verses);
-  // List<ParsedLine> temp = verses
-  //     .where((element) =>
-  //         element.collectionid == 'C03' &&
-  //         element.book == 'REV' &&
-  //         element.chapter == '22')
-  //     .toList();
+ 
   print('finished buildDatabaseFromXML');
   return appInfo;
 }

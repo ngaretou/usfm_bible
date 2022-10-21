@@ -2,7 +2,7 @@
 
 import 'package:fluent_ui/fluent_ui.dart';
 import 'dart:core';
-import '../models/database_builder.dart';
+import 'database_builder.dart';
 import 'package:flutter/gestures.dart';
 
 /* this class and associated verseComposer function is exposed as we have to use it several different places. 
@@ -10,6 +10,7 @@ It gets confusing but it is this way to avoid code duplication. Sometimes we nee
 with footnotes for display - sometimes composed without for Copy and Share
 functions. This processes a given range and gives us both the verses as a List of InLineSpans and as one String.
 */
+
 class ComposedVerses {
   List<InlineSpan> versesAsSpans;
   String versesAsString;

@@ -13,8 +13,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/services.dart';
 import 'package:context_menus/context_menus.dart';
 
-import '../models/database_builder.dart';
-import '../models/verse_composer.dart';
+import '../logic/database_builder.dart';
+import '../logic/verse_composer.dart';
 import '../widgets/paragraph_builder.dart';
 
 import '../providers/user_prefs.dart';

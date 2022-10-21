@@ -4,7 +4,7 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:provider/provider.dart';
 import 'package:usfm_bible/providers/user_prefs.dart';
 
-import '../models/database_builder.dart';
+import '../logic/database_builder.dart';
 import '../widgets/scripture_column.dart';
 import '../providers/column_manager.dart';
 import '../widgets/search.dart';
