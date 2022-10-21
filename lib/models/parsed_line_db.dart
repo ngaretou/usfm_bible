@@ -5,7 +5,8 @@ part 'parsed_line_db.g.dart';
 
 @Collection()
 class ParsedLineDB {
-  Id isarId = Isar.autoIncrement;
+  @Id()
+  int isarId = Isar.autoIncrement;
   late String collectionid;
   late String book;
   late String chapter;

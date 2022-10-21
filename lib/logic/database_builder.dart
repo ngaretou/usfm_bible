@@ -5,8 +5,8 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:provider/provider.dart';
 import 'package:usfm_bible/models/parsed_line_db.dart';
 import 'package:xml/xml.dart';
-
-import '../logic/isar_service.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:isar/isar.dart';
 
 import 'package:usfm_bible/providers/user_prefs.dart';
 
@@ -131,7 +131,6 @@ List<Collection> collections = [];
 List<ParsedLine> verses = [];
 List<Font> allFonts = [];
 List<Translation> translations = [];
-final service = IsarService();
 
 Future<String> asyncGetProjectName(BuildContext context) async {
   AssetBundle assetBundle = DefaultAssetBundle.of(context);
@@ -308,10 +307,16 @@ Future<void> asyncGetTranslations(BuildContext context) async {
 }
 
 Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
-  bool dbExists = false;
-  bool shouldRebuildDB = true;
+  bool shouldRebuildDB = false;
 
-  if (shouldRebuildDB) service.cleanDb;
+  final isar = await Isar.open(
+    schemas: [ParsedLineDBSchema],
+  );
+  //Delete the db
+  if (shouldRebuildDB) isar.clear();
+  int numLines = await isar.parsedLineDBs.count();
+
+  print(numLines);
 
   print('buildDatabaseFromXML');
   AssetBundle assetBundle = DefaultAssetBundle.of(context);
@@ -415,8 +420,12 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
   }
 
   //Now we know about the collections and can populate the content.
-
-  if (!dbExists) {
+  //if numLines in db is 0, that means there is no database, and we should build from XML.
+  //The else below is using the existing db.
+  if (numLines == 0) {
+    print('building verse db from xml ');
+    isar.close();
+    //TODO Or if we should rebuild the db as the version number has changed
     for (var collection in collections) {
       List<Book> books = collection.books;
       for (var book in books) {
@@ -524,19 +533,6 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
                   verseStyle: verseStyle);
 
               verses.add(lineToAdd);
-
-              final lineToAddDB = ParsedLineDB()
-                ..collectionid = lineToAdd.collectionid
-                ..book = lineToAdd.book
-                ..chapter = lineToAdd.chapter
-                ..verse = lineToAdd.verse
-                ..verseFragment = lineToAdd.verseFragment
-                ..audioMarker = lineToAdd.audioMarker
-                ..verseText = lineToAdd.verseText
-                ..verseStyle = lineToAdd.verseStyle;
-
-              //And to the Isar database
-              service.addLine(lineToAddDB);
             }
           }
         }
@@ -544,11 +540,28 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
       }
       // print('ending current collection ${collection.id}');
     }
-  }
-  // else {
-  //   //TODO: IMPLEMENT
-  // }
+  } else {
+    //use the saved db
+    print('using saved db');
+    final List<ParsedLineDB> versesDB =
+        await isar.parsedLineDBs.where().findAll();
+    for (var verseDB in versesDB) {
+      final ParsedLine lineToAdd = ParsedLine(
+          collectionid: verseDB.collectionid,
+          book: verseDB.book,
+          chapter: verseDB.chapter,
+          verse: verseDB.verse,
+          verseFragment: verseDB.verseFragment,
+          audioMarker: verseDB.audioMarker,
+          verseText: verseDB.verseText,
+          verseStyle: verseDB.verseStyle);
 
+      verses.add(lineToAdd);
+    }
+    isar.close();
+  }
+  print('verses.length');
+  print(verses.length);
   AppInfo appInfo = AppInfo(collections: collections, verses: verses);
 
   print('finished buildDatabaseFromXML');

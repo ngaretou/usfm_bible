@@ -9,7 +9,9 @@ import 'package:url_strategy/url_strategy.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:context_menus/context_menus.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:isar/isar.dart';
 
+import 'models/parsed_line_db.dart';
 import 'screens/about.dart';
 import 'screens/bible_view.dart';
 import 'screens/settings.dart';
@@ -110,7 +112,7 @@ class MyApp extends StatelessWidget {
       return response;
     }
 
-    late Future<String> initAppInfo = getAppTitle();
+    late Future<String> initAppTitle = getAppTitle();
 
     return ChangeNotifierProvider(
       create: (_) => AppTheme(),
@@ -118,7 +120,7 @@ class MyApp extends StatelessWidget {
         final appTheme = context.watch<AppTheme>();
 
         return FutureBuilder(
-            future: initAppInfo,
+            future: initAppTitle,
             builder: (ctx, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return Center(
@@ -207,6 +209,42 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
     windowManager.removeListener(this);
     settingsController.dispose();
     super.dispose();
+  }
+
+  addVersesToDB() async {
+    print('writing vs to local db');
+    final isar = await Isar.open(
+      schemas: [ParsedLineDBSchema],
+    );
+    try {
+      for (var verse in verses) {
+        final lineToAddDB = ParsedLineDB()
+          ..collectionid = verse.collectionid
+          ..book = verse.book
+          ..chapter = verse.chapter
+          ..verse = verse.verse
+          ..verseFragment = verse.verseFragment
+          ..audioMarker = verse.audioMarker
+          ..verseText = verse.verseText
+          ..verseStyle = verse.verseStyle;
+
+        //And to the Isar database
+        // isar.writeTxnSync(
+        //     (isar) => isar.parsedLineDBs.putSync(lineToAddDB));
+        isar.writeTxn((isar) async {
+          isar.parsedLineDBs.put(lineToAddDB);
+        });
+      }
+    } catch (e) {
+      print(e);
+    }
+
+    int numLines = await isar.parsedLineDBs.count();
+
+    print(numLines);
+    print('done writing vs to local db');
+
+    isar.close();
   }
 
   @override
@@ -386,6 +424,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                   }
                   //Main row that holds the text columns
                   else {
+                    addVersesToDB();
                     AppInfo appInfo = snapshot.data as AppInfo;
                     late String comboBoxFont;
                     bool anyRTL = collections
