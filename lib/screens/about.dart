@@ -149,43 +149,45 @@ class About extends StatelessWidget {
       );
     }
 
+    List<Widget> pageContent = [
+      htmlToDisplay(),
+      Button(
+          onPressed: () {
+            void showLicensePage({
+              required BuildContext context,
+              String? applicationName,
+              String? applicationVersion,
+              Widget? applicationIcon,
+              String? applicationLegalese,
+              bool useRootNavigator = false,
+            }) {
+              // assert(context != null);
+              // assert(useRootNavigator != null);
+              Navigator.of(context, rootNavigator: useRootNavigator)
+                  .push(MaterialPageRoute<void>(
+                builder: (BuildContext context) => LicensePage(
+                  applicationName: applicationName,
+                  applicationVersion: applicationVersion,
+                  applicationIcon: applicationIcon,
+                  applicationLegalese: applicationLegalese,
+                ),
+              ));
+            }
+
+            showLicensePage(
+                context: context,
+                applicationName: '99',
+                useRootNavigator: true);
+          },
+          child: const Text('Licenses')),
+    ];
+
     return ScaffoldPage.scrollable(
         header: PageHeader(
           title: Text(Provider.of<UserPrefs>(context, listen: false)
               .currentTranslation
               .about),
         ),
-        children: [
-          htmlToDisplay(),
-          Button(
-              onPressed: () {
-                void showLicensePage({
-                  required BuildContext context,
-                  String? applicationName,
-                  String? applicationVersion,
-                  Widget? applicationIcon,
-                  String? applicationLegalese,
-                  bool useRootNavigator = false,
-                }) {
-                  // assert(context != null);
-                  // assert(useRootNavigator != null);
-                  Navigator.of(context, rootNavigator: useRootNavigator)
-                      .push(MaterialPageRoute<void>(
-                    builder: (BuildContext context) => LicensePage(
-                      applicationName: applicationName,
-                      applicationVersion: applicationVersion,
-                      applicationIcon: applicationIcon,
-                      applicationLegalese: applicationLegalese,
-                    ),
-                  ));
-                }
-
-                showLicensePage(
-                    context: context,
-                    applicationName: '99',
-                    useRootNavigator: true);
-              },
-              child: const Text('Licenses')),
-        ]);
+        children: pageContent);
   }
 }
