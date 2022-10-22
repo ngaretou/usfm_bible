@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:usfm_bible/models/database_builder.dart';
 import 'dart:core';
+import 'package:hive_flutter/hive_flutter.dart';
+
+import '../hive/user_columns_db.dart';
 
 class BibleReference {
   Key key;
@@ -12,15 +15,16 @@ class BibleReference {
   String? bookID;
   String? chapter;
   String? verse;
+  int? columnIndex;
 
-  BibleReference({
-    required this.key,
-    required this.partOfScrollGroup,
-    required this.collectionID,
-    this.bookID,
-    this.chapter,
-    this.verse,
-  });
+  BibleReference(
+      {required this.key,
+      required this.partOfScrollGroup,
+      required this.collectionID,
+      this.bookID,
+      this.chapter,
+      this.verse,
+      this.columnIndex});
 }
 
 class UserPrefList {
@@ -37,6 +41,8 @@ class UserPrefs with ChangeNotifier {
     return _userPrefList;
   }
 
+  List<BibleReference> userColumns = [];
+
   String? userLang;
 
   Translation get currentTranslation {
@@ -52,15 +58,32 @@ class UserPrefs with ChangeNotifier {
     notifyListeners();
   }
 
-  List<BibleReference> userColumns = [];
-
   Future<void> loadUserPrefs(AppInfo appInfo) async {
-    bool hasPrefs = false;
-    //May in the future Check if the user has an existing session.
+    var box = await Hive.openBox<UserColumnsDB>('userColumnsDB');
+    //Check if the user has an existing session.
 
     //If not, set up the initial session.
-    if (!hasPrefs) {
+    if (box.isEmpty) {
       initializePrefs(appInfo);
+    } else {
+      print('getting usercolumns from local db');
+
+      for (var i = 0; i < box.length; i++) {
+        BibleReference ref = BibleReference(
+            // key: UniqueKey(), //Here is where the unique key comes from after reloading
+            key: box.getAt(i)!.key,
+            partOfScrollGroup: box.getAt(i)!.partOfScrollGroup,
+            collectionID: box.getAt(i)!.collectionID,
+            bookID: box.getAt(i)!.bookID,
+            chapter: box.getAt(i)!.chapter,
+            verse: box.getAt(i)!.verse,
+            columnIndex: box.getAt(i)!.columnIndex);
+        userColumns.add(ref);
+      }
+
+      userColumns.sort(((a, b) => a.columnIndex!.compareTo(a.columnIndex!)));
+
+      _userPrefList = UserPrefList(userColumns: userColumns);
     }
   }
 
@@ -94,7 +117,8 @@ class UserPrefs with ChangeNotifier {
               collectionID: currentCollection,
               bookID: null,
               chapter: null,
-              verse: null));
+              verse: null,
+              columnIndex: index));
     } else {
       //If it is more than one collection, each column initially will just take the next collection down.
       partOfScrollGroup = true;
@@ -108,10 +132,55 @@ class UserPrefs with ChangeNotifier {
             collectionID: "C0${(index + 1).toString()}",
             bookID: null,
             chapter: null,
-            verse: null),
+            verse: null,
+            columnIndex: index),
       );
     }
     // End of default initialization
     _userPrefList = UserPrefList(userColumns: userColumns);
+
+    for (var i = 0; i < userColumns.length; i++) {
+      UserColumnsDB colDB = UserColumnsDB()
+        ..key = userColumns[i].key
+        ..partOfScrollGroup = userColumns[i].partOfScrollGroup
+        ..collectionID = userColumns[i].collectionID
+        ..bookID = userColumns[i].bookID
+        ..chapter = userColumns[i].chapter
+        ..verse = userColumns[i].verse
+        ..columnIndex = i;
+      var box = await Hive.openBox<UserColumnsDB>('userColumnsDB');
+      box.put(userColumns[i].key, colDB);
+      print('almost there');
+    }
+  }
+
+  saveScrollGroupState(BibleReference ref) async {
+    var box = await Hive.openBox<UserColumnsDB>('userColumnsDB');
+    UserColumnsDB? refInQuestion = box.get(ref.key);
+    print(ref.key.toString());
+    for (var i = 0; i < box.length; i++) {
+      print('${i.toString()} ${box.keyAt(i)}');
+    }
+
+    if (refInQuestion != null) {
+      print('found the key for refInQuestion');
+    } else {
+      print('refInQuestion was null');
+    }
+
+    // refInQuestion!.partOfScrollGroup = ref.partOfScrollGroup;
+    // refInQuestion.collectionID = ref.collectionID;
+    // refInQuestion.bookID = ref.bookID;
+    // refInQuestion.chapter = ref.chapter;
+    // refInQuestion.verse = ref.verse;
+    // refInQuestion.save();
+
+    // print(colIndex);
+    // print(ref.key.toString());
+    // print(ref.partOfScrollGroup);
+    // print(ref.collectionID);
+    // print(ref.bookID);
+    // print(ref.chapter);
+    // print(ref.verse);
   }
 }

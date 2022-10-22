@@ -20,6 +20,9 @@ import 'models/database_builder.dart';
 import 'providers/user_prefs.dart';
 import 'providers/column_manager.dart';
 
+import 'package:hive_flutter/hive_flutter.dart';
+import '../hive/user_columns_db.dart';
+
 String appTitle = '';
 
 /// Checks if the current environment is a desktop environment.
@@ -36,6 +39,9 @@ void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   // Keep native splash screen up until app is finished bootstrapping
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  await Hive.initFlutter();
+  Hive.registerAdapter(UserColumnsDBAdapter());
 
   // if it's on the web, windows or android, load the accent color
   if (kIsWeb ||
