@@ -303,7 +303,8 @@ class _SearchResultTileState extends State<SearchResultTile> {
                 collectionID: widget.line.collectionid,
                 bookID: widget.line.book,
                 chapter: widget.line.chapter,
-                verse: widget.line.verse);
+                verse: widget.line.verse, 
+                columnIndex: 1); //This is dummy data as we dont care about the columnIndex here, just the ref
 
             Provider.of<ScrollGroup>(context, listen: false).setScrollGroupRef =
                 ref;

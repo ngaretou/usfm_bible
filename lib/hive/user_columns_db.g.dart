@@ -17,7 +17,7 @@ class UserColumnsDBAdapter extends TypeAdapter<UserColumnsDB> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return UserColumnsDB()
-      ..key = fields[0] as Key
+      ..key = fields[0] as String
       ..partOfScrollGroup = fields[1] as bool
       ..collectionID = fields[2] as String
       ..bookID = fields[3] as String?

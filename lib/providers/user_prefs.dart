@@ -7,15 +7,16 @@ import 'dart:core';
 import 'package:hive_flutter/hive_flutter.dart';
 
 import '../hive/user_columns_db.dart';
+import '../main.dart' as main;
 
 class BibleReference {
   Key key;
-  final bool partOfScrollGroup;
-  final String collectionID;
+  bool partOfScrollGroup;
+  String collectionID;
   String? bookID;
   String? chapter;
   String? verse;
-  int? columnIndex;
+  int columnIndex;
 
   BibleReference(
       {required this.key,
@@ -24,7 +25,7 @@ class BibleReference {
       this.bookID,
       this.chapter,
       this.verse,
-      this.columnIndex});
+      required this.columnIndex});
 }
 
 class UserPrefList {
@@ -35,6 +36,7 @@ class UserPrefList {
 }
 
 class UserPrefs with ChangeNotifier {
+  Box<UserColumnsDB> mybox = main.box;
   late UserPrefList _userPrefList;
 
   UserPrefList get userPrefList {
@@ -58,32 +60,65 @@ class UserPrefs with ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> loadUserPrefs(AppInfo appInfo) async {
-    var box = await Hive.openBox<UserColumnsDB>('userColumnsDB');
-    //Check if the user has an existing session.
+  printWhatsInBox() {
+    print('what\'s in the box?');
+    for (var i = 0; i < main.box.length; i++) {
+      print(
+          'i: $i | columnIndex: ${main.box.getAt(i)!.columnIndex} | collection: ${main.box.getAt(i)!.collectionID}');
+    }
+  }
 
-    //If not, set up the initial session.
-    if (box.isEmpty) {
+  printWhatsInList() {
+    print('what\'s in the list?');
+    for (var i = 0; i < userColumns.length; i++) {
+      print(
+          'i: $i | columnIndex: ${userColumns[i].columnIndex} | collection: ${userColumns[i].collectionID}');
+    }
+  }
+
+  loadUserPrefs(AppInfo appInfo) {
+    printWhatsInList();
+    //Check if the user has an existing session. If not, set up the initial session.
+    if (main.box.isEmpty) {
       initializePrefs(appInfo);
     } else {
-      print('getting usercolumns from local db');
+      try {
+        print('getting usercolumns from local db');
+        printWhatsInBox();
+        for (var i = 0; i < main.box.length; i++) {
+          Key newKeyForSession = UniqueKey();
 
-      for (var i = 0; i < box.length; i++) {
-        BibleReference ref = BibleReference(
-            // key: UniqueKey(), //Here is where the unique key comes from after reloading
-            key: box.getAt(i)!.key,
-            partOfScrollGroup: box.getAt(i)!.partOfScrollGroup,
-            collectionID: box.getAt(i)!.collectionID,
-            bookID: box.getAt(i)!.bookID,
-            chapter: box.getAt(i)!.chapter,
-            verse: box.getAt(i)!.verse,
-            columnIndex: box.getAt(i)!.columnIndex);
-        userColumns.add(ref);
+          BibleReference ref = BibleReference(
+              // key: UniqueKey(), //Here is where the unique key comes from after reloading.
+              // ScriptureColumns (List<Widget>) HAS to have a key so we can locate it later.
+              // The old key stored in the db is as String, but no way to convert String back to Key.
+              //For that reason fdtrtffgrdesfredswredsawe make a new key for this session above, then save it as we populate our in-memory copy of usercolumns
+              //And we also delete the old copy of the column info in the db and replace it with a new one
+              key: newKeyForSession,
+              partOfScrollGroup: main.box.getAt(i)!.partOfScrollGroup,
+              collectionID: main.box.getAt(i)!.collectionID,
+              bookID: main.box.getAt(i)!.bookID,
+              chapter: main.box.getAt(i)!.chapter,
+              verse: main.box.getAt(i)!.verse,
+              columnIndex: main.box.getAt(i)!.columnIndex);
+          userColumns.add(ref);
+        }
+        //just clear it here - it will get repopulated with new values
+        main.box.clear();
+        //Get them in the right order
+        userColumns.sort(((a, b) => a.columnIndex.compareTo(b.columnIndex)));
+        //Now potentially you have some columnIndexes out of order which will probably not hurt the program but just for my peace of mind let's reset the column indexes
+        for (var i = 0; i < userColumns.length; i++) {
+          userColumns[i].columnIndex = i;
+        }
+
+        _userPrefList = UserPrefList(userColumns: userColumns);
+      } catch (e) {
+        // safety valve in case seomething goes wrong - reset db and start over
+        print('Error in loading user prefs, reinitializing columns...');
+        main.box.clear;
+        initializePrefs(appInfo);
       }
-
-      userColumns.sort(((a, b) => a.columnIndex!.compareTo(a.columnIndex!)));
-
-      _userPrefList = UserPrefList(userColumns: userColumns);
     }
   }
 
@@ -127,7 +162,6 @@ class UserPrefs with ChangeNotifier {
         numberOfColumns,
         (index) => BibleReference(
             key: UniqueKey(),
-            // columnIndex: index,
             partOfScrollGroup: partOfScrollGroup,
             collectionID: "C0${(index + 1).toString()}",
             bookID: null,
@@ -136,51 +170,38 @@ class UserPrefs with ChangeNotifier {
             columnIndex: index),
       );
     }
-    // End of default initialization
+
     _userPrefList = UserPrefList(userColumns: userColumns);
+    // End of default initialization
+
+    //Now save the initial values to the user columns db
+    // var box = await Hive.openBox<UserColumnsDB>('userColumnsDB');
 
     for (var i = 0; i < userColumns.length; i++) {
       UserColumnsDB colDB = UserColumnsDB()
-        ..key = userColumns[i].key
+        ..key = userColumns[i].key.toString()
         ..partOfScrollGroup = userColumns[i].partOfScrollGroup
         ..collectionID = userColumns[i].collectionID
         ..bookID = userColumns[i].bookID
         ..chapter = userColumns[i].chapter
         ..verse = userColumns[i].verse
         ..columnIndex = i;
-      var box = await Hive.openBox<UserColumnsDB>('userColumnsDB');
-      box.put(userColumns[i].key, colDB);
-      print('almost there');
+
+      main.box.put(userColumns[i].key.toString(), colDB);
     }
   }
 
-  saveScrollGroupState(BibleReference ref) async {
-    var box = await Hive.openBox<UserColumnsDB>('userColumnsDB');
-    UserColumnsDB? refInQuestion = box.get(ref.key);
-    print(ref.key.toString());
-    for (var i = 0; i < box.length; i++) {
-      print('${i.toString()} ${box.keyAt(i)}');
-    }
+  saveScrollGroupState(BibleReference ref) {
+    UserColumnsDB colDB = UserColumnsDB()
+      ..key = ref.key.toString()
+      ..partOfScrollGroup = ref.partOfScrollGroup
+      ..collectionID = ref.collectionID
+      ..bookID = ref.bookID
+      ..chapter = ref.chapter
+      ..verse = ref.verse
+      ..columnIndex = ref.columnIndex;
 
-    if (refInQuestion != null) {
-      print('found the key for refInQuestion');
-    } else {
-      print('refInQuestion was null');
-    }
-
-    // refInQuestion!.partOfScrollGroup = ref.partOfScrollGroup;
-    // refInQuestion.collectionID = ref.collectionID;
-    // refInQuestion.bookID = ref.bookID;
-    // refInQuestion.chapter = ref.chapter;
-    // refInQuestion.verse = ref.verse;
-    // refInQuestion.save();
-
-    // print(colIndex);
-    // print(ref.key.toString());
-    // print(ref.partOfScrollGroup);
-    // print(ref.collectionID);
-    // print(ref.bookID);
-    // print(ref.chapter);
-    // print(ref.verse);
+    //We found the key, now replace the record at that spot or add it if it's new
+    main.box.put(ref.key.toString(), colDB);
   }
 }

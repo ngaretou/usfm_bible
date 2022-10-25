@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
 part 'user_columns_db.g.dart';
@@ -6,7 +5,7 @@ part 'user_columns_db.g.dart';
 @HiveType(typeId: 1)
 class UserColumnsDB {
   @HiveField(0)
-  late Key key;
+  late String key;
 
   @HiveField(1)
   late bool partOfScrollGroup;

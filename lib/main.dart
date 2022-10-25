@@ -35,6 +35,7 @@ bool get isDesktop {
   ].contains(defaultTargetPlatform);
 }
 
+late Box<UserColumnsDB> box;
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   // Keep native splash screen up until app is finished bootstrapping
@@ -43,6 +44,7 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(UserColumnsDBAdapter());
 
+  box = await Hive.openBox<UserColumnsDB>('userColumnsDB');
   // if it's on the web, windows or android, load the accent color
   if (kIsWeb ||
       [TargetPlatform.windows, TargetPlatform.android]

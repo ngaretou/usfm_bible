@@ -3,11 +3,14 @@
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:provider/provider.dart';
 import 'package:usfm_bible/providers/user_prefs.dart';
+// import 'package:hive_flutter/hive_flutter.dart';
 
+// import '../hive/user_columns_db.dart';
 import '../models/database_builder.dart';
 import '../widgets/scripture_column.dart';
 import '../providers/column_manager.dart';
 import '../widgets/search.dart';
+import '../main.dart' as main;
 
 class BibleView extends StatefulWidget {
   final AppInfo appInfo;
@@ -46,13 +49,11 @@ class _BibleViewState extends State<BibleView> {
     */
 
     scriptureColumns = List.generate(userColumns.length, (index) {
-      Key key = UniqueKey();
-
-      userColumns[index].key = key;
-
+      print('scrip column generate ${userColumns[index].columnIndex}');
+      //The user columns coming from provider initialize and provide the unique key which gets duplicated here so we can track both groups
       return ScriptureColumn(
-        key: key,
-        myColumnIndex: index,
+        key: userColumns[index].key,
+        myColumnIndex: userColumns[index].columnIndex,
         appInfo: widget.appInfo,
         bibleReference: userColumns[index],
         deleteColumn: deleteColumn,
@@ -64,7 +65,7 @@ class _BibleViewState extends State<BibleView> {
     super.initState();
   }
 
-  void deleteColumn(Key keyToDelete) {
+  void deleteColumn(Key keyToDelete) async {
     print('deleting column index $keyToDelete in BibleView');
     //This removes the desired element from the record in memory
     userColumns.removeWhere((element) => element.key == keyToDelete);
@@ -72,6 +73,18 @@ class _BibleViewState extends State<BibleView> {
     scriptureColumns.removeWhere((element) => element.key == keyToDelete);
     Provider.of<ColumnManager>(context, listen: false)
         .deleteColumnRebuildCall();
+    print('what\'s in the box?');
+    for (var i = 0; i < main.box.length; i++) {
+      print(
+          'i: $i | columnIndex: ${main.box.getAt(i)!.columnIndex} | collection: ${main.box.getAt(i)!.collectionID}');
+    }
+    //and from the user columns entry in the db
+    main.box.delete(keyToDelete.toString());
+    print('what\'s in the box?');
+    for (var i = 0; i < main.box.length; i++) {
+      print(
+          'i: $i | columnIndex: ${main.box.getAt(i)!.columnIndex} | collection: ${main.box.getAt(i)!.collectionID}');
+    }
     setState(() {});
   }
 
@@ -81,6 +94,11 @@ class _BibleViewState extends State<BibleView> {
       //This common key helps us keep track of refs and columns
       Key key = UniqueKey();
 
+      int lastExistingColIndex = userColumns.last.columnIndex;
+
+      int position =
+          search == null ? lastExistingColIndex + 1 : lastExistingColIndex;
+
       //new default bible reference
       BibleReference newDefaultRef = BibleReference(
           key: key,
@@ -88,18 +106,17 @@ class _BibleViewState extends State<BibleView> {
           collectionID: "C01",
           bookID: null,
           chapter: null,
-          verse: null);
+          verse: null,
+          columnIndex: position);
 
       userColumns.add(newDefaultRef);
       //new default column
-      int position = search == null
-          ? scriptureColumns.length
-          : scriptureColumns.length - 1;
+
       scriptureColumns.insert(
         position,
         ScriptureColumn(
           key: key,
-          myColumnIndex: scriptureColumns.length,
+          myColumnIndex: position,
           appInfo: widget.appInfo,
           bibleReference: newDefaultRef,
           deleteColumn: deleteColumn,

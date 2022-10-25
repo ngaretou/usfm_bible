@@ -28,6 +28,7 @@ class ColumnManager with ChangeNotifier {
     // print('timeToRebuildColumns in provider');
     notifyListeners();
     Timer(const Duration(seconds: 1), () => timeToRebuildColumns = false);
+    
   }
 }
 
