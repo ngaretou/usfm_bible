@@ -10,7 +10,6 @@ import '../models/database_builder.dart';
 import '../widgets/scripture_column.dart';
 import '../providers/column_manager.dart';
 import '../widgets/search.dart';
-import '../main.dart' as main;
 
 class BibleView extends StatefulWidget {
   final AppInfo appInfo;
@@ -69,22 +68,15 @@ class _BibleViewState extends State<BibleView> {
     print('deleting column index $keyToDelete in BibleView');
     //This removes the desired element from the record in memory
     userColumns.removeWhere((element) => element.key == keyToDelete);
-    //and the widget
+    //and from the user columns entry in the db
+    Provider.of<UserPrefs>(context, listen: false)
+        .deleteColumnFromBox(keyToDelete.toString());
+    //and the widget list
     scriptureColumns.removeWhere((element) => element.key == keyToDelete);
+    //Now call for rebuild
     Provider.of<ColumnManager>(context, listen: false)
         .deleteColumnRebuildCall();
-    print('what\'s in the box?');
-    for (var i = 0; i < main.box.length; i++) {
-      print(
-          'i: $i | columnIndex: ${main.box.getAt(i)!.columnIndex} | collection: ${main.box.getAt(i)!.collectionID}');
-    }
-    //and from the user columns entry in the db
-    main.box.delete(keyToDelete.toString());
-    print('what\'s in the box?');
-    for (var i = 0; i < main.box.length; i++) {
-      print(
-          'i: $i | columnIndex: ${main.box.getAt(i)!.columnIndex} | collection: ${main.box.getAt(i)!.collectionID}');
-    }
+
     setState(() {});
   }
 
@@ -94,10 +86,8 @@ class _BibleViewState extends State<BibleView> {
       //This common key helps us keep track of refs and columns
       Key key = UniqueKey();
 
-      int lastExistingColIndex = userColumns.last.columnIndex;
-
       int position =
-          search == null ? lastExistingColIndex + 1 : lastExistingColIndex;
+          search == null ? userColumns.length : userColumns.length - 1;
 
       //new default bible reference
       BibleReference newDefaultRef = BibleReference(

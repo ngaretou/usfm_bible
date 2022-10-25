@@ -105,7 +105,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
     /// Function to check if a reference is in the collection, return the index of the PARAGRAPH it is in or if not found, null
     int checkIfRefIsInCollection(String bk, String ch, String vs) {
-      int returnMe = 1;
+      int returnMe = -1;
 
       // Get the reference to the paragraph we're heading to - at the same time test if it does exist.
       for (int i = 0; i < versesByParagraph.length; i++) {

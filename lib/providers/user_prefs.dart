@@ -62,6 +62,9 @@ class UserPrefs with ChangeNotifier {
 
   printWhatsInBox() {
     print('what\'s in the box?');
+    if (main.box.isEmpty) {
+      print('Box is empty');
+    }
     for (var i = 0; i < main.box.length; i++) {
       print(
           'i: $i | columnIndex: ${main.box.getAt(i)!.columnIndex} | collection: ${main.box.getAt(i)!.collectionID}');
@@ -72,11 +75,11 @@ class UserPrefs with ChangeNotifier {
     print('what\'s in the list?');
     for (var i = 0; i < userColumns.length; i++) {
       print(
-          'i: $i | columnIndex: ${userColumns[i].columnIndex} | collection: ${userColumns[i].collectionID}');
+          'i: $i | columnIndex: ${userColumns[i].columnIndex} | collection: ${userColumns[i].collectionID} | key: ${userColumns[i].key}');
     }
   }
 
-  loadUserPrefs(AppInfo appInfo) {
+  loadUserPrefs(AppInfo appInfo) async {
     printWhatsInList();
     //Check if the user has an existing session. If not, set up the initial session.
     if (main.box.isEmpty) {
@@ -103,8 +106,14 @@ class UserPrefs with ChangeNotifier {
               columnIndex: main.box.getAt(i)!.columnIndex);
           userColumns.add(ref);
         }
-        //just clear it here - it will get repopulated with new values
-        main.box.clear();
+        //clear the box
+        await main.box.clear();
+        // repopulate with the new values - really just the key is new
+        //but with the String/key problem have to do the whole thing
+        for (var i = 0; i < userColumns.length; i++) {
+          saveScrollGroupState(userColumns[i]);
+        }
+
         //Get them in the right order
         userColumns.sort(((a, b) => a.columnIndex.compareTo(b.columnIndex)));
         //Now potentially you have some columnIndexes out of order which will probably not hurt the program but just for my peace of mind let's reset the column indexes
@@ -116,7 +125,7 @@ class UserPrefs with ChangeNotifier {
       } catch (e) {
         // safety valve in case seomething goes wrong - reset db and start over
         print('Error in loading user prefs, reinitializing columns...');
-        main.box.clear;
+        main.box.clear();
         initializePrefs(appInfo);
       }
     }
@@ -191,7 +200,8 @@ class UserPrefs with ChangeNotifier {
     }
   }
 
-  saveScrollGroupState(BibleReference ref) {
+  void saveScrollGroupState(BibleReference ref) {
+    // printWhatsInBox();
     UserColumnsDB colDB = UserColumnsDB()
       ..key = ref.key.toString()
       ..partOfScrollGroup = ref.partOfScrollGroup
@@ -203,5 +213,13 @@ class UserPrefs with ChangeNotifier {
 
     //We found the key, now replace the record at that spot or add it if it's new
     main.box.put(ref.key.toString(), colDB);
+    // printWhatsInBox();
+  }
+
+  deleteColumnFromBox(String keyAsString) {
+    // Box<UserColumnsDB> box = await Hive.openBox<UserColumnsDB>('userColumnsDB');
+    // printWhatsInBox();
+    main.box.delete(keyAsString);
+    printWhatsInBox();
   }
 }
