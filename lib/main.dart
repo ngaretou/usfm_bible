@@ -15,7 +15,7 @@ import 'screens/bible_view.dart';
 import 'screens/settings.dart';
 
 import 'theme.dart';
-import 'models/database_builder.dart';
+import 'logic/database_builder.dart';
 
 import 'providers/user_prefs.dart';
 import 'providers/column_manager.dart';

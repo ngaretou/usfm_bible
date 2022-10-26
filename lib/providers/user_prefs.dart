@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-import 'package:usfm_bible/models/database_builder.dart';
+import 'package:usfm_bible/logic/database_builder.dart';
 import 'dart:core';
 import 'package:hive_flutter/hive_flutter.dart';
 
