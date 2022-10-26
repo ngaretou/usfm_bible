@@ -577,8 +577,8 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   @override
   Widget build(BuildContext context) {
     Key? activeColumnKey = context.read<ScrollGroup>().getActiveColumnKey;
-    print(
-        'scripture column build: columnIndex: ${widget.bibleReference.columnIndex}; collection: ${widget.bibleReference.collectionID}; key: ${widget.key}');
+    // print(
+    //     'scripture column build: columnIndex: ${widget.bibleReference.columnIndex}; collection: ${widget.bibleReference.collectionID}; key: ${widget.key}');
     WidgetsBinding.instance.addPostFrameCallback((_) {
       //if switching from an NT only collection with few paragraphs to a longer full Bible collection
       //it will fail if it tries to scroll before the scrollablePositionedList is rebuilt.

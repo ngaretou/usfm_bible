@@ -48,7 +48,7 @@ class _BibleViewState extends State<BibleView> {
     */
 
     scriptureColumns = List.generate(userColumns.length, (index) {
-      print('scrip column generate ${userColumns[index].columnIndex}');
+      // print('scrip column generate ${userColumns[index].columnIndex}');
       //The user columns coming from provider initialize and provide the unique key which gets duplicated here so we can track both groups
       return ScriptureColumn(
         key: userColumns[index].key,

@@ -80,14 +80,14 @@ class UserPrefs with ChangeNotifier {
   }
 
   loadUserPrefs(AppInfo appInfo) async {
-    printWhatsInList();
+    // printWhatsInList();
     //Check if the user has an existing session. If not, set up the initial session.
     if (main.box.isEmpty) {
       initializePrefs(appInfo);
     } else {
       try {
-        print('getting usercolumns from local db');
-        printWhatsInBox();
+        // print('getting usercolumns from local db');
+        // printWhatsInBox();
         for (var i = 0; i < main.box.length; i++) {
           Key newKeyForSession = UniqueKey();
 
@@ -220,6 +220,6 @@ class UserPrefs with ChangeNotifier {
     // Box<UserColumnsDB> box = await Hive.openBox<UserColumnsDB>('userColumnsDB');
     // printWhatsInBox();
     main.box.delete(keyAsString);
-    printWhatsInBox();
+    // printWhatsInBox();
   }
 }

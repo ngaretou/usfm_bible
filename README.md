@@ -78,11 +78,6 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 ### Minimal
 - Remember column references visible on close
 
-Τεκνία, φυλάξατε ἑαυτὰ ἀπὸ τῶν ⸀εἰδώλων.  
-Ιωαννου Α 5.21 (SBL NT grec)
-
-This is wrong
-
 ### Maximal
 - Higher priority
   - NavPane buttons: Contact Us

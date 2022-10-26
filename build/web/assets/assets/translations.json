@@ -1,0 +1,26 @@
+[
+  {
+    "langCode": "en",
+    "addColumn": "Add Column",
+    "settingsTheme": "Theme",
+    "systemTheme": "System Theme",
+    "lightTheme": "Light Theme",
+    "darkTheme": "Dark Theme"
+  },
+  {
+    "langCode": "fr",
+    "addColumn": "Ajouter une colonne",
+    "settingsTheme": "Thème",
+    "systemTheme": "Thème système",
+    "lightTheme": "Thème claire",
+    "darkTheme": "Thème sombre"
+  },
+  {
+    "langCode": "wol",
+    "addColumn": "Yokk benn colonne",
+    "settingsTheme": "Melow wërale bi",
+    "systemTheme": "Melow système",
+    "lightTheme": "Melow bu woyof",
+    "darkTheme": "Melow bu lëndëm"
+  }
+]
