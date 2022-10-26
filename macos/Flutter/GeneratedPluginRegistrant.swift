@@ -12,7 +12,7 @@ import flutter_acrylic
 import just_audio
 import path_provider_macos
 import screen_retriever
-import share_plus_macos
+import share_plus
 import url_launcher_macos
 import window_manager
 

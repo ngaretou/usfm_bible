@@ -537,7 +537,7 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
                     verseStyle: verseStyle),
               );
 
-              var parsedLineDB = ParsedLineDB()
+              ParsedLineDB parsedLineDB = ParsedLineDB()
                 ..collectionid = collection.id
                 ..book = book.id
                 ..chapter = chapterNumber
