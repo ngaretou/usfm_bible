@@ -2,7 +2,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:usfm_bible/models/parsed_lines_db.dart';
+import 'package:usfm_bible/hive/parsed_lines_db.dart';
 import 'package:usfm_bible/providers/user_prefs.dart';
 import 'package:xml/xml.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -309,7 +309,7 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
   print('buildDatabaseFromXML');
   bool shouldResetDB = true;
 
-  await Hive.initFlutter();
+  // await Hive.initFlutter();
   Hive.registerAdapter(ParsedLineDBAdapter());
   var box = await Hive.openBox<ParsedLineDB>('parsedLineDB');
   // if (shouldResetDB) box.clear();
@@ -576,7 +576,7 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
   print(box.length);
 
   AppInfo appInfo = AppInfo(collections: collections, verses: verses);
- 
+
   print('finished buildDatabaseFromXML');
   return appInfo;
 }
