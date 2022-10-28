@@ -6,7 +6,7 @@ import 'package:usfm_bible/providers/user_prefs.dart';
 // import 'package:hive_flutter/hive_flutter.dart';
 
 // import '../hive/user_columns_db.dart';
-import '../models/database_builder.dart';
+import '../logic/database_builder.dart';
 import '../widgets/scripture_column.dart';
 import '../providers/column_manager.dart';
 import '../widgets/search.dart';

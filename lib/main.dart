@@ -1,5 +1,5 @@
 // ignore_for_file: avoid_print, use_build_context_synchronously
-
+import 'dart:io';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart' as flutter_acrylic;
@@ -15,7 +15,7 @@ import 'screens/bible_view.dart';
 import 'screens/settings.dart';
 
 import 'theme.dart';
-import 'models/database_builder.dart';
+import 'logic/database_builder.dart';
 
 import 'providers/user_prefs.dart';
 import 'providers/column_manager.dart';
@@ -35,7 +35,7 @@ bool get isDesktop {
   ].contains(defaultTargetPlatform);
 }
 
-late Box<UserColumnsDB> box;
+late Box<UserColumnsDB> userColumnsBox;
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   // Keep native splash screen up until app is finished bootstrapping
@@ -44,7 +44,8 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(UserColumnsDBAdapter());
 
-  box = await Hive.openBox<UserColumnsDB>('userColumnsDB');
+  userColumnsBox =
+      await Hive.openBox<UserColumnsDB>('userColumnsDB');
   // if it's on the web, windows or android, load the accent color
   if (kIsWeb ||
       [TargetPlatform.windows, TargetPlatform.android]
@@ -254,6 +255,8 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
             child: NavigationView(
               key: viewKey,
               //appBar is across top of the screen in place of normal OS specific title bar.
+              appBar: const NavigationAppBar(
+                  automaticallyImplyLeading: false, height: 4),
               // appBar: NavigationAppBar(
               //   automaticallyImplyLeading: false,
               //   title: () {

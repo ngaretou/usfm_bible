@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-import 'package:usfm_bible/models/database_builder.dart';
+import 'package:usfm_bible/logic/database_builder.dart';
 import 'dart:core';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -36,7 +36,7 @@ class UserPrefList {
 }
 
 class UserPrefs with ChangeNotifier {
-  Box<UserColumnsDB> mybox = main.box;
+  Box<UserColumnsDB> mybox = main.userColumnsBox;
   late UserPrefList _userPrefList;
 
   UserPrefList get userPrefList {
@@ -62,12 +62,12 @@ class UserPrefs with ChangeNotifier {
 
   printWhatsInBox() {
     print('what\'s in the box?');
-    if (main.box.isEmpty) {
+    if (main.userColumnsBox.isEmpty) {
       print('Box is empty');
     }
-    for (var i = 0; i < main.box.length; i++) {
+    for (var i = 0; i < main.userColumnsBox.length; i++) {
       print(
-          'i: $i | columnIndex: ${main.box.getAt(i)!.columnIndex} | collection: ${main.box.getAt(i)!.collectionID}');
+          'i: $i | columnIndex: ${main.userColumnsBox.getAt(i)!.columnIndex} | collection: ${main.userColumnsBox.getAt(i)!.collectionID}');
     }
   }
 
@@ -82,13 +82,13 @@ class UserPrefs with ChangeNotifier {
   loadUserPrefs(AppInfo appInfo) async {
     // printWhatsInList();
     //Check if the user has an existing session. If not, set up the initial session.
-    if (main.box.isEmpty) {
+    if (main.userColumnsBox.isEmpty) {
       initializePrefs(appInfo);
     } else {
       try {
         // print('getting usercolumns from local db');
         // printWhatsInBox();
-        for (var i = 0; i < main.box.length; i++) {
+        for (var i = 0; i < main.userColumnsBox.length; i++) {
           Key newKeyForSession = UniqueKey();
 
           BibleReference ref = BibleReference(
@@ -98,16 +98,17 @@ class UserPrefs with ChangeNotifier {
               //For that reason fdtrtffgrdesfredswredsawe make a new key for this session above, then save it as we populate our in-memory copy of usercolumns
               //And we also delete the old copy of the column info in the db and replace it with a new one
               key: newKeyForSession,
-              partOfScrollGroup: main.box.getAt(i)!.partOfScrollGroup,
-              collectionID: main.box.getAt(i)!.collectionID,
-              bookID: main.box.getAt(i)!.bookID,
-              chapter: main.box.getAt(i)!.chapter,
-              verse: main.box.getAt(i)!.verse,
-              columnIndex: main.box.getAt(i)!.columnIndex);
+              partOfScrollGroup:
+                  main.userColumnsBox.getAt(i)!.partOfScrollGroup,
+              collectionID: main.userColumnsBox.getAt(i)!.collectionID,
+              bookID: main.userColumnsBox.getAt(i)!.bookID,
+              chapter: main.userColumnsBox.getAt(i)!.chapter,
+              verse: main.userColumnsBox.getAt(i)!.verse,
+              columnIndex: main.userColumnsBox.getAt(i)!.columnIndex);
           userColumns.add(ref);
         }
         //clear the box
-        await main.box.clear();
+        await main.userColumnsBox.clear();
         // repopulate with the new values - really just the key is new
         //but with the String/key problem have to do the whole thing
         for (var i = 0; i < userColumns.length; i++) {
@@ -125,7 +126,7 @@ class UserPrefs with ChangeNotifier {
       } catch (e) {
         // safety valve in case seomething goes wrong - reset db and start over
         print('Error in loading user prefs, reinitializing columns...');
-        main.box.clear();
+        main.userColumnsBox.clear();
         initializePrefs(appInfo);
       }
     }
@@ -196,7 +197,7 @@ class UserPrefs with ChangeNotifier {
         ..verse = userColumns[i].verse
         ..columnIndex = i;
 
-      main.box.put(userColumns[i].key.toString(), colDB);
+      main.userColumnsBox.put(userColumns[i].key.toString(), colDB);
     }
   }
 
@@ -212,14 +213,14 @@ class UserPrefs with ChangeNotifier {
       ..columnIndex = ref.columnIndex;
 
     //We found the key, now replace the record at that spot or add it if it's new
-    main.box.put(ref.key.toString(), colDB);
+    main.userColumnsBox.put(ref.key.toString(), colDB);
     // printWhatsInBox();
   }
 
   deleteColumnFromBox(String keyAsString) {
     // Box<UserColumnsDB> box = await Hive.openBox<UserColumnsDB>('userColumnsDB');
     // printWhatsInBox();
-    main.box.delete(keyAsString);
+    main.userColumnsBox.delete(keyAsString);
     // printWhatsInBox();
   }
 }
