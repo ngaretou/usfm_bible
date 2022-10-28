@@ -47,8 +47,8 @@ dependencies:
   hive_flutter: ^1.1.0
   intl: ^0.17.0
   xml: ^6.1.0
-  just_audio: ^0.9.24
-  audio_session: ^0.1.6+1
+  # just_audio: ^0.9.24
+  # audio_session: ^0.1.6+1
   firebase_core: ^2.1.0
   firebase_analytics: ^10.0.2
   scrollable_positioned_list: ^0.3.2

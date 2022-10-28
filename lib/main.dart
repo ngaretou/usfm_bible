@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print, use_build_context_synchronously
-import 'dart:io';
+
+import 'package:flutter/services.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart' as flutter_acrylic;
@@ -44,8 +45,8 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(UserColumnsDBAdapter());
 
-  userColumnsBox =
-      await Hive.openBox<UserColumnsDB>('userColumnsDB');
+  userColumnsBox = await Hive.openBox<UserColumnsDB>('userColumnsDB');
+
   // if it's on the web, windows or android, load the accent color
   if (kIsWeb ||
       [TargetPlatform.windows, TargetPlatform.android]
@@ -60,6 +61,21 @@ void main() async {
     await WindowManager.instance.ensureInitialized();
 
     windowManager.waitUntilReadyToShow().then((_) async {
+      late double setWidth, setHeight;
+      Box userPrefsBox = await Hive.openBox('windowSize');
+      double? windowWidth = userPrefsBox.get('windowWidth');
+      double? windowHeight = userPrefsBox.get('windowHeight');
+      if (windowWidth != null) {
+        setWidth = windowWidth;
+      } else {
+        setWidth = 600;
+      }
+      if (windowHeight != null) {
+        setHeight = windowHeight;
+      } else {
+        setHeight = 600;
+      }
+
       await windowManager.setTitleBarStyle(
         TitleBarStyle.normal,
         windowButtonVisibility: true,
@@ -68,7 +84,7 @@ void main() async {
       await windowManager.setMinimumSize(const Size(600, 600));
       // await windowManager.center();
       await windowManager.show();
-      await windowManager.setPreventClose(true);
+      await windowManager.setPreventClose(false);
       await windowManager.setSkipTaskbar(false);
     });
   }
@@ -125,6 +141,14 @@ class MyApp extends StatelessWidget {
       create: (_) => AppTheme(),
       builder: (context, _) {
         final appTheme = context.watch<AppTheme>();
+        late SystemUiOverlayStyle style;
+        if (appTheme.mode == ThemeMode.dark) {
+          style = SystemUiOverlayStyle.light;
+        } else {
+          style = SystemUiOverlayStyle.dark;
+        }
+
+        SystemChrome.setSystemUIOverlayStyle(style);
 
         return FutureBuilder(
             future: initAppInfo,
@@ -220,6 +244,15 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
   @override
   Widget build(BuildContext context) {
+    Future<void> saveWindowSize(Size screenSize) async {
+      
+      Box userPrefsBox = await Hive.openBox('windowSize');
+      userPrefsBox.putAll(
+          {'windowWidth': screenSize.width, 'windowHeight': screenSize.height});
+    }
+
+    saveWindowSize(MediaQuery.of(context).size);
+
     final appTheme = context.watch<AppTheme>();
 
     return FutureBuilder(
@@ -430,6 +463,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
   @override
   void onWindowClose() async {
+    print('closing');
     bool isPreventClose = await windowManager.isPreventClose();
     if (isPreventClose) {
       showDialog(
@@ -465,7 +499,7 @@ class WindowButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = FluentTheme.of(context).copyWith();
+    final ThemeData theme = FluentTheme.of(context);
 
     return SizedBox(
       width: 138,

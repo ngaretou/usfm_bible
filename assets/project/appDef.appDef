@@ -6,7 +6,7 @@
   <app-name lang="default">Kàddug Yàlla Gi</app-name>
   <apk-filename append-version="true">Test_App.apk</apk-filename>
   <package>org.mbs.test.test</package>
-  <version code="2" name="1.0"/>
+  <version code="5" name="1.0"/>
   <multiple-apks value="false"/>
   <android-sdk min="16"/>
   <install-location value="preferExternal"/>

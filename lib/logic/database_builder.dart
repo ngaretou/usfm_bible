@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print, avoid_function_literals_in_foreach_calls, use_build_context_synchronously
 import 'dart:convert';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:usfm_bible/hive/parsed_lines_db.dart';
@@ -305,25 +306,79 @@ Future<void> asyncGetTranslations(BuildContext context) async {
   Provider.of<UserPrefs>(context, listen: false).setUserLang = initialLang;
 }
 
+Future<void> saveToLocalDB(List<ParsedLine> verses) async {
+  //Hopefully without detaining the user save locally the resulting List<ParsedLine>
+  print('starting to save parsed lines to box');
+  Box<ParsedLineDB> versesBox =
+      await Hive.openBox<ParsedLineDB>('parsedLineDB');
+
+  for (var i = 0; i < verses.length; i++) {
+    ParsedLineDB parsedLineDB = ParsedLineDB()
+      ..collectionid = verses[i].collectionid
+      ..book = verses[i].book
+      ..chapter = verses[i].chapter
+      ..verse = verses[i].verse
+      ..verseFragment = verses[i].verseFragment
+      ..audioMarker = verses[i].audioMarker
+      ..verseText = verses[i].verseText
+      ..verseStyle = verses[i].verseStyle;
+
+    versesBox.add(parsedLineDB);
+  }
+
+  print('finished saving parsed lines to box');
+  print(versesBox.length);
+  return;
+}
+
 Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
   print('buildDatabaseFromXML');
   bool shouldResetDB = true;
 
-  // await Hive.initFlutter();
-  Hive.registerAdapter(ParsedLineDBAdapter());
-  var box = await Hive.openBox<ParsedLineDB>('parsedLineDB');
-  // if (shouldResetDB) box.clear();
-  var numLines = box.length;
-
   AssetBundle assetBundle = DefaultAssetBundle.of(context);
-  //
+
   String appDefLocation = 'assets/project/appDef.appDef';
   String xmlFileString = await assetBundle.loadString(appDefLocation);
   //get the document into a usable iterable
   final document = XmlDocument.parse(xmlFileString);
 
-  //Get the font information
+  Hive.registerAdapter(ParsedLineDBAdapter());
+  Box<ParsedLineDB> versesBox =
+      await Hive.openBox<ParsedLineDB>('parsedLineDB');
 
+  //hivedb does not work on web correctly so only do this if it's a standalone app
+  if (!kIsWeb) {
+    // ** Decide whether or not to rebuild
+    //Get the two boxes we deal with here, all the verses and the vanilla userPrefs box
+    //(vanilla in the sense that it does not have a typeadapter and is just a Map<String, String>)
+
+    Box userPrefsBox = await Hive.openBox('userPrefs');
+
+    //Get the current appDef build number
+    String appDefBuildNumber = document
+        .getElement('app-definition')!
+        .getElement('version')!
+        .getAttribute('code')!;
+    //Get the last seen build numbrer
+    String? lastSeenBuildNumber = userPrefsBox.get('lastSeenBuildNumber');
+    //Get the number of lines in the verses box
+    var numLines = versesBox.length;
+
+    if (numLines == 0 || appDefBuildNumber != lastSeenBuildNumber) {
+      shouldResetDB = true;
+      versesBox.clear();
+    } else {
+      shouldResetDB = false;
+    }
+
+    //Store the current build number for later reference
+    userPrefsBox.put('lastSeenBuildNumber', appDefBuildNumber);
+
+    // ** End Decide whether or not to rebuild
+
+    //This part rebuilds every time
+    //Get the font information
+  }
   String fontWeight = "";
   String fontStyle = "";
 
@@ -416,7 +471,8 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
   }
 
   //Now we know about the collections and can populate the content.
-  if (numLines == 0) {
+  //This is the part that is stored for later use
+  if (shouldResetDB) {
     print('building local db');
     for (var collection in collections) {
       List<Book> books = collection.books;
@@ -457,18 +513,6 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
             audioMarker: "",
             verseText: book.name,
             verseStyle: 'mt1'));
-
-        var parsedLineDB = ParsedLineDB()
-          ..collectionid = collection.id
-          ..book = book.id
-          ..chapter = '1'
-          ..verse = ''
-          ..verseFragment = ""
-          ..audioMarker = ""
-          ..verseText = book.name
-          ..verseStyle = 'mt1';
-
-        box.add(parsedLineDB);
 
         for (var chapter in chapters) {
           RegExpMatch? match = RegExp(r'(\d+)(\s)').firstMatch(chapter);
@@ -536,18 +580,6 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
                     verseText: verseText,
                     verseStyle: verseStyle),
               );
-
-              ParsedLineDB parsedLineDB = ParsedLineDB()
-                ..collectionid = collection.id
-                ..book = book.id
-                ..chapter = chapterNumber
-                ..verse = verseNumber
-                ..verseFragment = ""
-                ..audioMarker = ""
-                ..verseText = verseText
-                ..verseStyle = verseStyle;
-
-              box.add(parsedLineDB);
             }
           }
         }
@@ -555,11 +587,14 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
       }
       // print('ending current collection ${collection.id}');
     }
+
+    //now save to local db
+    if (!kIsWeb) await saveToLocalDB(verses);
   } else {
     //use existing box
     print('using existing local db');
-    for (var i = 0; i < box.length; i++) {
-      ParsedLineDB lineDB = box.getAt(i)!;
+    for (var i = 0; i < versesBox.length; i++) {
+      ParsedLineDB lineDB = versesBox.getAt(i)!;
       verses.add(ParsedLine(
           collectionid: lineDB.collectionid,
           book: lineDB.book,
@@ -573,7 +608,7 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
   }
 
   print(verses.length);
-  print(box.length);
+  print(versesBox.length);
 
   AppInfo appInfo = AppInfo(collections: collections, verses: verses);
 

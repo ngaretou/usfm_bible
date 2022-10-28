@@ -77,6 +77,7 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 ## To do:
 ### Minimal
 - Remember column references visible on close
+- Incorporate into instructions that the signal to rebuild db is to increase build number in appDef
 
 ### Maximal
 - Higher priority
