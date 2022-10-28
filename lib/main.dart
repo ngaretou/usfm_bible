@@ -1,5 +1,5 @@
 // ignore_for_file: avoid_print, use_build_context_synchronously
-
+import 'dart:io';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart' as flutter_acrylic;
@@ -254,6 +254,8 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
             child: NavigationView(
               key: viewKey,
               //appBar is across top of the screen in place of normal OS specific title bar.
+              appBar: const NavigationAppBar(
+                  automaticallyImplyLeading: false, height: 4),
               // appBar: NavigationAppBar(
               //   automaticallyImplyLeading: false,
               //   title: () {

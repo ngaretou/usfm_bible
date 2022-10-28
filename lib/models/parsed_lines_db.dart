@@ -2,7 +2,7 @@ import 'package:hive/hive.dart';
 
 part 'parsed_lines_db.g.dart';
 
-@HiveType(typeId: 1)
+@HiveType(typeId: 2)
 class ParsedLineDB {
   @HiveField(0)
   late String collectionid;

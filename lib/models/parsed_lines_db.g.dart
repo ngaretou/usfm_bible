@@ -8,7 +8,7 @@ part of 'parsed_lines_db.dart';
 
 class ParsedLineDBAdapter extends TypeAdapter<ParsedLineDB> {
   @override
-  final int typeId = 1;
+  final int typeId = 2;
 
   @override
   ParsedLineDB read(BinaryReader reader) {
