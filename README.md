@@ -48,12 +48,21 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 - Clone or download the repository.
 - Do as described above in your your IDE, except for the changes to the index.html file.
 - Change app name in pubspec.yaml.
+- Change app name for desktop
+  - macOS: 
+    - in Xcode, open macos/Runner.xcodeproj 
+    - in *Runner*, Target *Runner*, choose *Build Settings* across the top and change *Product Name* under *Packaging*. Do not use accents. 
+  - Windows:
+    - TBD
 - (macOS Windows directions?)
 
 ### Be aware
 
 - Book Collection ID must follow C01, C02 pattern in your SAB project.
 - Footnote text is without formatting, just plain text stripped of USFM. The Tooltip widget only allows one style.  https://ubsicap.github.io/usfm/notes_basic/fnotes.html#fq etc.
+- For non web apps only
+  - The standalone apps (Windows macOS Android iOS) cache the database of verses parsed from the usfm files for quick reopening after first open. The web version does not support verse caching in a local database in the same way, but it does cache the usfm so subsequent openings of the web app are still much faster. Hopefully this will be improved in the future. 
+    - If you change the collections and want to trigger on client machines a db rebuild for non web apps, just increase your build number in the appDef before building. 
 
 
 ### Features
@@ -66,6 +75,10 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 - Copy and Share context menu on right click
 - Search by collection or all collections
 - Dark/Light mode with quick switching
+- Remembers user columns on subsequent opens
+- For non web apps (Win/macOS/Android/iOS)
+  - Remembers window position (Win/macOS)
+  - Caches verses in a local db
 - Example app with: 
   - Wolof full Bible
   - Wolof NT 2012
@@ -76,8 +89,7 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 
 ## To do:
 ### Minimal
-- Remember column references visible on close
-- Incorporate into instructions that the signal to rebuild db is to increase build number in appDef
+
 
 ### Maximal
 - Higher priority
@@ -90,6 +102,5 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
   - audio
   - Pass in ref via URL to go straight there? 
 - Desktop only items
-  - Remember window size and position on close (this only applies to desktop so low priority)...
   - Change window title on desktop https://stackoverflow.com/questions/64800455/how-to-change-app-icon-and-app-name-for-flutter-desktop-application
 

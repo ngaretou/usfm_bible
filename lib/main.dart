@@ -37,6 +37,7 @@ bool get isDesktop {
 }
 
 late Box<UserColumnsDB> userColumnsBox;
+late Box userPrefsBox;
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   // Keep native splash screen up until app is finished bootstrapping
@@ -46,6 +47,7 @@ void main() async {
   Hive.registerAdapter(UserColumnsDBAdapter());
 
   userColumnsBox = await Hive.openBox<UserColumnsDB>('userColumnsDB');
+  userPrefsBox = await Hive.openBox('userPrefs');
 
   // if it's on the web, windows or android, load the accent color
   if (kIsWeb ||
@@ -61,21 +63,6 @@ void main() async {
     await WindowManager.instance.ensureInitialized();
 
     windowManager.waitUntilReadyToShow().then((_) async {
-      late double setWidth, setHeight;
-      Box userPrefsBox = await Hive.openBox('windowSize');
-      double? windowWidth = userPrefsBox.get('windowWidth');
-      double? windowHeight = userPrefsBox.get('windowHeight');
-      if (windowWidth != null) {
-        setWidth = windowWidth;
-      } else {
-        setWidth = 600;
-      }
-      if (windowHeight != null) {
-        setHeight = windowHeight;
-      } else {
-        setHeight = 600;
-      }
-
       await windowManager.setTitleBarStyle(
         TitleBarStyle.normal,
         windowButtonVisibility: true,
@@ -141,6 +128,7 @@ class MyApp extends StatelessWidget {
       create: (_) => AppTheme(),
       builder: (context, _) {
         final appTheme = context.watch<AppTheme>();
+
         late SystemUiOverlayStyle style;
         if (appTheme.mode == ThemeMode.dark) {
           style = SystemUiOverlayStyle.light;
@@ -244,15 +232,6 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
   @override
   Widget build(BuildContext context) {
-    Future<void> saveWindowSize(Size screenSize) async {
-      
-      Box userPrefsBox = await Hive.openBox('windowSize');
-      userPrefsBox.putAll(
-          {'windowWidth': screenSize.width, 'windowHeight': screenSize.height});
-    }
-
-    saveWindowSize(MediaQuery.of(context).size);
-
     final appTheme = context.watch<AppTheme>();
 
     return FutureBuilder(
@@ -574,6 +553,12 @@ class LightDarkModePaneItemAction extends PaneItem {
     bool? autofocus,
     int? itemIndex,
   }) {
+    Future<void> saveThemeMode(String themeMode) async {
+      Box userPrefsBox = await Hive.openBox('userPrefs');
+      userPrefsBox.put('themeMode', themeMode);
+      // userPrefsBox.close();
+    }
+
     //Runs this function
     switchThemeMode() {
       /*Couple of cases here - by default it's set to user theme mode, but we want 
@@ -598,6 +583,7 @@ class LightDarkModePaneItemAction extends PaneItem {
         default:
           appTheme.mode = ThemeMode.dark;
       }
+      saveThemeMode(appTheme.mode.toString());
     }
 
     return super.build(context, selected, switchThemeMode);

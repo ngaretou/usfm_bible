@@ -658,6 +658,11 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
             //Padding in bible view makes the first and last column have the full 5.
             padding: const EdgeInsets.only(top: 5.0, right: 2.5, left: 2.5),
             child: Card(
+              //The default card color is good for dark but for white it's basically just white, so to differentiate soften a bit with grey
+              backgroundColor: FluentTheme.of(context).brightness ==
+                      Brightness.dark
+                  ? null
+                  : FluentTheme.of(context).cardColor.lerpWith(Colors.grey, .1),
               padding: EdgeInsets.only(top: 12, bottom: 12, left: 6, right: 6),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,

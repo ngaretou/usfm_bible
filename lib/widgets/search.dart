@@ -108,6 +108,12 @@ class _SearchWidgetState extends State<SearchWidget> {
               padding:
                   const EdgeInsets.only(top: 5.0, right: 5, left: 5, bottom: 5),
               child: Card(
+                backgroundColor:
+                    FluentTheme.of(context).brightness == Brightness.dark
+                        ? null
+                        : FluentTheme.of(context)
+                            .cardColor
+                            .lerpWith(Colors.grey, .1),
                 padding: const EdgeInsets.only(
                     top: 12, bottom: 12, left: 12, right: 12),
                 child: Row(
@@ -303,8 +309,9 @@ class _SearchResultTileState extends State<SearchResultTile> {
                 collectionID: widget.line.collectionid,
                 bookID: widget.line.book,
                 chapter: widget.line.chapter,
-                verse: widget.line.verse, 
-                columnIndex: 1); //This is dummy data as we dont care about the columnIndex here, just the ref
+                verse: widget.line.verse,
+                columnIndex:
+                    1); //This is dummy data as we dont care about the columnIndex here, just the ref
 
             Provider.of<ScrollGroup>(context, listen: false).setScrollGroupRef =
                 ref;

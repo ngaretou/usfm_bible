@@ -345,14 +345,12 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
   Hive.registerAdapter(ParsedLineDBAdapter());
   Box<ParsedLineDB> versesBox =
       await Hive.openBox<ParsedLineDB>('parsedLineDB');
-
+  Box userPrefsBox = await Hive.openBox('userPrefs');
   //hivedb does not work on web correctly so only do this if it's a standalone app
   if (!kIsWeb) {
     // ** Decide whether or not to rebuild
     //Get the two boxes we deal with here, all the verses and the vanilla userPrefs box
     //(vanilla in the sense that it does not have a typeadapter and is just a Map<String, String>)
-
-    Box userPrefsBox = await Hive.openBox('userPrefs');
 
     //Get the current appDef build number
     String appDefBuildNumber = document
@@ -363,8 +361,16 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
     String? lastSeenBuildNumber = userPrefsBox.get('lastSeenBuildNumber');
     //Get the number of lines in the verses box
     var numLines = versesBox.length;
+    print(numLines);
+    //Get number of lines in last DB build
+    var lastDbBuildLength = userPrefsBox.get('lastDbBuildLength');
+    //Writing the whole table to disk takes quite a long time, so
+    //check to make sure it finished by comparing the length of the two series
+    bool dbMatchesLastBuild = lastDbBuildLength == numLines;
 
-    if (numLines == 0 || appDefBuildNumber != lastSeenBuildNumber) {
+    if (numLines == 0 ||
+        appDefBuildNumber != lastSeenBuildNumber ||
+        !dbMatchesLastBuild) {
       shouldResetDB = true;
       versesBox.clear();
     } else {
@@ -379,6 +385,7 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
     //This part rebuilds every time
     //Get the font information
   }
+
   String fontWeight = "";
   String fontStyle = "";
 
@@ -589,7 +596,7 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
     }
 
     //now save to local db
-    if (!kIsWeb) await saveToLocalDB(verses);
+    if (!kIsWeb) saveToLocalDB(verses);
   } else {
     //use existing box
     print('using existing local db');
@@ -609,6 +616,7 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
 
   print(verses.length);
   print(versesBox.length);
+  userPrefsBox.put('lastDbBuildLength', verses.length);
 
   AppInfo appInfo = AppInfo(collections: collections, verses: verses);
 

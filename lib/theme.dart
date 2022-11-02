@@ -3,17 +3,47 @@ import 'package:flutter/foundation.dart';
 import 'package:system_theme/system_theme.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart';
 
+import '../main.dart';
+
 enum NavigationIndicators { sticky, end }
 
+ThemeMode getStoredThemeMode() {
+  ThemeMode themeToSet = ThemeMode.system;
+  switch (userPrefsBox.get('themeMode')) {
+    case 'ThemeMode.system':
+      themeToSet = ThemeMode.system;
+      break;
+    case 'ThemeMode.light':
+      themeToSet = ThemeMode.light;
+      break;
+    case 'ThemeMode.dark':
+      themeToSet = ThemeMode.dark;
+      break;
+    default:
+      themeToSet = ThemeMode.system;
+  }
+  return themeToSet;
+}
+
+AccentColor getStoredColorByIndex() {
+  AccentColor colorToReturn = systemAccentColor;
+  int? savedColorIndex = userPrefsBox.get('colorIndex');
+  if (savedColorIndex != null) {
+    colorToReturn = Colors.accentColors[savedColorIndex];
+  }
+
+  return colorToReturn;
+}
+
 class AppTheme extends ChangeNotifier {
-  AccentColor _color = systemAccentColor;
+  AccentColor _color = getStoredColorByIndex();
   AccentColor get color => _color;
   set color(AccentColor color) {
     _color = color;
     notifyListeners();
   }
 
-  ThemeMode _mode = ThemeMode.system;
+  ThemeMode _mode = getStoredThemeMode();
   ThemeMode get mode => _mode;
   set mode(ThemeMode mode) {
     _mode = mode;

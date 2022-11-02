@@ -5,6 +5,8 @@ import 'package:flutter/foundation.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart';
 import 'package:provider/provider.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:usfm_bible/main.dart';
 import '../logic/database_builder.dart';
 import '../providers/user_prefs.dart';
 
@@ -163,15 +165,19 @@ class Settings extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 8.0),
             child: RadioButton(
               checked: appTheme.mode == mode,
-              onChanged: (value) {
+              onChanged: (value) async {
                 if (value) {
                   appTheme.mode = mode;
 
-                  if (kIsWindowEffectsSupported) {
-                    // some window effects require on [dark] to look good.
-                    // appTheme.setEffect(WindowEffect.disabled, context);
-                    appTheme.setEffect(appTheme.windowEffect, context);
-                  }
+                  Box userPrefsBox = await Hive.openBox('userPrefs');
+                  userPrefsBox.put('themeMode', mode.toString());
+                  // userPrefsBox.close();
+
+                  // if (kIsWindowEffectsSupported) {
+                  //   // some window effects require on [dark] to look good.
+                  //   // appTheme.setEffect(WindowEffect.disabled, context);
+                  //   appTheme.setEffect(appTheme.windowEffect, context);
+                  // }
                 }
               },
               // content: Text('$mode'.replaceAll('ThemeMode.', '')),
@@ -226,15 +232,15 @@ class Settings extends StatelessWidget {
         //     style: FluentTheme.of(context).typography.subtitle),
         // spacer,
         Wrap(children: [
-          Tooltip(
-            message: accentColorNames[0],
-            child: _buildColorBlock(appTheme, systemAccentColor),
-          ),
+          // Tooltip(
+          //   message: accentColorNames[0],
+          //   child: _buildColorBlock(appTheme, systemAccentColor, 0),
+          // ),
           ...List.generate(Colors.accentColors.length, (index) {
             final color = Colors.accentColors[index];
             return Tooltip(
               message: accentColorNames[index + 1],
-              child: _buildColorBlock(appTheme, color),
+              child: _buildColorBlock(appTheme, color, index),
             );
           }),
         ]),
@@ -317,12 +323,14 @@ class Settings extends StatelessWidget {
     );
   }
 
-  Widget _buildColorBlock(AppTheme appTheme, AccentColor color) {
+  Widget _buildColorBlock(AppTheme appTheme, AccentColor color, int index) {
     return Padding(
       padding: const EdgeInsets.all(2.0),
       child: Button(
         onPressed: () {
           appTheme.color = color;
+
+          userPrefsBox.put('colorIndex', index);
         },
         style: ButtonStyle(
           padding: ButtonState.all(EdgeInsets.zero),

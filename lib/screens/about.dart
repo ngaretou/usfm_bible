@@ -30,7 +30,7 @@ class About extends StatelessWidget {
       String xmlFileString = await assetBundle.loadString(appDefLocation);
       //get the document into a usable iterable
       final document = XmlDocument.parse(xmlFileString);
-      //This is the info for all collections
+      //This is the info for all collectionsp
       Iterable<XmlElement> xmlCollections =
           document.getElement('app-definition')!.findAllElements('books');
 
@@ -99,7 +99,7 @@ class About extends StatelessWidget {
         //If present, replace variable with copyright text
         if (match != null) {
           String composedCopyrightStatement =
-              '<hr><br><h2>${collections.where((element) => element.id == k).first.name}</h2><br>${copyrights[k]}<br>';
+              '<br><hr style="margin-top:0em"><h2>${collections.where((element) => element.id == k).first.name}</h2><br>${copyrights[k]}<br>';
 
           aboutPageHtml = aboutPageHtml.replaceAll(
               RegExp('%copyright-all:$k%'), composedCopyrightStatement);
