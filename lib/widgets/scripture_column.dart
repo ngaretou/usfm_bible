@@ -312,17 +312,19 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     // print(
     //     'set SelectorsToClosestReferenceAfterScroll called ${widget.bibleReference.collectionID}');
     int p = itemPositionsListener.itemPositions.value.first.index;
+    //'first' includes the item that is in first position as it slides out of view, so look for the second item, looks better
+    int pPlus1 = p + 1;
     //This if makes it so this only fires when needed
-    if (previousParaPosition != p) {
+    if (previousParaPosition != pPlus1) {
       // print(
       //     'set SelectorsToClosestReferenceAfterScroll doing something ${widget.bibleReference.collectionID}');
-      previousParaPosition = p;
+      previousParaPosition = pPlus1;
 
-      List<ParsedLine> para = versesByParagraph[p];
+      List<ParsedLine> para = versesByParagraph[pPlus1];
 
       breakingloop:
       //This is all verses by paragraph - go through each one starting with the current paragraph - 'p' above
-      for (var i = p; i < versesByParagraph.length; i++) {
+      for (var i = pPlus1; i < versesByParagraph.length; i++) {
         para = versesByParagraph[i];
         if (para.isNotEmpty) {
           //Now in each paragraph start looking to see which verse is the first in the scrolled-to paragraph
