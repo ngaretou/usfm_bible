@@ -49,10 +49,9 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 - Change app name for desktop
   - macOS: 
     - in Xcode, open macos/Runner.xcodeproj 
-    - in *Runner*, Target *Runner*, choose *Build Settings* across the top and change *Product Name* under *Packaging*. Do not use accents. 
+    - in *Runner*, Target *Runner*, choose *Build Settings* at the top and change *Product Name* under *Packaging*. Do not use accents. 
   - Windows:
-    - TBD
-- (macOS Windows directions?)
+    - in windows/runner/main.cpp change at 'CreateAndShow' and in pubspec.yaml in the msix section. 
 
 ### Be aware
 
