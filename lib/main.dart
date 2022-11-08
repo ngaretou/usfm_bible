@@ -10,6 +10,7 @@ import 'package:url_strategy/url_strategy.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:context_menus/context_menus.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'dart:io';
 
 import 'screens/about.dart';
 import 'screens/bible_view.dart';
@@ -63,10 +64,18 @@ void main() async {
     await WindowManager.instance.ensureInitialized();
 
     windowManager.waitUntilReadyToShow().then((_) async {
-      await windowManager.setTitleBarStyle(
-        TitleBarStyle.normal,
-        windowButtonVisibility: true,
-      );
+      if (Platform.isWindows) {
+        await windowManager.setTitleBarStyle(
+          TitleBarStyle.hidden,
+          // windowButtonVisibility: true,
+        );
+      } else {
+        await windowManager.setTitleBarStyle(
+          TitleBarStyle.normal,
+          windowButtonVisibility: true,
+        );
+      }
+
       // await windowManager.setSize(const Size(1400, 700));
       await windowManager.setMinimumSize(const Size(600, 600));
       // await windowManager.center();
@@ -267,55 +276,58 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
             child: NavigationView(
               key: viewKey,
               //appBar is across top of the screen in place of normal OS specific title bar.
-              appBar: const NavigationAppBar(
-                  automaticallyImplyLeading: false, height: 4),
-              // appBar: NavigationAppBar(
-              //   automaticallyImplyLeading: false,
-              //   title: () {
-              //     if (kIsWeb) return Text(appTitle);
-              //     return DragToMoveArea(
-              //       child: Row(
-              //         children: [
-              //           const SizedBox(width: 15),
-              //           Align(
-              //             alignment: AlignmentDirectional.centerStart,
-              //             child: Text(appTitle),
-              //           ),
-              //         ],
-              //       ),
-              //     );
-              //   }(),
-              //   actions: Row(
-              //     crossAxisAlignment: CrossAxisAlignment.center,
-              //     mainAxisAlignment: MainAxisAlignment.end,
-              //     children: [
-              //       IconButton(
-              //           icon: const Icon(FluentIcons.add),
-              //           onPressed: () {
-              //             numberOfColumns <= 3 //keep it to four columns
-              //                 ? changeNumberColumns(add: true)
-              //                 : null;
 
-              //             // setState(() {});
-              //           }),
+              appBar: Platform.isWindows
+                  ? NavigationAppBar(
+                      height: 30,
+                      automaticallyImplyLeading: false,
+                      title: () {
+                        if (kIsWeb) return Text(appTitle);
+                        return DragToMoveArea(
+                          child: Row(
+                            children: [
+                              const SizedBox(width: 15),
+                              Align(
+                                alignment: AlignmentDirectional.centerStart,
+                                child: Text(appTitle),
+                              ),
+                            ],
+                          ),
+                        );
+                      }(),
+                      actions: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: const [
+                          //     IconButton(
+                          //         icon: const Icon(FluentIcons.add),
+                          //         onPressed: () {
+                          //           numberOfColumns <= 3 //keep it to four columns
+                          //               ? changeNumberColumns(add: true)
+                          //               : null;
 
-              //       // Spacer(),
+                          //           // setState(() {});
+                          //         }),
 
-              //       // ToggleSwitch(
-              //       //   content: const Text('Dark Mode'),
-              //       //   checked: FluentTheme.of(context).brightness.isDark,
-              //       //   onChanged: (v) {
-              //       //     if (v) {
-              //       //       appTheme.mode = ThemeMode.dark;
-              //       //     } else {
-              //       //       appTheme.mode = ThemeMode.light;
-              //       //     }
-              //       //   },
-              //       // ),
-              //       // if (!kIsWeb) WindowButtons(),
-              //     ],
-              //   ),
-              // ),
+                          //     // Spacer(),
+
+                          //     // ToggleSwitch(
+                          //     //   content: const Text('Dark Mode'),
+                          //     //   checked: FluentTheme.of(context).brightness.isDark,
+                          //     //   onChanged: (v) {
+                          //     //     if (v) {
+                          //     //       appTheme.mode = ThemeMode.dark;
+                          //     //     } else {
+                          //     //       appTheme.mode = ThemeMode.light;
+                          //     //     }
+                          //     //   },
+                          //     // ),
+                          WindowButtons()
+                        ],
+                      ),
+                    )
+                  : const NavigationAppBar(
+                      automaticallyImplyLeading: false, height: 4),
               //Main big row that holds the text columns
               pane: NavigationPane(
                 selected: index,

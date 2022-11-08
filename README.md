@@ -52,6 +52,9 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
     - in *Runner*, Target *Runner*, choose *Build Settings* at the top and change *Product Name* under *Packaging*. Do not use accents. 
   - Windows:
     - in windows/runner/main.cpp change at 'CreateAndShow' and in pubspec.yaml in the msix section. 
+- Change icon for desktop
+    - Windows: 
+      - Put icon file under windows/runner/resources folder, and change the IDI_APP_ICON part in windows\runner\Runner.rc file to your icon file name.
 
 ### Be aware
 

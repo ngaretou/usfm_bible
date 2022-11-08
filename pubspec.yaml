@@ -130,3 +130,12 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+msix_config:
+  display_name: Kàddug Yàlla gi
+  publisher_display_name: La MBS
+  identity_name: 24971LaMBS.KddugYllagi
+  msix_version: 1.0.0.0
+  publisher: CN=172AFE7A-55C9-42B2-9D60-BAD846698B5E
+  logo_path: C:\Users\corey\myflutter\usfm_bible\windows\runner\resources\app_icon.ico
+  store: true

@@ -41,6 +41,7 @@ migrate_working_dir/
 /build/*
 !/build/web/
 
+
 /macos/
 /test/
 /windows/
@@ -57,3 +58,9 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+/ios/Runner/GeneratedPluginRegistrant.h
+/ios/Runner/GeneratedPluginRegistrant.m
+/linux/flutter/generated_plugin_registrant.cc
+/linux/flutter/generated_plugin_registrant.h
+/linux/flutter/generated_plugins.cmake
+/macos/Flutter/GeneratedPluginRegistrant.swift
