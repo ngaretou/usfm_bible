@@ -1,4 +1,4 @@
-package com.example.usfm_bible
+package org.mbs.kygplus.wol
 
 import io.flutter.embedding.android.FlutterActivity
 

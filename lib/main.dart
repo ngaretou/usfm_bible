@@ -12,6 +12,9 @@ import 'package:context_menus/context_menus.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'dart:io';
 
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
 import 'screens/about.dart';
 import 'screens/bible_view.dart';
 import 'screens/settings.dart';
@@ -58,6 +61,10 @@ void main() async {
   }
 
   setPathUrlStrategy();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   if (isDesktop) {
     await flutter_acrylic.Window.initialize();

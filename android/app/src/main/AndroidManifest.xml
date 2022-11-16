@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.usfm_bible">
+    package="org.mbs.kygplus.wol">
    <application
-        android:label="usfm_bible"
+        android:label="Kaddug Yalla gi+"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

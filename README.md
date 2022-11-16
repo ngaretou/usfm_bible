@@ -48,13 +48,12 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 - Change app name in pubspec.yaml.
 - Change app name for desktop
   - macOS: 
-    - in Xcode, open macos/Runner.xcodeproj 
-    - in *Runner*, Target *Runner*, choose *Build Settings* at the top and change *Product Name* under *Packaging*. Do not use accents. 
+    - Edit macos/Runner/Configs/AppInfo.xcconfig. Do not use accents. 
   - Windows:
     - in windows/runner/main.cpp change at 'CreateAndShow' and in pubspec.yaml in the msix section. 
 - Change icon for desktop
     - Windows: 
-      - Put icon file under windows/runner/resources folder, and change the IDI_APP_ICON part in windows\runner\Runner.rc file to your icon file name.
+      - Put icon file under windows/runner/resources folder, and verify the IDI_APP_ICON part in windows\runner\Runner.rc file to your icon file name.
 
 ### Be aware
 
@@ -89,7 +88,7 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 
 ## To do:
 ### Minimal
-
+- Download apps button on web version
 
 ### Maximal
 - Higher priority
@@ -101,6 +100,3 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
   - read in styles from appdef
   - audio
   - Pass in ref via URL to go straight there? 
-- Desktop only items
-  - Change window title on desktop https://stackoverflow.com/questions/64800455/how-to-change-app-icon-and-app-name-for-flutter-desktop-application
-
