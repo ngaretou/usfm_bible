@@ -60,25 +60,7 @@ class UserPrefs with ChangeNotifier {
     notifyListeners();
   }
 
-  printWhatsInBox() {
-    print('what\'s in the box?');
-    if (main.userColumnsBox.isEmpty) {
-      print('Box is empty');
-    }
-    for (var i = 0; i < main.userColumnsBox.length; i++) {
-      print(
-          'i: $i | columnIndex: ${main.userColumnsBox.getAt(i)!.columnIndex} | collection: ${main.userColumnsBox.getAt(i)!.collectionID}');
-    }
-  }
-
-  printWhatsInList() {
-    print('what\'s in the list?');
-    for (var i = 0; i < userColumns.length; i++) {
-      print(
-          'i: $i | columnIndex: ${userColumns[i].columnIndex} | collection: ${userColumns[i].collectionID} | key: ${userColumns[i].key}');
-    }
-  }
-
+ 
   loadUserPrefs(AppInfo appInfo) async {
     // printWhatsInList();
     //Check if the user has an existing session. If not, set up the initial session.

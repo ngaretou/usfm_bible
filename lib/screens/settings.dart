@@ -129,6 +129,7 @@ class Settings extends StatelessWidget {
             onChanged: (value) {
               Provider.of<UserPrefs>(context, listen: false).setUserLang =
                   value!;
+              userPrefsBox.put('savedUserLang', value);
             },
           ),
         ),

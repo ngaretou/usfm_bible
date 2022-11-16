@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:usfm_bible/hive/parsed_lines_db.dart';
+import 'package:usfm_bible/main.dart';
 import 'package:usfm_bible/providers/user_prefs.dart';
 import 'package:xml/xml.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -303,7 +304,14 @@ Future<void> asyncGetTranslations(BuildContext context) async {
           share: shareText));
     }
   }
-  Provider.of<UserPrefs>(context, listen: false).setUserLang = initialLang;
+
+  String? savedUserLang = userPrefsBox.get('savedUserLang');
+  if (savedUserLang == null) {
+    Provider.of<UserPrefs>(context, listen: false).setUserLang = initialLang;
+    userPrefsBox.put('savedUserLang', initialLang);
+  } else {
+    Provider.of<UserPrefs>(context, listen: false).setUserLang = savedUserLang;
+  }
 }
 
 Future<void> saveToLocalDB(List<ParsedLine> verses) async {
