@@ -7,6 +7,7 @@ import 'package:flutter_acrylic/flutter_acrylic.dart' as flutter_acrylic;
 import 'package:provider/provider.dart';
 import 'package:system_theme/system_theme.dart';
 import 'package:url_strategy/url_strategy.dart';
+import 'package:url_launcher/link.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:context_menus/context_menus.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -83,9 +84,16 @@ void main() async {
         );
       }
 
-      // await windowManager.setSize(const Size(1400, 700));
+      double? windowWidth = userPrefsBox.get('windowWidth');
+      double? windowHeight = userPrefsBox.get('windowHeight');
+      if (windowHeight == null || windowWidth == null) {
+        windowWidth = 700;
+        windowHeight = 600;
+      }
+
+      await windowManager.setSize(Size(windowWidth, windowHeight));
       await windowManager.setMinimumSize(const Size(600, 600));
-      // await windowManager.center();
+      await windowManager.center();
       await windowManager.show();
       await windowManager.setPreventClose(false);
       await windowManager.setSkipTaskbar(false);
@@ -116,6 +124,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('myapp build');
     ScrollbarThemeData scrollBarTheme = const ScrollbarThemeData(
       thickness: 6.0,
       hoveringThickness: 6.0,
@@ -240,14 +249,34 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
   late Future<void> initInterface = callInterfaceInitialization();
 
   @override
+  void initState() {
+    windowManager.addListener(this);
+    super.initState();
+  }
+
+  @override
   void dispose() {
     windowManager.removeListener(this);
     settingsController.dispose();
     super.dispose();
   }
 
+  Future<void> saveWindowSize() async {
+    Size media = await windowManager.getSize();
+    userPrefsBox.put('windowHeight', media.height);
+    userPrefsBox.put('windowWidth', media.width);
+  }
+
+  @override
+  void onWindowResize() {
+    if (isDesktop) {
+      saveWindowSize();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    print('MyHomePageState build');
     final appTheme = context.watch<AppTheme>();
 
     return FutureBuilder(
@@ -256,6 +285,111 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: ProgressRing());
         } else {
+          List<NavigationPaneItem> finalNavPaneItems = [];
+
+          //For Wolof only and on web only on biblewolof.com
+          List<NavigationPaneItem> wolofWebOnlyNavPaneItems = [
+            //More apps
+            _LinkPaneItemAction(
+              icon: const Icon(FluentIcons.app_icon_default),
+              title: const Text('Yéneen appli'),
+              link: 'https://sng.al/app',
+              body: const SizedBox.shrink(),
+            ),
+            //Contact
+            _LinkPaneItemAction(
+              icon: const Icon(FluentIcons.mail),
+              title: const Text('Bind nu'),
+              link:
+                  'http://currah.download/pages/wolof/bible/contact/index.html',
+              body: const SizedBox.shrink(),
+            ),
+            //Listen
+            _LinkPaneItemAction(
+              icon: const Icon(FluentIcons.play),
+              // FluentIcons.m_s_n_videos_solid
+              // FluentIcons.play_solid
+              // FluentIcons.read_out_loud
+              title: const Text('Dégglul Kàddu gi'),
+              link:
+                  'http://currah.download/pages/wolof/bible/html/deglu_kaddu_gi.html',
+              body: const SizedBox.shrink(),
+            ),
+            //Download
+            _LinkPaneItemAction(
+              icon: const Icon(FluentIcons.cloud_download),
+              title: const Text('Yebal téerey Kàddu gi'),
+              link:
+                  'http://currah.download/pages/wolof/bible/html/biblewolof.html',
+              body: const SizedBox.shrink(),
+            ),
+            //More
+            _LinkPaneItemAction(
+              icon: const Icon(FluentIcons.developer_tools),
+              title: const Text('Jumtukaay'),
+              link: '#',
+              body: const SizedBox.shrink(),
+            )
+          ];
+
+          //Normal pane items we always use
+          List<NavigationPaneItem> normalNavPaneItems = [
+            PaneItemSeparator(),
+            RunFunctionPaneItemAction(
+                body: const About(),
+                title: Text(Provider.of<UserPrefs>(context, listen: true)
+                    .currentTranslation
+                    .search),
+                icon: const Icon(FluentIcons.search),
+                functionToRun:
+                    Provider.of<ColumnManager>(context, listen: false)
+                        .openSearch),
+            RunFunctionPaneItemAction(
+                body: const About(),
+                title: Text(Provider.of<UserPrefs>(context, listen: true)
+                    .currentTranslation
+                    .addColumn),
+                icon: const Icon(FluentIcons.calculator_addition),
+                functionToRun:
+                    Provider.of<ColumnManager>(context, listen: false)
+                        .addColumn),
+            LightDarkModePaneItemAction(
+              icon: FluentTheme.of(context).brightness.isDark
+                  ? const Icon(FluentIcons.sunny)
+                  : const Icon(FluentIcons.clear_night),
+              title: FluentTheme.of(context).brightness.isDark
+                  ? Text(Provider.of<UserPrefs>(context, listen: true)
+                      .currentTranslation
+                      .lightTheme)
+                  : Text(Provider.of<UserPrefs>(context, listen: true)
+                      .currentTranslation
+                      .darkTheme),
+              appTheme: appTheme,
+            ),
+            PaneItemSeparator(),
+            PaneItem(
+                body: const About(),
+                icon: const Icon(FluentIcons.info),
+                title: Text(Provider.of<UserPrefs>(context, listen: true)
+                    .currentTranslation
+                    .about)),
+            PaneItem(
+              body: Settings(controller: settingsController),
+              icon: const Icon(FluentIcons.settings),
+              title: Text(Provider.of<UserPrefs>(context, listen: true)
+                  .currentTranslation
+                  .settings),
+            ),
+          ];
+
+          //Set up the navPaneItems - note that if the name of the wolof app gets changed by one char it will not work
+          if (kIsWeb && appTitle == "Kàddug Yàlla Gi") {
+            finalNavPaneItems.addAll(wolofWebOnlyNavPaneItems);
+            finalNavPaneItems.addAll(normalNavPaneItems);
+          } else {
+            finalNavPaneItems.addAll(normalNavPaneItems);
+          }
+
           return ContextMenuOverlay(
             buttonStyle: ContextMenuButtonStyle(
               fgColor: DefaultTextStyle.of(context).style.color,
@@ -284,7 +418,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
               key: viewKey,
               //appBar is across top of the screen in place of normal OS specific title bar.
 
-              appBar: Platform.isWindows
+              appBar: !kIsWeb && Platform.isWindows
                   ? NavigationAppBar(
                       height: 30,
                       automaticallyImplyLeading: false,
@@ -337,121 +471,63 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                       automaticallyImplyLeading: false, height: 4),
               //Main big row that holds the text columns
               pane: NavigationPane(
-                selected: index,
-                onChanged: (i) => setState(() => index = i),
-                size: const NavigationPaneSize(
-                  openMinWidth: 250.0,
-                  openMaxWidth: 320.0,
-                ),
-                header: Container(
-                  height: kOneLineTileHeight,
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                ),
-                displayMode: appTheme.displayMode,
-                indicator: () {
-                  switch (appTheme.indicator) {
-                    case NavigationIndicators.end:
-                      return const EndNavigationIndicator();
-                    case NavigationIndicators.sticky:
-                    default:
-                      return const StickyNavigationIndicator();
-                  }
-                }(),
-                items: [
-                  PaneItem(
-                    body: FutureBuilder(
-                      future: initAppInfo,
-                      builder: (ctx, snapshot) {
-                        // Remove splash screen when bootstrap is complete
-                        FlutterNativeSplash.remove();
-                        if (snapshot.connectionState ==
-                            ConnectionState.waiting) {
-                          return const Center(child: ProgressRing());
-                        }
-                        //Main row that holds the text columns
-                        else {
-                          AppInfo appInfo = snapshot.data as AppInfo;
-                          late String comboBoxFont;
-                          bool anyRTL = collections
-                              .any((element) => element.textDirection != 'LTR');
-
-                          if (anyRTL) {
-                            String font = collections
-                                .firstWhere(
-                                    (element) => element.textDirection == 'RTL')
-                                .fonts
-                                .first
-                                .fontFamily;
-                            comboBoxFont = font;
+                  selected: index,
+                  onChanged: (i) => setState(() => index = i),
+                  size: const NavigationPaneSize(
+                    openMinWidth: 250.0,
+                    openMaxWidth: 320.0,
+                  ),
+                  header: Container(
+                    height: kOneLineTileHeight,
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                  ),
+                  displayMode: appTheme.displayMode,
+                  indicator: () {
+                    switch (appTheme.indicator) {
+                      case NavigationIndicators.end:
+                        return const EndNavigationIndicator();
+                      case NavigationIndicators.sticky:
+                      default:
+                        return const StickyNavigationIndicator();
+                    }
+                  }(),
+                  items: [
+                    PaneItem(
+                      body: FutureBuilder(
+                        future: initAppInfo,
+                        builder: (ctx, snapshot) {
+                          // Remove splash screen when bootstrap is complete
+                          FlutterNativeSplash.remove();
+                          if (snapshot.connectionState ==
+                              ConnectionState.waiting) {
+                            return const Center(child: ProgressRing());
                           }
-                          return BibleView(
-                              appInfo: appInfo, comboBoxFont: comboBoxFont);
-                        }
-                      },
-                    ),
-                    icon: const Icon(FluentIcons.reading_mode),
-                    title: Text(appTitle),
-                  ),
-                ],
-                footerItems: [
-                  //Actions label?
-                  // PaneItemHeader(
-                  //   header: Text('paneitemheader'),
-                  // ),
-                  PaneItemSeparator(),
-                  RunFunctionPaneItemAction(
-                      body: const About(),
-                      title: Text(Provider.of<UserPrefs>(context, listen: true)
-                          .currentTranslation
-                          .search),
-                      icon: const Icon(FluentIcons.search),
-                      functionToRun:
-                          Provider.of<ColumnManager>(context, listen: false)
-                              .openSearch),
-                  RunFunctionPaneItemAction(
-                      body: const About(),
-                      title: Text(Provider.of<UserPrefs>(context, listen: true)
-                          .currentTranslation
-                          .addColumn),
-                      icon: const Icon(FluentIcons.calculator_addition),
-                      functionToRun:
-                          Provider.of<ColumnManager>(context, listen: false)
-                              .addColumn),
-                  LightDarkModePaneItemAction(
-                    icon: FluentTheme.of(context).brightness.isDark
-                        ? const Icon(FluentIcons.sunny)
-                        : const Icon(FluentIcons.clear_night),
-                    title: FluentTheme.of(context).brightness.isDark
-                        ? Text(Provider.of<UserPrefs>(context, listen: true)
-                            .currentTranslation
-                            .lightTheme)
-                        : Text(Provider.of<UserPrefs>(context, listen: true)
-                            .currentTranslation
-                            .darkTheme),
-                    appTheme: appTheme,
-                  ),
+                          //Main row that holds the text columns
+                          else {
+                            AppInfo appInfo = snapshot.data as AppInfo;
+                            late String comboBoxFont;
+                            bool anyRTL = collections.any(
+                                (element) => element.textDirection != 'LTR');
 
-                  PaneItemSeparator(),
-                  PaneItem(
-                      body: const About(),
-                      icon: const Icon(FluentIcons.info),
-                      title: Text(Provider.of<UserPrefs>(context, listen: true)
-                          .currentTranslation
-                          .about)),
-                  PaneItem(
-                    body: Settings(controller: settingsController),
-                    icon: const Icon(FluentIcons.settings),
-                    title: Text(Provider.of<UserPrefs>(context, listen: true)
-                        .currentTranslation
-                        .settings),
-                  ),
-                  // _LinkPaneItemAction(
-                  //   icon: const Icon(FluentIcons.open_source),
-                  //   title: const Text('Source code'),
-                  //   link: 'https://github.com/ngaretou/usfm_bible',
-                  // ),
-                ],
-              ),
+                            if (anyRTL) {
+                              String font = collections
+                                  .firstWhere((element) =>
+                                      element.textDirection == 'RTL')
+                                  .fonts
+                                  .first
+                                  .fontFamily;
+                              comboBoxFont = font;
+                            }
+                            return BibleView(
+                                appInfo: appInfo, comboBoxFont: comboBoxFont);
+                          }
+                        },
+                      ),
+                      icon: const Icon(FluentIcons.reading_mode),
+                      title: Text(appTitle),
+                    ),
+                  ],
+                  footerItems: finalNavPaneItems),
             ),
           );
         }
@@ -609,8 +685,8 @@ class LightDarkModePaneItemAction extends PaneItem {
   }
 }
 
-// class _LinkPaneItemAction extends PaneItem {
-//   _LinkPaneItemAction({
+// class LinkPaneItemAction extends PaneItem {
+//   LinkPaneItemAction({
 //     required Widget icon,
 //     required this.link,
 //     title,
@@ -649,3 +725,38 @@ class LightDarkModePaneItemAction extends PaneItem {
 //     );
 //   }
 // }
+class _LinkPaneItemAction extends PaneItem {
+  _LinkPaneItemAction({
+    required super.icon,
+    required this.link,
+    required super.body,
+    super.title,
+  });
+
+  final String link;
+
+  @override
+  Widget build(
+    BuildContext context,
+    bool selected,
+    VoidCallback? onPressed, {
+    PaneDisplayMode? displayMode,
+    bool showTextOnTop = true,
+    bool? autofocus,
+    int? itemIndex,
+  }) {
+    return Link(
+      target: LinkTarget.blank, //opens in new tab on web
+      uri: Uri.parse(link),
+      builder: (context, followLink) => super.build(
+        context,
+        selected,
+        followLink,
+        displayMode: displayMode,
+        showTextOnTop: showTextOnTop,
+        itemIndex: itemIndex,
+        autofocus: autofocus,
+      ),
+    );
+  }
+}

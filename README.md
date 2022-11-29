@@ -75,6 +75,7 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 - Search by collection or all collections
 - Dark/Light mode with quick switching
 - Remembers user columns on subsequent opens
+- For Wolof version has unique Wolof links on web
 - For non web apps (Win/macOS/Android/iOS)
   - Remembers window position (Win/macOS)
   - Caches verses in a local db
@@ -88,7 +89,6 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 
 ## To do:
 ### Minimal
-- Download apps button on web version
 
 ### Maximal
 - Higher priority
