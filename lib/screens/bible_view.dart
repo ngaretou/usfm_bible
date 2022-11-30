@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print, prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:provider/provider.dart';
 import 'package:usfm_bible/providers/user_prefs.dart';
@@ -156,7 +154,7 @@ class _BibleViewState extends State<BibleView> {
       //Bible view pane overall padding - each column has 5 above and then 2.5 l and r,
       //which when beside each other makes 5 between each col.
       //This padding here makes the first and last column have the full 5.
-      padding: EdgeInsets.symmetric(horizontal: 2.5),
+      padding: const EdgeInsets.symmetric(horizontal: 2.5),
       color: FluentTheme.of(context).scaffoldBackgroundColor,
       child: Row(children: scriptureColumns),
     );

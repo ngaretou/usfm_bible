@@ -1,7 +1,4 @@
-// ignore_for_file: avoid_print, prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'dart:ui' as ui;
-// import 'package:flutter/rendering.dart'; //For ScrollDirection sometimes
 import 'dart:async';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:provider/provider.dart';
@@ -230,7 +227,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         // Navigate to the paragraph. This is the collection change section.
         itemScrollController.scrollTo(
           index: navigateToParagraph,
-          duration: Duration(milliseconds: 200),
+          duration: const Duration(milliseconds: 200),
         );
       }
       // }
@@ -280,7 +277,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         //Navigate to the paragraph. This is in the the book/ch/vs section.
         itemScrollController.scrollTo(
           index: navigateToParagraph,
-          duration: Duration(milliseconds: 200),
+          duration: const Duration(milliseconds: 200),
         );
 
         BibleReference ref = BibleReference(
@@ -665,7 +662,8 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                       Brightness.dark
                   ? null
                   : FluentTheme.of(context).cardColor.lerpWith(Colors.grey, .1),
-              padding: EdgeInsets.only(top: 12, bottom: 12, left: 6, right: 6),
+              padding:
+                  const EdgeInsets.only(top: 12, bottom: 12, left: 6, right: 6),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -787,7 +785,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                       );
                                     }),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 5,
                               ),
 
@@ -837,7 +835,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                   },
                                   child: const Icon(FluentIcons.font_increase),
                                 ),
-                                SizedBox(width: 5),
+                                const SizedBox(width: 5),
                                 Button(
                                   onPressed: () {
                                     if (baseFontSize > 10) {
@@ -848,7 +846,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                   },
                                   child: const Icon(FluentIcons.font_decrease),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
 
@@ -878,7 +876,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                       icon: const Icon(FluentIcons.calculator_multiply),
                     ),
                   if (widget.myColumnIndex == 0)
-                    SizedBox(
+                    const SizedBox(
                       width: 30,
                     )
                 ],
@@ -913,7 +911,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                     // print(activeColumnKey);
                     // print(widget.key);
 
-                    Timer(Duration(milliseconds: 100),
+                    Timer(const Duration(milliseconds: 100),
                         setSelectorsToClosestReferenceAfterScroll);
                   }
                 }
@@ -936,7 +934,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                     : const EdgeInsets.only(
                         left: 2.5, right: 2.5, top: 0, bottom: 0),
                 child: Container(
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     //This is the border between each scripture column and its neighbor to the right
                     border: Border(
                       right: BorderSide(
@@ -952,7 +950,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                           Provider.of<UserPrefs>(context, listen: false)
                               .currentTranslation
                               .copy,
-                          icon: Icon(FluentIcons.copy),
+                          icon: const Icon(FluentIcons.copy),
                           onPressed: () {
                             String? text = textToShareOrCopy();
 
@@ -965,7 +963,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                           Provider.of<UserPrefs>(context, listen: false)
                               .currentTranslation
                               .share,
-                          icon: Icon(FluentIcons.share),
+                          icon: const Icon(FluentIcons.share),
                           onPressed: () async {
                             String? text = textToShareOrCopy();
 
@@ -993,13 +991,13 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                     child: scrollablePositionedList =
                         ScrollablePositionedList.builder(
                             //this is the space between the right of the column and the text for the scrollbar
-                            padding: EdgeInsets.only(right: 10),
+                            padding: const EdgeInsets.only(right: 10),
                             initialAlignment: 1,
                             itemScrollController: itemScrollController,
                             itemPositionsListener: itemPositionsListener,
                             itemCount: versesByParagraph.length,
                             shrinkWrap: false,
-                            physics: ClampingScrollPhysics(),
+                            physics: const ClampingScrollPhysics(),
                             itemBuilder: (ctx, i) {
                               return ParagraphBuilder(
                                 paragraph: versesByParagraph[i],

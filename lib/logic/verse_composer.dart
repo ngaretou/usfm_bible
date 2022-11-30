@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 import 'package:fluent_ui/fluent_ui.dart';
 import 'dart:core';
 import 'database_builder.dart';

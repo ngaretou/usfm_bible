@@ -1,5 +1,3 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:fluent_ui/fluent_ui.dart';
@@ -10,19 +8,20 @@ import 'package:xml/xml.dart';
 import '../providers/user_prefs.dart';
 
 class About extends StatelessWidget {
-  const About({super.key});
+  // const About({super.key});
+  const About({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // print('about page build');
     String appName = '';
     String versionName = '';
     String programType = '';
     String programVersion = '';
+    AssetBundle assetBundle = DefaultAssetBundle.of(context);
 
     //Get collection copyright strings from the appdef
-    Future<Map<String, String>> getCollectionCopyrights(
-        BuildContext context) async {
-      AssetBundle assetBundle = DefaultAssetBundle.of(context);
+    Future<Map<String, String>> getCollectionCopyrights() async {
       Map<String, String> results = {};
 
       //get the appDef xml from outside the flutter project
@@ -52,9 +51,7 @@ class About extends StatelessWidget {
       return results;
     }
 
-    Future<void> getVariables(BuildContext context) async {
-      AssetBundle assetBundle = DefaultAssetBundle.of(context);
-
+    Future<void> getVariables() async {
       //get the appDef xml from outside the flutter project
       String appDefLocation = 'assets/project/appDef.appDef';
       String xmlFileString = await assetBundle.loadString(appDefLocation);
@@ -82,13 +79,14 @@ class About extends StatelessWidget {
     }
 
     Future<String> getHtml() async {
-      await getVariables(context);
+      await getVariables();
       //First get the copyrights from the appdef
-      Map<String, String> copyrights = await getCollectionCopyrights(context);
+      Map<String, String> copyrights = await getCollectionCopyrights();
 
       //Get the main about page html
-      String aboutPageHtml = await DefaultAssetBundle.of(context)
-          .loadString("assets/project/data/about/about.txt");
+
+      String aboutPageHtml =
+          await assetBundle.loadString("assets/project/data/about/about.txt");
 
       //Now for each of the copyright texts we have, check to see if the appbuilder wants that text in the about page
       for (var k in copyrights.keys) {

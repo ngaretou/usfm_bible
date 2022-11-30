@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 import 'package:fluent_ui/fluent_ui.dart';
 import 'dart:ui' as ui;
 import 'dart:core';

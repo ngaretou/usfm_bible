@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print, use_build_context_synchronously
-
 import 'package:flutter/services.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/foundation.dart';
@@ -63,7 +61,7 @@ void main() async {
 
   setPathUrlStrategy();
 
-  if (!Platform.isWindows) {
+  if (kIsWeb || !Platform.isWindows) {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
@@ -236,9 +234,9 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
   Future<AppInfo> callInititalization() async {
     // String response = await asyncGetProjectName(context);
     // appTitle = response;
-
+    UserPrefs userPrefs = Provider.of<UserPrefs>(context, listen: false);
     AppInfo appInfo = await buildDatabaseFromXML(context);
-    await Provider.of<UserPrefs>(context, listen: false).loadUserPrefs(appInfo);
+    await userPrefs.loadUserPrefs(appInfo);
 
     return appInfo;
   }
@@ -337,6 +335,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
           //Normal pane items we always use
           List<NavigationPaneItem> normalNavPaneItems = [
             PaneItemSeparator(),
+            //Search
             RunFunctionPaneItemAction(
                 body: const About(),
                 title: Text(Provider.of<UserPrefs>(context, listen: true)
@@ -346,6 +345,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                 functionToRun:
                     Provider.of<ColumnManager>(context, listen: false)
                         .openSearch),
+            //Add Column
             RunFunctionPaneItemAction(
                 body: const About(),
                 title: Text(Provider.of<UserPrefs>(context, listen: true)
@@ -355,6 +355,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                 functionToRun:
                     Provider.of<ColumnManager>(context, listen: false)
                         .addColumn),
+            //Light Dark Toggle
             LightDarkModePaneItemAction(
               icon: FluentTheme.of(context).brightness.isDark
                   ? const Icon(FluentIcons.sunny)
@@ -369,6 +370,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
               appTheme: appTheme,
             ),
             PaneItemSeparator(),
+            //About
             PaneItem(
                 body: const About(),
                 icon: const Icon(FluentIcons.info),

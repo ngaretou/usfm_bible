@@ -1,4 +1,3 @@
-// ignore_for_file: avoid_print, avoid_function_literals_in_foreach_calls, use_build_context_synchronously
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -153,11 +152,11 @@ Future<String> asyncGetProjectName(BuildContext context) async {
 Future<void> asyncGetTranslations(BuildContext context) async {
   //Stuff for supplemental translations
   Map<String, String> translationSupplement = {};
+  AssetBundle assetBundle = DefaultAssetBundle.of(context);
+  UserPrefs userPrefs = Provider.of<UserPrefs>(context, listen: false);
   String translationsJSON =
       await rootBundle.loadString("assets/translations.json");
   final translationData = json.decode(translationsJSON) as List<dynamic>;
-
-  AssetBundle assetBundle = DefaultAssetBundle.of(context);
 
   //get the appDef xml from outside the flutter project
   String appDefLocation = 'assets/project/appDef.appDef';
@@ -307,10 +306,10 @@ Future<void> asyncGetTranslations(BuildContext context) async {
 
   String? savedUserLang = userPrefsBox.get('savedUserLang');
   if (savedUserLang == null) {
-    Provider.of<UserPrefs>(context, listen: false).setUserLang = initialLang;
+    userPrefs.setUserLang = initialLang;
     userPrefsBox.put('savedUserLang', initialLang);
   } else {
-    Provider.of<UserPrefs>(context, listen: false).setUserLang = savedUserLang;
+    userPrefs.setUserLang = savedUserLang;
   }
 }
 

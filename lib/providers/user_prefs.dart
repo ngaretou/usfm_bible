@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print
-
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:usfm_bible/logic/database_builder.dart';

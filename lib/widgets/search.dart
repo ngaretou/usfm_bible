@@ -1,4 +1,3 @@
-// ignore_for_file: sized_box_for_whitespace, avoid_print
 import 'dart:ui' as ui;
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/material.dart' as material;
@@ -98,7 +97,7 @@ class _SearchWidgetState extends State<SearchWidget> {
       );
     });
 
-    return Container(
+    return SizedBox(
         width: 300,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

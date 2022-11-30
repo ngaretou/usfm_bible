@@ -1,5 +1,3 @@
-// ignore_for_file: constant_identifier_names, avoid_print
-
 import 'package:flutter/foundation.dart';
 
 import 'package:fluent_ui/fluent_ui.dart';
@@ -33,12 +31,12 @@ bool get kIsWindowEffectsSupported {
       ].contains(defaultTargetPlatform);
 }
 
-const _LinuxWindowEffects = [
+const linuxWindowEffects = [
   WindowEffect.disabled,
   WindowEffect.transparent,
 ];
 
-const _WindowsWindowEffects = [
+const windowsWindowEffects = [
   WindowEffect.disabled,
   WindowEffect.solid,
   WindowEffect.transparent,
@@ -48,7 +46,7 @@ const _WindowsWindowEffects = [
   WindowEffect.tabbed,
 ];
 
-const _MacosWindowEffects = [
+const macosWindowEffects = [
   WindowEffect.disabled,
   WindowEffect.titlebar,
   WindowEffect.selection,
@@ -70,11 +68,11 @@ List<WindowEffect> get currentWindowEffects {
   if (kIsWeb) return [];
 
   if (defaultTargetPlatform == TargetPlatform.windows) {
-    return _WindowsWindowEffects;
+    return windowsWindowEffects;
   } else if (defaultTargetPlatform == TargetPlatform.linux) {
-    return _LinuxWindowEffects;
+    return linuxWindowEffects;
   } else if (defaultTargetPlatform == TargetPlatform.macOS) {
-    return _MacosWindowEffects;
+    return macosWindowEffects;
   }
 
   return [];
@@ -87,6 +85,7 @@ class Settings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('settings page build');
     assert(debugCheckHasMediaQuery(context));
     final appTheme = context.watch<AppTheme>();
 
