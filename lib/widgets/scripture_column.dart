@@ -576,6 +576,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   @override
   Widget build(BuildContext context) {
     Key? activeColumnKey = context.read<ScrollGroup>().getActiveColumnKey;
+    ScrollGroup scrollGroup = Provider.of<ScrollGroup>(context, listen: false);
     // print(
     //     'scripture column build: columnIndex: ${widget.bibleReference.columnIndex}; collection: ${widget.bibleReference.collectionID}; key: ${widget.key}');
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -584,8 +585,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
       //Set above, this delayedScrollIndex scrolls after build to the index in such a situation
       if (delayedScrollIndex != null) {
         // print('set ActiveColumnKey3');
-        Provider.of<ScrollGroup>(context, listen: false).setActiveColumnKey =
-            widget.key;
+        scrollGroup.setActiveColumnKey = widget.key;
         itemScrollController.jumpTo(index: delayedScrollIndex!);
         delayedScrollIndex = null;
       }

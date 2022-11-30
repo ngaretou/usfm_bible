@@ -70,6 +70,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+  msix: ^3.7.0
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -129,9 +130,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-
+# https://pub.dev/packages/msix
+# flutter pub run msix:create
 msix_config:
-  display_name: Kàddug Yàlla gi
+  display_name: Kàddug Yàlla gi+
   publisher_display_name: La MBS
   identity_name: 24971LaMBS.KddugYllagi
   msix_version: 1.0.0.0
