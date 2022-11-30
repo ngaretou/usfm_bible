@@ -85,14 +85,15 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
   - Wolof Ajami (Arabic script) full Bible
   - Louis Segond
   - Lexham English Bible
-  - SBL Greek NT
+  - Society of Biblical Literature Greek NT
 
 ## To do:
 ### Minimal
+- Jumtukaay - Tools Galen make page
 
 ### Maximal
 - Higher priority
-  - NavPane buttons: Contact Us
+  - NavPane buttons: Contact Us from appDef
 - Other
   - Programmatically change permissions on files in project data folder to 744 when needed
   - Programmatically change font names
