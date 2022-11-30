@@ -63,9 +63,11 @@ void main() async {
 
   setPathUrlStrategy();
 
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  if (!Platform.isWindows) {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  }
 
   if (isDesktop) {
     await flutter_acrylic.Window.initialize();

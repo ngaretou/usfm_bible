@@ -55,6 +55,7 @@ migrate_working_dir/
 /macos/
 /test/
 /windows/
+/linux/
 
 # Web related
 
