@@ -645,6 +645,8 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     context.watch<ScrollGroup>().getScrollGroupRef;
     // if () {}
 
+    TextOverflow textOverflow = TextOverflow.ellipsis;
+
     return Expanded(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -702,7 +704,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                                   alignment: alignment,
                                                   child: Text(
                                                     e.name,
-                                                    overflow: TextOverflow.fade,
+                                                    overflow: textOverflow,
                                                     textDirection:
                                                         textDirection,
                                                   ),
@@ -744,7 +746,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                             alignment: alignment,
                                             child: Text(
                                               name,
-                                              overflow: TextOverflow.clip,
+                                              overflow: textOverflow,
                                               textDirection: textDirection,
                                             ),
                                           ),
@@ -761,7 +763,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                             Row(mainAxisSize: MainAxisSize.min, children: [
                               // //chapter
                               SizedBox(
-                                width: 60,
+                                width: 80,
                                 child: ValueListenableBuilder<String>(
                                     valueListenable: currentChapter,
                                     builder: (context, val, child) {
@@ -775,7 +777,10 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                         items: currentBookChapters
                                             .map((e) => ComboBoxItem<String>(
                                                   value: e,
-                                                  child: Text(e),
+                                                  child: Text(
+                                                    e,
+                                                    overflow: textOverflow,
+                                                  ),
                                                 ))
                                             .toList(),
                                         value: val,
@@ -791,7 +796,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
                               // //verse
                               SizedBox(
-                                width: 70,
+                                width: 80,
                                 child: ValueListenableBuilder<String>(
                                     valueListenable: currentVerse,
                                     builder: (context, val, child) {
@@ -802,13 +807,16 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                                                 fontFamily: widget.comboBoxFont,
                                                 fontSize: comboBoxFontSize),
                                         placeholder: const Text('150'),
-                                        // isExpanded: true,
+                                        isExpanded: true,
                                         items: currentChapterVerseNumbers
                                             .toSet()
                                             .toList()
                                             .map((e) => ComboBoxItem<String>(
                                                   value: e,
-                                                  child: Text(e),
+                                                  child: Text(
+                                                    e,
+                                                    overflow: textOverflow,
+                                                  ),
                                                 ))
                                             .toList(),
                                         value: val,

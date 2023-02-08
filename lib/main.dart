@@ -180,7 +180,7 @@ class MyApp extends StatelessWidget {
                   debugShowCheckedModeBanner: false,
                   home: const MyHomePage(),
                   color: appTheme.color,
-                  darkTheme: ThemeData(
+                  darkTheme: FluentThemeData(
                     brightness: Brightness.dark,
                     accentColor: appTheme.color,
                     visualDensity: VisualDensity.standard,
@@ -189,7 +189,7 @@ class MyApp extends StatelessWidget {
                     ),
                     scrollbarTheme: scrollBarTheme,
                   ),
-                  theme: ThemeData(
+                  theme: FluentThemeData(
                     accentColor: appTheme.color,
                     visualDensity: VisualDensity.standard,
                     focusTheme: FocusThemeData(
@@ -331,13 +331,13 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
               link: '#',
               body: const SizedBox.shrink(),
             ),
-            RunFunctionPaneItemAction(
-                body: const About(),
-                title: const Text('Jumtukaay test'),
-                icon: const Icon(FluentIcons.developer_tools),
-                functionToRun: () {
-                  print('you hit jumtukaay');
-                }),
+            // RunFunctionPaneItemAction(
+            //     body: const About(),
+            //     title: const Text('Jumtukaay test'),
+            //     icon: const Icon(FluentIcons.developer_tools),
+            //     functionToRun: () {
+            //       print('you hit jumtukaay');
+            //     }),
           ];
 
           //Normal pane items we always use
@@ -517,7 +517,9 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                           //Main row that holds the text columns
                           else {
                             AppInfo appInfo = snapshot.data as AppInfo;
-                            late String comboBoxFont;
+                            //Sets a default in case there is no RTL below
+                            late String comboBoxFont =
+                                collections.first.fonts.first.fontFamily;
                             bool anyRTL = collections.any(
                                 (element) => element.textDirection != 'LTR');
 
@@ -552,6 +554,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
     print('closing');
     bool isPreventClose = await windowManager.isPreventClose();
     if (isPreventClose) {
+      if (!mounted) return;
       showDialog(
         context: context,
         builder: (_) {
@@ -585,7 +588,7 @@ class WindowButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = FluentTheme.of(context);
+    final FluentThemeData theme = FluentTheme.of(context);
 
     return SizedBox(
       width: 138,

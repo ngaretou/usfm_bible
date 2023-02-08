@@ -90,6 +90,7 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 ## To do:
 ### Minimal
 - Jumtukaay - Tools Galen make page
+- •	SBL/GNT word parsing under mouse-over
 
 ### Maximal
 - Higher priority

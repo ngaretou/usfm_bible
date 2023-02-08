@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<app-definition type="SAB" program-version="9.3">
+<app-definition type="SAB" program-version="10.2">
   <project-name>Test App Project Name</project-name>
   <project-description></project-description>
 
@@ -25,7 +25,7 @@
   </signing>
 
   <resigning>
-    <signing-identity hash="BB44A134DD1CF58794874AE94C444EEBEDFC0254">Apple Distribution: Corey Garrett (RAJ3TA54HF)</signing-identity>
+    <signing-identity hash="C1D5AFB752E9B9A98E9C9F0256F6752FA087F0C9">Apple Distribution: Corey Garrett (RAJ3TA54HF)</signing-identity>
     <provisioning-profile>/Users/corey/OneDrive/Documents/iOS Wolof Bible App/certificates/orgmbstesttest.mobileprovision</provisioning-profile>
   </resigning>
 
@@ -38,12 +38,6 @@
 
   <analytics enabled="false">
   </analytics>
-
-  <audio-settings>
-    <message id="audio-not-found">
-      <filename>audio-not-found.txt</filename>
-    </message>
-  </audio-settings>
 
   <audio-sources>
     <audio-source id="a1" type="assets" default="true">
@@ -104,6 +98,12 @@
     <feature name="audio-speed" value="1.0"/>
     <feature name="audio-access-method" value="download"/>
     <feature name="audio-download-mode" value="prompt"/>
+    <feature name="audio-play-button-size" value="normal"/>
+    <feature name="audio-play-button-style" value="arrow"/>
+    <feature name="audio-repeat-mode-button" value="true"/>
+    <feature name="audio-repeat-mode-hint" value="true"/>
+    <feature name="audio-repeat-selection-button" value="true"/>
+    <feature name="audio-repeat-selection-wait-time" value="2000"/>
     <feature name="text-select-play-audio" value="true"/>
     <feature name="video-allow-fullscreen" value="true"/>
     <feature name="video-show-titles" value="true"/>
@@ -133,6 +133,7 @@
     <feature name="display-videos-in-bible-text" value="normal"/>
     <feature name="hide-empty-verses" value="true"/>
     <feature name="hide-empty-chapters" value="true"/>
+    <feature name="hide-verse-number-1" value="true"/>
     <feature name="footnote-caller-type" value="abc"/>
     <feature name="footnote-caller-symbol" value=""/>
     <feature name="crossref-caller-type" value="abc"/>
@@ -157,8 +158,6 @@
     <feature name="layout-config-change-viewer-button" value="true"/>
     <feature name="layout-config-first-launch" value="false"/>
     <feature name="settings-app-layout-direction" value="false"/>
-    <feature name="settings-audio-download-mode" value="true"/>
-    <feature name="settings-audio-access-method" value="true"/>
     <feature name="settings-book-selection" value="true"/>
     <feature name="settings-interface-language" value="true"/>
     <feature name="settings-red-letters" value="false"/>
@@ -172,6 +171,7 @@
     <feature name="settings-audio-highlight-phrase" value="true"/>
     <feature name="settings-audio-speed" value="true"/>
     <feature name="settings-audio-download-mode" value="true"/>
+    <feature name="settings-audio-access-method" value="true"/>
     <feature name="settings-keep-screen-on" value="true"/>
     <feature name="settings-share-usage-data" value="true"/>
     <feature name="share-app-link" value="false"/>
@@ -225,6 +225,7 @@
 
   <fonts>
     <font-handling>
+      <viewer type="default"/>
       <grandroid enabled="false"/>
     </font-handling>
 
@@ -239,20 +240,6 @@
       <font-name>Charis SIL (Full) Bold</font-name>
       <display-name>Charis SIL</display-name>
       <filename format="truetype">CharisSIL-B.ttf</filename>
-      <style-decl property="font-weight" value="bold"/>
-      <style-decl property="font-style" value="normal"/>
-    </font>
-    <font family="font2">
-      <font-name>Harmattan</font-name>
-      <display-name>Harmattan</display-name>
-      <filename format="truetype">Harmattan-Regular.ttf</filename>
-      <style-decl property="font-weight" value="normal"/>
-      <style-decl property="font-style" value="normal"/>
-    </font>
-    <font family="font2">
-      <font-name>Harmattan Bold</font-name>
-      <display-name>Harmattan</display-name>
-      <filename format="truetype">Harmattan-Bold.ttf</filename>
       <style-decl property="font-weight" value="bold"/>
       <style-decl property="font-style" value="normal"/>
     </font>
@@ -402,6 +389,8 @@
       <feature name="ref-chapter-range-separator" value="-"/>
       <feature name="ref-chapter-list-separator" value=";"/>
       <feature name="ref-extra-material" value=""/>
+      <feature name="ref-parse-introductions" value="false"/>
+      <feature name="ref-parse-glossary" value="false"/>
       <feature name="numerals-type" value="default"/>
       <feature name="bc-allow-single-pane" value="true"/>
       <feature name="bc-allow-copy-text" value="true"/>
@@ -988,6 +977,8 @@
       <feature name="ref-chapter-range-separator" value="-"/>
       <feature name="ref-chapter-list-separator" value=";"/>
       <feature name="ref-extra-material" value=""/>
+      <feature name="ref-parse-introductions" value="false"/>
+      <feature name="ref-parse-glossary" value="false"/>
       <feature name="numerals-type" value="default"/>
       <feature name="bc-allow-single-pane" value="true"/>
       <feature name="bc-allow-copy-text" value="true"/>
@@ -1009,8 +1000,6 @@
       <verse-number-style value="default"/>
 
       <styles>
-        <style name="div.footer">
-        </style>
       </styles>
     </styles-info>
 
@@ -1254,6 +1243,8 @@
       <feature name="ref-chapter-range-separator" value="-"/>
       <feature name="ref-chapter-list-separator" value=";"/>
       <feature name="ref-extra-material" value=""/>
+      <feature name="ref-parse-introductions" value="false"/>
+      <feature name="ref-parse-glossary" value="false"/>
       <feature name="numerals-type" value="default"/>
       <feature name="bc-allow-single-pane" value="true"/>
       <feature name="bc-allow-copy-text" value="true"/>
@@ -1279,8 +1270,6 @@
       <verse-number-style value="default"/>
 
       <styles>
-        <style name="div.footer">
-        </style>
       </styles>
     </styles-info>
 
@@ -2197,6 +2186,8 @@
       <feature name="ref-chapter-range-separator" value="-"/>
       <feature name="ref-chapter-list-separator" value=";"/>
       <feature name="ref-extra-material" value=""/>
+      <feature name="ref-parse-introductions" value="false"/>
+      <feature name="ref-parse-glossary" value="false"/>
       <feature name="numerals-type" value="default"/>
       <feature name="bc-allow-single-pane" value="true"/>
       <feature name="bc-allow-copy-text" value="true"/>
@@ -2222,8 +2213,6 @@
       <verse-number-style value="default"/>
 
       <styles>
-        <style name="div.footer">
-        </style>
       </styles>
     </styles-info>
 
@@ -2798,584 +2787,6 @@
     </book>
   </books>
 
-  <books id="C05">
-    <book-collection-name>ڪࣵدُّگْ يࣵلَّ گِ</book-collection-name>
-    <book-collection-abbrev></book-collection-abbrev>
-    <book-collection-description>ڪࣵدُّگْ يࣵلَّ گِ ݖِ وࣷلࣷفْ</book-collection-description>
-
-    <features type="bc">
-      <feature name="show-scripture-refs" value="true"/>
-      <feature name="ref-chapter-verse-separator" value="."/>
-      <feature name="ref-verse-range-separator" value="-"/>
-      <feature name="ref-verse-list-separator" value=","/>
-      <feature name="ref-chapter-range-separator" value="-"/>
-      <feature name="ref-chapter-list-separator" value=";"/>
-      <feature name="ref-extra-material" value=""/>
-      <feature name="numerals-type" value="default"/>
-      <feature name="bc-allow-single-pane" value="true"/>
-      <feature name="bc-allow-copy-text" value="true"/>
-      <feature name="bc-allow-long-press-select" value="true"/>
-      <feature name="bc-allow-share-text" value="true"/>
-      <feature name="bc-allow-text-on-image" value="true"/>
-      <feature name="bc-allow-text-on-image-edit-text" value="true"/>
-      <feature name="bc-allow-verse-of-the-day" value="true"/>
-      <feature name="bc-allow-share-audio" value="false"/>
-      <feature name="bc-allow-share-video" value="false"/>
-    </features>
-
-    <styles-info>
-      <text-font family="font2"/>
-      <text-size value="20"/>
-      <line-height value="120"/>
-      <text-direction value="RTL"/>
-      <numeral-system value="Default"/>
-      <verse-number-style value="default"/>
-
-      <styles>
-        <style name="div.footer">
-        </style>
-      </styles>
-    </styles-info>
-
-    <book-order>
-      <canon-name>Western Protestant Bible</canon-name>
-    </book-order>
-
-    <writing-system code="wol">
-      <display-names>
-        <form lang="default">Wolof</form>
-      </display-names>
-    </writing-system>
-
-    <book id="GEN">
-      <name>نجࣵلْبࣺينْ گَ</name>
-      <group>OT</group>
-      <sub-group>Pentateuch</sub-group>
-      <filename>01GENwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/01GENwPP.SFM</source>
-    </book>
-
-    <book id="EXO">
-      <name>مُݖّ گَ</name>
-      <group>OT</group>
-      <sub-group>Pentateuch</sub-group>
-      <filename>02EXOwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/02EXOwPP.SFM</source>
-    </book>
-
-    <book id="LEV">
-      <name>سَرْخَلْڪَتْ يِ</name>
-      <group>OT</group>
-      <sub-group>Pentateuch</sub-group>
-      <filename>03LEVwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/03LEVwPP.SFM</source>
-    </book>
-
-    <book id="NUM">
-      <name>مࣵنْدِݝْ مَ</name>
-      <group>OT</group>
-      <sub-group>Pentateuch</sub-group>
-      <filename>04NUMwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/04NUMwPP.SFM</source>
-    </book>
-
-    <book id="DEU">
-      <name>بَامْتُگْ يࣷونْ وِ</name>
-      <group>OT</group>
-      <sub-group>Pentateuch</sub-group>
-      <filename>05DEUwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/05DEUwPP.SFM</source>
-    </book>
-
-    <book id="JOS">
-      <name>يࣷسُوࣹ</name>
-      <group>OT</group>
-      <sub-group>Historical</sub-group>
-      <filename>06JOSwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/06JOSwPP.SFM</source>
-    </book>
-
-    <book id="JDG">
-      <name>نجِيتْ يَ</name>
-      <group>OT</group>
-      <sub-group>Historical</sub-group>
-      <filename>07JDGwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/07JDGwPP.SFM</source>
-    </book>
-
-    <book id="RUT">
-      <name>رُوتْ</name>
-      <group>OT</group>
-      <sub-group>Historical</sub-group>
-      <filename>08RUTwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/08RUTwPP.SFM</source>
-    </book>
-
-    <book id="1SA">
-      <name>1.سَمِيࣹلْ</name>
-      <group>OT</group>
-      <sub-group>Historical</sub-group>
-      <filename>091SAwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/091SAwPP.SFM</source>
-    </book>
-
-    <book id="2SA">
-      <name>2.سَمِيࣹلْ</name>
-      <group>OT</group>
-      <sub-group>Historical</sub-group>
-      <filename>102SAwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/102SAwPP.SFM</source>
-    </book>
-
-    <book id="1KI">
-      <name>1.بُورْ يَ</name>
-      <group>OT</group>
-      <sub-group>Historical</sub-group>
-      <filename>111KIwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/111KIwPP.SFM</source>
-    </book>
-
-    <book id="2KI">
-      <name>2.بُورْ يَ</name>
-      <group>OT</group>
-      <sub-group>Historical</sub-group>
-      <filename>122KIwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/122KIwPP.SFM</source>
-    </book>
-
-    <book id="1CH">
-      <name>1.جَارْ-جَارْ يَ</name>
-      <group>OT</group>
-      <sub-group>Historical</sub-group>
-      <filename>131CHwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/131CHwPP.SFM</source>
-    </book>
-
-    <book id="2CH">
-      <name>2.جَارْ-جَارْ يَ</name>
-      <group>OT</group>
-      <sub-group>Historical</sub-group>
-      <filename>142CHwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/142CHwPP.SFM</source>
-    </book>
-
-    <book id="EZR">
-      <name>اࣹسْرَ</name>
-      <group>OT</group>
-      <sub-group>Historical</sub-group>
-      <filename>15EZRwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/15EZRwPP.SFM</source>
-    </book>
-
-    <book id="NEH">
-      <name>نࣹيࣹمِ</name>
-      <group>OT</group>
-      <sub-group>Historical</sub-group>
-      <filename>16NEHwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/16NEHwPP.SFM</source>
-    </book>
-
-    <book id="EST">
-      <name>اࣹسْتࣹيرْ</name>
-      <group>OT</group>
-      <sub-group>Historical</sub-group>
-      <filename>17ESTwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/17ESTwPP.SFM</source>
-    </book>
-
-    <book id="JOB">
-      <name>اَيٗوبَ</name>
-      <group>OT</group>
-      <sub-group>PoetryWisdom</sub-group>
-      <filename>18JOBwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/18JOBwPP.SFM</source>
-    </book>
-
-    <book id="PSA">
-      <name>سَبٗورْ</name>
-      <group>OT</group>
-      <sub-group>PoetryWisdom</sub-group>
-      <filename>19PSAwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/19PSAwPP.SFM</source>
-    </book>
-
-    <book id="PRO">
-      <name>ڪࣵدُّ يُ خࣹلُ</name>
-      <group>OT</group>
-      <sub-group>PoetryWisdom</sub-group>
-      <filename>20PROwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/20PROwPP.SFM</source>
-    </book>
-
-    <book id="ECC">
-      <name>ڪࣵدُّيْ وَارࣹ</name>
-      <group>OT</group>
-      <sub-group>PoetryWisdom</sub-group>
-      <filename>21ECCwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/21ECCwPP.SFM</source>
-    </book>
-
-    <book id="SNG">
-      <name>نگࣴنْ-گِ-وࣷيْ</name>
-      <group>OT</group>
-      <sub-group>PoetryWisdom</sub-group>
-      <filename>22SNGwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/22SNGwPP.SFM</source>
-    </book>
-
-    <book id="ISA">
-      <name>اࣹسَيِ</name>
-      <group>OT</group>
-      <sub-group>MajorProphet</sub-group>
-      <filename>23ISAwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/23ISAwPP.SFM</source>
-    </book>
-
-    <book id="JER">
-      <name>يࣹرࣹمِ</name>
-      <group>OT</group>
-      <sub-group>MajorProphet</sub-group>
-      <filename>24JERwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/24JERwPP.SFM</source>
-    </book>
-
-    <book id="LAM">
-      <name>جࣷويْتُ</name>
-      <group>OT</group>
-      <sub-group>MajorProphet</sub-group>
-      <filename>25LAMwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/25LAMwPP.SFM</source>
-    </book>
-
-    <book id="EZK">
-      <name>اࣹسࣹڪِيࣹلْ</name>
-      <group>OT</group>
-      <sub-group>MajorProphet</sub-group>
-      <filename>26EZKwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/26EZKwPP.SFM</source>
-    </book>
-
-    <book id="DAN">
-      <name>دَݧࣹيلْ</name>
-      <group>OT</group>
-      <sub-group>MajorProphet</sub-group>
-      <filename>27DANwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/27DANwPP.SFM</source>
-    </book>
-
-    <book id="HOS">
-      <name>اࣷسࣹ</name>
-      <group>OT</group>
-      <sub-group>MinorProphet</sub-group>
-      <filename>28HOSwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/28HOSwPP.SFM</source>
-    </book>
-
-    <book id="JOL">
-      <name>يࣷوࣹلْ</name>
-      <group>OT</group>
-      <sub-group>MinorProphet</sub-group>
-      <filename>29JOLwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/29JOLwPP.SFM</source>
-    </book>
-
-    <book id="AMO">
-      <name>اَمࣷسْ</name>
-      <group>OT</group>
-      <sub-group>MinorProphet</sub-group>
-      <filename>30AMOwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/30AMOwPP.SFM</source>
-    </book>
-
-    <book id="OBA">
-      <name>اَبْدِيَسْ</name>
-      <group>OT</group>
-      <sub-group>MinorProphet</sub-group>
-      <filename>31OBAwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/31OBAwPP.SFM</source>
-    </book>
-
-    <book id="JON">
-      <name>يُنُسْ</name>
-      <group>OT</group>
-      <sub-group>MinorProphet</sub-group>
-      <filename>32JONwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/32JONwPP.SFM</source>
-    </book>
-
-    <book id="MIC">
-      <name>مِسࣹ</name>
-      <group>OT</group>
-      <sub-group>MinorProphet</sub-group>
-      <filename>33MICwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/33MICwPP.SFM</source>
-    </book>
-
-    <book id="NAM">
-      <name>نَوُمْ</name>
-      <group>OT</group>
-      <sub-group>MinorProphet</sub-group>
-      <filename>34NAMwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/34NAMwPP.SFM</source>
-    </book>
-
-    <book id="HAB">
-      <name>اَبَڪُگْ</name>
-      <group>OT</group>
-      <sub-group>MinorProphet</sub-group>
-      <filename>35HABwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/35HABwPP.SFM</source>
-    </book>
-
-    <book id="ZEP">
-      <name>ݖࣹفَݧَ</name>
-      <group>OT</group>
-      <sub-group>MinorProphet</sub-group>
-      <filename>36ZEPwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/36ZEPwPP.SFM</source>
-    </book>
-
-    <book id="HAG">
-      <name>اَسࣹ</name>
-      <group>OT</group>
-      <sub-group>MinorProphet</sub-group>
-      <filename>37HAGwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/37HAGwPP.SFM</source>
-    </book>
-
-    <book id="ZEC">
-      <name>سࣵڪَّرْيَا</name>
-      <group>OT</group>
-      <sub-group>MinorProphet</sub-group>
-      <filename>38ZECwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/38ZECwPP.SFM</source>
-    </book>
-
-    <book id="MAL">
-      <name>مَلَسِ</name>
-      <group>OT</group>
-      <sub-group>MinorProphet</sub-group>
-      <filename>39MALwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/39MALwPP.SFM</source>
-    </book>
-
-    <book id="MAT">
-      <name>مَݖࣴ</name>
-      <group>NT</group>
-      <sub-group>Gospel</sub-group>
-      <filename>41MATwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/41MATwPP.SFM</source>
-    </book>
-
-    <book id="MRK">
-      <name>مࣵرڪّ</name>
-      <group>NT</group>
-      <sub-group>Gospel</sub-group>
-      <filename>42MRKwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/42MRKwPP.SFM</source>
-    </book>
-
-    <book id="LUK">
-      <name>لُوگْ</name>
-      <group>NT</group>
-      <sub-group>Gospel</sub-group>
-      <filename>43LUKwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/43LUKwPP.SFM</source>
-    </book>
-
-    <book id="JHN">
-      <name>يࣷوَانْ</name>
-      <group>NT</group>
-      <sub-group>Gospel</sub-group>
-      <filename>44JHNwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/44JHNwPP.SFM</source>
-    </book>
-
-    <book id="ACT">
-      <name>جࣴفْ يَ</name>
-      <group>NT</group>
-      <sub-group>Acts</sub-group>
-      <filename>45ACTwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/45ACTwPP.SFM</source>
-    </book>
-
-    <book id="ROM">
-      <name>رࣷومْ</name>
-      <group>NT</group>
-      <sub-group>PaulineEpistle</sub-group>
-      <filename>46ROMwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/46ROMwPP.SFM</source>
-    </book>
-
-    <book id="1CO">
-      <name>1.ڪࣷرࣹنتّ</name>
-      <group>NT</group>
-      <sub-group>PaulineEpistle</sub-group>
-      <filename>471COwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/471COwPP.SFM</source>
-    </book>
-
-    <book id="2CO">
-      <name>2.ڪࣷرࣹنتّ</name>
-      <group>NT</group>
-      <sub-group>PaulineEpistle</sub-group>
-      <filename>482COwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/482COwPP.SFM</source>
-    </book>
-
-    <book id="GAL">
-      <name>گَلَسِ</name>
-      <group>NT</group>
-      <sub-group>PaulineEpistle</sub-group>
-      <filename>49GALwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/49GALwPP.SFM</source>
-    </book>
-
-    <book id="EPH">
-      <name>اࣹفࣹسْ</name>
-      <group>NT</group>
-      <sub-group>PaulineEpistle</sub-group>
-      <filename>50EPHwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/50EPHwPP.SFM</source>
-    </book>
-
-    <book id="PHP">
-      <name>فِلِبْ</name>
-      <group>NT</group>
-      <sub-group>PaulineEpistle</sub-group>
-      <filename>51PHPwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/51PHPwPP.SFM</source>
-    </book>
-
-    <book id="COL">
-      <name>ڪࣷلࣷسْ</name>
-      <group>NT</group>
-      <sub-group>PaulineEpistle</sub-group>
-      <filename>52COLwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/52COLwPP.SFM</source>
-    </book>
-
-    <book id="1TH">
-      <name>1.تࣹسَلࣷنِگْ</name>
-      <group>NT</group>
-      <sub-group>PaulineEpistle</sub-group>
-      <filename>531THwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/531THwPP.SFM</source>
-    </book>
-
-    <book id="2TH">
-      <name>2.تࣹسَلࣷنِگْ</name>
-      <group>NT</group>
-      <sub-group>PaulineEpistle</sub-group>
-      <filename>542THwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/542THwPP.SFM</source>
-    </book>
-
-    <book id="1TI">
-      <name>1.تِمࣷتࣹ</name>
-      <group>NT</group>
-      <sub-group>PaulineEpistle</sub-group>
-      <filename>551TIwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/551TIwPP.SFM</source>
-    </book>
-
-    <book id="2TI">
-      <name>2.تِمࣷتࣹ</name>
-      <group>NT</group>
-      <sub-group>PaulineEpistle</sub-group>
-      <filename>562TIwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/562TIwPP.SFM</source>
-    </book>
-
-    <book id="TIT">
-      <name>تِتْ</name>
-      <group>NT</group>
-      <sub-group>PaulineEpistle</sub-group>
-      <filename>57TITwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/57TITwPP.SFM</source>
-    </book>
-
-    <book id="PHM">
-      <name>فِلࣹمࣷنْ</name>
-      <group>NT</group>
-      <sub-group>PaulineEpistle</sub-group>
-      <filename>58PHMwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/58PHMwPP.SFM</source>
-    </book>
-
-    <book id="HEB">
-      <name>يَوُتْ يَ</name>
-      <group>NT</group>
-      <sub-group>GeneralEpistle</sub-group>
-      <filename>59HEBwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/59HEBwPP.SFM</source>
-    </book>
-
-    <book id="JAS">
-      <name>يَعْقُوبَ</name>
-      <group>NT</group>
-      <sub-group>GeneralEpistle</sub-group>
-      <filename>60JASwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/60JASwPP.SFM</source>
-    </book>
-
-    <book id="1PE">
-      <name>1.ݒِيࣹيرْ</name>
-      <group>NT</group>
-      <sub-group>GeneralEpistle</sub-group>
-      <filename>611PEwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/611PEwPP.SFM</source>
-    </book>
-
-    <book id="2PE">
-      <name>2.ݒِيࣹيرْ</name>
-      <group>NT</group>
-      <sub-group>GeneralEpistle</sub-group>
-      <filename>622PEwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/622PEwPP.SFM</source>
-    </book>
-
-    <book id="1JN">
-      <name>1.يࣷوَانْ</name>
-      <group>NT</group>
-      <sub-group>GeneralEpistle</sub-group>
-      <filename>631JNwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/631JNwPP.SFM</source>
-    </book>
-
-    <book id="2JN">
-      <name>2.يࣷوَانْ</name>
-      <group>NT</group>
-      <sub-group>GeneralEpistle</sub-group>
-      <filename>642JNwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/642JNwPP.SFM</source>
-    </book>
-
-    <book id="3JN">
-      <name>3.يࣷوَانْ</name>
-      <group>NT</group>
-      <sub-group>GeneralEpistle</sub-group>
-      <filename>653JNwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/653JNwPP.SFM</source>
-    </book>
-
-    <book id="JUD">
-      <name>يُدّ</name>
-      <group>NT</group>
-      <sub-group>GeneralEpistle</sub-group>
-      <filename>66JUDwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/66JUDwPP.SFM</source>
-    </book>
-
-    <book id="REV">
-      <name>ݒࣹيݧُ مَ</name>
-      <group>NT</group>
-      <sub-group>Revelation</sub-group>
-      <filename>67REVwPP.SFM</filename>
-      <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wPP/67REVwPP.SFM</source>
-    </book>
-  </books>
-
   <books id="C06">
     <book-collection-name>SBL NT grec</book-collection-name>
     <book-collection-abbrev>SBLGNT</book-collection-abbrev>
@@ -3389,6 +2800,8 @@
       <feature name="ref-chapter-range-separator" value="-"/>
       <feature name="ref-chapter-list-separator" value=";"/>
       <feature name="ref-extra-material" value=""/>
+      <feature name="ref-parse-introductions" value="false"/>
+      <feature name="ref-parse-glossary" value="false"/>
       <feature name="numerals-type" value="default"/>
       <feature name="bc-allow-single-pane" value="true"/>
       <feature name="bc-allow-copy-text" value="true"/>
@@ -3414,8 +2827,6 @@
       <verse-number-style value="default"/>
 
       <styles>
-        <style name="div.footer">
-        </style>
       </styles>
     </styles-info>
 
@@ -4100,6 +3511,7 @@ Please enter your access code:</translation>
           <form lang="id">Bahasa Korea</form>
           <form lang="ar">الكورية</form>
           <form lang="nl">Koreaans</form>
+          <form lang="de">Koreanisch</form>
         </display-names>
         <font-family>system</font-family>
         <trait name="text-direction" value="LTR"/>
@@ -4177,6 +3589,7 @@ Please enter your access code:</translation>
           <form lang="ar">تيلوجو</form>
           <form lang="nl">Telugu</form>
           <form lang="ta">தெலுங்கு</form>
+          <form lang="de">Telugu</form>
         </display-names>
         <font-family>system</font-family>
         <trait name="text-direction" value="LTR"/>
@@ -4210,6 +3623,7 @@ Please enter your access code:</translation>
           <form lang="id">Bahasa</form>
           <form lang="ar">بهاسا مالايو</form>
           <form lang="nl">Maleis</form>
+          <form lang="de">Bahasa Melayu</form>
         </display-names>
         <font-family>system</font-family>
         <trait name="text-direction" value="LTR"/>
@@ -4221,6 +3635,7 @@ Please enter your access code:</translation>
           <form lang="fr">Néerlandais</form>
           <form lang="nl">Nederlands</form>
           <form lang="ru">Голландский</form>
+          <form lang="de">Niederländisch</form>
         </display-names>
         <font-family>system</font-family>
         <trait name="text-direction" value="LTR"/>
@@ -4441,6 +3856,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Downloads</translation>
       <translation lang="ta">பதிவிறக்கங்கள்</translation>
       <translation lang="ru">Загрузки</translation>
+      <translation lang="de">Herunterladen</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Edit">
       <translation lang="en">Edit</translation>
@@ -4479,6 +3895,7 @@ Please enter your access code:</translation>
       <translation lang="te">వినియోగదారులను చేర్చండి</translation>
       <translation lang="ko">사용자 추가</translation>
       <translation lang="es">Añadir usuario</translation>
+      <translation lang="de">Benutzer hinzufügen</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Users_List">
       <translation lang="en">Users</translation>
@@ -4492,6 +3909,7 @@ Please enter your access code:</translation>
       <translation lang="hi">उपयोगकर्ताओं</translation>
       <translation lang="te">వినియోగదారులు</translation>
       <translation lang="ko">사용자</translation>
+      <translation lang="de">Benutzer</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Home">
       <translation lang="en">Home</translation>
@@ -4521,6 +3939,8 @@ Please enter your access code:</translation>
       <translation lang="en">Reset Contents</translation>
       <translation lang="fr">Réinitialiser le contenu</translation>
       <translation lang="ru">Сбросить настройки содержания</translation>
+      <translation lang="de">Inhalt zurücksetzen</translation>
+      <translation lang="ar">إعادة ضبط المحتويات</translation>
       <translation lang="wol"></translation>
     </translation-mapping>
     <translation-mapping id="Menu_Item_Copy">
@@ -4532,6 +3952,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Kopiëren</translation>
       <translation lang="ta">நகல் எடு</translation>
       <translation lang="ru">Копировать</translation>
+      <translation lang="de">Kopieren</translation>
       <translation lang="wol">Copier</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Item_Share">
@@ -4544,6 +3965,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Delen</translation>
       <translation lang="ta">பகிர்</translation>
       <translation lang="ru">Поделиться</translation>
+      <translation lang="de">Teilen Sie</translation>
       <translation lang="wol">Séddool</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Item_Image">
@@ -4555,6 +3977,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Afbeelding</translation>
       <translation lang="ta">நிழற்படம்</translation>
       <translation lang="ru">Картинка</translation>
+      <translation lang="de">Bild</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Bookmarks">
       <translation lang="en">Bookmarks</translation>
@@ -4987,6 +4410,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Delen</translation>
       <translation lang="ta">பகிர்</translation>
       <translation lang="ru">Поделиться</translation>
+      <translation lang="de">Teilen Sie</translation>
     </translation-mapping>
     <translation-mapping id="Button_Start">
       <translation lang="en">Start</translation>
@@ -4998,6 +4422,7 @@ Please enter your access code:</translation>
       <translation lang="ar">بدء</translation>
       <translation lang="nl">Beginnen</translation>
       <translation lang="ta">தொடங்கு</translation>
+      <translation lang="de">Start</translation>
     </translation-mapping>
     <translation-mapping id="Button_Submit">
       <translation lang="en">Submit</translation>
@@ -5033,6 +4458,7 @@ Please enter your access code:</translation>
       <translation lang="ar">تسجيل حساب</translation>
       <translation lang="nl">Inschrijven</translation>
       <translation lang="ta">பதியவும்</translation>
+      <translation lang="de">Anmeldung</translation>
       <translation lang="wol"></translation>
     </translation-mapping>
     <translation-mapping id="Button_Skip">
@@ -5045,6 +4471,7 @@ Please enter your access code:</translation>
       <translation lang="ar">تخطي</translation>
       <translation lang="nl">Overslaan</translation>
       <translation lang="ta">தவிர்</translation>
+      <translation lang="de">Überspringen</translation>
     </translation-mapping>
     <translation-mapping id="Button_Read">
       <translation lang="en">Read</translation>
@@ -5056,6 +4483,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Lezen</translation>
       <translation lang="ta">படிக்க</translation>
       <translation lang="ru">Читать</translation>
+      <translation lang="de">Lesen Sie</translation>
       <translation lang="wol">Jàngal</translation>
     </translation-mapping>
     <translation-mapping id="Button_Listen">
@@ -5068,6 +4496,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Luisteren</translation>
       <translation lang="ta">கேட்க</translation>
       <translation lang="ru">Слушать</translation>
+      <translation lang="de">Hören Sie</translation>
     </translation-mapping>
     <translation-mapping id="Button_Create_Image">
       <translation lang="en">Create Image</translation>
@@ -5079,6 +4508,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Afbeelding maken</translation>
       <translation lang="ta">வசனப்படம் செய்</translation>
       <translation lang="ru">Фотоцитата</translation>
+      <translation lang="de">Bild erstellen</translation>
     </translation-mapping>
     <translation-mapping id="Button_Audio_Play">
       <translation lang="en">Play</translation>
@@ -5565,6 +4995,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Onderbreking</translation>
       <translation lang="ta">இணையத் தொடர்பு சரியாக இயங்கவில்லை.</translation>
       <translation lang="ru">Время соединения с аудиосервером истекло</translation>
+      <translation lang="de">Die Verbindung zum Audioserver wurde unterbrochen.</translation>
       <translation lang="wol">Jàllale dégtal bi yàgg na ba wees àpp.</translation>
     </translation-mapping>
     <translation-mapping id="Audio_Downloading">
@@ -5666,6 +5097,9 @@ Please enter your access code:</translation>
       <translation lang="hin">ऑडियो डाउनलोड जानकारी प्राप्त करने में विफल</translation>
       <translation lang="wol">Ameesul ay tegtal ngir yebbi.</translation>
     </translation-mapping>
+    <translation-mapping id="Audio_Fail_DBT_Permission">
+      <translation lang="en">Not allowed to download audio</translation>
+    </translation-mapping>
     <translation-mapping id="Audio_Looking_For_File">
       <translation lang="en">Looking for audio file on your device...</translation>
       <translation lang="fr">Recherche du fichier audio sur votre appareil...</translation>
@@ -5691,6 +5125,23 @@ Please enter your access code:</translation>
       <translation lang="ar">إنشاء ملف صوتي</translation>
       <translation lang="nl">Geluidsbestand wordt gemaakt ...</translation>
       <translation lang="ta">ஒலிவடிவ வசனம் உருவாக்கப்படுகின்றது...</translation>
+      <translation lang="de">Audiodatei erstellen…</translation>
+    </translation-mapping>
+    <translation-mapping id="Audio_Repeat_Off_Continue">
+      <translation lang="en">Play to next page</translation>
+      <translation lang="fr">Aller à la page suivante</translation>
+    </translation-mapping>
+    <translation-mapping id="Audio_Repeat_Off_Stop">
+      <translation lang="en">Stop at end of page</translation>
+      <translation lang="fr">Arrêter en fin de page</translation>
+    </translation-mapping>
+    <translation-mapping id="Audio_Repeat_Page">
+      <translation lang="en">Repeat page</translation>
+      <translation lang="fr">Répéter la page</translation>
+    </translation-mapping>
+    <translation-mapping id="Audio_Repeat_Selection">
+      <translation lang="en">Repeat selection</translation>
+      <translation lang="fr">Répéter la sélection</translation>
     </translation-mapping>
     <translation-mapping id="Video_Download_Title">
       <translation lang="en">Video Download</translation>
@@ -5781,16 +5232,28 @@ Please enter your access code:</translation>
       <translation lang="ar">إنشاء فيديو</translation>
       <translation lang="nl">Video wordt gemaakt ...</translation>
       <translation lang="ta">வசனக் காணொளி உருவாக்கப்படுகின்றது...</translation>
+      <translation lang="de">Video erstellen...</translation>
+    </translation-mapping>
+    <translation-mapping id="Video_File_Not_Found">
+      <translation lang="en">Video file not found</translation>
+      <translation lang="fr">Fichier vidéo introuvable</translation>
+      <translation lang="es">Archivo de video no encontrado</translation>
+      <translation lang="pt">Arquivo de vídeo não encontrado</translation>
+      <translation lang="ru">Видеофайл не найден</translation>
     </translation-mapping>
     <translation-mapping id="App_Downloading_App">
       <translation lang="en">Downloading App...</translation>
       <translation lang="fr">Téléchargement de l&apos;application...</translation>
       <translation lang="ru">Приложение загружается…</translation>
+      <translation lang="de">App herunterladen…</translation>
+      <translation lang="ar">جاري تنزيل التطبيق</translation>
     </translation-mapping>
     <translation-mapping id="App_File_Error">
       <translation lang="en">Error processing downloaded app</translation>
       <translation lang="fr">Erreur de traitement de l&apos;application téléchargée</translation>
       <translation lang="ru">При установке загруженного приложения произошла ошибка</translation>
+      <translation lang="de">Fehler beim Verarbeiten der heruntergeladenen App</translation>
+      <translation lang="ar">خطأ في تشغيل التطبيق الذي تم تنزيله</translation>
     </translation-mapping>
     <translation-mapping id="Selector_Book">
       <translation lang="en">BOOK</translation>
@@ -6001,6 +5464,7 @@ Please enter your access code:</translation>
       <translation lang="ar">مشاركة النص</translation>
       <translation lang="nl">Tekst delen</translation>
       <translation lang="ta">வசனத்தை பகிர்</translation>
+      <translation lang="de">Text teilen</translation>
       <translation lang="wol">Séddool kàddu gu ñu bind</translation>
     </translation-mapping>
     <translation-mapping id="Share_Audio">
@@ -6012,6 +5476,7 @@ Please enter your access code:</translation>
       <translation lang="ar">مشاركة الصوت</translation>
       <translation lang="nl">Audio delen</translation>
       <translation lang="ta">ஒலிவடிவ வசனத்தை பகிர்</translation>
+      <translation lang="de">Audio teilen</translation>
       <translation lang="wol">Séddool Audio</translation>
     </translation-mapping>
     <translation-mapping id="Share_Image">
@@ -6023,6 +5488,7 @@ Please enter your access code:</translation>
       <translation lang="ar">مشاركة الصورة</translation>
       <translation lang="nl">Afbeelding delen</translation>
       <translation lang="ta">வசனப் படத்தை பகிர்</translation>
+      <translation lang="de">Bild teilen</translation>
       <translation lang="wol">Séddool Image</translation>
     </translation-mapping>
     <translation-mapping id="Share_Video">
@@ -6034,6 +5500,7 @@ Please enter your access code:</translation>
       <translation lang="ar">مشاركة الفيديو</translation>
       <translation lang="nl">Video delen</translation>
       <translation lang="ta">வசனக் காணொளியை பகிர்</translation>
+      <translation lang="de">Video teilen</translation>
       <translation lang="wol">Séddool Wideo</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Title">
@@ -6118,6 +5585,7 @@ Please enter your access code:</translation>
       <translation lang="ar">الإشعارات</translation>
       <translation lang="nl">Meldingen</translation>
       <translation lang="ta">நினைவூட்டல்</translation>
+      <translation lang="de">Benachrichtigungen</translation>
       <translation lang="wol">Ay yégle</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Category_Audio">
@@ -6279,41 +5747,55 @@ Please enter your access code:</translation>
       <translation lang="fr">Images dans le texte biblique</translation>
       <translation lang="es">Imágenes en texto bíblico</translation>
       <translation lang="ru">Картинки в библейском тексте</translation>
+      <translation lang="de">Bilder im Bibeltext</translation>
+      <translation lang="ar">صور في النص الكتابي</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Display_Videos_In_Bible_Text">
       <translation lang="en">Videos in Bible text</translation>
       <translation lang="fr">Vidéos dans le texte biblique</translation>
       <translation lang="es">Vídeos en texto bíblico</translation>
       <translation lang="ru">Видео в библейском тексте</translation>
+      <translation lang="de">Videos im Bibeltext</translation>
+      <translation lang="ar">فيديوهات في النص الكتابي</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Display_Images_Normal">
       <translation lang="en">Show images</translation>
       <translation lang="fr">Montrer les images</translation>
       <translation lang="es">Mostrar imágenes</translation>
       <translation lang="ru">Показывать картинки</translation>
+      <translation lang="de">Bilder zeigen</translation>
+      <translation lang="ar">عرض الصور</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Display_Images_Hidden">
       <translation lang="en">Hide images</translation>
       <translation lang="fr">Cacher les images</translation>
       <translation lang="es">Ocultar imágenes</translation>
       <translation lang="ru">Скрывать картинки</translation>
+      <translation lang="de">Bilder ausblenden</translation>
+      <translation lang="ar">إخفاء الصور</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Display_Videos_Normal">
       <translation lang="en">Show normal size</translation>
       <translation lang="fr">Montrer en taille normale</translation>
       <translation lang="es">Mostrar tamaño normal</translation>
       <translation lang="ru">Смотреть полномасштабные видео</translation>
+      <translation lang="de">Normale Größe zeigen</translation>
+      <translation lang="ar">عرض بالحجم العادي</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Display_Videos_Small">
       <translation lang="en">Show small size</translation>
       <translation lang="fr">Montrer en petite taille</translation>
       <translation lang="ru">Смотреть видео уменьшенного размера</translation>
+      <translation lang="de">Kleine Größe zeigen</translation>
+      <translation lang="ar">عرض بالحجم الصغير</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Display_Videos_Hidden">
       <translation lang="en">Hide videos</translation>
       <translation lang="fr">Cacher les vidéos</translation>
       <translation lang="es">Ocultar videos</translation>
       <translation lang="ru">Скрывать видео</translation>
+      <translation lang="de">Videos ausblenden</translation>
+      <translation lang="ar">إخفاء الفيديوهات</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Show_Border">
       <translation lang="en">Show border</translation>
@@ -6695,6 +6177,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Geluidsbestand downloaden of streamen</translation>
       <translation lang="ta">ஒலிவடிவ வசன பதிவிறக்கம் (அ) இயக்கம்</translation>
       <translation lang="ru">Загружать аудиофайлы или слушать потоковое аудио</translation>
+      <translation lang="de">Audio herunterladen oder streamen</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Access_Method_Download">
       <translation lang="en">Download audio files</translation>
@@ -6704,6 +6187,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Geluidsbestanden downloaden</translation>
       <translation lang="ta">பதிவிறக்க முறையில்</translation>
       <translation lang="ru">Загружать аудиофайлы</translation>
+      <translation lang="de">Herunterladen von Audiodateien</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Access_Method_Stream">
       <translation lang="en">Stream audio files</translation>
@@ -6713,6 +6197,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Geluidsbestanden streamen</translation>
       <translation lang="ta">இயக்க முறையில்</translation>
       <translation lang="ru">Слушать потоковое аудио</translation>
+      <translation lang="de">Audiodateien streamen</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Download_Mode">
       <translation lang="en">Audio file download</translation>
@@ -6836,6 +6321,7 @@ Please enter your access code:</translation>
       <translation lang="id">Nats harian</translation>
       <translation lang="ar">آية اليوم</translation>
       <translation lang="ta">இன்றைய வசனம்</translation>
+      <translation lang="de">Vers des Tages</translation>
       <translation lang="wol">Aaya bés bi</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Of_The_Day_Time">
@@ -6846,6 +6332,7 @@ Please enter your access code:</translation>
       <translation lang="id">Jadwal nats harian</translation>
       <translation lang="ar">حان الوقت لآية اليوم</translation>
       <translation lang="ta">இன்றைய வசன நேரம்</translation>
+      <translation lang="de">Zeitpunkt für Vers des Tages</translation>
       <translation lang="wol">Waxtuw aaya bés bi</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Of_The_Day_Book_Collection">
@@ -6856,6 +6343,7 @@ Please enter your access code:</translation>
       <translation lang="id">Terjemahan nats harian</translation>
       <translation lang="ar">ترجمة آية اليوم</translation>
       <translation lang="ta">இன்றைய வசனத்தின் மொழிபெயர்ப்பு</translation>
+      <translation lang="de">Übersetzung für Vers des Tages</translation>
       <translation lang="wol">Sottib aaya bés bi</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Daily_Reminder">
@@ -6866,6 +6354,7 @@ Please enter your access code:</translation>
       <translation lang="id">Peringatan harian</translation>
       <translation lang="ar">تذكير يومي</translation>
       <translation lang="ta">தினசரி வேத வாசிப்பு</translation>
+      <translation lang="de">Tägliche Erinnerung</translation>
       <translation lang="wol">Fàttlee ci bés bu nekk</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Daily_Reminder_Time">
@@ -6876,6 +6365,7 @@ Please enter your access code:</translation>
       <translation lang="id">Jadwal peringatan harian</translation>
       <translation lang="ar">حان الوقت للتذكير اليومي</translation>
       <translation lang="ta">தினசரி வேத வாசிப்பின் நேரம்</translation>
+      <translation lang="de">Zeitpunkt für die tägliche Erinnerung</translation>
       <translation lang="wol">Waxtuw fàttli</translation>
     </translation-mapping>
     <translation-mapping id="Account_Page_Title">
@@ -6886,6 +6376,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Mijn account</translation>
       <translation lang="ta">எனது விவரம்</translation>
       <translation lang="ru">Мой аккаунт</translation>
+      <translation lang="de">Mein Konto</translation>
     </translation-mapping>
     <translation-mapping id="Account_Sign_In_Title">
       <translation lang="en">Sign In</translation>
@@ -6895,6 +6386,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Inlognaam</translation>
       <translation lang="ta">உள்ளே செல்தல்</translation>
       <translation lang="ru">Авторизация</translation>
+      <translation lang="de">Anmelden</translation>
     </translation-mapping>
     <translation-mapping id="Account_Sign_In_Button">
       <translation lang="en">Sign In</translation>
@@ -6904,6 +6396,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Inloggen</translation>
       <translation lang="ta">உட்புகு</translation>
       <translation lang="ru">Авторизоваться</translation>
+      <translation lang="de">Anmelden</translation>
     </translation-mapping>
     <translation-mapping id="Account_Sign_Up_Title">
       <translation lang="en">Sign Up</translation>
@@ -6913,6 +6406,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Inschrijfnaam</translation>
       <translation lang="ta">பதிந்து கொள்தல்</translation>
       <translation lang="ru">Регистрация</translation>
+      <translation lang="de">Registrieren</translation>
     </translation-mapping>
     <translation-mapping id="Account_Sign_Up_Button">
       <translation lang="en">Sign Up</translation>
@@ -6921,6 +6415,8 @@ Please enter your access code:</translation>
       <translation lang="nl">Inschrijven</translation>
       <translation lang="ta">பதியவும்</translation>
       <translation lang="ru">Зарегистрироваться</translation>
+      <translation lang="de">Registrieren</translation>
+      <translation lang="ar">تسجيل حساب</translation>
     </translation-mapping>
     <translation-mapping id="Account_Sign_Out_Button">
       <translation lang="en">Sign Out</translation>
@@ -6930,11 +6426,14 @@ Please enter your access code:</translation>
       <translation lang="nl">Uitloggen</translation>
       <translation lang="ta">வெளியேறு</translation>
       <translation lang="ru">Выйти</translation>
+      <translation lang="de">Abmelden</translation>
     </translation-mapping>
     <translation-mapping id="Account_Sign_Out_Button_Confirmation">
       <translation lang="en">Do you want to sign out?\n\nAny new highlights, notes and bookmarks will not be saved to your account.</translation>
       <translation lang="fr">Voulez-vous vous déconnecter ?\n\nLes nouveaux surlignements, notes et signets ne seront pas enregistrés sur votre compte.</translation>
       <translation lang="ru">Вы хотите завершить сессию?\n\n Внесённые изменения, заметки и закладки не сохранятся в вашем аккаунте.</translation>
+      <translation lang="de">Möchten Sie sich abmelden?\n\nNeue Markierungen, Notizen und Lesezeichen werden nicht in Ihrem Konto gespeichert.</translation>
+      <translation lang="ar">هل ترغب في الخروج؟\n\nلن يتم حفظ أي نقاط رئيسية أو ملاحظات أو علامات مرجعية جديدة على حسابك</translation>
     </translation-mapping>
     <translation-mapping id="Account_Full_Name">
       <translation lang="en">Your Name</translation>
@@ -6944,6 +6443,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Volledige naam</translation>
       <translation lang="ta">முழுபெயர்</translation>
       <translation lang="ru">Полное имя</translation>
+      <translation lang="de">Vollständiger Name</translation>
     </translation-mapping>
     <translation-mapping id="Account_Email_Address">
       <translation lang="en">Email Address</translation>
@@ -6953,6 +6453,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Emailadres</translation>
       <translation lang="ta">மின்னஞ்சல்</translation>
       <translation lang="ru">Адрес электронной почты</translation>
+      <translation lang="de">E-Mail Adresse</translation>
     </translation-mapping>
     <translation-mapping id="Account_Password">
       <translation lang="en">Password</translation>
@@ -6962,6 +6463,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Wachtwoord</translation>
       <translation lang="ta">கடவுச்சொல்</translation>
       <translation lang="ru">Пароль</translation>
+      <translation lang="de">Passwort</translation>
     </translation-mapping>
     <translation-mapping id="Account_Confirm_Password">
       <translation lang="en">Confirm Password</translation>
@@ -6971,6 +6473,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Wachtwoord bevestigen</translation>
       <translation lang="ta">கடவுச்சொல்லை உறுதிசெய்</translation>
       <translation lang="ru">Подтвердите пароль</translation>
+      <translation lang="de">Bestätigen Sie Ihr Passwort</translation>
     </translation-mapping>
     <translation-mapping id="Account_Forgot_Password">
       <translation lang="en">Forgot Password?</translation>
@@ -6980,11 +6483,14 @@ Please enter your access code:</translation>
       <translation lang="nl">Wachtwoord vergeten?</translation>
       <translation lang="ta">கடவுச்சொல்லை மறந்துவிட்டீர்களா?</translation>
       <translation lang="ru">Забыли пароль?</translation>
+      <translation lang="de">Passwort vergessen?</translation>
     </translation-mapping>
     <translation-mapping id="Account_Reset_Password">
       <translation lang="en">Reset Password</translation>
       <translation lang="fr">Réinitialiser mot de passe</translation>
       <translation lang="ru">Сбросить пароль</translation>
+      <translation lang="de">Passwort zurücksetzen</translation>
+      <translation lang="ar">إعادة ضبط كلمة المرور</translation>
     </translation-mapping>
     <translation-mapping id="Account_Change_Password">
       <translation lang="en">Change Password</translation>
@@ -6994,6 +6500,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Wachtwoord veranderen</translation>
       <translation lang="ta">கடவுச்சொல்லை மாற்று</translation>
       <translation lang="ru">Изменить пароль</translation>
+      <translation lang="de">Passwort ändern</translation>
     </translation-mapping>
     <translation-mapping id="Account_Current_Password">
       <translation lang="en">Current Password</translation>
@@ -7003,6 +6510,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Huidig wachtwoord</translation>
       <translation lang="ta">தற்போதைய கடவுச்சொல்</translation>
       <translation lang="ru">Текущий пароль</translation>
+      <translation lang="de">Aktuelles Passwort</translation>
     </translation-mapping>
     <translation-mapping id="Account_New_Password">
       <translation lang="en">New Password</translation>
@@ -7012,6 +6520,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Nieuw wachtwoord</translation>
       <translation lang="ta">புதிய கடவுச்சொல்</translation>
       <translation lang="ru">Новый пароль</translation>
+      <translation lang="de">Neues Passwort</translation>
     </translation-mapping>
     <translation-mapping id="Account_Confirm_New_Password">
       <translation lang="en">Confirm New Password</translation>
@@ -7021,31 +6530,42 @@ Please enter your access code:</translation>
       <translation lang="nl">Nieuw wachtwoord bevestigen</translation>
       <translation lang="ta">புதிய கடவுச்சொல்லை உறுதிசெய்</translation>
       <translation lang="ru">Подтвердить новый пароль</translation>
+      <translation lang="de">Bestätigen Sie das neue Passwort</translation>
     </translation-mapping>
     <translation-mapping id="Account_Change_Profile">
       <translation lang="en">Change Profile</translation>
       <translation lang="fr">Modifier profil</translation>
       <translation lang="ru">Изменить профиль</translation>
+      <translation lang="de">Profil ändern</translation>
+      <translation lang="ar">تغيير الملف الشخصي</translation>
     </translation-mapping>
     <translation-mapping id="Account_Enter_Password">
       <translation lang="en">Enter Password</translation>
       <translation lang="fr">Saisir mot de passe</translation>
       <translation lang="ru">Введите пароль</translation>
+      <translation lang="de">Passwort eingeben</translation>
+      <translation lang="ar">إدخال كلمة المرور</translation>
     </translation-mapping>
     <translation-mapping id="Account_Save_Changes_Button">
       <translation lang="en">Save Changes</translation>
       <translation lang="fr">Enregistrer</translation>
       <translation lang="ru">Сохранить изменения</translation>
+      <translation lang="de">Änderungen speichern</translation>
+      <translation lang="ar">حفظ التغييرات</translation>
     </translation-mapping>
     <translation-mapping id="Account_Delete_Account">
       <translation lang="en">Delete Account</translation>
       <translation lang="fr">Supprimer compte</translation>
       <translation lang="ru">Удалить аккаунт</translation>
+      <translation lang="de">Konto löschen</translation>
+      <translation lang="ar">حذف الحساب</translation>
     </translation-mapping>
     <translation-mapping id="Account_Delete_Account_Confirmation">
       <translation lang="en">Do you want to delete your account?\n\nAll your saved highlights, notes and bookmarks will be deleted.</translation>
       <translation lang="fr">Voulez-vous supprimer votre compte ? Tous les surlignements, notes et signets que vous avez enregistrés seront supprimés.</translation>
       <translation lang="ru">Вы хотите удалить свой аккаунт?\n\nВсе внесенные вами изменения, заметки и закладки будут удалены.</translation>
+      <translation lang="de">Möchten Sie Ihr Konto löschen?\n\nAlle Ihre gespeicherten Highlights, Notizen und Lesezeichen werden gelöscht.</translation>
+      <translation lang="ar">هل ترغب في حذف حسابك؟ \n\nسوف يتم حذف كل النقاط الهامة والملاحظات والاشارات المرجعية التي قمت بحفظها</translation>
     </translation-mapping>
     <translation-mapping id="Account_Login_Page_Heading">
       <translation lang="en">Sign In or Sign Up</translation>
@@ -7055,6 +6575,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Inloggen</translation>
       <translation lang="ta">உள்ளேபுகு (அ) பதிவு செய்</translation>
       <translation lang="ru">Авторизоваться или зарегистрироваться</translation>
+      <translation lang="de">Anmelden oder Registrieren</translation>
     </translation-mapping>
     <translation-mapping id="Account_Login_Page_Info">
       <translation lang="en">You can save your highlights, notes and bookmarks - and synchronize them with other devices.</translation>
@@ -7063,6 +6584,8 @@ Please enter your access code:</translation>
       <translation lang="nl">Je kunt hoogtepunten, aantekeningen en bladwijzers opslaan en synchroniseren met andere apparaten.</translation>
       <translation lang="ta">நீங்கள் உங்கள் எடுத்து வைத்த குறிப்புகளையும் மேற்கோள்களையும் மற்றவர்களுடைய சாதனத்திற்கு அனுப்பலாம்</translation>
       <translation lang="ru">Вы можете сохранять выделение цветом, заметки, закладки и историю и синхронизировать это с другими устройствами.</translation>
+      <translation lang="de">Sie können Ihre Markierungen, Notizen, Lesezeichen und den Verlauf speichern - und mit anderen Geräten synchronisieren</translation>
+      <translation lang="ar">يمكنك حفظ النقاط الهامة والملاحظات والإشارات المرجعية والتاريخ - ومزامنتها مع الأجهزة الأخرى</translation>
     </translation-mapping>
     <translation-mapping id="Account_Logged_In_Page_Info">
       <translation lang="en">Your highlights, notes and bookmarks are being saved to your account when you are connected to the internet.</translation>
@@ -7071,86 +6594,120 @@ Please enter your access code:</translation>
       <translation lang="nl">Hoogtepunten, aantekeningen en bladwijzers worden bewaard bij internetverbinding.</translation>
       <translation lang="ta">உங்களது சாதனம் இணையத் தொடர்பில் இருக்கும்போது உங்களது குறிப்புகளும் மேற்கோள்களும் வைத்து வைக்கப்படும்</translation>
       <translation lang="ru">Выделение цветом, заметки, закладки и история будут сохранены в вашем аккаунте при подключении к интернету.</translation>
+      <translation lang="de">Ihre Markierungen, Notizen, Lesezeichen und der Verlauf werden in Ihrem Konto gespeichert, wenn Sie mit dem Internet verbunden sind.</translation>
+      <translation lang="ar">يتم حفظ النقاط الهامه والملاحظات والعلامات المرجعية والتاريخ على حسابك عندما تكون متصلاً بالأنترنت</translation>
     </translation-mapping>
     <translation-mapping id="Account_Message_Enter_Name">
       <translation lang="en">Please enter your name.</translation>
       <translation lang="fr">Veuillez saisir votre nom.</translation>
       <translation lang="ru">Введите, пожалуйста, ваше имя.</translation>
+      <translation lang="de">Bitte geben Sie Ihren Namen ein.</translation>
+      <translation lang="ar">برجاء إدخال اسمك</translation>
     </translation-mapping>
     <translation-mapping id="Account_Message_Enter_Valid_Email">
       <translation lang="en">Please enter a valid email address.</translation>
       <translation lang="fr">Veuillez entrer une adresse e-mail valide.</translation>
       <translation lang="ru">Просьба ввести действительный электронный адрес.</translation>
+      <translation lang="de">Bitte geben Sie eine gültige E-Mail-Adresse ein.</translation>
+      <translation lang="ar">برجاء إدخال بريد إلكتروني صحيح</translation>
     </translation-mapping>
     <translation-mapping id="Account_Message_Enter_Valid_Password">
       <translation lang="en">Please enter a valid password. Passwords must have at least six characters and can contain letters, numbers and punctuation.</translation>
       <translation lang="fr">Veuillez saisir un mot de passe valide. Les mots de passe doivent comporter au moins six caractères et peuvent contenir des lettres, des chiffres et des signes de ponctuation.</translation>
       <translation lang="ru">Просьба ввести действительный пароль. Пароль должен быть не короче шести знаков и может содержать буквы, цифры и знаки пунктуации.</translation>
+      <translation lang="de">Bitte geben Sie ein gültiges Passwort ein. Passwörter müssen aus mindestens sechs Zeichen bestehen und können Buchstaben, Zahlen und Sonderzeichen enthalten.</translation>
+      <translation lang="ar">برجاء إدخال كلمة مرور صالحة.  كلمة المرور يجب أن تحتوي على 6 مكونات على الأقل ويمكن أن تتكون من حروف وأرقام وعلامات ترقيم</translation>
     </translation-mapping>
     <translation-mapping id="Account_Message_Enter_Email_And_Password">
       <translation lang="en">Please enter your email address and password.</translation>
       <translation lang="fr">Veuillez saisir votre adresse e-mail et votre mot de passe.</translation>
       <translation lang="ru">Просьба ввести электронный адрес и пароль.</translation>
+      <translation lang="de">Bitte geben Sie Ihre E-Mail-Adresse und Ihr Passwort ein.</translation>
+      <translation lang="ar">برجاء إدخال بريدك الالكتروني وكلمة المرور</translation>
     </translation-mapping>
     <translation-mapping id="Account_Message_Passwords_Not_Matching">
       <translation lang="en">Your password confirmation did not match your new password. Please try again.</translation>
       <translation lang="fr">La confirmation de votre mot de passe ne correspond pas à votre nouveau mot de passe. Veuillez réessayer.</translation>
       <translation lang="ru">Подтверждённый пароль не совпадает с вашим новым паролем. Попробуйте ещё раз.</translation>
+      <translation lang="de">Die Bestätigung Ihres Passworts stimmte nicht mit Ihrem neuen Passwort überein. Bitte versuchen Sie es erneut.</translation>
+      <translation lang="ar">التأكيد على كلمة المرور الخاصة بك لم يتوافق مع كلمة المرور الجديدة.  من فضلك حاول مرة أخرى</translation>
     </translation-mapping>
     <translation-mapping id="Account_Message_Incorrect_Email_Password">
       <translation lang="en">Sorry, we cannot find this email address and/or password. Please try again.</translation>
       <translation lang="fr">Désolé, nous ne trouvons pas cette adresse e-mail et/ou ce mot de passe. Veuillez réessayer.</translation>
       <translation lang="ru">Введённый адрес электронной почты и/или пароль не найдены. Попробуйте ещё раз.</translation>
+      <translation lang="de">Leider können wir diese E-Mail-Adresse und/oder dieses Passwort nicht finden. Bitte versuchen Sie es erneut.</translation>
+      <translation lang="ar">للأسف، لم نتمكن من الوصول إلى بريدك الالكتروني أو كلمة المرور.  من فضلك حاول مرة أخرى</translation>
     </translation-mapping>
     <translation-mapping id="Account_Message_Sign_In_Error">
       <translation lang="en">Sorry, we were unable to sign you in.</translation>
       <translation lang="fr">Désolé, nous n&apos;avons pas pu vous connecter.</translation>
       <translation lang="ru">К сожалению, попытка входа не удалась.</translation>
+      <translation lang="de">Leider konnten wir Sie nicht anmelden.</translation>
+      <translation lang="ar">للأسف، لم نتمكن من إدخالك</translation>
     </translation-mapping>
     <translation-mapping id="Account_Message_Sign_Up_Error">
       <translation lang="en">Sorry, we were unable to sign you up.</translation>
       <translation lang="fr">Désolé, nous n&apos;avons pas pu vous inscrire.</translation>
       <translation lang="ru">К сожалению, регистрация не прошла.</translation>
+      <translation lang="de">Leider konnten wir Sie nicht registrieren.</translation>
+      <translation lang="ar">للأسف، لم نتمكن من تسجيلك</translation>
     </translation-mapping>
     <translation-mapping id="Account_Message_Database_Error">
       <translation lang="en">Please report the following database error:</translation>
       <translation lang="fr">Veuillez signaler l&apos;erreur suivante :</translation>
       <translation lang="ru">Пожалуйста, сообщите об ошибке базы данных:</translation>
+      <translation lang="de">Bitte melden Sie den folgenden Datenbankfehler:</translation>
+      <translation lang="ar">برجاء الإبلاغ عن الخطأ التالي في قاعدة البيانات:</translation>
     </translation-mapping>
     <translation-mapping id="Account_Message_Change_Password_Error">
       <translation lang="en">Sorry, we were unable to change your password.</translation>
       <translation lang="fr">Désolé, nous n&apos;avons pas pu modifier votre mot de passe.</translation>
       <translation lang="ru">К сожалению, попытка изменить пароль не удалась.</translation>
+      <translation lang="de">Leider konnten wir Ihr Passwort nicht ändern.</translation>
+      <translation lang="ar">للأسف لم نتمكن من تغيير كلمة المرور</translation>
     </translation-mapping>
     <translation-mapping id="Account_Message_Change_Profile_Error">
       <translation lang="en">Sorry, we were unable to change your profile.</translation>
       <translation lang="fr">Désolé, nous n&apos;avons pas pu modifier votre profil.</translation>
       <translation lang="ru">К сожалению, попытка изменения профиля не удалась.</translation>
+      <translation lang="de">Leider konnten wir Ihr Profil nicht ändern.</translation>
+      <translation lang="ar">للأسف، لم نتمكن من تغيير حسابك</translation>
     </translation-mapping>
     <translation-mapping id="Account_Message_Check_Internet">
       <translation lang="en">Please check your internet connection.</translation>
       <translation lang="fr">Veuillez vérifier votre connexion Internet.</translation>
       <translation lang="ru">Проверьте, пожалуйста, ваше соединение с интернетом.</translation>
+      <translation lang="de">Bitte überprüfen Sie Ihre Internetverbindung.</translation>
+      <translation lang="ar">برجاء فحص التوصيل بالإنترنت</translation>
     </translation-mapping>
     <translation-mapping id="Account_Message_Reset_Password_Email_Sent">
       <translation lang="en">We have sent you an email to reset your password.</translation>
       <translation lang="fr">Nous vous avons envoyé un courriel pour réinitialiser votre mot de passe.</translation>
       <translation lang="ru">Мы отправили вам email для изменения вашего пароля.</translation>
+      <translation lang="de">Wir haben Ihnen eine E-Mail geschickt, um Ihr Passwort zurückzusetzen.</translation>
+      <translation lang="ar">لقد أرسلنا لك إيميل لتغيير كلمة المرور الخاصة بك</translation>
     </translation-mapping>
     <translation-mapping id="Account_Message_Email_Already_In_Use">
       <translation lang="en">This email address is already in use.</translation>
       <translation lang="fr">Cette adresse e-mail est déjà utilisée.</translation>
       <translation lang="ru">Этот email уже используется.</translation>
+      <translation lang="de">Diese E-Mail-Adresse ist bereits in Gebrauch.</translation>
+      <translation lang="ar">هذا الحساب الالكتروني مستخدم بالفعل</translation>
     </translation-mapping>
     <translation-mapping id="Account_Message_Delete_Account_Error">
       <translation lang="en">Sorry, we were unable to delete your account.</translation>
       <translation lang="fr">Désolé, nous n&apos;avons pas pu supprimer votre compte.</translation>
       <translation lang="ru">К сожалению, удалить ваш аккаунт не удаётся.</translation>
+      <translation lang="de">Es tut uns leid, wir konnten Ihr Konto nicht löschen.</translation>
+      <translation lang="ar">للأسف، لم نتمكن من مسح حسابك</translation>
     </translation-mapping>
     <translation-mapping id="Account_Message_Delete_Account_Success">
       <translation lang="en">Your account was deleted successfully.</translation>
       <translation lang="fr">Votre compte a été supprimé avec succès.</translation>
       <translation lang="ru">Ваш аккаунт успешно удалён.</translation>
+      <translation lang="de">Ihr Konto wurde erfolgreich gelöscht.</translation>
+      <translation lang="ar">تم مسح حسابك بنجاح</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Verse_Of_The_Day_Title">
       <translation lang="en">Verse of the Day</translation>
@@ -7160,6 +6717,7 @@ Please enter your access code:</translation>
       <translation lang="id">Nats Harian</translation>
       <translation lang="ar">آية اليوم</translation>
       <translation lang="ta">இன்றைய வசனம்</translation>
+      <translation lang="de">Vers des Tages</translation>
       <translation lang="wol">Aaya bés bi</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Daily_Reminder_Title">
@@ -7170,6 +6728,7 @@ Please enter your access code:</translation>
       <translation lang="id">Peringatan Harian</translation>
       <translation lang="ar">تذكير يومي</translation>
       <translation lang="ta">வேத வாசிப்பு</translation>
+      <translation lang="de">Tägliche Erinnerung</translation>
       <translation lang="wol">Fàttlee ci bés bu nekk</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Daily_Reminder_Message">
@@ -7180,6 +6739,7 @@ Please enter your access code:</translation>
       <translation lang="id">Ini saatnya untuk membaca/mendengar Firman Allah</translation>
       <translation lang="ar">حان الوقت للإستماع أو لقراءة كلمة الله</translation>
       <translation lang="ta">வேத வசனம் வாசிக்கும் நேரம்</translation>
+      <translation lang="de">Zeit zum Lesen oder Hören auf Gottes Wort</translation>
       <translation lang="wol">Waxtuw jàng Kàddug Yàlla</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Channel_Name_Messages">
@@ -7189,6 +6749,8 @@ Please enter your access code:</translation>
       <translation lang="nl">Berichten</translation>
       <translation lang="ta">தகவல்கள்</translation>
       <translation lang="ru">Сообщения</translation>
+      <translation lang="de">Nachrichten</translation>
+      <translation lang="ar">رسائل</translation>
       <translation lang="wol"></translation>
     </translation-mapping>
     <translation-mapping id="Notification_Channel_Name_Verse_Of_The_Day">
@@ -7199,6 +6761,8 @@ Please enter your access code:</translation>
       <translation lang="nl">Vers van de dag</translation>
       <translation lang="ta">இன்றைய வசனம்</translation>
       <translation lang="ru">Стих дня</translation>
+      <translation lang="de">Vers des Tages</translation>
+      <translation lang="ar">آية اليوم</translation>
       <translation lang="wol">Aaya bés bi</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Channel_Name_Daily_Reminder">
@@ -7209,6 +6773,8 @@ Please enter your access code:</translation>
       <translation lang="nl">Dagelijkse herinnering</translation>
       <translation lang="ta">இன்றைய வேத வாசிப்பு</translation>
       <translation lang="ru">Ежедневное напоминание</translation>
+      <translation lang="de">Tägliche Erinnerung</translation>
+      <translation lang="ar">تذكير يومي</translation>
       <translation lang="wol">Man ngaa jot aaya bés bi ak ay fàttliy bés</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Channel_Name_Images">
@@ -7220,6 +6786,8 @@ Please enter your access code:</translation>
       <translation lang="nl">Afbeeldingen</translation>
       <translation lang="ta">படங்கள்</translation>
       <translation lang="ru">Изображения</translation>
+      <translation lang="de">Bilder</translation>
+      <translation lang="ar">صور</translation>
       <translation lang="wol"></translation>
     </translation-mapping>
     <translation-mapping id="Notification_Please_Allow">
@@ -7230,6 +6798,7 @@ Please enter your access code:</translation>
       <translation lang="ar">برجاء السماح لهذا التطبيق بإرسال إشعارات</translation>
       <translation lang="nl">Sta toe dat deze app je berichten stuurt.</translation>
       <translation lang="ta">உங்களைக்கு நினைவூட்ட இந்த செயலியை அனுமதிக்கிறீரா?</translation>
+      <translation lang="de">Bitte erlauben Sie dieser App, Ihnen Benachrichtigungen zu senden.</translation>
       <translation lang="wol">Mayal app bi mu yónnee ay yégle</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Please_Allow_Info">
@@ -7240,6 +6809,7 @@ Please enter your access code:</translation>
       <translation lang="ar">يمكنك أن تتلقى آية وتذكيرًا يوميًا</translation>
       <translation lang="nl">Je kunt een vers van de dag en dagelijkse herinneringen ontvangen.</translation>
       <translation lang="ta">இன்றைய வசனம் மற்றும் தினசரி நினைவூட்டல்களையும் நீங்கள் பெறலாம்</translation>
+      <translation lang="de">Sie können einen Vers des Tages und tägliche Erinnerungen erhalten.</translation>
       <translation lang="wol">Man ngaa jot aaya bés bi ak ay fàttliy bés</translation>
     </translation-mapping>
     <translation-mapping id="Song_List_By_Number">
@@ -7296,6 +6866,7 @@ Please enter your access code:</translation>
       <translation lang="ar">صورة</translation>
       <translation lang="nl">Afbeelding</translation>
       <translation lang="ta">வசனப் படம்</translation>
+      <translation lang="de">Bild</translation>
     </translation-mapping>
     <translation-mapping id="Text_On_Image_Saved">
       <translation lang="en">Image saved</translation>
@@ -7306,6 +6877,7 @@ Please enter your access code:</translation>
       <translation lang="ar">تم حفظ الصورة</translation>
       <translation lang="nl">Afbeelding opgeslagen</translation>
       <translation lang="ta">வசனப் படம் சேர்த்துவைக்கப்பட்டது</translation>
+      <translation lang="de">Bild gespeichert</translation>
       <translation lang="wol">Denc nga image bi ci sa masin</translation>
     </translation-mapping>
     <translation-mapping id="Text_On_Image_Video_Saved">
@@ -7316,6 +6888,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Video opgeslagen</translation>
       <translation lang="ta">வசனக் காணொளி சேர்த்துவைக்கப்பட்டது</translation>
       <translation lang="ru">Видео сохранено</translation>
+      <translation lang="de">Video gespeichert</translation>
     </translation-mapping>
     <translation-mapping id="Text_On_Image_Save_Image">
       <translation lang="en">Save Image</translation>
@@ -7325,6 +6898,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Afbeelding opslaan</translation>
       <translation lang="ta">வசனப் படத்தை சேர்த்துவை</translation>
       <translation lang="ru">Сохранить картинку</translation>
+      <translation lang="de">Bild speichern</translation>
     </translation-mapping>
     <translation-mapping id="Text_On_Image_Save_Video">
       <translation lang="en">Save Video</translation>
@@ -7334,6 +6908,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Video opslaan</translation>
       <translation lang="ta">வசனக் காணொளியைச் சேர்த்துவை</translation>
       <translation lang="ru">Сохранить видео</translation>
+      <translation lang="de">Video speichern</translation>
     </translation-mapping>
     <translation-mapping id="Crop_Image_Title">
       <translation lang="en">Crop Image</translation>
@@ -7343,6 +6918,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Afbeelding bijsnijden</translation>
       <translation lang="ta">வசனப் படத்தை சீர்படுத்துதல்</translation>
       <translation lang="ru">Обрезать картинку</translation>
+      <translation lang="de">Bild zuschneiden</translation>
     </translation-mapping>
     <translation-mapping id="Edit_Text_On_Image_Title">
       <translation lang="en">Edit Text</translation>
@@ -7352,6 +6928,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Tekst bewerken</translation>
       <translation lang="ta">வசனத்தை சீர்படுத்துதல்</translation>
       <translation lang="ru">Редактировать текст</translation>
+      <translation lang="de">Text bearbeiten</translation>
     </translation-mapping>
     <translation-mapping id="Book_Group_OT">
       <translation lang="en">Old Testament</translation>
@@ -7427,6 +7004,8 @@ Please enter your access code:</translation>
       <translation lang="en">Select Language &amp; Layout</translation>
       <translation lang="fr">Langue et agencement</translation>
       <translation lang="ru">Выберите язык и разметку</translation>
+      <translation lang="de">Sprache und Layout auswählen</translation>
+      <translation lang="ar">اختيار اللغة والترتيبة</translation>
     </translation-mapping>
     <translation-mapping id="Layout_Single_Pane">
       <translation lang="en">Single Pane</translation>
@@ -7442,6 +7021,7 @@ Please enter your access code:</translation>
       <translation lang="te">ఒక ప్యానెల్</translation>
       <translation lang="ko">하나의 단</translation>
       <translation lang="ta">ஒரு சட்டத்தில்</translation>
+      <translation lang="de">Ein Fenster</translation>
       <translation lang="hin">एक शाखा</translation>
       <translation lang="wol">Ci wenn laf</translation>
     </translation-mapping>
@@ -7459,6 +7039,7 @@ Please enter your access code:</translation>
       <translation lang="te">రెండు ప్యానెల్స్</translation>
       <translation lang="ko">두개의 단</translation>
       <translation lang="ta">இரண்டு சட்டத்தில்</translation>
+      <translation lang="de">Zwei Fenster</translation>
       <translation lang="hin">दो शाखा</translation>
       <translation lang="wol">Ci ñaari laf</translation>
     </translation-mapping>
@@ -7476,6 +7057,7 @@ Please enter your access code:</translation>
       <translation lang="te">వచనం తరవాత వచనం</translation>
       <translation lang="ko">절별</translation>
       <translation lang="ta">வசனத்தின் பின் வசனமாக</translation>
+      <translation lang="de">Vers für Vers</translation>
       <translation lang="hin">आयत बय आयत</translation>
       <translation lang="wol">Aaya yi benn-benn</translation>
     </translation-mapping>
@@ -7493,6 +7075,7 @@ Please enter your access code:</translation>
       <translation lang="hi">निशान डालें</translation>
       <translation lang="te">గురుతు పెట్టండి</translation>
       <translation lang="ko">마커 삽입</translation>
+      <translation lang="de">Markierung einfügen</translation>
       <translation lang="hin">निशान डालें</translation>
     </translation-mapping>
     <translation-mapping id="Editor_Insert_Paragraph">
@@ -7509,6 +7092,7 @@ Please enter your access code:</translation>
       <translation lang="hi">अनुच्छेद (\p)</translation>
       <translation lang="te">పేరా (\\ p)</translation>
       <translation lang="ko">단락 (\\p)</translation>
+      <translation lang="de">Absatz (\\p)</translation>
       <translation lang="hin">अनुच्छेद (\p)</translation>
     </translation-mapping>
     <translation-mapping id="Editor_Insert_Poetry">
@@ -7524,6 +7108,7 @@ Please enter your access code:</translation>
       <translation lang="ar">الشعر (\\q1)</translation>
       <translation lang="hi">कविता  (\q1)</translation>
       <translation lang="te">కవిత్వం (\q1)</translation>
+      <translation lang="de">Gedicht (\\q1)</translation>
       <translation lang="hin">कविता  (\q1)</translation>
     </translation-mapping>
     <translation-mapping id="Editor_Insert_SubHeading">
@@ -7540,6 +7125,7 @@ Please enter your access code:</translation>
       <translation lang="hi">उप शीर्षक (\s)</translation>
       <translation lang="te">ఉపశీర్షిక (\s)</translation>
       <translation lang="ko">부제 (\\s)</translation>
+      <translation lang="de">Zwischenüberschrift (\\\s)</translation>
       <translation lang="hin">उप शीर्षक (\s)</translation>
     </translation-mapping>
     <translation-mapping id="Editor_Insert_Footnote">
@@ -7556,6 +7142,7 @@ Please enter your access code:</translation>
       <translation lang="hi">पाद लेख (\f... \f*)</translation>
       <translation lang="te">ఫుట్‌నోట్ (\f... \f*)</translation>
       <translation lang="ko">각주 (\\f ...\\f*)</translation>
+      <translation lang="de">Fußnote (\\\f …\\f*)</translation>
       <translation lang="hin">पाद लेख (\f... \f*)</translation>
     </translation-mapping>
     <translation-mapping id="Editor_Insert_Other">
@@ -7573,15 +7160,20 @@ Please enter your access code:</translation>
       <translation lang="hi">अन्य  (\\)</translation>
       <translation lang="te">ఇతర (\\)</translation>
       <translation lang="ko">추가 (\\)</translation>
+      <translation lang="de">Sonstiges (\\\)</translation>
       <translation lang="hin">अन्य  (\\)</translation>
     </translation-mapping>
     <translation-mapping id="Quiz_Score_Page_Message_Before">
       <translation lang="en">You scored</translation>
       <translation lang="fr">Vous avez obtenu un score de</translation>
+      <translation lang="de">Sie haben</translation>
+      <translation lang="ar">لقد سجلت</translation>
     </translation-mapping>
     <translation-mapping id="Quiz_Score_Page_Message_After">
       <translation lang="en">out of %n% questions</translation>
       <translation lang="fr">sur %n% questions</translation>
+      <translation lang="de">von %n% der Fragen</translation>
+      <translation lang="ar">من أصل %n% أسئلة</translation>
     </translation-mapping>
     <translation-mapping id="Text_Copied">
       <translation lang="en">Text copied</translation>
@@ -7638,6 +7230,7 @@ Please enter your access code:</translation>
       <translation lang="te">క్యాలిక్యులేటర్</translation>
       <translation lang="id">Kalkulator</translation>
       <translation lang="ar">ألة حاسبة</translation>
+      <translation lang="de">Taschenrechner</translation>
     </translation-mapping>
     <translation-mapping id="Security_Device_Id">
       <translation lang="en">Device ID</translation>
@@ -7650,6 +7243,7 @@ Please enter your access code:</translation>
       <translation lang="hi">डिवाइस पहचान (आईडी ID)</translation>
       <translation lang="te">పరికరం ID</translation>
       <translation lang="ms">ID peranti</translation>
+      <translation lang="de">Geräte-ID</translation>
     </translation-mapping>
     <translation-mapping id="Security_Enter_PIN">
       <translation lang="en">Please enter your PIN</translation>
@@ -7661,6 +7255,7 @@ Please enter your access code:</translation>
       <translation lang="ar">رجاءاً أدخل كلمة التثبيت</translation>
       <translation lang="hi">कृपया अपना पिन कोड दर्ज करें</translation>
       <translation lang="te">దయచేసి మీ PINని నమోదు చేయండి</translation>
+      <translation lang="de">Bitte geben Sie Ihre PIN ein</translation>
     </translation-mapping>
     <translation-mapping id="Security_Incorrect_PIN">
       <translation lang="en">Incorrect PIN</translation>
@@ -7673,26 +7268,35 @@ Please enter your access code:</translation>
       <translation lang="hi">गलत पिन कोड</translation>
       <translation lang="te">PINలో తప్పు ఉంది</translation>
       <translation lang="ko">정확하지 않은 PIN 번호 입니다</translation>
+      <translation lang="de">Falsche PIN</translation>
     </translation-mapping>
     <translation-mapping id="User_Missing_Fields">
       <translation lang="en">Please complete the following fields to continue:</translation>
       <translation lang="fr">Veuillez remplir les champs suivants pour continuer :</translation>
       <translation lang="ru">Чтобы продолжить, заполните следующие поля:</translation>
+      <translation lang="de">Bitte füllen Sie die folgenden Felder aus, um fortzufahren:</translation>
+      <translation lang="ar">برجاء استكمال الفراغات التالية للإستمرار</translation>
     </translation-mapping>
     <translation-mapping id="User_Check_Internet">
       <translation lang="en">Please check that you have an internet connection, then press the button again to continue.</translation>
       <translation lang="fr">Veuillez vérifier que vous disposez d&apos;une connexion Internet, puis appuyez à nouveau sur le bouton pour continuer.</translation>
       <translation lang="ru">Проверьте ваше соединение с интернетом и нажмите ещё раз, чтобы продолжить.</translation>
+      <translation lang="de">Bitte überprüfen Sie, ob Sie eine Internetverbindung haben, und drücken Sie dann erneut auf die Schaltfläche, um fortzufahren.</translation>
+      <translation lang="ar">برجاء التأكد من إتصالك بالأنترنت، ثم أضغط هذا الزر مرة أخرى للإستمرار</translation>
     </translation-mapping>
     <translation-mapping id="User_Database_Sign_In_Error">
       <translation lang="en">Sorry, we were unable to sign in to the database server.</translation>
       <translation lang="fr">Désolé, nous n&apos;avons pas pu nous connecter au serveur de la base de données.</translation>
       <translation lang="ru">К сожалению, войти на сервер базы данных не удалось.</translation>
+      <translation lang="de">Es tut uns leid, wir konnten uns nicht am Datenbankserver anmelden.</translation>
+      <translation lang="ar">للأسف، لم نتمكن من التسجيل في سيرفر قاعدة البيانات</translation>
     </translation-mapping>
     <translation-mapping id="User_Database_Add_User_Error">
       <translation lang="en">Sorry, we were unable to add this information to the online database.</translation>
       <translation lang="fr">Désolé, nous n&apos;avons pas pu ajouter cette information à la base de données en ligne.</translation>
       <translation lang="ru">К сожалению, добавить информацию к базе данных онлайн не удалось.</translation>
+      <translation lang="de">Es tut uns leid, wir konnten diese Information nicht in die Online-Datenbank aufnehmen.</translation>
+      <translation lang="ar">للأسف، لا يمكننا إضافة هذه المعلومة في قاعدة البيانات</translation>
     </translation-mapping>
     <translation-mapping id="Language_en">
       <translation lang="en">English</translation>
@@ -7791,6 +7395,7 @@ Please enter your access code:</translation>
       <translation lang="id">Bahasa Korea</translation>
       <translation lang="ar">الكورية</translation>
       <translation lang="nl">Koreaans</translation>
+      <translation lang="de">Koreanisch</translation>
     </translation-mapping>
     <translation-mapping id="Language_ms">
       <translation lang="en">Bahasa Melayu</translation>
@@ -7800,12 +7405,14 @@ Please enter your access code:</translation>
       <translation lang="id">Bahasa</translation>
       <translation lang="ar">بهاسا مالايو</translation>
       <translation lang="nl">Maleis</translation>
+      <translation lang="de">Bahasa Melayu</translation>
     </translation-mapping>
     <translation-mapping id="Language_nl">
       <translation lang="en">Dutch</translation>
       <translation lang="fr">Néerlandais</translation>
       <translation lang="nl">Nederlands</translation>
       <translation lang="ru">Голландский</translation>
+      <translation lang="de">Niederländisch</translation>
     </translation-mapping>
     <translation-mapping id="Language_pt">
       <translation lang="en">Portuguese</translation>
@@ -7977,6 +7584,7 @@ Please enter your access code:</translation>
       <translation lang="ar">تيلوجو</translation>
       <translation lang="nl">Telugu</translation>
       <translation lang="ta">தெலுங்கு</translation>
+      <translation lang="de">Telugu</translation>
     </translation-mapping>
     <translation-mapping id="Language_vi">
       <translation lang="en">Vietnamese</translation>
@@ -8109,6 +7717,7 @@ Please enter your access code:</translation>
       <translation lang="ar">عرض قائمة الكلمات</translation>
       <translation lang="nl">Toon woordenlijst</translation>
       <translation lang="ta">அருஞ்சொற்கள் விளக்கம் காண்பி</translation>
+      <translation lang="de">Wörter im Glossar anzeigen</translation>
       <translation lang="wol"></translation>
     </translation-mapping>
     <translation-mapping id="Security_Permission_Denied">
@@ -8119,6 +7728,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Dit apparaat heeft geen toestemming om deze app te gebruiken.</translation>
       <translation lang="ta">இந்த செயலியை பயன்படுத்த இந்த சாதனத்தில் அனுமதி கொடுக்கப்படவில்லை</translation>
       <translation lang="ru">Устройство не имеет разрешения использовать это приложение</translation>
+      <translation lang="de">Dieses Gerät hat keine Berechtigung zur Nutzung dieser App.</translation>
     </translation-mapping>
     <translation-mapping id="iOS_Photo_Library_Usage_Description">
       <translation lang="en">so we can give you a choice of background images</translation>
@@ -8129,6 +7739,7 @@ Please enter your access code:</translation>
       <translation lang="nl">zodat we je een keuze aan achtergrondafbeeldingen kunnen geven</translation>
       <translation lang="ta">அதனால் இந்தப் படங்களை உங்களுக்குத் தருகிறோம்</translation>
       <translation lang="ru">чтобы предоставить вам выбор фоновых изображений</translation>
+      <translation lang="de">damit wir Ihnen eine Auswahl an Hintergrundbildern bieten können</translation>
       <translation lang="wol">Ndax ñu man la may nga tànn ci photo yi</translation>
     </translation-mapping>
     <translation-mapping id="iOS_Photo_Library_Add_Usage_Description">
