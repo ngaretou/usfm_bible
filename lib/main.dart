@@ -1,4 +1,5 @@
 import 'package:flutter/services.dart';
+
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart' as flutter_acrylic;
@@ -329,7 +330,14 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
               title: const Text('Jumtukaay'),
               link: '#',
               body: const SizedBox.shrink(),
-            )
+            ),
+            RunFunctionPaneItemAction(
+                body: const About(),
+                title: const Text('Jumtukaay test'),
+                icon: const Icon(FluentIcons.developer_tools),
+                functionToRun: () {
+                  print('you hit jumtukaay');
+                }),
           ];
 
           //Normal pane items we always use

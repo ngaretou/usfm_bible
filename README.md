@@ -82,7 +82,7 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
 - Example app with: 
   - Wolof full Bible
   - Wolof NT 2012
-  - Wolof Ajami (Arabic script) full Bible
+  <!-- - Wolof Ajami (Arabic script) full Bible -->
   - Louis Segond
   - Lexham English Bible
   - Society of Biblical Literature Greek NT
@@ -100,4 +100,4 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
   - reader mode/no verses
   - read in styles from appdef
   - audio
-  - Pass in ref via URL to go straight there? 
+  - Pass in ref via URL to go straight there? https://docs.flutter.dev/development/ui/navigation 
