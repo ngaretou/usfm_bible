@@ -280,6 +280,57 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
     print('MyHomePageState build');
     final appTheme = context.watch<AppTheme>();
 
+    // Widget menuTarget(Widget widget) {
+    //   return GestureDetector(
+    //       onTap: () {
+    //         contextController.showFlyout(
+    //           barrierColor: Colors.black.withOpacity(0.1),
+    //           // position: d.globalPosition,
+    //           builder: (context) {
+    //             return FlyoutContent(
+    //               child: SizedBox(
+    //                 width: 130,
+    //                 child: CommandBar(
+    //                   isCompact: true,
+    //                   primaryItems: [
+    //                     CommandBarButton(
+    //                       icon: const Icon(FluentIcons.add_favorite),
+    //                       label: const Text('Favorite'),
+    //                       onPressed: () {},
+    //                     ),
+    //                     CommandBarButton(
+    //                       icon: const Icon(FluentIcons.copy),
+    //                       label: const Text('Copy'),
+    //                       onPressed: () {},
+    //                     ),
+    //                     CommandBarButton(
+    //                       icon: const Icon(FluentIcons.share),
+    //                       label: const Text('Share'),
+    //                       onPressed: () {},
+    //                     ),
+    //                     CommandBarButton(
+    //                       icon: const Icon(FluentIcons.save),
+    //                       label: const Text('Save'),
+    //                       onPressed: () {},
+    //                     ),
+    //                     CommandBarButton(
+    //                       icon: const Icon(FluentIcons.delete),
+    //                       label: const Text('Delete'),
+    //                       onPressed: () {},
+    //                     ),
+    //                   ],
+    //                 ),
+    //               ),
+    //             );
+    //           },
+    //         );
+    //       },
+    //       child: FlyoutTarget(
+    //           key: contextAttachKey,
+    //           controller: contextController,
+    //           child: widget));
+    // }
+
     return FutureBuilder(
       future: initInterface,
       builder: (ctx, snapshot) {
@@ -298,6 +349,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
               body: const SizedBox.shrink(),
             ),
             //Contact
+
             _LinkPaneItemAction(
               icon: const Icon(FluentIcons.mail),
               title: const Text('Bind nu'),
@@ -325,25 +377,27 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
               body: const SizedBox.shrink(),
             ),
             //More
+
             _LinkPaneItemAction(
               icon: const Icon(FluentIcons.developer_tools),
-              title: const Text('Jumtukaay'),
-              link: '#',
+              title: const Text('Téere baati wolof'),
+              link: 'http://currah.download/pages/dictionnairewolof/',
               body: const SizedBox.shrink(),
             ),
-            // RunFunctionPaneItemAction(
-            //     body: const About(),
-            //     title: const Text('Jumtukaay test'),
-            //     icon: const Icon(FluentIcons.developer_tools),
-            //     functionToRun: () {
-            //       print('you hit jumtukaay');
-            //     }),
+
+            _LinkPaneItemAction(
+              icon: const Icon(FluentIcons.toolbox),
+              title: const Text('Jumtukaay wolofal'),
+              link: 'http://currah.download/pages/ajamisenegal/index.html',
+              body: const SizedBox.shrink(),
+            ),
           ];
 
           //Normal pane items we always use
           List<NavigationPaneItem> normalNavPaneItems = [
             PaneItemSeparator(),
             //Search
+
             RunFunctionPaneItemAction(
                 body: const About(),
                 title: Text(Provider.of<UserPrefs>(context, listen: true)
@@ -700,55 +754,15 @@ class LightDarkModePaneItemAction extends PaneItem {
   }
 }
 
-// class LinkPaneItemAction extends PaneItem {
-//   LinkPaneItemAction({
-//     required Widget icon,
-//     required this.link,
-//     title,
-//     infoBadge,
-//     focusNode,
-//     autofocus = false,
-//   }) : super(
-//           icon: icon,
-//           title: title,
-//           infoBadge: infoBadge,
-//           focusNode: focusNode,
-//           autofocus: autofocus,
-//         );
-
-//   final String link;
-
-//   @override
-//   Widget build(
-//     BuildContext context,
-//     bool selected,
-//     VoidCallback? onPressed, {
-//     PaneDisplayMode? displayMode,
-//     bool showTextOnTop = true,
-//     bool? autofocus,
-//   }) {
-//     return Link(
-//       uri: Uri.parse(link),
-//       builder: (context, followLink) => super.build(
-//         context,
-//         selected,
-//         followLink,
-//         displayMode: displayMode,
-//         showTextOnTop: showTextOnTop,
-//         autofocus: autofocus,
-//       ),
-//     );
-//   }
-// }
 class _LinkPaneItemAction extends PaneItem {
+  final String link;
+
   _LinkPaneItemAction({
-    required super.icon,
     required this.link,
+    required super.icon,
     required super.body,
     super.title,
   });
-
-  final String link;
 
   @override
   Widget build(

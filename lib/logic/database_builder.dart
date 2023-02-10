@@ -564,7 +564,6 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
               if (match.group(4) != null) {
                 verseText = match.group(4)!; //verseText
                 //?? = if_null operator: https://dart-lang.github.io/linter/lints/prefer_if_null_operators.html
-
               }
 
               //New Paragraph section
