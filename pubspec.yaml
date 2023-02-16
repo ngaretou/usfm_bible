@@ -38,7 +38,7 @@ dependencies:
   window_manager: ^0.3.0
   flutter_acrylic: ^1.0.0+2
   url_strategy: ^0.2.0
-  url_launcher: ^6.0.20
+  url_launcher: ^6.1.9
   share_plus: ^6.0.1
   clipboard: ^0.1.3
   fluent_ui: ^4.1.0
@@ -57,6 +57,8 @@ dependencies:
   context_menus: ^1.0.2
   flutter_native_splash: ^2.2.9
   diacritic: ^0.1.3
+  universal_html: ^2.0.8
+  pwa_install: ^0.0.5
 
 dev_dependencies:
   flutter_test:

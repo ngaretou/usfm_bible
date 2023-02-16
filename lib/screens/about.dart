@@ -1,11 +1,14 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as material;
 import 'package:provider/provider.dart';
 import 'package:fluent_ui/fluent_ui.dart';
+
 import 'package:flutter_html/flutter_html.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:usfm_bible/logic/database_builder.dart';
 import 'package:xml/xml.dart';
 import '../providers/user_prefs.dart';
+
+import '../widgets/onboarding_panel.dart';
 
 class About extends StatelessWidget {
   // const About({super.key});
@@ -162,8 +165,8 @@ class About extends StatelessWidget {
               // assert(context != null);
               // assert(useRootNavigator != null);
               Navigator.of(context, rootNavigator: useRootNavigator)
-                  .push(MaterialPageRoute<void>(
-                builder: (BuildContext context) => LicensePage(
+                  .push(material.MaterialPageRoute<void>(
+                builder: (BuildContext context) => material.LicensePage(
                   applicationName: applicationName,
                   applicationVersion: applicationVersion,
                   applicationIcon: applicationIcon,
@@ -181,10 +184,19 @@ class About extends StatelessWidget {
     ];
 
     return ScaffoldPage.scrollable(
-        header: PageHeader(
-          title: Text(Provider.of<UserPrefs>(context, listen: false)
-              .currentTranslation
-              .about),
+        header: GestureDetector(
+          onDoubleTap: () {
+            showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return const Center(child: OnboardingPanel());
+                });
+          },
+          child: PageHeader(
+            title: Text(Provider.of<UserPrefs>(context, listen: false)
+                .currentTranslation
+                .about),
+          ),
         ),
         children: pageContent);
   }

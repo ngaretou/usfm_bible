@@ -29,6 +29,8 @@ Demo of current version at https://coreygarrett.org/usfm_bible/
       - This is a hack to deal with a Flutter limitation and hopefully will be eliminated. https://docs.flutter.dev/cookbook/design/fonts#2-declare-the-font-in-the-pubspec
   - In index.html:
     - Change \<base href> to your subfolder if your web app is not in the root of your site. (More instructions in the comments of index.html.)
+  - In manifest.json
+    - Change the name, short name, start url for the PWA install to work correctly 
   - You may have to change permissions to 644 for your appDef file, your about/about.txt, and your .usfm files in your data/books/C0... collections folders if it does not run correctly.
 - Incorporate web app only translations
   - Some translations are available in the appDef and pulled directly from your existing project. Some are not a part of SAB's translation strings and you can provide those five that usfm_bible uses for your language in assets/translations.json. Include the translations there with the language codes from the Interface/Language/Language Codes column.

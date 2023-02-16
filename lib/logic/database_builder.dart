@@ -338,7 +338,8 @@ Future<void> saveToLocalDB(List<ParsedLine> verses) async {
   return;
 }
 
-Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
+Future<AppInfo> buildDatabaseFromXML(
+    BuildContext context, Function updater) async {
   print('buildDatabaseFromXML');
   bool shouldResetDB = true;
 
@@ -484,6 +485,18 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
             .toString()));
   }
 
+  print('now we have the collections info');
+
+  for (var i = 0; i < 100; i++) {
+    updater(i);
+  }
+
+  double totalNumberBooks = 0;
+  double booksDone = 0;
+  for (var collection in collections) {
+    totalNumberBooks = totalNumberBooks + collection.books.length;
+  }
+
   //Now we know about the collections and can populate the content.
   //This is the part that is stored for later use
   if (shouldResetDB) {
@@ -597,6 +610,8 @@ Future<AppInfo> buildDatabaseFromXML(BuildContext context) async {
           }
         }
         // print('ending current book ${book.name}');
+        booksDone++;
+        updater((booksDone / totalNumberBooks) * 100);
       }
       // print('ending current collection ${collection.id}');
     }

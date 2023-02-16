@@ -1,3 +1,6 @@
+import 'dart:async';
+
+// import 'package:universal_html/html.dart' as html;
 import 'package:flutter/services.dart';
 
 import 'package:fluent_ui/fluent_ui.dart';
@@ -10,6 +13,8 @@ import 'package:url_launcher/link.dart';
 import 'package:window_manager/window_manager.dart';
 import 'package:context_menus/context_menus.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:pwa_install/pwa_install.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'dart:io';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -18,6 +23,8 @@ import 'firebase_options.dart';
 import 'screens/about.dart';
 import 'screens/bible_view.dart';
 import 'screens/settings.dart';
+
+import 'widgets/onboarding_panel.dart';
 
 import 'theme.dart';
 import 'logic/database_builder.dart';
@@ -42,10 +49,17 @@ bool get isDesktop {
 
 late Box<UserColumnsDB> userColumnsBox;
 late Box userPrefsBox;
+
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   // Keep native splash screen up until app is finished bootstrapping
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  PWAInstall().setup(
+      //   installCallback: () {
+      //   debugPrint('APP INSTALLED!');
+      // }
+      );
 
   await Hive.initFlutter();
   Hive.registerAdapter(UserColumnsDBAdapter());
@@ -231,12 +245,22 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
   final settingsController = ScrollController();
   final viewKey = GlobalKey();
+  // Size windowSize = const Size(500, 500);
+  // late bool isFullScreen;
+  ValueNotifier<double> myProgress = ValueNotifier(0);
+  // double? myProgress;
+
+  void updateProgress(double progress) {
+    // print(progress);
+
+    myProgress.value = progress;
+  }
 
   Future<AppInfo> callInititalization() async {
     // String response = await asyncGetProjectName(context);
     // appTitle = response;
     UserPrefs userPrefs = Provider.of<UserPrefs>(context, listen: false);
-    AppInfo appInfo = await buildDatabaseFromXML(context);
+    AppInfo appInfo = await buildDatabaseFromXML(context, updateProgress);
     await userPrefs.loadUserPrefs(appInfo);
 
     return appInfo;
@@ -252,6 +276,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
   @override
   void initState() {
     windowManager.addListener(this);
+
     super.initState();
   }
 
@@ -275,61 +300,45 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
     }
   }
 
+  // void goFullScreen() {
+  //   html.document.documentElement?.requestFullscreen();
+  // }
+
+  // void exitFullScreen() {
+  //   html.document.exitFullscreen();
+  // }
+
+  // void toggleFullScreen() {
+  //   if (isFullScreen) {
+  //     html.document.exitFullscreen();
+  //   } else {
+  //     html.document.documentElement?.requestFullscreen();
+  //   }
+  // }
+
   @override
   Widget build(BuildContext context) {
+    bool? hasSeenOnboarding = userPrefsBox.get('hasSeenOnboarding');
+
+    if (hasSeenOnboarding == null && appTitle == "Kàddug Yàlla Gi") {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        // If Wolof ...
+
+        showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return const Center(child: OnboardingPanel());
+            });
+        //save that the user has seen the onboarding
+        userPrefsBox.put('hasSeenOnboarding', true);
+      });
+    }
+
     print('MyHomePageState build');
     final appTheme = context.watch<AppTheme>();
-
-    // Widget menuTarget(Widget widget) {
-    //   return GestureDetector(
-    //       onTap: () {
-    //         contextController.showFlyout(
-    //           barrierColor: Colors.black.withOpacity(0.1),
-    //           // position: d.globalPosition,
-    //           builder: (context) {
-    //             return FlyoutContent(
-    //               child: SizedBox(
-    //                 width: 130,
-    //                 child: CommandBar(
-    //                   isCompact: true,
-    //                   primaryItems: [
-    //                     CommandBarButton(
-    //                       icon: const Icon(FluentIcons.add_favorite),
-    //                       label: const Text('Favorite'),
-    //                       onPressed: () {},
-    //                     ),
-    //                     CommandBarButton(
-    //                       icon: const Icon(FluentIcons.copy),
-    //                       label: const Text('Copy'),
-    //                       onPressed: () {},
-    //                     ),
-    //                     CommandBarButton(
-    //                       icon: const Icon(FluentIcons.share),
-    //                       label: const Text('Share'),
-    //                       onPressed: () {},
-    //                     ),
-    //                     CommandBarButton(
-    //                       icon: const Icon(FluentIcons.save),
-    //                       label: const Text('Save'),
-    //                       onPressed: () {},
-    //                     ),
-    //                     CommandBarButton(
-    //                       icon: const Icon(FluentIcons.delete),
-    //                       label: const Text('Delete'),
-    //                       onPressed: () {},
-    //                     ),
-    //                   ],
-    //                 ),
-    //               ),
-    //             );
-    //           },
-    //         );
-    //       },
-    //       child: FlyoutTarget(
-    //           key: contextAttachKey,
-    //           controller: contextController,
-    //           child: widget));
-    // }
+    // windowSize = MediaQuery.of(context).size;
+    // isFullScreen = (html.window.screen?.width == windowSize.width) &&
+    //     (html.window.screen?.height == windowSize.height);
 
     return FutureBuilder(
       future: initInterface,
@@ -431,6 +440,15 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                       .darkTheme),
               appTheme: appTheme,
             ),
+            // if (kIsWeb)
+            //   PaneItemAction(
+            //     icon: const Icon(FluentIcons.full_screen),
+            //     // isFullScreen
+            //     //     ? const Icon(FluentIcons.accept)
+            //     //     : const Icon(FluentIcons.full_screen),
+            //     onTap: toggleFullScreen,
+            //     // onTap: isFullScreen ? exitFullScreen : goFullScreen
+            //   ),
             PaneItemSeparator(),
             //About
             PaneItem(
@@ -463,9 +481,8 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
             ),
             cardBuilder: (_, children) => Container(
                 decoration: BoxDecoration(
-                  color: FluentTheme.of(context)
-                      .acrylicBackgroundColor
-                      .lerpWith(DefaultTextStyle.of(context).style.color!, .1),
+                  backgroundBlendMode: BlendMode.srcOver,
+                  color: FluentTheme.of(context).menuColor,
                   borderRadius: const BorderRadius.all(
                     Radius.circular(5),
                   ),
@@ -564,9 +581,61 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                         builder: (ctx, snapshot) {
                           // Remove splash screen when bootstrap is complete
                           FlutterNativeSplash.remove();
+
                           if (snapshot.connectionState ==
                               ConnectionState.waiting) {
-                            return const Center(child: ProgressRing());
+                            return ValueListenableBuilder<double>(
+                                valueListenable: myProgress,
+                                builder: (context, val, child) {
+                                  if (val == 0) {
+                                    return const Center(child: ProgressRing());
+                                  } else {
+                                    return Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        Stack(
+                                          alignment: Alignment.center,
+                                          children: [
+                                            ProgressRing(value: val),
+                                            if (val != 100)
+                                              Text('${val.ceil().toString()}%',
+                                                  style: const TextStyle(
+                                                      fontSize: 10))
+                                          ],
+                                        ),
+                                        SizedBox(
+                                            height: (MediaQuery.of(context)
+                                                        .size
+                                                        .height /
+                                                    2) -
+                                                70),
+                                        if (kIsWeb &&
+                                            appTitle == "Kàddug Yàlla Gi")
+                                          Button(
+                                              onPressed: () async {
+                                                const url =
+                                                    'https://biblewolof.com';
+                                                if (await canLaunchUrl(
+                                                    Uri.parse(url))) {
+                                                  await launchUrl(
+                                                      Uri.parse(url),
+                                                      webOnlyWindowName:
+                                                          "_self");
+                                                } else {
+                                                  throw 'Could not launch $url';
+                                                }
+                                              },
+                                              child: const Text(
+                                                  'Dafa yeex ba ëpp, demal ci version bu weesu')),
+                                        const SizedBox(
+                                          height: 30,
+                                        )
+                                      ],
+                                    );
+                                  }
+                                });
                           }
                           //Main row that holds the text columns
                           else {
@@ -586,6 +655,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                                   .fontFamily;
                               comboBoxFont = font;
                             }
+
                             return BibleView(
                                 appInfo: appInfo, comboBoxFont: comboBoxFont);
                           }
