@@ -33,12 +33,9 @@ class _OnboardingPanelState extends State<OnboardingPanel> {
   Widget build(BuildContext context) {
     Widget imageWithShadow(Image image, bool showShadow) {
       return Container(
-        width: 600,
-        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        // padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         decoration: BoxDecoration(
-            // image:
-            //     DecorationImage(image: AssetImage('images/linkbutton.png')),
-            borderRadius: BorderRadius.circular(12),
+            // borderRadius: BorderRadius.circular(12),
             boxShadow: [
               if (showShadow)
                 BoxShadow(
@@ -49,8 +46,8 @@ class _OnboardingPanelState extends State<OnboardingPanel> {
                   color: Colors.black.withOpacity(0.3),
                 )
             ]),
+        height: image.height,
         child: image,
-        // width: 400,
       );
     }
 
@@ -59,10 +56,12 @@ class _OnboardingPanelState extends State<OnboardingPanel> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Expanded(flex: 5, child: top),
-          const SizedBox(height: 30),
-          Expanded(flex: 0, child: bottom),
-          Expanded(flex: 0, child: button ?? const SizedBox(height: 10))
+          Expanded(flex: 1, child: top),
+          const SizedBox(height: 20),
+          bottom,
+          const SizedBox(height: 20),
+          if (button != null) button,
+          if (button != null) const SizedBox(height: 20),
         ],
       );
     }
@@ -70,48 +69,45 @@ class _OnboardingPanelState extends State<OnboardingPanel> {
     List<Widget> pages = [
       pageTemplate(
           imageWithShadow(
-              const Image(image: AssetImage('images/menu.png')), true),
-          // Image(image: AssetImage('images/linkbutton.png')),
+              const Image(image: AssetImage('assets/images/menu.png')), true),
           const Text(
             'Bësal ci ñeeti ponk yi ngir ubbi fi nga man tànn ay jumtukaay.',
             style: TextStyle(color: Colors.black),
           )),
       pageTemplate(
-          imageWithShadow(
-              const Image(image: AssetImage('images/linkbutton.png')), true),
-          // Image(image: AssetImage('images/linkbutton.png')),
-          const Text(
-            'Bu button bi tàkke, kon mungiy ànd ak yeneen mbind yi. Bu tàkkul nag, day dox moom kenn.',
-            style: TextStyle(color: Colors.black),
-          )),
-      // pageTemplate(
-      //     Container(
-      //       color: Colors.red,
-      //       width: 400,
-      //       height: 100,
-      //     ),
-      //     Text(
-      //       '2',
-      //       style: TextStyle(color: Colors.black),
-      //     )),
+        imageWithShadow(
+            const Image(image: AssetImage('assets/images/columntools.png')),
+            true),
+        const Text(
+          'Ci mbind bu nekk man nga tànn aaya bi nga bëgg jàng ak melow mbind mi.',
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
     ];
 
     if (PWAInstall().installPromptEnabled) {
       pages.add(
         pageTemplate(
           imageWithShadow(
-              const Image(image: AssetImage('images/screenshot.png')), false),
+              const Image(image: AssetImage('assets/images/screenshot.png')),
+              true),
           const Text(
-            'Man nga installer appli ci sa ordinateur. Bësal ci button bi ngir tambale installation bi.',
+            'Man nga installer appli bi ci sa ordinateur. Bësal ci button bi ngir tambale installation bi.',
             style: TextStyle(color: Colors.black),
           ),
-          button: IconButton(
-              icon: Icon(
-                FluentIcons.installation,
-                color: Colors.teal,
-                size: 30,
+          button: GestureDetector(
+              child: Card(
+                backgroundColor: Colors.teal,
+                child: const Text('Installation'),
               ),
-              onPressed: () => PWAInstall().promptInstall_()),
+              onTap: () {
+                Navigator.of(context).pop();
+                try {
+                  PWAInstall().promptInstall_();
+                } catch (e) {
+                  print(e);
+                }
+              }),
         ),
       );
     }
@@ -129,10 +125,6 @@ class _OnboardingPanelState extends State<OnboardingPanel> {
       pageController.nextPage(duration: pageTurnDuration, curve: Curves.linear);
     }
 
-    void closePanelSavePref() {
-      Navigator.of(context).pop();
-    }
-
     return Container(
       height: 500,
       width: 700,
@@ -148,21 +140,20 @@ class _OnboardingPanelState extends State<OnboardingPanel> {
             children: [
               IconButton(
                 icon: const Icon(FluentIcons.chrome_close, color: Colors.black),
-                onPressed: closePanelSavePref,
+                onPressed: Navigator.of(context).pop,
               ),
             ],
           ),
           Expanded(
             child: Row(
               children: [
-                if (currentPage != 0)
-                  IconButton(
-                      icon: const Icon(
-                        FluentIcons.caret_solid_left,
-                        color: Colors.black,
-                        size: 30,
-                      ),
-                      onPressed: previousPage),
+                IconButton(
+                    icon: const Icon(
+                      FluentIcons.caret_solid_left,
+                      color: Colors.black,
+                      size: 30,
+                    ),
+                    onPressed: previousPage),
                 Expanded(
                   child: PageView(
                     controller: pageController,
@@ -174,14 +165,19 @@ class _OnboardingPanelState extends State<OnboardingPanel> {
                     children: pages,
                   ),
                 ),
-                if (currentPage != pages.length)
-                  IconButton(
-                      icon: const Icon(
-                        FluentIcons.caret_solid_right,
-                        color: Colors.black,
-                        size: 30,
-                      ),
-                      onPressed: nextPage),
+                IconButton(
+                    icon: const Icon(
+                      FluentIcons.caret_solid_right,
+                      color: Colors.black,
+                      size: 30,
+                    ),
+                    onPressed: () {
+                      if (currentPage + 1 == pages.length) {
+                        Navigator.of(context).pop();
+                      } else {
+                        nextPage();
+                      }
+                    }),
               ],
             ),
           ),

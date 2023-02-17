@@ -1343,7 +1343,7 @@ Fuller's blog&lt;/a&gt;
    limitations under the License.
 </string>
 			<key>License</key>
-			<string>Apache</string>
+			<string>Apache-2.0</string>
 			<key>Title</key>
 			<string>PromisesObjC</string>
 			<key>Type</key>
@@ -1506,7 +1506,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 			<key>License</key>
 			<string>BSD</string>
 			<key>Title</key>
-			<string>path_provider_ios</string>
+			<string>path_provider_foundation</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>

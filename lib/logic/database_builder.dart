@@ -487,7 +487,7 @@ Future<AppInfo> buildDatabaseFromXML(
 
   print('now we have the collections info');
 
-  for (var i = 0; i < 100; i++) {
+  for (double i = 0; i < 100; i++) {
     updater(i);
   }
 

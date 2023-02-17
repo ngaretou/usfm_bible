@@ -1398,7 +1398,7 @@ redistribute it freely, subject to the following restrictions:
    distribution.
 
 
-## path_provider_ios
+## path_provider_foundation
 
 Copyright 2013 The Flutter Authors. All rights reserved.
 

@@ -151,6 +151,20 @@ class About extends StatelessWidget {
     }
 
     List<Widget> pageContent = [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          IconButton(
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return const Center(child: OnboardingPanel());
+                    });
+              },
+              icon: const Icon(FluentIcons.onboarding))
+        ],
+      ),
       htmlToDisplay(),
       Button(
           onPressed: () {
@@ -184,19 +198,10 @@ class About extends StatelessWidget {
     ];
 
     return ScaffoldPage.scrollable(
-        header: GestureDetector(
-          onDoubleTap: () {
-            showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return const Center(child: OnboardingPanel());
-                });
-          },
-          child: PageHeader(
-            title: Text(Provider.of<UserPrefs>(context, listen: false)
-                .currentTranslation
-                .about),
-          ),
+        header: PageHeader(
+          title: Text(Provider.of<UserPrefs>(context, listen: false)
+              .currentTranslation
+              .about),
         ),
         children: pageContent);
   }

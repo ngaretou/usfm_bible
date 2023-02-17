@@ -248,7 +248,6 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
   // Size windowSize = const Size(500, 500);
   // late bool isFullScreen;
   ValueNotifier<double> myProgress = ValueNotifier(0);
-  // double? myProgress;
 
   void updateProgress(double progress) {
     // print(progress);
@@ -325,6 +324,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
         // If Wolof ...
 
         showDialog(
+            barrierDismissible: true,
             context: context,
             builder: (BuildContext context) {
               return const Center(child: OnboardingPanel());
@@ -467,7 +467,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
           ];
 
           //Set up the navPaneItems - note that if the name of the wolof app gets changed by one char it will not work
-          if (kIsWeb && appTitle == "Kàddug Yàlla Gi") {
+          if (appTitle == "Kàddug Yàlla Gi") {
             finalNavPaneItems.addAll(wolofWebOnlyNavPaneItems);
             finalNavPaneItems.addAll(normalNavPaneItems);
           } else {
@@ -599,7 +599,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                                           alignment: Alignment.center,
                                           children: [
                                             ProgressRing(value: val),
-                                            if (val != 100)
+                                            if (val.ceil() != 100)
                                               Text('${val.ceil().toString()}%',
                                                   style: const TextStyle(
                                                       fontSize: 10))

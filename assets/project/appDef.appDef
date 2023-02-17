@@ -3230,7 +3230,7 @@ Please enter your access code:</translation>
   </security>
 
   <interface-languages>
-    <trait name="use-system-language" value="true"/>
+    <trait name="use-system-language" value="false"/>
     <writing-systems>
       <writing-system code="en" type="interface">
         <display-names>
@@ -3657,7 +3657,7 @@ Please enter your access code:</translation>
     </writing-systems>
   </interface-languages>
 
-  <translation-mappings default-lang="en">
+  <translation-mappings default-lang="wol">
     <translation-mapping id="Menu_Contents">
       <translation lang="en">Contents</translation>
       <translation lang="fr">Contenu</translation>

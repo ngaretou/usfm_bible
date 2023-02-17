@@ -83,6 +83,7 @@ flutter:
 
   assets:
     - assets/
+    - assets/images/
     - assets/project/
     - assets/project/data/
     - assets/project/data/about/

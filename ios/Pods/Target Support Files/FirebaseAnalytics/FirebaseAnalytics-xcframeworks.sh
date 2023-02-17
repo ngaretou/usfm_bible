@@ -23,16 +23,16 @@ variant_for_slice()
   "FirebaseAnalytics.xcframework/ios-arm64_i386_x86_64-simulator")
     echo "simulator"
     ;;
-  "FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator")
-    echo "simulator"
-    ;;
-  "FirebaseAnalytics.xcframework/macos-arm64_x86_64")
-    echo ""
-    ;;
   "FirebaseAnalytics.xcframework/tvos-arm64")
     echo ""
     ;;
+  "FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator")
+    echo "simulator"
+    ;;
   "FirebaseAnalytics.xcframework/ios-arm64_armv7")
+    echo ""
+    ;;
+  "FirebaseAnalytics.xcframework/macos-arm64_x86_64")
     echo ""
     ;;
   esac
@@ -47,17 +47,17 @@ archs_for_slice()
   "FirebaseAnalytics.xcframework/ios-arm64_i386_x86_64-simulator")
     echo "arm64 i386 x86_64"
     ;;
-  "FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator")
-    echo "arm64 x86_64"
-    ;;
-  "FirebaseAnalytics.xcframework/macos-arm64_x86_64")
-    echo "arm64 x86_64"
-    ;;
   "FirebaseAnalytics.xcframework/tvos-arm64")
     echo "arm64"
     ;;
+  "FirebaseAnalytics.xcframework/tvos-arm64_x86_64-simulator")
+    echo "arm64 x86_64"
+    ;;
   "FirebaseAnalytics.xcframework/ios-arm64_armv7")
     echo "arm64 armv7"
+    ;;
+  "FirebaseAnalytics.xcframework/macos-arm64_x86_64")
+    echo "arm64 x86_64"
     ;;
   esac
 }

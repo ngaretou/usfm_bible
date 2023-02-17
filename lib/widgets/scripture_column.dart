@@ -584,13 +584,19 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
       //it will fail if it tries to scroll before the scrollablePositionedList is rebuilt.
       //Set above, this delayedScrollIndex scrolls after build to the index in such a situation
       if (delayedScrollIndex != null) {
-        // print('set ActiveColumnKey3');
+        
         scrollGroup.setActiveColumnKey = widget.key;
-        itemScrollController.jumpTo(index: delayedScrollIndex!);
+        try {
+          itemScrollController.jumpTo(index: delayedScrollIndex!);
+        } catch (e) {
+          print(e);
+        }
+
         delayedScrollIndex = null;
       }
 
       //This is what triggers the scrolling in other columns
+      if (!mounted) return;
       BibleReference? scrollGroupRef =
           context.read<ScrollGroup>().getScrollGroupRef;
 

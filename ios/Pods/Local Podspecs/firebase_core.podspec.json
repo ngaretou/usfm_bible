@@ -1,6 +1,6 @@
 {
   "name": "firebase_core",
-  "version": "2.1.0",
+  "version": "2.5.0",
   "summary": "Flutter plugin for Firebase Core, enabling connecting to multiple Firebase apps.",
   "description": "Flutter plugin for Firebase Core, enabling connecting to multiple Firebase apps.",
   "homepage": "https://firebase.flutter.dev/docs/core/usage/",
@@ -21,12 +21,12 @@
 
     ],
     "Firebase/CoreOnly": [
-      "10.0.0"
+      "10.3.0"
     ]
   },
   "static_framework": true,
   "pod_target_xcconfig": {
-    "GCC_PREPROCESSOR_DEFINITIONS": "LIBRARY_VERSION=\\@\\\"2.1.0\\\" LIBRARY_NAME=\\@\\\"flutter-fire-core\\\"",
+    "GCC_PREPROCESSOR_DEFINITIONS": "LIBRARY_VERSION=\\@\\\"2.5.0\\\" LIBRARY_NAME=\\@\\\"flutter-fire-core\\\"",
     "DEFINES_MODULE": "YES"
   }
 }
