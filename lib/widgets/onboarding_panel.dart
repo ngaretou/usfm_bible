@@ -76,10 +76,47 @@ class _OnboardingPanelState extends State<OnboardingPanel> {
           )),
       pageTemplate(
         imageWithShadow(
-            const Image(image: AssetImage('assets/images/columntools.png')),
+            const Image(image: AssetImage('assets/images/book_selection.png')),
             true),
         const Text(
-          'Ci mbind bu nekk man nga tànn aaya bi nga bëgg jàng ak melow mbind mi.',
+          'Ci xaaj bu nekk man nga tànn ban làkk nga bëgg gis.',
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
+      pageTemplate(
+        imageWithShadow(
+            const Image(
+                image: AssetImage('assets/images/bible_book_selection.png')),
+            true),
+        const Text(
+          'Fii ngay tànn ban téere nga bëgg jàng.',
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
+      pageTemplate(
+        imageWithShadow(
+            const Image(image: AssetImage('assets/images/ch_vs_selection.png')),
+            true),
+        const Text(
+          'Fii ngay gis ban saar ak aaya ñooy feeñ.',
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
+      pageTemplate(
+        imageWithShadow(
+            const Image(image: AssetImage('assets/images/font_size.png')),
+            true),
+        const Text(
+          'Man nga soppi dayob mbind mi.',
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
+      pageTemplate(
+        imageWithShadow(
+            const Image(image: AssetImage('assets/images/link_button.png')),
+            true),
+        const Text(
+          'Bu button bi takke, xaaj bi day ànd ak yeneen xaaj yi.',
           style: TextStyle(color: Colors.black),
         ),
       ),

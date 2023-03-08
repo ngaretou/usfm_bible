@@ -9,6 +9,7 @@ import 'package:xml/xml.dart';
 import 'package:flutter/services.dart' show rootBundle;
 // import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
 class Font {
   final String fontFamily;
@@ -359,14 +360,20 @@ Future<AppInfo> buildDatabaseFromXML(
     // ** Decide whether or not to rebuild
     //Get the two boxes we deal with here, all the verses and the vanilla userPrefs box
     //(vanilla in the sense that it does not have a typeadapter and is just a Map<String, String>)
+    //Get the build number from Flutter
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    String flutterBuildNumber = packageInfo.buildNumber;
 
     //Get the current appDef build number
     String appDefBuildNumber = document
         .getElement('app-definition')!
         .getElement('version')!
         .getAttribute('code')!;
-    //Get the last seen build numbrer
-    String? lastSeenBuildNumber = userPrefsBox.get('lastSeenBuildNumber');
+    //Get the last seen build numbers
+    String? lastSeenAppDefBuildNumber =
+        userPrefsBox.get('lastSeenAppDefBuildNumber');
+    String? lastSeenFlutterBuildNumber =
+        userPrefsBox.get('lastSeenFlutterBuildNumber');
     //Get the number of lines in the verses box
     var numLines = versesBox.length;
     print(numLines);
@@ -377,7 +384,8 @@ Future<AppInfo> buildDatabaseFromXML(
     bool dbMatchesLastBuild = lastDbBuildLength == numLines;
 
     if (numLines == 0 ||
-        appDefBuildNumber != lastSeenBuildNumber ||
+        appDefBuildNumber != lastSeenAppDefBuildNumber ||
+        flutterBuildNumber != lastSeenFlutterBuildNumber ||
         !dbMatchesLastBuild) {
       shouldResetDB = true;
       versesBox.clear();
@@ -386,7 +394,8 @@ Future<AppInfo> buildDatabaseFromXML(
     }
 
     //Store the current build number for later reference
-    userPrefsBox.put('lastSeenBuildNumber', appDefBuildNumber);
+    userPrefsBox.put('lastSeenAppDefBuildNumber', appDefBuildNumber);
+    userPrefsBox.put('lastSeenFlutterBuildNumber', flutterBuildNumber);
 
     // ** End Decide whether or not to rebuild
 
