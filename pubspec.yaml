@@ -93,7 +93,7 @@ flutter:
     - assets/project/data/books/C03/
     - assets/project/data/books/C04/
     - assets/project/data/books/C05/
-    - assets/project/data/books/C06/
+    # - assets/project/data/books/C06/
     # - assets/project/data/books/C07/
     # - assets/project/data/books/C08/
     # - assets/project/data/books/C09/
