@@ -299,6 +299,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
     }
   }
 
+  //This works as far as it goes - the problem is that it can't detect when we are already in full screen.
   // void goFullScreen() {
   //   html.document.documentElement?.requestFullscreen();
   // }
@@ -616,7 +617,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                                           Button(
                                               onPressed: () async {
                                                 const url =
-                                                    'https://biblewolof.com';
+                                                    'https://biblewolof.com/av/';
                                                 if (await canLaunchUrl(
                                                     Uri.parse(url))) {
                                                   await launchUrl(
