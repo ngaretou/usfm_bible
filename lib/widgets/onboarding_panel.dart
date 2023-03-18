@@ -71,7 +71,7 @@ class _OnboardingPanelState extends State<OnboardingPanel> {
           imageWithShadow(
               const Image(image: AssetImage('assets/images/menu.png')), true),
           const Text(
-            'Bësal ci ñeeti ponk yi ngir ubbi fi nga man tànn ay jumtukaay.',
+            'Bësal ci ñetti ponk yii ngir ubbi fi nga mana tànne ay jumtukaay.',
             style: TextStyle(color: Colors.black),
           )),
       pageTemplate(
@@ -79,7 +79,7 @@ class _OnboardingPanelState extends State<OnboardingPanel> {
             const Image(image: AssetImage('assets/images/book_selection.png')),
             true),
         const Text(
-          'Ci xaaj bu nekk man nga tànn ban làkk nga bëgg gis.',
+          'Pàcc bu nekk man nga caa tànne ban làkk nga bëgga gis.',
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -89,7 +89,7 @@ class _OnboardingPanelState extends State<OnboardingPanel> {
                 image: AssetImage('assets/images/bible_book_selection.png')),
             true),
         const Text(
-          'Fii ngay tànn ban téere nga bëgg jàng.',
+          'Fii ngay tànne ban téere nga bëgga jàng.',
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -98,7 +98,7 @@ class _OnboardingPanelState extends State<OnboardingPanel> {
             const Image(image: AssetImage('assets/images/ch_vs_selection.png')),
             true),
         const Text(
-          'Fii ngay gis ban saar ak aaya ñooy feeñ.',
+          'Fii ngay gise ban saar ak ban aaya ñooy feeñ.',
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -107,7 +107,7 @@ class _OnboardingPanelState extends State<OnboardingPanel> {
             const Image(image: AssetImage('assets/images/font_size.png')),
             true),
         const Text(
-          'Man nga soppi dayob mbind mi.',
+          'Man nga fee soppi dayob mbind mi.',
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -116,7 +116,7 @@ class _OnboardingPanelState extends State<OnboardingPanel> {
             const Image(image: AssetImage('assets/images/link_button.png')),
             true),
         const Text(
-          'Bu button bi takke, xaaj bi day ànd ak yeneen xaaj yi.',
+          'Bu tomb bii takke, pàcc bii day ànd ak yeneeni pàcc yi mu mengool.',
           style: TextStyle(color: Colors.black),
         ),
       ),

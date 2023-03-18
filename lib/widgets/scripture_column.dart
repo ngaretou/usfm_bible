@@ -412,7 +412,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     nar koo sànk, 
     ni kuy màbb tabax bu joy, 
     mbaa ngay bàddi per mu ràpp?  
-      Sabóor 62.4-4 (Kàddug Yàlla gi)
+      Sabóor 62.4-4 (Kàddug Yàlla)
      */
     addLinesBetweenIndexes() {
       int startIndex = 0;
@@ -584,7 +584,6 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
       //it will fail if it tries to scroll before the scrollablePositionedList is rebuilt.
       //Set above, this delayedScrollIndex scrolls after build to the index in such a situation
       if (delayedScrollIndex != null) {
-        
         scrollGroup.setActiveColumnKey = widget.key;
         try {
           itemScrollController.jumpTo(index: delayedScrollIndex!);

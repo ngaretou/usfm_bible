@@ -102,8 +102,8 @@ void main() async {
       double? windowWidth = userPrefsBox.get('windowWidth');
       double? windowHeight = userPrefsBox.get('windowHeight');
       if (windowHeight == null || windowWidth == null) {
-        windowWidth = 700;
-        windowHeight = 600;
+        windowWidth = 1200;
+        windowHeight = 800;
       }
 
       await windowManager.setSize(Size(windowWidth, windowHeight));
@@ -320,7 +320,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
   Widget build(BuildContext context) {
     bool? hasSeenOnboarding = userPrefsBox.get('hasSeenOnboarding');
 
-    if (hasSeenOnboarding == null && appTitle == "Kàddug Yàlla Gi") {
+    if (hasSeenOnboarding == null && appTitle == "Kàddug Yàlla") {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         // If Wolof ...
 
@@ -468,7 +468,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
           ];
 
           //Set up the navPaneItems - note that if the name of the wolof app gets changed by one char it will not work
-          if (appTitle == "Kàddug Yàlla Gi") {
+          if (appTitle == "Kàddug Yàlla") {
             finalNavPaneItems.addAll(wolofWebOnlyNavPaneItems);
             finalNavPaneItems.addAll(normalNavPaneItems);
           } else {
@@ -613,7 +613,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                                                     2) -
                                                 70),
                                         if (kIsWeb &&
-                                            appTitle == "Kàddug Yàlla Gi")
+                                            appTitle == "Kàddug Yàlla")
                                           Button(
                                               onPressed: () async {
                                                 const url =

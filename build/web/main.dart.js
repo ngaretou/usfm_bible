@@ -90371,7 +90371,7 @@ A.lR.prototype={}
 A.Yu.prototype={
 nW(a){return B.ag8}}
 A.Yt.prototype={
-nW(a){return B.agg}}
+nW(a){return B.agh}}
 A.Ys.prototype={}
 A.Yv.prototype={}
 A.Pn.prototype={
@@ -99057,7 +99057,7 @@ return A.R(null,r)}})
 return A.S($async$xm,r)},
 K9(){if(A.aYk())this.xm()},
 J(a){var s,r,q=this
-if($.kd.ak().o2(0,"hasSeenOnboarding")==null&&$.a8O==="K\xe0ddug Y\xe0lla Gi")$.L.dx$.push(new A.alk(a))
+if($.kd.ak().o2(0,"hasSeenOnboarding")==null&&$.a8O==="K\xe0ddug Y\xe0lla")$.L.dx$.push(new A.alk(a))
 A.d6("MyHomePageState build")
 s=A.c4(a,!0,t.lo)
 r=q.x
@@ -99086,7 +99086,7 @@ $2(a,b){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d=null
 if(b.a===B.eG)return B.kd
 else{s=t.f_
 r=A.a([],s)
-q=A.a([A.JE(B.V,B.Qi,"https://sng.al/app",B.agf),A.JE(B.V,B.Qj,"http://currah.download/pages/wolof/bible/contact/index.html",B.ag9),A.JE(B.V,B.PY,"http://currah.download/pages/wolof/bible/html/deglu_kaddu_gi.html",B.agh),A.JE(B.V,B.Q9,"http://currah.download/pages/wolof/bible/html/biblewolof.html",B.ags),A.JE(B.V,B.Q2,"http://currah.download/pages/dictionnairewolof/",B.agd),A.JE(B.V,B.PZ,"http://currah.download/pages/ajamisenegal/index.html",B.agq)],s)
+q=A.a([A.JE(B.V,B.Qi,"https://sng.al/app",B.agg),A.JE(B.V,B.Qj,"http://currah.download/pages/wolof/bible/contact/index.html",B.ag9),A.JE(B.V,B.PY,"http://currah.download/pages/wolof/bible/html/deglu_kaddu_gi.html",B.agi),A.JE(B.V,B.Q9,"http://currah.download/pages/wolof/bible/html/biblewolof.html",B.ags),A.JE(B.V,B.Q2,"http://currah.download/pages/dictionnairewolof/",B.agd),A.JE(B.V,B.PZ,"http://currah.download/pages/ajamisenegal/index.html",B.agq)],s)
 p=A.aTD()
 o=this.b
 n=t.r
@@ -99102,7 +99102,7 @@ i=this.c
 h=t.A
 g=this.a
 f=A.a([p,m,k,new A.Sh(i,new A.b1(d,h),l,j,d,B.fZ,d,!1,new A.b1(d,h),d),A.aTD(),A.Fd(!1,B.fZ,d,B.Q6,d,A.bT(A.c4(o,!0,n).gfF().x,d,d,d,d,d)),A.Fd(!1,new A.Xu(g.e,d),d,B.Qa,d,A.bT(A.c4(o,!0,n).gfF().y,d,d,d,d,d))],s)
-if($.a8O==="K\xe0ddug Y\xe0lla Gi"){B.b.O(r,q)
+if($.a8O==="K\xe0ddug Y\xe0lla"){B.b.O(r,q)
 B.b.O(r,f)}else B.b.O(r,f)
 p=t.yS
 n=o.v(p)
@@ -99147,7 +99147,7 @@ r=A.a([new A.xF(b,q)],s)
 if(B.d.ef(b)!==100)r.push(A.bT(B.e.j(B.d.ef(b))+"%",q,q,B.aei,q,q))
 s=A.a([new A.dX(B.at,q,B.aP,B.E,r,q),new A.bS(q,a.v(t.m).f.a.b/2-70,q,q)],s)
 r=$.a8O
-if(r==="K\xe0ddug Y\xe0lla Gi")s.push(A.ow(!1,B.ago,q,q,q,new A.al9(),q))
+if(r==="K\xe0ddug Y\xe0lla")s.push(A.ow(!1,B.ago,q,q,q,new A.al9(),q))
 s.push(B.abB)
 return A.dj(s,B.F,q,B.iR,B.M)}},
 $S:600}
@@ -99177,7 +99177,7 @@ $1(a){return a.f==="RTL"},
 $S:40}
 A.alo.prototype={
 $1(a){var s=null,r=this.a
-return new A.w0(B.agv,B.agx,A.a([new A.Qp(new A.alm(r),s,s,s,!1,B.agc,!0,s),A.ow(!1,B.aga,s,s,s,new A.aln(r),s)],t.p),s)},
+return new A.w0(B.agw,B.agy,A.a([new A.Qp(new A.alm(r),s,s,s,!1,B.agc,!0,s),A.ow(!1,B.aga,s,s,s,new A.aln(r),s)],t.p),s)},
 $S:602}
 A.alm.prototype={
 $0(){var s=this.a.c
@@ -99730,10 +99730,10 @@ l(){var s=this.d
 s===$&&A.b()
 s.l()
 this.aV()},
-J(a){var s,r,q,p,o,n=this,m=null,l=new A.aCf(),k=new A.aCh(),j=t.p,i=A.a([k.$2(l.$2(B.Qz,!0),B.agn),k.$2(l.$2(B.QA,!0),B.agy),k.$2(l.$2(B.Qw,!0),B.agm),k.$2(l.$2(B.Qy,!0),B.agp),k.$2(l.$2(B.Qx,!0),B.agr),k.$2(l.$2(B.QB,!0),B.agj)],j),h=$.vo()
+J(a){var s,r,q,p,o,n=this,m=null,l=new A.aCf(),k=new A.aCh(),j=t.p,i=A.a([k.$2(l.$2(B.Qz,!0),B.agp),k.$2(l.$2(B.QA,!0),B.agn),k.$2(l.$2(B.Qw,!0),B.agk),k.$2(l.$2(B.Qy,!0),B.age),k.$2(l.$2(B.Qx,!0),B.agv),k.$2(l.$2(B.QB,!0),B.agr)],j),h=$.vo()
 if(h.a){h=h.b
 h=h!==B.tn&&h!==B.tp}else h=!1
-if(h)i.push(k.$3$button(l.$2(B.QC,!0),B.age,A.fO(m,A.aaP($.aLz(),B.agw,B.kM),B.a9,!1,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,new A.aCc(a),m,m,m,m,m,m)))
+if(h)i.push(k.$3$button(l.$2(B.QC,!0),B.agf,A.fO(m,A.aaP($.aLz(),B.agx,B.kM),B.a9,!1,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,m,new A.aCc(a),m,m,m,m,m,m)))
 s=i.length
 h=A.cX(A.a([A.wF(B.Q5,A.aKj(A.hr(a,!1).gKo(),t.X))],j),B.aU,B.iR,B.M,m,m)
 r=A.wF(B.Qc,new A.aCi(n))
@@ -100466,7 +100466,7 @@ r=s.db
 r=A.ik(r,A.K(r).c)
 r=A.a_(r,!0,A.l(r).h("cf.E"))
 q=A.K(r).h("a0<1,ff<d>>")
-return A.OO(!0,A.a_(new A.a0(r,new A.aEb(this.c),q),!0,q.h("af.E")),new A.aEc(s),B.agl,p,b,t.N)},
+return A.OO(!0,A.a_(new A.a0(r,new A.aEb(this.c),q),!0,q.h("af.E")),new A.aEc(s),B.agm,p,b,t.N)},
 $S:102}
 A.aEb.prototype={
 $1(a){var s=null
@@ -100579,7 +100579,7 @@ l=A.c4(a,!1,m).gfF()
 h=a.v(h)
 h=(h==null?B.aZ:h).w.b
 k=t.p
-m=A.aaP(g,A.cX(A.a([A.dt(A.dj(A.a([A.cX(A.a([A.dt(A.b7A(o,!1,1,new A.aFl(j),l.c,s.dF(A.aO(102,h.gm(h)>>>16&255,h.gm(h)>>>8&255,h.gm(h)&255)),s,n,B.EV),1)],k),B.F,B.x,B.M,i,i),B.abC,new A.CA(A.ow(!1,A.bT(A.c4(a,!1,m).gfF().c,i,i,s,i,i),i,i,i,new A.aFm(j),i),B.agi,A.dj(j.r,B.aU,i,B.x,B.M),j.e)],k),B.hg,i,B.x,B.M),1),A.wF(B.te,new A.aFn(j))],k),B.aU,B.x,B.M,i,i),B.kM)
+m=A.aaP(g,A.cX(A.a([A.dt(A.dj(A.a([A.cX(A.a([A.dt(A.b7A(o,!1,1,new A.aFl(j),l.c,s.dF(A.aO(102,h.gm(h)>>>16&255,h.gm(h)>>>8&255,h.gm(h)&255)),s,n,B.EV),1)],k),B.F,B.x,B.M,i,i),B.abC,new A.CA(A.ow(!1,A.bT(A.c4(a,!1,m).gfF().c,i,i,s,i,i),i,i,i,new A.aFm(j),i),B.agj,A.dj(j.r,B.aU,i,B.x,B.M),j.e)],k),B.hg,i,B.x,B.M),1),A.wF(B.te,new A.aFn(j))],k),B.aU,B.x,B.M,i,i),B.kM)
 h=j.w.length
 h=h===0?B.aby:new A.jz(1,B.cJ,A.aNi(new A.aFo(j),h,i,i,!1),i)
 return new A.bS(300,i,A.dj(A.a([new A.bc(B.OZ,m,i),h],k),B.eH,i,B.x,B.M),i)}}
@@ -109328,26 +109328,26 @@ B.agb=new A.cY(" ",null,B.I1,B.d1,null,null,null,null)
 B.agc=new A.cY("Yes",null,null,null,null,null,null,null)
 B.agd=new A.cY("T\xe9ere baati wolof",null,null,null,null,null,null,null)
 B.dC=new A.B(!0,B.n,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
-B.age=new A.cY("Man nga installer appli bi ci sa ordinateur. B\xebsal ci button bi ngir tambale installation bi.",null,B.dC,null,null,null,null,null)
-B.agf=new A.cY("Y\xe9neen appli",null,null,null,null,null,null,null)
-B.agg=new A.cY("TABLE ROW",null,null,null,null,null,null,null)
-B.agh=new A.cY("D\xe9gglul K\xe0ddu gi",null,null,null,null,null,null,null)
-B.agi=new A.cY("",null,null,null,null,null,null,null)
-B.agj=new A.cY("Bu button bi takke, xaaj bi day \xe0nd ak yeneen xaaj yi.",null,B.dC,null,null,null,null,null)
-B.agl=new A.cY("150",null,null,null,null,null,null,null)
-B.agm=new A.cY("Fii ngay t\xe0nn ban t\xe9ere nga b\xebgg j\xe0ng.",null,B.dC,null,null,null,null,null)
-B.agn=new A.cY("B\xebsal ci \xf1eeti ponk yi ngir ubbi fi nga man t\xe0nn ay jumtukaay.",null,B.dC,null,null,null,null,null)
+B.age=new A.cY("Fii ngay gise ban saar ak ban aaya \xf1ooy fee\xf1.",null,B.dC,null,null,null,null,null)
+B.agf=new A.cY("Man nga installer appli bi ci sa ordinateur. B\xebsal ci button bi ngir tambale installation bi.",null,B.dC,null,null,null,null,null)
+B.agg=new A.cY("Y\xe9neen appli",null,null,null,null,null,null,null)
+B.agh=new A.cY("TABLE ROW",null,null,null,null,null,null,null)
+B.agi=new A.cY("D\xe9gglul K\xe0ddu gi",null,null,null,null,null,null,null)
+B.agj=new A.cY("",null,null,null,null,null,null,null)
+B.agk=new A.cY("Fii ngay t\xe0nne ban t\xe9ere nga b\xebgga j\xe0ng.",null,B.dC,null,null,null,null,null)
+B.agm=new A.cY("150",null,null,null,null,null,null,null)
+B.agn=new A.cY("P\xe0cc bu nekk man nga caa t\xe0nne ban l\xe0kk nga b\xebgga gis.",null,B.dC,null,null,null,null,null)
 B.ago=new A.cY("Dafa yeex ba \xebpp, demal ci version bu weesu",null,null,null,null,null,null,null)
-B.agp=new A.cY("Fii ngay gis ban saar ak aaya \xf1ooy fee\xf1.",null,B.dC,null,null,null,null,null)
+B.agp=new A.cY("B\xebsal ci \xf1etti ponk yii ngir ubbi fi nga mana t\xe0nne ay jumtukaay.",null,B.dC,null,null,null,null,null)
 B.agq=new A.cY("Jumtukaay wolofal",null,null,null,null,null,null,null)
-B.agr=new A.cY("Man nga soppi dayob mbind mi.",null,B.dC,null,null,null,null,null)
+B.agr=new A.cY("Bu tomb bii takke, p\xe0cc bii day \xe0nd ak yeneeni p\xe0cc yi mu mengool.",null,B.dC,null,null,null,null,null)
 B.ags=new A.cY("Yebal t\xe9erey K\xe0ddu gi",null,null,null,null,null,null,null)
 B.agt=new A.cY("Licenses",null,null,null,null,null,null,null)
 B.agu=new A.cY("Details",null,null,null,null,null,null,null)
-B.agv=new A.cY("Confirm close",null,null,null,null,null,null,null)
-B.agw=new A.cY("Installation",null,null,null,null,null,null,null)
-B.agx=new A.cY("Are you sure you want to close this window?",null,null,null,null,null,null,null)
-B.agy=new A.cY("Ci xaaj bu nekk man nga t\xe0nn ban l\xe0kk nga b\xebgg gis.",null,B.dC,null,null,null,null,null)
+B.agv=new A.cY("Man nga fee soppi dayob mbind mi.",null,B.dC,null,null,null,null,null)
+B.agw=new A.cY("Confirm close",null,null,null,null,null,null,null)
+B.agx=new A.cY("Installation",null,null,null,null,null,null,null)
+B.agy=new A.cY("Are you sure you want to close this window?",null,null,null,null,null,null,null)
 B.agz=new A.HE(0)
 B.agA=new A.HE(0.5)
 B.agB=new A.HF(null)
@@ -109502,8 +109502,8 @@ B.pF=new A.yY(0,0)
 B.aim=new A.yY(-2,-2)
 B.ain=new A.I0(0,"normal")
 B.fQ=new A.I0(1,"pre")
-B.agk=new A.cY("\t",null,B.I1,B.d1,null,null,null,null)
-B.aio=new A.e4(B.agk,B.bn,null,null)
+B.agl=new A.cY("\t",null,B.I1,B.d1,null,null,null,null)
+B.aio=new A.e4(B.agl,B.bn,null,null)
 B.aip=new A.e4(B.V,B.bn,null,null)
 B.aiq=new A.ZC(0,"disabled")
 B.es=new A.ZK(0,"start")
