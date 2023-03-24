@@ -146,7 +146,7 @@ Future<String> asyncGetProjectName(BuildContext context) async {
       .getElement('app-definition')!
       .getElement('app-name')!
       .innerText
-      .toString(); // e.g. Kaddug Yalla Gi
+      .toString(); // e.g. Kaddug Yalla
   return projectName;
 }
 

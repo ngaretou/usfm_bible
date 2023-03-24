@@ -65,7 +65,7 @@ class About extends StatelessWidget {
           .getElement('app-definition')!
           .getElement('app-name')!
           .innerText
-          .toString(); // e.g. Kaddug Yalla Gi
+          .toString(); // e.g. Kaddug Yalla
       versionName = document
           .getElement('app-definition')!
           .getElement('version')!

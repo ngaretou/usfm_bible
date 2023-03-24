@@ -90371,7 +90371,7 @@ A.lR.prototype={}
 A.Yu.prototype={
 nW(a){return B.ag8}}
 A.Yt.prototype={
-nW(a){return B.agh}}
+nW(a){return B.agg}}
 A.Ys.prototype={}
 A.Yv.prototype={}
 A.Pn.prototype={
@@ -98928,7 +98928,7 @@ s=6
 return A.G(q.tK(B.agD,!0),$async$$1)
 case 6:case 3:p=$.kd.ak().o2(0,"windowWidth")
 o=$.kd.ak().o2(0,"windowHeight")
-if(o==null||p==null){p=700
+if(o==null||p==null){p=1000
 o=600}s=7
 return A.G(q.xC(0,new A.a1(p,o)),$async$$1)
 case 7:s=8
@@ -99086,7 +99086,7 @@ $2(a,b){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d=null
 if(b.a===B.eG)return B.kd
 else{s=t.f_
 r=A.a([],s)
-q=A.a([A.JE(B.V,B.Qi,"https://sng.al/app",B.agg),A.JE(B.V,B.Qj,"http://currah.download/pages/wolof/bible/contact/index.html",B.ag9),A.JE(B.V,B.PY,"http://currah.download/pages/wolof/bible/html/deglu_kaddu_gi.html",B.agi),A.JE(B.V,B.Q9,"http://currah.download/pages/wolof/bible/html/biblewolof.html",B.ags),A.JE(B.V,B.Q2,"http://currah.download/pages/dictionnairewolof/",B.agd),A.JE(B.V,B.PZ,"http://currah.download/pages/ajamisenegal/index.html",B.agq)],s)
+q=A.a([A.JE(B.V,B.Qi,"https://sng.al/app",B.agh),A.JE(B.V,B.Qj,"http://currah.download/pages/wolof/bible/contact/index.html",B.ag9),A.JE(B.V,B.PY,"http://currah.download/pages/wolof/bible/html/deglu_kaddu_gi.html",B.agi),A.JE(B.V,B.Q9,"http://currah.download/pages/wolof/bible/html/biblewolof.html",B.ags),A.JE(B.V,B.Q2,"http://currah.download/pages/dictionnairewolof/",B.agd),A.JE(B.V,B.PZ,"http://currah.download/pages/ajamisenegal/index.html",B.agq)],s)
 p=A.aTD()
 o=this.b
 n=t.r
@@ -109330,8 +109330,8 @@ B.agd=new A.cY("T\xe9ere baati wolof",null,null,null,null,null,null,null)
 B.dC=new A.B(!0,B.n,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)
 B.age=new A.cY("Fii ngay gise ban saar ak ban aaya \xf1ooy fee\xf1.",null,B.dC,null,null,null,null,null)
 B.agf=new A.cY("Man nga installer appli bi ci sa ordinateur. B\xebsal ci button bi ngir tambale installation bi.",null,B.dC,null,null,null,null,null)
-B.agg=new A.cY("Y\xe9neen appli",null,null,null,null,null,null,null)
-B.agh=new A.cY("TABLE ROW",null,null,null,null,null,null,null)
+B.agg=new A.cY("TABLE ROW",null,null,null,null,null,null,null)
+B.agh=new A.cY("Yeneen appli",null,null,null,null,null,null,null)
 B.agi=new A.cY("D\xe9gglul K\xe0ddu gi",null,null,null,null,null,null,null)
 B.agj=new A.cY("",null,null,null,null,null,null,null)
 B.agk=new A.cY("Fii ngay t\xe0nne ban t\xe9ere nga b\xebgga j\xe0ng.",null,B.dC,null,null,null,null,null)
