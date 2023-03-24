@@ -102,8 +102,8 @@ void main() async {
       double? windowWidth = userPrefsBox.get('windowWidth');
       double? windowHeight = userPrefsBox.get('windowHeight');
       if (windowHeight == null || windowWidth == null) {
-        windowWidth = 1200;
-        windowHeight = 800;
+        windowWidth = 1000;
+        windowHeight = 600;
       }
 
       await windowManager.setSize(Size(windowWidth, windowHeight));
