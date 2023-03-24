@@ -354,7 +354,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
             //More apps
             _LinkPaneItemAction(
               icon: const Icon(FluentIcons.app_icon_default),
-              title: const Text('Yéneen appli'),
+              title: const Text('Yeneen appli'),
               link: 'https://sng.al/app',
               body: const SizedBox.shrink(),
             ),
