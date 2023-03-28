@@ -167,7 +167,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => AppTheme(),
       builder: (context, _) {
-        final appTheme = context.watch<AppTheme>();
+        AppTheme appTheme = context.watch<AppTheme>();
 
         late SystemUiOverlayStyle style;
         if (appTheme.mode == ThemeMode.dark) {
@@ -192,7 +192,9 @@ class MyApp extends StatelessWidget {
                   title: appTitle,
                   themeMode: appTheme.mode,
                   debugShowCheckedModeBanner: false,
-                  home: const MyHomePage(),
+                  home: MyHomePage(
+                    appTheme: appTheme,
+                  ),
                   color: appTheme.color,
                   darkTheme: FluentThemeData(
                     brightness: Brightness.dark,
@@ -234,7 +236,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  final AppTheme appTheme;
+
+  const MyHomePage({Key? key, required this.appTheme}) : super(key: key);
 
   @override
   MyHomePageState createState() => MyHomePageState();
@@ -274,6 +278,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
   @override
   void initState() {
+    print('MyHomePageState initState');
     windowManager.addListener(this);
 
     super.initState();
@@ -318,6 +323,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
   @override
   Widget build(BuildContext context) {
+    print('MyHomePageState build');
     bool? hasSeenOnboarding = userPrefsBox.get('hasSeenOnboarding');
 
     if (hasSeenOnboarding == null && appTitle == "Kàddug Yàlla") {
@@ -334,12 +340,6 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
         userPrefsBox.put('hasSeenOnboarding', true);
       });
     }
-
-    print('MyHomePageState build');
-    final appTheme = context.watch<AppTheme>();
-    // windowSize = MediaQuery.of(context).size;
-    // isFullScreen = (html.window.screen?.width == windowSize.width) &&
-    //     (html.window.screen?.height == windowSize.height);
 
     return FutureBuilder(
       future: initInterface,
@@ -410,7 +410,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
             RunFunctionPaneItemAction(
                 body: const About(),
-                title: Text(Provider.of<UserPrefs>(context, listen: true)
+                title: Text(Provider.of<UserPrefs>(context, listen: false)
                     .currentTranslation
                     .search),
                 icon: const Icon(FluentIcons.search),
@@ -420,7 +420,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
             //Add Column
             RunFunctionPaneItemAction(
                 body: const About(),
-                title: Text(Provider.of<UserPrefs>(context, listen: true)
+                title: Text(Provider.of<UserPrefs>(context, listen: false)
                     .currentTranslation
                     .addColumn),
                 icon: const Icon(FluentIcons.calculator_addition),
@@ -428,19 +428,65 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                     Provider.of<ColumnManager>(context, listen: false)
                         .addColumn),
             //Light Dark Toggle
-            LightDarkModePaneItemAction(
+            PaneItemAction(
               icon: FluentTheme.of(context).brightness.isDark
                   ? const Icon(FluentIcons.sunny)
                   : const Icon(FluentIcons.clear_night),
               title: FluentTheme.of(context).brightness.isDark
-                  ? Text(Provider.of<UserPrefs>(context, listen: true)
+                  ? Text(Provider.of<UserPrefs>(context, listen: false)
                       .currentTranslation
                       .lightTheme)
-                  : Text(Provider.of<UserPrefs>(context, listen: true)
+                  : Text(Provider.of<UserPrefs>(context, listen: false)
                       .currentTranslation
                       .darkTheme),
-              appTheme: appTheme,
+              onTap: () {
+                Future<void> saveThemeMode(String themeMode) async {
+                  Box userPrefsBox = await Hive.openBox('userPrefs');
+                  userPrefsBox.put('themeMode', themeMode);
+                  // userPrefsBox.close();
+                }
+
+                /*Couple of cases here - by default it's set to user theme mode, but we want 
+                to offer a way to change that easily. So account for whether the system theme
+                mode is dark or light, and switch to an expressly declared light or dark*/
+                switch (widget.appTheme.mode) {
+                  case ThemeMode.system:
+                    bool dark = (MediaQuery.of(context).platformBrightness ==
+                        Brightness.dark);
+                    if (dark) {
+                      widget.appTheme.mode = ThemeMode.light;
+                    } else {
+                      widget.appTheme.mode = ThemeMode.dark;
+                    }
+                    break;
+                  case ThemeMode.dark:
+                    widget.appTheme.mode = ThemeMode.light;
+                    break;
+                  case ThemeMode.light:
+                    widget.appTheme.mode = ThemeMode.dark;
+                    break;
+                  default:
+                    widget.appTheme.mode = ThemeMode.dark;
+                }
+                saveThemeMode(widget.appTheme.mode.toString());
+              },
             ),
+
+            // First version of this
+            // LightDarkModePaneItemAction(
+            //   icon: FluentTheme.of(context).brightness.isDark
+            //       ? const Icon(FluentIcons.sunny)
+            //       : const Icon(FluentIcons.clear_night),
+            //   title: FluentTheme.of(context).brightness.isDark
+            //       ? Text(Provider.of<UserPrefs>(context, listen: false)
+            //           .currentTranslation
+            //           .lightTheme)
+            //       : Text(Provider.of<UserPrefs>(context, listen: false)
+            //           .currentTranslation
+            //           .darkTheme),
+            //   appTheme: widget.appTheme,
+            // ),
+
             // if (kIsWeb)
             //   PaneItemAction(
             //     icon: const Icon(FluentIcons.full_screen),
@@ -455,13 +501,13 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
             PaneItem(
                 body: const About(),
                 icon: const Icon(FluentIcons.info),
-                title: Text(Provider.of<UserPrefs>(context, listen: true)
+                title: Text(Provider.of<UserPrefs>(context, listen: false)
                     .currentTranslation
                     .about)),
             PaneItem(
               body: Settings(controller: settingsController),
               icon: const Icon(FluentIcons.settings),
-              title: Text(Provider.of<UserPrefs>(context, listen: true)
+              title: Text(Provider.of<UserPrefs>(context, listen: false)
                   .currentTranslation
                   .settings),
             ),
@@ -536,17 +582,6 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
                           //     // Spacer(),
 
-                          //     // ToggleSwitch(
-                          //     //   content: const Text('Dark Mode'),
-                          //     //   checked: FluentTheme.of(context).brightness.isDark,
-                          //     //   onChanged: (v) {
-                          //     //     if (v) {
-                          //     //       appTheme.mode = ThemeMode.dark;
-                          //     //     } else {
-                          //     //       appTheme.mode = ThemeMode.light;
-                          //     //     }
-                          //     //   },
-                          //     // ),
                           WindowButtons()
                         ],
                       ),
@@ -565,9 +600,9 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                     height: kOneLineTileHeight,
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   ),
-                  displayMode: appTheme.displayMode,
+                  displayMode: widget.appTheme.displayMode,
                   indicator: () {
-                    switch (appTheme.indicator) {
+                    switch (widget.appTheme.indicator) {
                       case NavigationIndicators.end:
                         return const EndNavigationIndicator();
                       case NavigationIndicators.sticky:
