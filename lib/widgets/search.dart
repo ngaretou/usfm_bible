@@ -84,7 +84,7 @@ class _SearchWidgetState extends State<SearchWidget> {
         checked: collectionsToSearch.contains(collections[i].id),
         onChanged: (bool? value) {
           setState(() {
-            // print('setting ${collectionsToSearch[i]} to $value');
+            // // print('setting ${collectionsToSearch[i]} to $value');
             if (collectionsToSearch.contains(collections[i].id)) {
               collectionsToSearch
                   .removeWhere((element) => element == collections[i].id);
@@ -227,7 +227,7 @@ class _SearchResultTileState extends State<SearchResultTile> {
   Color? cardColor;
 
   void searchNavigator(ParsedLine line) {
-    print(line.verseText);
+    // print(line.verseText);
   }
 
   @override

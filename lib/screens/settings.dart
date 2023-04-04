@@ -85,7 +85,7 @@ class Settings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('settings page build');
+    // print('settings page build');
     assert(debugCheckHasMediaQuery(context));
     final appTheme = context.watch<AppTheme>();
 
@@ -199,7 +199,7 @@ class Settings extends StatelessWidget {
         //     child: RadioButton(
         //       checked: appTheme.displayMode == mode,
         //       onChanged: (value) {
-        //         print(mode.toString());
+        //         // print(mode.toString());
         //         if (value) appTheme.displayMode = mode;
         //       },
         //       content: Text(

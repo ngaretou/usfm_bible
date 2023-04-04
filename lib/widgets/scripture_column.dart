@@ -75,7 +75,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
   @override
   void initState() {
-    print('scripture column initState');
+    // print('scripture column initState');
     partOfScrollGroup = widget.bibleReference.partOfScrollGroup;
     baseFontSize = 20;
     previousParaPosition = 0;
@@ -91,7 +91,8 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     super.initState();
   }
 
-  //Function called on first open and also from combobox selectors to go to a Bible reference
+  //Function called on first open
+  //and also from combobox selectors to go to a Bible reference
   scrollToReference(
       {String? collection,
       String? bookID,
@@ -197,26 +198,26 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
           currentVerse.value = '1';
           navigateToParagraph = 0;
         }
-        //if our column has a ref, just stay at it -
+        //if our column has a ref, try to stay at it -
         //this is when a NT does not have an OT book but you're trying to scroll to it
 
         List<BibleReference> userColumns =
             Provider.of<UserPrefs>(context, listen: false).userColumns;
-        BibleReference savedBibleRefForThisColumn = userColumns
+        BibleReference? savedBibleRefForThisColumn = userColumns
             .firstWhere((element) => element.key == widget.bibleReference.key);
         /*We're here b/c we're trying to scroll to a ref not in the collection
           If there is an existing ref for this column, let's try to scroll to it*/
         if (savedBibleRefForThisColumn.bookID != null) {
           //Just to be on the safe side check to make sure that ref does in fact exist.
           navigateToParagraph = checkIfRefIsInCollection(
-              widget.bibleReference.bookID!,
-              widget.bibleReference.chapter!,
-              widget.bibleReference.verse!);
+              savedBibleRefForThisColumn.bookID!,
+              savedBibleRefForThisColumn.chapter!,
+              savedBibleRefForThisColumn.verse!);
           //If it does exist, then go ahead and navigate
           if (navigateToParagraph != -1) {
-            currentBook.value = widget.bibleReference.bookID!;
-            currentChapter.value = widget.bibleReference.chapter!;
-            currentVerse.value = widget.bibleReference.verse!;
+            currentBook.value = savedBibleRefForThisColumn.bookID!;
+            currentChapter.value = savedBibleRefForThisColumn.chapter!;
+            currentVerse.value = savedBibleRefForThisColumn.verse!;
           } else {
             //Otherwise go to beginning
             goToBeginning();
@@ -235,9 +236,15 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
             scrollCollectionRef.bookID!,
             scrollCollectionRef.chapter!,
             scrollCollectionRef.verse!);
-        print(
-            'navigateToParagraph in collection change is $navigateToParagraph');
-        if (navigateToParagraph == -1) refNotInCollection();
+
+        // print(            'navigateToParagraph in collection change is $navigateToParagraph');
+        if (navigateToParagraph == -1) {
+          refNotInCollection();
+        } else {
+          currentBook.value = scrollCollectionRef.bookID!;
+          currentChapter.value = scrollCollectionRef.chapter!;
+          currentVerse.value = scrollCollectionRef.verse!;
+        }
       } else if (bookID != null && chapter != null && verse != null) {
         //Here there is an incoming full ref
         navigateToParagraph = checkIfRefIsInCollection(bookID, chapter, verse);
@@ -254,24 +261,39 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         refNotInCollection();
       }
 
-      if (isInitState || navigateToParagraph > versesByParagraph.length) {
-        //If going from a short NT only collection to full Bible, at this point the scrollablePositionedList
-        //hasn't rebuilt and so a scroll will fail. Set a ref here to scroll in the post frame callback
-        delayedScrollIndex = navigateToParagraph;
-      } else {
-        // print('set ActiveColumnKey1');
-        Provider.of<ScrollGroup>(context, listen: false).setActiveColumnKey =
-            widget.key;
-        // Navigate to the paragraph. This is the collection change section.
-        itemScrollController.scrollTo(
-          index: navigateToParagraph,
-          duration: const Duration(milliseconds: 200),
-        );
-      }
+      // if (isInitState || navigateToParagraph > versesByParagraph.length) {
+      //   //If going from a short NT only collection to full Bible, at this point the scrollablePositionedList
+      //   //hasn't rebuilt and so a scroll will fail. Set a ref here to scroll in the post frame callback
+      //   delayedScrollIndex = navigateToParagraph;
+      // } else {
+      //   // // print('set ActiveColumnKey1');
+      //   Provider.of<ScrollGroup>(context, listen: false).setActiveColumnKey =
+      //       widget.key;
+      //   // Navigate to the paragraph. This is the collection change section.
+      //   itemScrollController.scrollTo(
+      //     index: navigateToParagraph,
+      //     duration: const Duration(milliseconds: 200),
+      //   );
       // }
+      //  if (isInitState || navigateToParagraph > versesByParagraph.length) {
+      //If going from a short NT only collection to full Bible, at this point the scrollablePositionedList
+      //hasn't rebuilt and so a scroll will fail. Set a ref here to scroll in the post frame callback
+      delayedScrollIndex = navigateToParagraph;
+
+      // } else {
+      // // print('set ActiveColumnKey1');
+      // Provider.of<ScrollGroup>(context, listen: false).setActiveColumnKey =
+      //     widget.key;
+      // Navigate to the paragraph. This is the collection change section.
+      // itemScrollController.scrollTo(
+      //   index: navigateToParagraph,
+      //   duration: const Duration(milliseconds: 200),
+      // );
+      // }
+
       setUpComboBoxesChVs();
-    } else {
       //Above is collection change, which resets the whole column.
+    } else {
       //Here is where the choice of book, ch, vs comes, and is a scrollTo with the same collection
       String oldBook = currentBook.value;
       String oldChapter = currentChapter.value;
@@ -305,9 +327,9 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
         //Filtering for active column scrolling
 
         if (activeColumnKey == null) {
-          print('set ActiveColumnKey2');
-          print(activeColumnKey);
-          print(widget.key);
+          // print('set ActiveColumnKey2');
+          // print(activeColumnKey);
+          // print(widget.key);
           Provider.of<ScrollGroup>(context, listen: false).setActiveColumnKey =
               widget.key;
         }
@@ -344,14 +366,14 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
   //On user end scroll notification
   void setSelectorsToClosestReferenceAfterScroll() {
-    // print(
+    // // print(
     //     'set SelectorsToClosestReferenceAfterScroll called ${widget.bibleReference.collectionID}');
     int p = itemPositionsListener.itemPositions.value.first.index;
     //'first' includes the item that is in first position as it slides out of view, so look for the second item, looks better
     int pPlus1 = p + 1;
     //This if makes it so this only fires when needed
     if (previousParaPosition != pPlus1) {
-      // print(
+      // // print(
       //     'set SelectorsToClosestReferenceAfterScroll doing something ${widget.bibleReference.collectionID}');
       previousParaPosition = pPlus1;
 
@@ -380,7 +402,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                 currentChapter.value = para[l].chapter;
               }
               if (currentVerse.value != para[l].verse) {
-                // print('verse change to ${para[l].verse}');
+                // // print('verse change to ${para[l].verse}');
                 currentVerse.value = para[l].verse;
               }
 
@@ -411,7 +433,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   }
 
   void setUpComboBoxesChVs() {
-    // print('setUp ComboBoxesChVs');
+    // // print('setUp ComboBoxesChVs');
 
     List<String> temp = versesInCollection
         .where((element) => element.book == currentBook.value)
@@ -503,7 +525,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
     }
     // if vs not in range, add it and arrange the lines
     else if (!verseAlreadyInRange) {
-      // print('third case');
+      // // print('third case');
       //add this verse and then
       rangeOfVersesToCopy.add(ref);
 
@@ -524,7 +546,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
 
     //if the user has changed their minds and wants to shorten the list of verses to work with
     // else if (rangeOfVersesToCopy.length >= 2 && verseAlreadyInRange) {
-    //   // print('fourth option');
+    //   // // print('fourth option');
     //   // startIndex = versesInCollection.indexWhere((element) =>
     //   //     element.book == rangeOfVersesToCopy[0].book &&
     //   //     element.chapter == rangeOfVersesToCopy[0].chapter &&
@@ -540,7 +562,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   }
 
   String? textToShareOrCopy() {
-    // print('textToShareOrCopy');
+    // // print('textToShareOrCopy');
     String textToReturn = '';
     String reference = '';
     String lineBreak = '\n';
@@ -615,19 +637,20 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   Widget build(BuildContext context) {
     Key? activeColumnKey = context.read<ScrollGroup>().getActiveColumnKey;
     ScrollGroup scrollGroup = Provider.of<ScrollGroup>(context, listen: false);
-    // print(
+    // // print(
     //     'scripture column build: columnIndex: ${widget.bibleReference.columnIndex}; collection: ${widget.bibleReference.collectionID}; key: ${widget.key}');
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       //if switching from an NT only collection with few paragraphs to a longer full Bible collection
       //it will fail if it tries to scroll before the scrollablePositionedList is rebuilt.
       //Set above, this delayedScrollIndex scrolls after build to the index in such a situation
+
       if (delayedScrollIndex != null) {
         scrollGroup.setActiveColumnKey = widget.key;
         try {
           itemScrollController.jumpTo(index: delayedScrollIndex!);
         } catch (e) {
-          print('$e at scripcol postframecallback');
+          // print('$e at scripcol postframecallback');
         }
 
         delayedScrollIndex = null;
@@ -652,17 +675,17 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
       }
     });
 
-    int numberOfColumns =
-        Provider.of<UserPrefs>(context, listen: false).userColumns.length;
+    // int numberOfColumns =
+    //     Provider.of<UserPrefs>(context, listen: false).userColumns.length;
 
-    double windowWidth = MediaQuery.of(context).size.width;
+    // double windowWidth = MediaQuery.of(context).size.width;
 
-    if (windowWidth > 1024 && numberOfColumns == 1) {
-      wideWindow = true;
-      wideWindowPadding = windowWidth / 5;
-    } else {
-      wideWindow = false;
-    }
+    // if (windowWidth > 1024 && numberOfColumns == 1) {
+    //   wideWindow = true;
+    //   wideWindowPadding = windowWidth / 5;
+    // } else {
+    //   wideWindow = false;
+    // }
 
     //Couple of things to get to pass in to the Paragraph Builder
 
@@ -940,7 +963,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
           Expanded(
             child: NotificationListener(
               onNotification: (ScrollNotification notification) {
-                // print(
+                // // print(
                 //     '$notification   |   ${widget.bibleReference.collectionID}');
 
                 //We're only interested in scrollnotifications
@@ -957,10 +980,10 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
                             .setActiveColumnKey =
                         widget
                             .key; //We're scrolling, so set this column's key as the active column - resets 2 seconds later
-                    // print(
+                    // // print(
                     //     'setting active column in scripcol ${widget.bibleReference.collectionID}');
-                    // print(activeColumnKey);
-                    // print(widget.key);
+                    // // print(activeColumnKey);
+                    // // print(widget.key);
 
                     Timer(const Duration(milliseconds: 100),
                         setSelectorsToClosestReferenceAfterScroll);

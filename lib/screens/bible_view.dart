@@ -31,6 +31,7 @@ class _BibleViewState extends State<BibleView> {
 
   @override
   void initState() {
+    // print('bibleview initstate');
     userColumns = Provider.of<UserPrefs>(context, listen: false).userColumns;
 
     numberOfColumns = userColumns.length;
@@ -46,7 +47,7 @@ class _BibleViewState extends State<BibleView> {
     */
 
     scriptureColumns = List.generate(userColumns.length, (index) {
-      // print('scrip column generate ${userColumns[index].columnIndex}');
+      // // print('scrip column generate ${userColumns[index].columnIndex}');
       //The user columns coming from provider initialize and provide the unique key which gets duplicated here so we can track both groups
       return ScriptureColumn(
         key: userColumns[index].key,
@@ -63,7 +64,7 @@ class _BibleViewState extends State<BibleView> {
   }
 
   void deleteColumn(Key keyToDelete) async {
-    print('deleting column index $keyToDelete in BibleView');
+    // print('deleting column index $keyToDelete in BibleView');
     //This removes the desired element from the record in memory
     userColumns.removeWhere((element) => element.key == keyToDelete);
     //and from the user columns entry in the db
@@ -134,17 +135,17 @@ class _BibleViewState extends State<BibleView> {
 
   @override
   Widget build(BuildContext context) {
-    print('bibleview build');
+    // print('bibleview build');
 
     //Listen around the corner from the main.dart NavPaneButtons
 
     if (Provider.of<ColumnManager>(context, listen: true).readyToAddColumn) {
-      print('AddColumn notified');
+      // print('AddColumn notified');
       addColumn();
     }
 
     if (Provider.of<ColumnManager>(context, listen: true).readyToOpenSearch) {
-      print('OpenSearch notified');
+      // print('OpenSearch notified');
       if (search == null) {
         openSearch();
       }

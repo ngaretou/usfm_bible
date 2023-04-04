@@ -29,7 +29,7 @@ class ParagraphBuilder extends StatefulWidget {
 class _ParagraphBuilderState extends State<ParagraphBuilder> {
   @override
   Widget build(BuildContext context) {
-    // print('paragraph builder build method');
+    // // print('paragraph builder build method');
     bool ltrText = widget.textDirection == ui.TextDirection.ltr;
     TextAlign paraAlignment = ltrText ? TextAlign.left : TextAlign.right;
 

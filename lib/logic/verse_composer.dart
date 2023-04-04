@@ -239,10 +239,10 @@ ComposedVerses verseComposer(
       versesAsSpans: spansToReturn, versesAsString: textToReturn);
   if (dealtWithSoFar != line.verseText.length) {
     // throw "Problem with line parsing in paragraph builder at ${line.collectionid} ${line.book} ${line.chapter} ${line.verse} ${line.verseText}";
-    print(
-        "Problem with line parsing in paragraph builder at ${line.collectionid} ${line.book} ${line.chapter} ${line.verse} ${line.verseText}");
-    print('$dealtWithSoFar dealtWithSoFar');
-    print('${line.verseText.length} line.verseText.length');
+    // print(
+    // "Problem with line parsing in paragraph builder at ${line.collectionid} ${line.book} ${line.chapter} ${line.verse} ${line.verseText}");
+    // print('$dealtWithSoFar dealtWithSoFar');
+    // print('${line.verseText.length} line.verseText.length');
   }
   return returnInfo;
 }

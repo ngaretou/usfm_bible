@@ -16,7 +16,7 @@ class About extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // print('about page build');
+    // // print('about page build');
     String appName = '';
     String versionName = '';
     String programType = '';

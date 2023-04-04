@@ -58,7 +58,6 @@ class UserPrefs with ChangeNotifier {
     notifyListeners();
   }
 
- 
   loadUserPrefs(AppInfo appInfo) async {
     // printWhatsInList();
     //Check if the user has an existing session. If not, set up the initial session.
@@ -66,7 +65,7 @@ class UserPrefs with ChangeNotifier {
       initializePrefs(appInfo);
     } else {
       try {
-        // print('getting usercolumns from local db');
+        // // print('getting usercolumns from local db');
         // printWhatsInBox();
         for (var i = 0; i < main.userColumnsBox.length; i++) {
           Key newKeyForSession = UniqueKey();
@@ -105,7 +104,7 @@ class UserPrefs with ChangeNotifier {
         _userPrefList = UserPrefList(userColumns: userColumns);
       } catch (e) {
         // safety valve in case seomething goes wrong - reset db and start over
-        print('Error in loading user prefs, reinitializing columns...');
+        // print('Error in loading user prefs, reinitializing columns...');
         main.userColumnsBox.clear();
         initializePrefs(appInfo);
       }
@@ -194,6 +193,20 @@ class UserPrefs with ChangeNotifier {
 
     //We found the key, now replace the record at that spot or add it if it's new
     main.userColumnsBox.put(ref.key.toString(), colDB);
+    //Now put it in the userColumns list
+    int indexToUpdate =
+        userColumns.indexWhere((element) => element.key == ref.key);
+    userColumns[indexToUpdate] = ref;
+
+    // for (var ref in userColumns) {
+    //   // print('${ref.collectionID} ${ref.bookID} ${ref.chapter} ${ref.verse}');
+    // }
+    // for (var i = 0; i < main.userColumnsBox.length; i++) {
+    //   final refDB = main.userColumnsBox.getAt(i);
+    //   // print(
+    //       '${refDB!.collectionID} ${refDB!.bookID} ${refDB!.chapter} ${refDB!.verse}');
+    // }
+
     // printWhatsInBox();
   }
 

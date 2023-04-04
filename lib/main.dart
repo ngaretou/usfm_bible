@@ -139,7 +139,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('myapp build');
+    // print('myapp build');
     ScrollbarThemeData scrollBarTheme = const ScrollbarThemeData(
       thickness: 6.0,
       hoveringThickness: 6.0,
@@ -254,7 +254,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
   ValueNotifier<double> myProgress = ValueNotifier(0);
 
   void updateProgress(double progress) {
-    // print(progress);
+    // // print(progress);
 
     myProgress.value = progress;
   }
@@ -278,7 +278,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
   @override
   void initState() {
-    print('MyHomePageState initState');
+    // print('MyHomePageState initState');
     windowManager.addListener(this);
 
     super.initState();
@@ -323,7 +323,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
   @override
   Widget build(BuildContext context) {
-    print('MyHomePageState build');
+    // print('MyHomePageState build');
     bool? hasSeenOnboarding = userPrefsBox.get('hasSeenOnboarding');
 
     if (hasSeenOnboarding == null && appTitle == "Kàddug Yàlla") {
@@ -351,6 +351,22 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
           //For Wolof only and on web only on biblewolof.com
           List<NavigationPaneItem> wolofWebOnlyNavPaneItems = [
+            if (kIsWeb)
+              PaneItemAction(
+                  icon: const Icon(FluentIcons.download),
+                  title: const Text('Yebal appli bi ci sa ordinatër'),
+                  onTap: () {
+                    showDialog(
+                        barrierDismissible: true,
+                        context: context,
+                        builder: (BuildContext context) {
+                          return const Center(
+                              child: OnboardingPanel(
+                            appDownloadOnly: true,
+                          ));
+                        });
+                  }),
+
             //More apps
             _LinkPaneItemAction(
               icon: const Icon(FluentIcons.app_icon_default),
@@ -410,7 +426,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
             RunFunctionPaneItemAction(
                 body: const About(),
-                title: Text(Provider.of<UserPrefs>(context, listen: false)
+                title: Text(Provider.of<UserPrefs>(context, listen: true)
                     .currentTranslation
                     .search),
                 icon: const Icon(FluentIcons.search),
@@ -420,7 +436,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
             //Add Column
             RunFunctionPaneItemAction(
                 body: const About(),
-                title: Text(Provider.of<UserPrefs>(context, listen: false)
+                title: Text(Provider.of<UserPrefs>(context, listen: true)
                     .currentTranslation
                     .addColumn),
                 icon: const Icon(FluentIcons.calculator_addition),
@@ -433,10 +449,10 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                   ? const Icon(FluentIcons.sunny)
                   : const Icon(FluentIcons.clear_night),
               title: FluentTheme.of(context).brightness.isDark
-                  ? Text(Provider.of<UserPrefs>(context, listen: false)
+                  ? Text(Provider.of<UserPrefs>(context, listen: true)
                       .currentTranslation
                       .lightTheme)
-                  : Text(Provider.of<UserPrefs>(context, listen: false)
+                  : Text(Provider.of<UserPrefs>(context, listen: true)
                       .currentTranslation
                       .darkTheme),
               onTap: () {
@@ -478,10 +494,10 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
             //       ? const Icon(FluentIcons.sunny)
             //       : const Icon(FluentIcons.clear_night),
             //   title: FluentTheme.of(context).brightness.isDark
-            //       ? Text(Provider.of<UserPrefs>(context, listen: false)
+            //       ? Text(Provider.of<UserPrefs>(context, listen: true)
             //           .currentTranslation
             //           .lightTheme)
-            //       : Text(Provider.of<UserPrefs>(context, listen: false)
+            //       : Text(Provider.of<UserPrefs>(context, listen: true)
             //           .currentTranslation
             //           .darkTheme),
             //   appTheme: widget.appTheme,
@@ -501,13 +517,13 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
             PaneItem(
                 body: const About(),
                 icon: const Icon(FluentIcons.info),
-                title: Text(Provider.of<UserPrefs>(context, listen: false)
+                title: Text(Provider.of<UserPrefs>(context, listen: true)
                     .currentTranslation
                     .about)),
             PaneItem(
               body: Settings(controller: settingsController),
               icon: const Icon(FluentIcons.settings),
-              title: Text(Provider.of<UserPrefs>(context, listen: false)
+              title: Text(Provider.of<UserPrefs>(context, listen: true)
                   .currentTranslation
                   .settings),
             ),
@@ -711,7 +727,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
   @override
   void onWindowClose() async {
-    print('closing');
+    // print('closing');
     bool isPreventClose = await windowManager.isPreventClose();
     if (isPreventClose) {
       if (!mounted) return;
