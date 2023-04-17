@@ -4,7 +4,7 @@ An extension of [Scripture App Builder](https://software.sil.org/scriptureappbui
 
 To use the pre-built version for your SAB project, upload it to your web server, drop in your SAB project, and it generates a multi-collection multi-column web app.
 
-Demo of current version at https://coreygarrett.org/usfm_bible/
+Demo of current version at http://kaddugyalla.com/app
 
 <p align="center">
   <img src="https://github.com/ngaretou/usfm_bible/blob/master/screenshot.png">
