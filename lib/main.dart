@@ -8,6 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart' as flutter_acrylic;
 import 'package:provider/provider.dart';
 import 'package:system_theme/system_theme.dart';
+
 import 'package:url_strategy/url_strategy.dart';
 import 'package:url_launcher/link.dart';
 import 'package:window_manager/window_manager.dart';
@@ -15,6 +16,7 @@ import 'package:context_menus/context_menus.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:pwa_install/pwa_install.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'dart:io';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -32,7 +34,6 @@ import 'logic/database_builder.dart';
 import 'providers/user_prefs.dart';
 import 'providers/column_manager.dart';
 
-import 'package:hive_flutter/hive_flutter.dart';
 import '../hive/user_columns_db.dart';
 
 String appTitle = '';
@@ -200,17 +201,17 @@ class MyApp extends StatelessWidget {
                     brightness: Brightness.dark,
                     accentColor: appTheme.color,
                     visualDensity: VisualDensity.standard,
-                    focusTheme: FocusThemeData(
-                      glowFactor: is10footScreen() ? 2.0 : 0.0,
-                    ),
+                    // focusTheme: FocusThemeData(
+                    //   glowFactor: is10footScreen() ? 2.0 : 0.0,
+                    // ),
                     scrollbarTheme: scrollBarTheme,
                   ),
                   theme: FluentThemeData(
                     accentColor: appTheme.color,
                     visualDensity: VisualDensity.standard,
-                    focusTheme: FocusThemeData(
-                      glowFactor: is10footScreen() ? 2.0 : 0.0,
-                    ),
+                    // focusTheme: FocusThemeData(
+                    //   glowFactor: is10footScreen() ? 2.0 : 0.0,
+                    // ),
                     scrollbarTheme: scrollBarTheme,
                   ),
                   builder: (context, child) {
@@ -582,10 +583,10 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                           ),
                         );
                       }(),
-                      actions: Row(
+                      actions: const Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.end,
-                        children: const [
+                        children: [
                           //     IconButton(
                           //         icon: const Icon(FluentIcons.add),
                           //         onPressed: () {

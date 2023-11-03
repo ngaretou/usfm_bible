@@ -38,6 +38,7 @@ AccentColor getStoredColorByIndex() {
 class AppTheme extends ChangeNotifier {
   AccentColor _color = getStoredColorByIndex();
   AccentColor get color => _color;
+  
   set color(AccentColor color) {
     _color = color;
     notifyListeners();
