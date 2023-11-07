@@ -44,7 +44,7 @@ dependencies:
   fluent_ui: ^4.1.0
   hive: ^2.2.1
   hive_flutter: ^1.1.0
-  intl: ^0.17.0
+  intl: ^0.18.1
   xml: ^6.1.0
   # just_audio: ^0.9.24
   # audio_session: ^0.1.6+1

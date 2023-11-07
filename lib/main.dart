@@ -198,17 +198,17 @@ class MyApp extends StatelessWidget {
                     brightness: Brightness.dark,
                     accentColor: appTheme.color,
                     visualDensity: VisualDensity.standard,
-                    focusTheme: FocusThemeData(
-                      glowFactor: is10footScreen() ? 2.0 : 0.0,
-                    ),
+                    // focusTheme: FocusThemeData(
+                    //   glowFactor: is10footScreen() ? 2.0 : 0.0,
+                    // ),
                     scrollbarTheme: scrollBarTheme,
                   ),
                   theme: FluentThemeData(
                     accentColor: appTheme.color,
                     visualDensity: VisualDensity.standard,
-                    focusTheme: FocusThemeData(
-                      glowFactor: is10footScreen() ? 2.0 : 0.0,
-                    ),
+                    // focusTheme: FocusThemeData(
+                    //   glowFactor: is10footScreen() ? 2.0 : 0.0,
+                    // ),
                     scrollbarTheme: scrollBarTheme,
                   ),
                   builder: (context, child) {
@@ -520,10 +520,10 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                           ),
                         );
                       }(),
-                      actions: Row(
+                      actions: const Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.end,
-                        children: const [
+                        children: [
                           //     IconButton(
                           //         icon: const Icon(FluentIcons.add),
                           //         onPressed: () {
