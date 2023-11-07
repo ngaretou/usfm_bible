@@ -24,13 +24,13 @@ class ScriptureColumn extends StatefulWidget {
   final String? comboBoxFont;
 
   const ScriptureColumn({
-    required Key? key,
+    required super.key,
     required this.myColumnIndex,
     required this.appInfo,
     required this.bibleReference,
     required this.deleteColumn,
     this.comboBoxFont,
-  }) : super(key: key);
+  });
 
   @override
   State<ScriptureColumn> createState() => _ScriptureColumnState();

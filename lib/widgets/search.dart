@@ -14,8 +14,7 @@ class SearchWidget extends StatefulWidget {
   final String? comboBoxFont;
 
   const SearchWidget(
-      {Key? key, required this.closeSearch, required this.comboBoxFont})
-      : super(key: key);
+      {super.key, required this.closeSearch, required this.comboBoxFont});
 
   @override
   State<SearchWidget> createState() => _SearchWidgetState();
@@ -217,7 +216,7 @@ class _SearchWidgetState extends State<SearchWidget> {
 class SearchResultTile extends StatefulWidget {
   final ParsedLine line;
 
-  const SearchResultTile({Key? key, required this.line}) : super(key: key);
+  const SearchResultTile({super.key, required this.line});
 
   @override
   State<SearchResultTile> createState() => _SearchResultTileState();

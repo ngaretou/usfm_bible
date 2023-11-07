@@ -13,8 +13,7 @@ class BibleView extends StatefulWidget {
   final AppInfo appInfo;
   final String? comboBoxFont;
 
-  const BibleView({Key? key, required this.appInfo, this.comboBoxFont})
-      : super(key: key);
+  const BibleView({super.key, required this.appInfo, this.comboBoxFont});
 
   @override
   State<BibleView> createState() => _BibleViewState();

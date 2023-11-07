@@ -13,14 +13,13 @@ class ParagraphBuilder extends StatefulWidget {
   final Function addVerseToCopyRange;
 
   const ParagraphBuilder(
-      {Key? key,
+      {super.key,
       required this.paragraph,
       required this.fontName,
       required this.textDirection,
       required this.fontSize,
       required this.rangeOfVersesToCopy,
-      required this.addVerseToCopyRange})
-      : super(key: key);
+      required this.addVerseToCopyRange});
 
   @override
   State<ParagraphBuilder> createState() => _ParagraphBuilderState();

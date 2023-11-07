@@ -79,7 +79,7 @@ List<WindowEffect> get currentWindowEffects {
 }
 
 class Settings extends StatelessWidget {
-  const Settings({Key? key, this.controller}) : super(key: key);
+  const Settings({super.key, this.controller});
 
   final ScrollController? controller;
 

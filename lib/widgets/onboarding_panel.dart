@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 class OnboardingPanel extends StatefulWidget {
   final bool? appDownloadOnly;
-  const OnboardingPanel({Key? key, this.appDownloadOnly}) : super(key: key);
+  const OnboardingPanel({super.key, this.appDownloadOnly});
 
   @override
   State<OnboardingPanel> createState() => _OnboardingPanelState();

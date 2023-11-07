@@ -1,6 +1,7 @@
 import 'dart:async';
 
 // import 'package:universal_html/html.dart' as html;
+import 'package:flutter/material.dart' as material;
 import 'package:flutter/services.dart';
 
 import 'package:fluent_ui/fluent_ui.dart';
@@ -72,7 +73,12 @@ void main() async {
   if (kIsWeb ||
       [TargetPlatform.windows, TargetPlatform.android]
           .contains(defaultTargetPlatform)) {
-    SystemTheme.accentColor.load();
+    try {
+      SystemTheme.accentColor.load();
+    } catch (e) {
+      print(e);
+      print('error loading SystemTheme.accentColor');
+    }
   }
 
   setPathUrlStrategy();
@@ -135,8 +141,10 @@ void main() async {
   );
 }
 
+final _appTheme = AppTheme();
+
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -152,8 +160,8 @@ class MyApp extends StatelessWidget {
       mainAxisMargin: 4.0, hoveringMainAxisMargin: 4.0,
       crossAxisMargin: 2.0, hoveringCrossAxisMargin: 2.0,
       minThumbLength: 48.0,
-      trackBorderColor: Color.fromARGB(85, 126, 126, 126),
-      hoveringTrackBorderColor: Color.fromARGB(85, 126, 126, 126),
+      // trackBorderColor: Color.fromARGB(85, 126, 126, 126),
+      // hoveringTrackBorderColor: Color.fromARGB(85, 126, 126, 126),
       padding: EdgeInsets.all(0),
       hoveringPadding: EdgeInsets.all(0),
     );
@@ -165,10 +173,10 @@ class MyApp extends StatelessWidget {
 
     late Future<String> initAppInfo = getAppTitle();
 
-    return ChangeNotifierProvider(
-      create: (_) => AppTheme(),
+    return ChangeNotifierProvider.value(
+      value: _appTheme,
       builder: (context, _) {
-        AppTheme appTheme = context.watch<AppTheme>();
+        final appTheme = context.watch<AppTheme>();
 
         late SystemUiOverlayStyle style;
         if (appTheme.mode == ThemeMode.dark) {
@@ -183,11 +191,10 @@ class MyApp extends StatelessWidget {
             future: initAppInfo,
             builder: (ctx, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(
-                    child: Container(
-                  color: Colors.blue,
-                ));
+                return const material.Center(
+                    child: material.CircularProgressIndicator());
               } else {
+                // print(appTheme.color.toString());
                 appTitle = snapshot.data.toString();
                 return FluentApp(
                   title: appTitle,
@@ -197,6 +204,7 @@ class MyApp extends StatelessWidget {
                     appTheme: appTheme,
                   ),
                   color: appTheme.color,
+                  // color: Colors.black,
                   darkTheme: FluentThemeData(
                     brightness: Brightness.dark,
                     accentColor: appTheme.color,
@@ -208,6 +216,7 @@ class MyApp extends StatelessWidget {
                   ),
                   theme: FluentThemeData(
                     accentColor: appTheme.color,
+
                     visualDensity: VisualDensity.standard,
                     // focusTheme: FocusThemeData(
                     //   glowFactor: is10footScreen() ? 2.0 : 0.0,
@@ -239,7 +248,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   final AppTheme appTheme;
 
-  const MyHomePage({Key? key, required this.appTheme}) : super(key: key);
+  const MyHomePage({super.key, required this.appTheme});
 
   @override
   MyHomePageState createState() => MyHomePageState();
@@ -761,7 +770,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 }
 
 class WindowButtons extends StatelessWidget {
-  const WindowButtons({Key? key}) : super(key: key);
+  const WindowButtons({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -780,19 +789,14 @@ class WindowButtons extends StatelessWidget {
 
 class RunFunctionPaneItemAction extends PaneItem {
   RunFunctionPaneItemAction({
-    required Widget icon,
+    required super.icon,
     required this.functionToRun, //pass in the function
     required super.body,
     super.title,
-    infoBadge,
-    focusNode,
-    autofocus = false,
-  }) : super(
-          icon: icon,
-          infoBadge: infoBadge,
-          focusNode: focusNode,
-          autofocus: autofocus,
-        );
+    super.infoBadge,
+    super.focusNode,
+    super.autofocus = false,
+  });
   Function functionToRun;
   @override
   Widget build(
@@ -815,19 +819,14 @@ class RunFunctionPaneItemAction extends PaneItem {
 
 class LightDarkModePaneItemAction extends PaneItem {
   LightDarkModePaneItemAction({
-    required Widget icon,
+    required super.icon,
     required this.appTheme,
-    title,
-    infoBadge,
-    focusNode,
-    autofocus = false,
+    super.title,
+    super.infoBadge,
+    super.focusNode,
+    super.autofocus = false,
   }) : super(
           body: const About(),
-          icon: icon,
-          title: title,
-          infoBadge: infoBadge,
-          focusNode: focusNode,
-          autofocus: autofocus,
         );
   final AppTheme appTheme;
   @override
