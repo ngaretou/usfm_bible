@@ -54,7 +54,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   List<String> collectionNames = [];
   List<Book> currentCollectionBooks = [];
 
-  //Just default values, will get set below
+  //Just initial default values, will get set below
   ValueNotifier<String> currentCollection = ValueNotifier("C01");
   ValueNotifier<String> currentBook = ValueNotifier("GEN");
   ValueNotifier<String> currentChapter = ValueNotifier("1");
@@ -177,7 +177,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
       //Get that last paragraph added!
       versesByParagraph.add(currentParagraph);
 
-      //Verses in order; //////////////////////
+      //Verses in order;
       //Now figure out where we're going
       BibleReference? scrollCollectionRef =
           Provider.of<ScrollGroup>(context, listen: false).getScrollGroupRef;
@@ -433,7 +433,7 @@ class _ScriptureColumnState extends State<ScriptureColumn> {
   }
 
   void setUpComboBoxesChVs() {
-    // // print('setUp ComboBoxesChVs');
+    // print('setUp ComboBoxesChVs');
 
     List<String> temp = versesInCollection
         .where((element) => element.book == currentBook.value)

@@ -46,7 +46,8 @@ class _BibleViewState extends State<BibleView> {
     */
 
     scriptureColumns = List.generate(userColumns.length, (index) {
-      // // print('scrip column generate ${userColumns[index].columnIndex}');
+      // print('scrip column generate ${userColumns[index].columnIndex}');
+      // print(userColumns[index].key);
       //The user columns coming from provider initialize and provide the unique key which gets duplicated here so we can track both groups
       return ScriptureColumn(
         key: userColumns[index].key,
@@ -74,8 +75,6 @@ class _BibleViewState extends State<BibleView> {
     //Now call for rebuild
     Provider.of<ColumnManager>(context, listen: false)
         .deleteColumnRebuildCall();
-
-    setState(() {});
   }
 
   void addColumn() {
@@ -84,6 +83,8 @@ class _BibleViewState extends State<BibleView> {
       //This common key helps us keep track of refs and columns
       Key key = UniqueKey();
 
+      //Which position should this column be in?
+      //if search is not open then usercolumns length - but if search is open put it with the scripture columns and leave search pane on the end
       int position =
           search == null ? userColumns.length : userColumns.length - 1;
 
@@ -112,9 +113,7 @@ class _BibleViewState extends State<BibleView> {
         ),
       );
 
-      setState(() {});
-      // } else {
-      //   //may in the future add user feedback when trying to create too many columns
+      // setState(() {});
     }
   }
 
@@ -127,9 +126,10 @@ class _BibleViewState extends State<BibleView> {
   }
 
   void closeSearch() {
-    search = null;
-    columnsToShow.removeLast();
-    setState(() {});
+    setState(() {
+      search = null;
+      columnsToShow.removeLast();
+    });
   }
 
   @override
@@ -143,10 +143,12 @@ class _BibleViewState extends State<BibleView> {
       addColumn();
     }
 
-    if (Provider.of<ColumnManager>(context, listen: true).readyToOpenSearch) {
+    if (Provider.of<ColumnManager>(context, listen: true).readyToToggleSearch) {
       // print('OpenSearch notified');
       if (search == null) {
         openSearch();
+      } else {
+        closeSearch();
       }
     }
 

@@ -2,22 +2,20 @@
 const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
-const RESOURCES = {
-  "version.json": "c08b1337496cdd4c0e9c919c5fbbda2c",
-"splash/img/light-2x.png": "6b66ea6e70a1c73c3b7758d66862f9d5",
+
+const RESOURCES = {"version.json": "502f8f2ba259f4a5f98f8b164c58005b",
+"splash/img/light-2x.png": "6e70d65c25732ecf2f6f76fc5fa21b47",
 "splash/img/dark-4x.png": "5b6866f5fbfd0e4606a82ce0b3e57394",
-"splash/img/light-3x.png": "cde60582cbed8e36c37f93d0b5651239",
-"splash/img/dark-3x.png": "cde60582cbed8e36c37f93d0b5651239",
+"splash/img/light-3x.png": "4575d370ad314ef3cf924f336dc588b7",
+"splash/img/dark-3x.png": "4575d370ad314ef3cf924f336dc588b7",
 "splash/img/light-4x.png": "5b6866f5fbfd0e4606a82ce0b3e57394",
-"splash/img/dark-2x.png": "6b66ea6e70a1c73c3b7758d66862f9d5",
-"splash/img/dark-1x.png": "f5e7ac5f9b405fbf77854adbcc4bf789",
-"splash/img/light-1x.png": "f5e7ac5f9b405fbf77854adbcc4bf789",
-"splash/splash.js": "123c400b58bea74c1305ca3ac966748d",
-"splash/style.css": "c94c38ff00a9d487c353a2d78989ea08",
-"index.html": "05cd32239e7df5aeed5a2bc34596793f",
-"/": "05cd32239e7df5aeed5a2bc34596793f",
-"main.dart.js": "9d4f7af4a5898126231bdc5690eb43f5",
-"flutter.js": "a85fcf6324d3c4d3ae3be1ae4931e9c5",
+"splash/img/dark-2x.png": "6e70d65c25732ecf2f6f76fc5fa21b47",
+"splash/img/dark-1x.png": "7d35d9e91ad35b42a3961254074d77bf",
+"splash/img/light-1x.png": "7d35d9e91ad35b42a3961254074d77bf",
+"index.html": "ad768f71cc45c2d6abd6e00754f0187b",
+"/": "ad768f71cc45c2d6abd6e00754f0187b",
+"main.dart.js": "8faae1c7c544a45d4ecdefdc77009568",
+"flutter.js": "7d69e653079438abfbb24b82a655b0a4",
 "favicon.png": "949684f311230a51816c77648f854f74",
 "icons/Icon-192.png": "81e0640fd822ff957bf9e9c1974b6842",
 "icons/Icon-maskable-192.png": "81e0640fd822ff957bf9e9c1974b6842",
@@ -26,20 +24,22 @@ const RESOURCES = {
 "icons/Icon-maskable-512.png": "6e70d65c25732ecf2f6f76fc5fa21b47",
 "icons/192.png": "a76bf4e4ec061bc1611d849ddbed97e5",
 "icons/Icon-512.png": "6e70d65c25732ecf2f6f76fc5fa21b47",
-"manifest.json": "509768cf558d542aee7b30abac7148fb",
-"Archive.zip": "63aee34ba7b66d05172408f68faeeac4",
-"assets/AssetManifest.json": "757dde8c1ac159279fa18511f52409ce",
-"assets/NOTICES": "2a91d64e4ef076e94daf430c9ecde4d4",
+"manifest.json": "a6615e6c25831e6a32425be7afebd8a2",
+"assets/AssetManifest.json": "ad70988571cd32c33c0144a121a3e2cd",
+"assets/NOTICES": "5e66878660e934ee312acd7287b6aef1",
 "assets/FontManifest.json": "2e32db8346bad9f53a1c9dc15cc06f8f",
+"assets/AssetManifest.bin.json": "58b6231dd711f39d95fa72a2b3897ebb",
 "assets/packages/window_manager/images/ic_chrome_unmaximize.png": "4a90c1909cb74e8f0d35794e2f61d8bf",
 "assets/packages/window_manager/images/ic_chrome_minimize.png": "4282cd84cb36edf2efb950ad9269ca62",
 "assets/packages/window_manager/images/ic_chrome_maximize.png": "af7499d7657c8b69d23b85156b60298c",
 "assets/packages/window_manager/images/ic_chrome_close.png": "75f4b8ab3608a05461a31fc18d6b47c2",
-"assets/packages/fluent_ui/fonts/FluentIcons.ttf": "1cd173aed13e298ab2663dd0924f6762",
+"assets/packages/fluent_ui/fonts/FluentIcons.ttf": "f3c4f09a37ace3246250ff7142da5cdd",
 "assets/packages/fluent_ui/assets/AcrylicNoise.png": "81f27726c45346351eca125bd062e9a7",
-"assets/fonts/MaterialIcons-Regular.otf": "e7069dfd19b331be16bed984668fe080",
-"assets/assets/translations.json": "aded0cf3e57f0346788b4f04651c79b1",
-"assets/assets/images/Thumbs.db": "0653fc7f7f1e6b4b386bde54b13b2026",
+"assets/shaders/ink_sparkle.frag": "4096b5150bac93c41cbc9b45276bd90f",
+"assets/AssetManifest.bin": "094b6e0512c10b3f77d6012814648db4",
+"assets/fonts/MaterialIcons-Regular.otf": "9567b378bb220ea817f868435e21b975",
+"assets/assets/translations.json": "edc27d9e4ce5c5f259287965ccb3633b",
+"assets/assets/images/Thumbs.db": "d7968fd33029e06b894bb7f0956c9102",
 "assets/assets/images/book_selection.png": "21b5f5dde20f1a1d1c6051466f085779",
 "assets/assets/images/app-logo.png": "c1324c0a870220b80a336a24af709c44",
 "assets/assets/images/screenshot.png": "7b1dc9b3a239ac2f60cec12f9e0999b6",
@@ -51,80 +51,81 @@ const RESOURCES = {
 "assets/assets/images/font_size.png": "52130f5561e840e930d9979d5bfc194b",
 "assets/assets/images/link_button.png": "1db5781fbaf4dd7955f9c5650679a317",
 "assets/assets/images/Microsoft-badge.png": "deee1c8dd80adb387d1384b8085b994c",
-"assets/assets/project/appDef.appDef": "d1cc1e035de478575cfd65cdcb86d307",
+"assets/assets/project/appDef.appDef.old": "d1cc1e035de478575cfd65cdcb86d307",
+"assets/assets/project/appDef.appDef": "d0958f7ca2ded6e304083d5045d1b358",
 "assets/assets/project/data/contents/contents.xml": "768e937d900b75fdd1e4b015c4b31499",
 "assets/assets/project/data/images/drawable-xxxhdpi/ic_launcher.png": "8786a4dcd43d187838464650947d0a27",
 "assets/assets/project/data/about/audio-not-found.txt": "d41d8cd98f00b204e9800998ecf8427e",
 "assets/assets/project/data/about/about.txt": "86da95419ffe8ddb3779a482cf1a4efa",
 "assets/assets/project/data/about/expiry.txt": "d41d8cd98f00b204e9800998ecf8427e",
-"assets/assets/project/data/books/C01/23ISAwolKYG.SFM": "76663ab346275024a23d95c5c8963c79",
-"assets/assets/project/data/books/C01/142CHwolKYG.SFM": "ebf75ae37f32576a1d08404bd2fb054f",
-"assets/assets/project/data/books/C01/653JNwolKYG.SFM": "e01dbfc2b93c0c11ff4acf393f205085",
-"assets/assets/project/data/books/C01/05DEUwolKYG.SFM": "d2a464d683bc036bb940968e44c26dd0",
-"assets/assets/project/data/books/C01/19PSAwolKYG.SFM": "a140ca9bef175d8765fc91f0910da7cf",
-"assets/assets/project/data/books/C01/44JHNwolKYG.SFM": "70408dc50a836467b3f5de7792a4f67b",
-"assets/assets/project/data/books/C01/41MATwolKYG.SFM": "c5b8d227331f61508549ccdc653c4612",
-"assets/assets/project/data/books/C01/37HAGwolKYG.SFM": "e54018ab54d489dab0ce0f8359bab804",
-"assets/assets/project/data/books/C01/35HABwolKYG.SFM": "680dccd6ed2f3da2fc6210dd7cde06a2",
-"assets/assets/project/data/books/C01/51PHPwolKYG.SFM": "1efde380df9f50548b3d26d0a33f6f4c",
-"assets/assets/project/data/books/C01/31OBAwolKYG.SFM": "c4b3d93fce05ef27c4d3c1cfd279ebde",
-"assets/assets/project/data/books/C01/59HEBwolKYG.SFM": "ff16fb0ef9aad6492354222b4993c3cb",
-"assets/assets/project/data/books/C01/622PEwolKYG.SFM": "8481dd44cbd07580072b76c37af59ecf",
-"assets/assets/project/data/books/C01/562TIwolKYG.SFM": "31b3ac5a9b29e8fc6dc2d4fbe70c28fe",
+"assets/assets/project/data/books/C01/23ISAwolKYG.SFM": "140bd863c99da28f702692a2d063c58c",
+"assets/assets/project/data/books/C01/142CHwolKYG.SFM": "bebd2b2caf6a1d59a11495272318668a",
+"assets/assets/project/data/books/C01/653JNwolKYG.SFM": "da2d54fa88135b25ec2020ed509a117a",
+"assets/assets/project/data/books/C01/05DEUwolKYG.SFM": "24191aebaa96a0d43d3eec6392a29760",
+"assets/assets/project/data/books/C01/19PSAwolKYG.SFM": "011eaef20878a45b71e951655d67ae22",
+"assets/assets/project/data/books/C01/44JHNwolKYG.SFM": "00b5c9cc1b266c97f182d77f55f0926d",
+"assets/assets/project/data/books/C01/41MATwolKYG.SFM": "773f7537b18059a3dcd464404a631d6e",
+"assets/assets/project/data/books/C01/37HAGwolKYG.SFM": "f31d9a3e91bea0f3869a127767647a4b",
+"assets/assets/project/data/books/C01/35HABwolKYG.SFM": "7a8794d757eed3644b25785229e4a740",
+"assets/assets/project/data/books/C01/51PHPwolKYG.SFM": "d17f38daeeb890a3b5a081800282361b",
+"assets/assets/project/data/books/C01/31OBAwolKYG.SFM": "294fc8046915ea4cd623e57788b40025",
+"assets/assets/project/data/books/C01/59HEBwolKYG.SFM": "819760be8a333713ec17099df5109ba0",
+"assets/assets/project/data/books/C01/622PEwolKYG.SFM": "5ccc3a27f0ab63ec4593036d58188a7b",
+"assets/assets/project/data/books/C01/562TIwolKYG.SFM": "cdf334a64cac554282017b15cdbae045",
 "assets/assets/project/data/books/C01/Suseef%2520-%2520Copy.sfm": "bbc34ab59b8bcea6126ed3cdd9ade0f3",
-"assets/assets/project/data/books/C01/52COLwolKYG.SFM": "a6afd1c00d23e8faaf1c29f143124b97",
-"assets/assets/project/data/books/C01/38ZECwolKYG.SFM": "568001013085d985f465bbdc6ae8d4b0",
-"assets/assets/project/data/books/C01/471COwolKYG.SFM": "f437091afb0afd56ad4974b13578bb04",
-"assets/assets/project/data/books/C01/26EZKwolKYG.SFM": "d4ff0baf9ab9ba46ed5c3a77ce34f5e2",
-"assets/assets/project/data/books/C01/03LEVwolKYG.SFM": "19dc4126092bb55192011b7a35da8184",
-"assets/assets/project/data/books/C01/43LUKwolKYG.SFM": "060e3eab4697b70c43d2998602ff374c",
-"assets/assets/project/data/books/C01/58PHMwolKYG.SFM": "dce6358b7a1132654bb4e03c72230574",
-"assets/assets/project/data/books/C01/122KIwolKYG.SFM": "47d70faf83526f8c28e7c925712d88c7",
-"assets/assets/project/data/books/C01/29JOLwolKYG.SFM": "204a2a41072267399a2c45053c3feb40",
-"assets/assets/project/data/books/C01/30AMOwolKYG.SFM": "874e4bbd4bb9a1164e74987e94231678",
-"assets/assets/project/data/books/C01/60JASwolKYG.SFM": "72bb77f7a66865cdb8486ea7dcd7ce4d",
-"assets/assets/project/data/books/C01/32JONwolKYG.SFM": "d173922ea1e066b13728e01fb4d531a3",
-"assets/assets/project/data/books/C01/06JOSwolKYG.SFM": "99d2263b04080e2c54a77b950e2113eb",
-"assets/assets/project/data/books/C01/01GENwolKYG.SFM": "c295459f325a913405802d2569ed0eba",
-"assets/assets/project/data/books/C01/24JERwolKYG.SFM": "9957605d9a890782f9bc3985a62d0439",
-"assets/assets/project/data/books/C01/33MICwolKYG.SFM": "e63d7c468bcabf0f4539dd241ff5bf6e",
-"assets/assets/project/data/books/C01/27DANwolKYG.SFM": "ae02e6c67fcfc3547b2b620e90132651",
-"assets/assets/project/data/books/C01/131CHwolKYG.SFM": "aea8106c5f5ad7ffdcd3d0286d64a83d",
-"assets/assets/project/data/books/C01/542THwolKYG.SFM": "9ca7547d74c0ba1f1b94ee76de59d13c",
-"assets/assets/project/data/books/C01/102SAwolKYG.SFM": "219c13ec4362998ff99b573a328ca2f0",
-"assets/assets/project/data/books/C01/50EPHwolKYG.SFM": "b9c5889783f380e7278a3d5aaa5c6d4f",
-"assets/assets/project/data/books/C01/551TIwolKYG.SFM": "d77870905489a9f71d291f271e991a27",
-"assets/assets/project/data/books/C01/18JOBwolKYG.SFM": "e9265587dfc0e1dbea6bda75f6007bc4",
-"assets/assets/project/data/books/C01/642JNwolKYG.SFM": "bc487fb6e10bf2cb09f2bfa90b861cb8",
-"assets/assets/project/data/books/C01/15EZRwolKYG.SFM": "afc0bcc041cbcb1e21ed4d80fffe888f",
-"assets/assets/project/data/books/C01/04NUMwolKYG.SFM": "e7a07b768d52b9e922e4e4f50c0e2af9",
-"assets/assets/project/data/books/C01/36ZEPwolKYG.SFM": "182f2e4fe0b993265226ce5d930dce85",
-"assets/assets/project/data/books/C01/46ROMwolKYG.SFM": "77c0719a3681e49d940ab7ba3b140d4a",
-"assets/assets/project/data/books/C01/42MRKwolKYG.SFM": "559a8b87b503687efcb0fbb5f95c7c86",
-"assets/assets/project/data/books/C01/611PEwolKYG.SFM": "c763522fb818402fcf6160c3ab932e43",
-"assets/assets/project/data/books/C01/45ACTwolKYG.SFM": "4a07777d12ae85b0d6247a7db418976d",
-"assets/assets/project/data/books/C01/57TITwolKYG.SFM": "20e0d71c6bda68b53c62a03e0ac5f61d",
-"assets/assets/project/data/books/C01/091SAwolKYG.SFM": "21487d99460314bf8c294a13f0814242",
-"assets/assets/project/data/books/C01/66JUDwolKYG.SFM": "b0c6587d14ccbdd4685f0bf2815704e9",
+"assets/assets/project/data/books/C01/52COLwolKYG.SFM": "fe3b66782ec346baf4466ac8bba8a8c3",
+"assets/assets/project/data/books/C01/38ZECwolKYG.SFM": "11b6715cfbfe35a02d3789a4ec525820",
+"assets/assets/project/data/books/C01/471COwolKYG.SFM": "b95945930f81e47bd95447d01868bd2f",
+"assets/assets/project/data/books/C01/26EZKwolKYG.SFM": "f99c8001e46789c08e3d31dd81dc5c25",
+"assets/assets/project/data/books/C01/03LEVwolKYG.SFM": "2849d4c3deac98e86b60baca8cce201c",
+"assets/assets/project/data/books/C01/43LUKwolKYG.SFM": "c415874f2ece8b8d4b54ef372b701e31",
+"assets/assets/project/data/books/C01/58PHMwolKYG.SFM": "1617093f533386bf61ef47707f347b03",
+"assets/assets/project/data/books/C01/122KIwolKYG.SFM": "0668370af32062cc5ee51e07bd8843db",
+"assets/assets/project/data/books/C01/29JOLwolKYG.SFM": "90d8af8d5618b06fd847b1143d50d507",
+"assets/assets/project/data/books/C01/30AMOwolKYG.SFM": "860d05aa054aa32a82305f8030e71359",
+"assets/assets/project/data/books/C01/60JASwolKYG.SFM": "d6b020b859f71cf3e10709d4ab218411",
+"assets/assets/project/data/books/C01/32JONwolKYG.SFM": "1da95fc58d9c09fa3168428982759fb6",
+"assets/assets/project/data/books/C01/06JOSwolKYG.SFM": "7353b42ebefacef9b86ddebc34e94305",
+"assets/assets/project/data/books/C01/01GENwolKYG.SFM": "91892b52b925e2e2ef2707695c142bde",
+"assets/assets/project/data/books/C01/24JERwolKYG.SFM": "025c4875bf018a1965a088debb909d0f",
+"assets/assets/project/data/books/C01/33MICwolKYG.SFM": "5febf3a2a7d634f22542885b14e07185",
+"assets/assets/project/data/books/C01/27DANwolKYG.SFM": "5b95fe49d848b8f6e8323ed8003619bf",
+"assets/assets/project/data/books/C01/131CHwolKYG.SFM": "5dca9ee968d9ffba9019add32b7aee8b",
+"assets/assets/project/data/books/C01/542THwolKYG.SFM": "20207944ba3886192fe5daa0caf1c530",
+"assets/assets/project/data/books/C01/102SAwolKYG.SFM": "f0643a7f6caa40674f1ffce6999f501f",
+"assets/assets/project/data/books/C01/50EPHwolKYG.SFM": "f26b8445b6ca3088b46ca366fcb6be53",
+"assets/assets/project/data/books/C01/551TIwolKYG.SFM": "631385b64a6ad6828bd687d62d761da9",
+"assets/assets/project/data/books/C01/18JOBwolKYG.SFM": "1a62b84d79079df768196b3f1e757272",
+"assets/assets/project/data/books/C01/642JNwolKYG.SFM": "2a5a66286898523ae5dcdec3b767c2b7",
+"assets/assets/project/data/books/C01/15EZRwolKYG.SFM": "5dddf2604ff3418e9917b45136fbaa57",
+"assets/assets/project/data/books/C01/04NUMwolKYG.SFM": "7b305610b9d28274b80afbf7946793c1",
+"assets/assets/project/data/books/C01/36ZEPwolKYG.SFM": "05afebc23157a42755a2d7852beec6e4",
+"assets/assets/project/data/books/C01/46ROMwolKYG.SFM": "c469af139e6268b27114a658ed3e1d72",
+"assets/assets/project/data/books/C01/42MRKwolKYG.SFM": "98a32d2ee632438359740c373184d3b8",
+"assets/assets/project/data/books/C01/611PEwolKYG.SFM": "8132fa36a228c576dde3e8653637df36",
+"assets/assets/project/data/books/C01/45ACTwolKYG.SFM": "df9fa81a6997b399a54ee1dc2350251b",
+"assets/assets/project/data/books/C01/57TITwolKYG.SFM": "1c3ee8e0f3238f54a9615ca806fd022b",
+"assets/assets/project/data/books/C01/091SAwolKYG.SFM": "08732548b1291722946ed9ff65ab535e",
+"assets/assets/project/data/books/C01/66JUDwolKYG.SFM": "dbaa58b94ec261752356ecb3c128d7f7",
 "assets/assets/project/data/books/C01/39MALwolKYG.SFM": "4311802f0cf4f16a8f5f324f49d45ff4",
-"assets/assets/project/data/books/C01/16NEHwolKYG.SFM": "90f5b6e3c9f911f2f57643ec992a1e3f",
-"assets/assets/project/data/books/C01/21ECCwolKYG.SFM": "b19e48dade6ea5bb860029fe89c33fb4",
-"assets/assets/project/data/books/C01/02EXOwolKYG.SFM": "b726cc7d51c01be844bece0f73a501f7",
-"assets/assets/project/data/books/C01/28HOSwolKYG.SFM": "d24962cd53b3b54df3355c58ed7cf640",
-"assets/assets/project/data/books/C01/07JDGwolKYG.SFM": "1544726ae221ce4804062f24f31e0328",
-"assets/assets/project/data/books/C01/17ESTwolKYG.SFM": "3f45cd413c7b68d22c578421942f2f98",
-"assets/assets/project/data/books/C01/08RUTwolKYG.SFM": "ef8d53a4d1cc412e3f20f164b9dae8b2",
-"assets/assets/project/data/books/C01/482COwolKYG.SFM": "a0e559f7b6fd745ab0e06642c2e972f2",
-"assets/assets/project/data/books/C01/22SNGwolKYG.SFM": "d791352975850c4a9f5e4783893b97fb",
-"assets/assets/project/data/books/C01/49GALwolKYG.SFM": "d4b8189fa07bdd1f0f9b37f6f6f9724f",
-"assets/assets/project/data/books/C01/631JNwolKYG.SFM": "d89a1af3ed565c7b95c39d52c6b9c64a",
-"assets/assets/project/data/books/C01/67REVwolKYG.SFM": "3348e8bdc96508ebcd20e9d1b84ef30a",
-"assets/assets/project/data/books/C01/34NAMwolKYG.SFM": "faa96c7847ea32fe063b794d04f449a0",
-"assets/assets/project/data/books/C01/20PROwolKYG.SFM": "2a3fe381d657a44139cc49d55b1d7ed0",
-"assets/assets/project/data/books/C01/25LAMwolKYG.SFM": "2c29d869f3e53c2d8a027b01c7852c90",
+"assets/assets/project/data/books/C01/16NEHwolKYG.SFM": "42dba84c785d5ea23e37ea98353f62f4",
+"assets/assets/project/data/books/C01/21ECCwolKYG.SFM": "c2bed82ebd6d21c1007bf982a4abcb3a",
+"assets/assets/project/data/books/C01/02EXOwolKYG.SFM": "7bd15caa198d5d43c1d911c417dc4696",
+"assets/assets/project/data/books/C01/28HOSwolKYG.SFM": "59b9938594c154532b25fb452e7b0d68",
+"assets/assets/project/data/books/C01/07JDGwolKYG.SFM": "149703d038db461f84cc4459036d5004",
+"assets/assets/project/data/books/C01/17ESTwolKYG.SFM": "00a16e1f69a3b8d8cfd8749cf59fe2a0",
+"assets/assets/project/data/books/C01/08RUTwolKYG.SFM": "dd4b5dac8376c7a74c83d3bd328cc7df",
+"assets/assets/project/data/books/C01/482COwolKYG.SFM": "ea718a971894eab3ad7860126bf8959c",
+"assets/assets/project/data/books/C01/22SNGwolKYG.SFM": "498516c99e2fb6a85e2c95c3e4ee8ca3",
+"assets/assets/project/data/books/C01/49GALwolKYG.SFM": "e800eac1bd44d316a1ae1934dc2028a8",
+"assets/assets/project/data/books/C01/631JNwolKYG.SFM": "f881d86ff2780c811fc2c4cf24ebbe41",
+"assets/assets/project/data/books/C01/67REVwolKYG.SFM": "d12f180765604d6d9abf9b262b5449ef",
+"assets/assets/project/data/books/C01/34NAMwolKYG.SFM": "164274cbdd912d8944135fded9d9accd",
+"assets/assets/project/data/books/C01/20PROwolKYG.SFM": "e6fdc0622d166f7bccdcbd3c745713ad",
+"assets/assets/project/data/books/C01/25LAMwolKYG.SFM": "39bbf7667cb8222cf79c2ed7901544fa",
 "assets/assets/project/data/books/C01/Suseef%2520-%2520Copy-Corey's%2520MacBook%2520Pro%25202012.sfm": "78e9a03d6beff6da9a8d32793b73e098",
-"assets/assets/project/data/books/C01/531THwolKYG.SFM": "3f1368b61c225a9422cc64d55c59ad4f",
-"assets/assets/project/data/books/C01/111KIwolKYG.SFM": "6947104d2514cb95f10621d44a8449a2",
+"assets/assets/project/data/books/C01/531THwolKYG.SFM": "9b81c9b231e31cbe7086cffa7450bfd5",
+"assets/assets/project/data/books/C01/111KIwolKYG.SFM": "0e00e455129880c5daed5d553ae7548c",
 "assets/assets/project/data/books/C02/631JNWNPub18.SFM": "4a2cf61a8f21c2c21a882c95fb3a977e",
 "assets/assets/project/data/books/C02/59HEBWNPub18.SFM": "91bc92bde53d6fbed4b61dc46e705ba9",
 "assets/assets/project/data/books/C02/531THWNPub18.SFM": "c016aa300f61daaeca2712ea8204fe97",
@@ -317,19 +318,20 @@ const RESOURCES = {
 "assets/assets/project/data/fonts/font1-R.ttf": "017b2b2ad86e09d3c22b8cf0dfc78247",
 "assets/assets/project/data/fonts/font3-B.ttf": "0e2ed0ab7fb81e540dab3203fc8386e3",
 "assets/assets/project/data/fonts/font1-B.ttf": "6f5069ac6a300dad45383c952e92c573",
-"canvaskit/canvaskit.js": "97937cb4c2c2073c968525a3e08c86a3",
-"canvaskit/profiling/canvaskit.js": "c21852696bc1cc82e8894d851c01921a",
-"canvaskit/profiling/canvaskit.wasm": "371bc4e204443b0d5e774d64a046eb99",
-"canvaskit/canvaskit.wasm": "3de12d898ec208a5f31362cc00f09b9e"
-};
-
+"canvaskit/skwasm.js": "87063acf45c5e1ab9565dcf06b0c18b8",
+"canvaskit/skwasm.wasm": "4124c42a73efa7eb886d3400a1ed7a06",
+"canvaskit/chromium/canvaskit.js": "0ae8bbcc58155679458a0f7a00f66873",
+"canvaskit/chromium/canvaskit.wasm": "f87e541501c96012c252942b6b75d1ea",
+"canvaskit/canvaskit.js": "eb8797020acdbdf96a12fb0405582c1b",
+"canvaskit/canvaskit.wasm": "64edb91684bdb3b879812ba2e48dd487",
+"canvaskit/skwasm.worker.js": "bfb704a6c714a75da9ef320991e88b03"};
 // The application shell files that are downloaded before a service worker can
 // start.
-const CORE = [
-  "main.dart.js",
+const CORE = ["main.dart.js",
 "index.html",
 "assets/AssetManifest.json",
 "assets/FontManifest.json"];
+
 // During install, the TEMP cache is populated with the application shell files.
 self.addEventListener("install", (event) => {
   self.skipWaiting();
@@ -340,7 +342,6 @@ self.addEventListener("install", (event) => {
     })
   );
 });
-
 // During activate, the cache is populated with the temp files downloaded in
 // install. If this service worker is upgrading from one with a saved
 // MANIFEST, then use this to retain unchanged resource files.
@@ -362,6 +363,8 @@ self.addEventListener("activate", function(event) {
         await caches.delete(TEMP);
         // Save the manifest to make future upgrades efficient.
         await manifestCache.put('manifest', new Response(JSON.stringify(RESOURCES)));
+        // Claim client to enable caching on first launch
+        self.clients.claim();
         return;
       }
       var oldManifest = await manifest.json();
@@ -387,6 +390,8 @@ self.addEventListener("activate", function(event) {
       await caches.delete(TEMP);
       // Save the manifest to make future upgrades efficient.
       await manifestCache.put('manifest', new Response(JSON.stringify(RESOURCES)));
+      // Claim client to enable caching on first launch
+      self.clients.claim();
       return;
     } catch (err) {
       // On an unhandled exception the state of the cache cannot be guaranteed.
@@ -397,7 +402,6 @@ self.addEventListener("activate", function(event) {
     }
   }());
 });
-
 // The fetch handler redirects requests for RESOURCE files to the service
 // worker cache.
 self.addEventListener("fetch", (event) => {
@@ -437,7 +441,6 @@ self.addEventListener("fetch", (event) => {
     })
   );
 });
-
 self.addEventListener('message', (event) => {
   // SkipWaiting can be used to immediately activate a waiting service worker.
   // This will also require a page refresh triggered by the main worker.
@@ -450,7 +453,6 @@ self.addEventListener('message', (event) => {
     return;
   }
 });
-
 // Download offline will check the RESOURCES for all files not in the cache
 // and populate them.
 async function downloadOffline() {
@@ -471,7 +473,6 @@ async function downloadOffline() {
   }
   return contentCache.addAll(resources);
 }
-
 // Attempt to download the resource online before falling back to
 // the offline cache.
 function onlineFirst(event) {

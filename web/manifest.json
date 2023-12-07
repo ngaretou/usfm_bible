@@ -1,10 +1,11 @@
 {
-    "name": "Kàddug Yàlla",
-    "short_name": "KYG",
+    "name": "usfm_bible",
+    "short_name": "usfm_bible",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#hexcode",
-    "theme_color": "#hexcode",
+    "background_color": "#0175C2",
+    "theme_color": "#0175C2",
+    "description": "A new Flutter project.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

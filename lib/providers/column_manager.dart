@@ -4,7 +4,7 @@ import 'user_prefs.dart';
 
 class ColumnManager with ChangeNotifier {
   bool readyToAddColumn = false;
-  bool readyToOpenSearch = false;
+  bool readyToToggleSearch = false;
   bool timeToRebuildColumns = false;
 
   void addColumn() {
@@ -14,11 +14,11 @@ class ColumnManager with ChangeNotifier {
     Timer(const Duration(seconds: 1), () => readyToAddColumn = false);
   }
 
-  void openSearch() {
-    readyToOpenSearch = true;
+  void toggleSearch() {
+    readyToToggleSearch = true;
     // // print('openSearch in provider');
     notifyListeners();
-    Timer(const Duration(seconds: 1), () => readyToOpenSearch = false);
+    Timer(const Duration(seconds: 1), () => readyToToggleSearch = false);
   }
 
   void deleteColumnRebuildCall() {
@@ -29,6 +29,7 @@ class ColumnManager with ChangeNotifier {
   }
 }
 
+// –––––––––––––––––––––––––––––––––––––––
 class ScrollGroup with ChangeNotifier {
   BibleReference? scrollGroupBibleReference;
   Key? activeColumnKey;

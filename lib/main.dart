@@ -67,27 +67,23 @@ void main() async {
   Hive.registerAdapter(UserColumnsDBAdapter());
 
   userColumnsBox = await Hive.openBox<UserColumnsDB>('userColumnsDB');
+  
   userPrefsBox = await Hive.openBox('userPrefs');
 
-  // if it's on the web, windows or android, load the accent color
-  if (kIsWeb ||
-      [TargetPlatform.windows, TargetPlatform.android]
-          .contains(defaultTargetPlatform)) {
-    try {
-      SystemTheme.accentColor.load();
-    } catch (e) {
-      print(e);
-      print('error loading SystemTheme.accentColor');
-    }
+  // if it's not on the web, windows or android, load the accent color
+  if (!kIsWeb &&
+      [
+        TargetPlatform.windows,
+        TargetPlatform.android,
+      ].contains(defaultTargetPlatform)) {
+    SystemTheme.accentColor.load();
   }
 
   setPathUrlStrategy();
 
-  if (kIsWeb || !Platform.isWindows) {
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
-  }
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   if (isDesktop) {
     await flutter_acrylic.Window.initialize();
@@ -122,6 +118,7 @@ void main() async {
     });
   }
 
+  // print('runApp');
   runApp(
     MultiProvider(
       providers: [
@@ -172,7 +169,7 @@ class MyApp extends StatelessWidget {
     }
 
     late Future<String> initAppInfo = getAppTitle();
-
+    // print('initAppInfo');
     return ChangeNotifierProvider.value(
       value: _appTheme,
       builder: (context, _) {
@@ -186,7 +183,7 @@ class MyApp extends StatelessWidget {
         }
 
         SystemChrome.setSystemUIOverlayStyle(style);
-
+        // print('about to hit FutureBuilder line 191');
         return FutureBuilder(
             future: initAppInfo,
             builder: (ctx, snapshot) {
@@ -442,7 +439,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                 icon: const Icon(FluentIcons.search),
                 functionToRun:
                     Provider.of<ColumnManager>(context, listen: false)
-                        .openSearch),
+                        .toggleSearch),
             //Add Column
             RunFunctionPaneItemAction(
                 body: const About(),
@@ -498,30 +495,6 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
               },
             ),
 
-            // First version of this
-            // LightDarkModePaneItemAction(
-            //   icon: FluentTheme.of(context).brightness.isDark
-            //       ? const Icon(FluentIcons.sunny)
-            //       : const Icon(FluentIcons.clear_night),
-            //   title: FluentTheme.of(context).brightness.isDark
-            //       ? Text(Provider.of<UserPrefs>(context, listen: true)
-            //           .currentTranslation
-            //           .lightTheme)
-            //       : Text(Provider.of<UserPrefs>(context, listen: true)
-            //           .currentTranslation
-            //           .darkTheme),
-            //   appTheme: widget.appTheme,
-            // ),
-
-            // if (kIsWeb)
-            //   PaneItemAction(
-            //     icon: const Icon(FluentIcons.full_screen),
-            //     // isFullScreen
-            //     //     ? const Icon(FluentIcons.accept)
-            //     //     : const Icon(FluentIcons.full_screen),
-            //     onTap: toggleFullScreen,
-            //     // onTap: isFullScreen ? exitFullScreen : goFullScreen
-            //   ),
             PaneItemSeparator(),
             //About
             PaneItem(

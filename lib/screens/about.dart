@@ -191,8 +191,8 @@ class About extends StatelessWidget {
 
             showLicensePage(
                 context: context,
-                applicationName: '99',
-                useRootNavigator: true);
+                applicationName: 'usfm_bible',
+                useRootNavigator: false);
           },
           child: const Text('Licenses')),
     ];

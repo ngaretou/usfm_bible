@@ -39,7 +39,7 @@ ComposedVerses verseComposer(
       RegExpMatch? match = RegExp(r'(\\)').firstMatch(thisString);
 
       if (match != null) {
-        print(
+        debugPrint(
             'Problem: A slash is here but should not be at ${line.collectionid} ${line.book} ${line.chapter} ${line.verse} $thisString');
       }
 
