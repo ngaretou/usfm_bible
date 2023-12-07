@@ -4,32 +4,32 @@ import 'user_prefs.dart';
 
 class ColumnManager with ChangeNotifier {
   bool readyToAddColumn = false;
-  bool readyToOpenSearch = false;
+  bool readyToToggleSearch = false;
   bool timeToRebuildColumns = false;
 
   void addColumn() {
     readyToAddColumn = true;
-    // print('addColumn in provider');
+    // // print('addColumn in provider');
     notifyListeners();
     Timer(const Duration(seconds: 1), () => readyToAddColumn = false);
   }
 
-  void openSearch() {
-    readyToOpenSearch = true;
-    // print('openSearch in provider');
+  void toggleSearch() {
+    readyToToggleSearch = true;
+    // // print('openSearch in provider');
     notifyListeners();
-    Timer(const Duration(seconds: 1), () => readyToOpenSearch = false);
+    Timer(const Duration(seconds: 1), () => readyToToggleSearch = false);
   }
 
   void deleteColumnRebuildCall() {
     timeToRebuildColumns = true;
-    // print('timeToRebuildColumns in provider');
+    // // print('timeToRebuildColumns in provider');
     notifyListeners();
     Timer(const Duration(seconds: 1), () => timeToRebuildColumns = false);
-    
   }
 }
 
+// –––––––––––––––––––––––––––––––––––––––
 class ScrollGroup with ChangeNotifier {
   BibleReference? scrollGroupBibleReference;
   Key? activeColumnKey;
@@ -41,8 +41,8 @@ class ScrollGroup with ChangeNotifier {
   set setScrollGroupRef(BibleReference ref) {
     void setScrollGroup() {
       scrollGroupBibleReference = ref;
-      // print('setScrollGroupRef in provider');
-      // print('${ref.bookID} ${ref.chapter} ${ref.verse}');
+      // // print('setScrollGroupRef in provider');
+      // // print('${ref.bookID} ${ref.chapter} ${ref.verse}');
       notifyListeners();
     }
 
@@ -64,10 +64,10 @@ class ScrollGroup with ChangeNotifier {
   }
 
   set setActiveColumnKey(Key? key) {
-    // print('set active col key to $key');
+    // // print('set active col key to $key');
     activeColumnKey = key;
     Timer(const Duration(milliseconds: 1500), () {
-      // print('returning active key to null');
+      // // print('returning active key to null');
       activeColumnKey = null;
     });
   }

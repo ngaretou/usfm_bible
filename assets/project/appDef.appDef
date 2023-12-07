@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<app-definition type="SAB" program-version="10.2">
+<app-definition type="SAB" program-version="11.0.4">
   <project-name>usfm_bible</project-name>
   <project-description></project-description>
 
@@ -16,6 +16,10 @@
   <ipa-container-url></ipa-container-url>
   <ipa-app-type>dedicated</ipa-app-type>
   <ipa-container-audio>false</ipa-container-audio>
+
+  <pwa-manifest name="" short-name="">
+    <pwa-text lang="null" direction="LTR"/>
+  </pwa-manifest>
 
   <signing>
     <keystore>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/keystore/keystore6.keystore</keystore>
@@ -116,9 +120,8 @@
     <feature name="wj-enabled" value="false"/>
     <feature name="show-red-letters" value="false"/>
     <feature name="show-glossary-words" value="true"/>
-    <feature name="show-footnotes" value="true"/>
-    <feature name="show-cross-refs" value="true"/>
     <feature name="show-illustrations" value="false"/>
+    <feature name="zoom-illustrations" value="true"/>
     <feature name="resize-illustrations" value="true"/>
     <feature name="resize-illustrations-width" value="480"/>
     <feature name="backgrounds-crop" value="true"/>
@@ -134,10 +137,6 @@
     <feature name="hide-empty-verses" value="true"/>
     <feature name="hide-empty-chapters" value="true"/>
     <feature name="hide-verse-number-1" value="true"/>
-    <feature name="footnote-caller-type" value="abc"/>
-    <feature name="footnote-caller-symbol" value=""/>
-    <feature name="crossref-caller-type" value="abc"/>
-    <feature name="crossref-caller-symbol" value=""/>
     <feature name="verse-of-the-day" value="false"/>
     <feature name="verse-of-the-day-default" value="false"/>
     <feature name="verse-of-the-day-time" value="12:00"/>
@@ -391,6 +390,14 @@
       <feature name="ref-extra-material" value=""/>
       <feature name="ref-parse-introductions" value="false"/>
       <feature name="ref-parse-glossary" value="false"/>
+      <feature name="show-footnotes" value="true"/>
+      <feature name="footnote-caller-type" value="abc"/>
+      <feature name="footnote-caller-symbol" value=""/>
+      <feature name="footnote-caller-no-caller-to-auto" value="true"/>
+      <feature name="show-cross-refs" value="true"/>
+      <feature name="crossref-caller-type" value="abc"/>
+      <feature name="crossref-caller-symbol" value=""/>
+      <feature name="crossref-caller-no-caller-to-auto" value="true"/>
       <feature name="numerals-type" value="default"/>
       <feature name="bc-allow-single-pane" value="true"/>
       <feature name="bc-allow-copy-text" value="true"/>
@@ -401,12 +408,16 @@
       <feature name="bc-allow-verse-of-the-day" value="true"/>
       <feature name="bc-allow-share-audio" value="false"/>
       <feature name="bc-allow-share-video" value="false"/>
+      <feature name="study-bible-explanatory-text-box" value="false"/>
+      <feature name="study-bible-explanatory-text-collapsible" value="true"/>
+      <feature name="study-bible-sidebars-collapsible" value="true"/>
+      <feature name="study-bible-footnote-keyword-links" value="true"/>
       <feature name="layout-show-config-button" value="true"/>
       <feature name="audio-phrase-end-chars" value=".?!:;,"/>
     </features>
 
     <metadata>
-      <meta name="copyright-text" content="&lt;p align=center&gt;Texte copyright © 2023 MBS.&lt;/p&gt;\n    &lt;p align=center&gt;(NINEA MBS: 20215410C9)&lt;/p&gt;\n    &lt;p  align=center&gt;Traduction provisoire&lt;/p&gt;\n    &lt;p&gt;Cette &amp;oelig;uvre est mise &amp;agrave; disposition sous licence Creative Commons Attribution - Pas d&apos;Utilisation Commerciale - Pas de Modification 4.0 International (CC BY-NC-ND 4.0)&lt;/p&gt;\n    \n    &lt;p&gt;Vous &amp;ecirc;tes autoris&amp;eacute; &amp;agrave; :&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;Partager&lt;/strong&gt; &amp;mdash; copier, distribuer et communiquer le mat&amp;eacute;riel par tous moyens et sous tous formats. L&apos;Offrant ne peut retirer les autorisations conc&amp;eacute;d&amp;eacute;es par la licence tant que vous appliquez les termes de cette licence.&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;Attribution&lt;/strong&gt; &amp;mdash; Vous devez cr&amp;eacute;diter l&apos;&amp;OElig;uvre, int&amp;eacute;grer un lien vers la licence et indiquer si des modifications ont &amp;eacute;t&amp;eacute; effectu&amp;eacute;es &amp;agrave; l&apos;Oeuvre. Vous devez indiquer ces informations par tous les moyens raisonnables, sans toutefois sugg&amp;eacute;rer que l&apos;Offrant vous soutient ou soutient la fa&amp;ccedil;on dont vous avez utilis&amp;eacute; son Oeuvre.&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;Pas d&amp;rsquo;Utilisation Commerciale&lt;/strong&gt; &amp;mdash; Vous n&apos;&amp;ecirc;tes pas autoris&amp;eacute; &amp;agrave; faire un usage commercial de cette Oeuvre, tout ou partie du mat&amp;eacute;riel la composant.&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;Pas de modifications&lt;/strong&gt; &amp;mdash; Dans le cas o&amp;ugrave; vous effectuez un remix, que vous transformez, ou cr&amp;eacute;ez &amp;agrave; partir du mat&amp;eacute;riel composant l&apos;Oeuvre originale, vous n&apos;&amp;ecirc;tes pas autoris&amp;eacute; &amp;agrave; distribuer ou mettre &amp;agrave; disposition l&apos;Oeuvre modifi&amp;eacute;e.&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;Pas de restrictions compl&amp;eacute;mentaires&lt;/strong&gt; &amp;mdash; Vous n&apos;&amp;ecirc;tes pas autoris&amp;eacute; &amp;agrave; appliquer des conditions l&amp;eacute;gales ou des mesures techniques qui restreindraient l&amp;eacute;galement autrui &amp;agrave; utiliser l&apos;Oeuvre dans les conditions d&amp;eacute;crites par la licence.&lt;/p&gt;\n    &lt;p&gt;C&apos;est un r&amp;eacute;sum&amp;eacute; (et non pas un substitut) de la licence. Pour voir une copie de cette licence, &lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&quot;&gt;&lt;u&gt;cliquez ici&lt;/u&gt;&lt;/a&gt;.&lt;/p&gt;\n    &lt;p&gt;La Mission Baptiste du S&amp;eacute;n&amp;eacute;gal a le plaisir de vous autoriser &amp;agrave; utiliser toute portion tir&amp;eacute;e des Ecritures qui sont disponibles sur &lt;a href=&quot;https://kaddugyalla.com&quot;&gt;kaddugyalla.com&lt;/a&gt; et sur ces appli (l&amp;rsquo;&amp;oelig;uvre), sous r&amp;eacute;serve que le cr&amp;eacute;dit nous soit reconnu par &amp;eacute;crit, avec la mention du nom de notre organisation (voir plus loin). Mais on ne peut la modifier de quelque fa&amp;ccedil;on que ce soit, ni l&amp;rsquo;utiliser &amp;agrave; des fins commerciales, c&amp;rsquo;est &amp;agrave; dire, de telles ressources ne peuvent &amp;ecirc;tre vendues &amp;agrave; un prix sup&amp;eacute;rieur au co&amp;ucirc;t de la reproduction.&lt;/p&gt;\n    &lt;p&gt;Cette licence n&amp;rsquo;autorise pas un mixage combinant les &amp;eacute;critures en wolof avec vos propres ressources traduites en wolof. Si vous d&amp;eacute;sirez faire un mixage, vous devez en obtenir l&amp;rsquo;autorisation, et pour cela nous exigeons un &amp;eacute;chantillon de traduction pour une pr&amp;eacute;alable approbation de notre part. En effet des ressources mal traduites portent pr&amp;eacute;judice &amp;agrave; la cr&amp;eacute;dibilit&amp;eacute; des &amp;eacute;critures.&lt;/p&gt;\n    &lt;p&gt;De m&amp;ecirc;me, s&amp;rsquo;il s&amp;rsquo;agit d&amp;rsquo;enregistrements des &amp;eacute;critures, nous exigeons des &amp;eacute;chantillons de la mati&amp;egrave;re enregistr&amp;eacute;e, pour approbation pr&amp;eacute;alable de notre part. En effet des voix marqu&amp;eacute;es d&amp;rsquo;accent pourraient &amp;ecirc;tre dommageables &amp;agrave; la cr&amp;eacute;dibilit&amp;eacute; des &amp;eacute;critures.&lt;/p&gt;\n    &lt;p&gt;Pour demander la permission de faire quoi que ce soit en dehors du cadre de cette licence, &lt;a href=&quot;https://kaddugyalla.com/#jokko&quot;&gt;&lt;u&gt;contactez-nous&lt;/u&gt;&lt;/a&gt;.&lt;/p&gt;\n    &lt;p&gt;Voici les d&amp;eacute;clarations de copyright &amp;agrave; inclure dans l&apos;&amp;oelig;uvre:&lt;/p&gt;\n    &lt;p&gt;&lt;em&gt;&amp;Eacute;criture extraite de &lt;/em&gt;(s&amp;rsquo;il s&amp;rsquo;agit d&amp;rsquo;une portion de livre)&lt;/p&gt;\n    &lt;p&gt;Suivi de:&lt;/p&gt;\n    &lt;p&gt;&lt;em&gt;K&amp;agrave;ddug Y&amp;agrave;lla gi &amp;copy; 2023 La Mission Baptiste du S&amp;eacute;n&amp;eacute;gal&lt;/em&gt;&lt;/p&gt;\n    &lt;p&gt;&lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&quot;&gt;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&lt;/a&gt;&lt;/p&gt;\n    &lt;p&gt;Vous pouvez aussi utiliser une forme abr&amp;eacute;g&amp;eacute;e:&lt;/p&gt;\n    &lt;p&gt;(Nom du livre abr&amp;eacute;g&amp;eacute;) &lt;em&gt;2023 MBS (NINEA: 20215410C9)&lt;/em&gt;&lt;/p&gt;\n    &lt;p&gt;&lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&quot;&gt;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&lt;/a&gt;&lt;/p&gt;\n    &lt;p&gt;La politique de confidentialit&amp;eacute; se trouve &lt;a href=&quot;https://sng.al/priv&quot;&gt;&lt;u&gt;ici&lt;/u&gt;&lt;/a&gt;.&lt;/p&gt;\n    &lt;hr&gt;\n    &lt;p&gt;This work is licensed under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)&lt;/p&gt;\n    \n    &lt;p&gt;You are free to:&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;Share&lt;/strong&gt; &amp;mdash; copy and redistribute the material in any medium or format. The licensor cannot revoke these freedoms as long as you follow the license terms.&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;Attribution&lt;/strong&gt; &amp;mdash; You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;NonCommercial&lt;/strong&gt; &amp;mdash; You may not use the material for commercial purposes.&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;NoDerivatives&lt;/strong&gt; &amp;mdash; If you remix, transform, or build upon the material, you may not distribute the modified material.&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;No additional restrictions&lt;/strong&gt; &amp;mdash; You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.&lt;/p&gt;\n    &lt;p&gt;This is a human-readable summary of (and not a substitute for) the license. To view a copy of this license, &lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode&quot;&gt;&lt;u&gt;click here&lt;/u&gt;&lt;/a&gt;.&lt;/p&gt;\n    &lt;p&gt;La Mission Baptiste du S&amp;eacute;n&amp;eacute;gal is pleased to give you permission to use any of the scriptures on &lt;a href=&quot;https://kaddugyalla.com&quot;&gt;kaddugyalla.com&lt;/a&gt; and in these apps (hereafter referred to as the Work) as long as you give credit to MBS with a copyright notice, and you do not modify or mix the work, and do not sell materials at a price over the cost of reproduction.&lt;/p&gt;\n    &lt;p&gt;In other words, you may download the Work and share it with others as long as you credit us, but you can&amp;rsquo;t change the Work in any way or use it commercially (for profit).&lt;/p&gt;\n    &lt;p&gt;If we give you permission to do a re-mix (combining the scriptures in wolof with your own materials translated in wolof), we will ask for a sample translation or audio recording to approve first, before any distribution. Materials badly translated and voices with a foreign accent impair the credibility of the scriptures.&lt;/p&gt;\n    &lt;p&gt;To ask permission to do anything outside the scope of this license, &lt;a href=&quot;https://kaddugyalla.com/#jokko&quot;&gt;&lt;u&gt;contact us&lt;/u&gt;&lt;/a&gt;.&lt;/p&gt;\n    &lt;p&gt;Here are copyright statements to include with the work :&lt;/p&gt;\n    \n    &lt;p&gt;&lt;em&gt;Scripture citations taken from&lt;/em&gt; (if it&apos;s only a portion of a book) followed by&lt;/p&gt;\n    &lt;p&gt;&lt;em&gt;K&amp;agrave;ddug Y&amp;agrave;lla gi &amp;copy; 2023 La Mission Baptiste du S&amp;eacute;n&amp;eacute;gal&lt;/em&gt;&lt;/p&gt;\n    &lt;p&gt;&lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode&quot;&gt;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode&lt;/a&gt;&lt;/p&gt;\n    &lt;p&gt;Or you may use a shortened form:&lt;/p&gt;\n    &lt;p&gt;(Name of the book) &lt;em&gt;2023 MBS (NINEA: 20215410C9)&lt;/em&gt;&lt;/p&gt;\n    &lt;p&gt;&lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode&quot;&gt;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode&lt;/a&gt;&lt;/p&gt;\n    &lt;p&gt;You can read our privacy policy &lt;a href=&quot;https://sng.al/priv&quot;&gt;&lt;u&gt;here&lt;/u&gt;&lt;/a&gt;.&lt;/p&gt;\n    &lt;hr&gt;\n    &lt;p&gt;Ligg&amp;eacute;ey bii turu sa&amp;ntilde;-sa&amp;ntilde;u j&amp;euml;fandikoom di &amp;laquo; Creative Commons BY-NC-ND 4.0 &amp;raquo; ; maye na ku ko yeb, f&amp;eacute;pp ci &amp;agrave;ddina, ci kaw way jefandiku ji w&amp;agrave;ccoo ak yii ndigal: BY = SM (dees na Seedeel boroom Moomeelam); NC = AJ (Amul Jaay); ND = AS (Amul Soppi). Ku b&amp;euml;gga gis sottib sa&amp;ntilde; sa&amp;ntilde;u j&amp;euml;fandikoo bi, seet ko &lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&quot;&gt;&lt;u&gt;fii&lt;/u&gt;&lt;/a&gt;.&lt;/p&gt;\n    \n    &lt;p&gt;Mission Baptiste du S&amp;eacute;n&amp;eacute;gal am na mb&amp;eacute;gtey may leen ngeen yeb, ak sotti, ak wasaare lu mu mana doon ci K&amp;agrave;ddug Y&amp;agrave;lla gi ci &lt;a href=&quot;https://kaddugyalla.com&quot;&gt;kaddugyalla.com&lt;/a&gt;, ak ci appli yii, ci kaw ngeen seedeel nu sunu moomeel (seetal ci suuf). Waaye dungeen ci mana soppi lenn, ak nu coppite ga mana t&amp;euml;dde, te ngeen ba&amp;ntilde; cee jaaye lenn ci nj&amp;euml;g gu wees li leen sottib mbind mi dikke.&lt;/p&gt;\n    &lt;p&gt;Su dee lu ngeen raxe (muy seen ligg&amp;eacute;eyu bopp bu ngeen tekki ci wolof, boole ko ak lenni k&amp;agrave;ddug Y&amp;agrave;lla gi ci wolof), ba b&amp;euml;gg koo sotti ngir wasaare ko, war ngeen cee j&amp;euml;kka am sunu ndigal, te jox nu ci seenub tekki, lu tuut lu nu ko mana natte ba mu doy nu, ndax jumtukaay yu tekki bi awul yoon g&amp;agrave;kkal na Mbind mu sell mi.&lt;/p&gt;\n    &lt;p&gt;&lt;a href=&quot;https://kaddugyalla.com/#jokko&quot;&gt;&lt;u&gt;Jokkooleen ak nun&lt;/u&gt;&lt;/a&gt;, ngir s&amp;agrave;kku ndigalu def lu mu mana doon, lu wees kemu sa&amp;ntilde;-sa&amp;ntilde;u j&amp;euml;foo.&lt;/p&gt;\n    &lt;p&gt;Ba tey su dee lu ngeen jukkee ci k&amp;agrave;ddug Y&amp;agrave;lla gi, ba def ko ay d&amp;eacute;gtal yu ngeen taataan, b&amp;euml;gg nanu ngeen s&amp;agrave;kkal nu ci seenub taataan, lu tuut lu nu mana natte baat yi ba mu doy nu, ndax baat yu seen l&amp;agrave;mmi&amp;ntilde;u boroom taq itam, g&amp;agrave;kkal na ab ligg&amp;eacute;ey.&lt;/p&gt;\n    &lt;p&gt;Yii k&amp;agrave;ddu la sa&amp;ntilde;-sa&amp;ntilde;u j&amp;euml;foo tege, te warees koo boole ci ligg&amp;eacute;ey bi:&lt;/p&gt;\n    &lt;p&gt;&lt;em&gt;Ci&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip; lanu ko jukkee,&lt;/em&gt; (su dee ab dogu t&amp;eacute;ere doŋŋ)&lt;/p&gt;\n    &lt;p&gt;&lt;em&gt;K&amp;agrave;ddug Y&amp;agrave;lla gi &amp;copy; 2023 La Mission Baptiste du S&amp;eacute;n&amp;eacute;gal&lt;/em&gt;&lt;/p&gt;\n    &lt;p&gt;&lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&quot;&gt;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&lt;/a&gt;&lt;/p&gt;\n    &lt;p&gt;Manees naa j&amp;euml;fandikoo itam ab g&amp;agrave;ttalub turu t&amp;eacute;ere bi :&lt;/p&gt;\n    &lt;p&gt;(Turu g&amp;agrave;ttalu t&amp;eacute;ere bi) &lt;em&gt;2023 MBS (NINEA: 20215410C9)&lt;/em&gt;&lt;/p&gt;\n    &lt;p&gt;&lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&quot;&gt;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&lt;/a&gt;&lt;/p&gt;"/>
+      <meta name="copyright-text" content="&lt;p align=center&gt;Texte copyright © 2023 MBS.&lt;/p&gt;\n    &lt;p align=center&gt;(NINEA MBS: 20215410C9)&lt;/p&gt;\n    &lt;p&gt;Cette &amp;oelig;uvre est mise &amp;agrave; disposition sous licence Creative Commons Attribution - Pas d&apos;Utilisation Commerciale - Pas de Modification 4.0 International (CC BY-NC-ND 4.0)&lt;/p&gt;\n    \n    &lt;p&gt;Vous &amp;ecirc;tes autoris&amp;eacute; &amp;agrave; :&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;Partager&lt;/strong&gt; &amp;mdash; copier, distribuer et communiquer le mat&amp;eacute;riel par tous moyens et sous tous formats. L&apos;Offrant ne peut retirer les autorisations conc&amp;eacute;d&amp;eacute;es par la licence tant que vous appliquez les termes de cette licence.&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;Attribution&lt;/strong&gt; &amp;mdash; Vous devez cr&amp;eacute;diter l&apos;&amp;OElig;uvre, int&amp;eacute;grer un lien vers la licence et indiquer si des modifications ont &amp;eacute;t&amp;eacute; effectu&amp;eacute;es &amp;agrave; l&apos;Oeuvre. Vous devez indiquer ces informations par tous les moyens raisonnables, sans toutefois sugg&amp;eacute;rer que l&apos;Offrant vous soutient ou soutient la fa&amp;ccedil;on dont vous avez utilis&amp;eacute; son Oeuvre.&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;Pas d&amp;rsquo;Utilisation Commerciale&lt;/strong&gt; &amp;mdash; Vous n&apos;&amp;ecirc;tes pas autoris&amp;eacute; &amp;agrave; faire un usage commercial de cette Oeuvre, tout ou partie du mat&amp;eacute;riel la composant.&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;Pas de modifications&lt;/strong&gt; &amp;mdash; Dans le cas o&amp;ugrave; vous effectuez un remix, que vous transformez, ou cr&amp;eacute;ez &amp;agrave; partir du mat&amp;eacute;riel composant l&apos;Oeuvre originale, vous n&apos;&amp;ecirc;tes pas autoris&amp;eacute; &amp;agrave; distribuer ou mettre &amp;agrave; disposition l&apos;Oeuvre modifi&amp;eacute;e.&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;Pas de restrictions compl&amp;eacute;mentaires&lt;/strong&gt; &amp;mdash; Vous n&apos;&amp;ecirc;tes pas autoris&amp;eacute; &amp;agrave; appliquer des conditions l&amp;eacute;gales ou des mesures techniques qui restreindraient l&amp;eacute;galement autrui &amp;agrave; utiliser l&apos;Oeuvre dans les conditions d&amp;eacute;crites par la licence.&lt;/p&gt;\n    &lt;p&gt;C&apos;est un r&amp;eacute;sum&amp;eacute; (et non pas un substitut) de la licence. Pour voir une copie de cette licence, &lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&quot;&gt;&lt;u&gt;cliquez ici&lt;/u&gt;&lt;/a&gt;.&lt;/p&gt;\n    &lt;p&gt;La Mission Baptiste du S&amp;eacute;n&amp;eacute;gal a le plaisir de vous autoriser &amp;agrave; utiliser toute portion tir&amp;eacute;e des Ecritures qui sont disponibles sur &lt;a href=&quot;https://kaddugyalla.com&quot;&gt;kaddugyalla.com&lt;/a&gt; et sur ces appli (l&amp;rsquo;&amp;oelig;uvre), sous r&amp;eacute;serve que le cr&amp;eacute;dit nous soit reconnu par &amp;eacute;crit, avec la mention du nom de notre organisation (voir plus loin). Mais on ne peut la modifier de quelque fa&amp;ccedil;on que ce soit, ni l&amp;rsquo;utiliser &amp;agrave; des fins commerciales, c&amp;rsquo;est &amp;agrave; dire, de telles ressources ne peuvent &amp;ecirc;tre vendues &amp;agrave; un prix sup&amp;eacute;rieur au co&amp;ucirc;t de la reproduction.&lt;/p&gt;\n    &lt;p&gt;Cette licence n&amp;rsquo;autorise pas un mixage combinant les &amp;eacute;critures en wolof avec vos propres ressources traduites en wolof. Si vous d&amp;eacute;sirez faire un mixage, vous devez en obtenir l&amp;rsquo;autorisation, et pour cela nous exigeons un &amp;eacute;chantillon de traduction pour une pr&amp;eacute;alable approbation de notre part. En effet des ressources mal traduites portent pr&amp;eacute;judice &amp;agrave; la cr&amp;eacute;dibilit&amp;eacute; des &amp;eacute;critures.&lt;/p&gt;\n    &lt;p&gt;De m&amp;ecirc;me, s&amp;rsquo;il s&amp;rsquo;agit d&amp;rsquo;enregistrements des &amp;eacute;critures, nous exigeons des &amp;eacute;chantillons de la mati&amp;egrave;re enregistr&amp;eacute;e, pour approbation pr&amp;eacute;alable de notre part. En effet des voix marqu&amp;eacute;es d&amp;rsquo;accent pourraient &amp;ecirc;tre dommageables &amp;agrave; la cr&amp;eacute;dibilit&amp;eacute; des &amp;eacute;critures.&lt;/p&gt;\n    &lt;p&gt;Pour demander la permission de faire quoi que ce soit en dehors du cadre de cette licence, &lt;a href=&quot;https://kaddugyalla.com/#jokko&quot;&gt;&lt;u&gt;contactez-nous&lt;/u&gt;&lt;/a&gt;.&lt;/p&gt;\n    &lt;p&gt;Voici les d&amp;eacute;clarations de copyright &amp;agrave; inclure dans l&apos;&amp;oelig;uvre:&lt;/p&gt;\n    &lt;p&gt;&lt;em&gt;&amp;Eacute;criture extraite de &lt;/em&gt;(s&amp;rsquo;il s&amp;rsquo;agit d&amp;rsquo;une portion de livre)&lt;/p&gt;\n    &lt;p&gt;Suivi de:&lt;/p&gt;\n    &lt;p&gt;&lt;em&gt;K&amp;agrave;ddug Y&amp;agrave;lla gi &amp;copy; 2023 La Mission Baptiste du S&amp;eacute;n&amp;eacute;gal&lt;/em&gt;&lt;/p&gt;\n    &lt;p&gt;&lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&quot;&gt;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&lt;/a&gt;&lt;/p&gt;\n    &lt;p&gt;Vous pouvez aussi utiliser une forme abr&amp;eacute;g&amp;eacute;e:&lt;/p&gt;\n    &lt;p&gt;(Nom du livre abr&amp;eacute;g&amp;eacute;) &lt;em&gt;2023 MBS (NINEA: 20215410C9)&lt;/em&gt;&lt;/p&gt;\n    &lt;p&gt;&lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&quot;&gt;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&lt;/a&gt;&lt;/p&gt;\n    &lt;p&gt;La politique de confidentialit&amp;eacute; se trouve &lt;a href=&quot;https://sng.al/priv&quot;&gt;&lt;u&gt;ici&lt;/u&gt;&lt;/a&gt;.&lt;/p&gt;\n    &lt;hr&gt;\n    &lt;p&gt;This work is licensed under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)&lt;/p&gt;\n    \n    &lt;p&gt;You are free to:&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;Share&lt;/strong&gt; &amp;mdash; copy and redistribute the material in any medium or format. The licensor cannot revoke these freedoms as long as you follow the license terms.&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;Attribution&lt;/strong&gt; &amp;mdash; You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;NonCommercial&lt;/strong&gt; &amp;mdash; You may not use the material for commercial purposes.&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;NoDerivatives&lt;/strong&gt; &amp;mdash; If you remix, transform, or build upon the material, you may not distribute the modified material.&lt;/p&gt;\n    &lt;p&gt;&lt;strong&gt;No additional restrictions&lt;/strong&gt; &amp;mdash; You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.&lt;/p&gt;\n    &lt;p&gt;This is a human-readable summary of (and not a substitute for) the license. To view a copy of this license, &lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode&quot;&gt;&lt;u&gt;click here&lt;/u&gt;&lt;/a&gt;.&lt;/p&gt;\n    &lt;p&gt;La Mission Baptiste du S&amp;eacute;n&amp;eacute;gal is pleased to give you permission to use any of the scriptures on &lt;a href=&quot;https://kaddugyalla.com&quot;&gt;kaddugyalla.com&lt;/a&gt; and in these apps (hereafter referred to as the Work) as long as you give credit to MBS with a copyright notice, and you do not modify or mix the work, and do not sell materials at a price over the cost of reproduction.&lt;/p&gt;\n    &lt;p&gt;In other words, you may download the Work and share it with others as long as you credit us, but you can&amp;rsquo;t change the Work in any way or use it commercially (for profit).&lt;/p&gt;\n    &lt;p&gt;If we give you permission to do a re-mix (combining the scriptures in wolof with your own materials translated in wolof), we will ask for a sample translation or audio recording to approve first, before any distribution. Materials badly translated and voices with a foreign accent impair the credibility of the scriptures.&lt;/p&gt;\n    &lt;p&gt;To ask permission to do anything outside the scope of this license, &lt;a href=&quot;https://kaddugyalla.com/#jokko&quot;&gt;&lt;u&gt;contact us&lt;/u&gt;&lt;/a&gt;.&lt;/p&gt;\n    &lt;p&gt;Here are copyright statements to include with the work :&lt;/p&gt;\n    \n    &lt;p&gt;&lt;em&gt;Scripture citations taken from&lt;/em&gt; (if it&apos;s only a portion of a book) followed by&lt;/p&gt;\n    &lt;p&gt;&lt;em&gt;K&amp;agrave;ddug Y&amp;agrave;lla gi &amp;copy; 2023 La Mission Baptiste du S&amp;eacute;n&amp;eacute;gal&lt;/em&gt;&lt;/p&gt;\n    &lt;p&gt;&lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode&quot;&gt;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode&lt;/a&gt;&lt;/p&gt;\n    &lt;p&gt;Or you may use a shortened form:&lt;/p&gt;\n    &lt;p&gt;(Name of the book) &lt;em&gt;2023 MBS (NINEA: 20215410C9)&lt;/em&gt;&lt;/p&gt;\n    &lt;p&gt;&lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode&quot;&gt;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode&lt;/a&gt;&lt;/p&gt;\n    &lt;p&gt;You can read our privacy policy &lt;a href=&quot;https://sng.al/priv&quot;&gt;&lt;u&gt;here&lt;/u&gt;&lt;/a&gt;.&lt;/p&gt;\n    &lt;hr&gt;\n    &lt;p&gt;Ligg&amp;eacute;ey bii turu sa&amp;ntilde;-sa&amp;ntilde;u j&amp;euml;fandikoom di &amp;laquo; Creative Commons BY-NC-ND 4.0 &amp;raquo; ; maye na ku ko yeb, f&amp;eacute;pp ci &amp;agrave;ddina, ci kaw way jefandiku ji w&amp;agrave;ccoo ak yii ndigal: BY = SM (dees na Seedeel boroom Moomeelam); NC = AJ (Amul Jaay); ND = AS (Amul Soppi). Ku b&amp;euml;gga gis sottib sa&amp;ntilde; sa&amp;ntilde;u j&amp;euml;fandikoo bi, seet ko &lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&quot;&gt;&lt;u&gt;fii&lt;/u&gt;&lt;/a&gt;.&lt;/p&gt;\n    \n    &lt;p&gt;Mission Baptiste du S&amp;eacute;n&amp;eacute;gal am na mb&amp;eacute;gtey may leen ngeen yeb, ak sotti, ak wasaare lu mu mana doon ci K&amp;agrave;ddug Y&amp;agrave;lla gi ci &lt;a href=&quot;https://kaddugyalla.com&quot;&gt;kaddugyalla.com&lt;/a&gt;, ak ci appli yii, ci kaw ngeen seedeel nu sunu moomeel (seetal ci suuf). Waaye dungeen ci mana soppi lenn, ak nu coppite ga mana t&amp;euml;dde, te ngeen ba&amp;ntilde; cee jaaye lenn ci nj&amp;euml;g gu wees li leen sottib mbind mi dikke.&lt;/p&gt;\n    &lt;p&gt;Su dee lu ngeen raxe (muy seen ligg&amp;eacute;eyu bopp bu ngeen tekki ci wolof, boole ko ak lenni k&amp;agrave;ddug Y&amp;agrave;lla gi ci wolof), ba b&amp;euml;gg koo sotti ngir wasaare ko, war ngeen cee j&amp;euml;kka am sunu ndigal, te jox nu ci seenub tekki, lu tuut lu nu ko mana natte ba mu doy nu, ndax jumtukaay yu tekki bi awul yoon g&amp;agrave;kkal na Mbind mu sell mi.&lt;/p&gt;\n    &lt;p&gt;&lt;a href=&quot;https://kaddugyalla.com/#jokko&quot;&gt;&lt;u&gt;Jokkooleen ak nun&lt;/u&gt;&lt;/a&gt;, ngir s&amp;agrave;kku ndigalu def lu mu mana doon, lu wees kemu sa&amp;ntilde;-sa&amp;ntilde;u j&amp;euml;foo.&lt;/p&gt;\n    &lt;p&gt;Ba tey su dee lu ngeen jukkee ci k&amp;agrave;ddug Y&amp;agrave;lla gi, ba def ko ay d&amp;eacute;gtal yu ngeen taataan, b&amp;euml;gg nanu ngeen s&amp;agrave;kkal nu ci seenub taataan, lu tuut lu nu mana natte baat yi ba mu doy nu, ndax baat yu seen l&amp;agrave;mmi&amp;ntilde;u boroom taq itam, g&amp;agrave;kkal na ab ligg&amp;eacute;ey.&lt;/p&gt;\n    &lt;p&gt;Yii k&amp;agrave;ddu la sa&amp;ntilde;-sa&amp;ntilde;u j&amp;euml;foo tege, te warees koo boole ci ligg&amp;eacute;ey bi:&lt;/p&gt;\n    &lt;p&gt;&lt;em&gt;Ci&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip; lanu ko jukkee,&lt;/em&gt; (su dee ab dogu t&amp;eacute;ere doŋŋ)&lt;/p&gt;\n    &lt;p&gt;&lt;em&gt;K&amp;agrave;ddug Y&amp;agrave;lla gi &amp;copy; 2023 La Mission Baptiste du S&amp;eacute;n&amp;eacute;gal&lt;/em&gt;&lt;/p&gt;\n    &lt;p&gt;&lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&quot;&gt;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&lt;/a&gt;&lt;/p&gt;\n    &lt;p&gt;Manees naa j&amp;euml;fandikoo itam ab g&amp;agrave;ttalub turu t&amp;eacute;ere bi :&lt;/p&gt;\n    &lt;p&gt;(Turu g&amp;agrave;ttalu t&amp;eacute;ere bi) &lt;em&gt;2023 MBS (NINEA: 20215410C9)&lt;/em&gt;&lt;/p&gt;\n    &lt;p&gt;&lt;a href=&quot;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&quot;&gt;https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.fr&lt;/a&gt;&lt;/p&gt;"/>
     </metadata>
 
     <styles-info>
@@ -428,6 +439,8 @@
       </styles>
     </styles-info>
 
+    <font-choice type="all" />
+
     <book-order>
       <canon-name>Western Protestant Bible</canon-name>
     </book-order>
@@ -439,6 +452,8 @@
       <name>Njàlbéen ga</name>
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>01GENwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/01GENwolKYG.SFM</source>
     </book>
@@ -447,6 +462,8 @@
       <name>Mucc ga</name>
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>02EXOwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/02EXOwolKYG.SFM</source>
     </book>
@@ -455,6 +472,8 @@
       <name>Sarxalkat yi</name>
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>03LEVwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/03LEVwolKYG.SFM</source>
     </book>
@@ -463,6 +482,8 @@
       <name>Màndiŋ ma</name>
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>04NUMwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/04NUMwolKYG.SFM</source>
     </book>
@@ -471,6 +492,8 @@
       <name>Baamtug Yoon wi</name>
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>05DEUwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/05DEUwolKYG.SFM</source>
     </book>
@@ -479,6 +502,8 @@
       <name>Yosuwe</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>06JOSwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/06JOSwolKYG.SFM</source>
     </book>
@@ -487,6 +512,8 @@
       <name>Njiit ya</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>07JDGwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/07JDGwolKYG.SFM</source>
     </book>
@@ -495,6 +522,8 @@
       <name>Ruut</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>08RUTwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/08RUTwolKYG.SFM</source>
     </book>
@@ -503,6 +532,8 @@
       <name>1.Samiyel</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>091SAwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/091SAwolKYG.SFM</source>
     </book>
@@ -511,6 +542,8 @@
       <name>2.Samiyel</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>102SAwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/102SAwolKYG.SFM</source>
     </book>
@@ -519,6 +552,8 @@
       <name>1.Buur ya</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>111KIwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/111KIwolKYG.SFM</source>
     </book>
@@ -527,6 +562,8 @@
       <name>2.Buur ya</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>122KIwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/122KIwolKYG.SFM</source>
     </book>
@@ -535,6 +572,8 @@
       <name>1.Jaar-jaar ya</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>131CHwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/131CHwolKYG.SFM</source>
     </book>
@@ -543,6 +582,8 @@
       <name>2.Jaar-jaar ya</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>142CHwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/142CHwolKYG.SFM</source>
     </book>
@@ -551,6 +592,8 @@
       <name>Esra</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>15EZRwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/15EZRwolKYG.SFM</source>
     </book>
@@ -559,6 +602,8 @@
       <name>Neyemi</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>16NEHwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/16NEHwolKYG.SFM</source>
     </book>
@@ -567,6 +612,8 @@
       <name>Esteer</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>17ESTwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/17ESTwolKYG.SFM</source>
     </book>
@@ -575,15 +622,19 @@
       <name>Ayóoba</name>
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>18JOBwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/18JOBwolKYG.SFM</source>
     </book>
 
     <book id="PSA">
-      <name>Taalifi Daawuda</name>
-      <abbrev>Taalifi Daawuda</abbrev>
+      <name>Taalifi Cant</name>
+      <abbrev>Taalifi Cant</abbrev>
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>19PSAwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/19PSAwolKYG.SFM</source>
 
@@ -597,6 +648,8 @@
       <name>Kàddu yu Xelu</name>
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>20PROwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/20PROwolKYG.SFM</source>
     </book>
@@ -605,6 +658,8 @@
       <name>Kàdduy Waare</name>
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>21ECCwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/21ECCwolKYG.SFM</source>
     </book>
@@ -613,6 +668,8 @@
       <name>Ngën-gi-woy</name>
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>22SNGwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/22SNGwolKYG.SFM</source>
     </book>
@@ -621,6 +678,8 @@
       <name>Esayi</name>
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>23ISAwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/23ISAwolKYG.SFM</source>
     </book>
@@ -629,6 +688,8 @@
       <name>Yeremi</name>
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>24JERwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/24JERwolKYG.SFM</source>
     </book>
@@ -637,6 +698,8 @@
       <name>Jooytu</name>
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>25LAMwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/25LAMwolKYG.SFM</source>
     </book>
@@ -645,6 +708,8 @@
       <name>Esekiyel</name>
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>26EZKwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/26EZKwolKYG.SFM</source>
     </book>
@@ -653,6 +718,8 @@
       <name>Dañeel</name>
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>27DANwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/27DANwolKYG.SFM</source>
     </book>
@@ -661,6 +728,8 @@
       <name>Ose</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>28HOSwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/28HOSwolKYG.SFM</source>
     </book>
@@ -669,6 +738,8 @@
       <name>Yowel</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>29JOLwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/29JOLwolKYG.SFM</source>
     </book>
@@ -677,6 +748,8 @@
       <name>Amos</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>30AMOwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/30AMOwolKYG.SFM</source>
     </book>
@@ -685,6 +758,8 @@
       <name>Abdiyas</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>31OBAwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/31OBAwolKYG.SFM</source>
     </book>
@@ -693,6 +768,8 @@
       <name>Yunus</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>32JONwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/32JONwolKYG.SFM</source>
     </book>
@@ -701,6 +778,8 @@
       <name>Mise</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>33MICwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/33MICwolKYG.SFM</source>
     </book>
@@ -709,6 +788,8 @@
       <name>Nawum</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>34NAMwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/34NAMwolKYG.SFM</source>
     </book>
@@ -717,6 +798,8 @@
       <name>Abakug</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>35HABwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/35HABwolKYG.SFM</source>
     </book>
@@ -725,6 +808,8 @@
       <name>Cefaña</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>36ZEPwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/36ZEPwolKYG.SFM</source>
     </book>
@@ -733,6 +818,8 @@
       <name>Ase</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>37HAGwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/37HAGwolKYG.SFM</source>
     </book>
@@ -741,6 +828,8 @@
       <name>Sàkkaryaa</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>38ZECwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/38ZECwolKYG.SFM</source>
     </book>
@@ -749,6 +838,8 @@
       <name>Malasi</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>39MALwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/39MALwolKYG.SFM</source>
     </book>
@@ -757,6 +848,8 @@
       <name>Macë</name>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>41MATwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/41MATwolKYG.SFM</source>
     </book>
@@ -765,6 +858,8 @@
       <name>Màrk</name>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>42MRKwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/42MRKwolKYG.SFM</source>
     </book>
@@ -773,6 +868,8 @@
       <name>Luug</name>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>43LUKwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/43LUKwolKYG.SFM</source>
     </book>
@@ -781,6 +878,8 @@
       <name>Yowaan</name>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>44JHNwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/44JHNwolKYG.SFM</source>
     </book>
@@ -789,6 +888,8 @@
       <name>Jëf ya</name>
       <group>NT</group>
       <sub-group>Acts</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>45ACTwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/45ACTwolKYG.SFM</source>
     </book>
@@ -797,6 +898,8 @@
       <name>Room</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>46ROMwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/46ROMwolKYG.SFM</source>
     </book>
@@ -805,6 +908,8 @@
       <name>1.Korent</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>471COwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/471COwolKYG.SFM</source>
     </book>
@@ -813,6 +918,8 @@
       <name>2.Korent</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>482COwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/482COwolKYG.SFM</source>
     </book>
@@ -821,6 +928,8 @@
       <name>Galasi</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>49GALwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/49GALwolKYG.SFM</source>
     </book>
@@ -829,6 +938,8 @@
       <name>Efes</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>50EPHwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/50EPHwolKYG.SFM</source>
     </book>
@@ -837,6 +948,8 @@
       <name>Filib</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>51PHPwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/51PHPwolKYG.SFM</source>
     </book>
@@ -845,6 +958,8 @@
       <name>Kolos</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>52COLwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/52COLwolKYG.SFM</source>
     </book>
@@ -853,6 +968,8 @@
       <name>1.Tesalonig</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>531THwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/531THwolKYG.SFM</source>
     </book>
@@ -861,6 +978,8 @@
       <name>2.Tesalonig</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>542THwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/542THwolKYG.SFM</source>
     </book>
@@ -869,6 +988,8 @@
       <name>1.Timote</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>551TIwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/551TIwolKYG.SFM</source>
     </book>
@@ -877,6 +998,8 @@
       <name>2.Timote</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>562TIwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/562TIwolKYG.SFM</source>
     </book>
@@ -885,6 +1008,8 @@
       <name>Tit</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>57TITwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/57TITwolKYG.SFM</source>
     </book>
@@ -893,6 +1018,8 @@
       <name>Filemon</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>58PHMwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/58PHMwolKYG.SFM</source>
     </book>
@@ -901,6 +1028,8 @@
       <name>Yawut ya</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>59HEBwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/59HEBwolKYG.SFM</source>
     </book>
@@ -909,6 +1038,8 @@
       <name>Yanqóoba</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>60JASwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/60JASwolKYG.SFM</source>
     </book>
@@ -917,6 +1048,8 @@
       <name>1.Piyeer</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>611PEwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/611PEwolKYG.SFM</source>
     </book>
@@ -925,6 +1058,8 @@
       <name>2.Piyeer</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>622PEwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/622PEwolKYG.SFM</source>
     </book>
@@ -933,6 +1068,8 @@
       <name>1.Yowaan</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>631JNwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/631JNwolKYG.SFM</source>
     </book>
@@ -941,6 +1078,8 @@
       <name>2.Yowaan</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>642JNwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/642JNwolKYG.SFM</source>
     </book>
@@ -949,6 +1088,8 @@
       <name>3.Yowaan</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>653JNwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/653JNwolKYG.SFM</source>
     </book>
@@ -957,6 +1098,8 @@
       <name>Yudd</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>66JUDwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/66JUDwolKYG.SFM</source>
     </book>
@@ -965,14 +1108,16 @@
       <name>Peeñu ma</name>
       <group>NT</group>
       <sub-group>Revelation</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>67REVwolKYG.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/My Paratext 9 Projects/wolKYG/67REVwolKYG.SFM</source>
     </book>
   </books>
 
   <books id="C02">
-    <book-collection-name>Téereb Injiil 2012</book-collection-name>
-    <book-collection-abbrev>TI2012</book-collection-abbrev>
+    <book-collection-name>Injil 2010</book-collection-name>
+    <book-collection-abbrev>TI10</book-collection-abbrev>
     <book-collection-description></book-collection-description>
 
     <features type="bc">
@@ -985,6 +1130,14 @@
       <feature name="ref-extra-material" value=""/>
       <feature name="ref-parse-introductions" value="false"/>
       <feature name="ref-parse-glossary" value="false"/>
+      <feature name="show-footnotes" value="true"/>
+      <feature name="footnote-caller-type" value="abc"/>
+      <feature name="footnote-caller-symbol" value=""/>
+      <feature name="footnote-caller-no-caller-to-auto" value="true"/>
+      <feature name="show-cross-refs" value="true"/>
+      <feature name="crossref-caller-type" value="abc"/>
+      <feature name="crossref-caller-symbol" value=""/>
+      <feature name="crossref-caller-no-caller-to-auto" value="true"/>
       <feature name="numerals-type" value="default"/>
       <feature name="bc-allow-single-pane" value="true"/>
       <feature name="bc-allow-copy-text" value="true"/>
@@ -995,6 +1148,10 @@
       <feature name="bc-allow-verse-of-the-day" value="true"/>
       <feature name="bc-allow-share-audio" value="false"/>
       <feature name="bc-allow-share-video" value="false"/>
+      <feature name="study-bible-explanatory-text-box" value="false"/>
+      <feature name="study-bible-explanatory-text-collapsible" value="true"/>
+      <feature name="study-bible-sidebars-collapsible" value="true"/>
+      <feature name="study-bible-footnote-keyword-links" value="true"/>
     </features>
 
     <styles-info>
@@ -1008,6 +1165,8 @@
       <styles>
       </styles>
     </styles-info>
+
+    <font-choice type="all" />
 
     <book-order>
       <canon-name>Western Protestant Bible</canon-name>
@@ -1023,6 +1182,8 @@
       <name>Macë</name>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>41MATWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/41MATWNPub18.SFM</source>
     </book>
@@ -1031,6 +1192,8 @@
       <name>Màrk</name>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>42MRKWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/42MRKWNPub18.SFM</source>
     </book>
@@ -1039,6 +1202,8 @@
       <name>Luug</name>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>43LUKWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/43LUKWNPub18.SFM</source>
     </book>
@@ -1047,6 +1212,8 @@
       <name>Yowaana</name>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>44JHNWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/44JHNWNPub18.SFM</source>
     </book>
@@ -1055,6 +1222,8 @@
       <name>Jëfi Ndaw Ya Kirist Yónni</name>
       <group>NT</group>
       <sub-group>Acts</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>45ACTWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/45ACTWNPub18.SFM</source>
     </book>
@@ -1063,6 +1232,8 @@
       <name>Waa Room</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>46ROMWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/46ROMWNPub18.SFM</source>
     </book>
@@ -1071,6 +1242,8 @@
       <name>1 Waa Korent</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>471COWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/471COWNPub18.SFM</source>
     </book>
@@ -1079,6 +1252,8 @@
       <name>2 Waa Korent</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>482COWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/482COWNPub18.SFM</source>
     </book>
@@ -1087,6 +1262,8 @@
       <name>Waa Galasi</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>49GALWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/49GALWNPub18.SFM</source>
     </book>
@@ -1095,6 +1272,8 @@
       <name>Waa Efes</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>50EPHWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/50EPHWNPub18.SFM</source>
     </book>
@@ -1103,6 +1282,8 @@
       <name>Waa Filib</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>51PHPWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/51PHPWNPub18.SFM</source>
     </book>
@@ -1111,6 +1292,8 @@
       <name>Waa Kolos</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>52COLWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/52COLWNPub18.SFM</source>
     </book>
@@ -1119,6 +1302,8 @@
       <name>1 Waa Tesalonig</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>531THWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/531THWNPub18.SFM</source>
     </book>
@@ -1127,6 +1312,8 @@
       <name>2 Waa Tesalonig</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>542THWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/542THWNPub18.SFM</source>
     </book>
@@ -1135,6 +1322,8 @@
       <name>1 Timote</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>551TIWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/551TIWNPub18.SFM</source>
     </book>
@@ -1143,6 +1332,8 @@
       <name>2 Timote</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>562TIWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/562TIWNPub18.SFM</source>
     </book>
@@ -1151,6 +1342,8 @@
       <name>Tit</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>57TITWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/57TITWNPub18.SFM</source>
     </book>
@@ -1159,6 +1352,8 @@
       <name>Filemon</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>58PHMWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/58PHMWNPub18.SFM</source>
     </book>
@@ -1167,6 +1362,8 @@
       <name>Yawut Ya</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>59HEBWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/59HEBWNPub18.SFM</source>
     </book>
@@ -1175,6 +1372,8 @@
       <name>Saag</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>60JASWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/60JASWNPub18.SFM</source>
     </book>
@@ -1183,6 +1382,8 @@
       <name>1 Piyeer</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>611PEWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/611PEWNPub18.SFM</source>
     </book>
@@ -1191,6 +1392,8 @@
       <name>2 Piyeer</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>622PEWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/622PEWNPub18.SFM</source>
     </book>
@@ -1199,6 +1402,8 @@
       <name>1 Yowaana</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>631JNWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/631JNWNPub18.SFM</source>
     </book>
@@ -1207,6 +1412,8 @@
       <name>2 Yowaana</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>642JNWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/642JNWNPub18.SFM</source>
     </book>
@@ -1215,6 +1422,8 @@
       <name>3 Yowaana</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>653JNWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/653JNWNPub18.SFM</source>
     </book>
@@ -1223,6 +1432,8 @@
       <name>Yudd</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>66JUDWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/66JUDWNPub18.SFM</source>
     </book>
@@ -1231,6 +1442,8 @@
       <name>Peeñu</name>
       <group>NT</group>
       <sub-group>Revelation</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>67REVWNPub18.SFM</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/SIM/Wolofal/Paratext projects/WNPub18/67REVWNPub18.SFM</source>
     </book>
@@ -1251,6 +1464,14 @@
       <feature name="ref-extra-material" value=""/>
       <feature name="ref-parse-introductions" value="false"/>
       <feature name="ref-parse-glossary" value="false"/>
+      <feature name="show-footnotes" value="true"/>
+      <feature name="footnote-caller-type" value="abc"/>
+      <feature name="footnote-caller-symbol" value=""/>
+      <feature name="footnote-caller-no-caller-to-auto" value="true"/>
+      <feature name="show-cross-refs" value="true"/>
+      <feature name="crossref-caller-type" value="abc"/>
+      <feature name="crossref-caller-symbol" value=""/>
+      <feature name="crossref-caller-no-caller-to-auto" value="true"/>
       <feature name="numerals-type" value="default"/>
       <feature name="bc-allow-single-pane" value="true"/>
       <feature name="bc-allow-copy-text" value="true"/>
@@ -1261,6 +1482,10 @@
       <feature name="bc-allow-verse-of-the-day" value="true"/>
       <feature name="bc-allow-share-audio" value="false"/>
       <feature name="bc-allow-share-video" value="false"/>
+      <feature name="study-bible-explanatory-text-box" value="false"/>
+      <feature name="study-bible-explanatory-text-collapsible" value="true"/>
+      <feature name="study-bible-sidebars-collapsible" value="true"/>
+      <feature name="study-bible-footnote-keyword-links" value="true"/>
     </features>
 
     <metadata>
@@ -1279,6 +1504,8 @@
       </styles>
     </styles-info>
 
+    <font-choice type="all" />
+
     <book-order>
       <canon-name>Western Protestant Bible</canon-name>
     </book-order>
@@ -1294,6 +1521,8 @@
       <abbrev>Ge</abbrev>
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>01 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/01 ENG[B]LEB2012.sfm</source>
 
@@ -1308,6 +1537,8 @@
       <abbrev>Exo</abbrev>
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>02 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/02 ENG[B]LEB2012.sfm</source>
 
@@ -1322,6 +1553,8 @@
       <abbrev>Le</abbrev>
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>03 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/03 ENG[B]LEB2012.sfm</source>
 
@@ -1336,6 +1569,8 @@
       <abbrev>Num</abbrev>
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>04 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/04 ENG[B]LEB2012.sfm</source>
 
@@ -1350,6 +1585,8 @@
       <abbrev>Dt</abbrev>
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>05 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/05 ENG[B]LEB2012.sfm</source>
 
@@ -1364,6 +1601,8 @@
       <abbrev>Jos</abbrev>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>06 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/06 ENG[B]LEB2012.sfm</source>
 
@@ -1378,6 +1617,8 @@
       <abbrev>Jdg</abbrev>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>07 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/07 ENG[B]LEB2012.sfm</source>
 
@@ -1392,6 +1633,8 @@
       <abbrev>Ru</abbrev>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>08 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/08 ENG[B]LEB2012.sfm</source>
     </book>
@@ -1401,6 +1644,8 @@
       <abbrev>1 Sa</abbrev>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>09 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/09 ENG[B]LEB2012.sfm</source>
 
@@ -1415,6 +1660,8 @@
       <abbrev>2 Sa</abbrev>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>10 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/10 ENG[B]LEB2012.sfm</source>
 
@@ -1429,6 +1676,8 @@
       <abbrev>1 Ki</abbrev>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>11 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/11 ENG[B]LEB2012.sfm</source>
 
@@ -1443,6 +1692,8 @@
       <abbrev>2 Ki</abbrev>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>12 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/12 ENG[B]LEB2012.sfm</source>
 
@@ -1457,6 +1708,8 @@
       <abbrev>1 Chr</abbrev>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>13 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/13 ENG[B]LEB2012.sfm</source>
 
@@ -1471,6 +1724,8 @@
       <abbrev>2 Chr</abbrev>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>14 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/14 ENG[B]LEB2012.sfm</source>
 
@@ -1485,6 +1740,8 @@
       <abbrev>Ezr</abbrev>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>15 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/15 ENG[B]LEB2012.sfm</source>
     </book>
@@ -1494,6 +1751,8 @@
       <abbrev>Ne</abbrev>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>16 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/16 ENG[B]LEB2012.sfm</source>
 
@@ -1508,6 +1767,8 @@
       <abbrev>Es</abbrev>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>17 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/17 ENG[B]LEB2012.sfm</source>
 
@@ -1522,6 +1783,8 @@
       <abbrev>Job</abbrev>
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>18 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/18 ENG[B]LEB2012.sfm</source>
     </book>
@@ -1531,6 +1794,8 @@
       <abbrev>Ps</abbrev>
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>19 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/19 ENG[B]LEB2012.sfm</source>
 
@@ -1545,6 +1810,8 @@
       <abbrev>Pr</abbrev>
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>20 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/20 ENG[B]LEB2012.sfm</source>
 
@@ -1559,6 +1826,8 @@
       <abbrev>Ec</abbrev>
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>21 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/21 ENG[B]LEB2012.sfm</source>
 
@@ -1573,6 +1842,8 @@
       <abbrev>So</abbrev>
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>22 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/22 ENG[B]LEB2012.sfm</source>
 
@@ -1587,6 +1858,8 @@
       <abbrev>Is</abbrev>
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>23 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/23 ENG[B]LEB2012.sfm</source>
 
@@ -1601,6 +1874,8 @@
       <abbrev>Je</abbrev>
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>24 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/24 ENG[B]LEB2012.sfm</source>
 
@@ -1615,6 +1890,8 @@
       <abbrev>La</abbrev>
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>25 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/25 ENG[B]LEB2012.sfm</source>
 
@@ -1629,6 +1906,8 @@
       <abbrev>Eze</abbrev>
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>26 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/26 ENG[B]LEB2012.sfm</source>
 
@@ -1643,6 +1922,8 @@
       <abbrev>Da</abbrev>
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>27 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/27 ENG[B]LEB2012.sfm</source>
 
@@ -1657,6 +1938,8 @@
       <abbrev>Ho</abbrev>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>28 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/28 ENG[B]LEB2012.sfm</source>
 
@@ -1671,6 +1954,8 @@
       <abbrev>Joe</abbrev>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>29 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/29 ENG[B]LEB2012.sfm</source>
     </book>
@@ -1680,6 +1965,8 @@
       <abbrev>Am</abbrev>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>30 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/30 ENG[B]LEB2012.sfm</source>
 
@@ -1694,6 +1981,8 @@
       <abbrev>Ob</abbrev>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>31 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/31 ENG[B]LEB2012.sfm</source>
 
@@ -1708,6 +1997,8 @@
       <abbrev>Jon</abbrev>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>32 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/32 ENG[B]LEB2012.sfm</source>
 
@@ -1722,6 +2013,8 @@
       <abbrev>Mic</abbrev>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>33 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/33 ENG[B]LEB2012.sfm</source>
 
@@ -1736,6 +2029,8 @@
       <abbrev>Na</abbrev>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>34 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/34 ENG[B]LEB2012.sfm</source>
 
@@ -1750,6 +2045,8 @@
       <abbrev>Hab</abbrev>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>35 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/35 ENG[B]LEB2012.sfm</source>
 
@@ -1764,6 +2061,8 @@
       <abbrev>Zep</abbrev>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>36 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/36 ENG[B]LEB2012.sfm</source>
 
@@ -1778,6 +2077,8 @@
       <abbrev>Hag</abbrev>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>37 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/37 ENG[B]LEB2012.sfm</source>
 
@@ -1792,6 +2093,8 @@
       <abbrev>Zec</abbrev>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>38 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/38 ENG[B]LEB2012.sfm</source>
 
@@ -1806,6 +2109,8 @@
       <abbrev>Mal</abbrev>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>39 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/39 ENG[B]LEB2012.sfm</source>
 
@@ -1820,6 +2125,8 @@
       <abbrev>Mt</abbrev>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>40 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/40 ENG[B]LEB2012.sfm</source>
 
@@ -1834,6 +2141,8 @@
       <abbrev>Mk</abbrev>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>41 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/41 ENG[B]LEB2012.sfm</source>
 
@@ -1848,6 +2157,8 @@
       <abbrev>Lk</abbrev>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>42 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/42 ENG[B]LEB2012.sfm</source>
     </book>
@@ -1857,6 +2168,8 @@
       <abbrev>Jn</abbrev>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>43 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/43 ENG[B]LEB2012.sfm</source>
 
@@ -1871,6 +2184,8 @@
       <abbrev>Ac</abbrev>
       <group>NT</group>
       <sub-group>Acts</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>44 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/44 ENG[B]LEB2012.sfm</source>
 
@@ -1885,6 +2200,8 @@
       <abbrev>Ro</abbrev>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>45 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/45 ENG[B]LEB2012.sfm</source>
 
@@ -1899,6 +2216,8 @@
       <abbrev>1 Co</abbrev>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>46 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/46 ENG[B]LEB2012.sfm</source>
 
@@ -1913,6 +2232,8 @@
       <abbrev>2 Co</abbrev>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>47 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/47 ENG[B]LEB2012.sfm</source>
 
@@ -1927,6 +2248,8 @@
       <abbrev>Ga</abbrev>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>48 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/48 ENG[B]LEB2012.sfm</source>
 
@@ -1941,6 +2264,8 @@
       <abbrev>Eph</abbrev>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>49 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/49 ENG[B]LEB2012.sfm</source>
 
@@ -1955,6 +2280,8 @@
       <abbrev>Php</abbrev>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>50 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/50 ENG[B]LEB2012.sfm</source>
 
@@ -1969,6 +2296,8 @@
       <abbrev>Col</abbrev>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>51 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/51 ENG[B]LEB2012.sfm</source>
 
@@ -1983,6 +2312,8 @@
       <abbrev>1 Th</abbrev>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>52 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/52 ENG[B]LEB2012.sfm</source>
 
@@ -1997,6 +2328,8 @@
       <abbrev>2 Th</abbrev>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>53 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/53 ENG[B]LEB2012.sfm</source>
 
@@ -2011,6 +2344,8 @@
       <abbrev>1 Ti</abbrev>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>54 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/54 ENG[B]LEB2012.sfm</source>
 
@@ -2025,6 +2360,8 @@
       <abbrev>2 Ti</abbrev>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>55 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/55 ENG[B]LEB2012.sfm</source>
 
@@ -2039,6 +2376,8 @@
       <abbrev>Titus</abbrev>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>56 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/56 ENG[B]LEB2012.sfm</source>
     </book>
@@ -2048,6 +2387,8 @@
       <abbrev>Phm</abbrev>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>57 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/57 ENG[B]LEB2012.sfm</source>
 
@@ -2062,6 +2403,8 @@
       <abbrev>Heb</abbrev>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>58 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/58 ENG[B]LEB2012.sfm</source>
 
@@ -2076,6 +2419,8 @@
       <abbrev>Jas</abbrev>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>59 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/59 ENG[B]LEB2012.sfm</source>
 
@@ -2090,6 +2435,8 @@
       <abbrev>1 Pe</abbrev>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>60 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/60 ENG[B]LEB2012.sfm</source>
 
@@ -2104,6 +2451,8 @@
       <abbrev>2 Pe</abbrev>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>61 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/61 ENG[B]LEB2012.sfm</source>
 
@@ -2118,6 +2467,8 @@
       <abbrev>1 Jn</abbrev>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>62 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/62 ENG[B]LEB2012.sfm</source>
 
@@ -2132,6 +2483,8 @@
       <abbrev>2 Jn</abbrev>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>63 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/63 ENG[B]LEB2012.sfm</source>
 
@@ -2146,6 +2499,8 @@
       <abbrev>3 Jn</abbrev>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>64 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/64 ENG[B]LEB2012.sfm</source>
 
@@ -2160,6 +2515,8 @@
       <abbrev>Jud</abbrev>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>65 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/65 ENG[B]LEB2012.sfm</source>
     </book>
@@ -2169,6 +2526,8 @@
       <abbrev>Re</abbrev>
       <group>NT</group>
       <sub-group>Revelation</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>66 ENG[B]LEB2012.sfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/LEB/66 ENG[B]LEB2012.sfm</source>
 
@@ -2194,6 +2553,14 @@
       <feature name="ref-extra-material" value=""/>
       <feature name="ref-parse-introductions" value="false"/>
       <feature name="ref-parse-glossary" value="false"/>
+      <feature name="show-footnotes" value="true"/>
+      <feature name="footnote-caller-type" value="abc"/>
+      <feature name="footnote-caller-symbol" value=""/>
+      <feature name="footnote-caller-no-caller-to-auto" value="true"/>
+      <feature name="show-cross-refs" value="true"/>
+      <feature name="crossref-caller-type" value="abc"/>
+      <feature name="crossref-caller-symbol" value=""/>
+      <feature name="crossref-caller-no-caller-to-auto" value="true"/>
       <feature name="numerals-type" value="default"/>
       <feature name="bc-allow-single-pane" value="true"/>
       <feature name="bc-allow-copy-text" value="true"/>
@@ -2204,10 +2571,14 @@
       <feature name="bc-allow-verse-of-the-day" value="true"/>
       <feature name="bc-allow-share-audio" value="false"/>
       <feature name="bc-allow-share-video" value="false"/>
+      <feature name="study-bible-explanatory-text-box" value="false"/>
+      <feature name="study-bible-explanatory-text-collapsible" value="true"/>
+      <feature name="study-bible-sidebars-collapsible" value="true"/>
+      <feature name="study-bible-footnote-keyword-links" value="true"/>
     </features>
 
     <metadata>
-      <meta name="copyright-text" content="Cette Bible est dans le domaine public. Il n&apos;est pas protégé par copyright."/>
+      <meta name="copyright-text" content="Louis Segond 1910 est dans le domaine public. Il n&apos;est pas protégé par copyright."/>
     </metadata>
 
     <styles-info>
@@ -2221,6 +2592,8 @@
       <styles>
       </styles>
     </styles-info>
+
+    <font-choice type="all" />
 
     <book-order>
       <canon-name>Western Protestant Bible</canon-name>
@@ -2236,6 +2609,8 @@
       <name>Genèse</name>
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>02-GENfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/02-GENfraLSG.usfm</source>
     </book>
@@ -2244,6 +2619,8 @@
       <name>Exode</name>
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>03-EXOfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/03-EXOfraLSG.usfm</source>
     </book>
@@ -2252,6 +2629,8 @@
       <name>Lévitique</name>
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>04-LEVfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/04-LEVfraLSG.usfm</source>
     </book>
@@ -2260,6 +2639,8 @@
       <name>Nombres</name>
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>05-NUMfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/05-NUMfraLSG.usfm</source>
     </book>
@@ -2268,6 +2649,8 @@
       <name>Deutéronome</name>
       <group>OT</group>
       <sub-group>Pentateuch</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>06-DEUfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/06-DEUfraLSG.usfm</source>
     </book>
@@ -2276,6 +2659,8 @@
       <name>Josué</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>07-JOSfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/07-JOSfraLSG.usfm</source>
     </book>
@@ -2284,6 +2669,8 @@
       <name>Juges</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>08-JDGfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/08-JDGfraLSG.usfm</source>
     </book>
@@ -2292,6 +2679,8 @@
       <name>Ruth</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>09-RUTfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/09-RUTfraLSG.usfm</source>
     </book>
@@ -2300,6 +2689,8 @@
       <name>1 Samuel</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>10-1SAfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/10-1SAfraLSG.usfm</source>
     </book>
@@ -2308,6 +2699,8 @@
       <name>2 Samuel</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>11-2SAfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/11-2SAfraLSG.usfm</source>
     </book>
@@ -2316,6 +2709,8 @@
       <name>1 Rois</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>12-1KIfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/12-1KIfraLSG.usfm</source>
     </book>
@@ -2324,6 +2719,8 @@
       <name>2 Rois</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>13-2KIfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/13-2KIfraLSG.usfm</source>
     </book>
@@ -2332,6 +2729,8 @@
       <name>1 Chroniques</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>14-1CHfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/14-1CHfraLSG.usfm</source>
     </book>
@@ -2340,6 +2739,8 @@
       <name>2 Chroniques</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>15-2CHfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/15-2CHfraLSG.usfm</source>
     </book>
@@ -2348,6 +2749,8 @@
       <name>Esdras</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>16-EZRfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/16-EZRfraLSG.usfm</source>
     </book>
@@ -2356,6 +2759,8 @@
       <name>Néhémie</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>17-NEHfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/17-NEHfraLSG.usfm</source>
     </book>
@@ -2364,6 +2769,8 @@
       <name>Esther</name>
       <group>OT</group>
       <sub-group>Historical</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>18-ESTfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/18-ESTfraLSG.usfm</source>
     </book>
@@ -2372,6 +2779,8 @@
       <name>Job</name>
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>19-JOBfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/19-JOBfraLSG.usfm</source>
     </book>
@@ -2380,6 +2789,8 @@
       <name>Psaumes</name>
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>20-PSAfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/20-PSAfraLSG.usfm</source>
     </book>
@@ -2388,6 +2799,8 @@
       <name>Proverbes</name>
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>21-PROfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/21-PROfraLSG.usfm</source>
     </book>
@@ -2396,6 +2809,8 @@
       <name>Ecclésiaste</name>
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>22-ECCfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/22-ECCfraLSG.usfm</source>
     </book>
@@ -2404,6 +2819,8 @@
       <name>Cantique</name>
       <group>OT</group>
       <sub-group>PoetryWisdom</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>23-SNGfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/23-SNGfraLSG.usfm</source>
     </book>
@@ -2412,6 +2829,8 @@
       <name>Ésaïe</name>
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>24-ISAfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/24-ISAfraLSG.usfm</source>
     </book>
@@ -2420,6 +2839,8 @@
       <name>Jérémie</name>
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>25-JERfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/25-JERfraLSG.usfm</source>
     </book>
@@ -2428,6 +2849,8 @@
       <name>Lamentations</name>
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>26-LAMfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/26-LAMfraLSG.usfm</source>
     </book>
@@ -2436,6 +2859,8 @@
       <name>Ézékiel</name>
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>27-EZKfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/27-EZKfraLSG.usfm</source>
     </book>
@@ -2444,6 +2869,8 @@
       <name>Daniel</name>
       <group>OT</group>
       <sub-group>MajorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>28-DANfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/28-DANfraLSG.usfm</source>
     </book>
@@ -2452,6 +2879,8 @@
       <name>Osée</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>29-HOSfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/29-HOSfraLSG.usfm</source>
     </book>
@@ -2460,6 +2889,8 @@
       <name>Joël</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>30-JOLfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/30-JOLfraLSG.usfm</source>
     </book>
@@ -2468,6 +2899,8 @@
       <name>Amos</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>31-AMOfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/31-AMOfraLSG.usfm</source>
     </book>
@@ -2476,6 +2909,8 @@
       <name>Abdias</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>32-OBAfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/32-OBAfraLSG.usfm</source>
     </book>
@@ -2484,6 +2919,8 @@
       <name>Jonas</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>33-JONfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/33-JONfraLSG.usfm</source>
     </book>
@@ -2492,6 +2929,8 @@
       <name>Michée</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>34-MICfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/34-MICfraLSG.usfm</source>
     </book>
@@ -2500,6 +2939,8 @@
       <name>Nahum</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>35-NAMfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/35-NAMfraLSG.usfm</source>
     </book>
@@ -2508,6 +2949,8 @@
       <name>Habacuc</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>36-HABfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/36-HABfraLSG.usfm</source>
     </book>
@@ -2516,6 +2959,8 @@
       <name>Sophonie</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>37-ZEPfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/37-ZEPfraLSG.usfm</source>
     </book>
@@ -2524,6 +2969,8 @@
       <name>Aggée</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>38-HAGfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/38-HAGfraLSG.usfm</source>
     </book>
@@ -2532,6 +2979,8 @@
       <name>Zacharie</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>39-ZECfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/39-ZECfraLSG.usfm</source>
     </book>
@@ -2540,6 +2989,8 @@
       <name>Malachie</name>
       <group>OT</group>
       <sub-group>MinorProphet</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>40-MALfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/40-MALfraLSG.usfm</source>
     </book>
@@ -2548,6 +2999,8 @@
       <name>Matthieu</name>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>46-MATfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/46-MATfraLSG.usfm</source>
 
@@ -2560,6 +3013,8 @@
       <name>Marc</name>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>47-MRKfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/47-MRKfraLSG.usfm</source>
 
@@ -2572,6 +3027,8 @@
       <name>Luc</name>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>48-LUKfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/48-LUKfraLSG.usfm</source>
 
@@ -2584,6 +3041,8 @@
       <name>Jean</name>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>73-JHNfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/73-JHNfraLSG.usfm</source>
 
@@ -2596,6 +3055,8 @@
       <name>Actes</name>
       <group>NT</group>
       <sub-group>Acts</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>50-ACTfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/50-ACTfraLSG.usfm</source>
 
@@ -2608,6 +3069,8 @@
       <name>Romains</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>51-ROMfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/51-ROMfraLSG.usfm</source>
     </book>
@@ -2616,6 +3079,8 @@
       <name>1 Corinthiens</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>52-1COfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/52-1COfraLSG.usfm</source>
 
@@ -2628,6 +3093,8 @@
       <name>2 Corinthiens</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>53-2COfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/53-2COfraLSG.usfm</source>
 
@@ -2640,6 +3107,8 @@
       <name>Galates</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>54-GALfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/54-GALfraLSG.usfm</source>
     </book>
@@ -2648,6 +3117,8 @@
       <name>Éphésiens</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>55-EPHfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/55-EPHfraLSG.usfm</source>
     </book>
@@ -2656,6 +3127,8 @@
       <name>Philippiens</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>56-PHPfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/56-PHPfraLSG.usfm</source>
     </book>
@@ -2664,6 +3137,8 @@
       <name>Colossiens</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>57-COLfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/57-COLfraLSG.usfm</source>
     </book>
@@ -2672,6 +3147,8 @@
       <name>1 Thessaloniciens</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>58-1THfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/58-1THfraLSG.usfm</source>
     </book>
@@ -2680,6 +3157,8 @@
       <name>2 Thessaloniciens</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>59-2THfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/59-2THfraLSG.usfm</source>
     </book>
@@ -2688,6 +3167,8 @@
       <name>1 Timothée</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>60-1TIfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/60-1TIfraLSG.usfm</source>
     </book>
@@ -2696,6 +3177,8 @@
       <name>2 Timothée</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>61-2TIfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/61-2TIfraLSG.usfm</source>
     </book>
@@ -2704,6 +3187,8 @@
       <name>Tite</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>62-TITfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/62-TITfraLSG.usfm</source>
     </book>
@@ -2712,6 +3197,8 @@
       <name>Philémon</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>63-PHMfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/63-PHMfraLSG.usfm</source>
     </book>
@@ -2720,6 +3207,8 @@
       <name>Hébreux</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>64-HEBfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/64-HEBfraLSG.usfm</source>
     </book>
@@ -2728,6 +3217,8 @@
       <name>Jacques</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>65-JASfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/65-JASfraLSG.usfm</source>
     </book>
@@ -2736,6 +3227,8 @@
       <name>1 Pierre</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>66-1PEfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/66-1PEfraLSG.usfm</source>
     </book>
@@ -2744,6 +3237,8 @@
       <name>2 Pierre</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>91-2PEfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/91-2PEfraLSG.usfm</source>
     </book>
@@ -2752,6 +3247,8 @@
       <name>1 Jean</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>68-1JNfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/68-1JNfraLSG.usfm</source>
     </book>
@@ -2760,6 +3257,8 @@
       <name>2 Jean</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>69-2JNfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/69-2JNfraLSG.usfm</source>
     </book>
@@ -2768,6 +3267,8 @@
       <name>3 Jean</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>70-3JNfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/70-3JNfraLSG.usfm</source>
     </book>
@@ -2776,6 +3277,8 @@
       <name>Jude</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>71-JUDfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/71-JUDfraLSG.usfm</source>
     </book>
@@ -2784,6 +3287,8 @@
       <name>Apocalypse</name>
       <group>NT</group>
       <sub-group>Revelation</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>72-REVfraLSG.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/fraLSG_usfm/72-REVfraLSG.usfm</source>
 
@@ -2808,6 +3313,14 @@
       <feature name="ref-extra-material" value=""/>
       <feature name="ref-parse-introductions" value="false"/>
       <feature name="ref-parse-glossary" value="false"/>
+      <feature name="show-footnotes" value="true"/>
+      <feature name="footnote-caller-type" value="abc"/>
+      <feature name="footnote-caller-symbol" value=""/>
+      <feature name="footnote-caller-no-caller-to-auto" value="true"/>
+      <feature name="show-cross-refs" value="true"/>
+      <feature name="crossref-caller-type" value="abc"/>
+      <feature name="crossref-caller-symbol" value=""/>
+      <feature name="crossref-caller-no-caller-to-auto" value="true"/>
       <feature name="numerals-type" value="default"/>
       <feature name="bc-allow-single-pane" value="true"/>
       <feature name="bc-allow-copy-text" value="true"/>
@@ -2818,6 +3331,10 @@
       <feature name="bc-allow-verse-of-the-day" value="true"/>
       <feature name="bc-allow-share-audio" value="false"/>
       <feature name="bc-allow-share-video" value="false"/>
+      <feature name="study-bible-explanatory-text-box" value="false"/>
+      <feature name="study-bible-explanatory-text-collapsible" value="true"/>
+      <feature name="study-bible-sidebars-collapsible" value="true"/>
+      <feature name="study-bible-footnote-keyword-links" value="true"/>
     </features>
 
     <metadata>
@@ -2836,6 +3353,8 @@
       </styles>
     </styles-info>
 
+    <font-choice type="all" />
+
     <book-order>
       <canon-name>Western Protestant Bible</canon-name>
     </book-order>
@@ -2847,6 +3366,8 @@
       <name>Κατα Μαθθαιον</name>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>46-MATgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/46-MATgrcsbl.usfm</source>
     </book>
@@ -2855,6 +3376,8 @@
       <name>Κατα Μαρκον</name>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>47-MRKgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/47-MRKgrcsbl.usfm</source>
     </book>
@@ -2863,6 +3386,8 @@
       <name>Κατα Λουκαν</name>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>48-LUKgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/48-LUKgrcsbl.usfm</source>
     </book>
@@ -2871,6 +3396,8 @@
       <name>Κατα Ιωαννην</name>
       <group>NT</group>
       <sub-group>Gospel</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>49-JHNgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/49-JHNgrcsbl.usfm</source>
     </book>
@@ -2879,6 +3406,8 @@
       <name>Πραξεισ Αποστολων</name>
       <group>NT</group>
       <sub-group>Acts</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>50-ACTgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/50-ACTgrcsbl.usfm</source>
     </book>
@@ -2887,6 +3416,8 @@
       <name>Προσ Ρωμαιους</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>51-ROMgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/51-ROMgrcsbl.usfm</source>
 
@@ -2900,6 +3431,8 @@
       <name>Προσ Κορινθιους Α</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>52-1COgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/52-1COgrcsbl.usfm</source>
 
@@ -2913,6 +3446,8 @@
       <name>Προσ Κορινθιους Β</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>53-2COgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/53-2COgrcsbl.usfm</source>
 
@@ -2926,6 +3461,8 @@
       <name>Προσ Γαλατας</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>54-GALgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/54-GALgrcsbl.usfm</source>
 
@@ -2939,6 +3476,8 @@
       <name>Προσ Εφεσιους</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>55-EPHgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/55-EPHgrcsbl.usfm</source>
 
@@ -2952,6 +3491,8 @@
       <name>Προσ Φιλιππησιους</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>56-PHPgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/56-PHPgrcsbl.usfm</source>
 
@@ -2965,6 +3506,8 @@
       <name>Προσ Κολοσσαεις</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>57-COLgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/57-COLgrcsbl.usfm</source>
 
@@ -2978,6 +3521,8 @@
       <name>Προσ Θεσσαλονικεις Α</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>58-1THgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/58-1THgrcsbl.usfm</source>
 
@@ -2991,6 +3536,8 @@
       <name>Προσ Θεσσαλονικεις Β</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>59-2THgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/59-2THgrcsbl.usfm</source>
 
@@ -3004,6 +3551,8 @@
       <name>Προσ Τιμοθεον Α</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>60-1TIgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/60-1TIgrcsbl.usfm</source>
     </book>
@@ -3012,6 +3561,8 @@
       <name>Προσ Τιμοθεον Β</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>61-2TIgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/61-2TIgrcsbl.usfm</source>
     </book>
@@ -3020,6 +3571,8 @@
       <name>Προσ Τιτον</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>62-TITgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/62-TITgrcsbl.usfm</source>
     </book>
@@ -3028,6 +3581,8 @@
       <name>Προσ Φιλημονα</name>
       <group>NT</group>
       <sub-group>PaulineEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>63-PHMgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/63-PHMgrcsbl.usfm</source>
     </book>
@@ -3036,6 +3591,8 @@
       <name>Προσ Εβραιους</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>64-HEBgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/64-HEBgrcsbl.usfm</source>
 
@@ -3049,6 +3606,8 @@
       <name>Ιακωβου</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>65-JASgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/65-JASgrcsbl.usfm</source>
     </book>
@@ -3057,6 +3616,8 @@
       <name>Πετρου Α</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>66-1PEgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/66-1PEgrcsbl.usfm</source>
     </book>
@@ -3065,6 +3626,8 @@
       <name>Πετρου Β</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>67-2PEgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/67-2PEgrcsbl.usfm</source>
     </book>
@@ -3073,6 +3636,8 @@
       <name>Ιωαννου Α</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>68-1JNgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/68-1JNgrcsbl.usfm</source>
     </book>
@@ -3081,6 +3646,8 @@
       <name>Ιωαννου Β</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>69-2JNgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/69-2JNgrcsbl.usfm</source>
     </book>
@@ -3089,6 +3656,8 @@
       <name>Ιωαννου Γ</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>70-3JNgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/70-3JNgrcsbl.usfm</source>
     </book>
@@ -3097,6 +3666,8 @@
       <name>Ιουδα</name>
       <group>NT</group>
       <sub-group>GeneralEpistle</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>71-JUDgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/71-JUDgrcsbl.usfm</source>
     </book>
@@ -3105,6 +3676,8 @@
       <name>Αποκαλυψισ Ιωαννου</name>
       <group>NT</group>
       <sub-group>Revelation</sub-group>
+
+      <font-choice type="book-collection" />
       <filename>72-REVgrcsbl.usfm</filename>
       <source>/Users/corey/OneDrive - SIM International, Inc/Documents/App Builder/flutter/usfm_bible/grcsbl_usfm/72-REVgrcsbl.usfm</source>
     </book>
@@ -3179,6 +3752,7 @@
       <feature name="access-code-algorithm" value="B"/>
       <feature name="require-internet" value="false"/>
       <feature name="calc-code" value=""/>
+      <feature name="users-database-path" value="top-level"/>
     </features>
     <key>dW3OjTHmXLT+/rVAZyPsoA==</key>
     <pin>9M9Gp6KKE5c=</pin>
@@ -3664,6 +4238,20 @@ Please enter your access code:</translation>
   </interface-languages>
 
   <translation-mappings default-lang="wol">
+    <translation-mapping id="Menu_Bible">
+      <translation lang="en">Bible</translation>
+      <translation lang="fr">Bible</translation>
+      <translation lang="es">Biblia</translation>
+      <translation lang="pt">Bíblia</translation>
+      <translation lang="ru">Библия</translation>
+      <translation lang="de">Bibel</translation>
+      <translation lang="it">Bibbia</translation>
+      <translation lang="nl">Bijbel</translation>
+      <translation lang="hi">बाइबल</translation>
+      <translation lang="zh">圣经</translation>
+      <translation lang="id">Alkitab</translation>
+      <translation lang="ko">성경</translation>
+    </translation-mapping>
     <translation-mapping id="Menu_Contents">
       <translation lang="en">Contents</translation>
       <translation lang="fr">Contenu</translation>
@@ -3734,7 +4322,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Taal &amp; Lay out</translation>
       <translation lang="ta">தள அமைப்பு</translation>
       <translation lang="hin">भाषा और ख़ाका</translation>
-      <translation lang="wol">Sotti yi</translation>
+      <translation lang="wol">Tekkite yi</translation>
     </translation-mapping>
     <translation-mapping id="Menu_History">
       <translation lang="en">History</translation>
@@ -3752,7 +4340,7 @@ Please enter your access code:</translation>
       <translation lang="ko">사용기록</translation>
       <translation lang="nl">Geschiedenis</translation>
       <translation lang="ta">முந்தைய வாசிப்புகள்</translation>
-      <translation lang="wol">Tànk yi</translation>
+      <translation lang="wol">Njàng yi wees</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Settings">
       <translation lang="en">Settings</translation>
@@ -3949,6 +4537,11 @@ Please enter your access code:</translation>
       <translation lang="ar">إعادة ضبط المحتويات</translation>
       <translation lang="wol"></translation>
     </translation-mapping>
+    <translation-mapping id="Menu_Plans">
+      <translation lang="en">Plans</translation>
+      <translation lang="fr">Plans</translation>
+      <translation lang="es">Planes</translation>
+    </translation-mapping>
     <translation-mapping id="Menu_Item_Copy">
       <translation lang="en">Copy</translation>
       <translation lang="fr">Copier</translation>
@@ -4006,7 +4599,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Favorieten</translation>
       <translation lang="ta">குறிக்கப்பட்ட வசனங்கள்</translation>
       <translation lang="hin">बुक मार्क</translation>
-      <translation lang="wol">Denc yi</translation>
+      <translation lang="wol">Dencukaay bi</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Highlights">
       <translation lang="en">Highlights</translation>
@@ -4029,7 +4622,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Hoogtepunten</translation>
       <translation lang="ta">முக்கிய வசனங்கள்</translation>
       <translation lang="hin">प्रमुख्ताएं</translation>
-      <translation lang="wol">Fésal yi</translation>
+      <translation lang="wol">Dencukaayu li nga fésal</translation>
     </translation-mapping>
     <translation-mapping id="Annotation_Notes">
       <translation lang="en">Notes</translation>
@@ -5635,7 +6228,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Gebruikershandleiding</translation>
       <translation lang="ta">வாசித்தல்</translation>
       <translation lang="hin">उपयोक्ता इंटरफेस</translation>
-      <translation lang="wol">Diisookaayu jëfookat bi</translation>
+      <translation lang="wol">Waxtaanukaayu jëfandikookat bi</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Book_Selection">
       <translation lang="en">Book Selection</translation>
@@ -6241,7 +6834,7 @@ Please enter your access code:</translation>
       <translation lang="ms">Sentiasa tanya sebelum memuat turun</translation>
       <translation lang="nl">Toestemming vragen voor het downloaden</translation>
       <translation lang="ta">அனுமதி பெற்று பதிவிறக்கு</translation>
-      <translation lang="wol">Laajte doora yebbi</translation>
+      <translation lang="wol">Laajte, doora yeb</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Audio_Download_Automatic">
       <translation lang="en">Download automatically</translation>
@@ -6298,7 +6891,7 @@ Please enter your access code:</translation>
       <translation lang="ms">Teruskan skrin</translation>
       <translation lang="nl">Scherm zichtbaar laten</translation>
       <translation lang="ta">திரை அணையாமல் வை</translation>
-      <translation lang="wol">Bàyyil tablo bi muy takk</translation>
+      <translation lang="wol">Bàyyi tablo bi muy tàkk</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Share_Usage_Data">
       <translation lang="en">Share usage data</translation>
@@ -6329,6 +6922,7 @@ Please enter your access code:</translation>
       <translation lang="ta">இன்றைய வசனம்</translation>
       <translation lang="de">Vers des Tages</translation>
       <translation lang="wol">Aaya bés bi</translation>
+      <translation lang="pt">Verso do dia</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Of_The_Day_Time">
       <translation lang="en">Time for verse of the day</translation>
@@ -6340,6 +6934,7 @@ Please enter your access code:</translation>
       <translation lang="ta">இன்றைய வசன நேரம்</translation>
       <translation lang="de">Zeitpunkt für Vers des Tages</translation>
       <translation lang="wol">Waxtuw aaya bés bi</translation>
+      <translation lang="pt">Hora do verso do dia</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Verse_Of_The_Day_Book_Collection">
       <translation lang="en">Translation for verse of the day</translation>
@@ -6350,7 +6945,8 @@ Please enter your access code:</translation>
       <translation lang="ar">ترجمة آية اليوم</translation>
       <translation lang="ta">இன்றைய வசனத்தின் மொழிபெயர்ப்பு</translation>
       <translation lang="de">Übersetzung für Vers des Tages</translation>
-      <translation lang="wol">Sottib aaya bés bi</translation>
+      <translation lang="wol">Tekkite aaya bés bi</translation>
+      <translation lang="pt">Tradução para verso do dia</translation>
     </translation-mapping>
     <translation-mapping id="Settings_Daily_Reminder">
       <translation lang="en">Daily reminder</translation>
@@ -6559,19 +7155,26 @@ Please enter your access code:</translation>
       <translation lang="de">Änderungen speichern</translation>
       <translation lang="ar">حفظ التغييرات</translation>
     </translation-mapping>
-    <translation-mapping id="Account_Delete_Account">
+    <translation-mapping id="Account_Delete_Account_Button">
       <translation lang="en">Delete Account</translation>
       <translation lang="fr">Supprimer compte</translation>
       <translation lang="ru">Удалить аккаунт</translation>
       <translation lang="de">Konto löschen</translation>
       <translation lang="ar">حذف الحساب</translation>
     </translation-mapping>
-    <translation-mapping id="Account_Delete_Account_Confirmation">
-      <translation lang="en">Do you want to delete your account?\n\nAll your saved highlights, notes and bookmarks will be deleted.</translation>
-      <translation lang="fr">Voulez-vous supprimer votre compte ? Tous les surlignements, notes et signets que vous avez enregistrés seront supprimés.</translation>
-      <translation lang="ru">Вы хотите удалить свой аккаунт?\n\nВсе внесенные вами изменения, заметки и закладки будут удалены.</translation>
-      <translation lang="de">Möchten Sie Ihr Konto löschen?\n\nAlle Ihre gespeicherten Highlights, Notizen und Lesezeichen werden gelöscht.</translation>
-      <translation lang="ar">هل ترغب في حذف حسابك؟ \n\nسوف يتم حذف كل النقاط الهامة والملاحظات والاشارات المرجعية التي قمت بحفظها</translation>
+    <translation-mapping id="Account_Delete_Account_Title">
+      <translation lang="en">Delete Account</translation>
+      <translation lang="fr">Supprimer compte</translation>
+      <translation lang="ru">Удалить аккаунт</translation>
+      <translation lang="de">Konto löschen</translation>
+      <translation lang="ar">حذف الحساب</translation>
+    </translation-mapping>
+    <translation-mapping id="Account_Delete_Account_Info">
+      <translation lang="en">If you delete your account, all your saved highlights, notes and bookmarks will be deleted.\n\nPlease enter your password to confirm that you want to do this.</translation>
+      <translation lang="fr">Si vous supprimez votre compte, tous les surlignements, notes et signets que vous avez enregistrés seront supprimés.\n\nVeuillez saisir votre mot de passe pour confirmer que vous souhaitez le faire.</translation>
+      <translation lang="es">Si elimina su cuenta, se borrarán todos sus destacados, notas y marcadores guardados.\n\nIntroduzca su contraseña para confirmar que desea hacerlo.</translation>
+      <translation lang="ru">Если Вы удалите свою учетную запись, все сохраненные Вами основные моменты, заметки и закладки будут удалены.\n\nПожалуйста, введите свой пароль, чтобы подтвердить, что Вы хотите это сделать.</translation>
+      <translation lang="ar">إذا قمت بحذف حسابك ، فسيتم حذف جميع العلامات المميزة والملاحظات والإشارات المرجعية المحفوظة.\n\nالرجاء إدخال كلمة المرور الخاصة بك لتأكيد رغبتك في القيام بذلك.</translation>
     </translation-mapping>
     <translation-mapping id="Account_Login_Page_Heading">
       <translation lang="en">Sign In or Sign Up</translation>
@@ -6704,9 +7307,10 @@ Please enter your access code:</translation>
     <translation-mapping id="Account_Message_Delete_Account_Error">
       <translation lang="en">Sorry, we were unable to delete your account.</translation>
       <translation lang="fr">Désolé, nous n&apos;avons pas pu supprimer votre compte.</translation>
+      <translation lang="es">Lo sentimos, no hemos podido eliminar su cuenta.\n\nPor favor, compruebe que ha introducido correctamente su contraseña y que dispone de conexión a Internet.</translation>
       <translation lang="ru">К сожалению, удалить ваш аккаунт не удаётся.</translation>
-      <translation lang="de">Es tut uns leid, wir konnten Ihr Konto nicht löschen.</translation>
       <translation lang="ar">للأسف، لم نتمكن من مسح حسابك</translation>
+      <translation lang="de">Es tut uns leid, wir konnten Ihr Konto nicht löschen.</translation>
     </translation-mapping>
     <translation-mapping id="Account_Message_Delete_Account_Success">
       <translation lang="en">Your account was deleted successfully.</translation>
@@ -6714,6 +7318,9 @@ Please enter your access code:</translation>
       <translation lang="ru">Ваш аккаунт успешно удалён.</translation>
       <translation lang="de">Ihr Konto wurde erfolgreich gelöscht.</translation>
       <translation lang="ar">تم مسح حسابك بنجاح</translation>
+    </translation-mapping>
+    <translation-mapping id="Account_Message_Delete_Account_Need_Password">
+      <translation lang="en">Please enter your password to delete this account.</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Verse_Of_The_Day_Title">
       <translation lang="en">Verse of the Day</translation>
@@ -6725,6 +7332,7 @@ Please enter your access code:</translation>
       <translation lang="ta">இன்றைய வசனம்</translation>
       <translation lang="de">Vers des Tages</translation>
       <translation lang="wol">Aaya bés bi</translation>
+      <translation lang="pt">Verso do dia</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Daily_Reminder_Title">
       <translation lang="en">Daily Reminder</translation>
@@ -6759,6 +7367,9 @@ Please enter your access code:</translation>
       <translation lang="ar">رسائل</translation>
       <translation lang="wol"></translation>
     </translation-mapping>
+    <translation-mapping id="Notification_Channel_Name_Media_Player">
+      <translation lang="en">Media Player</translation>
+    </translation-mapping>
     <translation-mapping id="Notification_Channel_Name_Verse_Of_The_Day">
       <translation lang="en">Verse of the Day</translation>
       <translation lang="fr">Verset du jour</translation>
@@ -6770,6 +7381,7 @@ Please enter your access code:</translation>
       <translation lang="de">Vers des Tages</translation>
       <translation lang="ar">آية اليوم</translation>
       <translation lang="wol">Aaya bés bi</translation>
+      <translation lang="pt">Verso do dia</translation>
     </translation-mapping>
     <translation-mapping id="Notification_Channel_Name_Daily_Reminder">
       <translation lang="en">Daily Reminder</translation>
@@ -6807,16 +7419,35 @@ Please enter your access code:</translation>
       <translation lang="de">Bitte erlauben Sie dieser App, Ihnen Benachrichtigungen zu senden.</translation>
       <translation lang="wol">Mayal app bi mu yónnee ay yégle</translation>
     </translation-mapping>
-    <translation-mapping id="Notification_Please_Allow_Info">
-      <translation lang="en">You can get a verse of the day and daily reminders.</translation>
-      <translation lang="fr">Vous pouvez recevoir un verset du jour et des rappels quotidiens.</translation>
-      <translation lang="ru">Вы можете получать цитату дня и ежедневные оповещения</translation>
-      <translation lang="id">Anda bisa mendapatkan nats harian dan peringatan harian.</translation>
-      <translation lang="ar">يمكنك أن تتلقى آية وتذكيرًا يوميًا</translation>
-      <translation lang="nl">Je kunt een vers van de dag en dagelijkse herinneringen ontvangen.</translation>
-      <translation lang="ta">இன்றைய வசனம் மற்றும் தினசரி நினைவூட்டல்களையும் நீங்கள் பெறலாம்</translation>
-      <translation lang="de">Sie können einen Vers des Tages und tägliche Erinnerungen erhalten.</translation>
-      <translation lang="wol">Man ngaa jot aaya bés bi ak ay fàttliy bés</translation>
+    <translation-mapping id="Notification_Reason_1">
+      <translation lang="en">You can receive %s.</translation>
+      <translation lang="fr">Vous pouvez recevoir %s.</translation>
+      <translation lang="wol">Man nga jot %s.</translation>
+    </translation-mapping>
+    <translation-mapping id="Notification_Reason_2">
+      <translation lang="en">You can receive %s and %s.</translation>
+      <translation lang="fr">Vous pouvez recevoir %s and %s.</translation>
+      <translation lang="wol">Man nga jot %s ak %s.</translation>
+    </translation-mapping>
+    <translation-mapping id="Notification_Reason_3">
+      <translation lang="en">You can receive %s, %s and %s.</translation>
+      <translation lang="fr">Vous pouvez recevoir %s, %s et %s.</translation>
+      <translation lang="wol">Man nga jot %s, %s, ak %s.</translation>
+    </translation-mapping>
+    <translation-mapping id="Notification_Reason_Verse_Of_The_Day">
+      <translation lang="en">a verse of the day</translation>
+      <translation lang="fr">un verset du jour</translation>
+      <translation lang="es">un versículo del día</translation>
+    </translation-mapping>
+    <translation-mapping id="Notification_Reason_Daily_Reminders">
+      <translation lang="en">daily reminders</translation>
+      <translation lang="fr">des rappels quotidiens</translation>
+      <translation lang="es">recordatorios diarios</translation>
+    </translation-mapping>
+    <translation-mapping id="Notification_Reason_Push_Notifications">
+      <translation lang="en">messages from the app developers</translation>
+      <translation lang="fr">messages des développeurs de l&apos;application</translation>
+      <translation lang="wol">ay xibaar yu jóge ci ñi defar appli bi</translation>
     </translation-mapping>
     <translation-mapping id="Song_List_By_Number">
       <translation lang="en">BY NUMBER</translation>
@@ -6958,7 +7589,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Oude Testament</translation>
       <translation lang="ta">பழைய ஏற்பாடு</translation>
       <translation lang="hin">पुराना नियम</translation>
-      <translation lang="wol">Kóllëre gu Jëkk gi</translation>
+      <translation lang="wol">Kóllëre gi njëkk</translation>
     </translation-mapping>
     <translation-mapping id="Book_Group_NT">
       <translation lang="en">New Testament</translation>
@@ -6982,7 +7613,7 @@ Please enter your access code:</translation>
       <translation lang="nl">Nieuwe Testament</translation>
       <translation lang="ta">புதிய ஏற்பாடு</translation>
       <translation lang="hin">नया नियम</translation>
-      <translation lang="wol">Kóllëre gu Bees gi</translation>
+      <translation lang="wol">Kóllëre gi yees</translation>
     </translation-mapping>
     <translation-mapping id="Book_Group_DC">
       <translation lang="en">Deuterocanonical</translation>
@@ -7012,6 +7643,7 @@ Please enter your access code:</translation>
       <translation lang="ru">Выберите язык и разметку</translation>
       <translation lang="de">Sprache und Layout auswählen</translation>
       <translation lang="ar">اختيار اللغة والترتيبة</translation>
+      <translation lang="wol">Tekkite ak meloy wërngal bi</translation>
     </translation-mapping>
     <translation-mapping id="Layout_Single_Pane">
       <translation lang="en">Single Pane</translation>
@@ -7168,6 +7800,78 @@ Please enter your access code:</translation>
       <translation lang="ko">추가 (\\)</translation>
       <translation lang="de">Sonstiges (\\\)</translation>
       <translation lang="hin">अन्य  (\\)</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Button_Start_Plan">
+      <translation lang="en">Start Plan</translation>
+      <translation lang="fr">Commencer</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Button_Start_Again">
+      <translation lang="en">Start Again</translation>
+      <translation lang="fr">Recommencer</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Button_Continue_Reading">
+      <translation lang="en">Continue</translation>
+      <translation lang="fr">Continuer</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Button_Next_Reading">
+      <translation lang="en">Next</translation>
+      <translation lang="fr">Suivant</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Button_View_Plan">
+      <translation lang="en">View Plan</translation>
+      <translation lang="fr">Voir plan</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Button_View_Plans">
+      <translation lang="en">View Plans</translation>
+      <translation lang="fr">Voir plans</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Tab_My_Plans">
+      <translation lang="en">My Plans</translation>
+      <translation lang="fr">Mes plans</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Tab_Choose_Plan">
+      <translation lang="en">Choose Plan</translation>
+      <translation lang="fr">Choisir plan</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Tab_Completed_Plans">
+      <translation lang="en">Completed</translation>
+      <translation lang="fr">Terminés</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Day">
+      <translation lang="en">Day</translation>
+      <translation lang="fr">Jour</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Number_Days">
+      <translation lang="en">%d days</translation>
+      <translation lang="fr">%d jours</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Date_Started">
+      <translation lang="en">You started this plan on %s.</translation>
+      <translation lang="fr">Vous avez commencé ce plan le %s.</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Date_Completed">
+      <translation lang="en">You completed this plan on %s.</translation>
+      <translation lang="fr">Vous avez terminé ce plan le %s.</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Progress_Item_Reading">
+      <translation lang="en">You are reading</translation>
+      <translation lang="fr">Vous êtes en train de lire</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Progress_Item_Completed">
+      <translation lang="en">You have completed</translation>
+      <translation lang="fr">Vous avez lu</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Progress_Congratulations">
+      <translation lang="en">Congratulations!</translation>
+      <translation lang="fr">Félicitations !</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Progress_Plan_Completed">
+      <translation lang="en">You have completed the plan</translation>
+      <translation lang="fr">Vous avez terminé le plan</translation>
+    </translation-mapping>
+    <translation-mapping id="Plans_Progress_Next_Reading">
+      <translation lang="en">The next reading is</translation>
+      <translation lang="fr">La lecture suivante est</translation>
     </translation-mapping>
     <translation-mapping id="Quiz_Score_Page_Message_Before">
       <translation lang="en">You scored</translation>
@@ -7754,6 +8458,32 @@ Please enter your access code:</translation>
       <translation lang="es">para que podamos guardar las imágenes que crea</translation>
       <translation lang="ar">يمكننا حفظ الصورة التي أنشأتها</translation>
       <translation lang="wol">Ndax nga man denc photos yi nga defar</translation>
+    </translation-mapping>
+    <translation-mapping id="Notification_Please_Allow_Info">
+      <translation lang="en">You can get a verse of the day and daily reminders.</translation>
+      <translation lang="fr">Vous pouvez recevoir un verset du jour et des rappels quotidiens.</translation>
+      <translation lang="ru">Вы можете получать цитату дня и ежедневные оповещения</translation>
+      <translation lang="id">Anda bisa mendapatkan nats harian dan peringatan harian.</translation>
+      <translation lang="ar">يمكنك أن تتلقى آية وتذكيرًا يوميًا</translation>
+      <translation lang="nl">Je kunt een vers van de dag en dagelijkse herinneringen ontvangen.</translation>
+      <translation lang="ta">இன்றைய வசனம் மற்றும் தினசரி நினைவூட்டல்களையும் நீங்கள் பெறலாம்</translation>
+      <translation lang="de">Sie können einen Vers des Tages und tägliche Erinnerungen erhalten.</translation>
+      <translation lang="wol">Man ngaa jot aaya bés bi ak ay fàttliy bés</translation>
+      <translation lang="pt">Você pode obter um verso diário e lembretes diários</translation>
+    </translation-mapping>
+    <translation-mapping id="Account_Delete_Account">
+      <translation lang="en">Delete Account</translation>
+      <translation lang="fr">Supprimer compte</translation>
+      <translation lang="ru">Удалить аккаунт</translation>
+      <translation lang="de">Konto löschen</translation>
+      <translation lang="ar">حذف الحساب</translation>
+    </translation-mapping>
+    <translation-mapping id="Account_Delete_Account_Confirmation">
+      <translation lang="en">Do you want to delete your account?\n\nAll your saved highlights, notes and bookmarks will be deleted.</translation>
+      <translation lang="fr">Voulez-vous supprimer votre compte ? Tous les surlignements, notes et signets que vous avez enregistrés seront supprimés.</translation>
+      <translation lang="ru">Вы хотите удалить свой аккаунт?\n\nВсе внесенные вами изменения, заметки и закладки будут удалены.</translation>
+      <translation lang="de">Möchten Sie Ihr Konto löschen?\n\nAlle Ihre gespeicherten Highlights, Notizen und Lesezeichen werden gelöscht.</translation>
+      <translation lang="ar">هل ترغب في حذف حسابك؟ \n\nسوف يتم حذف كل النقاط الهامة والملاحظات والاشارات المرجعية التي قمت بحفظها</translation>
     </translation-mapping>
     <translation-mapping id="Menu_Text_Size">
       <translation lang="en">Text Size</translation>

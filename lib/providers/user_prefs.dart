@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:usfm_bible/logic/database_builder.dart';
 import 'dart:core';
-import 'package:hive_flutter/hive_flutter.dart';
 
 import '../hive/user_columns_db.dart';
 import '../main.dart' as main;
@@ -34,7 +33,6 @@ class UserPrefList {
 }
 
 class UserPrefs with ChangeNotifier {
-  Box<UserColumnsDB> mybox = main.userColumnsBox;
   late UserPrefList _userPrefList;
 
   UserPrefList get userPrefList {
@@ -58,16 +56,14 @@ class UserPrefs with ChangeNotifier {
     notifyListeners();
   }
 
- 
   loadUserPrefs(AppInfo appInfo) async {
-    // printWhatsInList();
     //Check if the user has an existing session. If not, set up the initial session.
     if (main.userColumnsBox.isEmpty) {
       initializePrefs(appInfo);
     } else {
       try {
-        // print('getting usercolumns from local db');
-        // printWhatsInBox();
+        // print('loading usercolumns from userColumnsBox');
+
         for (var i = 0; i < main.userColumnsBox.length; i++) {
           Key newKeyForSession = UniqueKey();
 
@@ -89,11 +85,13 @@ class UserPrefs with ChangeNotifier {
         }
         //clear the box
         await main.userColumnsBox.clear();
+
         // repopulate with the new values - really just the key is new
         //but with the String/key problem have to do the whole thing
         for (var i = 0; i < userColumns.length; i++) {
           saveScrollGroupState(userColumns[i]);
         }
+        
 
         //Get them in the right order
         userColumns.sort(((a, b) => a.columnIndex.compareTo(b.columnIndex)));
@@ -105,17 +103,16 @@ class UserPrefs with ChangeNotifier {
         _userPrefList = UserPrefList(userColumns: userColumns);
       } catch (e) {
         // safety valve in case seomething goes wrong - reset db and start over
-        print('Error in loading user prefs, reinitializing columns...');
-        main.userColumnsBox.clear();
+        debugPrint('Error in loading user prefs, reinitializing columns...');
+        await main.userColumnsBox.clear();
         initializePrefs(appInfo);
       }
     }
   }
 
-  // void saveUserPrefs() {}
-
   //If no prefs, set them up. This gets called from loadUserPrefs.
   Future<void> initializePrefs(AppInfo appInfo) async {
+    // print('initializePrefs');
     late bool partOfScrollGroup;
     late String currentCollection;
     late int numberOfColumns;
@@ -165,7 +162,6 @@ class UserPrefs with ChangeNotifier {
     // End of default initialization
 
     //Now save the initial values to the user columns db
-    // var box = await Hive.openBox<UserColumnsDB>('userColumnsDB');
 
     for (var i = 0; i < userColumns.length; i++) {
       UserColumnsDB colDB = UserColumnsDB()
@@ -182,7 +178,7 @@ class UserPrefs with ChangeNotifier {
   }
 
   void saveScrollGroupState(BibleReference ref) {
-    // printWhatsInBox();
+    
     UserColumnsDB colDB = UserColumnsDB()
       ..key = ref.key.toString()
       ..partOfScrollGroup = ref.partOfScrollGroup
@@ -194,13 +190,24 @@ class UserPrefs with ChangeNotifier {
 
     //We found the key, now replace the record at that spot or add it if it's new
     main.userColumnsBox.put(ref.key.toString(), colDB);
+    //Now put it in the userColumns list
+    int indexToUpdate =
+        userColumns.indexWhere((element) => element.key == ref.key);
+    userColumns[indexToUpdate] = ref;
+
+    // for (var ref in userColumns) {
+    //   // print('${ref.collectionID} ${ref.bookID} ${ref.chapter} ${ref.verse}');
+    // }
+    // for (var i = 0; i < main.userColumnsBox.length; i++) {
+    //   final refDB = main.userColumnsBox.getAt(i);
+    //   // print(
+    //       '${refDB!.collectionID} ${refDB!.bookID} ${refDB!.chapter} ${refDB!.verse}');
+    // }
+
     // printWhatsInBox();
   }
 
   deleteColumnFromBox(String keyAsString) {
-    // Box<UserColumnsDB> box = await Hive.openBox<UserColumnsDB>('userColumnsDB');
-    // printWhatsInBox();
     main.userColumnsBox.delete(keyAsString);
-    // printWhatsInBox();
   }
 }

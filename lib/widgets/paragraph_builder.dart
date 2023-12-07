@@ -13,14 +13,13 @@ class ParagraphBuilder extends StatefulWidget {
   final Function addVerseToCopyRange;
 
   const ParagraphBuilder(
-      {Key? key,
+      {super.key,
       required this.paragraph,
       required this.fontName,
       required this.textDirection,
       required this.fontSize,
       required this.rangeOfVersesToCopy,
-      required this.addVerseToCopyRange})
-      : super(key: key);
+      required this.addVerseToCopyRange});
 
   @override
   State<ParagraphBuilder> createState() => _ParagraphBuilderState();
@@ -29,7 +28,7 @@ class ParagraphBuilder extends StatefulWidget {
 class _ParagraphBuilderState extends State<ParagraphBuilder> {
   @override
   Widget build(BuildContext context) {
-    // print('paragraph builder build method');
+    // // print('paragraph builder build method');
     bool ltrText = widget.textDirection == ui.TextDirection.ltr;
     TextAlign paraAlignment = ltrText ? TextAlign.left : TextAlign.right;
 

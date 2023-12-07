@@ -79,13 +79,13 @@ List<WindowEffect> get currentWindowEffects {
 }
 
 class Settings extends StatelessWidget {
-  const Settings({Key? key, this.controller}) : super(key: key);
+  const Settings({super.key, this.controller});
 
   final ScrollController? controller;
 
   @override
   Widget build(BuildContext context) {
-    print('settings page build');
+    // print('settings page build');
     assert(debugCheckHasMediaQuery(context));
     final appTheme = context.watch<AppTheme>();
 
@@ -199,7 +199,7 @@ class Settings extends StatelessWidget {
         //     child: RadioButton(
         //       checked: appTheme.displayMode == mode,
         //       onChanged: (value) {
-        //         print(mode.toString());
+        //         // print(mode.toString());
         //         if (value) appTheme.displayMode = mode;
         //       },
         //       content: Text(

@@ -316,7 +316,7 @@ Future<void> asyncGetTranslations(BuildContext context) async {
 
 Future<void> saveToLocalDB(List<ParsedLine> verses) async {
   //Hopefully without detaining the user save locally the resulting List<ParsedLine>
-  print('starting to save parsed lines to box');
+  // print('starting to save parsed lines to box');
   Box<ParsedLineDB> versesBox =
       await Hive.openBox<ParsedLineDB>('parsedLineDB');
 
@@ -334,14 +334,14 @@ Future<void> saveToLocalDB(List<ParsedLine> verses) async {
     versesBox.add(parsedLineDB);
   }
 
-  print('finished saving parsed lines to box');
-  print(versesBox.length);
+  // print('finished saving parsed lines to box');
+  // print(versesBox.length);
   return;
 }
 
 Future<AppInfo> buildDatabaseFromXML(
     BuildContext context, Function updater) async {
-  print('buildDatabaseFromXML');
+  // print('buildDatabaseFromXML');
   bool shouldResetDB = true;
 
   AssetBundle assetBundle = DefaultAssetBundle.of(context);
@@ -376,7 +376,7 @@ Future<AppInfo> buildDatabaseFromXML(
         userPrefsBox.get('lastSeenFlutterBuildNumber');
     //Get the number of lines in the verses box
     var numLines = versesBox.length;
-    print(numLines);
+    // print(numLines);
     //Get number of lines in last DB build
     var lastDbBuildLength = userPrefsBox.get('lastDbBuildLength');
     //Writing the whole table to disk takes quite a long time, so
@@ -494,7 +494,7 @@ Future<AppInfo> buildDatabaseFromXML(
             .toString()));
   }
 
-  print('now we have the collections info');
+  // print('now we have the collections info');
 
   for (double i = 0; i < 100; i++) {
     updater(i);
@@ -509,7 +509,7 @@ Future<AppInfo> buildDatabaseFromXML(
   //Now we know about the collections and can populate the content.
   //This is the part that is stored for later use
   if (shouldResetDB) {
-    print('building local db');
+    // print('building local db');
     for (var collection in collections) {
       List<Book> books = collection.books;
       for (var book in books) {
@@ -565,7 +565,7 @@ Future<AppInfo> buildDatabaseFromXML(
           if (collection.id == 'C06' &&
               book.id == 'MAT' &&
               chapterNumber == '1') {
-            print('verseStyle');
+            // print('verseStyle');
           }
 
           //Set up variables for the chapters - having them here resets them each new chapter also
@@ -618,18 +618,18 @@ Future<AppInfo> buildDatabaseFromXML(
             }
           }
         }
-        // print('ending current book ${book.name}');
+        // // print('ending current book ${book.name}');
         booksDone++;
         updater((booksDone / totalNumberBooks) * 100);
       }
-      // print('ending current collection ${collection.id}');
+      // // print('ending current collection ${collection.id}');
     }
 
     //now save to local db
     if (!kIsWeb) saveToLocalDB(verses);
   } else {
     //use existing box
-    print('using existing local db');
+    // print('using existing local db');
     for (var i = 0; i < versesBox.length; i++) {
       ParsedLineDB lineDB = versesBox.getAt(i)!;
       verses.add(ParsedLine(
@@ -644,12 +644,12 @@ Future<AppInfo> buildDatabaseFromXML(
     }
   }
 
-  print(verses.length);
-  print(versesBox.length);
+  // print(verses.length);
+  // print(versesBox.length);
   userPrefsBox.put('lastDbBuildLength', verses.length);
 
   AppInfo appInfo = AppInfo(collections: collections, verses: verses);
 
-  print('finished buildDatabaseFromXML');
+  // print('finished buildDatabaseFromXML');
   return appInfo;
 }

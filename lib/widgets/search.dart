@@ -14,8 +14,7 @@ class SearchWidget extends StatefulWidget {
   final String? comboBoxFont;
 
   const SearchWidget(
-      {Key? key, required this.closeSearch, required this.comboBoxFont})
-      : super(key: key);
+      {super.key, required this.closeSearch, required this.comboBoxFont});
 
   @override
   State<SearchWidget> createState() => _SearchWidgetState();
@@ -84,7 +83,7 @@ class _SearchWidgetState extends State<SearchWidget> {
         checked: collectionsToSearch.contains(collections[i].id),
         onChanged: (bool? value) {
           setState(() {
-            // print('setting ${collectionsToSearch[i]} to $value');
+            // // print('setting ${collectionsToSearch[i]} to $value');
             if (collectionsToSearch.contains(collections[i].id)) {
               collectionsToSearch
                   .removeWhere((element) => element == collections[i].id);
@@ -217,7 +216,7 @@ class _SearchWidgetState extends State<SearchWidget> {
 class SearchResultTile extends StatefulWidget {
   final ParsedLine line;
 
-  const SearchResultTile({Key? key, required this.line}) : super(key: key);
+  const SearchResultTile({super.key, required this.line});
 
   @override
   State<SearchResultTile> createState() => _SearchResultTileState();
@@ -227,7 +226,7 @@ class _SearchResultTileState extends State<SearchResultTile> {
   Color? cardColor;
 
   void searchNavigator(ParsedLine line) {
-    print(line.verseText);
+    // print(line.verseText);
   }
 
   @override

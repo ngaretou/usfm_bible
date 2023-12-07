@@ -1,6 +1,7 @@
 import 'dart:async';
 
 // import 'package:universal_html/html.dart' as html;
+import 'package:flutter/material.dart' as material;
 import 'package:flutter/services.dart';
 
 import 'package:fluent_ui/fluent_ui.dart';
@@ -8,6 +9,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart' as flutter_acrylic;
 import 'package:provider/provider.dart';
 import 'package:system_theme/system_theme.dart';
+
 import 'package:url_strategy/url_strategy.dart';
 import 'package:url_launcher/link.dart';
 import 'package:window_manager/window_manager.dart';
@@ -15,6 +17,7 @@ import 'package:context_menus/context_menus.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:pwa_install/pwa_install.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'dart:io';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -32,7 +35,6 @@ import 'logic/database_builder.dart';
 import 'providers/user_prefs.dart';
 import 'providers/column_manager.dart';
 
-import 'package:hive_flutter/hive_flutter.dart';
 import '../hive/user_columns_db.dart';
 
 String appTitle = '';
@@ -65,22 +67,23 @@ void main() async {
   Hive.registerAdapter(UserColumnsDBAdapter());
 
   userColumnsBox = await Hive.openBox<UserColumnsDB>('userColumnsDB');
+  
   userPrefsBox = await Hive.openBox('userPrefs');
 
-  // if it's on the web, windows or android, load the accent color
-  if (kIsWeb ||
-      [TargetPlatform.windows, TargetPlatform.android]
-          .contains(defaultTargetPlatform)) {
+  // if it's not on the web, windows or android, load the accent color
+  if (!kIsWeb &&
+      [
+        TargetPlatform.windows,
+        TargetPlatform.android,
+      ].contains(defaultTargetPlatform)) {
     SystemTheme.accentColor.load();
   }
 
   setPathUrlStrategy();
 
-  if (kIsWeb || !Platform.isWindows) {
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
-  }
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   if (isDesktop) {
     await flutter_acrylic.Window.initialize();
@@ -115,6 +118,7 @@ void main() async {
     });
   }
 
+  // print('runApp');
   runApp(
     MultiProvider(
       providers: [
@@ -134,12 +138,14 @@ void main() async {
   );
 }
 
+final _appTheme = AppTheme();
+
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    print('myapp build');
+    // print('myapp build');
     ScrollbarThemeData scrollBarTheme = const ScrollbarThemeData(
       thickness: 6.0,
       hoveringThickness: 6.0,
@@ -151,8 +157,8 @@ class MyApp extends StatelessWidget {
       mainAxisMargin: 4.0, hoveringMainAxisMargin: 4.0,
       crossAxisMargin: 2.0, hoveringCrossAxisMargin: 2.0,
       minThumbLength: 48.0,
-      trackBorderColor: Color.fromARGB(85, 126, 126, 126),
-      hoveringTrackBorderColor: Color.fromARGB(85, 126, 126, 126),
+      // trackBorderColor: Color.fromARGB(85, 126, 126, 126),
+      // hoveringTrackBorderColor: Color.fromARGB(85, 126, 126, 126),
       padding: EdgeInsets.all(0),
       hoveringPadding: EdgeInsets.all(0),
     );
@@ -163,9 +169,9 @@ class MyApp extends StatelessWidget {
     }
 
     late Future<String> initAppInfo = getAppTitle();
-
-    return ChangeNotifierProvider(
-      create: (_) => AppTheme(),
+    // print('initAppInfo');
+    return ChangeNotifierProvider.value(
+      value: _appTheme,
       builder: (context, _) {
         final appTheme = context.watch<AppTheme>();
 
@@ -177,23 +183,25 @@ class MyApp extends StatelessWidget {
         }
 
         SystemChrome.setSystemUIOverlayStyle(style);
-
+        // print('about to hit FutureBuilder line 191');
         return FutureBuilder(
             future: initAppInfo,
             builder: (ctx, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(
-                    child: Container(
-                  color: Colors.blue,
-                ));
+                return const material.Center(
+                    child: material.CircularProgressIndicator());
               } else {
+                // print(appTheme.color.toString());
                 appTitle = snapshot.data.toString();
                 return FluentApp(
                   title: appTitle,
                   themeMode: appTheme.mode,
                   debugShowCheckedModeBanner: false,
-                  home: const MyHomePage(),
+                  home: MyHomePage(
+                    appTheme: appTheme,
+                  ),
                   color: appTheme.color,
+                  // color: Colors.black,
                   darkTheme: FluentThemeData(
                     brightness: Brightness.dark,
                     accentColor: appTheme.color,
@@ -205,6 +213,7 @@ class MyApp extends StatelessWidget {
                   ),
                   theme: FluentThemeData(
                     accentColor: appTheme.color,
+
                     visualDensity: VisualDensity.standard,
                     // focusTheme: FocusThemeData(
                     //   glowFactor: is10footScreen() ? 2.0 : 0.0,
@@ -234,7 +243,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  final AppTheme appTheme;
+
+  const MyHomePage({super.key, required this.appTheme});
 
   @override
   MyHomePageState createState() => MyHomePageState();
@@ -250,7 +261,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
   ValueNotifier<double> myProgress = ValueNotifier(0);
 
   void updateProgress(double progress) {
-    // print(progress);
+    // // print(progress);
 
     myProgress.value = progress;
   }
@@ -274,6 +285,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
   @override
   void initState() {
+    // print('MyHomePageState initState');
     windowManager.addListener(this);
 
     super.initState();
@@ -318,6 +330,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
   @override
   Widget build(BuildContext context) {
+    // print('MyHomePageState build');
     bool? hasSeenOnboarding = userPrefsBox.get('hasSeenOnboarding');
 
     if (hasSeenOnboarding == null && appTitle == "Kàddug Yàlla") {
@@ -335,12 +348,6 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
       });
     }
 
-    print('MyHomePageState build');
-    final appTheme = context.watch<AppTheme>();
-    // windowSize = MediaQuery.of(context).size;
-    // isFullScreen = (html.window.screen?.width == windowSize.width) &&
-    //     (html.window.screen?.height == windowSize.height);
-
     return FutureBuilder(
       future: initInterface,
       builder: (ctx, snapshot) {
@@ -351,6 +358,22 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
           //For Wolof only and on web only on biblewolof.com
           List<NavigationPaneItem> wolofWebOnlyNavPaneItems = [
+            if (kIsWeb)
+              PaneItemAction(
+                  icon: const Icon(FluentIcons.download),
+                  title: const Text('Yebal appli bi ci sa ordinatër'),
+                  onTap: () {
+                    showDialog(
+                        barrierDismissible: true,
+                        context: context,
+                        builder: (BuildContext context) {
+                          return const Center(
+                              child: OnboardingPanel(
+                            appDownloadOnly: true,
+                          ));
+                        });
+                  }),
+
             //More apps
             _LinkPaneItemAction(
               icon: const Icon(FluentIcons.app_icon_default),
@@ -416,7 +439,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                 icon: const Icon(FluentIcons.search),
                 functionToRun:
                     Provider.of<ColumnManager>(context, listen: false)
-                        .openSearch),
+                        .toggleSearch),
             //Add Column
             RunFunctionPaneItemAction(
                 body: const About(),
@@ -428,7 +451,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                     Provider.of<ColumnManager>(context, listen: false)
                         .addColumn),
             //Light Dark Toggle
-            LightDarkModePaneItemAction(
+            PaneItemAction(
               icon: FluentTheme.of(context).brightness.isDark
                   ? const Icon(FluentIcons.sunny)
                   : const Icon(FluentIcons.clear_night),
@@ -439,17 +462,39 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                   : Text(Provider.of<UserPrefs>(context, listen: true)
                       .currentTranslation
                       .darkTheme),
-              appTheme: appTheme,
+              onTap: () {
+                Future<void> saveThemeMode(String themeMode) async {
+                  Box userPrefsBox = await Hive.openBox('userPrefs');
+                  userPrefsBox.put('themeMode', themeMode);
+                  // userPrefsBox.close();
+                }
+
+                /*Couple of cases here - by default it's set to user theme mode, but we want 
+                to offer a way to change that easily. So account for whether the system theme
+                mode is dark or light, and switch to an expressly declared light or dark*/
+                switch (widget.appTheme.mode) {
+                  case ThemeMode.system:
+                    bool dark = (MediaQuery.of(context).platformBrightness ==
+                        Brightness.dark);
+                    if (dark) {
+                      widget.appTheme.mode = ThemeMode.light;
+                    } else {
+                      widget.appTheme.mode = ThemeMode.dark;
+                    }
+                    break;
+                  case ThemeMode.dark:
+                    widget.appTheme.mode = ThemeMode.light;
+                    break;
+                  case ThemeMode.light:
+                    widget.appTheme.mode = ThemeMode.dark;
+                    break;
+                  default:
+                    widget.appTheme.mode = ThemeMode.dark;
+                }
+                saveThemeMode(widget.appTheme.mode.toString());
+              },
             ),
-            // if (kIsWeb)
-            //   PaneItemAction(
-            //     icon: const Icon(FluentIcons.full_screen),
-            //     // isFullScreen
-            //     //     ? const Icon(FluentIcons.accept)
-            //     //     : const Icon(FluentIcons.full_screen),
-            //     onTap: toggleFullScreen,
-            //     // onTap: isFullScreen ? exitFullScreen : goFullScreen
-            //   ),
+
             PaneItemSeparator(),
             //About
             PaneItem(
@@ -536,17 +581,6 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
                           //     // Spacer(),
 
-                          //     // ToggleSwitch(
-                          //     //   content: const Text('Dark Mode'),
-                          //     //   checked: FluentTheme.of(context).brightness.isDark,
-                          //     //   onChanged: (v) {
-                          //     //     if (v) {
-                          //     //       appTheme.mode = ThemeMode.dark;
-                          //     //     } else {
-                          //     //       appTheme.mode = ThemeMode.light;
-                          //     //     }
-                          //     //   },
-                          //     // ),
                           WindowButtons()
                         ],
                       ),
@@ -565,9 +599,9 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
                     height: kOneLineTileHeight,
                     padding: const EdgeInsets.symmetric(horizontal: 10.0),
                   ),
-                  displayMode: appTheme.displayMode,
+                  displayMode: widget.appTheme.displayMode,
                   indicator: () {
-                    switch (appTheme.indicator) {
+                    switch (widget.appTheme.indicator) {
                       case NavigationIndicators.end:
                         return const EndNavigationIndicator();
                       case NavigationIndicators.sticky:
@@ -676,7 +710,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 
   @override
   void onWindowClose() async {
-    print('closing');
+    // print('closing');
     bool isPreventClose = await windowManager.isPreventClose();
     if (isPreventClose) {
       if (!mounted) return;
@@ -709,7 +743,7 @@ class MyHomePageState extends State<MyHomePage> with WindowListener {
 }
 
 class WindowButtons extends StatelessWidget {
-  const WindowButtons({Key? key}) : super(key: key);
+  const WindowButtons({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -728,19 +762,14 @@ class WindowButtons extends StatelessWidget {
 
 class RunFunctionPaneItemAction extends PaneItem {
   RunFunctionPaneItemAction({
-    required Widget icon,
+    required super.icon,
     required this.functionToRun, //pass in the function
     required super.body,
     super.title,
-    infoBadge,
-    focusNode,
-    autofocus = false,
-  }) : super(
-          icon: icon,
-          infoBadge: infoBadge,
-          focusNode: focusNode,
-          autofocus: autofocus,
-        );
+    super.infoBadge,
+    super.focusNode,
+    super.autofocus = false,
+  });
   Function functionToRun;
   @override
   Widget build(
@@ -763,19 +792,14 @@ class RunFunctionPaneItemAction extends PaneItem {
 
 class LightDarkModePaneItemAction extends PaneItem {
   LightDarkModePaneItemAction({
-    required Widget icon,
+    required super.icon,
     required this.appTheme,
-    title,
-    infoBadge,
-    focusNode,
-    autofocus = false,
+    super.title,
+    super.infoBadge,
+    super.focusNode,
+    super.autofocus = false,
   }) : super(
           body: const About(),
-          icon: icon,
-          title: title,
-          infoBadge: infoBadge,
-          focusNode: focusNode,
-          autofocus: autofocus,
         );
   final AppTheme appTheme;
   @override

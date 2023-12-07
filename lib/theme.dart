@@ -36,8 +36,8 @@ AccentColor getStoredColorByIndex() {
 }
 
 class AppTheme extends ChangeNotifier {
-  AccentColor _color = getStoredColorByIndex();
-  AccentColor get color => _color;
+  AccentColor? _color = getStoredColorByIndex();
+  AccentColor get color => _color ?? systemAccentColor;
   set color(AccentColor color) {
     _color = color;
     notifyListeners();
@@ -100,9 +100,9 @@ class AppTheme extends ChangeNotifier {
 }
 
 AccentColor get systemAccentColor {
-  if (defaultTargetPlatform == TargetPlatform.windows ||
-      defaultTargetPlatform == TargetPlatform.android ||
-      kIsWeb) {
+  if ((defaultTargetPlatform == TargetPlatform.windows ||
+          defaultTargetPlatform == TargetPlatform.android) &&
+      !kIsWeb) {
     return AccentColor('normal', {
       'darkest': SystemTheme.accentColor.darkest,
       'darker': SystemTheme.accentColor.darker,
@@ -113,5 +113,7 @@ AccentColor get systemAccentColor {
       'lightest': SystemTheme.accentColor.lightest,
     });
   }
-  return Colors.teal;
+  return AccentColor('normal', {
+    'normal': Colors.teal,
+  });
 }

@@ -1,0 +1,4 @@
+%copyright-all:C01%
+%copyright-all:C03%
+%copyright-all:C04%
+%copyright-all:C05%

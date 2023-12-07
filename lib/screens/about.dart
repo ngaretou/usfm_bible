@@ -12,11 +12,11 @@ import '../widgets/onboarding_panel.dart';
 
 class About extends StatelessWidget {
   // const About({super.key});
-  const About({Key? key}) : super(key: key);
+  const About({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // print('about page build');
+    // // print('about page build');
     String appName = '';
     String versionName = '';
     String programType = '';
@@ -139,8 +139,8 @@ class About extends StatelessWidget {
             //SelectableHtml makes it selectable but you lose some formatting
             : Html(
                 data: snapshot.data.toString(),
-                onLinkTap: (String? url, RenderContext context,
-                    Map<String, String> attributes, element) async {
+                onLinkTap: (String? url, Map<String, String> attributes,
+                    element) async {
                   if (url != null) {
                     await canLaunchUrl(Uri.parse(url))
                         ? await launchUrl(Uri.parse(url))
@@ -191,8 +191,8 @@ class About extends StatelessWidget {
 
             showLicensePage(
                 context: context,
-                applicationName: '99',
-                useRootNavigator: true);
+                applicationName: 'usfm_bible',
+                useRootNavigator: false);
           },
           child: const Text('Licenses')),
     ];

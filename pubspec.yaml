@@ -17,7 +17,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.1+10
+version: 1.0.2+13
 
 environment:
   sdk: ">=2.17.1 <3.0.0"
@@ -39,7 +39,7 @@ dependencies:
   flutter_acrylic: ^1.0.0+2
   url_strategy: ^0.2.0
   url_launcher: ^6.1.9
-  share_plus: ^6.0.1
+  share_plus: ^7.1.0
   clipboard: ^0.1.3
   fluent_ui: ^4.1.0
   hive: ^2.2.1
@@ -48,31 +48,31 @@ dependencies:
   xml: ^6.1.0
   # just_audio: ^0.9.24
   # audio_session: ^0.1.6+1
-  firebase_core: ^2.1.1
-  firebase_analytics: ^10.0.4
+  firebase_core: ^2.21.0
+  firebase_analytics: ^10.6.3
   scrollable_positioned_list: ^0.3.2
-  google_fonts: ^4.0.3
+  google_fonts: ^6.0.0
 
   flutter_html: ^3.0.0-alpha.6
   context_menus: ^1.0.2
-  flutter_native_splash: ^2.2.9
+  flutter_native_splash: ^2.3.7
   diacritic: ^0.1.3
   universal_html: ^2.0.8
   pwa_install: ^0.0.5
-  package_info_plus: ^3.0.3
+  package_info_plus: ^5.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   hive_generator: ^2.0.0
   build_runner: ^2.1.11
-  flutter_launcher_icons: ^0.12.0
+  flutter_launcher_icons: ^0.13.1
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
   msix: ^3.7.0
 
 flutter_icons:
@@ -156,7 +156,7 @@ msix_config:
   display_name: Kàddug Yàlla+
   publisher_display_name: La MBS
   identity_name: 24971LaMBS.KddugYllagi
-  msix_version: 1.0.1.0
+  msix_version: 1.0.2.0
   publisher: CN=172AFE7A-55C9-42B2-9D60-BAD846698B5E
   logo_path: C:\Users\corey\myflutter\usfm_bible\windows\runner\resources\app_icon.ico
   store: true
