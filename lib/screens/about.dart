@@ -6,6 +6,9 @@ import 'package:flutter_html/flutter_html.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:usfm_bible/logic/database_builder.dart';
 import 'package:xml/xml.dart';
+
+import '../main.dart';
+
 import '../providers/user_prefs.dart';
 
 import '../widgets/onboarding_panel.dart';
@@ -168,6 +171,15 @@ class About extends StatelessWidget {
       htmlToDisplay(),
       Button(
           onPressed: () {
+            //Here we're transforming the saved theme to the Material theme just by grabbing
+            //the brightness and seed color
+            String themeMode = userPrefsBox.get('themeMode');
+            Color colorToReturn = Colors.teal;
+            int? savedColorIndex = userPrefsBox.get('colorIndex');
+            if (savedColorIndex != null) {
+              colorToReturn = Colors.accentColors[savedColorIndex];
+            }
+
             void showLicensePage({
               required BuildContext context,
               String? applicationName,
@@ -180,11 +192,22 @@ class About extends StatelessWidget {
               // assert(useRootNavigator != null);
               Navigator.of(context, rootNavigator: useRootNavigator)
                   .push(material.MaterialPageRoute<void>(
-                builder: (BuildContext context) => material.LicensePage(
-                  applicationName: applicationName,
-                  applicationVersion: applicationVersion,
-                  applicationIcon: applicationIcon,
-                  applicationLegalese: applicationLegalese,
+                builder: (BuildContext licenseContext) => material.Theme(
+                  //Here after Flutter 3 the theming wouldn't work right -
+                  //wrap the License Page in its own Material theme,
+                  //getting the imporant components from the saved theme
+                  data: material.ThemeData(
+                      useMaterial3: true, //important!
+                      colorSchemeSeed: colorToReturn,
+                      brightness: themeMode == 'ThemeMode.dark'
+                          ? Brightness.dark
+                          : Brightness.light),
+                  child: material.LicensePage(
+                    applicationName: applicationName,
+                    applicationVersion: applicationVersion,
+                    applicationIcon: applicationIcon,
+                    applicationLegalese: applicationLegalese,
+                  ),
                 ),
               ));
             }
