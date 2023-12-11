@@ -67,7 +67,7 @@ void main() async {
   Hive.registerAdapter(UserColumnsDBAdapter());
 
   userColumnsBox = await Hive.openBox<UserColumnsDB>('userColumnsDB');
-  
+
   userPrefsBox = await Hive.openBox('userPrefs');
 
   // if it's not on the web, windows or android, load the accent color

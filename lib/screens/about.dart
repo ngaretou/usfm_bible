@@ -173,7 +173,8 @@ class About extends StatelessWidget {
           onPressed: () {
             //Here we're transforming the saved theme to the Material theme just by grabbing
             //the brightness and seed color
-            String themeMode = userPrefsBox.get('themeMode');
+            String themeMode =
+                userPrefsBox.get('themeMode') ?? 'ThemeMode.dark';
             Color colorToReturn = Colors.teal;
             int? savedColorIndex = userPrefsBox.get('colorIndex');
             if (savedColorIndex != null) {

@@ -17,7 +17,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.2+13
+version: 1.0.3+13
 
 environment:
   sdk: ">=2.17.1 <3.0.0"
@@ -154,9 +154,9 @@ flutter:
 # flutter pub run msix:create
 msix_config:
   display_name: Kàddug Yàlla+
-  publisher_display_name: La MBS
+  publisher_display_name: Foundational LLC
   identity_name: 24971LaMBS.KddugYllagi
-  msix_version: 1.0.2.0
+  msix_version: 1.0.3.0
   publisher: CN=172AFE7A-55C9-42B2-9D60-BAD846698B5E
   logo_path: C:\Users\corey\myflutter\usfm_bible\windows\runner\resources\app_icon.ico
   store: true
