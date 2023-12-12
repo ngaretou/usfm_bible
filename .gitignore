@@ -18,7 +18,7 @@ pubspec.lock
 
 .idea
 .fvm
-
+.vscode
 
 
 # Miscellaneous
