@@ -63,7 +63,7 @@ void main() async {
       // }
       );
 
-  await Hive.initFlutter();
+  await Hive.initFlutter('kaddugyalla');
   Hive.registerAdapter(UserColumnsDBAdapter());
 
   userColumnsBox = await Hive.openBox<UserColumnsDB>('userColumnsDB');
