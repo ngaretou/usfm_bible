@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:flutter/material.dart' as material;
 import 'package:flutter/services.dart';
 
+import 'package:path_provider/path_provider.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_acrylic/flutter_acrylic.dart' as flutter_acrylic;
@@ -63,7 +64,41 @@ void main() async {
       // }
       );
 
-  await Hive.initFlutter('kaddugyalla');
+// Hive stores its files in ApplicationDocumentsDirectory - for most platforms this works great, but Windows it stores these three files in the Documents directory. Yuck.
+// We've changed that now wtih await Hive.initFlutter('KaddugYalla'); but clean it up if a user has that old version.
+
+  if (!kIsWeb && Platform.isWindows) {
+    List<String> filesToMove = [
+      'parsedlinedb.hive',
+      'parsedlinedb.lock',
+      'usercolumnsdb.hive',
+      'usercolumnsdb.lock',
+      'userprefs.hive',
+      'userprefs.lock'
+    ];
+
+    String dir = (await getApplicationDocumentsDirectory()).path;
+
+    for (var file in filesToMove) {
+      String oldPath = '$dir/$file';
+      String newPath = '$dir/KaddugYalla/$file';
+      try {
+        bool fileExists = await File(oldPath).exists();
+        if (fileExists) {
+          bool fileExistsInSubfolder = await File(newPath).exists();
+          if (!fileExistsInSubfolder) {
+            File(oldPath).copy(newPath).then((_) => File(oldPath).delete());
+          } else {
+            File(oldPath).delete();
+          }
+        }
+      } catch (e) {
+        debugPrint(e.toString());
+      }
+    }
+  }
+
+  await Hive.initFlutter('KaddugYalla');
   Hive.registerAdapter(UserColumnsDBAdapter());
 
   userColumnsBox = await Hive.openBox<UserColumnsDB>('userColumnsDB');
@@ -81,14 +116,12 @@ void main() async {
 
   setPathUrlStrategy();
 // No firebase for Windows yet so don't initialize it in that case, but do in other cases
-if (kIsWeb || !Platform.isWindows)
-{
-await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  if (kIsWeb || !Platform.isWindows) {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  }
 
-}
-  
   if (isDesktop) {
     await flutter_acrylic.Window.initialize();
     await WindowManager.instance.ensureInitialized();
@@ -110,11 +143,11 @@ await Firebase.initializeApp(
       double? windowHeight = userPrefsBox.get('windowHeight');
       if (windowHeight == null || windowWidth == null) {
         windowWidth = 1000;
-        windowHeight = 600;
+        windowHeight = 650;
       }
 
       await windowManager.setSize(Size(windowWidth, windowHeight));
-      await windowManager.setMinimumSize(const Size(600, 600));
+      await windowManager.setMinimumSize(const Size(600, 650));
       await windowManager.center();
       await windowManager.show();
       await windowManager.setPreventClose(false);

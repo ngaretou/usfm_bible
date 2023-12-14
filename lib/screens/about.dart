@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 
 import 'package:flutter_html/flutter_html.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:usfm_bible/logic/database_builder.dart';
 import 'package:xml/xml.dart';
@@ -20,10 +21,12 @@ class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // // print('about page build');
+    // appDef info
     String appName = '';
     String versionName = '';
     String programType = '';
     String programVersion = '';
+
     AssetBundle assetBundle = DefaultAssetBundle.of(context);
 
     //Get collection copyright strings from the appdef
@@ -153,10 +156,24 @@ class About extends StatelessWidget {
       );
     }
 
+    late PackageInfo packageInfo;
+
+    getPackageInfo() async {
+      packageInfo = await PackageInfo.fromPlatform();
+    }
+
     List<Widget> pageContent = [
       Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
+          FutureBuilder(
+              future: getPackageInfo(),
+              builder: (ctx, snapshot) => snapshot.connectionState ==
+                      ConnectionState.waiting
+                  ? const Center(child: ProgressBar())
+                  : Text(
+                      '${packageInfo.version} (${packageInfo.buildNumber})')),
+          const SizedBox(width: 20),
           IconButton(
               onPressed: () {
                 showDialog(
