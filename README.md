@@ -1,5 +1,9 @@
 # usfm_bible
 
+Archived project - if you are looking to release windows, macOS, and web versions of SAB projects, use the new web app builder in SAB and post to the web, then build for windows and app store on macOS with https://pwabuilder.com/ 
+
+----------------------
+
 An extension of [Scripture App Builder](https://software.sil.org/scriptureappbuilder/) primarily for web apps that also can be used to produce offline Windows and macOS.
 
 To use the pre-built version for your SAB project, upload it to your web server, drop in your SAB project, and it generates a multi-collection multi-column web app.
