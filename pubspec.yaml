@@ -60,6 +60,7 @@ dependencies:
   universal_html: ^2.0.8
   pwa_install: ^0.0.5
   package_info_plus: ^5.0.1
+  path_provider: ^2.1.1
 
 dev_dependencies:
   flutter_test:
@@ -151,7 +152,7 @@ msix_config:
   display_name: Kàddug Yàlla+
   publisher_display_name: Foundational LLC
   identity_name: 24971LaMBS.KddugYllagi
-  msix_version: 1.0.3.0
+  msix_version: 1.0.4.0
   publisher: CN=172AFE7A-55C9-42B2-9D60-BAD846698B5E
   logo_path: C:\Users\corey\myflutter\usfm_bible\windows\runner\resources\app_icon.ico
   store: true
