@@ -81,14 +81,12 @@ void main() async {
 
   setPathUrlStrategy();
 // No firebase for Windows yet so don't initialize it in that case, but do in other cases
-if (kIsWeb || !Platform.isWindows)
-{
-await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  if (kIsWeb || !Platform.isWindows) {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+  }
 
-}
-  
   if (isDesktop) {
     await flutter_acrylic.Window.initialize();
     await WindowManager.instance.ensureInitialized();

@@ -237,13 +237,13 @@ ComposedVerses verseComposer(
   //Then after all is accounted for it falls back down here
   ComposedVerses returnInfo = ComposedVerses(
       versesAsSpans: spansToReturn, versesAsString: textToReturn);
-  if (dealtWithSoFar != line.verseText.length) {
+  // if (dealtWithSoFar != line.verseText.length) {
     // throw "Problem with line parsing in paragraph builder at ${line.collectionid} ${line.book} ${line.chapter} ${line.verse} ${line.verseText}";
     // print(
     // "Problem with line parsing in paragraph builder at ${line.collectionid} ${line.book} ${line.chapter} ${line.verse} ${line.verseText}");
     // print('$dealtWithSoFar dealtWithSoFar');
     // print('${line.verseText.length} line.verseText.length');
-  }
+  // }
   return returnInfo;
 }
 //end verseComposer

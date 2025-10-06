@@ -524,7 +524,7 @@ Future<AppInfo> buildDatabaseFromXML(
           bookText = bookText.replaceAll(RegExp(findString), changes[k]!);
         }
 
-        //Greek NT changes
+        //==Greek NT changes
 
         //Remove all the extra \+fw
         bookText = bookText.replaceAll(RegExp(r'\\\+fw\s*'), '');
@@ -559,14 +559,14 @@ Future<AppInfo> buildDatabaseFromXML(
           List<String> chapterByLineBreaks = chapter.split('\n');
 
           ///\r?\n|\r/g is all linebreaks
-          //This juts gets rid of the chapter number
+          //This just gets rid of the chapter number
           chapterByLineBreaks.removeAt(0);
           //Print a bit
-          if (collection.id == 'C06' &&
-              book.id == 'MAT' &&
-              chapterNumber == '1') {
-            // print('verseStyle');
-          }
+          // if (collection.id == 'C06' &&
+          //     book.id == 'MAT' &&
+          //     chapterNumber == '1') {
+          //   // print('verseStyle');
+          // }
 
           //Set up variables for the chapters - having them here resets them each new chapter also
           String verseStyle = "";

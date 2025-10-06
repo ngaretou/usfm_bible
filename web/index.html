@@ -34,6 +34,13 @@
     // The value below is injected by flutter build, do not touch.
     const serviceWorkerVersion = null;
   </script>
+  <!-- stop native right click in favor of the app's  -->
+      <script>
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+      });
+    </script>
+    
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer=""></script>
   
